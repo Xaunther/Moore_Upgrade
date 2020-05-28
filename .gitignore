@@ -1,0 +1,32 @@
+#Ignore ntuples
+*.root
+
+#Examples
+examples/
+
+#Packages
+DaVinciDev*
+UraniaDev*
+
+#Compilation stuff
+*.so
+*.d
+*.pcm
+
+#Emacs shit
+*~
+
+#Ignore folder with cuts combinations
+Cuts/
+#Python compilation stuff
+*.pyc
+
+#Make log
+make.log
+
+#Ignore weights database
+*.db
+
+#Ignore ostap
+.ostap_history*
+.ostap_config*
