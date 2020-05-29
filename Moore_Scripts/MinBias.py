@@ -1,4 +1,4 @@
-from Moore import options, run_moore
+from Moore import options
 
 options.set_conds_from_testfiledb('Upgrade_MinBias_LDST')
 options.set_input_from_testfiledb('Upgrade_MinBias_LDST')

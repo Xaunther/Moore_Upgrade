@@ -30,3 +30,7 @@ make.log
 #Ignore ostap
 .ostap_history*
 .ostap_config*
+
+#Ignore (m)DSTs
+*.dst
+*.mdst
