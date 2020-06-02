@@ -4,7 +4,10 @@ import os
 
 #Define outputfolder here
 outfolder = "output/KstG/"
-os.mkdir(outfolder)
+try:
+    os.mkdir(outfolder)
+except:
+    pass
 
 with open("DSTs/KstG_11102202_MagDown.dir") as f:
     options.input_files = f.read().splitlines()

@@ -1,0 +1,1972 @@
+strict digraph "Data flow" {
+label="Data flow generated at Fri May 29 13:01:06 2020";
+rankdir=LR;
+node [shape=box];
+subgraph "cluster_DeterministicPrescaler/DeterministicPrescaler" {
+bgcolor=aliceblue;
+label="";
+"DeterministicPrescaler/DeterministicPrescaler" [label=<<B>DeterministicPrescaler/DeterministicPrescaler</B><BR/>AcceptFraction = 1<BR/>SeedName = Hlt2BToHHGamma_Inclusive_LinePrescaler>, shape=plaintext];
+"DeterministicPrescaler/DeterministicPrescaler_in_ODINLocation" [fillcolor=deepskyblue1, label=ODINLocation, style=filled];
+"DeterministicPrescaler/DeterministicPrescaler" -> "DeterministicPrescaler/DeterministicPrescaler_in_ODINLocation"  [minlen=0, style=invis];
+}
+
+"createODIN/createODIN_out_ODIN" -> "DeterministicPrescaler/DeterministicPrescaler_in_ODINLocation";
+subgraph "cluster_createODIN/createODIN" {
+bgcolor=aliceblue;
+label="";
+"createODIN/createODIN" [label=<<B>createODIN/createODIN</B><BR/>defaults-only>, shape=plaintext];
+"createODIN/createODIN_in_RawEvent" [fillcolor=deepskyblue1, label=RawEvent, style=filled];
+"createODIN/createODIN" -> "createODIN/createODIN_in_RawEvent"  [minlen=0, style=invis];
+"createODIN/createODIN_out_ODIN" [fillcolor=coral1, label=ODIN, style=filled];
+"createODIN/createODIN" -> "createODIN/createODIN_out_ODIN"  [minlen=0, style=invis];
+}
+
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#11_out_Output" -> "createODIN/createODIN_in_RawEvent";
+subgraph "cluster_Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#11" {
+bgcolor=aliceblue;
+label="";
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#11" [label=<<B>Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#11</B><BR/>Output = /Event/Trigger/RawEvent>, shape=plaintext];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#11_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#11" -> "Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#11_out_Output"  [minlen=0, style=invis];
+}
+
+subgraph "cluster_UnpackRecVertex/UnpackRecVertices" {
+bgcolor=aliceblue;
+label="";
+"UnpackRecVertex/UnpackRecVertices" [label=<<B>UnpackRecVertex/UnpackRecVertices</B><BR/>OutputName = /Event/Rec/Vertex/Primary>, shape=plaintext];
+"UnpackRecVertex/UnpackRecVertices_in_InputName" [fillcolor=deepskyblue1, label=InputName, style=filled];
+"UnpackRecVertex/UnpackRecVertices" -> "UnpackRecVertex/UnpackRecVertices_in_InputName"  [minlen=0, style=invis];
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" [fillcolor=coral1, label=OutputName, style=filled];
+"UnpackRecVertex/UnpackRecVertices" -> "UnpackRecVertex/UnpackRecVertices_out_OutputName"  [minlen=0, style=invis];
+}
+
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile_out_Output" -> "UnpackRecVertex/UnpackRecVertices_in_InputName";
+subgraph "cluster_Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile" {
+bgcolor=aliceblue;
+label="";
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile" [label=<<B>Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile</B><BR/>Output = /Event/pRec/Vertex/Primary>, shape=plaintext];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile" -> "Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile_out_Output"  [minlen=0, style=invis];
+}
+
+subgraph "cluster_UnpackCaloHypo/UnpackCaloElectrons" {
+bgcolor=aliceblue;
+label="";
+"UnpackCaloHypo/UnpackCaloElectrons" [label=<<B>UnpackCaloHypo/UnpackCaloElectrons</B><BR/>OutputName = /Event/Rec/Calo/Electrons>, shape=plaintext];
+"UnpackCaloHypo/UnpackCaloElectrons_in_InputName" [fillcolor=deepskyblue1, label=InputName, style=filled];
+"UnpackCaloHypo/UnpackCaloElectrons" -> "UnpackCaloHypo/UnpackCaloElectrons_in_InputName"  [minlen=0, style=invis];
+"UnpackCaloHypo/UnpackCaloElectrons_out_OutputName" [fillcolor=coral1, label=OutputName, style=filled];
+"UnpackCaloHypo/UnpackCaloElectrons" -> "UnpackCaloHypo/UnpackCaloElectrons_out_OutputName"  [minlen=0, style=invis];
+}
+
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#1_out_Output" -> "UnpackCaloHypo/UnpackCaloElectrons_in_InputName";
+subgraph "cluster_Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#1" {
+bgcolor=aliceblue;
+label="";
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#1" [label=<<B>Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#1</B><BR/>Output = /Event/pRec/Calo/Electrons>, shape=plaintext];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#1_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#1" -> "Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#1_out_Output"  [minlen=0, style=invis];
+}
+
+subgraph "cluster_UnpackCaloHypo/UnpackCaloPhotons" {
+bgcolor=aliceblue;
+label="";
+"UnpackCaloHypo/UnpackCaloPhotons" [label=<<B>UnpackCaloHypo/UnpackCaloPhotons</B><BR/>OutputName = /Event/Rec/Calo/Photons>, shape=plaintext];
+"UnpackCaloHypo/UnpackCaloPhotons_in_InputName" [fillcolor=deepskyblue1, label=InputName, style=filled];
+"UnpackCaloHypo/UnpackCaloPhotons" -> "UnpackCaloHypo/UnpackCaloPhotons_in_InputName"  [minlen=0, style=invis];
+"UnpackCaloHypo/UnpackCaloPhotons_out_OutputName" [fillcolor=coral1, label=OutputName, style=filled];
+"UnpackCaloHypo/UnpackCaloPhotons" -> "UnpackCaloHypo/UnpackCaloPhotons_out_OutputName"  [minlen=0, style=invis];
+}
+
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#2_out_Output" -> "UnpackCaloHypo/UnpackCaloPhotons_in_InputName";
+subgraph "cluster_Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#2" {
+bgcolor=aliceblue;
+label="";
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#2" [label=<<B>Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#2</B><BR/>Output = /Event/pRec/Calo/Photons>, shape=plaintext];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#2_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#2" -> "Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#2_out_Output"  [minlen=0, style=invis];
+}
+
+subgraph "cluster_UnpackCaloHypo/UnpackCaloMergedPi0s" {
+bgcolor=aliceblue;
+label="";
+"UnpackCaloHypo/UnpackCaloMergedPi0s" [label=<<B>UnpackCaloHypo/UnpackCaloMergedPi0s</B><BR/>OutputName = /Event/Rec/Calo/MergedPi0s>, shape=plaintext];
+"UnpackCaloHypo/UnpackCaloMergedPi0s_in_InputName" [fillcolor=deepskyblue1, label=InputName, style=filled];
+"UnpackCaloHypo/UnpackCaloMergedPi0s" -> "UnpackCaloHypo/UnpackCaloMergedPi0s_in_InputName"  [minlen=0, style=invis];
+"UnpackCaloHypo/UnpackCaloMergedPi0s_out_OutputName" [fillcolor=coral1, label=OutputName, style=filled];
+"UnpackCaloHypo/UnpackCaloMergedPi0s" -> "UnpackCaloHypo/UnpackCaloMergedPi0s_out_OutputName"  [minlen=0, style=invis];
+}
+
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#3_out_Output" -> "UnpackCaloHypo/UnpackCaloMergedPi0s_in_InputName";
+subgraph "cluster_Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#3" {
+bgcolor=aliceblue;
+label="";
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#3" [label=<<B>Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#3</B><BR/>Output = /Event/pRec/Calo/MergedPi0s>, shape=plaintext];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#3_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#3" -> "Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#3_out_Output"  [minlen=0, style=invis];
+}
+
+subgraph "cluster_UnpackCaloHypo/UnpackCaloSplitPhotons" {
+bgcolor=aliceblue;
+label="";
+"UnpackCaloHypo/UnpackCaloSplitPhotons" [label=<<B>UnpackCaloHypo/UnpackCaloSplitPhotons</B><BR/>OutputName = /Event/Rec/Calo/SplitPhotons>, shape=plaintext];
+"UnpackCaloHypo/UnpackCaloSplitPhotons_in_InputName" [fillcolor=deepskyblue1, label=InputName, style=filled];
+"UnpackCaloHypo/UnpackCaloSplitPhotons" -> "UnpackCaloHypo/UnpackCaloSplitPhotons_in_InputName"  [minlen=0, style=invis];
+"UnpackCaloHypo/UnpackCaloSplitPhotons_out_OutputName" [fillcolor=coral1, label=OutputName, style=filled];
+"UnpackCaloHypo/UnpackCaloSplitPhotons" -> "UnpackCaloHypo/UnpackCaloSplitPhotons_out_OutputName"  [minlen=0, style=invis];
+}
+
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#4_out_Output" -> "UnpackCaloHypo/UnpackCaloSplitPhotons_in_InputName";
+subgraph "cluster_Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#4" {
+bgcolor=aliceblue;
+label="";
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#4" [label=<<B>Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#4</B><BR/>Output = /Event/pRec/Calo/SplitPhotons>, shape=plaintext];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#4_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#4" -> "Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#4_out_Output"  [minlen=0, style=invis];
+}
+
+subgraph "cluster_DataPacking__Unpack&lt;LHCb__MuonPIDPacker&gt;/UnpackMuonPIDs" {
+bgcolor=aliceblue;
+label="";
+"DataPacking__Unpack&lt;LHCb__MuonPIDPacker&gt;/UnpackMuonPIDs" [label=<<B>DataPacking__Unpack&lt;LHCb__MuonPIDPacker&gt;/UnpackMuonPIDs</B><BR/>OutputName = /Event/Rec/Muon/MuonPID>, shape=plaintext];
+"DataPacking__Unpack&lt;LHCb__MuonPIDPacker&gt;/UnpackMuonPIDs_in_InputName" [fillcolor=deepskyblue1, label=InputName, style=filled];
+"DataPacking__Unpack&lt;LHCb__MuonPIDPacker&gt;/UnpackMuonPIDs" -> "DataPacking__Unpack&lt;LHCb__MuonPIDPacker&gt;/UnpackMuonPIDs_in_InputName"  [minlen=0, style=invis];
+"DataPacking__Unpack&lt;LHCb__MuonPIDPacker&gt;/UnpackMuonPIDs_out_OutputName" [fillcolor=coral1, label=OutputName, style=filled];
+"DataPacking__Unpack&lt;LHCb__MuonPIDPacker&gt;/UnpackMuonPIDs" -> "DataPacking__Unpack&lt;LHCb__MuonPIDPacker&gt;/UnpackMuonPIDs_out_OutputName"  [minlen=0, style=invis];
+}
+
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#5_out_Output" -> "DataPacking__Unpack&lt;LHCb__MuonPIDPacker&gt;/UnpackMuonPIDs_in_InputName";
+subgraph "cluster_Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#5" {
+bgcolor=aliceblue;
+label="";
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#5" [label=<<B>Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#5</B><BR/>Output = /Event/pRec/Muon/MuonPID>, shape=plaintext];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#5_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#5" -> "Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#5_out_Output"  [minlen=0, style=invis];
+}
+
+subgraph "cluster_DataPacking__Unpack&lt;LHCb__RichPIDPacker&gt;/UnpackRichPIDs" {
+bgcolor=aliceblue;
+label="";
+"DataPacking__Unpack&lt;LHCb__RichPIDPacker&gt;/UnpackRichPIDs" [label=<<B>DataPacking__Unpack&lt;LHCb__RichPIDPacker&gt;/UnpackRichPIDs</B><BR/>OutputName = /Event/Rec/Rich/PIDs<BR/>OutputLevel = 5>, shape=plaintext];
+"DataPacking__Unpack&lt;LHCb__RichPIDPacker&gt;/UnpackRichPIDs_in_InputName" [fillcolor=deepskyblue1, label=InputName, style=filled];
+"DataPacking__Unpack&lt;LHCb__RichPIDPacker&gt;/UnpackRichPIDs" -> "DataPacking__Unpack&lt;LHCb__RichPIDPacker&gt;/UnpackRichPIDs_in_InputName"  [minlen=0, style=invis];
+"DataPacking__Unpack&lt;LHCb__RichPIDPacker&gt;/UnpackRichPIDs_out_OutputName" [fillcolor=coral1, label=OutputName, style=filled];
+"DataPacking__Unpack&lt;LHCb__RichPIDPacker&gt;/UnpackRichPIDs" -> "DataPacking__Unpack&lt;LHCb__RichPIDPacker&gt;/UnpackRichPIDs_out_OutputName"  [minlen=0, style=invis];
+}
+
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#6_out_Output" -> "DataPacking__Unpack&lt;LHCb__RichPIDPacker&gt;/UnpackRichPIDs_in_InputName";
+subgraph "cluster_Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#6" {
+bgcolor=aliceblue;
+label="";
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#6" [label=<<B>Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#6</B><BR/>Output = /Event/pRec/Rich/PIDs>, shape=plaintext];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#6_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#6" -> "Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#6_out_Output"  [minlen=0, style=invis];
+}
+
+subgraph "cluster_UnpackTrackFunctional/UnpackBestTracks" {
+bgcolor=aliceblue;
+label="";
+"UnpackTrackFunctional/UnpackBestTracks" [label=<<B>UnpackTrackFunctional/UnpackBestTracks</B><BR/>OutputName = /Event/Rec/Track/Best>, shape=plaintext];
+"UnpackTrackFunctional/UnpackBestTracks_in_InputName" [fillcolor=deepskyblue1, label=InputName, style=filled];
+"UnpackTrackFunctional/UnpackBestTracks" -> "UnpackTrackFunctional/UnpackBestTracks_in_InputName"  [minlen=0, style=invis];
+"UnpackTrackFunctional/UnpackBestTracks_out_OutputName" [fillcolor=coral1, label=OutputName, style=filled];
+"UnpackTrackFunctional/UnpackBestTracks" -> "UnpackTrackFunctional/UnpackBestTracks_out_OutputName"  [minlen=0, style=invis];
+}
+
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#7_out_Output" -> "UnpackTrackFunctional/UnpackBestTracks_in_InputName";
+subgraph "cluster_Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#7" {
+bgcolor=aliceblue;
+label="";
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#7" [label=<<B>Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#7</B><BR/>Output = /Event/pRec/Track/Best>, shape=plaintext];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#7_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#7" -> "Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#7_out_Output"  [minlen=0, style=invis];
+}
+
+subgraph "cluster_UnpackTrackFunctional/UnpackMuonTracks" {
+bgcolor=aliceblue;
+label="";
+"UnpackTrackFunctional/UnpackMuonTracks" [label=<<B>UnpackTrackFunctional/UnpackMuonTracks</B><BR/>OutputName = /Event/Rec/Track/Muon>, shape=plaintext];
+"UnpackTrackFunctional/UnpackMuonTracks_in_InputName" [fillcolor=deepskyblue1, label=InputName, style=filled];
+"UnpackTrackFunctional/UnpackMuonTracks" -> "UnpackTrackFunctional/UnpackMuonTracks_in_InputName"  [minlen=0, style=invis];
+"UnpackTrackFunctional/UnpackMuonTracks_out_OutputName" [fillcolor=coral1, label=OutputName, style=filled];
+"UnpackTrackFunctional/UnpackMuonTracks" -> "UnpackTrackFunctional/UnpackMuonTracks_out_OutputName"  [minlen=0, style=invis];
+}
+
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#8_out_Output" -> "UnpackTrackFunctional/UnpackMuonTracks_in_InputName";
+subgraph "cluster_Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#8" {
+bgcolor=aliceblue;
+label="";
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#8" [label=<<B>Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#8</B><BR/>Output = /Event/pRec/Track/Muon>, shape=plaintext];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#8_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#8" -> "Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#8_out_Output"  [minlen=0, style=invis];
+}
+
+subgraph "cluster_UnpackProtoParticle/UnpackNeutralProtos" {
+bgcolor=aliceblue;
+label="";
+"UnpackProtoParticle/UnpackNeutralProtos" [label=<<B>UnpackProtoParticle/UnpackNeutralProtos</B><BR/>OutputName = /Event/Rec/ProtoP/Neutrals>, shape=plaintext];
+"UnpackProtoParticle/UnpackNeutralProtos_in_InputName" [fillcolor=deepskyblue1, label=InputName, style=filled];
+"UnpackProtoParticle/UnpackNeutralProtos" -> "UnpackProtoParticle/UnpackNeutralProtos_in_InputName"  [minlen=0, style=invis];
+"UnpackProtoParticle/UnpackNeutralProtos_out_OutputName" [fillcolor=coral1, label=OutputName, style=filled];
+"UnpackProtoParticle/UnpackNeutralProtos" -> "UnpackProtoParticle/UnpackNeutralProtos_out_OutputName"  [minlen=0, style=invis];
+}
+
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#9_out_Output" -> "UnpackProtoParticle/UnpackNeutralProtos_in_InputName";
+subgraph "cluster_Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#9" {
+bgcolor=aliceblue;
+label="";
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#9" [label=<<B>Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#9</B><BR/>Output = /Event/pRec/ProtoP/Neutrals>, shape=plaintext];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#9_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#9" -> "Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#9_out_Output"  [minlen=0, style=invis];
+}
+
+subgraph "cluster_UnpackProtoParticle/UnpackChargedProtos" {
+bgcolor=aliceblue;
+label="";
+"UnpackProtoParticle/UnpackChargedProtos" [label=<<B>UnpackProtoParticle/UnpackChargedProtos</B><BR/>OutputName = /Event/Rec/ProtoP/Charged>, shape=plaintext];
+"UnpackProtoParticle/UnpackChargedProtos_in_InputName" [fillcolor=deepskyblue1, label=InputName, style=filled];
+"UnpackProtoParticle/UnpackChargedProtos" -> "UnpackProtoParticle/UnpackChargedProtos_in_InputName"  [minlen=0, style=invis];
+"UnpackProtoParticle/UnpackChargedProtos_out_OutputName" [fillcolor=coral1, label=OutputName, style=filled];
+"UnpackProtoParticle/UnpackChargedProtos" -> "UnpackProtoParticle/UnpackChargedProtos_out_OutputName"  [minlen=0, style=invis];
+}
+
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10_out_Output" -> "UnpackProtoParticle/UnpackChargedProtos_in_InputName";
+subgraph "cluster_Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10" {
+bgcolor=aliceblue;
+label="";
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10" [label=<<B>Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10</B><BR/>Output = /Event/pRec/ProtoP/Charged>, shape=plaintext];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10" -> "Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10_out_Output"  [minlen=0, style=invis];
+}
+
+subgraph "cluster_ChargedProtoParticleAddRichInfo/ChargedProtoParticleAddRichInfo" {
+bgcolor=aliceblue;
+label="";
+"ChargedProtoParticleAddRichInfo/ChargedProtoParticleAddRichInfo" [label=<<B>ChargedProtoParticleAddRichInfo/ChargedProtoParticleAddRichInfo</B><BR/>defaults-only>, shape=plaintext];
+"ChargedProtoParticleAddRichInfo/ChargedProtoParticleAddRichInfo_in_ProtoParticleLocation" [fillcolor=deepskyblue1, label=ProtoParticleLocation, style=filled];
+"ChargedProtoParticleAddRichInfo/ChargedProtoParticleAddRichInfo" -> "ChargedProtoParticleAddRichInfo/ChargedProtoParticleAddRichInfo_in_ProtoParticleLocation"  [minlen=0, style=invis];
+"ChargedProtoParticleAddRichInfo/ChargedProtoParticleAddRichInfo_in_InputRichPIDLocation" [fillcolor=deepskyblue1, label=InputRichPIDLocation, style=filled];
+"ChargedProtoParticleAddRichInfo/ChargedProtoParticleAddRichInfo" -> "ChargedProtoParticleAddRichInfo/ChargedProtoParticleAddRichInfo_in_InputRichPIDLocation"  [minlen=0, style=invis];
+}
+
+"UnpackProtoParticle/UnpackChargedProtos_out_OutputName" -> "ChargedProtoParticleAddRichInfo/ChargedProtoParticleAddRichInfo_in_ProtoParticleLocation";
+subgraph "cluster_UnpackProtoParticle/UnpackChargedProtos" {
+bgcolor=aliceblue;
+label="";
+"UnpackProtoParticle/UnpackChargedProtos" [label=<<B>UnpackProtoParticle/UnpackChargedProtos</B><BR/>OutputName = /Event/Rec/ProtoP/Charged>, shape=plaintext];
+"UnpackProtoParticle/UnpackChargedProtos_in_InputName" [fillcolor=deepskyblue1, label=InputName, style=filled];
+"UnpackProtoParticle/UnpackChargedProtos" -> "UnpackProtoParticle/UnpackChargedProtos_in_InputName"  [minlen=0, style=invis];
+"UnpackProtoParticle/UnpackChargedProtos_out_OutputName" [fillcolor=coral1, label=OutputName, style=filled];
+"UnpackProtoParticle/UnpackChargedProtos" -> "UnpackProtoParticle/UnpackChargedProtos_out_OutputName"  [minlen=0, style=invis];
+}
+
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10_out_Output" -> "UnpackProtoParticle/UnpackChargedProtos_in_InputName";
+subgraph "cluster_Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10" {
+bgcolor=aliceblue;
+label="";
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10" [label=<<B>Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10</B><BR/>Output = /Event/pRec/ProtoP/Charged>, shape=plaintext];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10" -> "Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10_out_Output"  [minlen=0, style=invis];
+}
+
+"DataPacking__Unpack&lt;LHCb__RichPIDPacker&gt;/UnpackRichPIDs_out_OutputName" -> "ChargedProtoParticleAddRichInfo/ChargedProtoParticleAddRichInfo_in_InputRichPIDLocation";
+subgraph "cluster_DataPacking__Unpack&lt;LHCb__RichPIDPacker&gt;/UnpackRichPIDs" {
+bgcolor=aliceblue;
+label="";
+"DataPacking__Unpack&lt;LHCb__RichPIDPacker&gt;/UnpackRichPIDs" [label=<<B>DataPacking__Unpack&lt;LHCb__RichPIDPacker&gt;/UnpackRichPIDs</B><BR/>OutputName = /Event/Rec/Rich/PIDs<BR/>OutputLevel = 5>, shape=plaintext];
+"DataPacking__Unpack&lt;LHCb__RichPIDPacker&gt;/UnpackRichPIDs_in_InputName" [fillcolor=deepskyblue1, label=InputName, style=filled];
+"DataPacking__Unpack&lt;LHCb__RichPIDPacker&gt;/UnpackRichPIDs" -> "DataPacking__Unpack&lt;LHCb__RichPIDPacker&gt;/UnpackRichPIDs_in_InputName"  [minlen=0, style=invis];
+"DataPacking__Unpack&lt;LHCb__RichPIDPacker&gt;/UnpackRichPIDs_out_OutputName" [fillcolor=coral1, label=OutputName, style=filled];
+"DataPacking__Unpack&lt;LHCb__RichPIDPacker&gt;/UnpackRichPIDs" -> "DataPacking__Unpack&lt;LHCb__RichPIDPacker&gt;/UnpackRichPIDs_out_OutputName"  [minlen=0, style=invis];
+}
+
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#6_out_Output" -> "DataPacking__Unpack&lt;LHCb__RichPIDPacker&gt;/UnpackRichPIDs_in_InputName";
+subgraph "cluster_Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#6" {
+bgcolor=aliceblue;
+label="";
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#6" [label=<<B>Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#6</B><BR/>Output = /Event/pRec/Rich/PIDs>, shape=plaintext];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#6_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#6" -> "Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#6_out_Output"  [minlen=0, style=invis];
+}
+
+subgraph "cluster_ChargedProtoParticleAddMuonInfo/ChargedProtoParticleAddMuonInfo" {
+bgcolor=aliceblue;
+label="";
+"ChargedProtoParticleAddMuonInfo/ChargedProtoParticleAddMuonInfo" [label=<<B>ChargedProtoParticleAddMuonInfo/ChargedProtoParticleAddMuonInfo</B><BR/>defaults-only>, shape=plaintext];
+"ChargedProtoParticleAddMuonInfo/ChargedProtoParticleAddMuonInfo_in_ProtoParticleLocation" [fillcolor=deepskyblue1, label=ProtoParticleLocation, style=filled];
+"ChargedProtoParticleAddMuonInfo/ChargedProtoParticleAddMuonInfo" -> "ChargedProtoParticleAddMuonInfo/ChargedProtoParticleAddMuonInfo_in_ProtoParticleLocation"  [minlen=0, style=invis];
+"ChargedProtoParticleAddMuonInfo/ChargedProtoParticleAddMuonInfo_in_InputMuonPIDLocation" [fillcolor=deepskyblue1, label=InputMuonPIDLocation, style=filled];
+"ChargedProtoParticleAddMuonInfo/ChargedProtoParticleAddMuonInfo" -> "ChargedProtoParticleAddMuonInfo/ChargedProtoParticleAddMuonInfo_in_InputMuonPIDLocation"  [minlen=0, style=invis];
+}
+
+"UnpackProtoParticle/UnpackChargedProtos_out_OutputName" -> "ChargedProtoParticleAddMuonInfo/ChargedProtoParticleAddMuonInfo_in_ProtoParticleLocation";
+subgraph "cluster_UnpackProtoParticle/UnpackChargedProtos" {
+bgcolor=aliceblue;
+label="";
+"UnpackProtoParticle/UnpackChargedProtos" [label=<<B>UnpackProtoParticle/UnpackChargedProtos</B><BR/>OutputName = /Event/Rec/ProtoP/Charged>, shape=plaintext];
+"UnpackProtoParticle/UnpackChargedProtos_in_InputName" [fillcolor=deepskyblue1, label=InputName, style=filled];
+"UnpackProtoParticle/UnpackChargedProtos" -> "UnpackProtoParticle/UnpackChargedProtos_in_InputName"  [minlen=0, style=invis];
+"UnpackProtoParticle/UnpackChargedProtos_out_OutputName" [fillcolor=coral1, label=OutputName, style=filled];
+"UnpackProtoParticle/UnpackChargedProtos" -> "UnpackProtoParticle/UnpackChargedProtos_out_OutputName"  [minlen=0, style=invis];
+}
+
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10_out_Output" -> "UnpackProtoParticle/UnpackChargedProtos_in_InputName";
+subgraph "cluster_Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10" {
+bgcolor=aliceblue;
+label="";
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10" [label=<<B>Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10</B><BR/>Output = /Event/pRec/ProtoP/Charged>, shape=plaintext];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10" -> "Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10_out_Output"  [minlen=0, style=invis];
+}
+
+"DataPacking__Unpack&lt;LHCb__MuonPIDPacker&gt;/UnpackMuonPIDs_out_OutputName" -> "ChargedProtoParticleAddMuonInfo/ChargedProtoParticleAddMuonInfo_in_InputMuonPIDLocation";
+subgraph "cluster_DataPacking__Unpack&lt;LHCb__MuonPIDPacker&gt;/UnpackMuonPIDs" {
+bgcolor=aliceblue;
+label="";
+"DataPacking__Unpack&lt;LHCb__MuonPIDPacker&gt;/UnpackMuonPIDs" [label=<<B>DataPacking__Unpack&lt;LHCb__MuonPIDPacker&gt;/UnpackMuonPIDs</B><BR/>OutputName = /Event/Rec/Muon/MuonPID>, shape=plaintext];
+"DataPacking__Unpack&lt;LHCb__MuonPIDPacker&gt;/UnpackMuonPIDs_in_InputName" [fillcolor=deepskyblue1, label=InputName, style=filled];
+"DataPacking__Unpack&lt;LHCb__MuonPIDPacker&gt;/UnpackMuonPIDs" -> "DataPacking__Unpack&lt;LHCb__MuonPIDPacker&gt;/UnpackMuonPIDs_in_InputName"  [minlen=0, style=invis];
+"DataPacking__Unpack&lt;LHCb__MuonPIDPacker&gt;/UnpackMuonPIDs_out_OutputName" [fillcolor=coral1, label=OutputName, style=filled];
+"DataPacking__Unpack&lt;LHCb__MuonPIDPacker&gt;/UnpackMuonPIDs" -> "DataPacking__Unpack&lt;LHCb__MuonPIDPacker&gt;/UnpackMuonPIDs_out_OutputName"  [minlen=0, style=invis];
+}
+
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#5_out_Output" -> "DataPacking__Unpack&lt;LHCb__MuonPIDPacker&gt;/UnpackMuonPIDs_in_InputName";
+subgraph "cluster_Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#5" {
+bgcolor=aliceblue;
+label="";
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#5" [label=<<B>Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#5</B><BR/>Output = /Event/pRec/Muon/MuonPID>, shape=plaintext];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#5_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#5" -> "Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#5_out_Output"  [minlen=0, style=invis];
+}
+
+subgraph "cluster_ChargedProtoCombineDLLsAlg/ChargedProtoCombineDLLsAlg" {
+bgcolor=aliceblue;
+label="";
+"ChargedProtoCombineDLLsAlg/ChargedProtoCombineDLLsAlg" [label=<<B>ChargedProtoCombineDLLsAlg/ChargedProtoCombineDLLsAlg</B><BR/>defaults-only>, shape=plaintext];
+"ChargedProtoCombineDLLsAlg/ChargedProtoCombineDLLsAlg_in_ProtoParticleLocation" [fillcolor=deepskyblue1, label=ProtoParticleLocation, style=filled];
+"ChargedProtoCombineDLLsAlg/ChargedProtoCombineDLLsAlg" -> "ChargedProtoCombineDLLsAlg/ChargedProtoCombineDLLsAlg_in_ProtoParticleLocation"  [minlen=0, style=invis];
+}
+
+"UnpackProtoParticle/UnpackChargedProtos_out_OutputName" -> "ChargedProtoCombineDLLsAlg/ChargedProtoCombineDLLsAlg_in_ProtoParticleLocation";
+subgraph "cluster_UnpackProtoParticle/UnpackChargedProtos" {
+bgcolor=aliceblue;
+label="";
+"UnpackProtoParticle/UnpackChargedProtos" [label=<<B>UnpackProtoParticle/UnpackChargedProtos</B><BR/>OutputName = /Event/Rec/ProtoP/Charged>, shape=plaintext];
+"UnpackProtoParticle/UnpackChargedProtos_in_InputName" [fillcolor=deepskyblue1, label=InputName, style=filled];
+"UnpackProtoParticle/UnpackChargedProtos" -> "UnpackProtoParticle/UnpackChargedProtos_in_InputName"  [minlen=0, style=invis];
+"UnpackProtoParticle/UnpackChargedProtos_out_OutputName" [fillcolor=coral1, label=OutputName, style=filled];
+"UnpackProtoParticle/UnpackChargedProtos" -> "UnpackProtoParticle/UnpackChargedProtos_out_OutputName"  [minlen=0, style=invis];
+}
+
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10_out_Output" -> "UnpackProtoParticle/UnpackChargedProtos_in_InputName";
+subgraph "cluster_Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10" {
+bgcolor=aliceblue;
+label="";
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10" [label=<<B>Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10</B><BR/>Output = /Event/pRec/ProtoP/Charged>, shape=plaintext];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10" -> "Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10_out_Output"  [minlen=0, style=invis];
+}
+
+subgraph "cluster_FilterDesktop/FilterDesktop#4" {
+bgcolor=aliceblue;
+label="";
+"FilterDesktop/FilterDesktop#4" [label=<<B>FilterDesktop/FilterDesktop#4</B><BR/>ModifyLocations = False<BR/>WriteP2PVRelations = False<BR/>Code = VALUE(&#x27;LoKi::Hybrid::DictValue/HHgammaMVA&#x27;) &gt; 0.18>, shape=plaintext];
+"FilterDesktop/FilterDesktop#4_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"FilterDesktop/FilterDesktop#4" -> "FilterDesktop/FilterDesktop#4_in_ParticlesA"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#4_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"FilterDesktop/FilterDesktop#4" -> "FilterDesktop/FilterDesktop#4_out_Particles"  [minlen=0, style=invis];
+}
+
+"CombineParticles/CombineParticles#1_out_Particles" -> "FilterDesktop/FilterDesktop#4_in_ParticlesA";
+subgraph "cluster_CombineParticles/CombineParticles#1" {
+bgcolor=aliceblue;
+label="";
+"CombineParticles/CombineParticles#1" [label=<<B>CombineParticles/CombineParticles#1</B><BR/>WriteP2PVRelations = False<BR/>CombinationCut = (APT &gt; 2000.0) &amp; (AM &lt; 11000.0)<BR/>MotherCut = (HASVERTEX) &amp; (CHI2VXNDOF &lt; 1000.0) &amp; (in_range(2.[...]1000.0)) &amp; (BPVDIRA() &gt; 0.0) &amp; (BPVVDCHI2() &gt; 0.0)<BR/>DecayDescriptors = [&#x27;B0 -&gt; K*(892)0 gamma&#x27;]<BR/>ModifyLocations = False>, shape=plaintext];
+"CombineParticles/CombineParticles#1_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"CombineParticles/CombineParticles#1" -> "CombineParticles/CombineParticles#1_in_ParticlesA"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles#1_in_ParticlesB" [fillcolor=deepskyblue1, label=ParticlesB, style=filled];
+"CombineParticles/CombineParticles#1" -> "CombineParticles/CombineParticles#1_in_ParticlesB"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles#1_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"CombineParticles/CombineParticles#1" -> "CombineParticles/CombineParticles#1_in_PrimaryVertices"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles#1_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"CombineParticles/CombineParticles#1" -> "CombineParticles/CombineParticles#1_out_Particles"  [minlen=0, style=invis];
+}
+
+"CombineParticles/CombineParticles_out_Particles" -> "CombineParticles/CombineParticles#1_in_ParticlesA";
+subgraph "cluster_CombineParticles/CombineParticles" {
+bgcolor=aliceblue;
+label="";
+"CombineParticles/CombineParticles" [label=<<B>CombineParticles/CombineParticles</B><BR/>WriteP2PVRelations = False<BR/>CombinationCut = (APT &gt; 2000.0) &amp; (ANUM((ID==&#x27;KS0&#x27;)|(ABSID==&#x27;Lambda[...]((ABSID==&#x27;K+&#x27;) &amp; (MIPCHI2DV(PRIMARY) &lt; 16.0)) &lt; 2)<BR/>MotherCut = (HASVERTEX) &amp; (VFASPF(VCHI2) &lt; 1000.0) &amp; (BPVVDCHI2() &gt; 16.0) &amp; (in_range(2.0, BPVETA(), 5.0))<BR/>DecayDescriptors = [&#x27;K*(892)0 -&gt; pi+ pi-&#x27;]<BR/>ModifyLocations = False>, shape=plaintext];
+"CombineParticles/CombineParticles_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"CombineParticles/CombineParticles" -> "CombineParticles/CombineParticles_in_ParticlesA"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"CombineParticles/CombineParticles" -> "CombineParticles/CombineParticles_in_PrimaryVertices"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"CombineParticles/CombineParticles" -> "CombineParticles/CombineParticles_out_Particles"  [minlen=0, style=invis];
+}
+
+"FilterDesktop/FilterDesktop#2_out_Particles" -> "CombineParticles/CombineParticles_in_ParticlesA";
+subgraph "cluster_FilterDesktop/FilterDesktop#2" {
+bgcolor=aliceblue;
+label="";
+"FilterDesktop/FilterDesktop#2" [label=<<B>FilterDesktop/FilterDesktop#2</B><BR/>WriteP2PVRelations = False<BR/>Code = (TRCHI2DOF &lt; 2.5) &amp; (TRGHOSTPROB &lt; 0.2) &amp; (((PT &gt; [...].1 / 25000.0) * (25000.0 - PT) + 2.00148000021))))<BR/>ModifyLocations = False>, shape=plaintext];
+"FilterDesktop/FilterDesktop#2_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"FilterDesktop/FilterDesktop#2" -> "FilterDesktop/FilterDesktop#2_in_ParticlesA"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#2_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"FilterDesktop/FilterDesktop#2" -> "FilterDesktop/FilterDesktop#2_in_PrimaryVertices"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#2_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"FilterDesktop/FilterDesktop#2" -> "FilterDesktop/FilterDesktop#2_out_Particles"  [minlen=0, style=invis];
+}
+
+"FunctionalParticleMaker/FunctionalParticleMaker#2_out_Particles" -> "FilterDesktop/FilterDesktop#2_in_ParticlesA";
+subgraph "cluster_FunctionalParticleMaker/FunctionalParticleMaker#2" {
+bgcolor=aliceblue;
+label="";
+"FunctionalParticleMaker/FunctionalParticleMaker#2" [label=<<B>FunctionalParticleMaker/FunctionalParticleMaker#2</B><BR/>ParticleID = pion>, shape=plaintext];
+"FunctionalParticleMaker/FunctionalParticleMaker#2_in_InputProtoParticles" [fillcolor=deepskyblue1, label=InputProtoParticles, style=filled];
+"FunctionalParticleMaker/FunctionalParticleMaker#2" -> "FunctionalParticleMaker/FunctionalParticleMaker#2_in_InputProtoParticles"  [minlen=0, style=invis];
+"FunctionalParticleMaker/FunctionalParticleMaker#2_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"FunctionalParticleMaker/FunctionalParticleMaker#2" -> "FunctionalParticleMaker/FunctionalParticleMaker#2_out_Particles"  [minlen=0, style=invis];
+}
+
+"UnpackProtoParticle/UnpackChargedProtos_out_OutputName" -> "FunctionalParticleMaker/FunctionalParticleMaker#2_in_InputProtoParticles";
+subgraph "cluster_UnpackProtoParticle/UnpackChargedProtos" {
+bgcolor=aliceblue;
+label="";
+"UnpackProtoParticle/UnpackChargedProtos" [label=<<B>UnpackProtoParticle/UnpackChargedProtos</B><BR/>OutputName = /Event/Rec/ProtoP/Charged>, shape=plaintext];
+"UnpackProtoParticle/UnpackChargedProtos_in_InputName" [fillcolor=deepskyblue1, label=InputName, style=filled];
+"UnpackProtoParticle/UnpackChargedProtos" -> "UnpackProtoParticle/UnpackChargedProtos_in_InputName"  [minlen=0, style=invis];
+"UnpackProtoParticle/UnpackChargedProtos_out_OutputName" [fillcolor=coral1, label=OutputName, style=filled];
+"UnpackProtoParticle/UnpackChargedProtos" -> "UnpackProtoParticle/UnpackChargedProtos_out_OutputName"  [minlen=0, style=invis];
+}
+
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10_out_Output" -> "UnpackProtoParticle/UnpackChargedProtos_in_InputName";
+subgraph "cluster_Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10" {
+bgcolor=aliceblue;
+label="";
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10" [label=<<B>Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10</B><BR/>Output = /Event/pRec/ProtoP/Charged>, shape=plaintext];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10" -> "Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10_out_Output"  [minlen=0, style=invis];
+}
+
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "FilterDesktop/FilterDesktop#2_in_PrimaryVertices";
+subgraph "cluster_UnpackRecVertex/UnpackRecVertices" {
+bgcolor=aliceblue;
+label="";
+"UnpackRecVertex/UnpackRecVertices" [label=<<B>UnpackRecVertex/UnpackRecVertices</B><BR/>OutputName = /Event/Rec/Vertex/Primary>, shape=plaintext];
+"UnpackRecVertex/UnpackRecVertices_in_InputName" [fillcolor=deepskyblue1, label=InputName, style=filled];
+"UnpackRecVertex/UnpackRecVertices" -> "UnpackRecVertex/UnpackRecVertices_in_InputName"  [minlen=0, style=invis];
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" [fillcolor=coral1, label=OutputName, style=filled];
+"UnpackRecVertex/UnpackRecVertices" -> "UnpackRecVertex/UnpackRecVertices_out_OutputName"  [minlen=0, style=invis];
+}
+
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile_out_Output" -> "UnpackRecVertex/UnpackRecVertices_in_InputName";
+subgraph "cluster_Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile" {
+bgcolor=aliceblue;
+label="";
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile" [label=<<B>Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile</B><BR/>Output = /Event/pRec/Vertex/Primary>, shape=plaintext];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile" -> "Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile_out_Output"  [minlen=0, style=invis];
+}
+
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "CombineParticles/CombineParticles_in_PrimaryVertices";
+"FilterDesktop/FilterDesktop#3_out_Particles" -> "CombineParticles/CombineParticles#1_in_ParticlesB";
+subgraph "cluster_FilterDesktop/FilterDesktop#3" {
+bgcolor=aliceblue;
+label="";
+"FilterDesktop/FilterDesktop#3" [label=<<B>FilterDesktop/FilterDesktop#3</B><BR/>WriteP2PVRelations = False<BR/>Code = (PT &gt; 2000.0) &amp; (P &gt; 5000.0)<BR/>ModifyLocations = False>, shape=plaintext];
+"FilterDesktop/FilterDesktop#3_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"FilterDesktop/FilterDesktop#3" -> "FilterDesktop/FilterDesktop#3_in_ParticlesA"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#3_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"FilterDesktop/FilterDesktop#3" -> "FilterDesktop/FilterDesktop#3_in_PrimaryVertices"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#3_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"FilterDesktop/FilterDesktop#3" -> "FilterDesktop/FilterDesktop#3_out_Particles"  [minlen=0, style=invis];
+}
+
+"PhotonMakerAlg/PhotonMakerAlg_out_Particles" -> "FilterDesktop/FilterDesktop#3_in_ParticlesA";
+subgraph "cluster_PhotonMakerAlg/PhotonMakerAlg" {
+bgcolor=aliceblue;
+label="";
+"PhotonMakerAlg/PhotonMakerAlg" [label=<<B>PhotonMakerAlg/PhotonMakerAlg</B><BR/>ModifyLocations = False<BR/>WriteP2PVRelations = False<BR/>DecayDescriptor = Gamma>, shape=plaintext];
+"PhotonMakerAlg/PhotonMakerAlg_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"PhotonMakerAlg/PhotonMakerAlg" -> "PhotonMakerAlg/PhotonMakerAlg_in_ParticlesA"  [minlen=0, style=invis];
+"PhotonMakerAlg/PhotonMakerAlg_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"PhotonMakerAlg/PhotonMakerAlg" -> "PhotonMakerAlg/PhotonMakerAlg_out_Particles"  [minlen=0, style=invis];
+}
+
+"UnpackProtoParticle/UnpackNeutralProtos_out_OutputName" -> "PhotonMakerAlg/PhotonMakerAlg_in_ParticlesA";
+subgraph "cluster_UnpackProtoParticle/UnpackNeutralProtos" {
+bgcolor=aliceblue;
+label="";
+"UnpackProtoParticle/UnpackNeutralProtos" [label=<<B>UnpackProtoParticle/UnpackNeutralProtos</B><BR/>OutputName = /Event/Rec/ProtoP/Neutrals>, shape=plaintext];
+"UnpackProtoParticle/UnpackNeutralProtos_in_InputName" [fillcolor=deepskyblue1, label=InputName, style=filled];
+"UnpackProtoParticle/UnpackNeutralProtos" -> "UnpackProtoParticle/UnpackNeutralProtos_in_InputName"  [minlen=0, style=invis];
+"UnpackProtoParticle/UnpackNeutralProtos_out_OutputName" [fillcolor=coral1, label=OutputName, style=filled];
+"UnpackProtoParticle/UnpackNeutralProtos" -> "UnpackProtoParticle/UnpackNeutralProtos_out_OutputName"  [minlen=0, style=invis];
+}
+
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#9_out_Output" -> "UnpackProtoParticle/UnpackNeutralProtos_in_InputName";
+subgraph "cluster_Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#9" {
+bgcolor=aliceblue;
+label="";
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#9" [label=<<B>Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#9</B><BR/>Output = /Event/pRec/ProtoP/Neutrals>, shape=plaintext];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#9_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#9" -> "Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#9_out_Output"  [minlen=0, style=invis];
+}
+
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "FilterDesktop/FilterDesktop#3_in_PrimaryVertices";
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "CombineParticles/CombineParticles#1_in_PrimaryVertices";
+subgraph "cluster_DeterministicPrescaler/DeterministicPrescaler#1" {
+bgcolor=aliceblue;
+label="";
+"DeterministicPrescaler/DeterministicPrescaler#1" [label=<<B>DeterministicPrescaler/DeterministicPrescaler#1</B><BR/>AcceptFraction = 1<BR/>SeedName = Hlt2BToHHGammaee_Inclusive_LinePrescaler>, shape=plaintext];
+"DeterministicPrescaler/DeterministicPrescaler#1_in_ODINLocation" [fillcolor=deepskyblue1, label=ODINLocation, style=filled];
+"DeterministicPrescaler/DeterministicPrescaler#1" -> "DeterministicPrescaler/DeterministicPrescaler#1_in_ODINLocation"  [minlen=0, style=invis];
+}
+
+"createODIN/createODIN_out_ODIN" -> "DeterministicPrescaler/DeterministicPrescaler#1_in_ODINLocation";
+subgraph "cluster_createODIN/createODIN" {
+bgcolor=aliceblue;
+label="";
+"createODIN/createODIN" [label=<<B>createODIN/createODIN</B><BR/>defaults-only>, shape=plaintext];
+"createODIN/createODIN_in_RawEvent" [fillcolor=deepskyblue1, label=RawEvent, style=filled];
+"createODIN/createODIN" -> "createODIN/createODIN_in_RawEvent"  [minlen=0, style=invis];
+"createODIN/createODIN_out_ODIN" [fillcolor=coral1, label=ODIN, style=filled];
+"createODIN/createODIN" -> "createODIN/createODIN_out_ODIN"  [minlen=0, style=invis];
+}
+
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#11_out_Output" -> "createODIN/createODIN_in_RawEvent";
+subgraph "cluster_Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#11" {
+bgcolor=aliceblue;
+label="";
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#11" [label=<<B>Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#11</B><BR/>Output = /Event/Trigger/RawEvent>, shape=plaintext];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#11_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#11" -> "Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#11_out_Output"  [minlen=0, style=invis];
+}
+
+subgraph "cluster_FilterDesktop/FilterDesktop#6" {
+bgcolor=aliceblue;
+label="";
+"FilterDesktop/FilterDesktop#6" [label=<<B>FilterDesktop/FilterDesktop#6</B><BR/>ModifyLocations = False<BR/>WriteP2PVRelations = False<BR/>Code = VALUE(&#x27;LoKi::Hybrid::DictValue/HHgammaEEMVA&#x27;) &gt; 0.084>, shape=plaintext];
+"FilterDesktop/FilterDesktop#6_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"FilterDesktop/FilterDesktop#6" -> "FilterDesktop/FilterDesktop#6_in_ParticlesA"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#6_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"FilterDesktop/FilterDesktop#6" -> "FilterDesktop/FilterDesktop#6_out_Particles"  [minlen=0, style=invis];
+}
+
+"CombineParticles/CombineParticles#3_out_Particles" -> "FilterDesktop/FilterDesktop#6_in_ParticlesA";
+subgraph "cluster_CombineParticles/CombineParticles#3" {
+bgcolor=aliceblue;
+label="";
+"CombineParticles/CombineParticles#3" [label=<<B>CombineParticles/CombineParticles#3</B><BR/>WriteP2PVRelations = False<BR/>CombinationCut = (APT &gt; 2000.0) &amp; (AM &lt; 11000.0)<BR/>MotherCut = (HASVERTEX) &amp; (CHI2VXNDOF &lt; 1000.0) &amp; (in_range(2.[...]1000.0)) &amp; (BPVDIRA() &gt; 0.0) &amp; (BPVVDCHI2() &gt; 0.0)<BR/>DecayDescriptors = [&#x27;B0 -&gt; K*(892)0 gamma&#x27;]<BR/>ModifyLocations = False>, shape=plaintext];
+"CombineParticles/CombineParticles#3_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"CombineParticles/CombineParticles#3" -> "CombineParticles/CombineParticles#3_in_ParticlesA"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles#3_in_ParticlesB" [fillcolor=deepskyblue1, label=ParticlesB, style=filled];
+"CombineParticles/CombineParticles#3" -> "CombineParticles/CombineParticles#3_in_ParticlesB"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles#3_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"CombineParticles/CombineParticles#3" -> "CombineParticles/CombineParticles#3_in_PrimaryVertices"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles#3_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"CombineParticles/CombineParticles#3" -> "CombineParticles/CombineParticles#3_out_Particles"  [minlen=0, style=invis];
+}
+
+"CombineParticles/CombineParticles_out_Particles" -> "CombineParticles/CombineParticles#3_in_ParticlesA";
+subgraph "cluster_CombineParticles/CombineParticles" {
+bgcolor=aliceblue;
+label="";
+"CombineParticles/CombineParticles" [label=<<B>CombineParticles/CombineParticles</B><BR/>WriteP2PVRelations = False<BR/>CombinationCut = (APT &gt; 2000.0) &amp; (ANUM((ID==&#x27;KS0&#x27;)|(ABSID==&#x27;Lambda[...]((ABSID==&#x27;K+&#x27;) &amp; (MIPCHI2DV(PRIMARY) &lt; 16.0)) &lt; 2)<BR/>MotherCut = (HASVERTEX) &amp; (VFASPF(VCHI2) &lt; 1000.0) &amp; (BPVVDCHI2() &gt; 16.0) &amp; (in_range(2.0, BPVETA(), 5.0))<BR/>DecayDescriptors = [&#x27;K*(892)0 -&gt; pi+ pi-&#x27;]<BR/>ModifyLocations = False>, shape=plaintext];
+"CombineParticles/CombineParticles_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"CombineParticles/CombineParticles" -> "CombineParticles/CombineParticles_in_ParticlesA"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"CombineParticles/CombineParticles" -> "CombineParticles/CombineParticles_in_PrimaryVertices"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"CombineParticles/CombineParticles" -> "CombineParticles/CombineParticles_out_Particles"  [minlen=0, style=invis];
+}
+
+"FilterDesktop/FilterDesktop#2_out_Particles" -> "CombineParticles/CombineParticles_in_ParticlesA";
+subgraph "cluster_FilterDesktop/FilterDesktop#2" {
+bgcolor=aliceblue;
+label="";
+"FilterDesktop/FilterDesktop#2" [label=<<B>FilterDesktop/FilterDesktop#2</B><BR/>WriteP2PVRelations = False<BR/>Code = (TRCHI2DOF &lt; 2.5) &amp; (TRGHOSTPROB &lt; 0.2) &amp; (((PT &gt; [...].1 / 25000.0) * (25000.0 - PT) + 2.00148000021))))<BR/>ModifyLocations = False>, shape=plaintext];
+"FilterDesktop/FilterDesktop#2_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"FilterDesktop/FilterDesktop#2" -> "FilterDesktop/FilterDesktop#2_in_ParticlesA"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#2_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"FilterDesktop/FilterDesktop#2" -> "FilterDesktop/FilterDesktop#2_in_PrimaryVertices"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#2_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"FilterDesktop/FilterDesktop#2" -> "FilterDesktop/FilterDesktop#2_out_Particles"  [minlen=0, style=invis];
+}
+
+"FunctionalParticleMaker/FunctionalParticleMaker#2_out_Particles" -> "FilterDesktop/FilterDesktop#2_in_ParticlesA";
+subgraph "cluster_FunctionalParticleMaker/FunctionalParticleMaker#2" {
+bgcolor=aliceblue;
+label="";
+"FunctionalParticleMaker/FunctionalParticleMaker#2" [label=<<B>FunctionalParticleMaker/FunctionalParticleMaker#2</B><BR/>ParticleID = pion>, shape=plaintext];
+"FunctionalParticleMaker/FunctionalParticleMaker#2_in_InputProtoParticles" [fillcolor=deepskyblue1, label=InputProtoParticles, style=filled];
+"FunctionalParticleMaker/FunctionalParticleMaker#2" -> "FunctionalParticleMaker/FunctionalParticleMaker#2_in_InputProtoParticles"  [minlen=0, style=invis];
+"FunctionalParticleMaker/FunctionalParticleMaker#2_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"FunctionalParticleMaker/FunctionalParticleMaker#2" -> "FunctionalParticleMaker/FunctionalParticleMaker#2_out_Particles"  [minlen=0, style=invis];
+}
+
+"UnpackProtoParticle/UnpackChargedProtos_out_OutputName" -> "FunctionalParticleMaker/FunctionalParticleMaker#2_in_InputProtoParticles";
+subgraph "cluster_UnpackProtoParticle/UnpackChargedProtos" {
+bgcolor=aliceblue;
+label="";
+"UnpackProtoParticle/UnpackChargedProtos" [label=<<B>UnpackProtoParticle/UnpackChargedProtos</B><BR/>OutputName = /Event/Rec/ProtoP/Charged>, shape=plaintext];
+"UnpackProtoParticle/UnpackChargedProtos_in_InputName" [fillcolor=deepskyblue1, label=InputName, style=filled];
+"UnpackProtoParticle/UnpackChargedProtos" -> "UnpackProtoParticle/UnpackChargedProtos_in_InputName"  [minlen=0, style=invis];
+"UnpackProtoParticle/UnpackChargedProtos_out_OutputName" [fillcolor=coral1, label=OutputName, style=filled];
+"UnpackProtoParticle/UnpackChargedProtos" -> "UnpackProtoParticle/UnpackChargedProtos_out_OutputName"  [minlen=0, style=invis];
+}
+
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10_out_Output" -> "UnpackProtoParticle/UnpackChargedProtos_in_InputName";
+subgraph "cluster_Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10" {
+bgcolor=aliceblue;
+label="";
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10" [label=<<B>Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10</B><BR/>Output = /Event/pRec/ProtoP/Charged>, shape=plaintext];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10" -> "Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10_out_Output"  [minlen=0, style=invis];
+}
+
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "FilterDesktop/FilterDesktop#2_in_PrimaryVertices";
+subgraph "cluster_UnpackRecVertex/UnpackRecVertices" {
+bgcolor=aliceblue;
+label="";
+"UnpackRecVertex/UnpackRecVertices" [label=<<B>UnpackRecVertex/UnpackRecVertices</B><BR/>OutputName = /Event/Rec/Vertex/Primary>, shape=plaintext];
+"UnpackRecVertex/UnpackRecVertices_in_InputName" [fillcolor=deepskyblue1, label=InputName, style=filled];
+"UnpackRecVertex/UnpackRecVertices" -> "UnpackRecVertex/UnpackRecVertices_in_InputName"  [minlen=0, style=invis];
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" [fillcolor=coral1, label=OutputName, style=filled];
+"UnpackRecVertex/UnpackRecVertices" -> "UnpackRecVertex/UnpackRecVertices_out_OutputName"  [minlen=0, style=invis];
+}
+
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile_out_Output" -> "UnpackRecVertex/UnpackRecVertices_in_InputName";
+subgraph "cluster_Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile" {
+bgcolor=aliceblue;
+label="";
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile" [label=<<B>Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile</B><BR/>Output = /Event/pRec/Vertex/Primary>, shape=plaintext];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile" -> "Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile_out_Output"  [minlen=0, style=invis];
+}
+
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "CombineParticles/CombineParticles_in_PrimaryVertices";
+"CombineParticles/CombineParticles#2_out_Particles" -> "CombineParticles/CombineParticles#3_in_ParticlesB";
+subgraph "cluster_CombineParticles/CombineParticles#2" {
+bgcolor=aliceblue;
+label="";
+"CombineParticles/CombineParticles#2" [label=<<B>CombineParticles/CombineParticles#2</B><BR/>WriteP2PVRelations = False<BR/>CombinationCut = (APT &gt; 1500.0) &amp; (AM &lt; 50.0) &amp; (AP &gt; 0.0)<BR/>MotherCut = (ALL)<BR/>DecayDescriptors = [&#x27;gamma -&gt; e+ e-&#x27;]<BR/>ModifyLocations = False>, shape=plaintext];
+"CombineParticles/CombineParticles#2_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"CombineParticles/CombineParticles#2" -> "CombineParticles/CombineParticles#2_in_ParticlesA"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles#2_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"CombineParticles/CombineParticles#2" -> "CombineParticles/CombineParticles#2_in_PrimaryVertices"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles#2_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"CombineParticles/CombineParticles#2" -> "CombineParticles/CombineParticles#2_out_Particles"  [minlen=0, style=invis];
+}
+
+"FilterDesktop/FilterDesktop#5_out_Particles" -> "CombineParticles/CombineParticles#2_in_ParticlesA";
+subgraph "cluster_FilterDesktop/FilterDesktop#5" {
+bgcolor=aliceblue;
+label="";
+"FilterDesktop/FilterDesktop#5" [label=<<B>FilterDesktop/FilterDesktop#5</B><BR/>WriteP2PVRelations = False<BR/>Code = (PT &gt; 100.0)<BR/>ModifyLocations = False>, shape=plaintext];
+"FilterDesktop/FilterDesktop#5_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"FilterDesktop/FilterDesktop#5" -> "FilterDesktop/FilterDesktop#5_in_ParticlesA"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#5_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"FilterDesktop/FilterDesktop#5" -> "FilterDesktop/FilterDesktop#5_in_PrimaryVertices"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#5_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"FilterDesktop/FilterDesktop#5" -> "FilterDesktop/FilterDesktop#5_out_Particles"  [minlen=0, style=invis];
+}
+
+"FunctionalParticleMaker/FunctionalParticleMaker#3_out_Particles" -> "FilterDesktop/FilterDesktop#5_in_ParticlesA";
+subgraph "cluster_FunctionalParticleMaker/FunctionalParticleMaker#3" {
+bgcolor=aliceblue;
+label="";
+"FunctionalParticleMaker/FunctionalParticleMaker#3" [label=<<B>FunctionalParticleMaker/FunctionalParticleMaker#3</B><BR/>ParticleID = electron>, shape=plaintext];
+"FunctionalParticleMaker/FunctionalParticleMaker#3_in_InputProtoParticles" [fillcolor=deepskyblue1, label=InputProtoParticles, style=filled];
+"FunctionalParticleMaker/FunctionalParticleMaker#3" -> "FunctionalParticleMaker/FunctionalParticleMaker#3_in_InputProtoParticles"  [minlen=0, style=invis];
+"FunctionalParticleMaker/FunctionalParticleMaker#3_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"FunctionalParticleMaker/FunctionalParticleMaker#3" -> "FunctionalParticleMaker/FunctionalParticleMaker#3_out_Particles"  [minlen=0, style=invis];
+}
+
+"UnpackProtoParticle/UnpackChargedProtos_out_OutputName" -> "FunctionalParticleMaker/FunctionalParticleMaker#3_in_InputProtoParticles";
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "FilterDesktop/FilterDesktop#5_in_PrimaryVertices";
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "CombineParticles/CombineParticles#2_in_PrimaryVertices";
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "CombineParticles/CombineParticles#3_in_PrimaryVertices";
+subgraph "cluster_DeterministicPrescaler/DeterministicPrescaler#2" {
+bgcolor=aliceblue;
+label="";
+"DeterministicPrescaler/DeterministicPrescaler#2" [label=<<B>DeterministicPrescaler/DeterministicPrescaler#2</B><BR/>AcceptFraction = 1<BR/>SeedName = Hlt2BToHHHGamma_Inclusive_LinePrescaler>, shape=plaintext];
+"DeterministicPrescaler/DeterministicPrescaler#2_in_ODINLocation" [fillcolor=deepskyblue1, label=ODINLocation, style=filled];
+"DeterministicPrescaler/DeterministicPrescaler#2" -> "DeterministicPrescaler/DeterministicPrescaler#2_in_ODINLocation"  [minlen=0, style=invis];
+}
+
+"createODIN/createODIN_out_ODIN" -> "DeterministicPrescaler/DeterministicPrescaler#2_in_ODINLocation";
+subgraph "cluster_createODIN/createODIN" {
+bgcolor=aliceblue;
+label="";
+"createODIN/createODIN" [label=<<B>createODIN/createODIN</B><BR/>defaults-only>, shape=plaintext];
+"createODIN/createODIN_in_RawEvent" [fillcolor=deepskyblue1, label=RawEvent, style=filled];
+"createODIN/createODIN" -> "createODIN/createODIN_in_RawEvent"  [minlen=0, style=invis];
+"createODIN/createODIN_out_ODIN" [fillcolor=coral1, label=ODIN, style=filled];
+"createODIN/createODIN" -> "createODIN/createODIN_out_ODIN"  [minlen=0, style=invis];
+}
+
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#11_out_Output" -> "createODIN/createODIN_in_RawEvent";
+subgraph "cluster_Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#11" {
+bgcolor=aliceblue;
+label="";
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#11" [label=<<B>Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#11</B><BR/>Output = /Event/Trigger/RawEvent>, shape=plaintext];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#11_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#11" -> "Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#11_out_Output"  [minlen=0, style=invis];
+}
+
+subgraph "cluster_FilterDesktop/FilterDesktop#8" {
+bgcolor=aliceblue;
+label="";
+"FilterDesktop/FilterDesktop#8" [label=<<B>FilterDesktop/FilterDesktop#8</B><BR/>ModifyLocations = False<BR/>WriteP2PVRelations = False<BR/>Code = VALUE(&#x27;LoKi::Hybrid::DictValue/HHHgammaMVA&#x27;) &gt; 0.116>, shape=plaintext];
+"FilterDesktop/FilterDesktop#8_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"FilterDesktop/FilterDesktop#8" -> "FilterDesktop/FilterDesktop#8_in_ParticlesA"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#8_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"FilterDesktop/FilterDesktop#8" -> "FilterDesktop/FilterDesktop#8_out_Particles"  [minlen=0, style=invis];
+}
+
+"CombineParticles/CombineParticles#5_out_Particles" -> "FilterDesktop/FilterDesktop#8_in_ParticlesA";
+subgraph "cluster_CombineParticles/CombineParticles#5" {
+bgcolor=aliceblue;
+label="";
+"CombineParticles/CombineParticles#5" [label=<<B>CombineParticles/CombineParticles#5</B><BR/>WriteP2PVRelations = False<BR/>CombinationCut = (APT &gt; 2000.0) &amp; (AM &lt; 11000.0)<BR/>MotherCut = (HASVERTEX) &amp; (CHI2VXNDOF &lt; 1000.0) &amp; (in_range(2.[...]1000.0)) &amp; (BPVDIRA() &gt; 0.0) &amp; (BPVVDCHI2() &gt; 0.0)<BR/>DecayDescriptors = [&#x27;[B+ -&gt; D*(2010)+ gamma]cc&#x27;]<BR/>ModifyLocations = False>, shape=plaintext];
+"CombineParticles/CombineParticles#5_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"CombineParticles/CombineParticles#5" -> "CombineParticles/CombineParticles#5_in_ParticlesA"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles#5_in_ParticlesB" [fillcolor=deepskyblue1, label=ParticlesB, style=filled];
+"CombineParticles/CombineParticles#5" -> "CombineParticles/CombineParticles#5_in_ParticlesB"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles#5_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"CombineParticles/CombineParticles#5" -> "CombineParticles/CombineParticles#5_in_PrimaryVertices"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles#5_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"CombineParticles/CombineParticles#5" -> "CombineParticles/CombineParticles#5_out_Particles"  [minlen=0, style=invis];
+}
+
+"CombineParticles/CombineParticles#4_out_Particles" -> "CombineParticles/CombineParticles#5_in_ParticlesA";
+subgraph "cluster_CombineParticles/CombineParticles#4" {
+bgcolor=aliceblue;
+label="";
+"CombineParticles/CombineParticles#4" [label=<<B>CombineParticles/CombineParticles#4</B><BR/>WriteP2PVRelations = False<BR/>CombinationCut = (APT &gt; 2000.0) &amp; (ANUM((ID==&#x27;KS0&#x27;)|(ABSID==&#x27;Lambda[...]==&#x27;Lambda0&#x27;)) &amp; (MIPCHI2DV(PRIMARY) &lt; 16.0))) &lt; 2)<BR/>MotherCut = (HASVERTEX) &amp; (VFASPF(VCHI2) &lt; 1000.0) &amp; (BPVVDCHI[...](in_range(2.0, BPVETA(), 5.0)) &amp; (BPVDIRA() &gt; 0.0)<BR/>DecayDescriptors = [&#x27;D*(2010)+ -&gt; K*(892)0 pi+&#x27;, &#x27;D*(2010)- -&gt; K*(892)0 pi-&#x27;]<BR/>ModifyLocations = False>, shape=plaintext];
+"CombineParticles/CombineParticles#4_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"CombineParticles/CombineParticles#4" -> "CombineParticles/CombineParticles#4_in_ParticlesA"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles#4_in_ParticlesB" [fillcolor=deepskyblue1, label=ParticlesB, style=filled];
+"CombineParticles/CombineParticles#4" -> "CombineParticles/CombineParticles#4_in_ParticlesB"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles#4_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"CombineParticles/CombineParticles#4" -> "CombineParticles/CombineParticles#4_in_PrimaryVertices"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles#4_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"CombineParticles/CombineParticles#4" -> "CombineParticles/CombineParticles#4_out_Particles"  [minlen=0, style=invis];
+}
+
+"CombineParticles/CombineParticles_out_Particles" -> "CombineParticles/CombineParticles#4_in_ParticlesA";
+subgraph "cluster_CombineParticles/CombineParticles" {
+bgcolor=aliceblue;
+label="";
+"CombineParticles/CombineParticles" [label=<<B>CombineParticles/CombineParticles</B><BR/>WriteP2PVRelations = False<BR/>CombinationCut = (APT &gt; 2000.0) &amp; (ANUM((ID==&#x27;KS0&#x27;)|(ABSID==&#x27;Lambda[...]((ABSID==&#x27;K+&#x27;) &amp; (MIPCHI2DV(PRIMARY) &lt; 16.0)) &lt; 2)<BR/>MotherCut = (HASVERTEX) &amp; (VFASPF(VCHI2) &lt; 1000.0) &amp; (BPVVDCHI2() &gt; 16.0) &amp; (in_range(2.0, BPVETA(), 5.0))<BR/>DecayDescriptors = [&#x27;K*(892)0 -&gt; pi+ pi-&#x27;]<BR/>ModifyLocations = False>, shape=plaintext];
+"CombineParticles/CombineParticles_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"CombineParticles/CombineParticles" -> "CombineParticles/CombineParticles_in_ParticlesA"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"CombineParticles/CombineParticles" -> "CombineParticles/CombineParticles_in_PrimaryVertices"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"CombineParticles/CombineParticles" -> "CombineParticles/CombineParticles_out_Particles"  [minlen=0, style=invis];
+}
+
+"FilterDesktop/FilterDesktop#2_out_Particles" -> "CombineParticles/CombineParticles_in_ParticlesA";
+subgraph "cluster_FilterDesktop/FilterDesktop#2" {
+bgcolor=aliceblue;
+label="";
+"FilterDesktop/FilterDesktop#2" [label=<<B>FilterDesktop/FilterDesktop#2</B><BR/>WriteP2PVRelations = False<BR/>Code = (TRCHI2DOF &lt; 2.5) &amp; (TRGHOSTPROB &lt; 0.2) &amp; (((PT &gt; [...].1 / 25000.0) * (25000.0 - PT) + 2.00148000021))))<BR/>ModifyLocations = False>, shape=plaintext];
+"FilterDesktop/FilterDesktop#2_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"FilterDesktop/FilterDesktop#2" -> "FilterDesktop/FilterDesktop#2_in_ParticlesA"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#2_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"FilterDesktop/FilterDesktop#2" -> "FilterDesktop/FilterDesktop#2_in_PrimaryVertices"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#2_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"FilterDesktop/FilterDesktop#2" -> "FilterDesktop/FilterDesktop#2_out_Particles"  [minlen=0, style=invis];
+}
+
+"FunctionalParticleMaker/FunctionalParticleMaker#2_out_Particles" -> "FilterDesktop/FilterDesktop#2_in_ParticlesA";
+subgraph "cluster_FunctionalParticleMaker/FunctionalParticleMaker#2" {
+bgcolor=aliceblue;
+label="";
+"FunctionalParticleMaker/FunctionalParticleMaker#2" [label=<<B>FunctionalParticleMaker/FunctionalParticleMaker#2</B><BR/>ParticleID = pion>, shape=plaintext];
+"FunctionalParticleMaker/FunctionalParticleMaker#2_in_InputProtoParticles" [fillcolor=deepskyblue1, label=InputProtoParticles, style=filled];
+"FunctionalParticleMaker/FunctionalParticleMaker#2" -> "FunctionalParticleMaker/FunctionalParticleMaker#2_in_InputProtoParticles"  [minlen=0, style=invis];
+"FunctionalParticleMaker/FunctionalParticleMaker#2_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"FunctionalParticleMaker/FunctionalParticleMaker#2" -> "FunctionalParticleMaker/FunctionalParticleMaker#2_out_Particles"  [minlen=0, style=invis];
+}
+
+"UnpackProtoParticle/UnpackChargedProtos_out_OutputName" -> "FunctionalParticleMaker/FunctionalParticleMaker#2_in_InputProtoParticles";
+subgraph "cluster_UnpackProtoParticle/UnpackChargedProtos" {
+bgcolor=aliceblue;
+label="";
+"UnpackProtoParticle/UnpackChargedProtos" [label=<<B>UnpackProtoParticle/UnpackChargedProtos</B><BR/>OutputName = /Event/Rec/ProtoP/Charged>, shape=plaintext];
+"UnpackProtoParticle/UnpackChargedProtos_in_InputName" [fillcolor=deepskyblue1, label=InputName, style=filled];
+"UnpackProtoParticle/UnpackChargedProtos" -> "UnpackProtoParticle/UnpackChargedProtos_in_InputName"  [minlen=0, style=invis];
+"UnpackProtoParticle/UnpackChargedProtos_out_OutputName" [fillcolor=coral1, label=OutputName, style=filled];
+"UnpackProtoParticle/UnpackChargedProtos" -> "UnpackProtoParticle/UnpackChargedProtos_out_OutputName"  [minlen=0, style=invis];
+}
+
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10_out_Output" -> "UnpackProtoParticle/UnpackChargedProtos_in_InputName";
+subgraph "cluster_Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10" {
+bgcolor=aliceblue;
+label="";
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10" [label=<<B>Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10</B><BR/>Output = /Event/pRec/ProtoP/Charged>, shape=plaintext];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10" -> "Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10_out_Output"  [minlen=0, style=invis];
+}
+
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "FilterDesktop/FilterDesktop#2_in_PrimaryVertices";
+subgraph "cluster_UnpackRecVertex/UnpackRecVertices" {
+bgcolor=aliceblue;
+label="";
+"UnpackRecVertex/UnpackRecVertices" [label=<<B>UnpackRecVertex/UnpackRecVertices</B><BR/>OutputName = /Event/Rec/Vertex/Primary>, shape=plaintext];
+"UnpackRecVertex/UnpackRecVertices_in_InputName" [fillcolor=deepskyblue1, label=InputName, style=filled];
+"UnpackRecVertex/UnpackRecVertices" -> "UnpackRecVertex/UnpackRecVertices_in_InputName"  [minlen=0, style=invis];
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" [fillcolor=coral1, label=OutputName, style=filled];
+"UnpackRecVertex/UnpackRecVertices" -> "UnpackRecVertex/UnpackRecVertices_out_OutputName"  [minlen=0, style=invis];
+}
+
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile_out_Output" -> "UnpackRecVertex/UnpackRecVertices_in_InputName";
+subgraph "cluster_Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile" {
+bgcolor=aliceblue;
+label="";
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile" [label=<<B>Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile</B><BR/>Output = /Event/pRec/Vertex/Primary>, shape=plaintext];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile" -> "Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile_out_Output"  [minlen=0, style=invis];
+}
+
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "CombineParticles/CombineParticles_in_PrimaryVertices";
+"FilterDesktop/FilterDesktop#7_out_Particles" -> "CombineParticles/CombineParticles#4_in_ParticlesB";
+subgraph "cluster_FilterDesktop/FilterDesktop#7" {
+bgcolor=aliceblue;
+label="";
+"FilterDesktop/FilterDesktop#7" [label=<<B>FilterDesktop/FilterDesktop#7</B><BR/>WriteP2PVRelations = False<BR/>Code = (PT &gt; 200.0) &amp; (P &gt; 3000.0) &amp; (TRCHI2DOF &lt; 3.0) &amp; (MIPCHI2DV(PRIMARY) &gt; 4.0)<BR/>ModifyLocations = False>, shape=plaintext];
+"FilterDesktop/FilterDesktop#7_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"FilterDesktop/FilterDesktop#7" -> "FilterDesktop/FilterDesktop#7_in_ParticlesA"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#7_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"FilterDesktop/FilterDesktop#7" -> "FilterDesktop/FilterDesktop#7_in_PrimaryVertices"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#7_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"FilterDesktop/FilterDesktop#7" -> "FilterDesktop/FilterDesktop#7_out_Particles"  [minlen=0, style=invis];
+}
+
+"FunctionalParticleMaker/FunctionalParticleMaker#2_out_Particles" -> "FilterDesktop/FilterDesktop#7_in_ParticlesA";
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "FilterDesktop/FilterDesktop#7_in_PrimaryVertices";
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "CombineParticles/CombineParticles#4_in_PrimaryVertices";
+"FilterDesktop/FilterDesktop#3_out_Particles" -> "CombineParticles/CombineParticles#5_in_ParticlesB";
+subgraph "cluster_FilterDesktop/FilterDesktop#3" {
+bgcolor=aliceblue;
+label="";
+"FilterDesktop/FilterDesktop#3" [label=<<B>FilterDesktop/FilterDesktop#3</B><BR/>WriteP2PVRelations = False<BR/>Code = (PT &gt; 2000.0) &amp; (P &gt; 5000.0)<BR/>ModifyLocations = False>, shape=plaintext];
+"FilterDesktop/FilterDesktop#3_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"FilterDesktop/FilterDesktop#3" -> "FilterDesktop/FilterDesktop#3_in_ParticlesA"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#3_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"FilterDesktop/FilterDesktop#3" -> "FilterDesktop/FilterDesktop#3_in_PrimaryVertices"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#3_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"FilterDesktop/FilterDesktop#3" -> "FilterDesktop/FilterDesktop#3_out_Particles"  [minlen=0, style=invis];
+}
+
+"PhotonMakerAlg/PhotonMakerAlg_out_Particles" -> "FilterDesktop/FilterDesktop#3_in_ParticlesA";
+subgraph "cluster_PhotonMakerAlg/PhotonMakerAlg" {
+bgcolor=aliceblue;
+label="";
+"PhotonMakerAlg/PhotonMakerAlg" [label=<<B>PhotonMakerAlg/PhotonMakerAlg</B><BR/>ModifyLocations = False<BR/>WriteP2PVRelations = False<BR/>DecayDescriptor = Gamma>, shape=plaintext];
+"PhotonMakerAlg/PhotonMakerAlg_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"PhotonMakerAlg/PhotonMakerAlg" -> "PhotonMakerAlg/PhotonMakerAlg_in_ParticlesA"  [minlen=0, style=invis];
+"PhotonMakerAlg/PhotonMakerAlg_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"PhotonMakerAlg/PhotonMakerAlg" -> "PhotonMakerAlg/PhotonMakerAlg_out_Particles"  [minlen=0, style=invis];
+}
+
+"UnpackProtoParticle/UnpackNeutralProtos_out_OutputName" -> "PhotonMakerAlg/PhotonMakerAlg_in_ParticlesA";
+subgraph "cluster_UnpackProtoParticle/UnpackNeutralProtos" {
+bgcolor=aliceblue;
+label="";
+"UnpackProtoParticle/UnpackNeutralProtos" [label=<<B>UnpackProtoParticle/UnpackNeutralProtos</B><BR/>OutputName = /Event/Rec/ProtoP/Neutrals>, shape=plaintext];
+"UnpackProtoParticle/UnpackNeutralProtos_in_InputName" [fillcolor=deepskyblue1, label=InputName, style=filled];
+"UnpackProtoParticle/UnpackNeutralProtos" -> "UnpackProtoParticle/UnpackNeutralProtos_in_InputName"  [minlen=0, style=invis];
+"UnpackProtoParticle/UnpackNeutralProtos_out_OutputName" [fillcolor=coral1, label=OutputName, style=filled];
+"UnpackProtoParticle/UnpackNeutralProtos" -> "UnpackProtoParticle/UnpackNeutralProtos_out_OutputName"  [minlen=0, style=invis];
+}
+
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#9_out_Output" -> "UnpackProtoParticle/UnpackNeutralProtos_in_InputName";
+subgraph "cluster_Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#9" {
+bgcolor=aliceblue;
+label="";
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#9" [label=<<B>Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#9</B><BR/>Output = /Event/pRec/ProtoP/Neutrals>, shape=plaintext];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#9_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#9" -> "Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#9_out_Output"  [minlen=0, style=invis];
+}
+
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "FilterDesktop/FilterDesktop#3_in_PrimaryVertices";
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "CombineParticles/CombineParticles#5_in_PrimaryVertices";
+subgraph "cluster_DeterministicPrescaler/DeterministicPrescaler#3" {
+bgcolor=aliceblue;
+label="";
+"DeterministicPrescaler/DeterministicPrescaler#3" [label=<<B>DeterministicPrescaler/DeterministicPrescaler#3</B><BR/>AcceptFraction = 1<BR/>SeedName = Hlt2BToHHHGammaEE_Inclusive_LinePrescaler>, shape=plaintext];
+"DeterministicPrescaler/DeterministicPrescaler#3_in_ODINLocation" [fillcolor=deepskyblue1, label=ODINLocation, style=filled];
+"DeterministicPrescaler/DeterministicPrescaler#3" -> "DeterministicPrescaler/DeterministicPrescaler#3_in_ODINLocation"  [minlen=0, style=invis];
+}
+
+"createODIN/createODIN_out_ODIN" -> "DeterministicPrescaler/DeterministicPrescaler#3_in_ODINLocation";
+subgraph "cluster_createODIN/createODIN" {
+bgcolor=aliceblue;
+label="";
+"createODIN/createODIN" [label=<<B>createODIN/createODIN</B><BR/>defaults-only>, shape=plaintext];
+"createODIN/createODIN_in_RawEvent" [fillcolor=deepskyblue1, label=RawEvent, style=filled];
+"createODIN/createODIN" -> "createODIN/createODIN_in_RawEvent"  [minlen=0, style=invis];
+"createODIN/createODIN_out_ODIN" [fillcolor=coral1, label=ODIN, style=filled];
+"createODIN/createODIN" -> "createODIN/createODIN_out_ODIN"  [minlen=0, style=invis];
+}
+
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#11_out_Output" -> "createODIN/createODIN_in_RawEvent";
+subgraph "cluster_Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#11" {
+bgcolor=aliceblue;
+label="";
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#11" [label=<<B>Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#11</B><BR/>Output = /Event/Trigger/RawEvent>, shape=plaintext];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#11_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#11" -> "Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#11_out_Output"  [minlen=0, style=invis];
+}
+
+subgraph "cluster_FilterDesktop/FilterDesktop#9" {
+bgcolor=aliceblue;
+label="";
+"FilterDesktop/FilterDesktop#9" [label=<<B>FilterDesktop/FilterDesktop#9</B><BR/>ModifyLocations = False<BR/>WriteP2PVRelations = False<BR/>Code = VALUE(&#x27;LoKi::Hybrid::DictValue/HHHgammaEEMVA&#x27;) &gt; 0.05>, shape=plaintext];
+"FilterDesktop/FilterDesktop#9_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"FilterDesktop/FilterDesktop#9" -> "FilterDesktop/FilterDesktop#9_in_ParticlesA"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#9_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"FilterDesktop/FilterDesktop#9" -> "FilterDesktop/FilterDesktop#9_out_Particles"  [minlen=0, style=invis];
+}
+
+"CombineParticles/CombineParticles#6_out_Particles" -> "FilterDesktop/FilterDesktop#9_in_ParticlesA";
+subgraph "cluster_CombineParticles/CombineParticles#6" {
+bgcolor=aliceblue;
+label="";
+"CombineParticles/CombineParticles#6" [label=<<B>CombineParticles/CombineParticles#6</B><BR/>WriteP2PVRelations = False<BR/>CombinationCut = (APT &gt; 2000.0) &amp; (AM &lt; 11000.0)<BR/>MotherCut = (HASVERTEX) &amp; (CHI2VXNDOF &lt; 1000.0) &amp; (in_range(2.[...]1000.0)) &amp; (BPVDIRA() &gt; 0.0) &amp; (BPVVDCHI2() &gt; 0.0)<BR/>DecayDescriptors = [&#x27;[B+ -&gt; D*(2010)+ gamma]cc&#x27;]<BR/>ModifyLocations = False>, shape=plaintext];
+"CombineParticles/CombineParticles#6_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"CombineParticles/CombineParticles#6" -> "CombineParticles/CombineParticles#6_in_ParticlesA"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles#6_in_ParticlesB" [fillcolor=deepskyblue1, label=ParticlesB, style=filled];
+"CombineParticles/CombineParticles#6" -> "CombineParticles/CombineParticles#6_in_ParticlesB"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles#6_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"CombineParticles/CombineParticles#6" -> "CombineParticles/CombineParticles#6_in_PrimaryVertices"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles#6_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"CombineParticles/CombineParticles#6" -> "CombineParticles/CombineParticles#6_out_Particles"  [minlen=0, style=invis];
+}
+
+"CombineParticles/CombineParticles#4_out_Particles" -> "CombineParticles/CombineParticles#6_in_ParticlesA";
+subgraph "cluster_CombineParticles/CombineParticles#4" {
+bgcolor=aliceblue;
+label="";
+"CombineParticles/CombineParticles#4" [label=<<B>CombineParticles/CombineParticles#4</B><BR/>WriteP2PVRelations = False<BR/>CombinationCut = (APT &gt; 2000.0) &amp; (ANUM((ID==&#x27;KS0&#x27;)|(ABSID==&#x27;Lambda[...]==&#x27;Lambda0&#x27;)) &amp; (MIPCHI2DV(PRIMARY) &lt; 16.0))) &lt; 2)<BR/>MotherCut = (HASVERTEX) &amp; (VFASPF(VCHI2) &lt; 1000.0) &amp; (BPVVDCHI[...](in_range(2.0, BPVETA(), 5.0)) &amp; (BPVDIRA() &gt; 0.0)<BR/>DecayDescriptors = [&#x27;D*(2010)+ -&gt; K*(892)0 pi+&#x27;, &#x27;D*(2010)- -&gt; K*(892)0 pi-&#x27;]<BR/>ModifyLocations = False>, shape=plaintext];
+"CombineParticles/CombineParticles#4_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"CombineParticles/CombineParticles#4" -> "CombineParticles/CombineParticles#4_in_ParticlesA"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles#4_in_ParticlesB" [fillcolor=deepskyblue1, label=ParticlesB, style=filled];
+"CombineParticles/CombineParticles#4" -> "CombineParticles/CombineParticles#4_in_ParticlesB"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles#4_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"CombineParticles/CombineParticles#4" -> "CombineParticles/CombineParticles#4_in_PrimaryVertices"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles#4_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"CombineParticles/CombineParticles#4" -> "CombineParticles/CombineParticles#4_out_Particles"  [minlen=0, style=invis];
+}
+
+"CombineParticles/CombineParticles_out_Particles" -> "CombineParticles/CombineParticles#4_in_ParticlesA";
+subgraph "cluster_CombineParticles/CombineParticles" {
+bgcolor=aliceblue;
+label="";
+"CombineParticles/CombineParticles" [label=<<B>CombineParticles/CombineParticles</B><BR/>WriteP2PVRelations = False<BR/>CombinationCut = (APT &gt; 2000.0) &amp; (ANUM((ID==&#x27;KS0&#x27;)|(ABSID==&#x27;Lambda[...]((ABSID==&#x27;K+&#x27;) &amp; (MIPCHI2DV(PRIMARY) &lt; 16.0)) &lt; 2)<BR/>MotherCut = (HASVERTEX) &amp; (VFASPF(VCHI2) &lt; 1000.0) &amp; (BPVVDCHI2() &gt; 16.0) &amp; (in_range(2.0, BPVETA(), 5.0))<BR/>DecayDescriptors = [&#x27;K*(892)0 -&gt; pi+ pi-&#x27;]<BR/>ModifyLocations = False>, shape=plaintext];
+"CombineParticles/CombineParticles_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"CombineParticles/CombineParticles" -> "CombineParticles/CombineParticles_in_ParticlesA"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"CombineParticles/CombineParticles" -> "CombineParticles/CombineParticles_in_PrimaryVertices"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"CombineParticles/CombineParticles" -> "CombineParticles/CombineParticles_out_Particles"  [minlen=0, style=invis];
+}
+
+"FilterDesktop/FilterDesktop#2_out_Particles" -> "CombineParticles/CombineParticles_in_ParticlesA";
+subgraph "cluster_FilterDesktop/FilterDesktop#2" {
+bgcolor=aliceblue;
+label="";
+"FilterDesktop/FilterDesktop#2" [label=<<B>FilterDesktop/FilterDesktop#2</B><BR/>WriteP2PVRelations = False<BR/>Code = (TRCHI2DOF &lt; 2.5) &amp; (TRGHOSTPROB &lt; 0.2) &amp; (((PT &gt; [...].1 / 25000.0) * (25000.0 - PT) + 2.00148000021))))<BR/>ModifyLocations = False>, shape=plaintext];
+"FilterDesktop/FilterDesktop#2_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"FilterDesktop/FilterDesktop#2" -> "FilterDesktop/FilterDesktop#2_in_ParticlesA"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#2_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"FilterDesktop/FilterDesktop#2" -> "FilterDesktop/FilterDesktop#2_in_PrimaryVertices"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#2_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"FilterDesktop/FilterDesktop#2" -> "FilterDesktop/FilterDesktop#2_out_Particles"  [minlen=0, style=invis];
+}
+
+"FunctionalParticleMaker/FunctionalParticleMaker#2_out_Particles" -> "FilterDesktop/FilterDesktop#2_in_ParticlesA";
+subgraph "cluster_FunctionalParticleMaker/FunctionalParticleMaker#2" {
+bgcolor=aliceblue;
+label="";
+"FunctionalParticleMaker/FunctionalParticleMaker#2" [label=<<B>FunctionalParticleMaker/FunctionalParticleMaker#2</B><BR/>ParticleID = pion>, shape=plaintext];
+"FunctionalParticleMaker/FunctionalParticleMaker#2_in_InputProtoParticles" [fillcolor=deepskyblue1, label=InputProtoParticles, style=filled];
+"FunctionalParticleMaker/FunctionalParticleMaker#2" -> "FunctionalParticleMaker/FunctionalParticleMaker#2_in_InputProtoParticles"  [minlen=0, style=invis];
+"FunctionalParticleMaker/FunctionalParticleMaker#2_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"FunctionalParticleMaker/FunctionalParticleMaker#2" -> "FunctionalParticleMaker/FunctionalParticleMaker#2_out_Particles"  [minlen=0, style=invis];
+}
+
+"UnpackProtoParticle/UnpackChargedProtos_out_OutputName" -> "FunctionalParticleMaker/FunctionalParticleMaker#2_in_InputProtoParticles";
+subgraph "cluster_UnpackProtoParticle/UnpackChargedProtos" {
+bgcolor=aliceblue;
+label="";
+"UnpackProtoParticle/UnpackChargedProtos" [label=<<B>UnpackProtoParticle/UnpackChargedProtos</B><BR/>OutputName = /Event/Rec/ProtoP/Charged>, shape=plaintext];
+"UnpackProtoParticle/UnpackChargedProtos_in_InputName" [fillcolor=deepskyblue1, label=InputName, style=filled];
+"UnpackProtoParticle/UnpackChargedProtos" -> "UnpackProtoParticle/UnpackChargedProtos_in_InputName"  [minlen=0, style=invis];
+"UnpackProtoParticle/UnpackChargedProtos_out_OutputName" [fillcolor=coral1, label=OutputName, style=filled];
+"UnpackProtoParticle/UnpackChargedProtos" -> "UnpackProtoParticle/UnpackChargedProtos_out_OutputName"  [minlen=0, style=invis];
+}
+
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10_out_Output" -> "UnpackProtoParticle/UnpackChargedProtos_in_InputName";
+subgraph "cluster_Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10" {
+bgcolor=aliceblue;
+label="";
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10" [label=<<B>Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10</B><BR/>Output = /Event/pRec/ProtoP/Charged>, shape=plaintext];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10" -> "Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10_out_Output"  [minlen=0, style=invis];
+}
+
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "FilterDesktop/FilterDesktop#2_in_PrimaryVertices";
+subgraph "cluster_UnpackRecVertex/UnpackRecVertices" {
+bgcolor=aliceblue;
+label="";
+"UnpackRecVertex/UnpackRecVertices" [label=<<B>UnpackRecVertex/UnpackRecVertices</B><BR/>OutputName = /Event/Rec/Vertex/Primary>, shape=plaintext];
+"UnpackRecVertex/UnpackRecVertices_in_InputName" [fillcolor=deepskyblue1, label=InputName, style=filled];
+"UnpackRecVertex/UnpackRecVertices" -> "UnpackRecVertex/UnpackRecVertices_in_InputName"  [minlen=0, style=invis];
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" [fillcolor=coral1, label=OutputName, style=filled];
+"UnpackRecVertex/UnpackRecVertices" -> "UnpackRecVertex/UnpackRecVertices_out_OutputName"  [minlen=0, style=invis];
+}
+
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile_out_Output" -> "UnpackRecVertex/UnpackRecVertices_in_InputName";
+subgraph "cluster_Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile" {
+bgcolor=aliceblue;
+label="";
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile" [label=<<B>Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile</B><BR/>Output = /Event/pRec/Vertex/Primary>, shape=plaintext];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile" -> "Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile_out_Output"  [minlen=0, style=invis];
+}
+
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "CombineParticles/CombineParticles_in_PrimaryVertices";
+"FilterDesktop/FilterDesktop#7_out_Particles" -> "CombineParticles/CombineParticles#4_in_ParticlesB";
+subgraph "cluster_FilterDesktop/FilterDesktop#7" {
+bgcolor=aliceblue;
+label="";
+"FilterDesktop/FilterDesktop#7" [label=<<B>FilterDesktop/FilterDesktop#7</B><BR/>WriteP2PVRelations = False<BR/>Code = (PT &gt; 200.0) &amp; (P &gt; 3000.0) &amp; (TRCHI2DOF &lt; 3.0) &amp; (MIPCHI2DV(PRIMARY) &gt; 4.0)<BR/>ModifyLocations = False>, shape=plaintext];
+"FilterDesktop/FilterDesktop#7_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"FilterDesktop/FilterDesktop#7" -> "FilterDesktop/FilterDesktop#7_in_ParticlesA"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#7_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"FilterDesktop/FilterDesktop#7" -> "FilterDesktop/FilterDesktop#7_in_PrimaryVertices"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#7_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"FilterDesktop/FilterDesktop#7" -> "FilterDesktop/FilterDesktop#7_out_Particles"  [minlen=0, style=invis];
+}
+
+"FunctionalParticleMaker/FunctionalParticleMaker#2_out_Particles" -> "FilterDesktop/FilterDesktop#7_in_ParticlesA";
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "FilterDesktop/FilterDesktop#7_in_PrimaryVertices";
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "CombineParticles/CombineParticles#4_in_PrimaryVertices";
+"CombineParticles/CombineParticles#2_out_Particles" -> "CombineParticles/CombineParticles#6_in_ParticlesB";
+subgraph "cluster_CombineParticles/CombineParticles#2" {
+bgcolor=aliceblue;
+label="";
+"CombineParticles/CombineParticles#2" [label=<<B>CombineParticles/CombineParticles#2</B><BR/>WriteP2PVRelations = False<BR/>CombinationCut = (APT &gt; 1500.0) &amp; (AM &lt; 50.0) &amp; (AP &gt; 0.0)<BR/>MotherCut = (ALL)<BR/>DecayDescriptors = [&#x27;gamma -&gt; e+ e-&#x27;]<BR/>ModifyLocations = False>, shape=plaintext];
+"CombineParticles/CombineParticles#2_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"CombineParticles/CombineParticles#2" -> "CombineParticles/CombineParticles#2_in_ParticlesA"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles#2_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"CombineParticles/CombineParticles#2" -> "CombineParticles/CombineParticles#2_in_PrimaryVertices"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles#2_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"CombineParticles/CombineParticles#2" -> "CombineParticles/CombineParticles#2_out_Particles"  [minlen=0, style=invis];
+}
+
+"FilterDesktop/FilterDesktop#5_out_Particles" -> "CombineParticles/CombineParticles#2_in_ParticlesA";
+subgraph "cluster_FilterDesktop/FilterDesktop#5" {
+bgcolor=aliceblue;
+label="";
+"FilterDesktop/FilterDesktop#5" [label=<<B>FilterDesktop/FilterDesktop#5</B><BR/>WriteP2PVRelations = False<BR/>Code = (PT &gt; 100.0)<BR/>ModifyLocations = False>, shape=plaintext];
+"FilterDesktop/FilterDesktop#5_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"FilterDesktop/FilterDesktop#5" -> "FilterDesktop/FilterDesktop#5_in_ParticlesA"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#5_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"FilterDesktop/FilterDesktop#5" -> "FilterDesktop/FilterDesktop#5_in_PrimaryVertices"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#5_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"FilterDesktop/FilterDesktop#5" -> "FilterDesktop/FilterDesktop#5_out_Particles"  [minlen=0, style=invis];
+}
+
+"FunctionalParticleMaker/FunctionalParticleMaker#3_out_Particles" -> "FilterDesktop/FilterDesktop#5_in_ParticlesA";
+subgraph "cluster_FunctionalParticleMaker/FunctionalParticleMaker#3" {
+bgcolor=aliceblue;
+label="";
+"FunctionalParticleMaker/FunctionalParticleMaker#3" [label=<<B>FunctionalParticleMaker/FunctionalParticleMaker#3</B><BR/>ParticleID = electron>, shape=plaintext];
+"FunctionalParticleMaker/FunctionalParticleMaker#3_in_InputProtoParticles" [fillcolor=deepskyblue1, label=InputProtoParticles, style=filled];
+"FunctionalParticleMaker/FunctionalParticleMaker#3" -> "FunctionalParticleMaker/FunctionalParticleMaker#3_in_InputProtoParticles"  [minlen=0, style=invis];
+"FunctionalParticleMaker/FunctionalParticleMaker#3_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"FunctionalParticleMaker/FunctionalParticleMaker#3" -> "FunctionalParticleMaker/FunctionalParticleMaker#3_out_Particles"  [minlen=0, style=invis];
+}
+
+"UnpackProtoParticle/UnpackChargedProtos_out_OutputName" -> "FunctionalParticleMaker/FunctionalParticleMaker#3_in_InputProtoParticles";
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "FilterDesktop/FilterDesktop#5_in_PrimaryVertices";
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "CombineParticles/CombineParticles#2_in_PrimaryVertices";
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "CombineParticles/CombineParticles#6_in_PrimaryVertices";
+subgraph "cluster_bankKiller/bankKiller" {
+bgcolor=aliceblue;
+label="";
+"bankKiller/bankKiller" [label=<<B>bankKiller/bankKiller</B><BR/>BankTypes = [&#x27;HltDecReports&#x27;, &#x27;HltSelReports&#x27;, &#x27;HltLumiSummary&#x27;, &#x27;HltRoutingBits&#x27;]>, shape=plaintext];
+"bankKiller/bankKiller_in_RawEventLocations" [fillcolor=deepskyblue1, label=RawEventLocations, style=filled];
+"bankKiller/bankKiller" -> "bankKiller/bankKiller_in_RawEventLocations"  [minlen=0, style=invis];
+}
+
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#11_out_Output" -> "bankKiller/bankKiller_in_RawEventLocations";
+subgraph "cluster_Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#11" {
+bgcolor=aliceblue;
+label="";
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#11" [label=<<B>Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#11</B><BR/>Output = /Event/Trigger/RawEvent>, shape=plaintext];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#11_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#11" -> "Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#11_out_Output"  [minlen=0, style=invis];
+}
+
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#12_out_Output" -> "bankKiller/bankKiller_in_RawEventLocations";
+subgraph "cluster_Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#12" {
+bgcolor=aliceblue;
+label="";
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#12" [label=<<B>Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#12</B><BR/>Output = /Event/Unstripped/RawEvent>, shape=plaintext];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#12_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#12" -> "Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#12_out_Output"  [minlen=0, style=invis];
+}
+
+subgraph "cluster_ExecutionReportsWriter/ExecutionReportsWriter" {
+bgcolor=aliceblue;
+label="";
+"ExecutionReportsWriter/ExecutionReportsWriter" [label=<<B>ExecutionReportsWriter/ExecutionReportsWriter</B><BR/>Persist = [&#x27;Hlt2BToHHGamma_Inclusive_Line&#x27;, &#x27;Hlt2BToHHGammae[...]Inclusive_Line&#x27;, &#x27;Hlt2BToHHHGamma_Inclusive_Line&#x27;]<BR/>ANNSvcKey = Hlt1SelectionID>, shape=plaintext];
+"ExecutionReportsWriter/ExecutionReportsWriter_out_DecReportsLocation" [fillcolor=coral1, label=DecReportsLocation, style=filled];
+"ExecutionReportsWriter/ExecutionReportsWriter" -> "ExecutionReportsWriter/ExecutionReportsWriter_out_DecReportsLocation"  [minlen=0, style=invis];
+}
+
+subgraph "cluster_HltDecReportsWriter/HltDecReportsWriter" {
+bgcolor=aliceblue;
+label="";
+"HltDecReportsWriter/HltDecReportsWriter" [label=<<B>HltDecReportsWriter/HltDecReportsWriter</B><BR/>OutputRawEventLocation = /Event/Trigger/RawEvent>, shape=plaintext];
+"HltDecReportsWriter/HltDecReportsWriter_in_InputHltDecReportsLocation" [fillcolor=deepskyblue1, label=InputHltDecReportsLocation, style=filled];
+"HltDecReportsWriter/HltDecReportsWriter" -> "HltDecReportsWriter/HltDecReportsWriter_in_InputHltDecReportsLocation"  [minlen=0, style=invis];
+"HltDecReportsWriter/HltDecReportsWriter_out_OutputRawEventLocation" [fillcolor=coral1, label=OutputRawEventLocation, style=filled];
+"HltDecReportsWriter/HltDecReportsWriter" -> "HltDecReportsWriter/HltDecReportsWriter_out_OutputRawEventLocation"  [minlen=0, style=invis];
+}
+
+"ExecutionReportsWriter/ExecutionReportsWriter_out_DecReportsLocation" -> "HltDecReportsWriter/HltDecReportsWriter_in_InputHltDecReportsLocation";
+subgraph "cluster_ExecutionReportsWriter/ExecutionReportsWriter" {
+bgcolor=aliceblue;
+label="";
+"ExecutionReportsWriter/ExecutionReportsWriter" [label=<<B>ExecutionReportsWriter/ExecutionReportsWriter</B><BR/>Persist = [&#x27;Hlt2BToHHGamma_Inclusive_Line&#x27;, &#x27;Hlt2BToHHGammae[...]Inclusive_Line&#x27;, &#x27;Hlt2BToHHHGamma_Inclusive_Line&#x27;]<BR/>ANNSvcKey = Hlt1SelectionID>, shape=plaintext];
+"ExecutionReportsWriter/ExecutionReportsWriter_out_DecReportsLocation" [fillcolor=coral1, label=DecReportsLocation, style=filled];
+"ExecutionReportsWriter/ExecutionReportsWriter" -> "ExecutionReportsWriter/ExecutionReportsWriter_out_DecReportsLocation"  [minlen=0, style=invis];
+}
+
+subgraph "cluster_FilterDesktop/FilterDesktop#12" {
+bgcolor=aliceblue;
+label="";
+"FilterDesktop/FilterDesktop#12" [label=<<B>FilterDesktop/FilterDesktop#12</B><BR/>ModifyLocations = True<BR/>WriteP2PVRelations = True<BR/>Code = BPVVALID() | ALL<BR/>CloneFilteredParticles = True<BR/>Output = /Event/Hlt2BToHHHGammaEE_Inclusive_Line/Particles>, shape=plaintext];
+"FilterDesktop/FilterDesktop#12_in_Particles" [fillcolor=deepskyblue1, label=Particles, style=filled];
+"FilterDesktop/FilterDesktop#12" -> "FilterDesktop/FilterDesktop#12_in_Particles"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#12_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"FilterDesktop/FilterDesktop#12" -> "FilterDesktop/FilterDesktop#12_in_PrimaryVertices"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#12_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"FilterDesktop/FilterDesktop#12" -> "FilterDesktop/FilterDesktop#12_out_Output"  [minlen=0, style=invis];
+}
+
+"FilterDesktop/FilterDesktop#9_out_Particles" -> "FilterDesktop/FilterDesktop#12_in_Particles";
+subgraph "cluster_FilterDesktop/FilterDesktop#9" {
+bgcolor=aliceblue;
+label="";
+"FilterDesktop/FilterDesktop#9" [label=<<B>FilterDesktop/FilterDesktop#9</B><BR/>ModifyLocations = False<BR/>WriteP2PVRelations = False<BR/>Code = VALUE(&#x27;LoKi::Hybrid::DictValue/HHHgammaEEMVA&#x27;) &gt; 0.05>, shape=plaintext];
+"FilterDesktop/FilterDesktop#9_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"FilterDesktop/FilterDesktop#9" -> "FilterDesktop/FilterDesktop#9_in_ParticlesA"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#9_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"FilterDesktop/FilterDesktop#9" -> "FilterDesktop/FilterDesktop#9_out_Particles"  [minlen=0, style=invis];
+}
+
+"CombineParticles/CombineParticles#6_out_Particles" -> "FilterDesktop/FilterDesktop#9_in_ParticlesA";
+subgraph "cluster_CombineParticles/CombineParticles#6" {
+bgcolor=aliceblue;
+label="";
+"CombineParticles/CombineParticles#6" [label=<<B>CombineParticles/CombineParticles#6</B><BR/>WriteP2PVRelations = False<BR/>CombinationCut = (APT &gt; 2000.0) &amp; (AM &lt; 11000.0)<BR/>MotherCut = (HASVERTEX) &amp; (CHI2VXNDOF &lt; 1000.0) &amp; (in_range(2.[...]1000.0)) &amp; (BPVDIRA() &gt; 0.0) &amp; (BPVVDCHI2() &gt; 0.0)<BR/>DecayDescriptors = [&#x27;[B+ -&gt; D*(2010)+ gamma]cc&#x27;]<BR/>ModifyLocations = False>, shape=plaintext];
+"CombineParticles/CombineParticles#6_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"CombineParticles/CombineParticles#6" -> "CombineParticles/CombineParticles#6_in_ParticlesA"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles#6_in_ParticlesB" [fillcolor=deepskyblue1, label=ParticlesB, style=filled];
+"CombineParticles/CombineParticles#6" -> "CombineParticles/CombineParticles#6_in_ParticlesB"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles#6_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"CombineParticles/CombineParticles#6" -> "CombineParticles/CombineParticles#6_in_PrimaryVertices"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles#6_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"CombineParticles/CombineParticles#6" -> "CombineParticles/CombineParticles#6_out_Particles"  [minlen=0, style=invis];
+}
+
+"CombineParticles/CombineParticles#4_out_Particles" -> "CombineParticles/CombineParticles#6_in_ParticlesA";
+subgraph "cluster_CombineParticles/CombineParticles#4" {
+bgcolor=aliceblue;
+label="";
+"CombineParticles/CombineParticles#4" [label=<<B>CombineParticles/CombineParticles#4</B><BR/>WriteP2PVRelations = False<BR/>CombinationCut = (APT &gt; 2000.0) &amp; (ANUM((ID==&#x27;KS0&#x27;)|(ABSID==&#x27;Lambda[...]==&#x27;Lambda0&#x27;)) &amp; (MIPCHI2DV(PRIMARY) &lt; 16.0))) &lt; 2)<BR/>MotherCut = (HASVERTEX) &amp; (VFASPF(VCHI2) &lt; 1000.0) &amp; (BPVVDCHI[...](in_range(2.0, BPVETA(), 5.0)) &amp; (BPVDIRA() &gt; 0.0)<BR/>DecayDescriptors = [&#x27;D*(2010)+ -&gt; K*(892)0 pi+&#x27;, &#x27;D*(2010)- -&gt; K*(892)0 pi-&#x27;]<BR/>ModifyLocations = False>, shape=plaintext];
+"CombineParticles/CombineParticles#4_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"CombineParticles/CombineParticles#4" -> "CombineParticles/CombineParticles#4_in_ParticlesA"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles#4_in_ParticlesB" [fillcolor=deepskyblue1, label=ParticlesB, style=filled];
+"CombineParticles/CombineParticles#4" -> "CombineParticles/CombineParticles#4_in_ParticlesB"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles#4_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"CombineParticles/CombineParticles#4" -> "CombineParticles/CombineParticles#4_in_PrimaryVertices"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles#4_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"CombineParticles/CombineParticles#4" -> "CombineParticles/CombineParticles#4_out_Particles"  [minlen=0, style=invis];
+}
+
+"CombineParticles/CombineParticles_out_Particles" -> "CombineParticles/CombineParticles#4_in_ParticlesA";
+subgraph "cluster_CombineParticles/CombineParticles" {
+bgcolor=aliceblue;
+label="";
+"CombineParticles/CombineParticles" [label=<<B>CombineParticles/CombineParticles</B><BR/>WriteP2PVRelations = False<BR/>CombinationCut = (APT &gt; 2000.0) &amp; (ANUM((ID==&#x27;KS0&#x27;)|(ABSID==&#x27;Lambda[...]((ABSID==&#x27;K+&#x27;) &amp; (MIPCHI2DV(PRIMARY) &lt; 16.0)) &lt; 2)<BR/>MotherCut = (HASVERTEX) &amp; (VFASPF(VCHI2) &lt; 1000.0) &amp; (BPVVDCHI2() &gt; 16.0) &amp; (in_range(2.0, BPVETA(), 5.0))<BR/>DecayDescriptors = [&#x27;K*(892)0 -&gt; pi+ pi-&#x27;]<BR/>ModifyLocations = False>, shape=plaintext];
+"CombineParticles/CombineParticles_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"CombineParticles/CombineParticles" -> "CombineParticles/CombineParticles_in_ParticlesA"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"CombineParticles/CombineParticles" -> "CombineParticles/CombineParticles_in_PrimaryVertices"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"CombineParticles/CombineParticles" -> "CombineParticles/CombineParticles_out_Particles"  [minlen=0, style=invis];
+}
+
+"FilterDesktop/FilterDesktop#2_out_Particles" -> "CombineParticles/CombineParticles_in_ParticlesA";
+subgraph "cluster_FilterDesktop/FilterDesktop#2" {
+bgcolor=aliceblue;
+label="";
+"FilterDesktop/FilterDesktop#2" [label=<<B>FilterDesktop/FilterDesktop#2</B><BR/>WriteP2PVRelations = False<BR/>Code = (TRCHI2DOF &lt; 2.5) &amp; (TRGHOSTPROB &lt; 0.2) &amp; (((PT &gt; [...].1 / 25000.0) * (25000.0 - PT) + 2.00148000021))))<BR/>ModifyLocations = False>, shape=plaintext];
+"FilterDesktop/FilterDesktop#2_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"FilterDesktop/FilterDesktop#2" -> "FilterDesktop/FilterDesktop#2_in_ParticlesA"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#2_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"FilterDesktop/FilterDesktop#2" -> "FilterDesktop/FilterDesktop#2_in_PrimaryVertices"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#2_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"FilterDesktop/FilterDesktop#2" -> "FilterDesktop/FilterDesktop#2_out_Particles"  [minlen=0, style=invis];
+}
+
+"FunctionalParticleMaker/FunctionalParticleMaker#2_out_Particles" -> "FilterDesktop/FilterDesktop#2_in_ParticlesA";
+subgraph "cluster_FunctionalParticleMaker/FunctionalParticleMaker#2" {
+bgcolor=aliceblue;
+label="";
+"FunctionalParticleMaker/FunctionalParticleMaker#2" [label=<<B>FunctionalParticleMaker/FunctionalParticleMaker#2</B><BR/>ParticleID = pion>, shape=plaintext];
+"FunctionalParticleMaker/FunctionalParticleMaker#2_in_InputProtoParticles" [fillcolor=deepskyblue1, label=InputProtoParticles, style=filled];
+"FunctionalParticleMaker/FunctionalParticleMaker#2" -> "FunctionalParticleMaker/FunctionalParticleMaker#2_in_InputProtoParticles"  [minlen=0, style=invis];
+"FunctionalParticleMaker/FunctionalParticleMaker#2_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"FunctionalParticleMaker/FunctionalParticleMaker#2" -> "FunctionalParticleMaker/FunctionalParticleMaker#2_out_Particles"  [minlen=0, style=invis];
+}
+
+"UnpackProtoParticle/UnpackChargedProtos_out_OutputName" -> "FunctionalParticleMaker/FunctionalParticleMaker#2_in_InputProtoParticles";
+subgraph "cluster_UnpackProtoParticle/UnpackChargedProtos" {
+bgcolor=aliceblue;
+label="";
+"UnpackProtoParticle/UnpackChargedProtos" [label=<<B>UnpackProtoParticle/UnpackChargedProtos</B><BR/>OutputName = /Event/Rec/ProtoP/Charged>, shape=plaintext];
+"UnpackProtoParticle/UnpackChargedProtos_in_InputName" [fillcolor=deepskyblue1, label=InputName, style=filled];
+"UnpackProtoParticle/UnpackChargedProtos" -> "UnpackProtoParticle/UnpackChargedProtos_in_InputName"  [minlen=0, style=invis];
+"UnpackProtoParticle/UnpackChargedProtos_out_OutputName" [fillcolor=coral1, label=OutputName, style=filled];
+"UnpackProtoParticle/UnpackChargedProtos" -> "UnpackProtoParticle/UnpackChargedProtos_out_OutputName"  [minlen=0, style=invis];
+}
+
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10_out_Output" -> "UnpackProtoParticle/UnpackChargedProtos_in_InputName";
+subgraph "cluster_Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10" {
+bgcolor=aliceblue;
+label="";
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10" [label=<<B>Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10</B><BR/>Output = /Event/pRec/ProtoP/Charged>, shape=plaintext];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10" -> "Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10_out_Output"  [minlen=0, style=invis];
+}
+
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "FilterDesktop/FilterDesktop#2_in_PrimaryVertices";
+subgraph "cluster_UnpackRecVertex/UnpackRecVertices" {
+bgcolor=aliceblue;
+label="";
+"UnpackRecVertex/UnpackRecVertices" [label=<<B>UnpackRecVertex/UnpackRecVertices</B><BR/>OutputName = /Event/Rec/Vertex/Primary>, shape=plaintext];
+"UnpackRecVertex/UnpackRecVertices_in_InputName" [fillcolor=deepskyblue1, label=InputName, style=filled];
+"UnpackRecVertex/UnpackRecVertices" -> "UnpackRecVertex/UnpackRecVertices_in_InputName"  [minlen=0, style=invis];
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" [fillcolor=coral1, label=OutputName, style=filled];
+"UnpackRecVertex/UnpackRecVertices" -> "UnpackRecVertex/UnpackRecVertices_out_OutputName"  [minlen=0, style=invis];
+}
+
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile_out_Output" -> "UnpackRecVertex/UnpackRecVertices_in_InputName";
+subgraph "cluster_Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile" {
+bgcolor=aliceblue;
+label="";
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile" [label=<<B>Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile</B><BR/>Output = /Event/pRec/Vertex/Primary>, shape=plaintext];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile" -> "Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile_out_Output"  [minlen=0, style=invis];
+}
+
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "CombineParticles/CombineParticles_in_PrimaryVertices";
+"FilterDesktop/FilterDesktop#7_out_Particles" -> "CombineParticles/CombineParticles#4_in_ParticlesB";
+subgraph "cluster_FilterDesktop/FilterDesktop#7" {
+bgcolor=aliceblue;
+label="";
+"FilterDesktop/FilterDesktop#7" [label=<<B>FilterDesktop/FilterDesktop#7</B><BR/>WriteP2PVRelations = False<BR/>Code = (PT &gt; 200.0) &amp; (P &gt; 3000.0) &amp; (TRCHI2DOF &lt; 3.0) &amp; (MIPCHI2DV(PRIMARY) &gt; 4.0)<BR/>ModifyLocations = False>, shape=plaintext];
+"FilterDesktop/FilterDesktop#7_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"FilterDesktop/FilterDesktop#7" -> "FilterDesktop/FilterDesktop#7_in_ParticlesA"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#7_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"FilterDesktop/FilterDesktop#7" -> "FilterDesktop/FilterDesktop#7_in_PrimaryVertices"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#7_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"FilterDesktop/FilterDesktop#7" -> "FilterDesktop/FilterDesktop#7_out_Particles"  [minlen=0, style=invis];
+}
+
+"FunctionalParticleMaker/FunctionalParticleMaker#2_out_Particles" -> "FilterDesktop/FilterDesktop#7_in_ParticlesA";
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "FilterDesktop/FilterDesktop#7_in_PrimaryVertices";
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "CombineParticles/CombineParticles#4_in_PrimaryVertices";
+"CombineParticles/CombineParticles#2_out_Particles" -> "CombineParticles/CombineParticles#6_in_ParticlesB";
+subgraph "cluster_CombineParticles/CombineParticles#2" {
+bgcolor=aliceblue;
+label="";
+"CombineParticles/CombineParticles#2" [label=<<B>CombineParticles/CombineParticles#2</B><BR/>WriteP2PVRelations = False<BR/>CombinationCut = (APT &gt; 1500.0) &amp; (AM &lt; 50.0) &amp; (AP &gt; 0.0)<BR/>MotherCut = (ALL)<BR/>DecayDescriptors = [&#x27;gamma -&gt; e+ e-&#x27;]<BR/>ModifyLocations = False>, shape=plaintext];
+"CombineParticles/CombineParticles#2_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"CombineParticles/CombineParticles#2" -> "CombineParticles/CombineParticles#2_in_ParticlesA"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles#2_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"CombineParticles/CombineParticles#2" -> "CombineParticles/CombineParticles#2_in_PrimaryVertices"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles#2_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"CombineParticles/CombineParticles#2" -> "CombineParticles/CombineParticles#2_out_Particles"  [minlen=0, style=invis];
+}
+
+"FilterDesktop/FilterDesktop#5_out_Particles" -> "CombineParticles/CombineParticles#2_in_ParticlesA";
+subgraph "cluster_FilterDesktop/FilterDesktop#5" {
+bgcolor=aliceblue;
+label="";
+"FilterDesktop/FilterDesktop#5" [label=<<B>FilterDesktop/FilterDesktop#5</B><BR/>WriteP2PVRelations = False<BR/>Code = (PT &gt; 100.0)<BR/>ModifyLocations = False>, shape=plaintext];
+"FilterDesktop/FilterDesktop#5_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"FilterDesktop/FilterDesktop#5" -> "FilterDesktop/FilterDesktop#5_in_ParticlesA"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#5_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"FilterDesktop/FilterDesktop#5" -> "FilterDesktop/FilterDesktop#5_in_PrimaryVertices"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#5_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"FilterDesktop/FilterDesktop#5" -> "FilterDesktop/FilterDesktop#5_out_Particles"  [minlen=0, style=invis];
+}
+
+"FunctionalParticleMaker/FunctionalParticleMaker#3_out_Particles" -> "FilterDesktop/FilterDesktop#5_in_ParticlesA";
+subgraph "cluster_FunctionalParticleMaker/FunctionalParticleMaker#3" {
+bgcolor=aliceblue;
+label="";
+"FunctionalParticleMaker/FunctionalParticleMaker#3" [label=<<B>FunctionalParticleMaker/FunctionalParticleMaker#3</B><BR/>ParticleID = electron>, shape=plaintext];
+"FunctionalParticleMaker/FunctionalParticleMaker#3_in_InputProtoParticles" [fillcolor=deepskyblue1, label=InputProtoParticles, style=filled];
+"FunctionalParticleMaker/FunctionalParticleMaker#3" -> "FunctionalParticleMaker/FunctionalParticleMaker#3_in_InputProtoParticles"  [minlen=0, style=invis];
+"FunctionalParticleMaker/FunctionalParticleMaker#3_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"FunctionalParticleMaker/FunctionalParticleMaker#3" -> "FunctionalParticleMaker/FunctionalParticleMaker#3_out_Particles"  [minlen=0, style=invis];
+}
+
+"UnpackProtoParticle/UnpackChargedProtos_out_OutputName" -> "FunctionalParticleMaker/FunctionalParticleMaker#3_in_InputProtoParticles";
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "FilterDesktop/FilterDesktop#5_in_PrimaryVertices";
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "CombineParticles/CombineParticles#2_in_PrimaryVertices";
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "CombineParticles/CombineParticles#6_in_PrimaryVertices";
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "FilterDesktop/FilterDesktop#12_in_PrimaryVertices";
+subgraph "cluster_FilterDesktop/FilterDesktop#13" {
+bgcolor=aliceblue;
+label="";
+"FilterDesktop/FilterDesktop#13" [label=<<B>FilterDesktop/FilterDesktop#13</B><BR/>ModifyLocations = True<BR/>WriteP2PVRelations = True<BR/>Code = BPVVALID() | ALL<BR/>CloneFilteredParticles = True<BR/>Output = /Event/Hlt2BToHHHGamma_Inclusive_Line/Particles>, shape=plaintext];
+"FilterDesktop/FilterDesktop#13_in_Particles" [fillcolor=deepskyblue1, label=Particles, style=filled];
+"FilterDesktop/FilterDesktop#13" -> "FilterDesktop/FilterDesktop#13_in_Particles"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#13_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"FilterDesktop/FilterDesktop#13" -> "FilterDesktop/FilterDesktop#13_in_PrimaryVertices"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#13_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"FilterDesktop/FilterDesktop#13" -> "FilterDesktop/FilterDesktop#13_out_Output"  [minlen=0, style=invis];
+}
+
+"FilterDesktop/FilterDesktop#8_out_Particles" -> "FilterDesktop/FilterDesktop#13_in_Particles";
+subgraph "cluster_FilterDesktop/FilterDesktop#8" {
+bgcolor=aliceblue;
+label="";
+"FilterDesktop/FilterDesktop#8" [label=<<B>FilterDesktop/FilterDesktop#8</B><BR/>ModifyLocations = False<BR/>WriteP2PVRelations = False<BR/>Code = VALUE(&#x27;LoKi::Hybrid::DictValue/HHHgammaMVA&#x27;) &gt; 0.116>, shape=plaintext];
+"FilterDesktop/FilterDesktop#8_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"FilterDesktop/FilterDesktop#8" -> "FilterDesktop/FilterDesktop#8_in_ParticlesA"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#8_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"FilterDesktop/FilterDesktop#8" -> "FilterDesktop/FilterDesktop#8_out_Particles"  [minlen=0, style=invis];
+}
+
+"CombineParticles/CombineParticles#5_out_Particles" -> "FilterDesktop/FilterDesktop#8_in_ParticlesA";
+subgraph "cluster_CombineParticles/CombineParticles#5" {
+bgcolor=aliceblue;
+label="";
+"CombineParticles/CombineParticles#5" [label=<<B>CombineParticles/CombineParticles#5</B><BR/>WriteP2PVRelations = False<BR/>CombinationCut = (APT &gt; 2000.0) &amp; (AM &lt; 11000.0)<BR/>MotherCut = (HASVERTEX) &amp; (CHI2VXNDOF &lt; 1000.0) &amp; (in_range(2.[...]1000.0)) &amp; (BPVDIRA() &gt; 0.0) &amp; (BPVVDCHI2() &gt; 0.0)<BR/>DecayDescriptors = [&#x27;[B+ -&gt; D*(2010)+ gamma]cc&#x27;]<BR/>ModifyLocations = False>, shape=plaintext];
+"CombineParticles/CombineParticles#5_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"CombineParticles/CombineParticles#5" -> "CombineParticles/CombineParticles#5_in_ParticlesA"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles#5_in_ParticlesB" [fillcolor=deepskyblue1, label=ParticlesB, style=filled];
+"CombineParticles/CombineParticles#5" -> "CombineParticles/CombineParticles#5_in_ParticlesB"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles#5_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"CombineParticles/CombineParticles#5" -> "CombineParticles/CombineParticles#5_in_PrimaryVertices"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles#5_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"CombineParticles/CombineParticles#5" -> "CombineParticles/CombineParticles#5_out_Particles"  [minlen=0, style=invis];
+}
+
+"CombineParticles/CombineParticles#4_out_Particles" -> "CombineParticles/CombineParticles#5_in_ParticlesA";
+subgraph "cluster_CombineParticles/CombineParticles#4" {
+bgcolor=aliceblue;
+label="";
+"CombineParticles/CombineParticles#4" [label=<<B>CombineParticles/CombineParticles#4</B><BR/>WriteP2PVRelations = False<BR/>CombinationCut = (APT &gt; 2000.0) &amp; (ANUM((ID==&#x27;KS0&#x27;)|(ABSID==&#x27;Lambda[...]==&#x27;Lambda0&#x27;)) &amp; (MIPCHI2DV(PRIMARY) &lt; 16.0))) &lt; 2)<BR/>MotherCut = (HASVERTEX) &amp; (VFASPF(VCHI2) &lt; 1000.0) &amp; (BPVVDCHI[...](in_range(2.0, BPVETA(), 5.0)) &amp; (BPVDIRA() &gt; 0.0)<BR/>DecayDescriptors = [&#x27;D*(2010)+ -&gt; K*(892)0 pi+&#x27;, &#x27;D*(2010)- -&gt; K*(892)0 pi-&#x27;]<BR/>ModifyLocations = False>, shape=plaintext];
+"CombineParticles/CombineParticles#4_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"CombineParticles/CombineParticles#4" -> "CombineParticles/CombineParticles#4_in_ParticlesA"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles#4_in_ParticlesB" [fillcolor=deepskyblue1, label=ParticlesB, style=filled];
+"CombineParticles/CombineParticles#4" -> "CombineParticles/CombineParticles#4_in_ParticlesB"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles#4_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"CombineParticles/CombineParticles#4" -> "CombineParticles/CombineParticles#4_in_PrimaryVertices"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles#4_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"CombineParticles/CombineParticles#4" -> "CombineParticles/CombineParticles#4_out_Particles"  [minlen=0, style=invis];
+}
+
+"CombineParticles/CombineParticles_out_Particles" -> "CombineParticles/CombineParticles#4_in_ParticlesA";
+subgraph "cluster_CombineParticles/CombineParticles" {
+bgcolor=aliceblue;
+label="";
+"CombineParticles/CombineParticles" [label=<<B>CombineParticles/CombineParticles</B><BR/>WriteP2PVRelations = False<BR/>CombinationCut = (APT &gt; 2000.0) &amp; (ANUM((ID==&#x27;KS0&#x27;)|(ABSID==&#x27;Lambda[...]((ABSID==&#x27;K+&#x27;) &amp; (MIPCHI2DV(PRIMARY) &lt; 16.0)) &lt; 2)<BR/>MotherCut = (HASVERTEX) &amp; (VFASPF(VCHI2) &lt; 1000.0) &amp; (BPVVDCHI2() &gt; 16.0) &amp; (in_range(2.0, BPVETA(), 5.0))<BR/>DecayDescriptors = [&#x27;K*(892)0 -&gt; pi+ pi-&#x27;]<BR/>ModifyLocations = False>, shape=plaintext];
+"CombineParticles/CombineParticles_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"CombineParticles/CombineParticles" -> "CombineParticles/CombineParticles_in_ParticlesA"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"CombineParticles/CombineParticles" -> "CombineParticles/CombineParticles_in_PrimaryVertices"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"CombineParticles/CombineParticles" -> "CombineParticles/CombineParticles_out_Particles"  [minlen=0, style=invis];
+}
+
+"FilterDesktop/FilterDesktop#2_out_Particles" -> "CombineParticles/CombineParticles_in_ParticlesA";
+subgraph "cluster_FilterDesktop/FilterDesktop#2" {
+bgcolor=aliceblue;
+label="";
+"FilterDesktop/FilterDesktop#2" [label=<<B>FilterDesktop/FilterDesktop#2</B><BR/>WriteP2PVRelations = False<BR/>Code = (TRCHI2DOF &lt; 2.5) &amp; (TRGHOSTPROB &lt; 0.2) &amp; (((PT &gt; [...].1 / 25000.0) * (25000.0 - PT) + 2.00148000021))))<BR/>ModifyLocations = False>, shape=plaintext];
+"FilterDesktop/FilterDesktop#2_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"FilterDesktop/FilterDesktop#2" -> "FilterDesktop/FilterDesktop#2_in_ParticlesA"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#2_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"FilterDesktop/FilterDesktop#2" -> "FilterDesktop/FilterDesktop#2_in_PrimaryVertices"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#2_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"FilterDesktop/FilterDesktop#2" -> "FilterDesktop/FilterDesktop#2_out_Particles"  [minlen=0, style=invis];
+}
+
+"FunctionalParticleMaker/FunctionalParticleMaker#2_out_Particles" -> "FilterDesktop/FilterDesktop#2_in_ParticlesA";
+subgraph "cluster_FunctionalParticleMaker/FunctionalParticleMaker#2" {
+bgcolor=aliceblue;
+label="";
+"FunctionalParticleMaker/FunctionalParticleMaker#2" [label=<<B>FunctionalParticleMaker/FunctionalParticleMaker#2</B><BR/>ParticleID = pion>, shape=plaintext];
+"FunctionalParticleMaker/FunctionalParticleMaker#2_in_InputProtoParticles" [fillcolor=deepskyblue1, label=InputProtoParticles, style=filled];
+"FunctionalParticleMaker/FunctionalParticleMaker#2" -> "FunctionalParticleMaker/FunctionalParticleMaker#2_in_InputProtoParticles"  [minlen=0, style=invis];
+"FunctionalParticleMaker/FunctionalParticleMaker#2_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"FunctionalParticleMaker/FunctionalParticleMaker#2" -> "FunctionalParticleMaker/FunctionalParticleMaker#2_out_Particles"  [minlen=0, style=invis];
+}
+
+"UnpackProtoParticle/UnpackChargedProtos_out_OutputName" -> "FunctionalParticleMaker/FunctionalParticleMaker#2_in_InputProtoParticles";
+subgraph "cluster_UnpackProtoParticle/UnpackChargedProtos" {
+bgcolor=aliceblue;
+label="";
+"UnpackProtoParticle/UnpackChargedProtos" [label=<<B>UnpackProtoParticle/UnpackChargedProtos</B><BR/>OutputName = /Event/Rec/ProtoP/Charged>, shape=plaintext];
+"UnpackProtoParticle/UnpackChargedProtos_in_InputName" [fillcolor=deepskyblue1, label=InputName, style=filled];
+"UnpackProtoParticle/UnpackChargedProtos" -> "UnpackProtoParticle/UnpackChargedProtos_in_InputName"  [minlen=0, style=invis];
+"UnpackProtoParticle/UnpackChargedProtos_out_OutputName" [fillcolor=coral1, label=OutputName, style=filled];
+"UnpackProtoParticle/UnpackChargedProtos" -> "UnpackProtoParticle/UnpackChargedProtos_out_OutputName"  [minlen=0, style=invis];
+}
+
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10_out_Output" -> "UnpackProtoParticle/UnpackChargedProtos_in_InputName";
+subgraph "cluster_Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10" {
+bgcolor=aliceblue;
+label="";
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10" [label=<<B>Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10</B><BR/>Output = /Event/pRec/ProtoP/Charged>, shape=plaintext];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10" -> "Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10_out_Output"  [minlen=0, style=invis];
+}
+
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "FilterDesktop/FilterDesktop#2_in_PrimaryVertices";
+subgraph "cluster_UnpackRecVertex/UnpackRecVertices" {
+bgcolor=aliceblue;
+label="";
+"UnpackRecVertex/UnpackRecVertices" [label=<<B>UnpackRecVertex/UnpackRecVertices</B><BR/>OutputName = /Event/Rec/Vertex/Primary>, shape=plaintext];
+"UnpackRecVertex/UnpackRecVertices_in_InputName" [fillcolor=deepskyblue1, label=InputName, style=filled];
+"UnpackRecVertex/UnpackRecVertices" -> "UnpackRecVertex/UnpackRecVertices_in_InputName"  [minlen=0, style=invis];
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" [fillcolor=coral1, label=OutputName, style=filled];
+"UnpackRecVertex/UnpackRecVertices" -> "UnpackRecVertex/UnpackRecVertices_out_OutputName"  [minlen=0, style=invis];
+}
+
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile_out_Output" -> "UnpackRecVertex/UnpackRecVertices_in_InputName";
+subgraph "cluster_Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile" {
+bgcolor=aliceblue;
+label="";
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile" [label=<<B>Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile</B><BR/>Output = /Event/pRec/Vertex/Primary>, shape=plaintext];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile" -> "Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile_out_Output"  [minlen=0, style=invis];
+}
+
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "CombineParticles/CombineParticles_in_PrimaryVertices";
+"FilterDesktop/FilterDesktop#7_out_Particles" -> "CombineParticles/CombineParticles#4_in_ParticlesB";
+subgraph "cluster_FilterDesktop/FilterDesktop#7" {
+bgcolor=aliceblue;
+label="";
+"FilterDesktop/FilterDesktop#7" [label=<<B>FilterDesktop/FilterDesktop#7</B><BR/>WriteP2PVRelations = False<BR/>Code = (PT &gt; 200.0) &amp; (P &gt; 3000.0) &amp; (TRCHI2DOF &lt; 3.0) &amp; (MIPCHI2DV(PRIMARY) &gt; 4.0)<BR/>ModifyLocations = False>, shape=plaintext];
+"FilterDesktop/FilterDesktop#7_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"FilterDesktop/FilterDesktop#7" -> "FilterDesktop/FilterDesktop#7_in_ParticlesA"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#7_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"FilterDesktop/FilterDesktop#7" -> "FilterDesktop/FilterDesktop#7_in_PrimaryVertices"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#7_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"FilterDesktop/FilterDesktop#7" -> "FilterDesktop/FilterDesktop#7_out_Particles"  [minlen=0, style=invis];
+}
+
+"FunctionalParticleMaker/FunctionalParticleMaker#2_out_Particles" -> "FilterDesktop/FilterDesktop#7_in_ParticlesA";
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "FilterDesktop/FilterDesktop#7_in_PrimaryVertices";
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "CombineParticles/CombineParticles#4_in_PrimaryVertices";
+"FilterDesktop/FilterDesktop#3_out_Particles" -> "CombineParticles/CombineParticles#5_in_ParticlesB";
+subgraph "cluster_FilterDesktop/FilterDesktop#3" {
+bgcolor=aliceblue;
+label="";
+"FilterDesktop/FilterDesktop#3" [label=<<B>FilterDesktop/FilterDesktop#3</B><BR/>WriteP2PVRelations = False<BR/>Code = (PT &gt; 2000.0) &amp; (P &gt; 5000.0)<BR/>ModifyLocations = False>, shape=plaintext];
+"FilterDesktop/FilterDesktop#3_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"FilterDesktop/FilterDesktop#3" -> "FilterDesktop/FilterDesktop#3_in_ParticlesA"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#3_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"FilterDesktop/FilterDesktop#3" -> "FilterDesktop/FilterDesktop#3_in_PrimaryVertices"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#3_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"FilterDesktop/FilterDesktop#3" -> "FilterDesktop/FilterDesktop#3_out_Particles"  [minlen=0, style=invis];
+}
+
+"PhotonMakerAlg/PhotonMakerAlg_out_Particles" -> "FilterDesktop/FilterDesktop#3_in_ParticlesA";
+subgraph "cluster_PhotonMakerAlg/PhotonMakerAlg" {
+bgcolor=aliceblue;
+label="";
+"PhotonMakerAlg/PhotonMakerAlg" [label=<<B>PhotonMakerAlg/PhotonMakerAlg</B><BR/>ModifyLocations = False<BR/>WriteP2PVRelations = False<BR/>DecayDescriptor = Gamma>, shape=plaintext];
+"PhotonMakerAlg/PhotonMakerAlg_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"PhotonMakerAlg/PhotonMakerAlg" -> "PhotonMakerAlg/PhotonMakerAlg_in_ParticlesA"  [minlen=0, style=invis];
+"PhotonMakerAlg/PhotonMakerAlg_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"PhotonMakerAlg/PhotonMakerAlg" -> "PhotonMakerAlg/PhotonMakerAlg_out_Particles"  [minlen=0, style=invis];
+}
+
+"UnpackProtoParticle/UnpackNeutralProtos_out_OutputName" -> "PhotonMakerAlg/PhotonMakerAlg_in_ParticlesA";
+subgraph "cluster_UnpackProtoParticle/UnpackNeutralProtos" {
+bgcolor=aliceblue;
+label="";
+"UnpackProtoParticle/UnpackNeutralProtos" [label=<<B>UnpackProtoParticle/UnpackNeutralProtos</B><BR/>OutputName = /Event/Rec/ProtoP/Neutrals>, shape=plaintext];
+"UnpackProtoParticle/UnpackNeutralProtos_in_InputName" [fillcolor=deepskyblue1, label=InputName, style=filled];
+"UnpackProtoParticle/UnpackNeutralProtos" -> "UnpackProtoParticle/UnpackNeutralProtos_in_InputName"  [minlen=0, style=invis];
+"UnpackProtoParticle/UnpackNeutralProtos_out_OutputName" [fillcolor=coral1, label=OutputName, style=filled];
+"UnpackProtoParticle/UnpackNeutralProtos" -> "UnpackProtoParticle/UnpackNeutralProtos_out_OutputName"  [minlen=0, style=invis];
+}
+
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#9_out_Output" -> "UnpackProtoParticle/UnpackNeutralProtos_in_InputName";
+subgraph "cluster_Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#9" {
+bgcolor=aliceblue;
+label="";
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#9" [label=<<B>Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#9</B><BR/>Output = /Event/pRec/ProtoP/Neutrals>, shape=plaintext];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#9_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#9" -> "Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#9_out_Output"  [minlen=0, style=invis];
+}
+
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "FilterDesktop/FilterDesktop#3_in_PrimaryVertices";
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "CombineParticles/CombineParticles#5_in_PrimaryVertices";
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "FilterDesktop/FilterDesktop#13_in_PrimaryVertices";
+subgraph "cluster_FilterDesktop/FilterDesktop#10" {
+bgcolor=aliceblue;
+label="";
+"FilterDesktop/FilterDesktop#10" [label=<<B>FilterDesktop/FilterDesktop#10</B><BR/>ModifyLocations = True<BR/>WriteP2PVRelations = True<BR/>Code = BPVVALID() | ALL<BR/>CloneFilteredParticles = True<BR/>Output = /Event/Hlt2BToHHGamma_Inclusive_Line/Particles>, shape=plaintext];
+"FilterDesktop/FilterDesktop#10_in_Particles" [fillcolor=deepskyblue1, label=Particles, style=filled];
+"FilterDesktop/FilterDesktop#10" -> "FilterDesktop/FilterDesktop#10_in_Particles"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#10_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"FilterDesktop/FilterDesktop#10" -> "FilterDesktop/FilterDesktop#10_in_PrimaryVertices"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#10_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"FilterDesktop/FilterDesktop#10" -> "FilterDesktop/FilterDesktop#10_out_Output"  [minlen=0, style=invis];
+}
+
+"FilterDesktop/FilterDesktop#4_out_Particles" -> "FilterDesktop/FilterDesktop#10_in_Particles";
+subgraph "cluster_FilterDesktop/FilterDesktop#4" {
+bgcolor=aliceblue;
+label="";
+"FilterDesktop/FilterDesktop#4" [label=<<B>FilterDesktop/FilterDesktop#4</B><BR/>ModifyLocations = False<BR/>WriteP2PVRelations = False<BR/>Code = VALUE(&#x27;LoKi::Hybrid::DictValue/HHgammaMVA&#x27;) &gt; 0.18>, shape=plaintext];
+"FilterDesktop/FilterDesktop#4_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"FilterDesktop/FilterDesktop#4" -> "FilterDesktop/FilterDesktop#4_in_ParticlesA"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#4_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"FilterDesktop/FilterDesktop#4" -> "FilterDesktop/FilterDesktop#4_out_Particles"  [minlen=0, style=invis];
+}
+
+"CombineParticles/CombineParticles#1_out_Particles" -> "FilterDesktop/FilterDesktop#4_in_ParticlesA";
+subgraph "cluster_CombineParticles/CombineParticles#1" {
+bgcolor=aliceblue;
+label="";
+"CombineParticles/CombineParticles#1" [label=<<B>CombineParticles/CombineParticles#1</B><BR/>WriteP2PVRelations = False<BR/>CombinationCut = (APT &gt; 2000.0) &amp; (AM &lt; 11000.0)<BR/>MotherCut = (HASVERTEX) &amp; (CHI2VXNDOF &lt; 1000.0) &amp; (in_range(2.[...]1000.0)) &amp; (BPVDIRA() &gt; 0.0) &amp; (BPVVDCHI2() &gt; 0.0)<BR/>DecayDescriptors = [&#x27;B0 -&gt; K*(892)0 gamma&#x27;]<BR/>ModifyLocations = False>, shape=plaintext];
+"CombineParticles/CombineParticles#1_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"CombineParticles/CombineParticles#1" -> "CombineParticles/CombineParticles#1_in_ParticlesA"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles#1_in_ParticlesB" [fillcolor=deepskyblue1, label=ParticlesB, style=filled];
+"CombineParticles/CombineParticles#1" -> "CombineParticles/CombineParticles#1_in_ParticlesB"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles#1_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"CombineParticles/CombineParticles#1" -> "CombineParticles/CombineParticles#1_in_PrimaryVertices"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles#1_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"CombineParticles/CombineParticles#1" -> "CombineParticles/CombineParticles#1_out_Particles"  [minlen=0, style=invis];
+}
+
+"CombineParticles/CombineParticles_out_Particles" -> "CombineParticles/CombineParticles#1_in_ParticlesA";
+subgraph "cluster_CombineParticles/CombineParticles" {
+bgcolor=aliceblue;
+label="";
+"CombineParticles/CombineParticles" [label=<<B>CombineParticles/CombineParticles</B><BR/>WriteP2PVRelations = False<BR/>CombinationCut = (APT &gt; 2000.0) &amp; (ANUM((ID==&#x27;KS0&#x27;)|(ABSID==&#x27;Lambda[...]((ABSID==&#x27;K+&#x27;) &amp; (MIPCHI2DV(PRIMARY) &lt; 16.0)) &lt; 2)<BR/>MotherCut = (HASVERTEX) &amp; (VFASPF(VCHI2) &lt; 1000.0) &amp; (BPVVDCHI2() &gt; 16.0) &amp; (in_range(2.0, BPVETA(), 5.0))<BR/>DecayDescriptors = [&#x27;K*(892)0 -&gt; pi+ pi-&#x27;]<BR/>ModifyLocations = False>, shape=plaintext];
+"CombineParticles/CombineParticles_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"CombineParticles/CombineParticles" -> "CombineParticles/CombineParticles_in_ParticlesA"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"CombineParticles/CombineParticles" -> "CombineParticles/CombineParticles_in_PrimaryVertices"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"CombineParticles/CombineParticles" -> "CombineParticles/CombineParticles_out_Particles"  [minlen=0, style=invis];
+}
+
+"FilterDesktop/FilterDesktop#2_out_Particles" -> "CombineParticles/CombineParticles_in_ParticlesA";
+subgraph "cluster_FilterDesktop/FilterDesktop#2" {
+bgcolor=aliceblue;
+label="";
+"FilterDesktop/FilterDesktop#2" [label=<<B>FilterDesktop/FilterDesktop#2</B><BR/>WriteP2PVRelations = False<BR/>Code = (TRCHI2DOF &lt; 2.5) &amp; (TRGHOSTPROB &lt; 0.2) &amp; (((PT &gt; [...].1 / 25000.0) * (25000.0 - PT) + 2.00148000021))))<BR/>ModifyLocations = False>, shape=plaintext];
+"FilterDesktop/FilterDesktop#2_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"FilterDesktop/FilterDesktop#2" -> "FilterDesktop/FilterDesktop#2_in_ParticlesA"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#2_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"FilterDesktop/FilterDesktop#2" -> "FilterDesktop/FilterDesktop#2_in_PrimaryVertices"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#2_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"FilterDesktop/FilterDesktop#2" -> "FilterDesktop/FilterDesktop#2_out_Particles"  [minlen=0, style=invis];
+}
+
+"FunctionalParticleMaker/FunctionalParticleMaker#2_out_Particles" -> "FilterDesktop/FilterDesktop#2_in_ParticlesA";
+subgraph "cluster_FunctionalParticleMaker/FunctionalParticleMaker#2" {
+bgcolor=aliceblue;
+label="";
+"FunctionalParticleMaker/FunctionalParticleMaker#2" [label=<<B>FunctionalParticleMaker/FunctionalParticleMaker#2</B><BR/>ParticleID = pion>, shape=plaintext];
+"FunctionalParticleMaker/FunctionalParticleMaker#2_in_InputProtoParticles" [fillcolor=deepskyblue1, label=InputProtoParticles, style=filled];
+"FunctionalParticleMaker/FunctionalParticleMaker#2" -> "FunctionalParticleMaker/FunctionalParticleMaker#2_in_InputProtoParticles"  [minlen=0, style=invis];
+"FunctionalParticleMaker/FunctionalParticleMaker#2_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"FunctionalParticleMaker/FunctionalParticleMaker#2" -> "FunctionalParticleMaker/FunctionalParticleMaker#2_out_Particles"  [minlen=0, style=invis];
+}
+
+"UnpackProtoParticle/UnpackChargedProtos_out_OutputName" -> "FunctionalParticleMaker/FunctionalParticleMaker#2_in_InputProtoParticles";
+subgraph "cluster_UnpackProtoParticle/UnpackChargedProtos" {
+bgcolor=aliceblue;
+label="";
+"UnpackProtoParticle/UnpackChargedProtos" [label=<<B>UnpackProtoParticle/UnpackChargedProtos</B><BR/>OutputName = /Event/Rec/ProtoP/Charged>, shape=plaintext];
+"UnpackProtoParticle/UnpackChargedProtos_in_InputName" [fillcolor=deepskyblue1, label=InputName, style=filled];
+"UnpackProtoParticle/UnpackChargedProtos" -> "UnpackProtoParticle/UnpackChargedProtos_in_InputName"  [minlen=0, style=invis];
+"UnpackProtoParticle/UnpackChargedProtos_out_OutputName" [fillcolor=coral1, label=OutputName, style=filled];
+"UnpackProtoParticle/UnpackChargedProtos" -> "UnpackProtoParticle/UnpackChargedProtos_out_OutputName"  [minlen=0, style=invis];
+}
+
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10_out_Output" -> "UnpackProtoParticle/UnpackChargedProtos_in_InputName";
+subgraph "cluster_Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10" {
+bgcolor=aliceblue;
+label="";
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10" [label=<<B>Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10</B><BR/>Output = /Event/pRec/ProtoP/Charged>, shape=plaintext];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10" -> "Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10_out_Output"  [minlen=0, style=invis];
+}
+
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "FilterDesktop/FilterDesktop#2_in_PrimaryVertices";
+subgraph "cluster_UnpackRecVertex/UnpackRecVertices" {
+bgcolor=aliceblue;
+label="";
+"UnpackRecVertex/UnpackRecVertices" [label=<<B>UnpackRecVertex/UnpackRecVertices</B><BR/>OutputName = /Event/Rec/Vertex/Primary>, shape=plaintext];
+"UnpackRecVertex/UnpackRecVertices_in_InputName" [fillcolor=deepskyblue1, label=InputName, style=filled];
+"UnpackRecVertex/UnpackRecVertices" -> "UnpackRecVertex/UnpackRecVertices_in_InputName"  [minlen=0, style=invis];
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" [fillcolor=coral1, label=OutputName, style=filled];
+"UnpackRecVertex/UnpackRecVertices" -> "UnpackRecVertex/UnpackRecVertices_out_OutputName"  [minlen=0, style=invis];
+}
+
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile_out_Output" -> "UnpackRecVertex/UnpackRecVertices_in_InputName";
+subgraph "cluster_Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile" {
+bgcolor=aliceblue;
+label="";
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile" [label=<<B>Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile</B><BR/>Output = /Event/pRec/Vertex/Primary>, shape=plaintext];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile" -> "Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile_out_Output"  [minlen=0, style=invis];
+}
+
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "CombineParticles/CombineParticles_in_PrimaryVertices";
+"FilterDesktop/FilterDesktop#3_out_Particles" -> "CombineParticles/CombineParticles#1_in_ParticlesB";
+subgraph "cluster_FilterDesktop/FilterDesktop#3" {
+bgcolor=aliceblue;
+label="";
+"FilterDesktop/FilterDesktop#3" [label=<<B>FilterDesktop/FilterDesktop#3</B><BR/>WriteP2PVRelations = False<BR/>Code = (PT &gt; 2000.0) &amp; (P &gt; 5000.0)<BR/>ModifyLocations = False>, shape=plaintext];
+"FilterDesktop/FilterDesktop#3_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"FilterDesktop/FilterDesktop#3" -> "FilterDesktop/FilterDesktop#3_in_ParticlesA"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#3_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"FilterDesktop/FilterDesktop#3" -> "FilterDesktop/FilterDesktop#3_in_PrimaryVertices"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#3_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"FilterDesktop/FilterDesktop#3" -> "FilterDesktop/FilterDesktop#3_out_Particles"  [minlen=0, style=invis];
+}
+
+"PhotonMakerAlg/PhotonMakerAlg_out_Particles" -> "FilterDesktop/FilterDesktop#3_in_ParticlesA";
+subgraph "cluster_PhotonMakerAlg/PhotonMakerAlg" {
+bgcolor=aliceblue;
+label="";
+"PhotonMakerAlg/PhotonMakerAlg" [label=<<B>PhotonMakerAlg/PhotonMakerAlg</B><BR/>ModifyLocations = False<BR/>WriteP2PVRelations = False<BR/>DecayDescriptor = Gamma>, shape=plaintext];
+"PhotonMakerAlg/PhotonMakerAlg_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"PhotonMakerAlg/PhotonMakerAlg" -> "PhotonMakerAlg/PhotonMakerAlg_in_ParticlesA"  [minlen=0, style=invis];
+"PhotonMakerAlg/PhotonMakerAlg_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"PhotonMakerAlg/PhotonMakerAlg" -> "PhotonMakerAlg/PhotonMakerAlg_out_Particles"  [minlen=0, style=invis];
+}
+
+"UnpackProtoParticle/UnpackNeutralProtos_out_OutputName" -> "PhotonMakerAlg/PhotonMakerAlg_in_ParticlesA";
+subgraph "cluster_UnpackProtoParticle/UnpackNeutralProtos" {
+bgcolor=aliceblue;
+label="";
+"UnpackProtoParticle/UnpackNeutralProtos" [label=<<B>UnpackProtoParticle/UnpackNeutralProtos</B><BR/>OutputName = /Event/Rec/ProtoP/Neutrals>, shape=plaintext];
+"UnpackProtoParticle/UnpackNeutralProtos_in_InputName" [fillcolor=deepskyblue1, label=InputName, style=filled];
+"UnpackProtoParticle/UnpackNeutralProtos" -> "UnpackProtoParticle/UnpackNeutralProtos_in_InputName"  [minlen=0, style=invis];
+"UnpackProtoParticle/UnpackNeutralProtos_out_OutputName" [fillcolor=coral1, label=OutputName, style=filled];
+"UnpackProtoParticle/UnpackNeutralProtos" -> "UnpackProtoParticle/UnpackNeutralProtos_out_OutputName"  [minlen=0, style=invis];
+}
+
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#9_out_Output" -> "UnpackProtoParticle/UnpackNeutralProtos_in_InputName";
+subgraph "cluster_Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#9" {
+bgcolor=aliceblue;
+label="";
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#9" [label=<<B>Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#9</B><BR/>Output = /Event/pRec/ProtoP/Neutrals>, shape=plaintext];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#9_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#9" -> "Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#9_out_Output"  [minlen=0, style=invis];
+}
+
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "FilterDesktop/FilterDesktop#3_in_PrimaryVertices";
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "CombineParticles/CombineParticles#1_in_PrimaryVertices";
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "FilterDesktop/FilterDesktop#10_in_PrimaryVertices";
+subgraph "cluster_FilterDesktop/FilterDesktop#11" {
+bgcolor=aliceblue;
+label="";
+"FilterDesktop/FilterDesktop#11" [label=<<B>FilterDesktop/FilterDesktop#11</B><BR/>ModifyLocations = True<BR/>WriteP2PVRelations = True<BR/>Code = BPVVALID() | ALL<BR/>CloneFilteredParticles = True<BR/>Output = /Event/Hlt2BToHHGammaee_Inclusive_Line/Particles>, shape=plaintext];
+"FilterDesktop/FilterDesktop#11_in_Particles" [fillcolor=deepskyblue1, label=Particles, style=filled];
+"FilterDesktop/FilterDesktop#11" -> "FilterDesktop/FilterDesktop#11_in_Particles"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#11_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"FilterDesktop/FilterDesktop#11" -> "FilterDesktop/FilterDesktop#11_in_PrimaryVertices"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#11_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"FilterDesktop/FilterDesktop#11" -> "FilterDesktop/FilterDesktop#11_out_Output"  [minlen=0, style=invis];
+}
+
+"FilterDesktop/FilterDesktop#6_out_Particles" -> "FilterDesktop/FilterDesktop#11_in_Particles";
+subgraph "cluster_FilterDesktop/FilterDesktop#6" {
+bgcolor=aliceblue;
+label="";
+"FilterDesktop/FilterDesktop#6" [label=<<B>FilterDesktop/FilterDesktop#6</B><BR/>ModifyLocations = False<BR/>WriteP2PVRelations = False<BR/>Code = VALUE(&#x27;LoKi::Hybrid::DictValue/HHgammaEEMVA&#x27;) &gt; 0.084>, shape=plaintext];
+"FilterDesktop/FilterDesktop#6_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"FilterDesktop/FilterDesktop#6" -> "FilterDesktop/FilterDesktop#6_in_ParticlesA"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#6_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"FilterDesktop/FilterDesktop#6" -> "FilterDesktop/FilterDesktop#6_out_Particles"  [minlen=0, style=invis];
+}
+
+"CombineParticles/CombineParticles#3_out_Particles" -> "FilterDesktop/FilterDesktop#6_in_ParticlesA";
+subgraph "cluster_CombineParticles/CombineParticles#3" {
+bgcolor=aliceblue;
+label="";
+"CombineParticles/CombineParticles#3" [label=<<B>CombineParticles/CombineParticles#3</B><BR/>WriteP2PVRelations = False<BR/>CombinationCut = (APT &gt; 2000.0) &amp; (AM &lt; 11000.0)<BR/>MotherCut = (HASVERTEX) &amp; (CHI2VXNDOF &lt; 1000.0) &amp; (in_range(2.[...]1000.0)) &amp; (BPVDIRA() &gt; 0.0) &amp; (BPVVDCHI2() &gt; 0.0)<BR/>DecayDescriptors = [&#x27;B0 -&gt; K*(892)0 gamma&#x27;]<BR/>ModifyLocations = False>, shape=plaintext];
+"CombineParticles/CombineParticles#3_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"CombineParticles/CombineParticles#3" -> "CombineParticles/CombineParticles#3_in_ParticlesA"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles#3_in_ParticlesB" [fillcolor=deepskyblue1, label=ParticlesB, style=filled];
+"CombineParticles/CombineParticles#3" -> "CombineParticles/CombineParticles#3_in_ParticlesB"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles#3_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"CombineParticles/CombineParticles#3" -> "CombineParticles/CombineParticles#3_in_PrimaryVertices"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles#3_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"CombineParticles/CombineParticles#3" -> "CombineParticles/CombineParticles#3_out_Particles"  [minlen=0, style=invis];
+}
+
+"CombineParticles/CombineParticles_out_Particles" -> "CombineParticles/CombineParticles#3_in_ParticlesA";
+subgraph "cluster_CombineParticles/CombineParticles" {
+bgcolor=aliceblue;
+label="";
+"CombineParticles/CombineParticles" [label=<<B>CombineParticles/CombineParticles</B><BR/>WriteP2PVRelations = False<BR/>CombinationCut = (APT &gt; 2000.0) &amp; (ANUM((ID==&#x27;KS0&#x27;)|(ABSID==&#x27;Lambda[...]((ABSID==&#x27;K+&#x27;) &amp; (MIPCHI2DV(PRIMARY) &lt; 16.0)) &lt; 2)<BR/>MotherCut = (HASVERTEX) &amp; (VFASPF(VCHI2) &lt; 1000.0) &amp; (BPVVDCHI2() &gt; 16.0) &amp; (in_range(2.0, BPVETA(), 5.0))<BR/>DecayDescriptors = [&#x27;K*(892)0 -&gt; pi+ pi-&#x27;]<BR/>ModifyLocations = False>, shape=plaintext];
+"CombineParticles/CombineParticles_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"CombineParticles/CombineParticles" -> "CombineParticles/CombineParticles_in_ParticlesA"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"CombineParticles/CombineParticles" -> "CombineParticles/CombineParticles_in_PrimaryVertices"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"CombineParticles/CombineParticles" -> "CombineParticles/CombineParticles_out_Particles"  [minlen=0, style=invis];
+}
+
+"FilterDesktop/FilterDesktop#2_out_Particles" -> "CombineParticles/CombineParticles_in_ParticlesA";
+subgraph "cluster_FilterDesktop/FilterDesktop#2" {
+bgcolor=aliceblue;
+label="";
+"FilterDesktop/FilterDesktop#2" [label=<<B>FilterDesktop/FilterDesktop#2</B><BR/>WriteP2PVRelations = False<BR/>Code = (TRCHI2DOF &lt; 2.5) &amp; (TRGHOSTPROB &lt; 0.2) &amp; (((PT &gt; [...].1 / 25000.0) * (25000.0 - PT) + 2.00148000021))))<BR/>ModifyLocations = False>, shape=plaintext];
+"FilterDesktop/FilterDesktop#2_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"FilterDesktop/FilterDesktop#2" -> "FilterDesktop/FilterDesktop#2_in_ParticlesA"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#2_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"FilterDesktop/FilterDesktop#2" -> "FilterDesktop/FilterDesktop#2_in_PrimaryVertices"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#2_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"FilterDesktop/FilterDesktop#2" -> "FilterDesktop/FilterDesktop#2_out_Particles"  [minlen=0, style=invis];
+}
+
+"FunctionalParticleMaker/FunctionalParticleMaker#2_out_Particles" -> "FilterDesktop/FilterDesktop#2_in_ParticlesA";
+subgraph "cluster_FunctionalParticleMaker/FunctionalParticleMaker#2" {
+bgcolor=aliceblue;
+label="";
+"FunctionalParticleMaker/FunctionalParticleMaker#2" [label=<<B>FunctionalParticleMaker/FunctionalParticleMaker#2</B><BR/>ParticleID = pion>, shape=plaintext];
+"FunctionalParticleMaker/FunctionalParticleMaker#2_in_InputProtoParticles" [fillcolor=deepskyblue1, label=InputProtoParticles, style=filled];
+"FunctionalParticleMaker/FunctionalParticleMaker#2" -> "FunctionalParticleMaker/FunctionalParticleMaker#2_in_InputProtoParticles"  [minlen=0, style=invis];
+"FunctionalParticleMaker/FunctionalParticleMaker#2_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"FunctionalParticleMaker/FunctionalParticleMaker#2" -> "FunctionalParticleMaker/FunctionalParticleMaker#2_out_Particles"  [minlen=0, style=invis];
+}
+
+"UnpackProtoParticle/UnpackChargedProtos_out_OutputName" -> "FunctionalParticleMaker/FunctionalParticleMaker#2_in_InputProtoParticles";
+subgraph "cluster_UnpackProtoParticle/UnpackChargedProtos" {
+bgcolor=aliceblue;
+label="";
+"UnpackProtoParticle/UnpackChargedProtos" [label=<<B>UnpackProtoParticle/UnpackChargedProtos</B><BR/>OutputName = /Event/Rec/ProtoP/Charged>, shape=plaintext];
+"UnpackProtoParticle/UnpackChargedProtos_in_InputName" [fillcolor=deepskyblue1, label=InputName, style=filled];
+"UnpackProtoParticle/UnpackChargedProtos" -> "UnpackProtoParticle/UnpackChargedProtos_in_InputName"  [minlen=0, style=invis];
+"UnpackProtoParticle/UnpackChargedProtos_out_OutputName" [fillcolor=coral1, label=OutputName, style=filled];
+"UnpackProtoParticle/UnpackChargedProtos" -> "UnpackProtoParticle/UnpackChargedProtos_out_OutputName"  [minlen=0, style=invis];
+}
+
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10_out_Output" -> "UnpackProtoParticle/UnpackChargedProtos_in_InputName";
+subgraph "cluster_Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10" {
+bgcolor=aliceblue;
+label="";
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10" [label=<<B>Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10</B><BR/>Output = /Event/pRec/ProtoP/Charged>, shape=plaintext];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10" -> "Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#10_out_Output"  [minlen=0, style=invis];
+}
+
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "FilterDesktop/FilterDesktop#2_in_PrimaryVertices";
+subgraph "cluster_UnpackRecVertex/UnpackRecVertices" {
+bgcolor=aliceblue;
+label="";
+"UnpackRecVertex/UnpackRecVertices" [label=<<B>UnpackRecVertex/UnpackRecVertices</B><BR/>OutputName = /Event/Rec/Vertex/Primary>, shape=plaintext];
+"UnpackRecVertex/UnpackRecVertices_in_InputName" [fillcolor=deepskyblue1, label=InputName, style=filled];
+"UnpackRecVertex/UnpackRecVertices" -> "UnpackRecVertex/UnpackRecVertices_in_InputName"  [minlen=0, style=invis];
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" [fillcolor=coral1, label=OutputName, style=filled];
+"UnpackRecVertex/UnpackRecVertices" -> "UnpackRecVertex/UnpackRecVertices_out_OutputName"  [minlen=0, style=invis];
+}
+
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile_out_Output" -> "UnpackRecVertex/UnpackRecVertices_in_InputName";
+subgraph "cluster_Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile" {
+bgcolor=aliceblue;
+label="";
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile" [label=<<B>Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile</B><BR/>Output = /Event/pRec/Vertex/Primary>, shape=plaintext];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile" -> "Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile_out_Output"  [minlen=0, style=invis];
+}
+
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "CombineParticles/CombineParticles_in_PrimaryVertices";
+"CombineParticles/CombineParticles#2_out_Particles" -> "CombineParticles/CombineParticles#3_in_ParticlesB";
+subgraph "cluster_CombineParticles/CombineParticles#2" {
+bgcolor=aliceblue;
+label="";
+"CombineParticles/CombineParticles#2" [label=<<B>CombineParticles/CombineParticles#2</B><BR/>WriteP2PVRelations = False<BR/>CombinationCut = (APT &gt; 1500.0) &amp; (AM &lt; 50.0) &amp; (AP &gt; 0.0)<BR/>MotherCut = (ALL)<BR/>DecayDescriptors = [&#x27;gamma -&gt; e+ e-&#x27;]<BR/>ModifyLocations = False>, shape=plaintext];
+"CombineParticles/CombineParticles#2_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"CombineParticles/CombineParticles#2" -> "CombineParticles/CombineParticles#2_in_ParticlesA"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles#2_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"CombineParticles/CombineParticles#2" -> "CombineParticles/CombineParticles#2_in_PrimaryVertices"  [minlen=0, style=invis];
+"CombineParticles/CombineParticles#2_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"CombineParticles/CombineParticles#2" -> "CombineParticles/CombineParticles#2_out_Particles"  [minlen=0, style=invis];
+}
+
+"FilterDesktop/FilterDesktop#5_out_Particles" -> "CombineParticles/CombineParticles#2_in_ParticlesA";
+subgraph "cluster_FilterDesktop/FilterDesktop#5" {
+bgcolor=aliceblue;
+label="";
+"FilterDesktop/FilterDesktop#5" [label=<<B>FilterDesktop/FilterDesktop#5</B><BR/>WriteP2PVRelations = False<BR/>Code = (PT &gt; 100.0)<BR/>ModifyLocations = False>, shape=plaintext];
+"FilterDesktop/FilterDesktop#5_in_ParticlesA" [fillcolor=deepskyblue1, label=ParticlesA, style=filled];
+"FilterDesktop/FilterDesktop#5" -> "FilterDesktop/FilterDesktop#5_in_ParticlesA"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#5_in_PrimaryVertices" [fillcolor=deepskyblue1, label=PrimaryVertices, style=filled];
+"FilterDesktop/FilterDesktop#5" -> "FilterDesktop/FilterDesktop#5_in_PrimaryVertices"  [minlen=0, style=invis];
+"FilterDesktop/FilterDesktop#5_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"FilterDesktop/FilterDesktop#5" -> "FilterDesktop/FilterDesktop#5_out_Particles"  [minlen=0, style=invis];
+}
+
+"FunctionalParticleMaker/FunctionalParticleMaker#3_out_Particles" -> "FilterDesktop/FilterDesktop#5_in_ParticlesA";
+subgraph "cluster_FunctionalParticleMaker/FunctionalParticleMaker#3" {
+bgcolor=aliceblue;
+label="";
+"FunctionalParticleMaker/FunctionalParticleMaker#3" [label=<<B>FunctionalParticleMaker/FunctionalParticleMaker#3</B><BR/>ParticleID = electron>, shape=plaintext];
+"FunctionalParticleMaker/FunctionalParticleMaker#3_in_InputProtoParticles" [fillcolor=deepskyblue1, label=InputProtoParticles, style=filled];
+"FunctionalParticleMaker/FunctionalParticleMaker#3" -> "FunctionalParticleMaker/FunctionalParticleMaker#3_in_InputProtoParticles"  [minlen=0, style=invis];
+"FunctionalParticleMaker/FunctionalParticleMaker#3_out_Particles" [fillcolor=coral1, label=Particles, style=filled];
+"FunctionalParticleMaker/FunctionalParticleMaker#3" -> "FunctionalParticleMaker/FunctionalParticleMaker#3_out_Particles"  [minlen=0, style=invis];
+}
+
+"UnpackProtoParticle/UnpackChargedProtos_out_OutputName" -> "FunctionalParticleMaker/FunctionalParticleMaker#3_in_InputProtoParticles";
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "FilterDesktop/FilterDesktop#5_in_PrimaryVertices";
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "CombineParticles/CombineParticles#2_in_PrimaryVertices";
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "CombineParticles/CombineParticles#3_in_PrimaryVertices";
+"UnpackRecVertex/UnpackRecVertices_out_OutputName" -> "FilterDesktop/FilterDesktop#11_in_PrimaryVertices";
+subgraph "cluster_CopyLinePersistenceLocations/CopyLinePersistenceLocations" {
+bgcolor=aliceblue;
+label="";
+"CopyLinePersistenceLocations/CopyLinePersistenceLocations" [label=<<B>CopyLinePersistenceLocations/CopyLinePersistenceLocations</B><BR/>OutputPrefix = /Event/HLT2<BR/>LinesToCopy = [&#x27;Hlt2BToHHHGammaEE_Inclusive_LineDecision&#x27;, &#x27;Hlt2[...]ision&#x27;, &#x27;Hlt2BToHHGammaee_Inclusive_LineDecision&#x27;]<BR/>ILinePersistenceSvc = HltLinePersistenceSvc/HltLinePersistenceSvc>, shape=plaintext];
+"CopyLinePersistenceLocations/CopyLinePersistenceLocations_in_Hlt2DecReportsLocation" [fillcolor=deepskyblue1, label=Hlt2DecReportsLocation, style=filled];
+"CopyLinePersistenceLocations/CopyLinePersistenceLocations" -> "CopyLinePersistenceLocations/CopyLinePersistenceLocations_in_Hlt2DecReportsLocation"  [minlen=0, style=invis];
+}
+
+"ExecutionReportsWriter/ExecutionReportsWriter_out_DecReportsLocation" -> "CopyLinePersistenceLocations/CopyLinePersistenceLocations_in_Hlt2DecReportsLocation";
+subgraph "cluster_ExecutionReportsWriter/ExecutionReportsWriter" {
+bgcolor=aliceblue;
+label="";
+"ExecutionReportsWriter/ExecutionReportsWriter" [label=<<B>ExecutionReportsWriter/ExecutionReportsWriter</B><BR/>Persist = [&#x27;Hlt2BToHHGamma_Inclusive_Line&#x27;, &#x27;Hlt2BToHHGammae[...]Inclusive_Line&#x27;, &#x27;Hlt2BToHHHGamma_Inclusive_Line&#x27;]<BR/>ANNSvcKey = Hlt1SelectionID>, shape=plaintext];
+"ExecutionReportsWriter/ExecutionReportsWriter_out_DecReportsLocation" [fillcolor=coral1, label=DecReportsLocation, style=filled];
+"ExecutionReportsWriter/ExecutionReportsWriter" -> "ExecutionReportsWriter/ExecutionReportsWriter_out_DecReportsLocation"  [minlen=0, style=invis];
+}
+
+subgraph "cluster_CopyParticle2PVRelationsFromLinePersistenceLocations/CopyParticle2PVRelationsFromLinePersistenceLocations" {
+bgcolor=aliceblue;
+label="";
+"CopyParticle2PVRelationsFromLinePersistenceLocations/CopyParticle2PVRelationsFromLinePersistenceLocations" [label=<<B>CopyParticle2PVRelationsFromLinePersistenceLocations/CopyParticle2PVRelationsFromLinePersistenceLocations</B><BR/>ILinePersistenceSvc = HltLinePersistenceSvc/HltLinePersistenceSvc<BR/>LinesToCopy = [&#x27;Hlt2BToHHHGammaEE_Inclusive_LineDecision&#x27;, &#x27;Hlt2[...]ision&#x27;, &#x27;Hlt2BToHHGammaee_Inclusive_LineDecision&#x27;]<BR/>ClonerType = VertexBaseFromRecVertexClonerNoTracks<BR/>OutputPrefix = /Event/HLT2>, shape=plaintext];
+"CopyParticle2PVRelationsFromLinePersistenceLocations/CopyParticle2PVRelationsFromLinePersistenceLocations_in_Hlt2DecReportsLocation" [fillcolor=deepskyblue1, label=Hlt2DecReportsLocation, style=filled];
+"CopyParticle2PVRelationsFromLinePersistenceLocations/CopyParticle2PVRelationsFromLinePersistenceLocations" -> "CopyParticle2PVRelationsFromLinePersistenceLocations/CopyParticle2PVRelationsFromLinePersistenceLocations_in_Hlt2DecReportsLocation"  [minlen=0, style=invis];
+}
+
+"ExecutionReportsWriter/ExecutionReportsWriter_out_DecReportsLocation" -> "CopyParticle2PVRelationsFromLinePersistenceLocations/CopyParticle2PVRelationsFromLinePersistenceLocations_in_Hlt2DecReportsLocation";
+subgraph "cluster_ExecutionReportsWriter/ExecutionReportsWriter" {
+bgcolor=aliceblue;
+label="";
+"ExecutionReportsWriter/ExecutionReportsWriter" [label=<<B>ExecutionReportsWriter/ExecutionReportsWriter</B><BR/>Persist = [&#x27;Hlt2BToHHGamma_Inclusive_Line&#x27;, &#x27;Hlt2BToHHGammae[...]Inclusive_Line&#x27;, &#x27;Hlt2BToHHHGamma_Inclusive_Line&#x27;]<BR/>ANNSvcKey = Hlt1SelectionID>, shape=plaintext];
+"ExecutionReportsWriter/ExecutionReportsWriter_out_DecReportsLocation" [fillcolor=coral1, label=DecReportsLocation, style=filled];
+"ExecutionReportsWriter/ExecutionReportsWriter" -> "ExecutionReportsWriter/ExecutionReportsWriter_out_DecReportsLocation"  [minlen=0, style=invis];
+}
+
+subgraph "cluster_PackParticlesAndVertices/PackParticlesAndVertices" {
+bgcolor=aliceblue;
+label="";
+"PackParticlesAndVertices/PackParticlesAndVertices" [label=<<B>PackParticlesAndVertices/PackParticlesAndVertices</B><BR/>DeleteInput = False<BR/>EnableCheck = False<BR/>AlwaysCreateContainers = [&#x27;/Event/HLT2/pPhys/Particles&#x27;, &#x27;/Event/HLT2/pPhys[...]Rich/CustomPIDs&#x27;, &#x27;/Event/HLT2/pRec/Track/Custom&#x27;]<BR/>AlwaysCreateOutput = True<BR/>InputStream = /Event/HLT2>, shape=plaintext];
+}
+
+subgraph "cluster_PackCaloHypo/PackCaloHypo" {
+bgcolor=aliceblue;
+label="";
+"PackCaloHypo/PackCaloHypo" [label=<<B>PackCaloHypo/PackCaloHypo</B><BR/>EnableCheck = False<BR/>DeleteInput = False<BR/>OutputName = /Event/HLT2/pRec/Calo/Photons<BR/>InputName = /Event/HLT2/Rec/Calo/Photons<BR/>AlwaysCreateOutput = True>, shape=plaintext];
+}
+
+subgraph "cluster_PackCaloHypo/PackCaloHypo#1" {
+bgcolor=aliceblue;
+label="";
+"PackCaloHypo/PackCaloHypo#1" [label=<<B>PackCaloHypo/PackCaloHypo#1</B><BR/>EnableCheck = False<BR/>DeleteInput = False<BR/>OutputName = /Event/HLT2/pRec/Calo/SplitPhotons<BR/>InputName = /Event/HLT2/Rec/Calo/SplitPhotons<BR/>AlwaysCreateOutput = True>, shape=plaintext];
+}
+
+subgraph "cluster_PackCaloHypo/PackCaloHypo#2" {
+bgcolor=aliceblue;
+label="";
+"PackCaloHypo/PackCaloHypo#2" [label=<<B>PackCaloHypo/PackCaloHypo#2</B><BR/>EnableCheck = False<BR/>DeleteInput = False<BR/>OutputName = /Event/HLT2/pRec/Calo/MergedPi0s<BR/>InputName = /Event/HLT2/Rec/Calo/MergedPi0s<BR/>AlwaysCreateOutput = True>, shape=plaintext];
+}
+
+subgraph "cluster_PackCaloHypo/PackCaloHypo#3" {
+bgcolor=aliceblue;
+label="";
+"PackCaloHypo/PackCaloHypo#3" [label=<<B>PackCaloHypo/PackCaloHypo#3</B><BR/>EnableCheck = False<BR/>DeleteInput = False<BR/>OutputName = /Event/HLT2/pRec/Calo/Electrons<BR/>InputName = /Event/HLT2/Rec/Calo/Electrons<BR/>AlwaysCreateOutput = True>, shape=plaintext];
+}
+
+subgraph "cluster_Hlt__RoutingBitsWriter/Hlt__RoutingBitsWriter" {
+bgcolor=aliceblue;
+label="";
+"Hlt__RoutingBitsWriter/Hlt__RoutingBitsWriter" [label=<<B>Hlt__RoutingBitsWriter/Hlt__RoutingBitsWriter</B><BR/>RoutingBits = {33: [], 35: [], 36: [], 37: []}<BR/>RawEventLocation = /Event/Trigger/RawEvent>, shape=plaintext];
+"Hlt__RoutingBitsWriter/Hlt__RoutingBitsWriter_in_DecReports" [fillcolor=deepskyblue1, label=DecReports, style=filled];
+"Hlt__RoutingBitsWriter/Hlt__RoutingBitsWriter" -> "Hlt__RoutingBitsWriter/Hlt__RoutingBitsWriter_in_DecReports"  [minlen=0, style=invis];
+"Hlt__RoutingBitsWriter/Hlt__RoutingBitsWriter_in_ODIN" [fillcolor=deepskyblue1, label=ODIN, style=filled];
+"Hlt__RoutingBitsWriter/Hlt__RoutingBitsWriter" -> "Hlt__RoutingBitsWriter/Hlt__RoutingBitsWriter_in_ODIN"  [minlen=0, style=invis];
+"Hlt__RoutingBitsWriter/Hlt__RoutingBitsWriter_out_RawEventLocation" [fillcolor=coral1, label=RawEventLocation, style=filled];
+"Hlt__RoutingBitsWriter/Hlt__RoutingBitsWriter" -> "Hlt__RoutingBitsWriter/Hlt__RoutingBitsWriter_out_RawEventLocation"  [minlen=0, style=invis];
+}
+
+"ExecutionReportsWriter/ExecutionReportsWriter_out_DecReportsLocation" -> "Hlt__RoutingBitsWriter/Hlt__RoutingBitsWriter_in_DecReports";
+subgraph "cluster_ExecutionReportsWriter/ExecutionReportsWriter" {
+bgcolor=aliceblue;
+label="";
+"ExecutionReportsWriter/ExecutionReportsWriter" [label=<<B>ExecutionReportsWriter/ExecutionReportsWriter</B><BR/>Persist = [&#x27;Hlt2BToHHGamma_Inclusive_Line&#x27;, &#x27;Hlt2BToHHGammae[...]Inclusive_Line&#x27;, &#x27;Hlt2BToHHHGamma_Inclusive_Line&#x27;]<BR/>ANNSvcKey = Hlt1SelectionID>, shape=plaintext];
+"ExecutionReportsWriter/ExecutionReportsWriter_out_DecReportsLocation" [fillcolor=coral1, label=DecReportsLocation, style=filled];
+"ExecutionReportsWriter/ExecutionReportsWriter" -> "ExecutionReportsWriter/ExecutionReportsWriter_out_DecReportsLocation"  [minlen=0, style=invis];
+}
+
+"createODIN/createODIN_out_ODIN" -> "Hlt__RoutingBitsWriter/Hlt__RoutingBitsWriter_in_ODIN";
+subgraph "cluster_createODIN/createODIN" {
+bgcolor=aliceblue;
+label="";
+"createODIN/createODIN" [label=<<B>createODIN/createODIN</B><BR/>defaults-only>, shape=plaintext];
+"createODIN/createODIN_in_RawEvent" [fillcolor=deepskyblue1, label=RawEvent, style=filled];
+"createODIN/createODIN" -> "createODIN/createODIN_in_RawEvent"  [minlen=0, style=invis];
+"createODIN/createODIN_out_ODIN" [fillcolor=coral1, label=ODIN, style=filled];
+"createODIN/createODIN" -> "createODIN/createODIN_out_ODIN"  [minlen=0, style=invis];
+}
+
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#11_out_Output" -> "createODIN/createODIN_in_RawEvent";
+subgraph "cluster_Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#11" {
+bgcolor=aliceblue;
+label="";
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#11" [label=<<B>Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#11</B><BR/>Output = /Event/Trigger/RawEvent>, shape=plaintext];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#11_out_Output" [fillcolor=coral1, label=Output, style=filled];
+"Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#11" -> "Gaudi__Hive__FetchDataFromFile/Gaudi__Hive__FetchDataFromFile#11_out_Output"  [minlen=0, style=invis];
+}
+
+subgraph "cluster_OutputStream/OutputStream" {
+bgcolor=aliceblue;
+label="";
+"OutputStream/OutputStream" [label=<<B>OutputStream/OutputStream</B><BR/>Output = DATAFILE=&#x27;output/KstG/KstG.mdst&#x27; SVC=&#x27;Gaudi::RootCnvSvc&#x27; OPT=&#x27;RECREATE&#x27;<BR/>OptItemList = [&#x27;/Event/HLT2/pRec#*&#x27;, &#x27;/Event/Trigger/RawEvent#1&#x27;, &#x27;/Event/HLT2/pPhys#*&#x27;]>, shape=plaintext];
+"OutputStream/OutputStream_in_ItemList" [fillcolor=deepskyblue1, label=ItemList, style=filled];
+"OutputStream/OutputStream" -> "OutputStream/OutputStream_in_ItemList"  [minlen=0, style=invis];
+}
+
+}
