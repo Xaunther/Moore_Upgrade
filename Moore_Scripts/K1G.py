@@ -9,7 +9,7 @@ try:
 except:
     pass
 
-with open("DSTs/K1G_11102202_MagDown.dir") as f:
+with open("DSTs/K1G_12203224_MagDown.dir") as f:
     options.input_files = f.read().splitlines()
 f.close()
 options.input_type = 'ROOT'

@@ -1,0 +1,721 @@
+# setting LC_ALL to "C"
+# --> Including file '/afs/cern.ch/work/a/aalfonso/private/moore_upgrade/Moore_Scripts/K1G.py'
+# <-- End of file '/afs/cern.ch/work/a/aalfonso/private/moore_upgrade/Moore_Scripts/K1G.py'
+# --> Including file '/afs/cern.ch/work/a/aalfonso/private/moore_upgrade/Moore_Scripts/AllLines.py'
+# Disabling python logging messages below threshold
+/***** User ApplicationOptions/ApplicationOptions **************************************************
+|-data_flow_file        = 'output/K1G/data_flow.gv'  (default: 'data_flow.gv')
+|-n_event_slots         = 1  (default: -1)
+|-buffer_events         = 20000  (default: 20000)
+|-n_threads             = 1  (default: 1)
+|-scheduler_legacy_mode = True  (default: True)
+|-input_type            = 'ROOT'  (default: '')
+|-output_file           = 'output/K1G/K1G.mdst'  (default: '')
+|-event_store           = 'HiveWhiteBoard'  (default: 'HiveWhiteBoard')
+|-dddb_tag              = 'dddb-20171126'  (default: '')
+|-control_flow_file     = 'output/K1G/control_flow.gv'  (default: 'control_flow.gv')
+|-use_iosvc             = False  (default: False)
+|-evt_max               = -1  (default: -1)
+|-python_logging_level  = 30  (default: 30)
+|-callgrind_profile     = False  (default: False)
+|-data_type             = 'Upgrade'  (default: 'Upgrade')
+|-input_raw_format      = 4.3  (default: 0.3)
+|-msg_svc_format        = '% F%35W%S %7W%R%T %0W%M'  (default: '% F%35W%S %7W%R%T %0W%M')
+|-ntuple_file           = ''  (default: '')
+|-conddb_tag            = 'sim-20171127-vc-md100'  (default: '')
+|-input_files           = ['root://x509up_u98003@eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000001_1.ldst', 'root://x509up_u98003@eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000002_1.ldst', 'root://x509up_u98003@eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000003_1.ldst', 'root://x509up_u98003@eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000033_1.ldst', 'root://xrootd-lhcb.cr.cnaf.infn.it//storage/gpfs_lhcb/lhcb/disk/MC/Upgrade/LDST/00075816/0000/00075816_00000034_1.ldst', 'root://xrootd-lhcb.cr.cnaf.infn.it//storage/gpfs_lhcb/lhcb/disk/MC/Upgrade/LDST/00075816/0000/00075816_00000048_1.ldst', 'root://x509up_u98003@lhcbxrootd-kit.gridka.de//pnfs/gridka.de/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000004_1.ldst', 'root://x509up_u98003@lhcbxrootd-kit.gridka.de//pnfs/gridka.de/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000005_1.ldst', 'root://x509up_u98003@lhcbxrootd-kit.gridka.de//pnfs/gridka.de/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000006_1.ldst', 'root://x509up_u98003@lhcbxrootd-kit.gridka.de//pnfs/gridka.de/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000035_1.ldst', 'root://x509up_u98003@lhcbxrootd-kit.gridka.de//pnfs/gridka.de/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000049_1.ldst', 'root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000007_1.ldst', 'root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000008_1.ldst', 'root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000009_1.ldst', 'root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000010_1.ldst', 'root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000012_1.ldst', 'root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000013_1.ldst', 'root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000015_1.ldst', 'root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000016_1.ldst', 'root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000017_1.ldst', 'root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000018_1.ldst', 'root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000022_1.ldst', 'root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000029_1.ldst', 'root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000037_1.ldst', 'root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000039_1.ldst', 'root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000052_1.ldst', 'root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000053_1.ldst', 'root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000054_1.ldst', 'root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000055_1.ldst', 'root://x509up_u98003@xrootd.pic.es//pnfs/pic.es/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000025_1.ldst', 'root://x509up_u98003@xrootd.pic.es//pnfs/pic.es/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000056_1.ldst', 'root://xrootd.echo.stfc.ac.uk/lhcb:prod/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000026_1.ldst', 'root://xrootd.echo.stfc.ac.uk/lhcb:prod/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000041_1.ldst', 'root://xrootd.echo.stfc.ac.uk/lhcb:prod/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000042_1.ldst', 'root://lhcbsdrm.t1.grid.kiae.ru:1094/t1.grid.kiae.ru/data/lhcb/lhcbdisk/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000027_1.ldst', 'root://lhcbsdrm.t1.grid.kiae.ru:1094/t1.grid.kiae.ru/data/lhcb/lhcbdisk/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000043_1.ldst', 'root://lhcbsdrm.t1.grid.kiae.ru:1094/t1.grid.kiae.ru/data/lhcb/lhcbdisk/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000057_1.ldst', 'root://shark6.grid.surfsara.nl:1094/pnfs/grid.sara.nl/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000028_1.ldst', 'root://shark5.grid.surfsara.nl:1094/pnfs/grid.sara.nl/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000058_1.ldst']
+|                       (default: [])
+|-memory_pool_size      = 10485760  (default: 10485760)
+|-print_freq            = 10000  (default: 10000)
+|-simulation            = True  (default: True)
+|-output_level          = 3  (default: 3)
+|-histo_file            = ''  (default: '')
+|-output_type           = 'ROOT'  (default: '')
+|-msg_svc_time_format   = '%Y-%m-%d %H:%M:%S UTC'  (default: '%Y-%m-%d %H:%M:%S UTC')
+\----- (End of User ApplicationOptions/ApplicationOptions) -----------------------------------------
+ApplicationMgr    SUCCESS 
+====================================================================================================================================
+                                                   Welcome to Moore version v51r0
+                                          running on lxplus724.cern.ch on Tue Jun  2 12:46:07 2020
+====================================================================================================================================
+ApplicationMgr       INFO Application Manager Configured successfully
+ToolSvc.GitDDDB                        INFO opening Git repository '/cvmfs/lhcb.cern.ch/lib/lhcb/git-conddb/DDDB.git'
+ToolSvc.GitDDDB                        INFO using commit 'upgrade/dddb-20171126' corresponding to 3ca3610ca2465697d0ee7666bc3a8bc2f5c88438
+ToolSvc.GitSIMCOND                     INFO opening Git repository '/cvmfs/lhcb.cern.ch/lib/lhcb/git-conddb/SIMCOND.git'
+ToolSvc.GitSIMCOND                     INFO using commit 'upgrade/sim-20171127-vc-md100' corresponding to 143109bc764c9a5cb34a04ce227d005e20236caa
+DetectorPersistencySvc                 INFO Added successfully Conversion service:XmlCnvSvc
+DetectorDataSvc                     SUCCESS Detector description database: git:/lhcb.xml
+HLTControlFlowMgr                      INFO Start initialization
+ChargedProtoCombineDLLsAlg             INFO Using retuned RICH el and mu DLL values in combined DLLs
+FunctionalParticleMaker#2.LoKi::...    INFO CUT: ' ( (TrTYPE==3) &TrALL) ' 
+EventClockSvc.FakeEventTime            INFO Event times generated from 0 with steps of 0
+EventClockSvc.FakeEventTime            INFO Run numbers generated from 0 every 0 events
+MagneticFieldSvc                       INFO Opened magnetic field file : /cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/FieldMap/v5r7/cdf/field.v5r0.c1.down.cdf
+MagneticFieldSvc                       INFO Opened magnetic field file : /cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/FieldMap/v5r7/cdf/field.v5r0.c2.down.cdf
+MagneticFieldSvc                       INFO Opened magnetic field file : /cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/FieldMap/v5r7/cdf/field.v5r0.c3.down.cdf
+MagneticFieldSvc                       INFO Opened magnetic field file : /cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/FieldMap/v5r7/cdf/field.v5r0.c4.down.cdf
+MagneticFieldSvc                       INFO Map scaled by factor 1 with polarity internally used: -1 signed relative current: -1
+PhotonMakerAlg.PhotonMaker             INFO  Following technique(s) will be used for CL evaluation : [IsNotH]
+PhotonMakerAlg.PhotonMaker             INFO  Switch to [PhotonDLL] if one technique is not available 
+FunctionalParticleMaker#3.LoKi::...    INFO CUT: ' ( (TrTYPE==3) &TrALL) ' 
+bankKiller                          SUCCESS bankKiller : all banks of type 'HltDecReports' will be removed.
+bankKiller                          SUCCESS bankKiller : all banks of type 'HltSelReports' will be removed.
+bankKiller                          SUCCESS bankKiller : all banks of type 'HltLumiSummary' will be removed.
+bankKiller                          SUCCESS bankKiller : all banks of type 'HltRoutingBits' will be removed.
+bankKiller                             INFO Killing banks from first raw event in '[/Event/Trigger/RawEvent, /Event/Unstripped/RawEvent]'
+EventPersistencySvc                    INFO Added successfully Conversion service:RootCnvSvc
+OutputStream                           INFO Data source: EventDataSvc output: DATAFILE='output/K1G/K1G.mdst' SVC='Gaudi::RootCnvSvc' OPT='RECREATE'
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: UnpackRecVertex/UnpackRecVertices
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: UnpackCaloHypo/UnpackCaloElectrons
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: UnpackCaloHypo/UnpackCaloPhotons
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: UnpackCaloHypo/UnpackCaloMergedPi0s
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: UnpackCaloHypo/UnpackCaloSplitPhotons
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: DataPacking::Unpack<LHCb::MuonPIDPacker>/UnpackMuonPIDs
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: DataPacking::Unpack<LHCb::RichPIDPacker>/UnpackRichPIDs
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: UnpackProtoParticle/UnpackNeutralProtos
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: UnpackProtoParticle/UnpackChargedProtos
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: ChargedProtoParticleAddRichInfo
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: ChargedProtoParticleAddMuonInfo
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: ChargedProtoCombineDLLsAlg
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#2
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: CombineParticles
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: PhotonMakerAlg
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#3
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: CombineParticles/CombineParticles#1
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#4
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#5
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: CombineParticles/CombineParticles#2
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: CombineParticles/CombineParticles#3
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#6
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#7
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: CombineParticles/CombineParticles#4
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: CombineParticles/CombineParticles#5
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#8
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: CombineParticles/CombineParticles#6
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#9
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: bankKiller
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: HltDecReportsWriter
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#12
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#13
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#10
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#11
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: CopyLinePersistenceLocations
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: CopyParticle2PVRelationsFromLinePersistenceLocations
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: PackParticlesAndVertices
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: PackCaloHypo
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: PackCaloHypo/PackCaloHypo#1
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: PackCaloHypo/PackCaloHypo#2
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: PackCaloHypo/PackCaloHypo#3
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: OutputStream
+HLTControlFlowMgr                      INFO Concurrency level information:
+HLTControlFlowMgr                      INFO  o Number of events slots: 1
+HLTControlFlowMgr                      INFO  o TBB thread pool size:  'ThreadPoolSize':1
+HLTControlFlowMgr                      INFO ---> End of Initialization. This took 56736 ms
+ApplicationMgr                         INFO Application Manager Initialized successfully
+DeVP                                   INFO There are 208 sensors (left: 104, right: 104)
+DeFTDetector                           INFO Current FT geometry version =   63
+ApplicationMgr                         INFO Application Manager Started successfully
+EventSelector                          INFO Stream:EventSelector.DataStreamTool_1 Def:DATAFILE='root://x509up_u98003@eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000001_1.ldst' SVC='Gaudi::RootEvtSelector' OPT='READ' IgnoreChecksum='YES'
+HLTControlFlowMgr                      INFO Will measure time between events 10 and 2147483647 (stop might be some events later)
+HLTControlFlowMgr                      INFO Starting loop on events
+EventSelector                       SUCCESS Reading Event record 1. Record number within stream 1: 1
+TransportSvc                           INFO Initialize the static pointer to DetDesc::IGeometryErrorSvc
+TransportSvc                           INFO Recovery of geometry errors is  ENABLED
+ToolSvc.LoKi::VertexFitter             INFO Option for Optimised Kalman Filter fit is activated 
+HLTControlFlowMgr                      INFO Timing started at: 12:47:38
+IODataManager                          INFO Referring to dataset output/K1G/K1G.mdst by its file ID:6463BF79-BEA4-EA11-BCBC-FA163E98FDF0
+ToolSvc.LoKi::VertexFitter          WARNING LoKi::VertexFitter:: Error from Kalman-step, skip [CombineParticles#2] StatusCode=405
+ToolSvc.LoKi::VertexFitter          WARNING LoKi::VertexFitter:: The WARNING message is suppressed : 'Error from Kalman-step, skip [CombineParticles#2]' StatusCode=405
+EventSelector                          INFO Stream:EventSelector.DataStreamTool_2 Def:DATAFILE='root://x509up_u98003@eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000002_1.ldst' SVC='Gaudi::RootEvtSelector' OPT='READ' IgnoreChecksum='YES'
+EventSelector                          INFO Stream:EventSelector.DataStreamTool_3 Def:DATAFILE='root://x509up_u98003@eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000003_1.ldst' SVC='Gaudi::RootEvtSelector' OPT='READ' IgnoreChecksum='YES'
+EventSelector                       SUCCESS Reading Event record 10001. Record number within stream 3: 673
+EventSelector                          INFO Stream:EventSelector.DataStreamTool_4 Def:DATAFILE='root://x509up_u98003@eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000033_1.ldst' SVC='Gaudi::RootEvtSelector' OPT='READ' IgnoreChecksum='YES'
+IODataManager                          INFO Disconnect from dataset root://x509up_u98003@eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000001_1.ldst [B2D779F6-9B75-E811-B053-FA163EAD4681]
+RootCnvSvc                             INFO Removed disconnected IO  stream:B2D779F6-9B75-E811-B053-FA163EAD4681 [root://x509up_u98003@eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000001_1.ldst]
+EventSelector                          INFO Stream:EventSelector.DataStreamTool_5 Def:DATAFILE='root://xrootd-lhcb.cr.cnaf.infn.it//storage/gpfs_lhcb/lhcb/disk/MC/Upgrade/LDST/00075816/0000/00075816_00000034_1.ldst' SVC='Gaudi::RootEvtSelector' OPT='READ' IgnoreChecksum='YES'
+IODataManager                          INFO Disconnect from dataset root://x509up_u98003@eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000002_1.ldst [8A16C75F-9C75-E811-BC51-FA163E7D05BC]
+RootCnvSvc                             INFO Removed disconnected IO  stream:8A16C75F-9C75-E811-BC51-FA163E7D05BC [root://x509up_u98003@eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000002_1.ldst]
+EventSelector                          INFO Stream:EventSelector.DataStreamTool_6 Def:DATAFILE='root://xrootd-lhcb.cr.cnaf.infn.it//storage/gpfs_lhcb/lhcb/disk/MC/Upgrade/LDST/00075816/0000/00075816_00000048_1.ldst' SVC='Gaudi::RootEvtSelector' OPT='READ' IgnoreChecksum='YES'
+IODataManager                          INFO Disconnect from dataset root://x509up_u98003@eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000003_1.ldst [90F4CD06-9C75-E811-849C-FA163E8C419A]
+RootCnvSvc                             INFO Removed disconnected IO  stream:90F4CD06-9C75-E811-849C-FA163E8C419A [root://x509up_u98003@eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000003_1.ldst]
+EventSelector                          INFO Stream:EventSelector.DataStreamTool_7 Def:DATAFILE='root://x509up_u98003@lhcbxrootd-kit.gridka.de//pnfs/gridka.de/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000004_1.ldst' SVC='Gaudi::RootEvtSelector' OPT='READ' IgnoreChecksum='YES'
+IODataManager                          INFO Disconnect from dataset root://x509up_u98003@eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000033_1.ldst [14452677-B97E-E811-998B-02163E017C27]
+RootCnvSvc                             INFO Removed disconnected IO  stream:14452677-B97E-E811-998B-02163E017C27 [root://x509up_u98003@eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000033_1.ldst]
+EventSelector                       SUCCESS Reading Event record 20001. Record number within stream 7: 3678
+EventSelector                          INFO Stream:EventSelector.DataStreamTool_8 Def:DATAFILE='root://x509up_u98003@lhcbxrootd-kit.gridka.de//pnfs/gridka.de/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000005_1.ldst' SVC='Gaudi::RootEvtSelector' OPT='READ' IgnoreChecksum='YES'
+IODataManager                          INFO Disconnect from dataset root://xrootd-lhcb.cr.cnaf.infn.it//storage/gpfs_lhcb/lhcb/disk/MC/Upgrade/LDST/00075816/0000/00075816_00000034_1.ldst [42EA61DF-C97E-E811-B08B-A0369FE2C140]
+RootCnvSvc                             INFO Removed disconnected IO  stream:42EA61DF-C97E-E811-B08B-A0369FE2C140 [root://xrootd-lhcb.cr.cnaf.infn.it//storage/gpfs_lhcb/lhcb/disk/MC/Upgrade/LDST/00075816/0000/00075816_00000034_1.ldst]
+EventSelector                          INFO Stream:EventSelector.DataStreamTool_9 Def:DATAFILE='root://x509up_u98003@lhcbxrootd-kit.gridka.de//pnfs/gridka.de/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000006_1.ldst' SVC='Gaudi::RootEvtSelector' OPT='READ' IgnoreChecksum='YES'
+IODataManager                          INFO Disconnect from dataset root://xrootd-lhcb.cr.cnaf.infn.it//storage/gpfs_lhcb/lhcb/disk/MC/Upgrade/LDST/00075816/0000/00075816_00000048_1.ldst [1AB1D8F7-9F7F-E811-92D2-0090FAA57BE0]
+RootCnvSvc                             INFO Removed disconnected IO  stream:1AB1D8F7-9F7F-E811-92D2-0090FAA57BE0 [root://xrootd-lhcb.cr.cnaf.infn.it//storage/gpfs_lhcb/lhcb/disk/MC/Upgrade/LDST/00075816/0000/00075816_00000048_1.ldst]
+EventSelector                       SUCCESS Reading Event record 30001. Record number within stream 9: 4495
+EventSelector                          INFO Stream:EventSelector.DataStreamTool_10 Def:DATAFILE='root://x509up_u98003@lhcbxrootd-kit.gridka.de//pnfs/gridka.de/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000035_1.ldst' SVC='Gaudi::RootEvtSelector' OPT='READ' IgnoreChecksum='YES'
+IODataManager                          INFO Disconnect from dataset root://x509up_u98003@lhcbxrootd-kit.gridka.de//pnfs/gridka.de/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000004_1.ldst [F4C77CE1-9E75-E811-9C63-A4BF0112E3E8]
+RootCnvSvc                             INFO Removed disconnected IO  stream:F4C77CE1-9E75-E811-9C63-A4BF0112E3E8 [root://x509up_u98003@lhcbxrootd-kit.gridka.de//pnfs/gridka.de/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000004_1.ldst]
+EventSelector                          INFO Stream:EventSelector.DataStreamTool_11 Def:DATAFILE='root://x509up_u98003@lhcbxrootd-kit.gridka.de//pnfs/gridka.de/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000049_1.ldst' SVC='Gaudi::RootEvtSelector' OPT='READ' IgnoreChecksum='YES'
+IODataManager                          INFO Disconnect from dataset root://x509up_u98003@lhcbxrootd-kit.gridka.de//pnfs/gridka.de/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000005_1.ldst [86A7C3BE-B375-E811-92D6-A4BF0112BC5C]
+RootCnvSvc                             INFO Removed disconnected IO  stream:86A7C3BE-B375-E811-92D6-A4BF0112BC5C [root://x509up_u98003@lhcbxrootd-kit.gridka.de//pnfs/gridka.de/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000005_1.ldst]
+EventSelector                          INFO Stream:EventSelector.DataStreamTool_12 Def:DATAFILE='root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000007_1.ldst' SVC='Gaudi::RootEvtSelector' OPT='READ' IgnoreChecksum='YES'
+IODataManager                          INFO Disconnect from dataset root://x509up_u98003@lhcbxrootd-kit.gridka.de//pnfs/gridka.de/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000006_1.ldst [3CBF75F0-A775-E811-A0C0-88D7F63CFCDE]
+RootCnvSvc                             INFO Removed disconnected IO  stream:3CBF75F0-A775-E811-A0C0-88D7F63CFCDE [root://x509up_u98003@lhcbxrootd-kit.gridka.de//pnfs/gridka.de/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000006_1.ldst]
+EventSelector                          INFO Stream:EventSelector.DataStreamTool_13 Def:DATAFILE='root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000008_1.ldst' SVC='Gaudi::RootEvtSelector' OPT='READ' IgnoreChecksum='YES'
+IODataManager                          INFO Disconnect from dataset root://x509up_u98003@lhcbxrootd-kit.gridka.de//pnfs/gridka.de/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000035_1.ldst [B4DCFA77-BB7E-E811-8345-A4BF0112BC0E]
+RootCnvSvc                             INFO Removed disconnected IO  stream:B4DCFA77-BB7E-E811-8345-A4BF0112BC0E [root://x509up_u98003@lhcbxrootd-kit.gridka.de//pnfs/gridka.de/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000035_1.ldst]
+EventSelector                       SUCCESS Reading Event record 40001. Record number within stream 13: 3762
+EventSelector                          INFO Stream:EventSelector.DataStreamTool_14 Def:DATAFILE='root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000009_1.ldst' SVC='Gaudi::RootEvtSelector' OPT='READ' IgnoreChecksum='YES'
+IODataManager                          INFO Disconnect from dataset root://x509up_u98003@lhcbxrootd-kit.gridka.de//pnfs/gridka.de/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000049_1.ldst [56FCB6F4-A17F-E811-AF5C-001E677926FA]
+RootCnvSvc                             INFO Removed disconnected IO  stream:56FCB6F4-A17F-E811-AF5C-001E677926FA [root://x509up_u98003@lhcbxrootd-kit.gridka.de//pnfs/gridka.de/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000049_1.ldst]
+EventSelector                          INFO Stream:EventSelector.DataStreamTool_15 Def:DATAFILE='root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000010_1.ldst' SVC='Gaudi::RootEvtSelector' OPT='READ' IgnoreChecksum='YES'
+IODataManager                          INFO Disconnect from dataset root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000007_1.ldst [4A3E188F-BB75-E811-8FBE-7CD30ACE1744]
+RootCnvSvc                             INFO Removed disconnected IO  stream:4A3E188F-BB75-E811-8FBE-7CD30ACE1744 [root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000007_1.ldst]
+EventSelector                          INFO Stream:EventSelector.DataStreamTool_16 Def:DATAFILE='root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000012_1.ldst' SVC='Gaudi::RootEvtSelector' OPT='READ' IgnoreChecksum='YES'
+IODataManager                          INFO Disconnect from dataset root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000008_1.ldst [E2583956-A375-E811-B6AD-F04DA2752644]
+RootCnvSvc                             INFO Removed disconnected IO  stream:E2583956-A375-E811-B6AD-F04DA2752644 [root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000008_1.ldst]
+EventSelector                       SUCCESS Reading Event record 50001. Record number within stream 16: 23
+EventSelector                          INFO Stream:EventSelector.DataStreamTool_17 Def:DATAFILE='root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000013_1.ldst' SVC='Gaudi::RootEvtSelector' OPT='READ' IgnoreChecksum='YES'
+IODataManager                          INFO Disconnect from dataset root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000009_1.ldst [E2F65CCA-A975-E811-8DC1-008CFAF72B30]
+RootCnvSvc                             INFO Removed disconnected IO  stream:E2F65CCA-A975-E811-8DC1-008CFAF72B30 [root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000009_1.ldst]
+EventSelector                          INFO Stream:EventSelector.DataStreamTool_18 Def:DATAFILE='root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000015_1.ldst' SVC='Gaudi::RootEvtSelector' OPT='READ' IgnoreChecksum='YES'
+IODataManager                          INFO Disconnect from dataset root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000010_1.ldst [8A26ACB9-A775-E811-A541-509A4C74D06B]
+RootCnvSvc                             INFO Removed disconnected IO  stream:8A26ACB9-A775-E811-A541-509A4C74D06B [root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000010_1.ldst]
+EventSelector                       SUCCESS Reading Event record 60001. Record number within stream 18: 748
+EventSelector                          INFO Stream:EventSelector.DataStreamTool_19 Def:DATAFILE='root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000016_1.ldst' SVC='Gaudi::RootEvtSelector' OPT='READ' IgnoreChecksum='YES'
+IODataManager                          INFO Disconnect from dataset root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000012_1.ldst [C0D7FC87-A675-E811-89F6-3417EBE64CDB]
+RootCnvSvc                             INFO Removed disconnected IO  stream:C0D7FC87-A675-E811-89F6-3417EBE64CDB [root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000012_1.ldst]
+EventSelector                          INFO Stream:EventSelector.DataStreamTool_20 Def:DATAFILE='root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000017_1.ldst' SVC='Gaudi::RootEvtSelector' OPT='READ' IgnoreChecksum='YES'
+IODataManager                          INFO Disconnect from dataset root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000013_1.ldst [8278A47A-A475-E811-ADCC-7CD30AD0A77A]
+RootCnvSvc                             INFO Removed disconnected IO  stream:8278A47A-A475-E811-ADCC-7CD30AD0A77A [root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000013_1.ldst]
+EventSelector                       SUCCESS Reading Event record 70001. Record number within stream 20: 1492
+EventSelector                          INFO Stream:EventSelector.DataStreamTool_21 Def:DATAFILE='root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000018_1.ldst' SVC='Gaudi::RootEvtSelector' OPT='READ' IgnoreChecksum='YES'
+IODataManager                          INFO Disconnect from dataset root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000015_1.ldst [DE51ECAB-A575-E811-9DB8-7CD30ACE178C]
+RootCnvSvc                             INFO Removed disconnected IO  stream:DE51ECAB-A575-E811-9DB8-7CD30ACE178C [root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000015_1.ldst]
+EventSelector                          INFO Stream:EventSelector.DataStreamTool_22 Def:DATAFILE='root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000022_1.ldst' SVC='Gaudi::RootEvtSelector' OPT='READ' IgnoreChecksum='YES'
+IODataManager                          INFO Disconnect from dataset root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000016_1.ldst [18920DC7-AD75-E811-BF55-008CFAFBDBA8]
+RootCnvSvc                             INFO Removed disconnected IO  stream:18920DC7-AD75-E811-BF55-008CFAFBDBA8 [root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000016_1.ldst]
+EventSelector                       SUCCESS Reading Event record 80001. Record number within stream 22: 2315
+EventSelector                          INFO Stream:EventSelector.DataStreamTool_23 Def:DATAFILE='root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000029_1.ldst' SVC='Gaudi::RootEvtSelector' OPT='READ' IgnoreChecksum='YES'
+IODataManager                          INFO Disconnect from dataset root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000017_1.ldst [3EB8E464-B075-E811-9E53-509A4C83D54F]
+RootCnvSvc                             INFO Removed disconnected IO  stream:3EB8E464-B075-E811-9E53-509A4C83D54F [root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000017_1.ldst]
+EventSelector                          INFO Stream:EventSelector.DataStreamTool_24 Def:DATAFILE='root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000037_1.ldst' SVC='Gaudi::RootEvtSelector' OPT='READ' IgnoreChecksum='YES'
+IODataManager                          INFO Disconnect from dataset root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000018_1.ldst [E4BCAE40-B075-E811-9EB6-008CFAF72A28]
+RootCnvSvc                             INFO Removed disconnected IO  stream:E4BCAE40-B075-E811-9EB6-008CFAF72A28 [root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000018_1.ldst]
+EventSelector                          INFO Stream:EventSelector.DataStreamTool_25 Def:DATAFILE='root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000039_1.ldst' SVC='Gaudi::RootEvtSelector' OPT='READ' IgnoreChecksum='YES'
+IODataManager                          INFO Disconnect from dataset root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000022_1.ldst [B2601E60-E175-E811-8628-7CD30ACE1684]
+RootCnvSvc                             INFO Removed disconnected IO  stream:B2601E60-E175-E811-8628-7CD30ACE1684 [root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000022_1.ldst]
+EventSelector                          INFO Stream:EventSelector.DataStreamTool_26 Def:DATAFILE='root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000052_1.ldst' SVC='Gaudi::RootEvtSelector' OPT='READ' IgnoreChecksum='YES'
+IODataManager                          INFO Disconnect from dataset root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000029_1.ldst [BE0A98A0-4678-E811-987F-008CFAFBFB7C]
+RootCnvSvc                             INFO Removed disconnected IO  stream:BE0A98A0-4678-E811-987F-008CFAFBFB7C [root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000029_1.ldst]
+EventSelector                          INFO Stream:EventSelector.DataStreamTool_27 Def:DATAFILE='root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000053_1.ldst' SVC='Gaudi::RootEvtSelector' OPT='READ' IgnoreChecksum='YES'
+IODataManager                          INFO Disconnect from dataset root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000037_1.ldst [C6E8946D-B87E-E811-87C4-3417EBE644DA]
+RootCnvSvc                             INFO Removed disconnected IO  stream:C6E8946D-B87E-E811-87C4-3417EBE644DA [root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000037_1.ldst]
+EventSelector                          INFO Stream:EventSelector.DataStreamTool_28 Def:DATAFILE='root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000054_1.ldst' SVC='Gaudi::RootEvtSelector' OPT='READ' IgnoreChecksum='YES'
+IODataManager                          INFO Disconnect from dataset root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000039_1.ldst [F6B6806A-B87E-E811-B2E3-509A4C72D4A3]
+RootCnvSvc                             INFO Removed disconnected IO  stream:F6B6806A-B87E-E811-B2E3-509A4C72D4A3 [root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000039_1.ldst]
+EventSelector                          INFO Stream:EventSelector.DataStreamTool_29 Def:DATAFILE='root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000055_1.ldst' SVC='Gaudi::RootEvtSelector' OPT='READ' IgnoreChecksum='YES'
+IODataManager                          INFO Disconnect from dataset root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000052_1.ldst [682B74A3-D17F-E811-88E8-509A4C8453CD]
+RootCnvSvc                             INFO Removed disconnected IO  stream:682B74A3-D17F-E811-88E8-509A4C8453CD [root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000052_1.ldst]
+EventSelector                          INFO Stream:EventSelector.DataStreamTool_30 Def:DATAFILE='root://x509up_u98003@xrootd.pic.es//pnfs/pic.es/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000025_1.ldst' SVC='Gaudi::RootEvtSelector' OPT='READ' IgnoreChecksum='YES'
+IODataManager                          INFO Disconnect from dataset root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000053_1.ldst [80D24521-A57F-E811-9696-008CFAF516CA]
+RootCnvSvc                             INFO Removed disconnected IO  stream:80D24521-A57F-E811-9696-008CFAF516CA [root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000053_1.ldst]
+EventSelector                       SUCCESS Reading Event record 90001. Record number within stream 30: 1556
+EventSelector                          INFO Stream:EventSelector.DataStreamTool_31 Def:DATAFILE='root://x509up_u98003@xrootd.pic.es//pnfs/pic.es/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000056_1.ldst' SVC='Gaudi::RootEvtSelector' OPT='READ' IgnoreChecksum='YES'
+IODataManager                          INFO Disconnect from dataset root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000054_1.ldst [1E035F30-AE7F-E811-B96D-7CD30AD09B20]
+RootCnvSvc                             INFO Removed disconnected IO  stream:1E035F30-AE7F-E811-B96D-7CD30AD09B20 [root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000054_1.ldst]
+EventSelector                          INFO Stream:EventSelector.DataStreamTool_32 Def:DATAFILE='root://xrootd.echo.stfc.ac.uk/lhcb:prod/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000026_1.ldst' SVC='Gaudi::RootEvtSelector' OPT='READ' IgnoreChecksum='YES'
+IODataManager                          INFO Disconnect from dataset root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000055_1.ldst [D85922B3-C57F-E811-98FA-F04DA2756D51]
+RootCnvSvc                             INFO Removed disconnected IO  stream:D85922B3-C57F-E811-98FA-F04DA2756D51 [root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000055_1.ldst]
+EventSelector                          INFO Stream:EventSelector.DataStreamTool_33 Def:DATAFILE='root://xrootd.echo.stfc.ac.uk/lhcb:prod/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000041_1.ldst' SVC='Gaudi::RootEvtSelector' OPT='READ' IgnoreChecksum='YES'
+IODataManager                          INFO Disconnect from dataset root://x509up_u98003@xrootd.pic.es//pnfs/pic.es/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000025_1.ldst [C4DA13BE-D777-E811-A257-6CC2173BBA40]
+RootCnvSvc                             INFO Removed disconnected IO  stream:C4DA13BE-D777-E811-A257-6CC2173BBA40 [root://x509up_u98003@xrootd.pic.es//pnfs/pic.es/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000025_1.ldst]
+EventSelector                          INFO Stream:EventSelector.DataStreamTool_34 Def:DATAFILE='root://xrootd.echo.stfc.ac.uk/lhcb:prod/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000042_1.ldst' SVC='Gaudi::RootEvtSelector' OPT='READ' IgnoreChecksum='YES'
+IODataManager                          INFO Disconnect from dataset root://x509up_u98003@xrootd.pic.es//pnfs/pic.es/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000056_1.ldst [8A5D9880-BB81-E811-B03A-00266CFF0A88]
+RootCnvSvc                             INFO Removed disconnected IO  stream:8A5D9880-BB81-E811-B03A-00266CFF0A88 [root://x509up_u98003@xrootd.pic.es//pnfs/pic.es/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000056_1.ldst]
+EventSelector                          INFO Stream:EventSelector.DataStreamTool_35 Def:DATAFILE='root://lhcbsdrm.t1.grid.kiae.ru:1094/t1.grid.kiae.ru/data/lhcb/lhcbdisk/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000027_1.ldst' SVC='Gaudi::RootEvtSelector' OPT='READ' IgnoreChecksum='YES'
+IODataManager                          INFO Disconnect from dataset root://xrootd.echo.stfc.ac.uk/lhcb:prod/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000026_1.ldst [0E9946C6-7776-E811-AFA2-0242AC110002]
+RootCnvSvc                             INFO Removed disconnected IO  stream:0E9946C6-7776-E811-AFA2-0242AC110002 [root://xrootd.echo.stfc.ac.uk/lhcb:prod/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000026_1.ldst]
+EventSelector                          INFO Stream:EventSelector.DataStreamTool_36 Def:DATAFILE='root://lhcbsdrm.t1.grid.kiae.ru:1094/t1.grid.kiae.ru/data/lhcb/lhcbdisk/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000043_1.ldst' SVC='Gaudi::RootEvtSelector' OPT='READ' IgnoreChecksum='YES'
+IODataManager                          INFO Disconnect from dataset root://xrootd.echo.stfc.ac.uk/lhcb:prod/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000041_1.ldst [50D6D744-B87E-E811-9B6C-0242AC11001C]
+RootCnvSvc                             INFO Removed disconnected IO  stream:50D6D744-B87E-E811-9B6C-0242AC11001C [root://xrootd.echo.stfc.ac.uk/lhcb:prod/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000041_1.ldst]
+EventSelector                          INFO Stream:EventSelector.DataStreamTool_37 Def:DATAFILE='root://lhcbsdrm.t1.grid.kiae.ru:1094/t1.grid.kiae.ru/data/lhcb/lhcbdisk/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000057_1.ldst' SVC='Gaudi::RootEvtSelector' OPT='READ' IgnoreChecksum='YES'
+IODataManager                          INFO Disconnect from dataset root://xrootd.echo.stfc.ac.uk/lhcb:prod/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000042_1.ldst [CA5C7297-BB7E-E811-9D6E-0242AC11000C]
+RootCnvSvc                             INFO Removed disconnected IO  stream:CA5C7297-BB7E-E811-9D6E-0242AC11000C [root://xrootd.echo.stfc.ac.uk/lhcb:prod/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000042_1.ldst]
+EventSelector                          INFO Stream:EventSelector.DataStreamTool_38 Def:DATAFILE='root://shark6.grid.surfsara.nl:1094/pnfs/grid.sara.nl/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000028_1.ldst' SVC='Gaudi::RootEvtSelector' OPT='READ' IgnoreChecksum='YES'
+IODataManager                          INFO Disconnect from dataset root://lhcbsdrm.t1.grid.kiae.ru:1094/t1.grid.kiae.ru/data/lhcb/lhcbdisk/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000027_1.ldst [4AA42FE5-6976-E811-A53B-0CC47A50D036]
+RootCnvSvc                             INFO Removed disconnected IO  stream:4AA42FE5-6976-E811-A53B-0CC47A50D036 [root://lhcbsdrm.t1.grid.kiae.ru:1094/t1.grid.kiae.ru/data/lhcb/lhcbdisk/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000027_1.ldst]
+EventSelector                       SUCCESS Reading Event record 100001. Record number within stream 38: 837
+EventSelector                          INFO Stream:EventSelector.DataStreamTool_39 Def:DATAFILE='root://shark5.grid.surfsara.nl:1094/pnfs/grid.sara.nl/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000058_1.ldst' SVC='Gaudi::RootEvtSelector' OPT='READ' IgnoreChecksum='YES'
+IODataManager                          INFO Disconnect from dataset root://lhcbsdrm.t1.grid.kiae.ru:1094/t1.grid.kiae.ru/data/lhcb/lhcbdisk/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000043_1.ldst [66807290-F87E-E811-B83D-0CC47A50CF78]
+RootCnvSvc                             INFO Removed disconnected IO  stream:66807290-F87E-E811-B83D-0CC47A50CF78 [root://lhcbsdrm.t1.grid.kiae.ru:1094/t1.grid.kiae.ru/data/lhcb/lhcbdisk/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000043_1.ldst]
+HLTControlFlowMgr                      INFO No more events in event selection 
+HLTControlFlowMgr                      INFO ---> Loop over 101929 Events Finished -  WSS 1346.88, timed 101919 Events: 3001770 ms, Evts/s = 33.953
+ApplicationMgr                         INFO Application Manager Stopped successfully
+DeterministicPrescaler              SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ |*"#accept"                                       |    101929 |     101929 |( 100.0000 +- 0.000000)% |
+UnpackMuonPIDs                      SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# UnPackedData"                                |    101929 |1.147458e+07 |     112.57 |     56.285 |      3.0000 |      714.00 |
+UnpackRichPIDs                      SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# UnPackedData"                                |    101929 |1.60332e+07 |     157.30 |     79.312 |      5.0000 |      981.00 |
+UnpackRichPIDs                      SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/0/1/0
+UnpackRichPIDs                      SUCCESS  #WARNINGS   = 101929   Message = 'Incorrect data version 0 for packing version > 3. Correcting data to version 2.'
+UnpackBestTracks                    SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# Unpacked Tracks"                             |    101929 |   48346102 |     474.31 |
+UnpackMuonTracks                    SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# Unpacked Tracks"                             |    101929 |    1739085 |     17.062 |
+FunctionalParticleMaker#2           SUCCESS Number of counters : 4
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ |*"# passed ProtoParticle filter"                 |  11560803 |   11560803 |( 100.0000 +- 0.000000)% |
+ |*"# passed Track filter"                         |  17680101 |   11560803 |( 65.38878 +- 0.01131404)% |
+ | "Nb created anti-particles"                     |    101929 |    5747810 |     56.390 |     28.123 |           1 |         327 |
+ | "Nb created particles"                          |    101929 |    5812993 |     57.030 |     28.119 |           1 |         325 |
+FilterDesktop#2                     SUCCESS Number of counters : 5
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# FunctionalParticleMaker#2/Particles"         |    101929 |1.15608e+07 |     113.42 |     55.436 |      3.0000 |      646.00 |
+ | "# input particles"                             |    101929 |1.15608e+07 |     113.42 |     55.436 |      3.0000 |      646.00 |
+ |*"#accept"                                       |    101929 |      81342 |( 79.80261 +- 0.1257498)% |
+ | "#passed"                                       |    101929 |     139901 |     1.3725 |     1.0860 |      0.0000 |      11.000 |
+ |*"efficiency"                                    |  11560803 |  1.399e+05 |( 1.210132 +- 0.003215723)%|   -------   |   -------   |
+CombineParticles                    SUCCESS Number of counters : 10
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# FilterDesktop#2/Particles"                   |    101929 |     139901 |     1.3725 |     1.0860 |      0.0000 |      11.000 |
+ | "# K*(892)0 -> pi+  pi- "                       |    101929 |      28831 |    0.28285 |    0.71838 |      0.0000 |      17.000 |
+ | "# input particles"                             |    101929 |     139901 |     1.3725 |     1.0860 |      0.0000 |      11.000 |
+ | "# pi+"                                         |    101929 |      70341 |    0.69010 |    0.77073 |      0.0000 |      7.0000 |
+ | "# pi-"                                         |    101929 |      69560 |    0.68244 |    0.76460 |      0.0000 |      6.0000 |
+ | "# selected"                                    |    101929 |      28831 |    0.28285 |    0.71838 |      0.0000 |      17.000 |
+ |*"#accept"                                       |    101929 |      19197 |( 18.83370 +- 0.1224635)% |
+ |*"#pass combcut"                                 |     48039 |      34021 |( 70.81954 +- 0.2074081)%|   -------   |   -------   |
+ |*"#pass mother cut"                              |     34021 |      28831 |( 84.74472 +- 0.1949364)%|   -------   |   -------   |
+ | "Error from IParticleCombiner, skip the combinat|        35 |         35 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+PhotonMakerAlg                      SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ |*"#accept"                                       |    101929 |     101929 |( 100.0000 +- 0.000000)% |
+FilterDesktop#3                     SUCCESS Number of counters : 5
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# PhotonMakerAlg/Particles"                    |    101929 |1.124118e+07 |     110.28 |     34.577 |      4.0000 |      221.00 |
+ | "# input particles"                             |    101929 |1.124118e+07 |     110.28 |     34.577 |      4.0000 |      221.00 |
+ |*"#accept"                                       |    101929 |      68616 |( 67.31745 +- 0.1469173)% |
+ | "#passed"                                       |    101929 |     113021 |     1.1088 |     1.0956 |      0.0000 |      13.000 |
+ |*"efficiency"                                    |  11241181 | 1.1302e+05 |( 1.005419 +- 0.002975592)%|   -------   |   -------   |
+CombineParticles#1                  SUCCESS Number of counters : 11
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# B0 -> K*(892)0  gamma "                      |    101929 |      17800 |    0.17463 |    0.72518 |      0.0000 |      32.000 |
+ | "# CombineParticles/Particles"                  |    101929 |      28831 |    0.28285 |    0.71838 |      0.0000 |      17.000 |
+ | "# FilterDesktop#3/Particles"                   |    101929 |     113021 |     1.1088 |     1.0956 |      0.0000 |      13.000 |
+ | "# K*(892)0"                                    |    101929 |      28831 |    0.28285 |    0.71838 |      0.0000 |      17.000 |
+ | "# K*(892)~0"                                   |    101929 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# gamma"                                       |    101929 |     113021 |     1.1088 |     1.0956 |      0.0000 |      13.000 |
+ | "# input particles"                             |    101929 |     141852 |     1.3917 |     1.3392 |      0.0000 |      20.000 |
+ | "# selected"                                    |    101929 |      17800 |    0.17463 |    0.72518 |      0.0000 |      32.000 |
+ |*"#accept"                                       |    101929 |       9435 |( 9.256443 +- 0.09077810)% |
+ |*"#pass combcut"                                 |     35891 |      29518 |( 82.24346 +- 0.2017145)%|   -------   |   -------   |
+ |*"#pass mother cut"                              |     29518 |      17800 |( 60.30219 +- 0.2847779)%|   -------   |   -------   |
+FilterDesktop#4                     SUCCESS Number of counters : 5
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# CombineParticles#1/Particles"                |    101929 |      17800 |    0.17463 |    0.72518 |      0.0000 |      32.000 |
+ | "# input particles"                             |    101929 |      17800 |    0.17463 |    0.72518 |      0.0000 |      32.000 |
+ |*"#accept"                                       |    101929 |       4090 |( 4.012597 +- 0.06147110)% |
+ | "#passed"                                       |    101929 |       5090 |   0.049937 |    0.26307 |      0.0000 |      5.0000 |
+ |*"efficiency"                                    |     17800 |       5090 |( 28.59551 +- 0.3386894)%|   -------   |   -------   |
+DeterministicPrescaler#1            SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ |*"#accept"                                       |    101929 |     101929 |( 100.0000 +- 0.000000)% |
+FunctionalParticleMaker#3           SUCCESS Number of counters : 4
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ |*"# passed ProtoParticle filter"                 |  11560803 |   11560803 |( 100.0000 +- 0.000000)% |
+ |*"# passed Track filter"                         |  17680101 |   11560803 |( 65.38878 +- 0.01131404)% |
+ | "Nb created anti-particles"                     |    101929 |    5747810 |     56.390 |     28.123 |           1 |         327 |
+ | "Nb created particles"                          |    101929 |    5812993 |     57.030 |     28.119 |           1 |         325 |
+FilterDesktop#5                     SUCCESS Number of counters : 5
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# FunctionalParticleMaker#3/Particles"         |    101929 |1.15608e+07 |     113.42 |     55.436 |      3.0000 |      646.00 |
+ | "# input particles"                             |    101929 |1.15608e+07 |     113.42 |     55.436 |      3.0000 |      646.00 |
+ |*"#accept"                                       |    101929 |     101929 |( 100.0000 +- 0.000000)% |
+ | "#passed"                                       |    101929 |1.065909e+07 |     104.57 |     50.228 |      3.0000 |      601.00 |
+ |*"efficiency"                                    |  11560803 | 1.0659e+07 |( 92.20024 +- 0.007887015)%|   -------   |   -------   |
+CombineParticles#2                  SUCCESS Number of counters : 10
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# FilterDesktop#5/Particles"                   |    101929 |1.065909e+07 |     104.57 |     50.228 |      3.0000 |      601.00 |
+ | "# e+"                                          |    101929 |    5357619 |     52.562 |     25.496 |      1.0000 |      302.00 |
+ | "# e-"                                          |    101929 |    5301469 |     52.011 |     25.528 |      1.0000 |      300.00 |
+ | "# gamma -> e+  e- "                            |    101929 |      96456 |    0.94631 |     1.7211 |      0.0000 |      40.000 |
+ | "# input particles"                             |    101929 |1.065909e+07 |     104.57 |     50.228 |      3.0000 |      601.00 |
+ | "# selected"                                    |    101929 |      96456 |    0.94631 |     1.7211 |      0.0000 |      40.000 |
+ |*"#accept"                                       |    101929 |      41984 |( 41.18946 +- 0.1541600)% |
+ |*"#pass combcut"                                 | 340891983 | 1.0203e+05 |(0.02993030 +- 9.368761e-05)%|   -------   |   -------   |
+ |*"#pass mother cut"                              |    102030 |      96456 |( 94.53690 +- 0.07114695)%|   -------   |   -------   |
+ | "Error from IParticleCombiner, skip the combinat|      5574 |       5574 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+CombineParticles#3                  SUCCESS Number of counters : 12
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# B0 -> K*(892)0  gamma "                      |    101929 |       4582 |   0.044953 |    0.42791 |      0.0000 |      36.000 |
+ | "# CombineParticles#2/Particles"                |    101929 |      96456 |    0.94631 |     1.7211 |      0.0000 |      40.000 |
+ | "# CombineParticles/Particles"                  |    101929 |      28831 |    0.28285 |    0.71838 |      0.0000 |      17.000 |
+ | "# K*(892)0"                                    |    101929 |      28831 |    0.28285 |    0.71838 |      0.0000 |      17.000 |
+ | "# K*(892)~0"                                   |    101929 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# gamma"                                       |    101929 |      96456 |    0.94631 |     1.7211 |      0.0000 |      40.000 |
+ | "# input particles"                             |    101929 |     125287 |     1.2292 |     1.8762 |      0.0000 |      40.000 |
+ | "# selected"                                    |    101929 |       4582 |   0.044953 |    0.42791 |      0.0000 |      36.000 |
+ |*"#accept"                                       |    101929 |       2280 |( 2.236851 +- 0.04631879)% |
+ |*"#pass combcut"                                 |     29417 |      23239 |( 78.99854 +- 0.2374844)%|   -------   |   -------   |
+ |*"#pass mother cut"                              |     23239 |       4582 |( 19.71686 +- 0.2609891)%|   -------   |   -------   |
+ | "Error from IParticleCombiner, skip the combinat|       320 |        320 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+FilterDesktop#6                     SUCCESS Number of counters : 5
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# CombineParticles#3/Particles"                |    101929 |       4582 |   0.044953 |    0.42791 |      0.0000 |      36.000 |
+ | "# input particles"                             |    101929 |       4582 |   0.044953 |    0.42791 |      0.0000 |      36.000 |
+ |*"#accept"                                       |    101929 |        341 |(0.3345466 +- 0.01808638)% |
+ | "#passed"                                       |    101929 |        526 |  0.0051605 |    0.11641 |      0.0000 |      16.000 |
+ |*"efficiency"                                    |      4582 |        526 |( 11.47970 +- 0.4709331)%|   -------   |   -------   |
+DeterministicPrescaler#2            SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ |*"#accept"                                       |    101929 |     101929 |( 100.0000 +- 0.000000)% |
+FilterDesktop#7                     SUCCESS Number of counters : 5
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# FunctionalParticleMaker#2/Particles"         |    101929 |1.15608e+07 |     113.42 |     55.436 |      3.0000 |      646.00 |
+ | "# input particles"                             |    101929 |1.15608e+07 |     113.42 |     55.436 |      3.0000 |      646.00 |
+ |*"#accept"                                       |    101929 |     101929 |( 100.0000 +- 0.000000)% |
+ | "#passed"                                       |    101929 |    2434987 |     23.889 |     12.013 |      1.0000 |      166.00 |
+ |*"efficiency"                                    |  11560803 |  2.435e+06 |( 21.06244 +- 0.01199229)%|   -------   |   -------   |
+CombineParticles#4                  SUCCESS Number of counters : 14
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# CombineParticles/Particles"                  |    101929 |      28831 |    0.28285 |    0.71838 |      0.0000 |      17.000 |
+ | "# D*(2010)+ -> K*(892)0  pi+ "                 |    101929 |     104958 |     1.0297 |     3.3911 |      0.0000 |      118.00 |
+ | "# D*(2010)- -> K*(892)0  pi- "                 |    101929 |     105140 |     1.0315 |     3.4142 |      0.0000 |      139.00 |
+ | "# FilterDesktop#7/Particles"                   |    101929 |    2434987 |     23.889 |     12.013 |      1.0000 |      166.00 |
+ | "# K*(892)0"                                    |    101929 |      28831 |    0.28285 |    0.71838 |      0.0000 |      17.000 |
+ | "# K*(892)~0"                                   |    101929 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# input particles"                             |    101929 |    2463818 |     24.172 |     12.056 |      1.0000 |      168.00 |
+ | "# pi+"                                         |    101929 |    1224963 |     12.018 |     6.4510 |      0.0000 |      84.000 |
+ | "# pi-"                                         |    101929 |    1210024 |     11.871 |     6.4146 |      0.0000 |      94.000 |
+ | "# selected"                                    |    101929 |     210098 |     2.0612 |     6.5437 |      0.0000 |      257.00 |
+ |*"#accept"                                       |    101929 |      18785 |( 18.42950 +- 0.1214435)% |
+ |*"#pass combcut"                                 |    715988 |  2.737e+05 |( 38.22718 +- 0.05742909)%|   -------   |   -------   |
+ |*"#pass mother cut"                              |    273702 |  2.101e+05 |( 76.76159 +- 0.08073024)%|   -------   |   -------   |
+ | "Error from IParticleCombiner, skip the combinat|       214 |        214 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+CombineParticles#5                  SUCCESS Number of counters : 12
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# B+ -> D*(2010)+  gamma "                     |    101929 |      42417 |    0.41614 |     2.4016 |      0.0000 |      138.00 |
+ | "# B- -> D*(2010)-  gamma "                     |    101929 |      42061 |    0.41265 |     2.4620 |      0.0000 |      206.00 |
+ | "# CombineParticles#4/Particles"                |    101929 |     210098 |     2.0612 |     6.5437 |      0.0000 |      257.00 |
+ | "# D*(2010)+"                                   |    101929 |     104958 |     1.0297 |     3.3911 |      0.0000 |      118.00 |
+ | "# D*(2010)-"                                   |    101929 |     105140 |     1.0315 |     3.4142 |      0.0000 |      139.00 |
+ | "# FilterDesktop#3/Particles"                   |    101929 |     113021 |     1.1088 |     1.0956 |      0.0000 |      13.000 |
+ | "# gamma"                                       |    101929 |     113021 |     1.1088 |     1.0956 |      0.0000 |      13.000 |
+ | "# input particles"                             |    101929 |     323119 |     3.1700 |     6.6972 |      0.0000 |      259.00 |
+ | "# selected"                                    |    101929 |      84478 |    0.82879 |     4.6427 |      0.0000 |      302.00 |
+ |*"#accept"                                       |    101929 |       9414 |( 9.235841 +- 0.09068731)% |
+ |*"#pass combcut"                                 |    275384 | 2.1024e+05 |( 76.34249 +- 0.08098383)%|   -------   |   -------   |
+ |*"#pass mother cut"                              |    210235 |      84478 |( 40.18265 +- 0.1069253)%|   -------   |   -------   |
+FilterDesktop#8                     SUCCESS Number of counters : 5
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# CombineParticles#5/Particles"                |    101929 |      84478 |    0.82879 |     4.6427 |      0.0000 |      302.00 |
+ | "# input particles"                             |    101929 |      84478 |    0.82879 |     4.6427 |      0.0000 |      302.00 |
+ |*"#accept"                                       |    101929 |       3813 |( 3.740839 +- 0.05943697)% |
+ | "#passed"                                       |    101929 |       8633 |   0.084696 |    0.55862 |      0.0000 |      27.000 |
+ |*"efficiency"                                    |     84478 |       8633 |( 10.21923 +- 0.1042147)%|   -------   |   -------   |
+DeterministicPrescaler#3            SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ |*"#accept"                                       |    101929 |     101929 |( 100.0000 +- 0.000000)% |
+CombineParticles#6                  SUCCESS Number of counters : 13
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# B+ -> D*(2010)+  gamma "                     |    101929 |      19552 |    0.19182 |     3.6580 |      0.0000 |      956.00 |
+ | "# B- -> D*(2010)-  gamma "                     |    101929 |      20067 |    0.19687 |     3.7127 |      0.0000 |      958.00 |
+ | "# CombineParticles#2/Particles"                |    101929 |      96456 |    0.94631 |     1.7211 |      0.0000 |      40.000 |
+ | "# CombineParticles#4/Particles"                |    101929 |     210098 |     2.0612 |     6.5437 |      0.0000 |      257.00 |
+ | "# D*(2010)+"                                   |    101929 |     104958 |     1.0297 |     3.3911 |      0.0000 |      118.00 |
+ | "# D*(2010)-"                                   |    101929 |     105140 |     1.0315 |     3.4142 |      0.0000 |      139.00 |
+ | "# gamma"                                       |    101929 |      96456 |    0.94631 |     1.7211 |      0.0000 |      40.000 |
+ | "# input particles"                             |    101929 |     306554 |     3.0075 |     6.8884 |      0.0000 |      286.00 |
+ | "# selected"                                    |    101929 |      39619 |    0.38869 |     7.2781 |      0.0000 |      1914.0 |
+ |*"#accept"                                       |    101929 |       2755 |( 2.702862 +- 0.05079408)% |
+ |*"#pass combcut"                                 |    283841 | 2.1233e+05 |( 74.80561 +- 0.08148570)%|   -------   |   -------   |
+ |*"#pass mother cut"                              |    212329 |      39619 |( 18.65925 +- 0.08454667)%|   -------   |   -------   |
+ | "Error from IParticleCombiner, skip the combinat|      2548 |       2548 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+FilterDesktop#9                     SUCCESS Number of counters : 5
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# CombineParticles#6/Particles"                |    101929 |      39619 |    0.38869 |     7.2781 |      0.0000 |      1914.0 |
+ | "# input particles"                             |    101929 |      39619 |    0.38869 |     7.2781 |      0.0000 |      1914.0 |
+ |*"#accept"                                       |    101929 |         66 |(0.06475095 +- 0.007967711)% |
+ | "#passed"                                       |    101929 |        132 |  0.0012950 |   0.060235 |      0.0000 |      7.0000 |
+ |*"efficiency"                                    |     39619 |        132 |(0.3331735 +- 0.02895068)%|   -------   |   -------   |
+bankKiller                          SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/0/1/0
+bankKiller                          SUCCESS  #WARNINGS   = 5141     Message = ' No bank of type 'HltLumiSummary' has been found - nothing to be removed'
+FilterDesktop#12                    SUCCESS Number of counters : 5
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# FilterDesktop#9"                             |      5141 |        132 |   0.025676 |    0.26704 |      0.0000 |      7.0000 |
+ | "# input particles"                             |      5141 |        132 |   0.025676 |    0.26704 |      0.0000 |      7.0000 |
+ |*"#accept"                                       |      5141 |         66 |( 1.283797 +- 0.1570068)% |
+ | "#passed"                                       |      5141 |        132 |   0.025676 |    0.26704 |      0.0000 |      7.0000 |
+ |*"efficiency"                                    |       132 |        132 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
+FilterDesktop#13                    SUCCESS Number of counters : 5
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# FilterDesktop#8"                             |      5141 |       8633 |     1.6792 |     1.8734 |      0.0000 |      27.000 |
+ | "# input particles"                             |      5141 |       8633 |     1.6792 |     1.8734 |      0.0000 |      27.000 |
+ |*"#accept"                                       |      5141 |       3813 |( 74.16845 +- 0.6104654)% |
+ | "#passed"                                       |      5141 |       8633 |     1.6792 |     1.8734 |      0.0000 |      27.000 |
+ |*"efficiency"                                    |      8633 |       8633 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
+FilterDesktop#10                    SUCCESS Number of counters : 5
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# FilterDesktop#4"                             |      5141 |       5090 |    0.99008 |    0.66427 |      0.0000 |      5.0000 |
+ | "# input particles"                             |      5141 |       5090 |    0.99008 |    0.66427 |      0.0000 |      5.0000 |
+ |*"#accept"                                       |      5141 |       4090 |( 79.55651 +- 0.5624600)% |
+ | "#passed"                                       |      5141 |       5090 |    0.99008 |    0.66427 |      0.0000 |      5.0000 |
+ |*"efficiency"                                    |      5090 |       5090 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
+FilterDesktop#11                    SUCCESS Number of counters : 5
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# FilterDesktop#6"                             |      5141 |        526 |    0.10231 |    0.50866 |      0.0000 |      16.000 |
+ | "# input particles"                             |      5141 |        526 |    0.10231 |    0.50866 |      0.0000 |      16.000 |
+ |*"#accept"                                       |      5141 |        341 |( 6.632951 +- 0.3470775)% |
+ | "#passed"                                       |      5141 |        526 |    0.10231 |    0.50866 |      0.0000 |      16.000 |
+ |*"efficiency"                                    |       526 |        526 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
+OutputStream                           INFO Events output: 5141
+HLTControlFlowMgr                      INFO Memory pool: used 0.000427246 +/- 0 MiB (min: 0, max: 0) in 1 +/- 0 blocks (allocated >once in 0 +/- 0% events). Allocated capacity was 10 +/- 0 MiB (min: 10, max: 10) and 2 +/- 0 (min: 2, max: 2) requests were served
+HLTControlFlowMgr                      INFO Timing table:
+HLTControlFlowMgr                      INFO Average ticks per millisecond: 2195376
+HLTControlFlowMgr                      INFO 
+ | Name of Algorithm                                       | Execution Count | Total Time / s  | Avg. Time / us   |
+ | "OutputStream"                                          |            5141 |          11.799 |         2295.111 |
+ | "Gaudi__Hive__FetchDataFromFile#11"                     |          101929 |        2072.044 |        20328.303 |
+ | "createODIN"                                            |          101929 |           2.576 |           25.269 |
+ | "DeterministicPrescaler"                                |          101929 |           0.377 |            3.702 |
+ | "Gaudi__Hive__FetchDataFromFile"                        |          101929 |           0.892 |            8.756 |
+ | "UnpackRecVertices"                                     |          101929 |          93.407 |          916.392 |
+ | "Gaudi__Hive__FetchDataFromFile#1"                      |          101929 |           0.839 |            8.227 |
+ | "UnpackCaloElectrons"                                   |          101929 |           9.242 |           90.675 |
+ | "Gaudi__Hive__FetchDataFromFile#2"                      |          101929 |           0.662 |            6.498 |
+ | "UnpackCaloPhotons"                                     |          101929 |           7.895 |           77.453 |
+ | "Gaudi__Hive__FetchDataFromFile#3"                      |          101929 |           0.593 |            5.813 |
+ | "UnpackCaloMergedPi0s"                                  |          101929 |           1.387 |           13.607 |
+ | "Gaudi__Hive__FetchDataFromFile#4"                      |          101929 |           0.527 |            5.173 |
+ | "UnpackCaloSplitPhotons"                                |          101929 |           2.014 |           19.764 |
+ | "Gaudi__Hive__FetchDataFromFile#5"                      |          101929 |           0.518 |            5.078 |
+ | "UnpackMuonPIDs"                                        |          101929 |           4.660 |           45.718 |
+ | "Gaudi__Hive__FetchDataFromFile#6"                      |          101929 |           0.598 |            5.865 |
+ | "UnpackRichPIDs"                                        |          101929 |           9.745 |           95.607 |
+ | "Gaudi__Hive__FetchDataFromFile#7"                      |          101929 |           0.661 |            6.487 |
+ | "UnpackBestTracks"                                      |          101929 |          52.190 |          512.026 |
+ | "Gaudi__Hive__FetchDataFromFile#8"                      |          101929 |           0.766 |            7.513 |
+ | "UnpackMuonTracks"                                      |          101929 |           2.555 |           25.066 |
+ | "Gaudi__Hive__FetchDataFromFile#9"                      |          101929 |           0.554 |            5.431 |
+ | "UnpackNeutralProtos"                                   |          101929 |          23.396 |          229.533 |
+ | "Gaudi__Hive__FetchDataFromFile#10"                     |          101929 |           0.697 |            6.834 |
+ | "UnpackChargedProtos"                                   |          101929 |          29.278 |          287.240 |
+ | "ChargedProtoParticleAddRichInfo"                       |          101929 |          21.930 |          215.146 |
+ | "ChargedProtoParticleAddMuonInfo"                       |          101929 |          11.722 |          115.007 |
+ | "ChargedProtoCombineDLLsAlg"                            |          101929 |          17.926 |          175.871 |
+ | "FunctionalParticleMaker#2"                             |          101929 |          12.931 |          126.860 |
+ | "FilterDesktop#2"                                       |          101929 |          47.118 |          462.266 |
+ | "CombineParticles"                                      |          101929 |          12.060 |          118.321 |
+ | "PhotonMakerAlg"                                        |          101929 |          34.103 |          334.572 |
+ | "FilterDesktop#3"                                       |          101929 |           2.848 |           27.937 |
+ | "CombineParticles#1"                                    |          101929 |           8.212 |           80.562 |
+ | "FilterDesktop#4"                                       |          101929 |           3.496 |           34.295 |
+ | "DeterministicPrescaler#1"                              |          101929 |           0.256 |            2.509 |
+ | "FunctionalParticleMaker#3"                             |          101929 |          13.313 |          130.611 |
+ | "FilterDesktop#5"                                       |          101929 |           4.177 |           40.980 |
+ | "CombineParticles#2"                                    |          101929 |         190.757 |         1871.469 |
+ | "CombineParticles#3"                                    |          101929 |           6.574 |           64.492 |
+ | "FilterDesktop#6"                                       |          101929 |           1.541 |           15.119 |
+ | "DeterministicPrescaler#2"                              |          101929 |           0.350 |            3.432 |
+ | "FilterDesktop#7"                                       |          101929 |          88.987 |          873.025 |
+ | "CombineParticles#4"                                    |          101929 |          18.530 |          181.793 |
+ | "CombineParticles#5"                                    |          101929 |          10.368 |          101.715 |
+ | "FilterDesktop#8"                                       |          101929 |           6.079 |           59.636 |
+ | "DeterministicPrescaler#3"                              |          101929 |           0.271 |            2.662 |
+ | "CombineParticles#6"                                    |          101929 |          10.044 |           98.539 |
+ | "FilterDesktop#9"                                       |          101929 |           3.504 |           34.376 |
+ | "bankKiller"                                            |            5141 |           0.097 |           18.907 |
+ | "ExecutionReportsWriter"                                |            5141 |           0.064 |           12.460 |
+ | "HltDecReportsWriter"                                   |            5141 |           0.068 |           13.313 |
+ | "CopyLinePersistenceLocations"                          |            5141 |           4.263 |          829.280 |
+ | "CopyParticle2PVRelationsFromLinePersistenceLocations"  |            5141 |           0.378 |           73.467 |
+ | "PackParticlesAndVertices"                              |            5141 |           0.974 |          189.490 |
+ | "PackCaloHypo"                                          |            5141 |           0.079 |           15.456 |
+ | "PackCaloHypo#1"                                        |            5141 |           0.096 |           18.608 |
+ | "PackCaloHypo#2"                                        |            5141 |           0.072 |           13.909 |
+ | "PackCaloHypo#3"                                        |            5141 |           0.041 |            7.952 |
+ | "Hlt__RoutingBitsWriter"                                |            5141 |           0.053 |           10.282 |
+ | "FilterDesktop#12"                                      |            5141 |           0.067 |           13.011 |
+ | "FilterDesktop#13"                                      |            5141 |           0.291 |           56.507 |
+ | "FilterDesktop#10"                                      |            5141 |           0.304 |           59.197 |
+ | "FilterDesktop#11"                                      |            5141 |           0.073 |           14.260 |
+
+HLTControlFlowMgr                      INFO 
+LAZY_AND: moore                                                                                              #=101929  Sum=5141        Eff=|( 5.043707 +- 0.0685469)%|
+ NONLAZY_OR: hlt_decision                                                                                    #=101929  Sum=5141        Eff=|( 5.043707 +- 0.0685469)%|
+  LAZY_AND: Hlt2BToHHGamma_Inclusive_Line                                                                    #=101929  Sum=4090        Eff=|( 4.012597 +- 0.0614711)%|
+   DeterministicPrescaler/DeterministicPrescaler                                                             #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   UnpackRecVertex/UnpackRecVertices                                                                         #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   UnpackCaloHypo/UnpackCaloElectrons                                                                        #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   UnpackCaloHypo/UnpackCaloPhotons                                                                          #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   UnpackCaloHypo/UnpackCaloMergedPi0s                                                                       #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   UnpackCaloHypo/UnpackCaloSplitPhotons                                                                     #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   DataPacking__Unpack<LHCb__MuonPIDPacker>/UnpackMuonPIDs                                                   #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   DataPacking__Unpack<LHCb__RichPIDPacker>/UnpackRichPIDs                                                   #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   UnpackTrackFunctional/UnpackBestTracks                                                                    #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   UnpackTrackFunctional/UnpackMuonTracks                                                                    #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   UnpackProtoParticle/UnpackNeutralProtos                                                                   #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   UnpackProtoParticle/UnpackChargedProtos                                                                   #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   ChargedProtoParticleAddRichInfo/ChargedProtoParticleAddRichInfo                                           #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   ChargedProtoParticleAddMuonInfo/ChargedProtoParticleAddMuonInfo                                           #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   ChargedProtoCombineDLLsAlg/ChargedProtoCombineDLLsAlg                                                     #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   FilterDesktop/FilterDesktop#4                                                                             #=101929  Sum=4090        Eff=|( 4.012597 +- 0.0614711)%|
+  LAZY_AND: Hlt2BToHHGammaee_Inclusive_Line                                                                  #=101929  Sum=341         Eff=|(0.3345466 +- 0.0180864)%|
+   DeterministicPrescaler/DeterministicPrescaler#1                                                           #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   UnpackRecVertex/UnpackRecVertices                                                                         #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   UnpackCaloHypo/UnpackCaloElectrons                                                                        #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   UnpackCaloHypo/UnpackCaloPhotons                                                                          #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   UnpackCaloHypo/UnpackCaloMergedPi0s                                                                       #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   UnpackCaloHypo/UnpackCaloSplitPhotons                                                                     #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   DataPacking__Unpack<LHCb__MuonPIDPacker>/UnpackMuonPIDs                                                   #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   DataPacking__Unpack<LHCb__RichPIDPacker>/UnpackRichPIDs                                                   #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   UnpackTrackFunctional/UnpackBestTracks                                                                    #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   UnpackTrackFunctional/UnpackMuonTracks                                                                    #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   UnpackProtoParticle/UnpackNeutralProtos                                                                   #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   UnpackProtoParticle/UnpackChargedProtos                                                                   #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   ChargedProtoParticleAddRichInfo/ChargedProtoParticleAddRichInfo                                           #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   ChargedProtoParticleAddMuonInfo/ChargedProtoParticleAddMuonInfo                                           #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   ChargedProtoCombineDLLsAlg/ChargedProtoCombineDLLsAlg                                                     #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   FilterDesktop/FilterDesktop#6                                                                             #=101929  Sum=341         Eff=|(0.3345466 +- 0.0180864)%|
+  LAZY_AND: Hlt2BToHHHGamma_Inclusive_Line                                                                   #=101929  Sum=3813        Eff=|( 3.740839 +- 0.0594370)%|
+   DeterministicPrescaler/DeterministicPrescaler#2                                                           #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   UnpackRecVertex/UnpackRecVertices                                                                         #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   UnpackCaloHypo/UnpackCaloElectrons                                                                        #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   UnpackCaloHypo/UnpackCaloPhotons                                                                          #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   UnpackCaloHypo/UnpackCaloMergedPi0s                                                                       #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   UnpackCaloHypo/UnpackCaloSplitPhotons                                                                     #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   DataPacking__Unpack<LHCb__MuonPIDPacker>/UnpackMuonPIDs                                                   #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   DataPacking__Unpack<LHCb__RichPIDPacker>/UnpackRichPIDs                                                   #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   UnpackTrackFunctional/UnpackBestTracks                                                                    #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   UnpackTrackFunctional/UnpackMuonTracks                                                                    #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   UnpackProtoParticle/UnpackNeutralProtos                                                                   #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   UnpackProtoParticle/UnpackChargedProtos                                                                   #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   ChargedProtoParticleAddRichInfo/ChargedProtoParticleAddRichInfo                                           #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   ChargedProtoParticleAddMuonInfo/ChargedProtoParticleAddMuonInfo                                           #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   ChargedProtoCombineDLLsAlg/ChargedProtoCombineDLLsAlg                                                     #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   FilterDesktop/FilterDesktop#8                                                                             #=101929  Sum=3813        Eff=|( 3.740839 +- 0.0594370)%|
+  LAZY_AND: Hlt2BToHHHGammaEE_Inclusive_Line                                                                 #=101929  Sum=66          Eff=|(0.06475095 +- 0.00796771)%|
+   DeterministicPrescaler/DeterministicPrescaler#3                                                           #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   UnpackRecVertex/UnpackRecVertices                                                                         #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   UnpackCaloHypo/UnpackCaloElectrons                                                                        #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   UnpackCaloHypo/UnpackCaloPhotons                                                                          #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   UnpackCaloHypo/UnpackCaloMergedPi0s                                                                       #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   UnpackCaloHypo/UnpackCaloSplitPhotons                                                                     #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   DataPacking__Unpack<LHCb__MuonPIDPacker>/UnpackMuonPIDs                                                   #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   DataPacking__Unpack<LHCb__RichPIDPacker>/UnpackRichPIDs                                                   #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   UnpackTrackFunctional/UnpackBestTracks                                                                    #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   UnpackTrackFunctional/UnpackMuonTracks                                                                    #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   UnpackProtoParticle/UnpackNeutralProtos                                                                   #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   UnpackProtoParticle/UnpackChargedProtos                                                                   #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   ChargedProtoParticleAddRichInfo/ChargedProtoParticleAddRichInfo                                           #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   ChargedProtoParticleAddMuonInfo/ChargedProtoParticleAddMuonInfo                                           #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   ChargedProtoCombineDLLsAlg/ChargedProtoCombineDLLsAlg                                                     #=101929  Sum=101929      Eff=|( 100.0000 +- 0.00000 )%|
+   FilterDesktop/FilterDesktop#9                                                                             #=101929  Sum=66          Eff=|(0.06475095 +- 0.00796771)%|
+ NONLAZY_OR: report_writers                                                                                  #=5141    Sum=5141        Eff=|( 100.0000 +- 0.00000 )%|
+  bankKiller/bankKiller                                                                                      #=5141    Sum=5141        Eff=|( 100.0000 +- 0.00000 )%|
+  ExecutionReportsWriter/ExecutionReportsWriter                                                              #=5141    Sum=5141        Eff=|( 100.0000 +- 0.00000 )%|
+  HltDecReportsWriter/HltDecReportsWriter                                                                    #=5141    Sum=5141        Eff=|( 100.0000 +- 0.00000 )%|
+  NONLAZY_OR: LineMovers                                                                                     #=5141    Sum=5141        Eff=|( 100.0000 +- 0.00000 )%|
+   NONLAZY_OR: Hlt2BToHHHGammaEE_Inclusive_LineDecisionMovers                                                #=5141    Sum=66          Eff=|( 1.283797 +- 0.157007)%|
+    FilterDesktop/FilterDesktop#12                                                                           #=5141    Sum=66          Eff=|( 1.283797 +- 0.157007)%|
+   NONLAZY_OR: Hlt2BToHHHGamma_Inclusive_LineDecisionMovers                                                  #=5141    Sum=3813        Eff=|( 74.16845 +- 0.610465)%|
+    FilterDesktop/FilterDesktop#13                                                                           #=5141    Sum=3813        Eff=|( 74.16845 +- 0.610465)%|
+   NONLAZY_OR: Hlt2BToHHGamma_Inclusive_LineDecisionMovers                                                   #=5141    Sum=4090        Eff=|( 79.55651 +- 0.562460)%|
+    FilterDesktop/FilterDesktop#10                                                                           #=5141    Sum=4090        Eff=|( 79.55651 +- 0.562460)%|
+   NONLAZY_OR: Hlt2BToHHGammaee_Inclusive_LineDecisionMovers                                                 #=5141    Sum=341         Eff=|( 6.632951 +- 0.347077)%|
+    FilterDesktop/FilterDesktop#11                                                                           #=5141    Sum=341         Eff=|( 6.632951 +- 0.347077)%|
+  CopyLinePersistenceLocations/CopyLinePersistenceLocations                                                  #=5141    Sum=5141        Eff=|( 100.0000 +- 0.00000 )%|
+  CopyParticle2PVRelationsFromLinePersistenceLocations/CopyParticle2PVRelationsFromLinePersistenceLocations  #=5141    Sum=5141        Eff=|( 100.0000 +- 0.00000 )%|
+  PackParticlesAndVertices/PackParticlesAndVertices                                                          #=5141    Sum=5141        Eff=|( 100.0000 +- 0.00000 )%|
+  PackCaloHypo/PackCaloHypo                                                                                  #=5141    Sum=5141        Eff=|( 100.0000 +- 0.00000 )%|
+  PackCaloHypo/PackCaloHypo#1                                                                                #=5141    Sum=5141        Eff=|( 100.0000 +- 0.00000 )%|
+  PackCaloHypo/PackCaloHypo#2                                                                                #=5141    Sum=5141        Eff=|( 100.0000 +- 0.00000 )%|
+  PackCaloHypo/PackCaloHypo#3                                                                                #=5141    Sum=5141        Eff=|( 100.0000 +- 0.00000 )%|
+  Hlt__RoutingBitsWriter/Hlt__RoutingBitsWriter                                                              #=5141    Sum=5141        Eff=|( 100.0000 +- 0.00000 )%|
+ OutputStream/OutputStream                                                                                   #=5141    Sum=5141        Eff=|( 100.0000 +- 0.00000 )%|
+
+HLTControlFlowMgr                      INFO Histograms converted successfully according to request.
+TransportSvc                        SUCCESS  GEOMETRY ERRORS: 'Skip'     map has the size 0
+
+TransportSvc                        SUCCESS  GEOMETRY ERRORS: 'Recover'  map has the size 0
+
+TransportSvc                        SUCCESS  GEOMETRY ERRORS: 'Codes'    map has the size 0
+
+TransportSvc                           INFO Reset the static pointer to DetDesc::IGeometyrErrorSvc
+ToolSvc                                INFO Removing all tools created by ToolSvc
+ToolSvc.LoKi::VertexFitter          SUCCESS Number of counters : 6
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "#iterations/1"                                 |    584615 |    1000164 |     1.7108 |    0.87363 |      1.0000 |      11.000 |
+ | "#iterations/2"                                 |    598119 |    1529257 |     2.5568 |     1.1119 |      2.0000 |      11.000 |
+ | "#iterations/Gen"                               |      1743 |       6295 |     3.6116 |
+ | "#iterations/Opt"                               |    874640 |     928000 |     1.0610 |     1.1645 |      0.0000 |      10.000 |
+ | "Seed:case(2)"                                  |      4099 |
+ | "Seed:case(3)"                                  |      6335 |
+ToolSvc.LoKi::VertexFitter          SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/0/25/0
+ToolSvc.LoKi::VertexFitter          SUCCESS  #WARNINGS   = 14       Message = 'Error from Kalman-step, skip [CombineParticles#2]'
+ToolSvc.LoKi::VertexFitter          SUCCESS  #WARNINGS   = 5574     Message = 'No convergency has been reached [CombineParticles#2]'
+ToolSvc.LoKi::VertexFitter          SUCCESS  #WARNINGS   = 320      Message = 'No convergency has been reached [CombineParticles#3]'
+ToolSvc.LoKi::VertexFitter          SUCCESS  #WARNINGS   = 214      Message = 'No convergency has been reached [CombineParticles#4]'
+ToolSvc.LoKi::VertexFitter          SUCCESS  #WARNINGS   = 2548     Message = 'No convergency has been reached [CombineParticles#6]'
+ToolSvc.LoKi::VertexFitter          SUCCESS  #WARNINGS   = 35       Message = 'No convergency has been reached [CombineParticles]'
+ToolSvc.LoKi::VertexFitter          SUCCESS  #WARNINGS   = 6296     Message = '_iterate_opt: No convergency has been reached [CombineParticles#2]'
+ToolSvc.LoKi::VertexFitter          SUCCESS  #WARNINGS   = 328      Message = '_iterate_opt: No convergency has been reached [CombineParticles#3]'
+ToolSvc.LoKi::VertexFitter          SUCCESS  #WARNINGS   = 1161     Message = '_iterate_opt: No convergency has been reached [CombineParticles#4]'
+ToolSvc.LoKi::VertexFitter          SUCCESS  #WARNINGS   = 2610     Message = '_iterate_opt: No convergency has been reached [CombineParticles#6]'
+ToolSvc.LoKi::VertexFitter          SUCCESS  #WARNINGS   = 39       Message = '_iterate_opt: No convergency has been reached [CombineParticles]'
+ToolSvc.LoKi::VertexFitter          SUCCESS  #WARNINGS   = 9171     Message = 'fit(): Vertex is outside of fiducial volume [CombineParticles#2]'
+ToolSvc.LoKi::VertexFitter          SUCCESS  #WARNINGS   = 3        Message = 'fit(): Vertex is outside of fiducial volume [CombineParticles#4]'
+ToolSvc.LoKi::VertexFitter          SUCCESS  #WARNINGS   = 6        Message = 'fit(): Vertex is outside of fiducial volume [CombineParticles]'
+ToolSvc.LoKi::VertexFitter          SUCCESS  #WARNINGS   = 5574     Message = 'fit(): failure from _iterate() [CombineParticles#2]'
+ToolSvc.LoKi::VertexFitter          SUCCESS  #WARNINGS   = 320      Message = 'fit(): failure from _iterate() [CombineParticles#3]'
+ToolSvc.LoKi::VertexFitter          SUCCESS  #WARNINGS   = 214      Message = 'fit(): failure from _iterate() [CombineParticles#4]'
+ToolSvc.LoKi::VertexFitter          SUCCESS  #WARNINGS   = 2548     Message = 'fit(): failure from _iterate() [CombineParticles#6]'
+ToolSvc.LoKi::VertexFitter          SUCCESS  #WARNINGS   = 35       Message = 'fit(): failure from _iterate() [CombineParticles]'
+ToolSvc.LoKi::VertexFitter          SUCCESS  #WARNINGS   = 5574     Message = 'fit(): failure from fit [CombineParticles#2]'
+ToolSvc.LoKi::VertexFitter          SUCCESS  #WARNINGS   = 320      Message = 'fit(): failure from fit [CombineParticles#3]'
+ToolSvc.LoKi::VertexFitter          SUCCESS  #WARNINGS   = 214      Message = 'fit(): failure from fit [CombineParticles#4]'
+ToolSvc.LoKi::VertexFitter          SUCCESS  #WARNINGS   = 2548     Message = 'fit(): failure from fit [CombineParticles#6]'
+ToolSvc.LoKi::VertexFitter          SUCCESS  #WARNINGS   = 35       Message = 'fit(): failure from fit [CombineParticles]'
+ToolSvc.LoKi::VertexFitter          SUCCESS  #WARNINGS   = 16       Message = 'fit(): measured mass error is a bit    non-positive, adjust to 1 MeV [CombineParticles#2]'
+PhotonMakerAlg.PhotonMaker             INFO PhotonMakerAlg.PhotonMaker -  Summary -----
+PhotonMakerAlg.PhotonMaker             INFO  Created : 110.284 gamma per event
+PhotonMakerAlg.PhotonMaker             INFO  ---------------------------
+PhotonMakerAlg.PhotonMaker          SUCCESS Number of counters : 2
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "Confidence Level"                              |  11241181 |   981094.2 |   0.087277 |
+ | "Created unConverted photons"                   |    101929 |   11241181 |     110.28 |
+ToolSvc.HybridFactory               SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# loaded from PYTHON"                          |        80 |         80 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+ToolSvc.TrackFunctorFactory         SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# loaded from PYTHON"                          |         2 |          2 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+ToolSvc.TrackParabolicExtrapolator  SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "Number of field calls"                         |    704235 |
+ToolSvc.TrackStateProvider.Track... SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "Number of field calls"                         |       168 |
+ToolSvc.TrackStateProvider          SUCCESS Number of counters : 2
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "Number of states added"                        |         1 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "Number of tracks seen"                         |         1 |          1 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+FunctionalParticleMaker#3.LoKi::... SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# loaded from PYTHON"                          |         1 |          1 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+FunctionalParticleMaker#2.LoKi::... SUCCESS Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# loaded from PYTHON"                          |         1 |          1 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+ToolSvc.LoKi::DistanceCalculator    SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/0/2/0
+ToolSvc.LoKi::DistanceCalculator    SUCCESS  #WARNINGS   = 181      Message = 'There is no convergency-III [CombineParticles]'
+ToolSvc.LoKi::DistanceCalculator    SUCCESS  #WARNINGS   = 48       Message = 'There is no convergency-III [FilterDesktop#4]'
+RootCnvSvc                             INFO Disconnected data IO:1C3B5F40-A97F-E811-8E1A-3CFDFE9EB2F4 [root://shark5.grid.surfsara.nl:1094/pnfs/grid.sara.nl/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000058_1.ldst]
+RootCnvSvc                             INFO Disconnected data IO:6463BF79-BEA4-EA11-BCBC-FA163E98FDF0 [output/K1G/K1G.mdst]
+RootCnvSvc                             INFO Disconnected data IO:CC441C62-C976-E811-AAED-3CFDFE9EB2E8 [root://shark6.grid.surfsara.nl:1094/pnfs/grid.sara.nl/data/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000028_1.ldst]
+RootCnvSvc                             INFO Disconnected data IO:CCB8DAD7-9F7F-E811-B350-00259059EB88 [root://lhcbsdrm.t1.grid.kiae.ru:1094/t1.grid.kiae.ru/data/lhcb/lhcbdisk/lhcb/MC/Upgrade/LDST/00075816/0000/00075816_00000057_1.ldst]
+ApplicationMgr                         INFO Application Manager Finalized successfully
+ApplicationMgr                         INFO Application Manager Terminated successfully

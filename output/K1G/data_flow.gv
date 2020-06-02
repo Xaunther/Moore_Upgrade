@@ -1,5 +1,5 @@
 strict digraph "Data flow" {
-label="Data flow generated at Tue Jun 02 12:44:35 2020";
+label="Data flow generated at Tue Jun 02 12:46:06 2020";
 rankdir=LR;
 node [shape=box];
 subgraph "cluster_DeterministicPrescaler/DeterministicPrescaler" {
@@ -1964,7 +1964,7 @@ label="";
 subgraph "cluster_OutputStream/OutputStream" {
 bgcolor=aliceblue;
 label="";
-"OutputStream/OutputStream" [label=<<B>OutputStream/OutputStream</B><BR/>Output = DATAFILE=&#x27;output/KstG/KstG.mdst&#x27; SVC=&#x27;Gaudi::RootCnvSvc&#x27; OPT=&#x27;RECREATE&#x27;<BR/>OptItemList = [&#x27;/Event/HLT2/pRec#*&#x27;, &#x27;/Event/Trigger/RawEvent#1&#x27;, &#x27;/Event/HLT2/pPhys#*&#x27;]>, shape=plaintext];
+"OutputStream/OutputStream" [label=<<B>OutputStream/OutputStream</B><BR/>Output = DATAFILE=&#x27;output/K1G/K1G.mdst&#x27; SVC=&#x27;Gaudi::RootCnvSvc&#x27; OPT=&#x27;RECREATE&#x27;<BR/>OptItemList = [&#x27;/Event/HLT2/pRec#*&#x27;, &#x27;/Event/Trigger/RawEvent#1&#x27;, &#x27;/Event/HLT2/pPhys#*&#x27;]>, shape=plaintext];
 "OutputStream/OutputStream_in_ItemList" [fillcolor=deepskyblue1, label=ItemList, style=filled];
 "OutputStream/OutputStream" -> "OutputStream/OutputStream_in_ItemList"  [minlen=0, style=invis];
 }
