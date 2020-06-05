@@ -54,7 +54,7 @@ line_output = AutomaticData("{1}/{0}/Particles".format(linename, ROOT_IN_TES))
 dtt_line = DecayTreeTuple(
     "MyTuple",
     Inputs=[line_output.outputLocation()],
-    Decay="B+ -> ^(D*(2010)+ -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi+) ^gamma || B- -> ^(D*(2010)- -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi-) ^gamma",
+    Decay="(B+ -> ^(D*(2010)+ -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi+) ^gamma) || (B- -> ^(D*(2010)- -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi-) ^gamma)",
     ToolList=list(DEFAULT_TUPLE_TOOLS),
 )
 dtt_line.ErrorMax = -1

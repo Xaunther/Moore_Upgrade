@@ -11,7 +11,7 @@ from PhysSelPython.Selections import (
     SelectionSequence,
 )
 #Small configs to do here
-linename = "Hlt2BToHHHGammaee_Inclusive_Line"
+linename = "Hlt2BToHHHGammaEE_Inclusive_Line"
 extrasel = ""
 
 
@@ -54,7 +54,7 @@ line_output = AutomaticData("{1}/{0}/Particles".format(linename, ROOT_IN_TES))
 dtt_line = DecayTreeTuple(
     "MyTuple",
     Inputs=[line_output.outputLocation()],
-    Decay="B+ -> ^(D*(2010)+ -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi+) ^(gamma -> ^e+ ^e-) || B- -> ^(D*(2010)- -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi-) ^(gamma -> ^e+ ^e-)",
+    Decay="(B+ -> ^(D*(2010)+ -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi+) ^(gamma -> ^e+ ^e-)) || (B- -> ^(D*(2010)- -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi-) ^(gamma -> ^e+ ^e-))",
     ToolList=list(DEFAULT_TUPLE_TOOLS),
 )
 dtt_line.ErrorMax = -1
