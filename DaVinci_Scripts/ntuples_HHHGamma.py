@@ -25,7 +25,7 @@ DEFAULT_TUPLE_TOOLS = (
 ROOT_IN_TES = "/Event/HLT2"
 
 # The output of the HLT2 line
-line_output = AutomaticData("{0}/Particles".format(linename))
+line_output = AutomaticData("{1}/{0}/Particles".format(linename, ROOT_IN_TES))
 # Extra pions
 #soft_pions = AutomaticData("Hlt2CharmD0ToKmPip/SoftPions/Particles")
 #dstars = CombineSelection(
@@ -57,6 +57,7 @@ dtt_line = DecayTreeTuple(
     Decay="B+ -> ^(D*(2010)+ -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi+) ^gamma || B- -> ^(D*(2010)- -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi-) ^gamma",
     ToolList=list(DEFAULT_TUPLE_TOOLS),
 )
+dtt_line.ErrorMax = -1
 #dtt_kpi.addBranches({
 #    "D0": "D0 -> K- K+",
 #    "D0_h1": "D0 -> ^K- K+",
@@ -82,7 +83,7 @@ dtt_line.addTupleTool("TupleToolANNPID").ANNPIDTunes = ["MC15TuneV1"]
 DaVinci().DataType = "Upgrade"
 DaVinci().Simulation = True
 DaVinci().Lumi = not DaVinci().Simulation
-DaVinci().InputType = "DST"
+DaVinci().InputType = "MDST"
 DaVinci().RootInTES = ROOT_IN_TES
 DaVinci().UserAlgorithms = [dtt_line]
 DaVinci().TupleFile = DaVinci().TupleFile + "_HHHGamma.root"
