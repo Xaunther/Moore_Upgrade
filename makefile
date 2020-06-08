@@ -12,6 +12,7 @@ LbLogin9=export BINARY_TAG="x86_64-centos7-gcc9-opt" && export CMTCONFIG="x86_64
 default_DST_output_list=output/KstG/std_Moore.out output/K1G/std_Moore.out output/PhiG/std_Moore.out output/LambdaG/std_Moore.out
 default_DST_output: $(default_DST_output_list)
 $(default_DST_output_list): output/%/std_Moore.out: Moore_Scripts/%.py
+	mkdir output/$*
 	$(LbLogin9) && $(MOORE)/run gaudirun.py Moore_Scripts/$*.py Moore_Scripts/AllLines.py | tee $@
 	rm -f test_catalog.xml
 
