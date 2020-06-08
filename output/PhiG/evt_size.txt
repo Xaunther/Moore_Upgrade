@@ -1,0 +1,2 @@
+OutputStream                           INFO Events output: 11561
+34M	output/PhiG/PhiG.dst

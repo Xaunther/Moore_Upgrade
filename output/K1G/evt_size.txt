@@ -1,0 +1,2 @@
+OutputStream                           INFO Events output: 5141
+20M	output/K1G/K1G.dst

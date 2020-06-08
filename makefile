@@ -38,3 +38,14 @@ $(default_ntuple_HHHGammaEE_output_list): output/%/std_DV_HHHGammaEE.out: output
 	$(LbLogin9) && $(DAVINCI) gaudirun.py DaVinci_Scripts/$*.py DaVinci_Scripts/ntuples_HHHGammaEE.py | tee $@
 .PHONY: default_ntuple_output
 default_ntuple_output: default_ntuple_HHGamma_output default_ntuple_HHGammaEE_output default_ntuple_HHHGamma_output default_ntuple_HHHGammaEE_output
+
+#Another thingy to do here is to clunkily get the average event size
+default_DST_size_list=output/KstG/evt_size.txt output/PhiG/evt_size.txt output/LambdaG/evt_size.txt output/K1G/evt_size.txt
+default_DST_size: $(default_DST_size_list)
+$(default_DST_size_list): output/%/evt_size.txt: output/%/std_Moore.out
+	grep "Events output" output/$*/std_Moore.out > $@
+	du -sh output/$*/$*.dst >> $@
+
+#Run all default stuff
+.PHONY: all_default
+all_default: default_ntuple_output default_DST_size
