@@ -27,7 +27,7 @@ ROOT_IN_TES = "/Event/HLT2"
 # The output of the HLT2 line
 line_output = AutomaticData("{1}/{0}/Particles".format(linename, ROOT_IN_TES))
 # Extra pions
-extra_hadrons = AutomaticData("{0}/{1}/Particles".format(linename, extra_hadron))
+extra_hadrons = AutomaticData("{2}/{0}/{1}/Particles".format(linename, extra_hadron, ROOT_IN_TES))
 extra_hadron_sel = CombineSelection(
     extra_hadron+"Sel",
     inputs=[line_output, extra_hadrons],
