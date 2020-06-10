@@ -18,9 +18,9 @@ extra_hadron = "ExtraHadron"
 # The addTupleTool machinery tries to mutate this in place, so have to make
 # sure to copy it whenever we need it
 DEFAULT_TUPLE_TOOLS = (
-    "TupleToolKinematic",
-    "TupleToolPid",
-    "TupleToolGeometry",
+#    "TupleToolKinematic",
+#    "TupleToolPid",
+#    "TupleToolGeometry",
 )
 ROOT_IN_TES = "/Event/HLT2"
 

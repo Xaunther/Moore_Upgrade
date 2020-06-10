@@ -45,7 +45,7 @@ default_DST_size_list=output/KstG/evt_size.txt output/PhiG/evt_size.txt output/L
 default_DST_size: $(default_DST_size_list)
 $(default_DST_size_list): output/%/evt_size.txt: output/%/std_Moore.out
 	grep "Events output" output/$*/std_Moore.out > $@
-	du -sh output/$*/$*.dst >> $@
+	du -sh output/$*/$*.mdst >> $@
 
 #Run all default stuff
 .PHONY: all_default
