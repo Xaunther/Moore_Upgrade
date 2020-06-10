@@ -36,7 +36,16 @@ extra_hadron_sel = CombineSelection(
     "B*+ -> B+ pi-",
     "B*- -> B- pi+",
     "B*- -> B- pi-"
-    ]
+    ],
+    DaughtersCuts={
+        "pi+": "PT > -100 * MeV"
+    },
+    CombinationCut=(
+    "AM > -100"
+    ),
+    MotherCut=(
+    "M > -100"
+    )
 )
 extra_hadron_selseq = SelectionSequence(
     extra_hadron_sel.name() + "Seq",

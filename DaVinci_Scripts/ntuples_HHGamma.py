@@ -34,7 +34,16 @@ extra_hadron_sel = CombineSelection(
     DecayDescriptors=[
     "B*+ -> B0 pi+",
     "B*- -> B0 pi-"
-    ]
+    ],
+    DaughtersCuts={
+        "pi+": "PT > -100 * MeV"
+    },
+    CombinationCut=(
+    "AM > -100"
+    ),
+    MotherCut=(
+    "M > -100"
+    )
 )
 extra_hadron_selseq = SelectionSequence(
     extra_hadron_sel.name() + "Seq",
