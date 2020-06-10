@@ -3,7 +3,7 @@ from Gaudi.Configuration import INFO
 import os
 
 #Define decay name, will be used around
-decname = "K1GG"
+decname = "K1G"
 decdesc = "12203224"
 
 #Define outputfolder here
@@ -13,7 +13,7 @@ try:
 except:
     pass
 
-with open("DSTs/{0}_{1}_MagDown.dir").format(decname, decdesc) as f:
+with open("DSTs/{0}_{1}_MagDown.dir".format(decname, decdesc)) as f:
     options.input_files = f.read().splitlines()
 f.close()
 options.input_type = 'ROOT'
