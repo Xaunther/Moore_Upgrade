@@ -1,0 +1,231 @@
+strict digraph control_flow {
+compound=True;
+label="Control flow generated at Tue Jun 09 19:04:27 2020";
+subgraph cluster_moore {
+label=<<B>moore</B><BR/>LAZY_AND, ordered>;
+edge [dir=forward];
+subgraph cluster_hlt_decision {
+label=<<B>hlt_decision</B><BR/>NONLAZY_OR, unordered>;
+edge [dir=none];
+subgraph cluster_Hlt2BToHHGamma_Inclusive_Line {
+label=<<B>Hlt2BToHHGamma_Inclusive_Line</B><BR/>LAZY_AND, ordered>;
+edge [dir=forward];
+"Hlt2BToHHGamma_Inclusive_Line_DeterministicPrescaler/DeterministicPrescaler" [label="DeterministicPrescaler/DeterministicPrescaler"];
+"Hlt2BToHHGamma_Inclusive_Line_UnpackRecVertex/UnpackRecVertices" [label="UnpackRecVertex/UnpackRecVertices"];
+"Hlt2BToHHGamma_Inclusive_Line_DeterministicPrescaler/DeterministicPrescaler" -> "Hlt2BToHHGamma_Inclusive_Line_UnpackRecVertex/UnpackRecVertices";
+"Hlt2BToHHGamma_Inclusive_Line_UnpackCaloHypo/UnpackCaloElectrons" [label="UnpackCaloHypo/UnpackCaloElectrons"];
+"Hlt2BToHHGamma_Inclusive_Line_UnpackRecVertex/UnpackRecVertices" -> "Hlt2BToHHGamma_Inclusive_Line_UnpackCaloHypo/UnpackCaloElectrons";
+"Hlt2BToHHGamma_Inclusive_Line_UnpackCaloHypo/UnpackCaloPhotons" [label="UnpackCaloHypo/UnpackCaloPhotons"];
+"Hlt2BToHHGamma_Inclusive_Line_UnpackCaloHypo/UnpackCaloElectrons" -> "Hlt2BToHHGamma_Inclusive_Line_UnpackCaloHypo/UnpackCaloPhotons";
+"Hlt2BToHHGamma_Inclusive_Line_UnpackCaloHypo/UnpackCaloMergedPi0s" [label="UnpackCaloHypo/UnpackCaloMergedPi0s"];
+"Hlt2BToHHGamma_Inclusive_Line_UnpackCaloHypo/UnpackCaloPhotons" -> "Hlt2BToHHGamma_Inclusive_Line_UnpackCaloHypo/UnpackCaloMergedPi0s";
+"Hlt2BToHHGamma_Inclusive_Line_UnpackCaloHypo/UnpackCaloSplitPhotons" [label="UnpackCaloHypo/UnpackCaloSplitPhotons"];
+"Hlt2BToHHGamma_Inclusive_Line_UnpackCaloHypo/UnpackCaloMergedPi0s" -> "Hlt2BToHHGamma_Inclusive_Line_UnpackCaloHypo/UnpackCaloSplitPhotons";
+"Hlt2BToHHGamma_Inclusive_Line_DataPacking__Unpack&lt;LHCb__MuonPIDPacker&gt;/UnpackMuonPIDs" [label="DataPacking__Unpack<LHCb__MuonPIDPacker>/UnpackMuonPIDs"];
+"Hlt2BToHHGamma_Inclusive_Line_UnpackCaloHypo/UnpackCaloSplitPhotons" -> "Hlt2BToHHGamma_Inclusive_Line_DataPacking__Unpack&lt;LHCb__MuonPIDPacker&gt;/UnpackMuonPIDs";
+"Hlt2BToHHGamma_Inclusive_Line_DataPacking__Unpack&lt;LHCb__RichPIDPacker&gt;/UnpackRichPIDs" [label="DataPacking__Unpack<LHCb__RichPIDPacker>/UnpackRichPIDs"];
+"Hlt2BToHHGamma_Inclusive_Line_DataPacking__Unpack&lt;LHCb__MuonPIDPacker&gt;/UnpackMuonPIDs" -> "Hlt2BToHHGamma_Inclusive_Line_DataPacking__Unpack&lt;LHCb__RichPIDPacker&gt;/UnpackRichPIDs";
+"Hlt2BToHHGamma_Inclusive_Line_UnpackTrackFunctional/UnpackBestTracks" [label="UnpackTrackFunctional/UnpackBestTracks"];
+"Hlt2BToHHGamma_Inclusive_Line_DataPacking__Unpack&lt;LHCb__RichPIDPacker&gt;/UnpackRichPIDs" -> "Hlt2BToHHGamma_Inclusive_Line_UnpackTrackFunctional/UnpackBestTracks";
+"Hlt2BToHHGamma_Inclusive_Line_UnpackTrackFunctional/UnpackMuonTracks" [label="UnpackTrackFunctional/UnpackMuonTracks"];
+"Hlt2BToHHGamma_Inclusive_Line_UnpackTrackFunctional/UnpackBestTracks" -> "Hlt2BToHHGamma_Inclusive_Line_UnpackTrackFunctional/UnpackMuonTracks";
+"Hlt2BToHHGamma_Inclusive_Line_UnpackProtoParticle/UnpackNeutralProtos" [label="UnpackProtoParticle/UnpackNeutralProtos"];
+"Hlt2BToHHGamma_Inclusive_Line_UnpackTrackFunctional/UnpackMuonTracks" -> "Hlt2BToHHGamma_Inclusive_Line_UnpackProtoParticle/UnpackNeutralProtos";
+"Hlt2BToHHGamma_Inclusive_Line_UnpackProtoParticle/UnpackChargedProtos" [label="UnpackProtoParticle/UnpackChargedProtos"];
+"Hlt2BToHHGamma_Inclusive_Line_UnpackProtoParticle/UnpackNeutralProtos" -> "Hlt2BToHHGamma_Inclusive_Line_UnpackProtoParticle/UnpackChargedProtos";
+"Hlt2BToHHGamma_Inclusive_Line_ChargedProtoParticleAddRichInfo/ChargedProtoParticleAddRichInfo" [label="ChargedProtoParticleAddRichInfo/ChargedProtoParticleAddRichInfo"];
+"Hlt2BToHHGamma_Inclusive_Line_UnpackProtoParticle/UnpackChargedProtos" -> "Hlt2BToHHGamma_Inclusive_Line_ChargedProtoParticleAddRichInfo/ChargedProtoParticleAddRichInfo";
+"Hlt2BToHHGamma_Inclusive_Line_ChargedProtoParticleAddMuonInfo/ChargedProtoParticleAddMuonInfo" [label="ChargedProtoParticleAddMuonInfo/ChargedProtoParticleAddMuonInfo"];
+"Hlt2BToHHGamma_Inclusive_Line_ChargedProtoParticleAddRichInfo/ChargedProtoParticleAddRichInfo" -> "Hlt2BToHHGamma_Inclusive_Line_ChargedProtoParticleAddMuonInfo/ChargedProtoParticleAddMuonInfo";
+"Hlt2BToHHGamma_Inclusive_Line_ChargedProtoCombineDLLsAlg/ChargedProtoCombineDLLsAlg" [label="ChargedProtoCombineDLLsAlg/ChargedProtoCombineDLLsAlg"];
+"Hlt2BToHHGamma_Inclusive_Line_ChargedProtoParticleAddMuonInfo/ChargedProtoParticleAddMuonInfo" -> "Hlt2BToHHGamma_Inclusive_Line_ChargedProtoCombineDLLsAlg/ChargedProtoCombineDLLsAlg";
+"Hlt2BToHHGamma_Inclusive_Line_FilterDesktop/FilterDesktop#4" [label="FilterDesktop/FilterDesktop#4"];
+"Hlt2BToHHGamma_Inclusive_Line_ChargedProtoCombineDLLsAlg/ChargedProtoCombineDLLsAlg" -> "Hlt2BToHHGamma_Inclusive_Line_FilterDesktop/FilterDesktop#4";
+}
+
+subgraph cluster_Hlt2BToHHGammaee_Inclusive_Line {
+label=<<B>Hlt2BToHHGammaee_Inclusive_Line</B><BR/>LAZY_AND, ordered>;
+edge [dir=forward];
+"Hlt2BToHHGammaee_Inclusive_Line_DeterministicPrescaler/DeterministicPrescaler#1" [label="DeterministicPrescaler/DeterministicPrescaler#1"];
+"Hlt2BToHHGammaee_Inclusive_Line_UnpackRecVertex/UnpackRecVertices" [label="UnpackRecVertex/UnpackRecVertices"];
+"Hlt2BToHHGammaee_Inclusive_Line_DeterministicPrescaler/DeterministicPrescaler#1" -> "Hlt2BToHHGammaee_Inclusive_Line_UnpackRecVertex/UnpackRecVertices";
+"Hlt2BToHHGammaee_Inclusive_Line_UnpackCaloHypo/UnpackCaloElectrons" [label="UnpackCaloHypo/UnpackCaloElectrons"];
+"Hlt2BToHHGammaee_Inclusive_Line_UnpackRecVertex/UnpackRecVertices" -> "Hlt2BToHHGammaee_Inclusive_Line_UnpackCaloHypo/UnpackCaloElectrons";
+"Hlt2BToHHGammaee_Inclusive_Line_UnpackCaloHypo/UnpackCaloPhotons" [label="UnpackCaloHypo/UnpackCaloPhotons"];
+"Hlt2BToHHGammaee_Inclusive_Line_UnpackCaloHypo/UnpackCaloElectrons" -> "Hlt2BToHHGammaee_Inclusive_Line_UnpackCaloHypo/UnpackCaloPhotons";
+"Hlt2BToHHGammaee_Inclusive_Line_UnpackCaloHypo/UnpackCaloMergedPi0s" [label="UnpackCaloHypo/UnpackCaloMergedPi0s"];
+"Hlt2BToHHGammaee_Inclusive_Line_UnpackCaloHypo/UnpackCaloPhotons" -> "Hlt2BToHHGammaee_Inclusive_Line_UnpackCaloHypo/UnpackCaloMergedPi0s";
+"Hlt2BToHHGammaee_Inclusive_Line_UnpackCaloHypo/UnpackCaloSplitPhotons" [label="UnpackCaloHypo/UnpackCaloSplitPhotons"];
+"Hlt2BToHHGammaee_Inclusive_Line_UnpackCaloHypo/UnpackCaloMergedPi0s" -> "Hlt2BToHHGammaee_Inclusive_Line_UnpackCaloHypo/UnpackCaloSplitPhotons";
+"Hlt2BToHHGammaee_Inclusive_Line_DataPacking__Unpack&lt;LHCb__MuonPIDPacker&gt;/UnpackMuonPIDs" [label="DataPacking__Unpack<LHCb__MuonPIDPacker>/UnpackMuonPIDs"];
+"Hlt2BToHHGammaee_Inclusive_Line_UnpackCaloHypo/UnpackCaloSplitPhotons" -> "Hlt2BToHHGammaee_Inclusive_Line_DataPacking__Unpack&lt;LHCb__MuonPIDPacker&gt;/UnpackMuonPIDs";
+"Hlt2BToHHGammaee_Inclusive_Line_DataPacking__Unpack&lt;LHCb__RichPIDPacker&gt;/UnpackRichPIDs" [label="DataPacking__Unpack<LHCb__RichPIDPacker>/UnpackRichPIDs"];
+"Hlt2BToHHGammaee_Inclusive_Line_DataPacking__Unpack&lt;LHCb__MuonPIDPacker&gt;/UnpackMuonPIDs" -> "Hlt2BToHHGammaee_Inclusive_Line_DataPacking__Unpack&lt;LHCb__RichPIDPacker&gt;/UnpackRichPIDs";
+"Hlt2BToHHGammaee_Inclusive_Line_UnpackTrackFunctional/UnpackBestTracks" [label="UnpackTrackFunctional/UnpackBestTracks"];
+"Hlt2BToHHGammaee_Inclusive_Line_DataPacking__Unpack&lt;LHCb__RichPIDPacker&gt;/UnpackRichPIDs" -> "Hlt2BToHHGammaee_Inclusive_Line_UnpackTrackFunctional/UnpackBestTracks";
+"Hlt2BToHHGammaee_Inclusive_Line_UnpackTrackFunctional/UnpackMuonTracks" [label="UnpackTrackFunctional/UnpackMuonTracks"];
+"Hlt2BToHHGammaee_Inclusive_Line_UnpackTrackFunctional/UnpackBestTracks" -> "Hlt2BToHHGammaee_Inclusive_Line_UnpackTrackFunctional/UnpackMuonTracks";
+"Hlt2BToHHGammaee_Inclusive_Line_UnpackProtoParticle/UnpackNeutralProtos" [label="UnpackProtoParticle/UnpackNeutralProtos"];
+"Hlt2BToHHGammaee_Inclusive_Line_UnpackTrackFunctional/UnpackMuonTracks" -> "Hlt2BToHHGammaee_Inclusive_Line_UnpackProtoParticle/UnpackNeutralProtos";
+"Hlt2BToHHGammaee_Inclusive_Line_UnpackProtoParticle/UnpackChargedProtos" [label="UnpackProtoParticle/UnpackChargedProtos"];
+"Hlt2BToHHGammaee_Inclusive_Line_UnpackProtoParticle/UnpackNeutralProtos" -> "Hlt2BToHHGammaee_Inclusive_Line_UnpackProtoParticle/UnpackChargedProtos";
+"Hlt2BToHHGammaee_Inclusive_Line_ChargedProtoParticleAddRichInfo/ChargedProtoParticleAddRichInfo" [label="ChargedProtoParticleAddRichInfo/ChargedProtoParticleAddRichInfo"];
+"Hlt2BToHHGammaee_Inclusive_Line_UnpackProtoParticle/UnpackChargedProtos" -> "Hlt2BToHHGammaee_Inclusive_Line_ChargedProtoParticleAddRichInfo/ChargedProtoParticleAddRichInfo";
+"Hlt2BToHHGammaee_Inclusive_Line_ChargedProtoParticleAddMuonInfo/ChargedProtoParticleAddMuonInfo" [label="ChargedProtoParticleAddMuonInfo/ChargedProtoParticleAddMuonInfo"];
+"Hlt2BToHHGammaee_Inclusive_Line_ChargedProtoParticleAddRichInfo/ChargedProtoParticleAddRichInfo" -> "Hlt2BToHHGammaee_Inclusive_Line_ChargedProtoParticleAddMuonInfo/ChargedProtoParticleAddMuonInfo";
+"Hlt2BToHHGammaee_Inclusive_Line_ChargedProtoCombineDLLsAlg/ChargedProtoCombineDLLsAlg" [label="ChargedProtoCombineDLLsAlg/ChargedProtoCombineDLLsAlg"];
+"Hlt2BToHHGammaee_Inclusive_Line_ChargedProtoParticleAddMuonInfo/ChargedProtoParticleAddMuonInfo" -> "Hlt2BToHHGammaee_Inclusive_Line_ChargedProtoCombineDLLsAlg/ChargedProtoCombineDLLsAlg";
+"Hlt2BToHHGammaee_Inclusive_Line_FilterDesktop/FilterDesktop#7" [label="FilterDesktop/FilterDesktop#7"];
+"Hlt2BToHHGammaee_Inclusive_Line_ChargedProtoCombineDLLsAlg/ChargedProtoCombineDLLsAlg" -> "Hlt2BToHHGammaee_Inclusive_Line_FilterDesktop/FilterDesktop#7";
+}
+
+"Hlt2BToHHGamma_Inclusive_Line_FilterDesktop/FilterDesktop#4" -> "Hlt2BToHHGammaee_Inclusive_Line_DataPacking__Unpack&lt;LHCb__MuonPIDPacker&gt;/UnpackMuonPIDs"  [lhead=cluster_Hlt2BToHHGammaee_Inclusive_Line, ltail=cluster_Hlt2BToHHGamma_Inclusive_Line];
+subgraph cluster_Hlt2BToHHHGamma_Inclusive_Line {
+label=<<B>Hlt2BToHHHGamma_Inclusive_Line</B><BR/>LAZY_AND, ordered>;
+edge [dir=forward];
+"Hlt2BToHHHGamma_Inclusive_Line_DeterministicPrescaler/DeterministicPrescaler#2" [label="DeterministicPrescaler/DeterministicPrescaler#2"];
+"Hlt2BToHHHGamma_Inclusive_Line_UnpackRecVertex/UnpackRecVertices" [label="UnpackRecVertex/UnpackRecVertices"];
+"Hlt2BToHHHGamma_Inclusive_Line_DeterministicPrescaler/DeterministicPrescaler#2" -> "Hlt2BToHHHGamma_Inclusive_Line_UnpackRecVertex/UnpackRecVertices";
+"Hlt2BToHHHGamma_Inclusive_Line_UnpackCaloHypo/UnpackCaloElectrons" [label="UnpackCaloHypo/UnpackCaloElectrons"];
+"Hlt2BToHHHGamma_Inclusive_Line_UnpackRecVertex/UnpackRecVertices" -> "Hlt2BToHHHGamma_Inclusive_Line_UnpackCaloHypo/UnpackCaloElectrons";
+"Hlt2BToHHHGamma_Inclusive_Line_UnpackCaloHypo/UnpackCaloPhotons" [label="UnpackCaloHypo/UnpackCaloPhotons"];
+"Hlt2BToHHHGamma_Inclusive_Line_UnpackCaloHypo/UnpackCaloElectrons" -> "Hlt2BToHHHGamma_Inclusive_Line_UnpackCaloHypo/UnpackCaloPhotons";
+"Hlt2BToHHHGamma_Inclusive_Line_UnpackCaloHypo/UnpackCaloMergedPi0s" [label="UnpackCaloHypo/UnpackCaloMergedPi0s"];
+"Hlt2BToHHHGamma_Inclusive_Line_UnpackCaloHypo/UnpackCaloPhotons" -> "Hlt2BToHHHGamma_Inclusive_Line_UnpackCaloHypo/UnpackCaloMergedPi0s";
+"Hlt2BToHHHGamma_Inclusive_Line_UnpackCaloHypo/UnpackCaloSplitPhotons" [label="UnpackCaloHypo/UnpackCaloSplitPhotons"];
+"Hlt2BToHHHGamma_Inclusive_Line_UnpackCaloHypo/UnpackCaloMergedPi0s" -> "Hlt2BToHHHGamma_Inclusive_Line_UnpackCaloHypo/UnpackCaloSplitPhotons";
+"Hlt2BToHHHGamma_Inclusive_Line_DataPacking__Unpack&lt;LHCb__MuonPIDPacker&gt;/UnpackMuonPIDs" [label="DataPacking__Unpack<LHCb__MuonPIDPacker>/UnpackMuonPIDs"];
+"Hlt2BToHHHGamma_Inclusive_Line_UnpackCaloHypo/UnpackCaloSplitPhotons" -> "Hlt2BToHHHGamma_Inclusive_Line_DataPacking__Unpack&lt;LHCb__MuonPIDPacker&gt;/UnpackMuonPIDs";
+"Hlt2BToHHHGamma_Inclusive_Line_DataPacking__Unpack&lt;LHCb__RichPIDPacker&gt;/UnpackRichPIDs" [label="DataPacking__Unpack<LHCb__RichPIDPacker>/UnpackRichPIDs"];
+"Hlt2BToHHHGamma_Inclusive_Line_DataPacking__Unpack&lt;LHCb__MuonPIDPacker&gt;/UnpackMuonPIDs" -> "Hlt2BToHHHGamma_Inclusive_Line_DataPacking__Unpack&lt;LHCb__RichPIDPacker&gt;/UnpackRichPIDs";
+"Hlt2BToHHHGamma_Inclusive_Line_UnpackTrackFunctional/UnpackBestTracks" [label="UnpackTrackFunctional/UnpackBestTracks"];
+"Hlt2BToHHHGamma_Inclusive_Line_DataPacking__Unpack&lt;LHCb__RichPIDPacker&gt;/UnpackRichPIDs" -> "Hlt2BToHHHGamma_Inclusive_Line_UnpackTrackFunctional/UnpackBestTracks";
+"Hlt2BToHHHGamma_Inclusive_Line_UnpackTrackFunctional/UnpackMuonTracks" [label="UnpackTrackFunctional/UnpackMuonTracks"];
+"Hlt2BToHHHGamma_Inclusive_Line_UnpackTrackFunctional/UnpackBestTracks" -> "Hlt2BToHHHGamma_Inclusive_Line_UnpackTrackFunctional/UnpackMuonTracks";
+"Hlt2BToHHHGamma_Inclusive_Line_UnpackProtoParticle/UnpackNeutralProtos" [label="UnpackProtoParticle/UnpackNeutralProtos"];
+"Hlt2BToHHHGamma_Inclusive_Line_UnpackTrackFunctional/UnpackMuonTracks" -> "Hlt2BToHHHGamma_Inclusive_Line_UnpackProtoParticle/UnpackNeutralProtos";
+"Hlt2BToHHHGamma_Inclusive_Line_UnpackProtoParticle/UnpackChargedProtos" [label="UnpackProtoParticle/UnpackChargedProtos"];
+"Hlt2BToHHHGamma_Inclusive_Line_UnpackProtoParticle/UnpackNeutralProtos" -> "Hlt2BToHHHGamma_Inclusive_Line_UnpackProtoParticle/UnpackChargedProtos";
+"Hlt2BToHHHGamma_Inclusive_Line_ChargedProtoParticleAddRichInfo/ChargedProtoParticleAddRichInfo" [label="ChargedProtoParticleAddRichInfo/ChargedProtoParticleAddRichInfo"];
+"Hlt2BToHHHGamma_Inclusive_Line_UnpackProtoParticle/UnpackChargedProtos" -> "Hlt2BToHHHGamma_Inclusive_Line_ChargedProtoParticleAddRichInfo/ChargedProtoParticleAddRichInfo";
+"Hlt2BToHHHGamma_Inclusive_Line_ChargedProtoParticleAddMuonInfo/ChargedProtoParticleAddMuonInfo" [label="ChargedProtoParticleAddMuonInfo/ChargedProtoParticleAddMuonInfo"];
+"Hlt2BToHHHGamma_Inclusive_Line_ChargedProtoParticleAddRichInfo/ChargedProtoParticleAddRichInfo" -> "Hlt2BToHHHGamma_Inclusive_Line_ChargedProtoParticleAddMuonInfo/ChargedProtoParticleAddMuonInfo";
+"Hlt2BToHHHGamma_Inclusive_Line_ChargedProtoCombineDLLsAlg/ChargedProtoCombineDLLsAlg" [label="ChargedProtoCombineDLLsAlg/ChargedProtoCombineDLLsAlg"];
+"Hlt2BToHHHGamma_Inclusive_Line_ChargedProtoParticleAddMuonInfo/ChargedProtoParticleAddMuonInfo" -> "Hlt2BToHHHGamma_Inclusive_Line_ChargedProtoCombineDLLsAlg/ChargedProtoCombineDLLsAlg";
+"Hlt2BToHHHGamma_Inclusive_Line_FilterDesktop/FilterDesktop#9" [label="FilterDesktop/FilterDesktop#9"];
+"Hlt2BToHHHGamma_Inclusive_Line_ChargedProtoCombineDLLsAlg/ChargedProtoCombineDLLsAlg" -> "Hlt2BToHHHGamma_Inclusive_Line_FilterDesktop/FilterDesktop#9";
+}
+
+"Hlt2BToHHGammaee_Inclusive_Line_DataPacking__Unpack&lt;LHCb__MuonPIDPacker&gt;/UnpackMuonPIDs" -> "Hlt2BToHHHGamma_Inclusive_Line_UnpackCaloHypo/UnpackCaloPhotons"  [lhead=cluster_Hlt2BToHHHGamma_Inclusive_Line, ltail=cluster_Hlt2BToHHGammaee_Inclusive_Line];
+subgraph cluster_Hlt2BToHHHGammaEE_Inclusive_Line {
+label=<<B>Hlt2BToHHHGammaEE_Inclusive_Line</B><BR/>LAZY_AND, ordered>;
+edge [dir=forward];
+"Hlt2BToHHHGammaEE_Inclusive_Line_DeterministicPrescaler/DeterministicPrescaler#3" [label="DeterministicPrescaler/DeterministicPrescaler#3"];
+"Hlt2BToHHHGammaEE_Inclusive_Line_UnpackRecVertex/UnpackRecVertices" [label="UnpackRecVertex/UnpackRecVertices"];
+"Hlt2BToHHHGammaEE_Inclusive_Line_DeterministicPrescaler/DeterministicPrescaler#3" -> "Hlt2BToHHHGammaEE_Inclusive_Line_UnpackRecVertex/UnpackRecVertices";
+"Hlt2BToHHHGammaEE_Inclusive_Line_UnpackCaloHypo/UnpackCaloElectrons" [label="UnpackCaloHypo/UnpackCaloElectrons"];
+"Hlt2BToHHHGammaEE_Inclusive_Line_UnpackRecVertex/UnpackRecVertices" -> "Hlt2BToHHHGammaEE_Inclusive_Line_UnpackCaloHypo/UnpackCaloElectrons";
+"Hlt2BToHHHGammaEE_Inclusive_Line_UnpackCaloHypo/UnpackCaloPhotons" [label="UnpackCaloHypo/UnpackCaloPhotons"];
+"Hlt2BToHHHGammaEE_Inclusive_Line_UnpackCaloHypo/UnpackCaloElectrons" -> "Hlt2BToHHHGammaEE_Inclusive_Line_UnpackCaloHypo/UnpackCaloPhotons";
+"Hlt2BToHHHGammaEE_Inclusive_Line_UnpackCaloHypo/UnpackCaloMergedPi0s" [label="UnpackCaloHypo/UnpackCaloMergedPi0s"];
+"Hlt2BToHHHGammaEE_Inclusive_Line_UnpackCaloHypo/UnpackCaloPhotons" -> "Hlt2BToHHHGammaEE_Inclusive_Line_UnpackCaloHypo/UnpackCaloMergedPi0s";
+"Hlt2BToHHHGammaEE_Inclusive_Line_UnpackCaloHypo/UnpackCaloSplitPhotons" [label="UnpackCaloHypo/UnpackCaloSplitPhotons"];
+"Hlt2BToHHHGammaEE_Inclusive_Line_UnpackCaloHypo/UnpackCaloMergedPi0s" -> "Hlt2BToHHHGammaEE_Inclusive_Line_UnpackCaloHypo/UnpackCaloSplitPhotons";
+"Hlt2BToHHHGammaEE_Inclusive_Line_DataPacking__Unpack&lt;LHCb__MuonPIDPacker&gt;/UnpackMuonPIDs" [label="DataPacking__Unpack<LHCb__MuonPIDPacker>/UnpackMuonPIDs"];
+"Hlt2BToHHHGammaEE_Inclusive_Line_UnpackCaloHypo/UnpackCaloSplitPhotons" -> "Hlt2BToHHHGammaEE_Inclusive_Line_DataPacking__Unpack&lt;LHCb__MuonPIDPacker&gt;/UnpackMuonPIDs";
+"Hlt2BToHHHGammaEE_Inclusive_Line_DataPacking__Unpack&lt;LHCb__RichPIDPacker&gt;/UnpackRichPIDs" [label="DataPacking__Unpack<LHCb__RichPIDPacker>/UnpackRichPIDs"];
+"Hlt2BToHHHGammaEE_Inclusive_Line_DataPacking__Unpack&lt;LHCb__MuonPIDPacker&gt;/UnpackMuonPIDs" -> "Hlt2BToHHHGammaEE_Inclusive_Line_DataPacking__Unpack&lt;LHCb__RichPIDPacker&gt;/UnpackRichPIDs";
+"Hlt2BToHHHGammaEE_Inclusive_Line_UnpackTrackFunctional/UnpackBestTracks" [label="UnpackTrackFunctional/UnpackBestTracks"];
+"Hlt2BToHHHGammaEE_Inclusive_Line_DataPacking__Unpack&lt;LHCb__RichPIDPacker&gt;/UnpackRichPIDs" -> "Hlt2BToHHHGammaEE_Inclusive_Line_UnpackTrackFunctional/UnpackBestTracks";
+"Hlt2BToHHHGammaEE_Inclusive_Line_UnpackTrackFunctional/UnpackMuonTracks" [label="UnpackTrackFunctional/UnpackMuonTracks"];
+"Hlt2BToHHHGammaEE_Inclusive_Line_UnpackTrackFunctional/UnpackBestTracks" -> "Hlt2BToHHHGammaEE_Inclusive_Line_UnpackTrackFunctional/UnpackMuonTracks";
+"Hlt2BToHHHGammaEE_Inclusive_Line_UnpackProtoParticle/UnpackNeutralProtos" [label="UnpackProtoParticle/UnpackNeutralProtos"];
+"Hlt2BToHHHGammaEE_Inclusive_Line_UnpackTrackFunctional/UnpackMuonTracks" -> "Hlt2BToHHHGammaEE_Inclusive_Line_UnpackProtoParticle/UnpackNeutralProtos";
+"Hlt2BToHHHGammaEE_Inclusive_Line_UnpackProtoParticle/UnpackChargedProtos" [label="UnpackProtoParticle/UnpackChargedProtos"];
+"Hlt2BToHHHGammaEE_Inclusive_Line_UnpackProtoParticle/UnpackNeutralProtos" -> "Hlt2BToHHHGammaEE_Inclusive_Line_UnpackProtoParticle/UnpackChargedProtos";
+"Hlt2BToHHHGammaEE_Inclusive_Line_ChargedProtoParticleAddRichInfo/ChargedProtoParticleAddRichInfo" [label="ChargedProtoParticleAddRichInfo/ChargedProtoParticleAddRichInfo"];
+"Hlt2BToHHHGammaEE_Inclusive_Line_UnpackProtoParticle/UnpackChargedProtos" -> "Hlt2BToHHHGammaEE_Inclusive_Line_ChargedProtoParticleAddRichInfo/ChargedProtoParticleAddRichInfo";
+"Hlt2BToHHHGammaEE_Inclusive_Line_ChargedProtoParticleAddMuonInfo/ChargedProtoParticleAddMuonInfo" [label="ChargedProtoParticleAddMuonInfo/ChargedProtoParticleAddMuonInfo"];
+"Hlt2BToHHHGammaEE_Inclusive_Line_ChargedProtoParticleAddRichInfo/ChargedProtoParticleAddRichInfo" -> "Hlt2BToHHHGammaEE_Inclusive_Line_ChargedProtoParticleAddMuonInfo/ChargedProtoParticleAddMuonInfo";
+"Hlt2BToHHHGammaEE_Inclusive_Line_ChargedProtoCombineDLLsAlg/ChargedProtoCombineDLLsAlg" [label="ChargedProtoCombineDLLsAlg/ChargedProtoCombineDLLsAlg"];
+"Hlt2BToHHHGammaEE_Inclusive_Line_ChargedProtoParticleAddMuonInfo/ChargedProtoParticleAddMuonInfo" -> "Hlt2BToHHHGammaEE_Inclusive_Line_ChargedProtoCombineDLLsAlg/ChargedProtoCombineDLLsAlg";
+"Hlt2BToHHHGammaEE_Inclusive_Line_FilterDesktop/FilterDesktop#10" [label="FilterDesktop/FilterDesktop#10"];
+"Hlt2BToHHHGammaEE_Inclusive_Line_ChargedProtoCombineDLLsAlg/ChargedProtoCombineDLLsAlg" -> "Hlt2BToHHHGammaEE_Inclusive_Line_FilterDesktop/FilterDesktop#10";
+}
+
+"Hlt2BToHHHGamma_Inclusive_Line_UnpackCaloHypo/UnpackCaloPhotons" -> "Hlt2BToHHHGammaEE_Inclusive_Line_DataPacking__Unpack&lt;LHCb__MuonPIDPacker&gt;/UnpackMuonPIDs"  [lhead=cluster_Hlt2BToHHHGammaEE_Inclusive_Line, ltail=cluster_Hlt2BToHHHGamma_Inclusive_Line];
+}
+
+subgraph cluster_report_writers {
+label=<<B>report_writers</B><BR/>NONLAZY_OR, ordered>;
+edge [dir=forward];
+"report_writers_bankKiller/bankKiller" [label="bankKiller/bankKiller"];
+"report_writers_ExecutionReportsWriter/ExecutionReportsWriter" [label="ExecutionReportsWriter/ExecutionReportsWriter"];
+"report_writers_bankKiller/bankKiller" -> "report_writers_ExecutionReportsWriter/ExecutionReportsWriter";
+"report_writers_HltDecReportsWriter/HltDecReportsWriter" [label="HltDecReportsWriter/HltDecReportsWriter"];
+"report_writers_ExecutionReportsWriter/ExecutionReportsWriter" -> "report_writers_HltDecReportsWriter/HltDecReportsWriter";
+subgraph cluster_LineMovers {
+label=<<B>LineMovers</B><BR/>NONLAZY_OR, unordered>;
+edge [dir=none];
+subgraph cluster_Hlt2BToHHHGammaEE_Inclusive_LineDecisionMovers {
+label=<<B>Hlt2BToHHHGammaEE_Inclusive_LineDecisionMovers</B><BR/>NONLAZY_OR, unordered>;
+edge [dir=none];
+"Hlt2BToHHHGammaEE_Inclusive_LineDecisionMovers_FilterDesktop/FilterDesktop#15" [label="FilterDesktop/FilterDesktop#15"];
+"Hlt2BToHHHGammaEE_Inclusive_LineDecisionMovers_FilterDesktop/FilterDesktop#16" [label="FilterDesktop/FilterDesktop#16"];
+"Hlt2BToHHHGammaEE_Inclusive_LineDecisionMovers_FilterDesktop/FilterDesktop#15" -> "Hlt2BToHHHGammaEE_Inclusive_LineDecisionMovers_FilterDesktop/FilterDesktop#16";
+}
+
+subgraph cluster_Hlt2BToHHHGamma_Inclusive_LineDecisionMovers {
+label=<<B>Hlt2BToHHHGamma_Inclusive_LineDecisionMovers</B><BR/>NONLAZY_OR, unordered>;
+edge [dir=none];
+"Hlt2BToHHHGamma_Inclusive_LineDecisionMovers_FilterDesktop/FilterDesktop#17" [label="FilterDesktop/FilterDesktop#17"];
+"Hlt2BToHHHGamma_Inclusive_LineDecisionMovers_FilterDesktop/FilterDesktop#18" [label="FilterDesktop/FilterDesktop#18"];
+"Hlt2BToHHHGamma_Inclusive_LineDecisionMovers_FilterDesktop/FilterDesktop#17" -> "Hlt2BToHHHGamma_Inclusive_LineDecisionMovers_FilterDesktop/FilterDesktop#18";
+}
+
+"Hlt2BToHHHGammaEE_Inclusive_LineDecisionMovers_FilterDesktop/FilterDesktop#15" -> "Hlt2BToHHHGamma_Inclusive_LineDecisionMovers_FilterDesktop/FilterDesktop#17"  [lhead=cluster_Hlt2BToHHHGamma_Inclusive_LineDecisionMovers, ltail=cluster_Hlt2BToHHHGammaEE_Inclusive_LineDecisionMovers];
+subgraph cluster_Hlt2BToHHGamma_Inclusive_LineDecisionMovers {
+label=<<B>Hlt2BToHHGamma_Inclusive_LineDecisionMovers</B><BR/>NONLAZY_OR, unordered>;
+edge [dir=none];
+"Hlt2BToHHGamma_Inclusive_LineDecisionMovers_FilterDesktop/FilterDesktop#11" [label="FilterDesktop/FilterDesktop#11"];
+"Hlt2BToHHGamma_Inclusive_LineDecisionMovers_FilterDesktop/FilterDesktop#12" [label="FilterDesktop/FilterDesktop#12"];
+"Hlt2BToHHGamma_Inclusive_LineDecisionMovers_FilterDesktop/FilterDesktop#11" -> "Hlt2BToHHGamma_Inclusive_LineDecisionMovers_FilterDesktop/FilterDesktop#12";
+}
+
+"Hlt2BToHHHGamma_Inclusive_LineDecisionMovers_FilterDesktop/FilterDesktop#17" -> "Hlt2BToHHGamma_Inclusive_LineDecisionMovers_FilterDesktop/FilterDesktop#12"  [lhead=cluster_Hlt2BToHHGamma_Inclusive_LineDecisionMovers, ltail=cluster_Hlt2BToHHHGamma_Inclusive_LineDecisionMovers];
+subgraph cluster_Hlt2BToHHGammaee_Inclusive_LineDecisionMovers {
+label=<<B>Hlt2BToHHGammaee_Inclusive_LineDecisionMovers</B><BR/>NONLAZY_OR, unordered>;
+edge [dir=none];
+"Hlt2BToHHGammaee_Inclusive_LineDecisionMovers_FilterDesktop/FilterDesktop#13" [label="FilterDesktop/FilterDesktop#13"];
+"Hlt2BToHHGammaee_Inclusive_LineDecisionMovers_FilterDesktop/FilterDesktop#14" [label="FilterDesktop/FilterDesktop#14"];
+"Hlt2BToHHGammaee_Inclusive_LineDecisionMovers_FilterDesktop/FilterDesktop#13" -> "Hlt2BToHHGammaee_Inclusive_LineDecisionMovers_FilterDesktop/FilterDesktop#14";
+}
+
+"Hlt2BToHHGamma_Inclusive_LineDecisionMovers_FilterDesktop/FilterDesktop#12" -> "Hlt2BToHHGammaee_Inclusive_LineDecisionMovers_FilterDesktop/FilterDesktop#14"  [lhead=cluster_Hlt2BToHHGammaee_Inclusive_LineDecisionMovers, ltail=cluster_Hlt2BToHHGamma_Inclusive_LineDecisionMovers];
+}
+
+"report_writers_HltDecReportsWriter/HltDecReportsWriter" -> "Hlt2BToHHHGamma_Inclusive_LineDecisionMovers_FilterDesktop/FilterDesktop#17"  [lhead=cluster_LineMovers];
+"report_writers_CopyLinePersistenceLocations/CopyLinePersistenceLocations" [label="CopyLinePersistenceLocations/CopyLinePersistenceLocations"];
+"Hlt2BToHHHGamma_Inclusive_LineDecisionMovers_FilterDesktop/FilterDesktop#17" -> "report_writers_CopyLinePersistenceLocations/CopyLinePersistenceLocations"  [ltail=cluster_LineMovers];
+"report_writers_CopyParticle2PVRelationsFromLinePersistenceLocations/CopyParticle2PVRelationsFromLinePersistenceLocations" [label="CopyParticle2PVRelationsFromLinePersistenceLocations/CopyParticle2PVRelationsFromLinePersistenceLocations"];
+"report_writers_CopyLinePersistenceLocations/CopyLinePersistenceLocations" -> "report_writers_CopyParticle2PVRelationsFromLinePersistenceLocations/CopyParticle2PVRelationsFromLinePersistenceLocations";
+"report_writers_PackParticlesAndVertices/PackParticlesAndVertices" [label="PackParticlesAndVertices/PackParticlesAndVertices"];
+"report_writers_CopyParticle2PVRelationsFromLinePersistenceLocations/CopyParticle2PVRelationsFromLinePersistenceLocations" -> "report_writers_PackParticlesAndVertices/PackParticlesAndVertices";
+"report_writers_PackCaloHypo/PackCaloHypo" [label="PackCaloHypo/PackCaloHypo"];
+"report_writers_PackParticlesAndVertices/PackParticlesAndVertices" -> "report_writers_PackCaloHypo/PackCaloHypo";
+"report_writers_PackCaloHypo/PackCaloHypo#1" [label="PackCaloHypo/PackCaloHypo#1"];
+"report_writers_PackCaloHypo/PackCaloHypo" -> "report_writers_PackCaloHypo/PackCaloHypo#1";
+"report_writers_PackCaloHypo/PackCaloHypo#2" [label="PackCaloHypo/PackCaloHypo#2"];
+"report_writers_PackCaloHypo/PackCaloHypo#1" -> "report_writers_PackCaloHypo/PackCaloHypo#2";
+"report_writers_PackCaloHypo/PackCaloHypo#3" [label="PackCaloHypo/PackCaloHypo#3"];
+"report_writers_PackCaloHypo/PackCaloHypo#2" -> "report_writers_PackCaloHypo/PackCaloHypo#3";
+"report_writers_Hlt__RoutingBitsWriter/Hlt__RoutingBitsWriter" [label="Hlt__RoutingBitsWriter/Hlt__RoutingBitsWriter"];
+"report_writers_PackCaloHypo/PackCaloHypo#3" -> "report_writers_Hlt__RoutingBitsWriter/Hlt__RoutingBitsWriter";
+}
+
+"Hlt2BToHHGammaee_Inclusive_Line_DataPacking__Unpack&lt;LHCb__MuonPIDPacker&gt;/UnpackMuonPIDs" -> "report_writers_CopyParticle2PVRelationsFromLinePersistenceLocations/CopyParticle2PVRelationsFromLinePersistenceLocations"  [lhead=cluster_report_writers, ltail=cluster_hlt_decision];
+"moore_OutputStream/OutputStream" [label="OutputStream/OutputStream"];
+"report_writers_CopyParticle2PVRelationsFromLinePersistenceLocations/CopyParticle2PVRelationsFromLinePersistenceLocations" -> "moore_OutputStream/OutputStream"  [ltail=cluster_report_writers];
+}
+
+}
