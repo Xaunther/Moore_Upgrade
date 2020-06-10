@@ -64,7 +64,7 @@ dtt_line.addTupleTool("TupleToolANNPID").ANNPIDTunes = ["MC15TuneV1"]
 #DecayTreeTuple for ExtraHadron
 dtt_extra_hadron = DecayTreeTuple(
     "Tuple"+extra_hadron,
-    Inputs=[extra_hadron_selseq],
+    Inputs=[extra_hadron_selseq.outputLocation()],
     Decay="""(B*+ -> ^(B+ -> ^(D*(2010)+ -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi+) ^gamma) ^pi+) ||
              (B*+ -> ^(B+ -> ^(D*(2010)+ -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi+) ^gamma) ^pi-) ||
              (B*- -> ^(B- -> ^(D*(2010)- -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi-) ^gamma) ^pi+) ||
@@ -74,11 +74,6 @@ dtt_extra_hadron = DecayTreeTuple(
 dtt_extra_hadron.ErrorMax = -1
 dtt_extra_hadron.addTupleTool("TupleToolANNPID").ANNPIDTunes = ["MC15TuneV1"]
 
-
-DaVinci().DataType = "Upgrade"
-DaVinci().Simulation = True
-DaVinci().Lumi = not DaVinci().Simulation
-DaVinci().InputType = "MDST"
 DaVinci().RootInTES = ROOT_IN_TES
 DaVinci().UserAlgorithms = [extra_hadron_selseq.sequence(), dtt_line, dtt_extra_hadron]
 DaVinci().TupleFile = DaVinci().TupleFile + "_HHHGamma.root"
