@@ -34,7 +34,7 @@ extra_hadron_sel = CombineSelection(
     DecayDescriptors=[
         "B*+ -> B0 pi+",
         "B*- -> B0 pi-"
-    ]
+    ],
     CombinationCut="APT > 0",
     MotherCut="ALL"
 )
@@ -58,7 +58,7 @@ dtt_line_extra_hadron = DecayTreeTuple(
     linename+"_"+extra_hadron,
     Inputs=[extra_hadron_selseq.outputLocation()],
     Decay="""(B*+ -> ^(B0 -> ^(K*(892)0 -> ^pi+ ^pi-) ^gamma) ^pi+) ||
-             (B*+ -> ^(B0 -> ^(K*(892)0 -> ^pi+ ^pi-) ^gamma) ^pi-)""",
+             (B*- -> ^(B0 -> ^(K*(892)0 -> ^pi+ ^pi-) ^gamma) ^pi-)""",
     ToolList=list(DEFAULT_TUPLE_TOOLS)
 )
 dtt_line_extra_hadron.ErrorMax = -1
