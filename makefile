@@ -4,6 +4,8 @@
 MOORE=../stack/Moore
 #DaVinci version to use
 DAVINCI=lb-run DaVinci/v50r6
+#ROOT version to use
+ROOT=lb-run ROOT/6.18.04 root -l -b -q
 #Gcc compilers
 LbLogin8=export BINARY_TAG="x86_64-centos7-gcc8-opt" && export CMTCONFIG="x86_64-centos7-gcc8-opt"
 LbLogin9=export BINARY_TAG="x86_64-centos7-gcc9-opt" && export CMTCONFIG="x86_64-centos7-gcc9-opt"
@@ -47,6 +49,14 @@ $(default_DST_size_list): output/%/evt_size.txt: output/%/std_Moore.out
 	grep "Events output" output/$*/std_Moore.out > $@
 	du -sh output/$*/$*.mdst >> $@
 
+########################################## ROOT #######################################
+#Once we have the ntuples
+#Plot all variables of some relevant ntuple(s)
+output/K1G/HHGamma_VarList.txt:  output/K1G/std_DV_HHGamma.out
+	$(LbLogin8) && $(ROOT) src/getvars.C\(\"output/K1G/K1G_HHGamma.root\",\"$@\",\"Hlt2BToHHGamma_Inclusive_Line_ExtraHadron/DecayTree\"\)
+	mkdir -p output/K1G/plots/
+	../root/PlotUsedVars.out $@ output/K1G/K1G_HHGamma.root "" E1  output/K1G/plots/
+
 #Run all default stuff
 .PHONY: all_default
-all_default: default_ntuple_output default_DST_size
+all_default: default_ntuple_output default_DST_size output/K1G/HHGamma_VarList.txt
