@@ -23,7 +23,7 @@ DEFAULT_TUPLE_TOOLS = (
     "TupleToolGeometry",
     "TupleToolTrackInfo",
     "TupleToolAngles",
-    "TupleToolRecoStats",
+#    "TupleToolRecoStats",
     "TupleToolMCTruth",
     "MCTupleToolKinematic"
 )
