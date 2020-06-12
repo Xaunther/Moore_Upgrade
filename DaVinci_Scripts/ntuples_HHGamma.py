@@ -25,9 +25,9 @@ DEFAULT_TUPLE_TOOLS = (
 ROOT_IN_TES = "/Event/HLT2"
 
 # The output of the HLT2 line
-line_output = AutomaticData("{1}/{0}/Particles".format(linename, ROOT_IN_TES))
+line_output = AutomaticData("{0}/Particles".format(linename))
 # Extra pions
-extra_hadrons = AutomaticData("{2}/{0}/{1}/Particles".format(linename, extra_hadron, ROOT_IN_TES))
+extra_hadrons = AutomaticData("{0}/{1}/Particles".format(linename, extra_hadron))
 extra_hadron_sel = CombineSelection(
     extra_hadron+"Sel",
     inputs=[line_output, extra_hadrons],
@@ -64,19 +64,9 @@ dtt_line_extra_hadron = DecayTreeTuple(
 dtt_line_extra_hadron.ErrorMax = -1
 dtt_line_extra_hadron.addTupleTool("TupleToolANNPID").ANNPIDTunes = ["MC15TuneV1"]
 
-#DecayTreeTuple for ExtraHadron
-dtt_extra_hadron = DecayTreeTuple(
-    extra_hadron+"Tuple",
-    Inputs=[extra_hadrons.outputLocation()],
-    Decay="(pi+) || (pi-)",
-    ToolList=list(DEFAULT_TUPLE_TOOLS)
-)
-dtt_extra_hadron.ErrorMax = -1
-dtt_extra_hadron.addTupleTool("TupleToolANNPID").ANNPIDTunes = ["MC15TuneV1"]
-
 
 DaVinci().RootInTES = ROOT_IN_TES
-DaVinci().UserAlgorithms = [extra_hadron_selseq.sequence(), dtt_line, dtt_line_extra_hadron, dtt_extra_hadron]
+DaVinci().UserAlgorithms = [extra_hadron_selseq.sequence(), dtt_line, dtt_line_extra_hadron]
 DaVinci().TupleFile = DaVinci().TupleFile + "_HHGamma.root"
 
 @appendPostConfigAction
