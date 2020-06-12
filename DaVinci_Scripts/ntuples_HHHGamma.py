@@ -21,6 +21,11 @@ DEFAULT_TUPLE_TOOLS = (
     "TupleToolKinematic",
     "TupleToolPid",
     "TupleToolGeometry",
+    "TupleToolTrackInfo",
+    "TupleToolAngles",
+    "TupleToolRecoStats",
+    "TupleToolMCTruth",
+    "MCTupleToolKinematic"
 )
 ROOT_IN_TES = "/Event/HLT2"
 
