@@ -1,2 +1,18 @@
 3
 Tuples/ExtraselCut_HHHgammaEE.root CandidatesFromLineHHHgammaEE/DecayTree 3
+output/KstG/KstG_HHGamma.root Hlt2BToHHGamma_Inclusive_Line/DecayTree 3
+output/KstG/KstG_HHGammaEE.root Hlt2BToHHGammaee_Inclusive_Line/DecayTree 3
+output/KstG/KstG_HHHGamma.root Hlt2BToHHHGamma_Inclusive_Line/DecayTree 3
+output/KstG/KstG_HHHGammaEE.root Hlt2BToHHHGammaEE_Inclusive_Line/DecayTree 3
+output/PhiG/PhiG_HHGamma.root Hlt2BToHHGamma_Inclusive_Line/DecayTree 3
+output/PhiG/PhiG_HHGammaEE.root Hlt2BToHHGammaee_Inclusive_Line/DecayTree 3
+output/PhiG/PhiG_HHHGamma.root Hlt2BToHHHGamma_Inclusive_Line/DecayTree 3
+output/PhiG/PhiG_HHHGammaEE.root Hlt2BToHHHGammaEE_Inclusive_Line/DecayTree 3
+output/LambdaG/LambdaG_HHGamma.root Hlt2BToHHGamma_Inclusive_Line/DecayTree 3
+output/LambdaG/LambdaG_HHGammaEE.root Hlt2BToHHGammaee_Inclusive_Line/DecayTree 3
+output/LambdaG/LambdaG_HHHGamma.root Hlt2BToHHHGamma_Inclusive_Line/DecayTree 3
+output/LambdaG/LambdaG_HHHGammaEE.root Hlt2BToHHHGammaEE_Inclusive_Line/DecayTree 3
+output/K1G/K1G_HHGamma.root Hlt2BToHHGamma_Inclusive_Line/DecayTree 3
+output/K1G/K1G_HHGammaEE.root Hlt2BToHHGammaee_Inclusive_Line/DecayTree 3
+output/K1G/K1G_HHHGamma.root Hlt2BToHHHGamma_Inclusive_Line/DecayTree 3
+output/K1G/K1G_HHHGammaEE.root Hlt2BToHHHGammaEE_Inclusive_Line/DecayTree 3
