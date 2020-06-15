@@ -1,0 +1,32 @@
+Selection efficiencies applied on output/KstG/KstG_HHGamma.root: 
+Event weight: 
+
+                     Preselection                     
+------------------------------------------------------
+
+          Efficiency for each cut, and global          
+-------------------------------------------------------
+(piplus0_PT > 400)            |  1
+(piplus0_PT > 500)            |  0.796598
+(piplus0_PT > 600)            |  0.635276
+(piplus0_PT > 700)            |  0.510147
+(piplus0_PT > 800)            |  0.414388
+(piplus0_PT > 900)            |  0.340737
+(piplus0_PT > 1000)           |  0.283256
+(piplus0_IPCHI2_OWNPV < 0.1)  |  0.0504887
+(piplus0_IPCHI2_OWNPV < 0.2)  |  0.0984275
+(piplus0_IPCHI2_OWNPV < 0.3)  |  0.14286
+(piplus0_IPCHI2_OWNPV < 0.4)  |  0.185474
+(piplus0_IPCHI2_OWNPV < 0.5)  |  0.22488
+(piplus0_IPCHI2_OWNPV < 0.6)  |  0.26268
+(piplus0_IPCHI2_OWNPV < 0.7)  |  0.297922
+(piplus0_IPCHI2_OWNPV < 0.8)  |  0.331068
+(piplus0_IPCHI2_OWNPV < 0.9)  |  0.362334
+(piplus0_IPCHI2_OWNPV < 1.0)  |  0.39237
+(piplus0_IPCHI2_OWNPV < 1.5)  |  0.518406
+(piplus0_IPCHI2_OWNPV < 2.0)  |  0.615938
+(piplus0_IPCHI2_OWNPV < 3.0)  |  0.747315
+(piplus0_IPCHI2_OWNPV < 4.0)  |  0.829013
+(piplus0_IPCHI2_OWNPV < 5.0)  |  0.880515
+Global                        |  0.014143
+Error                         |  0.000239

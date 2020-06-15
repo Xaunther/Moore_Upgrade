@@ -16,8 +16,6 @@ UraniaDev*
 #Emacs shit
 *~
 
-#Ignore folder with cuts combinations
-Cuts/
 #Python compilation stuff
 *.pyc
 

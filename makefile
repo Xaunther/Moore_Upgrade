@@ -52,11 +52,19 @@ $(default_DST_size_list): output/%/evt_size.txt: output/%/std_Moore.out
 ########################################## ROOT #######################################
 #Once we have the ntuples
 #Plot all variables of some relevant ntuple(s)
-output/K1G/HHGamma_VarList.txt:  output/K1G/std_DV_HHGamma.out
-	$(LbLogin8) && $(ROOT) src/getvars.C\(\"output/K1G/K1G_HHGamma.root\",\"$@\",\"Hlt2BToHHGamma_Inclusive_Line_ExtraHadron/DecayTree\"\)
-	mkdir -p output/K1G/plots/
-	../root/PlotUsedVars.out $@ output/K1G/K1G_HHGamma.root "" E1  output/K1G/plots/
+default_HHGamma_VarList=output/KstG/HHGamma_VarList.txt output/K1G/HHGamma_VarList.txt output/PhiG/HHGamma_VarList.txt output/LambdaG/HHGamma_VarList.txt
+default_HHGamma_Var: $(default_HHGamma_VarList)
+$(default_HHGamma_VarList): output/%/HHGamma_VarList.txt: output/%/std_DV_HHGamma.out
+	$(LbLogin8) && $(ROOT) src/getvars.C\(\"output/$*/$*_HHGamma.root\",\"$@\",\"Hlt2BToHHGamma_Inclusive_Line_ExtraHadron/DecayTree\"\)
+	mkdir -p output/$*/plots/
+	../root/PlotUsedVars.out $@ output/$*/$*_HHGamma.root "" E1  output/$*/plots/
+
+#Efficiency of extracuts
+default_HHGamma_extraCutEff_list=output/KstG/HHGamma_extraCutEff.txt output/K1G/HHGamma_extraCutEff.txt output/PhiG/HHGamma_extraCutEff.txt output/LambdaG/HHGamma_extraCutEff.txt
+default_HHGamma_extraCutEff: $(default_HHGamma_extraCutEff_list)
+$(default_HHGamma_extraCutEff_list): output/%/HHGamma_extraCutEff.txt: output/%/std_DV_HHGamma.out Cuts/extracuts.txt
+	../root/CutEff.out output/$*/$*_HHGamma.root Cuts/extracuts.txt "" $@ "" Hlt2BToHHGamma_Inclusive_Line_ExtraHadron/DecayTree
 
 #Run all default stuff
 .PHONY: all_default
-all_default: default_ntuple_output default_DST_size output/K1G/HHGamma_VarList.txt
+all_default: default_ntuple_output default_DST_size default_HHGamma_Var default_HHGamma_extraCutEff
