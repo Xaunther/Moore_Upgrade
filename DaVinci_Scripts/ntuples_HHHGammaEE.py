@@ -61,8 +61,8 @@ extra_hadron_sel = CombineSelection(
         "B*0 -> B+ pi-",
         "B*0~ -> B- pi+",
         "B*- -> B- pi-",
-        "B*+ -> B+ Ks0",
-        "B*- -> B- Ks0",
+        "B*+ -> B+ KS0",
+        "B*- -> B- KS0",
         "B*+ -> B+ Lambda0",
         "B*+ -> B+ Lambda~0",
         "B*- -> B- Lambda0",
@@ -96,8 +96,8 @@ dtt_line_extra_hadron = DecayTreeTuple(
              (B*0 -> ^(B+ -> ^(D*(2010)+ -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi+) ^(gamma -> ^e+ ^e-)) ^pi-) ||
              (B*0~ -> ^(B- -> ^(D*(2010)- -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi-) ^(gamma -> ^e+ ^e-)) ^pi+) ||
              (B*- -> ^(B- -> ^(D*(2010)- -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi-) ^(gamma -> ^e+ ^e-)) ^pi-) ||
-             (B*+ -> ^(B+ -> ^(D*(2010)+ -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi+) ^(gamma -> ^e+ ^e-)) ^(Ks0 -> ^pi+ ^pi-)) ||
-             (B*- -> ^(B- -> ^(D*(2010)- -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi-) ^(gamma -> ^e+ ^e-)) ^(Ks0 -> ^pi+ ^pi-)) ||
+             (B*+ -> ^(B+ -> ^(D*(2010)+ -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi+) ^(gamma -> ^e+ ^e-)) ^(KS0 -> ^pi+ ^pi-)) ||
+             (B*- -> ^(B- -> ^(D*(2010)- -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi-) ^(gamma -> ^e+ ^e-)) ^(KS0 -> ^pi+ ^pi-)) ||
              (B*+ -> ^(B+ -> ^(D*(2010)+ -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi+) ^(gamma -> ^e+ ^e-)) ^(Lambda0 -> ^p+ ^pi-)) ||
              (B*+ -> ^(B+ -> ^(D*(2010)+ -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi+) ^(gamma -> ^e+ ^e-)) ^(Lambda~0 -> ^p~- ^pi+)) ||
              (B*- -> ^(B- -> ^(D*(2010)- -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi-) ^(gamma -> ^e+ ^e-)) ^(Lambda0 -> ^p+ ^pi-)) ||
