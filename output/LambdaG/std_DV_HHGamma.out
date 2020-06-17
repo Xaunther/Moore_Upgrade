@@ -131,7 +131,7 @@
 ApplicationMgr    SUCCESS 
 ====================================================================================================================================
                                                    Welcome to DaVinci version v50r6
-                                          running on lxplus723.cern.ch on Fri Jun 12 15:01:48 2020
+                                          running on lxplus723.cern.ch on Mon Jun 15 16:20:04 2020
 ====================================================================================================================================
 ApplicationMgr       INFO Application Manager Configured successfully
 ToolSvc.GitDDDB      INFO opening Git repository '/cvmfs/lhcb.cern.ch/lib/lhcb/git-conddb/DDDB.git'
@@ -143,7 +143,7 @@ DetectorDataSvc   SUCCESS Detector description database: git:/lhcb.xml
 RndmGenSvc.Engine    INFO Generator engine type:CLHEP::RanluxEngine
 RndmGenSvc.Engine    INFO Current Seed:1234567 Luxury:3
 RndmGenSvc           INFO Using Random engine:HepRndm::Engine<CLHEP::RanluxEngine>
-TimingAuditor.T...   INFO This machine has a speed about   3.03 times the speed of a 2.8 GHz Xeon.
+TimingAuditor.T...   INFO This machine has a speed about   2.94 times the speed of a 2.8 GHz Xeon.
 NTupleSvc            INFO Added stream file:output/LambdaG/LambdaG_HHGamma.root as FILE1
 DaVinciEventSeq      INFO Member list: DaVinciInit/DaVinciInitAlg, GaudiSequencer/FilteredEventSeq, GaudiSequencer/LumiSeq
 DaVinciInitAlg    SUCCESS ==================================================================
@@ -365,12 +365,12 @@ ApplicationMgr       INFO Application Manager Stopped successfully
 HLT2_PsAndVsUnpackSUCCESS Number of counters : 8
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
  | "# Unpacked FlavourTags"                        |       192 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
- | "# Unpacked MuonPIDs"                           |       192 |       9128 |     47.542 |     17.380 |      10.000 |      100.00 |
- | "# Unpacked Particles"                          |       192 |      12607 |     65.661 |     31.621 |      13.000 |      190.00 |
- | "# Unpacked ProtoParticles"                     |       192 |      10208 |     53.167 |     19.036 |      11.000 |      113.00 |
+ | "# Unpacked MuonPIDs"                           |       192 |       2256 |     11.750 |     4.6648 |      2.0000 |      28.000 |
+ | "# Unpacked Particles"                          |       192 |       3883 |     20.224 |     10.780 |      6.0000 |      98.000 |
+ | "# Unpacked ProtoParticles"                     |       192 |       2641 |     13.755 |     4.9935 |      4.0000 |      30.000 |
  | "# Unpacked RecVertices"                        |       192 |       1266 |     6.5938 |     2.2271 |      1.0000 |      14.000 |
- | "# Unpacked RichPIDs"                           |       192 |      10010 |     52.135 |     19.000 |      10.000 |      113.00 |
- | "# Unpacked Tracks"                             |       192 |      11238 |     58.531 |     22.474 |      10.000 |      136.00 |
+ | "# Unpacked RichPIDs"                           |       192 |       2446 |     12.740 |     4.9618 |      3.0000 |      29.000 |
+ | "# Unpacked Tracks"                             |       192 |       2735 |     14.245 |     5.7949 |      3.0000 |      32.000 |
  | "# Unpacked Vertices"                           |       192 |        989 |     5.1510 |     5.2918 |      2.0000 |      57.000 |
 LINK:MCParticle...SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/0/1/0
 LINK:MCParticle...SUCCESS  #WARNINGS   = 55       Message = 'No valid data is found at '/Event/MC/Particles''
@@ -387,20 +387,20 @@ SELECT:Hlt2BToH...SUCCESS Number of counters : 1
  |*"#passed"                                       |        55 |         55 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
 ExtraHadronSel    SUCCESS Number of counters : 14
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "# B*+ -> B0  pi+ "                             |        55 |       1357 |     24.673 |     15.474 |      4.0000 |      82.000 |
- | "# B*- -> B0  pi- "                             |        55 |       1398 |     25.418 |     14.496 |      4.0000 |      72.000 |
+ | "# B*+ -> B0  pi+ "                             |        55 |        250 |     4.5455 |     2.8208 |      0.0000 |      13.000 |
+ | "# B*- -> B0  pi- "                             |        55 |        278 |     5.0545 |     3.8820 |      1.0000 |      22.000 |
  | "# B0"                                          |        55 |         60 |     1.0909 |    0.28748 |      1.0000 |      2.0000 |
  | "# B~0"                                         |        55 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
  | "# Hlt2BToHHGamma_Inclusive_Line"               |        55 |         60 |     1.0909 |    0.28748 |      1.0000 |      2.0000 |
- | "# Hlt2BToHHGamma_Inclusive_Line/ExtraHadron"   |        55 |       2518 |     45.782 |     19.918 |      8.0000 |      87.000 |
- | "# input particles"                             |        55 |       2578 |     46.873 |     19.976 |      9.0000 |      88.000 |
- | "# pi+"                                         |        55 |       1230 |     22.364 |     10.211 |      4.0000 |      42.000 |
- | "# pi-"                                         |        55 |       1288 |     23.418 |     10.630 |      4.0000 |      50.000 |
- | "# selected"                                    |        55 |       2755 |     50.091 |     29.162 |      8.0000 |      154.00 |
+ | "# Hlt2BToHHGamma_Inclusive_Line/ExtraHadron"   |        55 |        485 |     8.8182 |     4.3279 |      1.0000 |      19.000 |
+ | "# input particles"                             |        55 |        545 |     9.9091 |     4.3663 |      2.0000 |      20.000 |
+ | "# pi+"                                         |        55 |        234 |     4.2545 |     2.5457 |      0.0000 |      9.0000 |
+ | "# pi-"                                         |        55 |        251 |     4.5636 |     2.7684 |      1.0000 |      14.000 |
+ | "# selected"                                    |        55 |        528 |     9.6000 |     5.6427 |      1.0000 |      28.000 |
  |*"#accept"                                       |        55 |         55 |( 100.0000 +- 0.000000)% |
- |*"#pass combcut"                                 |      2809 |       2809 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
- |*"#pass mother cut"                              |      2809 |       2755 |( 98.07761 +- 0.2590777)%|   -------   |   -------   |
- | "Error from IParticleCombiner, skip the combinat|        54 |         54 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+ |*"#pass combcut"                                 |       536 |        536 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
+ |*"#pass mother cut"                              |       536 |        528 |( 98.50746 +- 0.5237388)%|   -------   |   -------   |
+ | "Error from IParticleCombiner, skip the combinat|         8 |          8 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
 Hlt2BToHHGamma_...SUCCESS Booked 1 N-Tuples and 0 Event Tag Collections
 Hlt2BToHHGamma_...SUCCESS List of booked N-Tuples in directory "FILE1/Hlt2BToHHGamma_Inclusive_Line"
 Hlt2BToHHGamma_...SUCCESS  ID=DecayTree     Title="DecayTree"                               #items=295{B0_ENDVERTEX_X,B0_ENDVERTEX_Y,B0_ENDVERTEX_Z,B0_ENDVERTEX_XERR,B0_ENDVERTEX_YERR,}
@@ -417,8 +417,8 @@ Hlt2BToHHGamma_...SUCCESS List of booked N-Tuples in directory "FILE1/Hlt2BToHHG
 Hlt2BToHHGamma_...SUCCESS  ID=DecayTree     Title="DecayTree"                               #items=436{Bstplus_ENDVERTEX_X,Bstplus_ENDVERTEX_Y,Bstplus_ENDVERTEX_Z,Bstplus_ENDVERTEX_XER}
 Hlt2BToHHGamma_...SUCCESS Number of counters : 4
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "# Phys/ExtraHadronSel"                         |       192 |       2755 |     14.349 |     27.504 |      0.0000 |      154.00 |
- | "# input particles"                             |       192 |       2755 |     14.349 |     27.504 |      0.0000 |      154.00 |
+ | "# Phys/ExtraHadronSel"                         |       192 |        528 |     2.7500 |     5.2876 |      0.0000 |      28.000 |
+ | "# input particles"                             |       192 |        528 |     2.7500 |     5.2876 |      0.0000 |      28.000 |
  |*"#accept"                                       |       192 |         55 |( 28.64583 +- 3.262795)% |
  | "Event"                                         |       192 |        192 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
 Hlt2BToHHGamma_...SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/1/0/0
@@ -432,26 +432,26 @@ TransportSvc      SUCCESS  GEOMETRY ERRORS: 'Recover'  map has the size 0
 TransportSvc      SUCCESS  GEOMETRY ERRORS: 'Codes'    map has the size 0
 
 TransportSvc         INFO Reset the static pointer to DetDesc::IGeometyrErrorSvc
-RootCnvSvc           INFO Disconnected data IO:2600CD76-81AA-EA11-ACC0-FA163E98FDF0 [output/LambdaG/LambdaG.mdst]
-DataOnDemandSvc      INFO Handled "DataFault" incidents: 62463/3067/101857(Alg/Node/Total).
+RootCnvSvc           INFO Disconnected data IO:BC146937-0CAF-EA11-9AB3-FA163E4B924C [output/LambdaG/LambdaG.mdst]
+DataOnDemandSvc      INFO Handled "DataFault" incidents: 15646/3066/30542(Alg/Node/Total).
 ToolSvc              INFO Removing all tools created by ToolSvc
 Hlt2BToHHGamma_...SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/0/1/0
-Hlt2BToHHGamma_...SUCCESS  #WARNINGS   = 2755     Message = 'Will not fill geometry tuple for neutral Calo particles. No worry'
+Hlt2BToHHGamma_...SUCCESS  #WARNINGS   = 528      Message = 'Will not fill geometry tuple for neutral Calo particles. No worry'
 Hlt2BToHHGamma_...SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/0/1/0
 Hlt2BToHHGamma_...SUCCESS  #WARNINGS   = 60       Message = 'Will not fill geometry tuple for neutral Calo particles. No worry'
 ToolSvc.LoKi::V...SUCCESS Number of counters : 5
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "#iterations/1"                                 |      2025 |       3731 |     1.8425 |    0.74395 |      1.0000 |      8.0000 |
- | "#iterations/2"                                 |      2127 |       5373 |     2.5261 |     1.0911 |      2.0000 |      11.000 |
- | "#iterations/Gen"                               |         8 |         29 |     3.6250 |
- | "#iterations/Opt"                               |      2747 |       3225 |     1.1740 |     1.1452 |      0.0000 |      10.000 |
- | "Seed:case(3)"                                  |        62 |
+ | "#iterations/1"                                 |       372 |        698 |     1.8763 |    0.74472 |      1.0000 |      4.0000 |
+ | "#iterations/2"                                 |       411 |       1071 |     2.6058 |     1.1633 |      2.0000 |      10.000 |
+ | "#iterations/Gen"                               |         2 |         11 |     5.5000 |
+ | "#iterations/Opt"                               |       526 |        651 |     1.2376 |     1.1903 |      0.0000 |      9.0000 |
+ | "Seed:case(3)"                                  |        10 |
 ToolSvc.LoKi::V...SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/0/5/0
-ToolSvc.LoKi::V...SUCCESS  #WARNINGS   = 54       Message = 'No convergency has been reached [ExtraHadronSel]'
-ToolSvc.LoKi::V...SUCCESS  #WARNINGS   = 62       Message = '_iterate_opt: No convergency has been reached [ExtraHadronSel]'
-ToolSvc.LoKi::V...SUCCESS  #WARNINGS   = 54       Message = 'fit(): failure from _iterate() [ExtraHadronSel]'
-ToolSvc.LoKi::V...SUCCESS  #WARNINGS   = 54       Message = 'fit(): failure from fit [ExtraHadronSel]'
-ToolSvc.LoKi::V...SUCCESS  #WARNINGS   = 205      Message = 'fit(): measured mass error is a bit    non-positive, adjust to 1 MeV [ExtraHadronSel]'
+ToolSvc.LoKi::V...SUCCESS  #WARNINGS   = 8        Message = 'No convergency has been reached [ExtraHadronSel]'
+ToolSvc.LoKi::V...SUCCESS  #WARNINGS   = 10       Message = '_iterate_opt: No convergency has been reached [ExtraHadronSel]'
+ToolSvc.LoKi::V...SUCCESS  #WARNINGS   = 8        Message = 'fit(): failure from _iterate() [ExtraHadronSel]'
+ToolSvc.LoKi::V...SUCCESS  #WARNINGS   = 8        Message = 'fit(): failure from fit [ExtraHadronSel]'
+ToolSvc.LoKi::V...SUCCESS  #WARNINGS   = 37       Message = 'fit(): measured mass error is a bit    non-positive, adjust to 1 MeV [ExtraHadronSel]'
 ToolSvc.HybridF...SUCCESS Number of counters : 1
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
  | "# loaded from PYTHON"                          |         6 |          6 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
@@ -461,44 +461,42 @@ ToolSvc.CoreFac...SUCCESS Number of counters : 1
 DaVinciInitAlg....SUCCESS Booked 4 Histogram(s) : 1D=4 
 DaVinciInitAlg....SUCCESS Number of counters : 2
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "Delta Memory/MB"                               |       183 |      1.616 |  0.0088306 |   0.069378 |      0.0000 |     0.63200 |
- | "Total Memory/MB"                               |       192 |   350387.9 |     1824.9 |     28.795 |      1593.6 |      1829.2 |
-DaVinciInitAlg....SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/0/1/0
-DaVinciInitAlg....SUCCESS  #WARNINGS   = 3        Message = 'Delta Memory for the event exceeds 3*sigma'
+ | "Delta Memory/MB"                               |       183 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "Total Memory/MB"                               |       192 |   350145.4 |     1823.7 |     28.654 |      1593.8 |      1827.3 |
 ToolSvc.TrackSt...SUCCESS Number of counters : 2
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
  | "Number of states added"                        |        55 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
- | "Number of tracks seen"                         |       190 |       2629 |     13.837 |     24.189 |      0.0000 |      89.000 |
+ | "Number of tracks seen"                         |       190 |        596 |     3.1368 |     5.4408 |      0.0000 |      21.000 |
 TimingAuditor.T...   INFO ----------------------------------------------------------------------------------------------------------------------
-TimingAuditor.T...   INFO This machine has a speed about   3.03 times the speed of a 2.8 GHz Xeon.
+TimingAuditor.T...   INFO This machine has a speed about   2.94 times the speed of a 2.8 GHz Xeon.
 TimingAuditor.T...   INFO Algorithm                              (millisec) |    <user> |   <clock> |      min       max    sigma | entries | total (s) |
 TimingAuditor.T...   INFO ----------------------------------------------------------------------------------------------------------------------
-TimingAuditor.T...   INFO EVENT LOOP                                        |    81.510 |    82.874 |    2.999    8827.8   637.15 |     192 |    15.912 |
-TimingAuditor.T...   INFO  DaVinciEventSeq                                  |    80.885 |    82.199 |    2.382    8827.8   637.20 |     192 |    15.782 |
-TimingAuditor.T...   INFO   DaVinciInitAlg                                  |     0.052 |     0.071 |    0.052       0.4     0.04 |     192 |     0.014 |
-TimingAuditor.T...   INFO   FilteredEventSeq                                |    80.781 |    82.110 |    2.313    8827.7   637.20 |     192 |    15.765 |
-TimingAuditor.T...   INFO    DaVinciEventInitSeq                            |     4.687 |     4.699 |    1.581      67.4     9.24 |     192 |     0.902 |
-TimingAuditor.T...   INFO     KillDAQ                                       |     0.000 |     0.007 |    0.006       0.0     0.00 |     192 |     0.002 |
-TimingAuditor.T...   INFO     UnpackParticlesAndVertices                    |     4.687 |     4.683 |    1.566      67.4     9.24 |     192 |     0.899 |
-TimingAuditor.T...   INFO    DaVinciAnalysisSeq                             |    76.093 |    77.404 |    0.613    8823.9   637.23 |     192 |    14.862 |
-TimingAuditor.T...   INFO     DaVinciUserSequence                           |    76.093 |    77.395 |    0.606    8823.8   637.23 |     192 |    14.860 |
-TimingAuditor.T...   INFO      ExtraHadronSelSeq                            |    41.302 |    42.038 |    0.038    8025.6   579.18 |     192 |     8.071 |
-TimingAuditor.T...   INFO       SELECT:Hlt2BToHHGamma_Inclusive_Line        |     0.000 |     0.035 |    0.007       0.5     0.05 |     192 |     0.007 |
-TimingAuditor.T...   INFO       SELECT:Hlt2BToHHGamma_Inclusive_Line/ExtraHa|     0.000 |     0.005 |    0.005       0.0     0.00 |      55 |     0.000 |
-TimingAuditor.T...   INFO       ExtraHadronSel                              |   144.181 |   146.540 |    0.287    8025.4  1082.05 |      55 |     8.060 |
-TimingAuditor.T...   INFO      Hlt2BToHHGamma_Inclusive_Line                |     4.270 |     4.688 |    0.003     637.7    45.97 |     192 |     0.900 |
-TimingAuditor.T...   INFO      Hlt2BToHHGamma_Inclusive_Line_ExtraHadron    |    30.104 |    30.209 |    0.003     311.6    57.35 |     192 |     5.800 |
+TimingAuditor.T...   INFO EVENT LOOP                                        |    55.156 |    63.222 |    2.799    9728.1   701.35 |     192 |    12.139 |
+TimingAuditor.T...   INFO  DaVinciEventSeq                                  |    54.531 |    62.503 |    2.210    9728.1   701.40 |     192 |    12.001 |
+TimingAuditor.T...   INFO   DaVinciInitAlg                                  |     0.052 |     0.071 |    0.051       0.6     0.04 |     192 |     0.014 |
+TimingAuditor.T...   INFO   FilteredEventSeq                                |    54.479 |    62.413 |    2.143    9728.0   701.40 |     192 |    11.983 |
+TimingAuditor.T...   INFO    DaVinciEventInitSeq                            |     2.291 |     2.911 |    1.481      72.5     6.67 |     192 |     0.559 |
+TimingAuditor.T...   INFO     KillDAQ                                       |     0.000 |     0.008 |    0.006       0.0     0.00 |     192 |     0.002 |
+TimingAuditor.T...   INFO     UnpackParticlesAndVertices                    |     2.291 |     2.895 |    1.468      72.4     6.66 |     192 |     0.556 |
+TimingAuditor.T...   INFO    DaVinciAnalysisSeq                             |    52.187 |    59.495 |    0.611    9724.3   701.32 |     192 |    11.423 |
+TimingAuditor.T...   INFO     DaVinciUserSequence                           |    52.187 |    59.487 |    0.605    9724.3   701.32 |     192 |    11.422 |
+TimingAuditor.T...   INFO      ExtraHadronSelSeq                            |    41.406 |    44.858 |    0.038    8573.2   618.70 |     192 |     8.613 |
+TimingAuditor.T...   INFO       SELECT:Hlt2BToHHGamma_Inclusive_Line        |     0.000 |     0.102 |    0.007      13.0     0.94 |     192 |     0.020 |
+TimingAuditor.T...   INFO       SELECT:Hlt2BToHHGamma_Inclusive_Line/ExtraHa|     0.000 |     0.006 |    0.005       0.0     0.00 |      55 |     0.000 |
+TimingAuditor.T...   INFO       ExtraHadronSel                              |   144.181 |   156.166 |    0.173    8572.9  1155.93 |      55 |     8.589 |
+TimingAuditor.T...   INFO      Hlt2BToHHGamma_Inclusive_Line                |     3.541 |     7.149 |    0.003    1106.8    79.81 |     192 |     1.373 |
+TimingAuditor.T...   INFO      Hlt2BToHHGamma_Inclusive_Line_ExtraHadron    |     6.718 |     6.962 |    0.002      66.7    13.36 |     192 |     1.337 |
 TimingAuditor.T...   INFO     MonitoringSequence                            |     0.000 |     0.002 |    0.002       0.0     0.00 |     192 |     0.000 |
-TimingAuditor.T...   INFO   LumiSeq                                         |     0.000 |     0.008 |    0.006       0.0     0.00 |     192 |     0.002 |
+TimingAuditor.T...   INFO   LumiSeq                                         |     0.000 |     0.009 |    0.006       0.1     0.01 |     192 |     0.002 |
 TimingAuditor.T...   INFO    EventAccount                                   |     0.000 |     0.003 |    0.002       0.0     0.00 |     192 |     0.001 |
-TimingAuditor.T...   INFO *     HLT2_PsAndVsUnpack                          |     0.053 |     0.062 |    0.003       1.7     0.24 |    3352 |     0.208 |
-TimingAuditor.T...   INFO *       createODIN                                |     0.052 |     0.121 |    0.044       2.3     0.16 |     190 |     0.023 |
-TimingAuditor.T...   INFO *      HLT2_pRec_Calo_Photons_Converter           |     0.545 |     0.417 |    0.064       3.9     0.85 |      55 |     0.023 |
-TimingAuditor.T...   INFO *      UnpackMCParticles                          |     0.035 |     0.036 |    0.027       2.3     0.02 |   19640 |     0.724 |
-TimingAuditor.T...   INFO *      SEQ:MCParticles                            |     0.003 |     0.002 |    0.002       0.3     0.00 |   39170 |     0.113 |
-TimingAuditor.T...   INFO *       UnpackMCParticle                          |     0.181 |     0.062 |    0.053       0.3     0.03 |      55 |     0.003 |
-TimingAuditor.T...   INFO *       LINK:MCParticles2MC                       |     0.000 |     0.039 |    0.036       0.1     0.00 |      55 |     0.002 |
-TimingAuditor.T...   INFO *        LINK:MC2Sim4Particles                    |     0.000 |     0.040 |    0.032       0.1     0.01 |      56 |     0.002 |
+TimingAuditor.T...   INFO *     HLT2_PsAndVsUnpack                          |     0.051 |     0.070 |    0.003      12.7     0.37 |    3302 |     0.232 |
+TimingAuditor.T...   INFO *       createODIN                                |     0.052 |     0.119 |    0.056       3.1     0.27 |     190 |     0.023 |
+TimingAuditor.T...   INFO *      HLT2_pRec_Calo_Photons_Converter           |     0.181 |     0.185 |    0.059       3.5     0.51 |      55 |     0.010 |
+TimingAuditor.T...   INFO *      UnpackMCParticles                          |     0.037 |     0.045 |    0.026       4.1     0.14 |    4051 |     0.184 |
+TimingAuditor.T...   INFO *      SEQ:MCParticles                            |     0.002 |     0.003 |    0.002       0.5     0.01 |    7992 |     0.029 |
+TimingAuditor.T...   INFO *       UnpackMCParticle                          |     0.181 |     0.067 |    0.051       0.3     0.05 |      55 |     0.004 |
+TimingAuditor.T...   INFO *       LINK:MCParticles2MC                       |     0.000 |     0.042 |    0.036       0.2     0.02 |      55 |     0.002 |
+TimingAuditor.T...   INFO *        LINK:MC2Sim4Particles                    |     0.000 |     0.046 |    0.032       0.2     0.03 |      56 |     0.003 |
 TimingAuditor.T...   INFO ----------------------------------------------------------------------------------------------------------------------
 NTupleSvc            INFO NTuples saved successfully
 ApplicationMgr       INFO Application Manager Finalized successfully

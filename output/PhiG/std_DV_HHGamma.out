@@ -131,7 +131,7 @@
 ApplicationMgr    SUCCESS 
 ====================================================================================================================================
                                                    Welcome to DaVinci version v50r6
-                                          running on lxplus723.cern.ch on Fri Jun 12 15:01:48 2020
+                                          running on lxplus723.cern.ch on Wed Jun 17 10:10:23 2020
 ====================================================================================================================================
 ApplicationMgr       INFO Application Manager Configured successfully
 ToolSvc.GitDDDB      INFO opening Git repository '/cvmfs/lhcb.cern.ch/lib/lhcb/git-conddb/DDDB.git'
@@ -220,9 +220,9 @@ Hlt2BToHHGamma_...WARNING TupleToolGeometry:: Will not fill geometry tuple for n
 Hlt2BToHHGamma_...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
 Hlt2BToHHGamma_...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
 Hlt2BToHHGamma_...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+Hlt2BToHHGamma_...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+Hlt2BToHHGamma_...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
 Hlt2BToHHGamma_...WARNING TupleToolGeometry:: The WARNING message is suppressed : 'Will not fill geometry tuple for neutral Calo particles. No worry'
-Hlt2BToHHGamma_...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
-Hlt2BToHHGamma_...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
 Hlt2BToHHGamma_...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
 Hlt2BToHHGamma_...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
 Hlt2BToHHGamma_...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
@@ -234,7 +234,7 @@ IODataManager       ERROR Error: connectDataIO> failed to resolve FID:60B9993C-9
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:60B9993C-9C75-E811-877B-FA163EC51D71:/Event/Rec
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:60B9993C-9C75-E811-877B-FA163EC51D71:/Event/MC
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:60B9993C-9C75-E811-877B-FA163EC51D71:/Event/pSim
-DaVinciInitAlg       INFO Memory has changed from 1593800 to 1842248 KB (248448KB, 15.5884%) in last 1000 events
+DaVinciInitAlg       INFO Memory has changed from 1593820 to 1839332 KB (245512KB, 15.404%) in last 1000 events
 EventSelector     SUCCESS Reading Event record 1001. Record number within stream 1: 1001
 IODataManager       ERROR Error: connectDataIO> failed to resolve FID:5AFA97EA-9B75-E811-85E3-FA163EEBFBDA
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:5AFA97EA-9B75-E811-85E3-FA163EEBFBDA:/Event/Rec
@@ -244,7 +244,7 @@ IODataManager       ERROR Error: connectDataIO> failed to resolve FID:70E02B28-9
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:70E02B28-9C75-E811-A152-02163E013D0B:/Event/Rec
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:70E02B28-9C75-E811-A152-02163E013D0B:/Event/MC
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:70E02B28-9C75-E811-A152-02163E013D0B:/Event/pSim
-DaVinciInitAlg       INFO Memory has changed from 1842248 to 2017744 KB (175496KB, 9.52619%) in last 1000 events
+DaVinciInitAlg       INFO Memory has changed from 1839332 to 1841080 KB (1748KB, 0.0950345%) in last 1000 events
 EventSelector     SUCCESS Reading Event record 2001. Record number within stream 1: 2001
 IODataManager       ERROR Error: connectDataIO> failed to resolve FID:4842D86A-6876-E811-94A4-02163E00C495
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:4842D86A-6876-E811-94A4-02163E00C495:/Event/Rec

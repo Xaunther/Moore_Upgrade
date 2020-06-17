@@ -6,21 +6,21 @@ Event weight:
 
           Efficiency for each cut, and global          
 -------------------------------------------------------
-(piplus0_PT > 500)             |  0.796598
-(piplus0_PT > 600)             |  0.635276
-(piplus0_PT > 700)             |  0.510147
-(piplus0_PT > 800)             |  0.414388
-(piplus0_PT > 900)             |  0.340737
-(piplus0_PT > 1000)            |  0.283256
-(piplus0_IPCHI2_OWNPV < 0.05)  |  0.025651
-(piplus0_IPCHI2_OWNPV < 0.06)  |  0.030706
-(piplus0_IPCHI2_OWNPV < 0.07)  |  0.0356833
-(piplus0_IPCHI2_OWNPV < 0.08)  |  0.040534
-(piplus0_IPCHI2_OWNPV < 0.09)  |  0.045683
-(piplus0_IPCHI2_OWNPV < 0.1)   |  0.0504887
-(piplus0_IPCHI2_OWNPV < 0.2)   |  0.0984275
-(piplus0_IPCHI2_OWNPV < 0.3)   |  0.14286
-(piplus0_IPCHI2_OWNPV < 0.4)   |  0.185474
-(piplus0_IPCHI2_OWNPV < 0.5)   |  0.22488
-Global                         |  0.007143
-Error                          |  0.000170
+(piplus0_PT > 500)             |  1
+(piplus0_PT > 600)             |  0.796438
+(piplus0_PT > 700)             |  0.637975
+(piplus0_PT > 800)             |  0.515842
+(piplus0_PT > 900)             |  0.422431
+(piplus0_PT > 1000)            |  0.351525
+(piplus0_IPCHI2_OWNPV < 0.05)  |  0.114161
+(piplus0_IPCHI2_OWNPV < 0.06)  |  0.136915
+(piplus0_IPCHI2_OWNPV < 0.07)  |  0.158577
+(piplus0_IPCHI2_OWNPV < 0.08)  |  0.180056
+(piplus0_IPCHI2_OWNPV < 0.09)  |  0.202765
+(piplus0_IPCHI2_OWNPV < 0.1)   |  0.223948
+(piplus0_IPCHI2_OWNPV < 0.2)   |  0.438512
+(piplus0_IPCHI2_OWNPV < 0.3)   |  0.637223
+(piplus0_IPCHI2_OWNPV < 0.4)   |  0.825752
+(piplus0_IPCHI2_OWNPV < 0.5)   |  1
+Global                         |  0.039815
+Error                          |  0.000933

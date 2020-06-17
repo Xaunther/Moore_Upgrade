@@ -37,7 +37,7 @@
 ApplicationMgr    SUCCESS 
 ====================================================================================================================================
                                                    Welcome to Moore version v51r0
-                                          running on lxplus724.cern.ch on Tue Jun  9 17:55:58 2020
+                                          running on lxplus723.cern.ch on Mon Jun 15 15:27:24 2020
 ====================================================================================================================================
 ApplicationMgr       INFO Application Manager Configured successfully
 ToolSvc.GitDDDB                        INFO opening Git repository '/cvmfs/lhcb.cern.ch/lib/lhcb/git-conddb/DDDB.git'
@@ -116,7 +116,7 @@ HiveDataBrokerSvc                   WARNING non-reentrant algorithm: OutputStrea
 HLTControlFlowMgr                      INFO Concurrency level information:
 HLTControlFlowMgr                      INFO  o Number of events slots: 1
 HLTControlFlowMgr                      INFO  o TBB thread pool size:  'ThreadPoolSize':1
-HLTControlFlowMgr                      INFO ---> End of Initialization. This took 57235 ms
+HLTControlFlowMgr                      INFO ---> End of Initialization. This took 79061 ms
 ApplicationMgr                         INFO Application Manager Initialized successfully
 DeVP                                   INFO There are 208 sensors (left: 104, right: 104)
 DeFTDetector                           INFO Current FT geometry version =   63
@@ -128,8 +128,8 @@ EventSelector                       SUCCESS Reading Event record 1. Record numbe
 ToolSvc.LoKi::VertexFitter             INFO Option for Optimised Kalman Filter fit is activated 
 TransportSvc                           INFO Initialize the static pointer to DetDesc::IGeometryErrorSvc
 TransportSvc                           INFO Recovery of geometry errors is  ENABLED
-HLTControlFlowMgr                      INFO Timing started at: 17:57:29
-IODataManager                          INFO Referring to dataset output/KstG/KstG.mdst by its file ID:AE63F2EB-69AA-EA11-A3E4-FA163E98FDF0
+HLTControlFlowMgr                      INFO Timing started at: 15:29:15
+IODataManager                          INFO Referring to dataset output/KstG/KstG.mdst by its file ID:92677435-0CAF-EA11-B3D4-FA163E4B924C
 EventSelector                          INFO Stream:EventSelector.DataStreamTool_2 Def:DATAFILE='root://x509up_u98003@eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/Upgrade/LDST/00075829/0000/00075829_00000003_1.ldst' SVC='Gaudi::RootEvtSelector' OPT='READ' IgnoreChecksum='YES'
 EventSelector                          INFO Stream:EventSelector.DataStreamTool_3 Def:DATAFILE='root://x509up_u98003@eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/Upgrade/LDST/00075829/0000/00075829_00000022_1.ldst' SVC='Gaudi::RootEvtSelector' OPT='READ' IgnoreChecksum='YES'
 EventSelector                       SUCCESS Reading Event record 10001. Record number within stream 3: 1267
@@ -218,7 +218,7 @@ EventSelector                          INFO Stream:EventSelector.DataStreamTool_
 IODataManager                          INFO Disconnect from dataset root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075829/0000/00075829_00000018_1.ldst [329B74DA-BA75-E811-85CD-008CFAF75254]
 RootCnvSvc                             INFO Removed disconnected IO  stream:329B74DA-BA75-E811-85CD-008CFAF75254 [root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075829/0000/00075829_00000018_1.ldst]
 HLTControlFlowMgr                      INFO No more events in event selection 
-HLTControlFlowMgr                      INFO ---> Loop over 89000 Events Finished -  WSS 1450.14, timed 88990 Events: 3941840 ms, Evts/s = 22.5758
+HLTControlFlowMgr                      INFO ---> Loop over 89000 Events Finished -  WSS 1482, timed 88990 Events: 2668747 ms, Evts/s = 33.3452
 ApplicationMgr                         INFO Application Manager Stopped successfully
 DeterministicPrescaler              SUCCESS Number of counters : 1
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
@@ -426,16 +426,16 @@ FilterDesktop#5                     SUCCESS Number of counters : 5
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
  | "# FunctionalParticleMaker#2/Particles"         |      6815 |     739910 |     108.57 |     51.675 |      7.0000 |      412.00 |
  | "# input particles"                             |      6815 |     739910 |     108.57 |     51.675 |      7.0000 |      412.00 |
- |*"#accept"                                       |      6815 |       6815 |( 100.0000 +- 0.000000)% |
- | "#passed"                                       |      6815 |     271002 |     39.766 |     18.038 |      1.0000 |      113.00 |
- |*"efficiency"                                    |    739910 |   2.71e+05 |( 36.62635 +- 0.05600950)%|   -------   |   -------   |
+ |*"#accept"                                       |      6815 |       6717 |( 98.56200 +- 0.1442122)% |
+ | "#passed"                                       |      6815 |      48744 |     7.1525 |     4.0801 |      0.0000 |      27.000 |
+ |*"efficiency"                                    |    739910 |      48744 |( 6.587828 +- 0.02883921)%|   -------   |   -------   |
 FilterDesktop#16                    SUCCESS Number of counters : 5
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "# FilterDesktop#5"                             |      6815 |     271002 |     39.766 |     18.038 |      1.0000 |      113.00 |
- | "# input particles"                             |      6815 |     271002 |     39.766 |     18.038 |      1.0000 |      113.00 |
- |*"#accept"                                       |      6815 |       6815 |( 100.0000 +- 0.000000)% |
- | "#passed"                                       |      6815 |     271002 |     39.766 |     18.038 |      1.0000 |      113.00 |
- |*"efficiency"                                    |    271002 |   2.71e+05 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
+ | "# FilterDesktop#5"                             |      6815 |      48744 |     7.1525 |     4.0801 |      0.0000 |      27.000 |
+ | "# input particles"                             |      6815 |      48744 |     7.1525 |     4.0801 |      0.0000 |      27.000 |
+ |*"#accept"                                       |      6815 |       6717 |( 98.56200 +- 0.1442122)% |
+ | "#passed"                                       |      6815 |      48744 |     7.1525 |     4.0801 |      0.0000 |      27.000 |
+ |*"efficiency"                                    |     48744 |      48744 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
 FilterDesktop#17                    SUCCESS Number of counters : 5
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
  | "# FilterDesktop#9"                             |      6815 |       4433 |    0.65048 |     1.1870 |      0.0000 |      18.000 |
@@ -445,11 +445,11 @@ FilterDesktop#17                    SUCCESS Number of counters : 5
  |*"efficiency"                                    |      4433 |       4433 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
 FilterDesktop#18                    SUCCESS Number of counters : 5
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "# FilterDesktop#5"                             |      6815 |     271002 |     39.766 |     18.038 |      1.0000 |      113.00 |
- | "# input particles"                             |      6815 |     271002 |     39.766 |     18.038 |      1.0000 |      113.00 |
- |*"#accept"                                       |      6815 |       6815 |( 100.0000 +- 0.000000)% |
- | "#passed"                                       |      6815 |     271002 |     39.766 |     18.038 |      1.0000 |      113.00 |
- |*"efficiency"                                    |    271002 |   2.71e+05 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
+ | "# FilterDesktop#5"                             |      6815 |      48744 |     7.1525 |     4.0801 |      0.0000 |      27.000 |
+ | "# input particles"                             |      6815 |      48744 |     7.1525 |     4.0801 |      0.0000 |      27.000 |
+ |*"#accept"                                       |      6815 |       6717 |( 98.56200 +- 0.1442122)% |
+ | "#passed"                                       |      6815 |      48744 |     7.1525 |     4.0801 |      0.0000 |      27.000 |
+ |*"efficiency"                                    |     48744 |      48744 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
 FilterDesktop#11                    SUCCESS Number of counters : 5
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
  | "# FilterDesktop#4"                             |      6815 |       6425 |    0.94277 |    0.37760 |      0.0000 |      4.0000 |
@@ -459,11 +459,11 @@ FilterDesktop#11                    SUCCESS Number of counters : 5
  |*"efficiency"                                    |      6425 |       6425 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
 FilterDesktop#12                    SUCCESS Number of counters : 5
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "# FilterDesktop#5"                             |      6815 |     271002 |     39.766 |     18.038 |      1.0000 |      113.00 |
- | "# input particles"                             |      6815 |     271002 |     39.766 |     18.038 |      1.0000 |      113.00 |
- |*"#accept"                                       |      6815 |       6815 |( 100.0000 +- 0.000000)% |
- | "#passed"                                       |      6815 |     271002 |     39.766 |     18.038 |      1.0000 |      113.00 |
- |*"efficiency"                                    |    271002 |   2.71e+05 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
+ | "# FilterDesktop#5"                             |      6815 |      48744 |     7.1525 |     4.0801 |      0.0000 |      27.000 |
+ | "# input particles"                             |      6815 |      48744 |     7.1525 |     4.0801 |      0.0000 |      27.000 |
+ |*"#accept"                                       |      6815 |       6717 |( 98.56200 +- 0.1442122)% |
+ | "#passed"                                       |      6815 |      48744 |     7.1525 |     4.0801 |      0.0000 |      27.000 |
+ |*"efficiency"                                    |     48744 |      48744 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
 FilterDesktop#13                    SUCCESS Number of counters : 5
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
  | "# FilterDesktop#7"                             |      6815 |        480 |   0.070433 |    0.37614 |      0.0000 |      9.0000 |
@@ -473,87 +473,87 @@ FilterDesktop#13                    SUCCESS Number of counters : 5
  |*"efficiency"                                    |       480 |        480 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
 FilterDesktop#14                    SUCCESS Number of counters : 5
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "# FilterDesktop#5"                             |      6815 |     271002 |     39.766 |     18.038 |      1.0000 |      113.00 |
- | "# input particles"                             |      6815 |     271002 |     39.766 |     18.038 |      1.0000 |      113.00 |
- |*"#accept"                                       |      6815 |       6815 |( 100.0000 +- 0.000000)% |
- | "#passed"                                       |      6815 |     271002 |     39.766 |     18.038 |      1.0000 |      113.00 |
- |*"efficiency"                                    |    271002 |   2.71e+05 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
+ | "# FilterDesktop#5"                             |      6815 |      48744 |     7.1525 |     4.0801 |      0.0000 |      27.000 |
+ | "# input particles"                             |      6815 |      48744 |     7.1525 |     4.0801 |      0.0000 |      27.000 |
+ |*"#accept"                                       |      6815 |       6717 |( 98.56200 +- 0.1442122)% |
+ | "#passed"                                       |      6815 |      48744 |     7.1525 |     4.0801 |      0.0000 |      27.000 |
+ |*"efficiency"                                    |     48744 |      48744 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
 OutputStream                           INFO Events output: 6815
 HLTControlFlowMgr                      INFO Memory pool: used 0.000427246 +/- 0 MiB (min: 0, max: 0) in 1 +/- 0 blocks (allocated >once in 0 +/- 0% events). Allocated capacity was 10 +/- 0 MiB (min: 10, max: 10) and 2 +/- 0 (min: 2, max: 2) requests were served
 HLTControlFlowMgr                      INFO Timing table:
-HLTControlFlowMgr                      INFO Average ticks per millisecond: 2195258
+HLTControlFlowMgr                      INFO Average ticks per millisecond: 2195491
 HLTControlFlowMgr                      INFO 
  | Name of Algorithm                                       | Execution Count | Total Time / s  | Avg. Time / us   |
- | "Gaudi__Hive__FetchDataFromFile#10"                     |           89000 |           0.535 |            6.016 |
- | "UnpackChargedProtos"                                   |           89000 |          28.016 |          314.789 |
- | "ChargedProtoCombineDLLsAlg"                            |           89000 |          15.859 |          178.191 |
- | "Gaudi__Hive__FetchDataFromFile#5"                      |           89000 |           0.407 |            4.571 |
- | "UnpackMuonPIDs"                                        |           89000 |           5.455 |           61.296 |
- | "ChargedProtoParticleAddMuonInfo"                       |           89000 |          10.392 |          116.766 |
- | "Gaudi__Hive__FetchDataFromFile#6"                      |           89000 |           0.452 |            5.081 |
- | "UnpackRichPIDs"                                        |           89000 |          10.385 |          116.690 |
- | "ChargedProtoParticleAddRichInfo"                       |           89000 |          19.680 |          221.128 |
- | "CopyLinePersistenceLocations"                          |            6815 |           9.436 |         1384.528 |
- | "CopyParticle2PVRelationsFromLinePersistenceLocations"  |            6815 |           2.007 |          294.515 |
- | "Gaudi__Hive__FetchDataFromFile#11"                     |           89000 |        2866.572 |        32208.678 |
- | "createODIN"                                            |           89000 |           3.184 |           35.778 |
- | "DeterministicPrescaler"                                |           89000 |           0.413 |            4.637 |
- | "DeterministicPrescaler#1"                              |           89000 |           0.343 |            3.851 |
- | "DeterministicPrescaler#2"                              |           89000 |           0.303 |            3.400 |
- | "DeterministicPrescaler#3"                              |           89000 |           0.339 |            3.804 |
- | "ExecutionReportsWriter"                                |            6815 |           0.086 |           12.588 |
- | "FunctionalParticleMaker#3"                             |           89000 |          12.735 |          143.090 |
- | "FilterDesktop#6"                                       |           89000 |           6.014 |           67.569 |
- | "CombineParticles#2"                                    |           89000 |         178.399 |         2004.488 |
- | "FunctionalParticleMaker#2"                             |           89000 |          13.095 |          147.132 |
- | "FilterDesktop#2"                                       |           89000 |          42.893 |          481.944 |
- | "CombineParticles"                                      |           89000 |           9.135 |          102.643 |
- | "FilterDesktop#8"                                       |           89000 |          74.971 |          842.367 |
- | "CombineParticles#4"                                    |           89000 |          17.646 |          198.273 |
- | "CombineParticles#6"                                    |           89000 |           8.978 |          100.874 |
- | "FilterDesktop#10"                                      |           89000 |           3.231 |           36.309 |
- | "Gaudi__Hive__FetchDataFromFile"                        |           89000 |           0.827 |            9.293 |
- | "UnpackRecVertices"                                     |           89000 |          87.716 |          985.570 |
- | "Gaudi__Hive__FetchDataFromFile#9"                      |           89000 |           0.417 |            4.691 |
- | "UnpackNeutralProtos"                                   |           89000 |          24.436 |          274.561 |
- | "PhotonMakerAlg"                                        |           89000 |          34.789 |          390.882 |
- | "FilterDesktop#3"                                       |           89000 |           2.513 |           28.233 |
- | "CombineParticles#1"                                    |           89000 |           7.500 |           84.274 |
- | "FilterDesktop#4"                                       |           89000 |           3.465 |           38.932 |
- | "FilterDesktop#11"                                      |            6815 |           0.408 |           59.817 |
- | "FilterDesktop#5"                                       |            6815 |           7.099 |         1041.686 |
- | "FilterDesktop#12"                                      |            6815 |           5.790 |          849.586 |
- | "CombineParticles#3"                                    |           89000 |           8.748 |           98.294 |
- | "FilterDesktop#7"                                       |           89000 |           1.371 |           15.407 |
- | "FilterDesktop#13"                                      |            6815 |           0.089 |           12.995 |
- | "FilterDesktop#14"                                      |            6815 |           5.764 |          845.803 |
- | "FilterDesktop#15"                                      |            6815 |           0.092 |           13.452 |
- | "FilterDesktop#16"                                      |            6815 |           5.738 |          841.953 |
- | "CombineParticles#5"                                    |           89000 |           9.475 |          106.456 |
- | "FilterDesktop#9"                                       |           89000 |           5.050 |           56.745 |
- | "FilterDesktop#17"                                      |            6815 |           0.205 |           30.018 |
- | "FilterDesktop#18"                                      |            6815 |           5.712 |          838.105 |
- | "HltDecReportsWriter"                                   |            6815 |           0.080 |           11.773 |
- | "Hlt__RoutingBitsWriter"                                |            6815 |           0.066 |            9.694 |
- | "OutputStream"                                          |            6815 |          90.818 |        13326.176 |
- | "PackCaloHypo"                                          |            6815 |           0.137 |           20.048 |
- | "PackCaloHypo#1"                                        |            6815 |           0.133 |           19.472 |
- | "PackCaloHypo#2"                                        |            6815 |           0.096 |           14.031 |
- | "PackCaloHypo#3"                                        |            6815 |           0.089 |           13.056 |
- | "PackParticlesAndVertices"                              |            6815 |           2.196 |          322.222 |
- | "Gaudi__Hive__FetchDataFromFile#1"                      |           89000 |           0.659 |            7.404 |
- | "UnpackCaloElectrons"                                   |           89000 |          11.083 |          124.525 |
- | "Gaudi__Hive__FetchDataFromFile#3"                      |           89000 |           0.485 |            5.445 |
- | "UnpackCaloMergedPi0s"                                  |           89000 |           1.473 |           16.546 |
- | "Gaudi__Hive__FetchDataFromFile#2"                      |           89000 |           0.531 |            5.966 |
- | "UnpackCaloPhotons"                                     |           89000 |           9.781 |          109.901 |
- | "Gaudi__Hive__FetchDataFromFile#4"                      |           89000 |           0.427 |            4.800 |
- | "UnpackCaloSplitPhotons"                                |           89000 |           2.189 |           24.600 |
- | "Gaudi__Hive__FetchDataFromFile#7"                      |           89000 |           0.490 |            5.509 |
- | "UnpackBestTracks"                                      |           89000 |          60.283 |          677.335 |
- | "Gaudi__Hive__FetchDataFromFile#8"                      |           89000 |           0.553 |            6.210 |
- | "UnpackMuonTracks"                                      |           89000 |           2.485 |           27.916 |
- | "bankKiller"                                            |            6815 |           0.145 |           21.344 |
+ | "Gaudi__Hive__FetchDataFromFile#10"                     |           89000 |           0.522 |            5.871 |
+ | "UnpackChargedProtos"                                   |           89000 |          24.288 |          272.896 |
+ | "ChargedProtoCombineDLLsAlg"                            |           89000 |          15.281 |          171.698 |
+ | "Gaudi__Hive__FetchDataFromFile#5"                      |           89000 |           0.388 |            4.362 |
+ | "UnpackMuonPIDs"                                        |           89000 |           4.072 |           45.757 |
+ | "ChargedProtoParticleAddMuonInfo"                       |           89000 |           9.872 |          110.918 |
+ | "Gaudi__Hive__FetchDataFromFile#6"                      |           89000 |           0.418 |            4.691 |
+ | "UnpackRichPIDs"                                        |           89000 |           8.160 |           91.688 |
+ | "ChargedProtoParticleAddRichInfo"                       |           89000 |          18.163 |          204.083 |
+ | "CopyLinePersistenceLocations"                          |            6815 |           5.109 |          749.708 |
+ | "CopyParticle2PVRelationsFromLinePersistenceLocations"  |            6815 |           0.843 |          123.632 |
+ | "Gaudi__Hive__FetchDataFromFile#11"                     |           89000 |        1857.174 |        20867.126 |
+ | "createODIN"                                            |           89000 |           2.293 |           25.763 |
+ | "DeterministicPrescaler"                                |           89000 |           0.326 |            3.668 |
+ | "DeterministicPrescaler#1"                              |           89000 |           0.274 |            3.080 |
+ | "DeterministicPrescaler#2"                              |           89000 |           0.304 |            3.415 |
+ | "DeterministicPrescaler#3"                              |           89000 |           0.251 |            2.822 |
+ | "ExecutionReportsWriter"                                |            6815 |           0.085 |           12.518 |
+ | "FunctionalParticleMaker#3"                             |           89000 |          11.096 |          124.677 |
+ | "FilterDesktop#6"                                       |           89000 |           4.723 |           53.072 |
+ | "CombineParticles#2"                                    |           89000 |         164.425 |         1847.468 |
+ | "FunctionalParticleMaker#2"                             |           89000 |          11.186 |          125.687 |
+ | "FilterDesktop#2"                                       |           89000 |          39.960 |          448.986 |
+ | "CombineParticles"                                      |           89000 |           8.256 |           92.767 |
+ | "FilterDesktop#8"                                       |           89000 |          78.032 |          876.759 |
+ | "CombineParticles#4"                                    |           89000 |          16.907 |          189.967 |
+ | "CombineParticles#6"                                    |           89000 |           8.520 |           95.735 |
+ | "FilterDesktop#10"                                      |           89000 |           3.185 |           35.790 |
+ | "Gaudi__Hive__FetchDataFromFile"                        |           89000 |           0.709 |            7.970 |
+ | "UnpackRecVertices"                                     |           89000 |          83.080 |          933.483 |
+ | "Gaudi__Hive__FetchDataFromFile#9"                      |           89000 |           0.406 |            4.558 |
+ | "UnpackNeutralProtos"                                   |           89000 |          19.964 |          224.317 |
+ | "PhotonMakerAlg"                                        |           89000 |          30.455 |          342.188 |
+ | "FilterDesktop#3"                                       |           89000 |           2.410 |           27.081 |
+ | "CombineParticles#1"                                    |           89000 |           7.153 |           80.372 |
+ | "FilterDesktop#4"                                       |           89000 |           3.307 |           37.158 |
+ | "FilterDesktop#11"                                      |            6815 |           0.398 |           58.444 |
+ | "FilterDesktop#5"                                       |            6815 |           5.680 |          833.449 |
+ | "FilterDesktop#12"                                      |            6815 |           1.217 |          178.600 |
+ | "CombineParticles#3"                                    |           89000 |           5.915 |           66.459 |
+ | "FilterDesktop#7"                                       |           89000 |           1.333 |           14.975 |
+ | "FilterDesktop#13"                                      |            6815 |           0.078 |           11.398 |
+ | "FilterDesktop#14"                                      |            6815 |           1.194 |          175.142 |
+ | "FilterDesktop#15"                                      |            6815 |           0.075 |           10.990 |
+ | "FilterDesktop#16"                                      |            6815 |           1.169 |          171.585 |
+ | "CombineParticles#5"                                    |           89000 |           9.259 |          104.029 |
+ | "FilterDesktop#9"                                       |           89000 |           5.042 |           56.650 |
+ | "FilterDesktop#17"                                      |            6815 |           0.185 |           27.186 |
+ | "FilterDesktop#18"                                      |            6815 |           1.168 |          171.432 |
+ | "HltDecReportsWriter"                                   |            6815 |           0.081 |           11.823 |
+ | "Hlt__RoutingBitsWriter"                                |            6815 |           0.056 |            8.159 |
+ | "OutputStream"                                          |            6815 |          25.261 |         3706.641 |
+ | "PackCaloHypo"                                          |            6815 |           0.108 |           15.911 |
+ | "PackCaloHypo#1"                                        |            6815 |           0.124 |           18.217 |
+ | "PackCaloHypo#2"                                        |            6815 |           0.097 |           14.248 |
+ | "PackCaloHypo#3"                                        |            6815 |           0.058 |            8.520 |
+ | "PackParticlesAndVertices"                              |            6815 |           1.421 |          208.566 |
+ | "Gaudi__Hive__FetchDataFromFile#1"                      |           89000 |           0.641 |            7.203 |
+ | "UnpackCaloElectrons"                                   |           89000 |           7.784 |           87.456 |
+ | "Gaudi__Hive__FetchDataFromFile#3"                      |           89000 |           0.425 |            4.776 |
+ | "UnpackCaloMergedPi0s"                                  |           89000 |           1.176 |           13.212 |
+ | "Gaudi__Hive__FetchDataFromFile#2"                      |           89000 |           0.489 |            5.499 |
+ | "UnpackCaloPhotons"                                     |           89000 |           6.601 |           74.169 |
+ | "Gaudi__Hive__FetchDataFromFile#4"                      |           89000 |           0.418 |            4.697 |
+ | "UnpackCaloSplitPhotons"                                |           89000 |           1.681 |           18.892 |
+ | "Gaudi__Hive__FetchDataFromFile#7"                      |           89000 |           0.442 |            4.969 |
+ | "UnpackBestTracks"                                      |           89000 |          44.919 |          504.705 |
+ | "Gaudi__Hive__FetchDataFromFile#8"                      |           89000 |           0.534 |            6.004 |
+ | "UnpackMuonTracks"                                      |           89000 |           2.111 |           23.721 |
+ | "bankKiller"                                            |            6815 |           0.131 |           19.207 |
 
 HLTControlFlowMgr                      INFO 
 LAZY_AND: moore                                                                                              #=89000   Sum=6815        Eff=|( 7.657303 +- 0.0891342)%|
@@ -631,18 +631,18 @@ LAZY_AND: moore                                                                 
   ExecutionReportsWriter/ExecutionReportsWriter                                                              #=6815    Sum=6815        Eff=|( 100.0000 +- 0.00000 )%|
   HltDecReportsWriter/HltDecReportsWriter                                                                    #=6815    Sum=6815        Eff=|( 100.0000 +- 0.00000 )%|
   NONLAZY_OR: LineMovers                                                                                     #=6815    Sum=6815        Eff=|( 100.0000 +- 0.00000 )%|
-   NONLAZY_OR: Hlt2BToHHHGammaEE_Inclusive_LineDecisionMovers                                                #=6815    Sum=6815        Eff=|( 100.0000 +- 0.00000 )%|
+   NONLAZY_OR: Hlt2BToHHHGammaEE_Inclusive_LineDecisionMovers                                                #=6815    Sum=6717        Eff=|( 98.56200 +- 0.144212)%|
     FilterDesktop/FilterDesktop#15                                                                           #=6815    Sum=44          Eff=|(0.6456346 +- 0.0970184)%|
-    FilterDesktop/FilterDesktop#16                                                                           #=6815    Sum=6815        Eff=|( 100.0000 +- 0.00000 )%|
-   NONLAZY_OR: Hlt2BToHHHGamma_Inclusive_LineDecisionMovers                                                  #=6815    Sum=6815        Eff=|( 100.0000 +- 0.00000 )%|
+    FilterDesktop/FilterDesktop#16                                                                           #=6815    Sum=6717        Eff=|( 98.56200 +- 0.144212)%|
+   NONLAZY_OR: Hlt2BToHHHGamma_Inclusive_LineDecisionMovers                                                  #=6815    Sum=6737        Eff=|( 98.85547 +- 0.128849)%|
     FilterDesktop/FilterDesktop#17                                                                           #=6815    Sum=2450        Eff=|( 35.95011 +- 0.581268)%|
-    FilterDesktop/FilterDesktop#18                                                                           #=6815    Sum=6815        Eff=|( 100.0000 +- 0.00000 )%|
-   NONLAZY_OR: Hlt2BToHHGamma_Inclusive_LineDecisionMovers                                                   #=6815    Sum=6815        Eff=|( 100.0000 +- 0.00000 )%|
+    FilterDesktop/FilterDesktop#18                                                                           #=6815    Sum=6717        Eff=|( 98.56200 +- 0.144212)%|
+   NONLAZY_OR: Hlt2BToHHGamma_Inclusive_LineDecisionMovers                                                   #=6815    Sum=6812        Eff=|( 99.95598 +- 0.0254097)%|
     FilterDesktop/FilterDesktop#11                                                                           #=6815    Sum=6144        Eff=|( 90.15407 +- 0.360901)%|
-    FilterDesktop/FilterDesktop#12                                                                           #=6815    Sum=6815        Eff=|( 100.0000 +- 0.00000 )%|
-   NONLAZY_OR: Hlt2BToHHGammaee_Inclusive_LineDecisionMovers                                                 #=6815    Sum=6815        Eff=|( 100.0000 +- 0.00000 )%|
+    FilterDesktop/FilterDesktop#12                                                                           #=6815    Sum=6717        Eff=|( 98.56200 +- 0.144212)%|
+   NONLAZY_OR: Hlt2BToHHGammaee_Inclusive_LineDecisionMovers                                                 #=6815    Sum=6718        Eff=|( 98.57667 +- 0.143485)%|
     FilterDesktop/FilterDesktop#13                                                                           #=6815    Sum=360         Eff=|( 5.282465 +- 0.270957)%|
-    FilterDesktop/FilterDesktop#14                                                                           #=6815    Sum=6815        Eff=|( 100.0000 +- 0.00000 )%|
+    FilterDesktop/FilterDesktop#14                                                                           #=6815    Sum=6717        Eff=|( 98.56200 +- 0.144212)%|
   CopyLinePersistenceLocations/CopyLinePersistenceLocations                                                  #=6815    Sum=6815        Eff=|( 100.0000 +- 0.00000 )%|
   CopyParticle2PVRelationsFromLinePersistenceLocations/CopyParticle2PVRelationsFromLinePersistenceLocations  #=6815    Sum=6815        Eff=|( 100.0000 +- 0.00000 )%|
   PackParticlesAndVertices/PackParticlesAndVertices                                                          #=6815    Sum=6815        Eff=|( 100.0000 +- 0.00000 )%|
@@ -730,7 +730,7 @@ ToolSvc.LoKi::DistanceCalculator    SUCCESS  #WARNINGS   = 137      Message = 'T
 ToolSvc.LoKi::DistanceCalculator    SUCCESS  #WARNINGS   = 36       Message = 'There is no convergency-III [FilterDesktop#4]'
 RootCnvSvc                             INFO Disconnected data IO:229F3AB5-AD7F-E811-9BD1-901B0E0D0345 [root://lobster4.grid.surfsara.nl:1094/pnfs/grid.sara.nl/data/lhcb/MC/Upgrade/LDST/00075829/0000/00075829_00000034_1.ldst]
 RootCnvSvc                             INFO Disconnected data IO:865BCCAE-C976-E811-A4A3-B083FECE8C59 [root://hake7.grid.surfsara.nl:1094/pnfs/grid.sara.nl/data/lhcb/MC/Upgrade/LDST/00075829/0000/00075829_00000025_1.ldst]
-RootCnvSvc                             INFO Disconnected data IO:AE63F2EB-69AA-EA11-A3E4-FA163E98FDF0 [output/KstG/KstG.mdst]
+RootCnvSvc                             INFO Disconnected data IO:92677435-0CAF-EA11-B3D4-FA163E4B924C [output/KstG/KstG.mdst]
 RootCnvSvc                             INFO Disconnected data IO:CAC486D5-B475-E811-8750-7CD30AD09C52 [root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00075829/0000/00075829_00000019_1.ldst]
 XMLCatalog                             INFO File 'test_catalog.xml' does not exist. New file created.
 ApplicationMgr                         INFO Application Manager Finalized successfully
