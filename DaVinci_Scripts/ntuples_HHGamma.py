@@ -84,9 +84,9 @@ dtt_line_extra_hadron = DecayTreeTuple(
     Inputs=[extra_hadron_selseq.outputLocation()],
     Decay="""(B*+ -> ^(B0 -> ^(K*(892)0 -> ^pi+ ^pi-) ^gamma) ^pi+) ||
              (B*- -> ^(B0 -> ^(K*(892)0 -> ^pi+ ^pi-) ^gamma) ^pi-) ||
-             (B*0 -> ^(B0 -> ^(K*(892)0 -> ^pi+ ^pi-) ^gamma) ^(KS0 -> ^pi+ ^pi-)) ||
-             (B*0 -> ^(B0 -> ^(K*(892)0 -> ^pi+ ^pi-) ^gamma) ^(Lambda0 -> ^p+ ^pi-)) ||
-             (B*~0 -> ^(B0 -> ^(K*(892)0 -> ^pi+ ^pi-) ^gamma) ^(Lambda~0 -> ^p~- ^pi+))""",
+             (B*0 -> ^(B0 -> ^(K*(892)0 -> ^pi+ ^pi-) ^gamma) ^(KS0 -> pi+ pi-)) ||
+             (B*0 -> ^(B0 -> ^(K*(892)0 -> ^pi+ ^pi-) ^gamma) ^(Lambda0 -> p+ pi-)) ||
+             (B*~0 -> ^(B0 -> ^(K*(892)0 -> ^pi+ ^pi-) ^gamma) ^(Lambda~0 -> p~- pi+))""",
     ToolList=list(DEFAULT_TUPLE_TOOLS),
 )
 dtt_line_extra_hadron.ErrorMax = -1

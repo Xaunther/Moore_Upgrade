@@ -96,12 +96,12 @@ dtt_line_extra_hadron = DecayTreeTuple(
        (B*0 -> ^(B+ -> ^(D*(2010)+ -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi+) ^gamma) ^pi-) ||
        (B*0~ -> ^(B- -> ^(D*(2010)- -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi-) ^gamma) ^pi+) ||
        (B*- -> ^(B- -> ^(D*(2010)- -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi-) ^gamma) ^pi-) ||
-       (B*+ -> ^(B+ -> ^(D*(2010)+ -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi+) ^gamma) ^(KS0 -> ^pi+ ^pi-)) ||
-       (B*- -> ^(B- -> ^(D*(2010)- -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi-) ^gamma) ^(KS0 -> ^pi+ ^pi-)) ||
-       (B*+ -> ^(B+ -> ^(D*(2010)+ -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi+) ^gamma) ^(Lambda0 -> ^p+ ^pi-)) ||
-       (B*+ -> ^(B+ -> ^(D*(2010)+ -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi+) ^gamma) ^(Lambda~0 -> ^p~- ^pi+)) ||
-       (B*- -> ^(B- -> ^(D*(2010)- -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi-) ^gamma) ^(Lambda0 -> ^p+ ^pi-)) ||
-       (B*- -> ^(B- -> ^(D*(2010)- -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi-) ^gamma) ^(Lambda~0 -> ^p~- ^pi+))""",
+       (B*+ -> ^(B+ -> ^(D*(2010)+ -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi+) ^gamma) ^(KS0 -> pi+ pi-)) ||
+       (B*- -> ^(B- -> ^(D*(2010)- -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi-) ^gamma) ^(KS0 -> pi+ pi-)) ||
+       (B*+ -> ^(B+ -> ^(D*(2010)+ -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi+) ^gamma) ^(Lambda0 -> p+ pi-)) ||
+       (B*+ -> ^(B+ -> ^(D*(2010)+ -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi+) ^gamma) ^(Lambda~0 -> p~- pi+)) ||
+       (B*- -> ^(B- -> ^(D*(2010)- -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi-) ^gamma) ^(Lambda0 -> p+ pi-)) ||
+       (B*- -> ^(B- -> ^(D*(2010)- -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi-) ^gamma) ^(Lambda~0 -> p~- pi+))""",
     ToolList=list(DEFAULT_TUPLE_TOOLS),
 )
 dtt_line_extra_hadron.ErrorMax = -1
