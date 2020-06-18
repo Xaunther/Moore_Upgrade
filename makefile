@@ -54,19 +54,59 @@ $(default_DST_size_list): output/%/evt_size.txt: output/%/std_Moore.out
 ########################################## ROOT #######################################
 #Once we have the ntuples
 #Plot all variables of some relevant ntuple(s)
+#HHGamma Line
 default_HHGamma_VarList=$(foreach MC, $(MC_list), output/$(MC)/HHGamma_VarList.txt)
 default_HHGamma_Var: $(default_HHGamma_VarList)
 $(default_HHGamma_VarList): output/%/HHGamma_VarList.txt: output/%/std_DV_HHGamma.out
-	$(LbLogin8) && $(ROOT) src/getvars.C\(\"output/$*/$*_HHGamma.root\",\"$@\",\"Hlt2BToHHGamma_Inclusive_Line_ExtraHadron/DecayTree\"\)
+	$(LbLogin8) && $(ROOT) src/getvars.C\(\"output/$*/$*_HHGamma.root\",\"$@\",\"Hlt2BToHHGamma_Inclusive_Line/DecayTree\"\)
 	mkdir -p output/$*/plots/
-	../root/PlotUsedVars.out $@ output/$*/$*_HHGamma.root "" E1  output/$*/plots/
+	mkdir -p output/$*/plots/HHGamma
+	../root/PlotUsedVars.out $@ output/$*/$*_HHGamma.root "" E1  output/$*/plots/HHGamma
+#Extra hadron
+default_ExtraHadron_VarList=$(foreach MC, $(MC_list), output/$(MC)/ExtraHadron_VarList.txt)
+default_ExtraHadron_Var: $(default_ExtraHadron_VarList)
+$(default_ExtraHadron_VarList): output/%/ExtraHadron_VarList.txt: output/%/std_DV_HHGamma.out
+	$(LbLogin8) && $(ROOT) src/getvars.C\(\"output/$*/$*_HHGamma.root\",\"$@\",\"ExtraHadron/DecayTree\"\)
+	mkdir -p output/$*/plots/
+	mkdir -p output/$*/plots/HHGamma
+	mkdir -p output/$*/plots/HHGamma/ExtraHadron
+	../root/PlotUsedVars.out $@ output/$*/$*_HHGamma.root "" E1  output/$*/plots/HHGamma/ExtraHadron
+#Extra Ks0
+default_Ks0_VarList=$(foreach MC, $(MC_list), output/$(MC)/Ks0_VarList.txt)
+default_Ks0_Var: $(default_Ks0_VarList)
+$(default_Ks0_VarList): output/%/Ks0_VarList.txt: output/%/std_DV_HHGamma.out
+	$(LbLogin8) && $(ROOT) src/getvars.C\(\"output/$*/$*_HHGamma.root\",\"$@\",\"ExtraKs0/DecayTree\"\)
+	mkdir -p output/$*/plots/
+	mkdir -p output/$*/plots/HHGamma
+	mkdir -p output/$*/plots/HHGamma/ExtraKs0
+	../root/PlotUsedVars.out $@ output/$*/$*_HHGamma.root "" E1  output/$*/plots/HHGamma/ExtraKs0
+#Extra Lambda
+default_Lambda_VarList=$(foreach MC, $(MC_list), output/$(MC)/Lambda_VarList.txt)
+default_Lambda_Var: $(default_Lambda_VarList)
+$(default_Lambda_VarList): output/%/Lambda_VarList.txt: output/%/std_DV_HHGamma.out
+	$(LbLogin8) && $(ROOT) src/getvars.C\(\"output/$*/$*_HHGamma.root\",\"$@\",\"ExtraLambda/DecayTree\"\)
+	mkdir -p output/$*/plots/
+	mkdir -p output/$*/plots/HHGamma
+	mkdir -p output/$*/plots/HHGamma/ExtraLambda
+	../root/PlotUsedVars.out $@ output/$*/$*_HHGamma.root "" E1  output/$*/plots/HHGamma/ExtraLambda
 
 #Efficiency of extracuts
-default_HHGamma_extraCutEff_list=$(foreach MC, $(MC_list), output/$(MC)/HHGamma_extraCutEff.txt)
-default_HHGamma_extraCutEff: $(default_HHGamma_extraCutEff_list)
-$(default_HHGamma_extraCutEff_list): output/%/HHGamma_extraCutEff.txt: output/%/std_DV_HHGamma.out Cuts/extracuts.txt
-	../root/CutEff.out output/$*/$*_HHGamma.root Cuts/extracuts.txt "" $@ "" Hlt2BToHHGamma_Inclusive_Line_ExtraHadron/DecayTree
+#Hadron
+default_HHGamma_extraHadronCutEff_list=$(foreach MC, $(MC_list), output/$(MC)/HHGamma_extraHadronCutEff.txt)
+default_HHGamma_extraHadronCutEff: $(default_HHGamma_extraHadronCutEff_list)
+$(default_HHGamma_extraHadronCutEff_list): output/%/HHGamma_extraHadronCutEff.txt: output/%/std_DV_HHGamma.out Cuts/extraHadroncuts.txt
+	../root/CutEff.out output/$*/$*_HHGamma.root Cuts/extraHadroncuts.txt "" $@ "" ExtraHadron/DecayTree
+#Ks0
+default_HHGamma_extraKs0CutEff_list=$(foreach MC, $(MC_list), output/$(MC)/HHGamma_extraKs0CutEff.txt)
+default_HHGamma_extraKs0CutEff: $(default_HHGamma_extraKs0CutEff_list)
+$(default_HHGamma_extraKs0CutEff_list): output/%/HHGamma_extraKs0CutEff.txt: output/%/std_DV_HHGamma.out Cuts/extraKs0cuts.txt
+	../root/CutEff.out output/$*/$*_HHGamma.root Cuts/extraKs0cuts.txt "" $@ "" ExtraKs0/DecayTree
+#Lambda
+default_HHGamma_extraLambdaCutEff_list=$(foreach MC, $(MC_list), output/$(MC)/HHGamma_extraLambdaCutEff.txt)
+default_HHGamma_extraLambdaCutEff: $(default_HHGamma_extraLambdaCutEff_list)
+$(default_HHGamma_extraLambdaCutEff_list): output/%/HHGamma_extraLambdaCutEff.txt: output/%/std_DV_HHGamma.out Cuts/extraLambdacuts.txt
+	../root/CutEff.out output/$*/$*_HHGamma.root Cuts/extraLambdacuts.txt "" $@ "" ExtraLambda/DecayTree
 
 #Run all default stuff
 .PHONY: all_default
-all_default: default_ntuple_output default_DST_size default_HHGamma_Var default_HHGamma_extraCutEff
+all_default: default_ntuple_output default_DST_size default_HHGamma_Var default_ExtraHadron_Var default_Ks0_Var default_HHGamma_extraHadronCutEff default_HHGamma_extraKs0CutEff default_HHGamma_extraLambdaCutEff

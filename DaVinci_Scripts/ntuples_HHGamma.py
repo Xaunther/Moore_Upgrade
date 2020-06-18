@@ -11,13 +11,17 @@ from PhysSelPython.Selections import (
     SelectionSequence,
     MergedSelection,
 )
+
 # Small configs to do here
 linename = "Hlt2BToHHGamma_Inclusive_Line"
+decay = "B0 -> ^(K*(892)0 -> ^pi+ ^pi-) ^gamma"
+output = "HHGamma"
 extra_hadron = "ExtraHadron"
 extra_Ks0LL = "ExtraKs0LL"
 extra_Ks0DD = "ExtraKs0DD"
 extra_LambdaLL = "ExtraLambdaLL"
 extra_LambdaDD = "ExtraLambdaDD"
+dtt_list=[]
 
 # The addTupleTool machinery tries to mutate this in place, so have to make
 # sure to copy it whenever we need it
@@ -34,71 +38,64 @@ ROOT_IN_TES = "/Event/HLT2"
 
 # The output of the HLT2 line
 line_output = AutomaticData("{0}/Particles".format(linename))
-# Extra selections
-extra_hadrons = AutomaticData("{0}/{1}/Particles".format(
-    linename, extra_hadron))
-extra_Ks0LLs = AutomaticData("{0}/{1}/Particles".format(linename, extra_Ks0LL))
-extra_Ks0DDs = AutomaticData("{0}/{1}/Particles".format(linename, extra_Ks0DD))
-extra_LambdaLLs = AutomaticData("{0}/{1}/Particles".format(
-    linename, extra_LambdaLL))
-extra_LambdaDDs = AutomaticData("{0}/{1}/Particles".format(
-    linename, extra_LambdaDD))
-
-# Before combining, merge Ks0 and Lambdas
-extra_all = MergedSelection("ExtraAllMerged",
-                            RequiredSelections=[
-                                extra_hadrons, extra_Ks0LLs, extra_Ks0DDs,
-                                extra_LambdaLLs, extra_LambdaDDs, extra_Ks0LLs,
-                                extra_Ks0DDs
-                            ])
-
-# Combinations!
-extra_hadron_sel = CombineSelection(
-    "ExtraHadronSel",
-    inputs=[line_output, extra_all],
-    DecayDescriptors=[
-        "B*+ -> B0 pi+", "B*- -> B0 pi-", "B*0 -> B0 KS0", "B*0 -> B0 Lambda0",
-        "B*~0 -> B0 Lambda~0"
-    ],
-    CombinationCut="APT > 0",
-    MotherCut="ALL",
-)
-
-#Sequences
-extra_hadron_selseq = SelectionSequence(extra_hadron_sel.name() + "Seq",
-                                        TopSelection=extra_hadron_sel)
-
-# DecayTreeTuple for main line
 dtt_line = DecayTreeTuple(
     linename,
     Inputs=[line_output.outputLocation()],
-    Decay="B0 -> ^(K*(892)0 -> ^pi+ ^pi-) ^gamma",
+    Decay=decay,
     ToolList=list(DEFAULT_TUPLE_TOOLS),
 )
 dtt_line.ErrorMax = -1
 dtt_line.addTupleTool("TupleToolANNPID").ANNPIDTunes = ["MC15TuneV1"]
+dtt_list.append(dtt_line)
 
-# DecayTreeTuple for ExtraSelection
-dtt_line_extra_hadron = DecayTreeTuple(
-    linename + "_" + extra_hadron,
-    Inputs=[extra_hadron_selseq.outputLocation()],
-    Decay="""(B*+ -> ^(B0 -> ^(K*(892)0 -> ^pi+ ^pi-) ^gamma) ^pi+) ||
-             (B*- -> ^(B0 -> ^(K*(892)0 -> ^pi+ ^pi-) ^gamma) ^pi-) ||
-             (B*0 -> ^(B0 -> ^(K*(892)0 -> ^pi+ ^pi-) ^gamma) ^(KS0 -> pi+ pi-)) ||
-             (B*0 -> ^(B0 -> ^(K*(892)0 -> ^pi+ ^pi-) ^gamma) ^(Lambda0 -> p+ pi-)) ||
-             (B*~0 -> ^(B0 -> ^(K*(892)0 -> ^pi+ ^pi-) ^gamma) ^(Lambda~0 -> p~- pi+))""",
+# Extra hadron
+extra_hadron_output = AutomaticData("{0}/{1}/Particles".format(
+    linename, extra_hadron))
+dtt_extra_hadron = DecayTreeTuple(
+    extra_hadron,
+    Inputs=[extra_hadron_output.outputLocation()],
+    Decay="(pi+) || (pi-)",
     ToolList=list(DEFAULT_TUPLE_TOOLS),
 )
-dtt_line_extra_hadron.ErrorMax = -1
-dtt_line_extra_hadron.addTupleTool("TupleToolANNPID").ANNPIDTunes = [
-    "MC15TuneV1"
-]
+dtt_extra_hadron.ErrorMax = -1
+dtt_extra_hadron.addTupleTool("TupleToolANNPID").ANNPIDTunes = ["MC15TuneV1"]
+dtt_list.append(dtt_extra_hadron)
+
+#Extra Ks0
+extra_Ks0LL_output = AutomaticData("{0}/{1}/Particles".format(linename, extra_Ks0LL))
+extra_Ks0DD_output = AutomaticData("{0}/{1}/Particles".format(linename, extra_Ks0DD))
+extra_Ks0LLs = MergedSelection("ExtraKs0Merged",
+    RequiredSelections=[extra_Ks0LL_output, extra_Ks0DD_output])
+dtt_extra_Ks0 = DecayTreeTuple(
+    "ExtraKs0",
+    Inputs=[extra_Ks0_output.outputLocation()],
+    Decay="KS0 -> ^pi+ ^pi-",
+    ToolList=list(DEFAULT_TUPLE_TOOLS),
+)
+dtt_extra_Ks0.ErrorMax = -1
+dtt_extra_Ks0.addTupleTool("TupleToolANNPID").ANNPIDTunes = ["MC15TuneV1"]
+dtt_list.append(dtt_extra_Ks0)
+
+#Extra Lambda
+extra_LambdaLL_output = AutomaticData("{0}/{1}/Particles".format(
+    linename, extra_LambdaLL))
+extra_LambdaDD_output = AutomaticData("{0}/{1}/Particles".format(
+    linename, extra_LambdaDD))
+extra_Lambdas = MergedSelection("ExtraLambdaMerged",
+    RequiredSelections=[extra_LambdaLL_output, extra_LambdaDD_output])
+dtt_extra_Lambda = DecayTreeTuple(
+    "ExtraLambda",
+    Inputs=[extra_Lambda_output.outputLocation()],
+    Decay="(Lambda0 -> ^p ^pi-) || (Lambda~0 -> ^p~- ^pi+)",
+    ToolList=list(DEFAULT_TUPLE_TOOLS),
+)
+dtt_extra_Lambda.ErrorMax = -1
+dtt_extra_Lambda.addTupleTool("TupleToolANNPID").ANNPIDTunes = ["MC15TuneV1"]
+
 
 DaVinci().RootInTES = ROOT_IN_TES
-DaVinci().UserAlgorithms = [
-    extra_hadron_selseq.sequence(), dtt_line, dtt_line_extra_hadron
-]
-DaVinci().TupleFile = DaVinci().TupleFile + "_HHGamma.root"
+DaVinci().UserAlgorithms = dtt_list
+DaVinci().TupleFile = DaVinci().TupleFile + "_"+output+"".root"
 
 
 @appendPostConfigAction
