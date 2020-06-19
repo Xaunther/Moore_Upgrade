@@ -1,0 +1,26 @@
+Selection efficiencies applied on output/LambdaG/LambdaG_HHGamma.root: 
+Event weight: 
+
+                     Preselection                     
+------------------------------------------------------
+
+          Efficiency for each cut, and global          
+-------------------------------------------------------
+(piplus_PT > 500)             |  1
+(piplus_PT > 600)             |  0.787629
+(piplus_PT > 700)             |  0.618557
+(piplus_PT > 800)             |  0.498969
+(piplus_PT > 900)             |  0.414433
+(piplus_PT > 1000)            |  0.342268
+(piplus_IPCHI2_OWNPV < 0.05)  |  0.101031
+(piplus_IPCHI2_OWNPV < 0.06)  |  0.123711
+(piplus_IPCHI2_OWNPV < 0.07)  |  0.136082
+(piplus_IPCHI2_OWNPV < 0.08)  |  0.150515
+(piplus_IPCHI2_OWNPV < 0.09)  |  0.173196
+(piplus_IPCHI2_OWNPV < 0.1)   |  0.195876
+(piplus_IPCHI2_OWNPV < 0.2)   |  0.418557
+(piplus_IPCHI2_OWNPV < 0.3)   |  0.620619
+(piplus_IPCHI2_OWNPV < 0.4)   |  0.830928
+(piplus_IPCHI2_OWNPV < 0.5)   |  1
+Global                        |  0.028866
+Error                         |  0.007603

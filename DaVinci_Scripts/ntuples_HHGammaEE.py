@@ -64,11 +64,9 @@ dtt_list.append(dtt_extra_hadron)
 #Extra Ks0
 extra_Ks0LL_output = AutomaticData("{0}/{1}/Particles".format(linename, extra_Ks0LL))
 extra_Ks0DD_output = AutomaticData("{0}/{1}/Particles".format(linename, extra_Ks0DD))
-extra_Ks0LLs = MergedSelection("ExtraKs0Merged",
-    RequiredSelections=[extra_Ks0LL_output, extra_Ks0DD_output])
 dtt_extra_Ks0 = DecayTreeTuple(
     "ExtraKs0",
-    Inputs=[extra_Ks0_output.outputLocation()],
+    Inputs=[extra_Ks0LL_output.outputLocation(), extra_Ks0DD_output.outputLocation()],
     Decay="KS0 -> ^pi+ ^pi-",
     ToolList=list(DEFAULT_TUPLE_TOOLS),
 )
@@ -81,21 +79,19 @@ extra_LambdaLL_output = AutomaticData("{0}/{1}/Particles".format(
     linename, extra_LambdaLL))
 extra_LambdaDD_output = AutomaticData("{0}/{1}/Particles".format(
     linename, extra_LambdaDD))
-extra_Lambdas = MergedSelection("ExtraLambdaMerged",
-    RequiredSelections=[extra_LambdaLL_output, extra_LambdaDD_output])
 dtt_extra_Lambda = DecayTreeTuple(
     "ExtraLambda",
-    Inputs=[extra_Lambda_output.outputLocation()],
-    Decay="(Lambda0 -> ^p ^pi-) || (Lambda~0 -> ^p~- ^pi+)",
+    Inputs=[extra_LambdaLL_output.outputLocation(), extra_LambdaDD_output.outputLocation()],
+    Decay="(Lambda0 -> ^p+ ^pi-) || (Lambda~0 -> ^p~- ^pi+)",
     ToolList=list(DEFAULT_TUPLE_TOOLS),
 )
 dtt_extra_Lambda.ErrorMax = -1
 dtt_extra_Lambda.addTupleTool("TupleToolANNPID").ANNPIDTunes = ["MC15TuneV1"]
-
+dtt_list.append(dtt_extra_Lambda)
 
 DaVinci().RootInTES = ROOT_IN_TES
 DaVinci().UserAlgorithms = dtt_list
-DaVinci().TupleFile = DaVinci().TupleFile + "_"+output+"".root"
+DaVinci().TupleFile = DaVinci().TupleFile + "_"+output+".root"
 
 
 @appendPostConfigAction
@@ -105,4 +101,3 @@ def hack():
 
     unpacker = UnpackParticlesAndVertices(InputStream=ROOT_IN_TES, )
     GaudiSequencer("DaVinciEventInitSeq").Members.append(unpacker)
-    

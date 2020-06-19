@@ -1,0 +1,26 @@
+Selection efficiencies applied on output/K1G/K1G_HHGamma.root: 
+Event weight: 
+
+                     Preselection                     
+------------------------------------------------------
+
+          Efficiency for each cut, and global          
+-------------------------------------------------------
+(KS0_PT > 500)             |  1
+(KS0_PT > 600)             |  0.882213
+(KS0_PT > 700)             |  0.784057
+(KS0_PT > 800)             |  0.698989
+(KS0_PT > 900)             |  0.61392
+(KS0_PT > 1000)            |  0.542534
+(KS0_IPCHI2_OWNPV < 0.05)  |  0.0220107
+(KS0_IPCHI2_OWNPV < 0.06)  |  0.0249851
+(KS0_IPCHI2_OWNPV < 0.07)  |  0.0279595
+(KS0_IPCHI2_OWNPV < 0.08)  |  0.030934
+(KS0_IPCHI2_OWNPV < 0.09)  |  0.0333135
+(KS0_IPCHI2_OWNPV < 0.1)   |  0.0374777
+(KS0_IPCHI2_OWNPV < 0.2)   |  0.0654372
+(KS0_IPCHI2_OWNPV < 0.3)   |  0.10232
+(KS0_IPCHI2_OWNPV < 0.4)   |  0.132659
+(KS0_IPCHI2_OWNPV < 0.5)   |  0.167757
+Global                     |  0.013682
+Error                      |  0.002833

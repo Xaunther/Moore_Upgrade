@@ -1,2 +1,2 @@
 OutputStream                           INFO Events output: 192
-1.7M	output/LambdaG/LambdaG.mdst
+1.8M	output/LambdaG/LambdaG.mdst

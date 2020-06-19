@@ -61,7 +61,7 @@ $(default_HHGamma_VarList): output/%/HHGamma_VarList.txt: output/%/std_DV_HHGamm
 	$(LbLogin8) && $(ROOT) src/getvars.C\(\"output/$*/$*_HHGamma.root\",\"$@\",\"Hlt2BToHHGamma_Inclusive_Line/DecayTree\"\)
 	mkdir -p output/$*/plots/
 	mkdir -p output/$*/plots/HHGamma
-	../root/PlotUsedVars.out $@ output/$*/$*_HHGamma.root "" E1  output/$*/plots/HHGamma
+	../root/PlotUsedVars.out $@ output/$*/$*_HHGamma.root "" E1  output/$*/plots/HHGamma/ Hlt2BToHHGamma_Inclusive_Line/DecayTree
 #Extra hadron
 default_ExtraHadron_VarList=$(foreach MC, $(MC_list), output/$(MC)/ExtraHadron_VarList.txt)
 default_ExtraHadron_Var: $(default_ExtraHadron_VarList)
@@ -70,7 +70,7 @@ $(default_ExtraHadron_VarList): output/%/ExtraHadron_VarList.txt: output/%/std_D
 	mkdir -p output/$*/plots/
 	mkdir -p output/$*/plots/HHGamma
 	mkdir -p output/$*/plots/HHGamma/ExtraHadron
-	../root/PlotUsedVars.out $@ output/$*/$*_HHGamma.root "" E1  output/$*/plots/HHGamma/ExtraHadron
+	../root/PlotUsedVars.out $@ output/$*/$*_HHGamma.root "" E1  output/$*/plots/HHGamma/ExtraHadron/ ExtraHadron/DecayTree
 #Extra Ks0
 default_Ks0_VarList=$(foreach MC, $(MC_list), output/$(MC)/Ks0_VarList.txt)
 default_Ks0_Var: $(default_Ks0_VarList)
@@ -79,7 +79,7 @@ $(default_Ks0_VarList): output/%/Ks0_VarList.txt: output/%/std_DV_HHGamma.out
 	mkdir -p output/$*/plots/
 	mkdir -p output/$*/plots/HHGamma
 	mkdir -p output/$*/plots/HHGamma/ExtraKs0
-	../root/PlotUsedVars.out $@ output/$*/$*_HHGamma.root "" E1  output/$*/plots/HHGamma/ExtraKs0
+	../root/PlotUsedVars.out $@ output/$*/$*_HHGamma.root "" E1  output/$*/plots/HHGamma/ExtraKs0/ ExtraKs0/DecayTree
 #Extra Lambda
 default_Lambda_VarList=$(foreach MC, $(MC_list), output/$(MC)/Lambda_VarList.txt)
 default_Lambda_Var: $(default_Lambda_VarList)
@@ -88,7 +88,7 @@ $(default_Lambda_VarList): output/%/Lambda_VarList.txt: output/%/std_DV_HHGamma.
 	mkdir -p output/$*/plots/
 	mkdir -p output/$*/plots/HHGamma
 	mkdir -p output/$*/plots/HHGamma/ExtraLambda
-	../root/PlotUsedVars.out $@ output/$*/$*_HHGamma.root "" E1  output/$*/plots/HHGamma/ExtraLambda
+	../root/PlotUsedVars.out $@ output/$*/$*_HHGamma.root "" E1  output/$*/plots/HHGamma/ExtraLambda/ ExtraLambda/DecayTree
 
 #Efficiency of extracuts
 #Hadron

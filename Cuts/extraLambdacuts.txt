@@ -1,0 +1,16 @@
+Lambda0_PT > 500
+Lambda0_PT > 600
+Lambda0_PT > 700
+Lambda0_PT > 800
+Lambda0_PT > 900
+Lambda0_PT > 1000
+Lambda0_IPCHI2_OWNPV < 0.05
+Lambda0_IPCHI2_OWNPV < 0.06
+Lambda0_IPCHI2_OWNPV < 0.07
+Lambda0_IPCHI2_OWNPV < 0.08
+Lambda0_IPCHI2_OWNPV < 0.09
+Lambda0_IPCHI2_OWNPV < 0.1
+Lambda0_IPCHI2_OWNPV < 0.2
+Lambda0_IPCHI2_OWNPV < 0.3
+Lambda0_IPCHI2_OWNPV < 0.4
+Lambda0_IPCHI2_OWNPV < 0.5

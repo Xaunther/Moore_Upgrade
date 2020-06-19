@@ -1,0 +1,16 @@
+piplus_PT > 500
+piplus_PT > 600
+piplus_PT > 700
+piplus_PT > 800
+piplus_PT > 900
+piplus_PT > 1000
+piplus_IPCHI2_OWNPV < 0.05
+piplus_IPCHI2_OWNPV < 0.06
+piplus_IPCHI2_OWNPV < 0.07
+piplus_IPCHI2_OWNPV < 0.08
+piplus_IPCHI2_OWNPV < 0.09
+piplus_IPCHI2_OWNPV < 0.1
+piplus_IPCHI2_OWNPV < 0.2
+piplus_IPCHI2_OWNPV < 0.3
+piplus_IPCHI2_OWNPV < 0.4
+piplus_IPCHI2_OWNPV < 0.5

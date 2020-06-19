@@ -2,8 +2,10 @@
 # --> Including file '/afs/cern.ch/work/a/aalfonso/private/moore_upgrade/DaVinci_Scripts/KstG.py'
 # <-- End of file '/afs/cern.ch/work/a/aalfonso/private/moore_upgrade/DaVinci_Scripts/KstG.py'
 # --> Including file '/afs/cern.ch/work/a/aalfonso/private/moore_upgrade/DaVinci_Scripts/ntuples_HHHGammaEE.py'
-# WARNING: Property MyTuple.ErrorMax is deprecated:  [[deprecated]] max number of errors [Gaudi::Algorithm] 
-# WARNING: Property Hlt2BToHHHGammaEE_Inclusive_Line_ExtraHadron.ErrorMax is deprecated:  [[deprecated]] max number of errors [Gaudi::Algorithm] 
+# WARNING: Property Hlt2BToHHHGammaEE_Inclusive_Line.ErrorMax is deprecated:  [[deprecated]] max number of errors [Gaudi::Algorithm] 
+# WARNING: Property ExtraHadron.ErrorMax is deprecated:  [[deprecated]] max number of errors [Gaudi::Algorithm] 
+# WARNING: Property ExtraKs0.ErrorMax is deprecated:  [[deprecated]] max number of errors [Gaudi::Algorithm] 
+# WARNING: Property ExtraLambda.ErrorMax is deprecated:  [[deprecated]] max number of errors [Gaudi::Algorithm] 
 # <-- End of file '/afs/cern.ch/work/a/aalfonso/private/moore_upgrade/DaVinci_Scripts/ntuples_HHHGammaEE.py'
 # applying configuration of RawEventFormatConf
 # /***** User RawEventFormatConf/RawEventFormatConf **************************************************
@@ -19,13 +21,13 @@
 # DaVinci                   INFO    Applying DaVinci configuration
 # DaVinci                   INFO    /***** User DaVinci/DaVinci ************************************************************************
 |-MainOptions          = ''
-|-TupleFile            = 'output/KstG/KstG_HHHGammaee.root'  (default: '')
+|-TupleFile            = 'output/KstG/KstG_HHHGammaEE.root'  (default: '')
 |-SkipEvents           = 0
 |-RootCompressionLevel = 'LZMA:6'
 |-Input                = []  (default: [])
 |-Turbo                = False
 |-DDDBtag              = 'dddb-20171126'  (default: '')
-|-UserAlgorithms       = [GaudiSequencer('ExtraHadronSelSeq'), DecayTreeTuple('MyTuple'), DecayTreeTuple('Hlt2BToHHHGammaEE_Inclusive_Line_ExtraHadron')]
+|-UserAlgorithms       = [DecayTreeTuple('Hlt2BToHHHGammaEE_Inclusive_Line'), DecayTreeTuple('ExtraHadron'), DecayTreeTuple('ExtraKs0'), DecayTreeTuple('ExtraLambda')]
 |                      (default: [])
 |-RootInTES            = '/Event/HLT2'  (default: '')
 |-DQFLAGStag           = ''
@@ -69,21 +71,19 @@
 # PhysConf.MicroDST         INFO    Configure node-killer agent for ('/Event/DAQ', '/Event/pRec') 
 # PhysConf.MicroDST         INFO    Configure ODIN,Raw,Summary&Reports RootInTES='/Event/HLT2/'
 # DaVinci                   INFO    Set RootInTES=/Event/HLT2 for DaVinciUserSequence
-# DaVinci                   INFO    Set RootInTES=/Event/HLT2 for ExtraHadronSelSeq
-# DaVinci                   INFO    Set RootInTES=/Event/HLT2 for SELECT:Hlt2BToHHHGammaEE_Inclusive_Line
-# DaVinci                   INFO    Set RootInTES=/Event/HLT2 for SELECT:Hlt2BToHHHGammaEE_Inclusive_Line/ExtraHadron
-# DaVinci                   INFO    Set RootInTES=/Event/HLT2 for ExtraHadronSel
-# DaVinci                   INFO    Set RootInTES=/Event/HLT2 for MyTuple
-# DaVinci                   INFO    Set RootInTES=/Event/HLT2 for Hlt2BToHHHGammaEE_Inclusive_Line_ExtraHadron
+# DaVinci                   INFO    Set RootInTES=/Event/HLT2 for Hlt2BToHHHGammaEE_Inclusive_Line
+# DaVinci                   INFO    Set RootInTES=/Event/HLT2 for ExtraHadron
+# DaVinci                   INFO    Set RootInTES=/Event/HLT2 for ExtraKs0
+# DaVinci                   INFO    Set RootInTES=/Event/HLT2 for ExtraLambda
 # /***** User DaVinci/DaVinci ************************************************************************
 # |-MainOptions          = ''
-# |-TupleFile            = 'output/KstG/KstG_HHHGammaee.root'  (default: '')
+# |-TupleFile            = 'output/KstG/KstG_HHHGammaEE.root'  (default: '')
 # |-SkipEvents           = 0
 # |-RootCompressionLevel = 'LZMA:6'
 # |-Input                = []  (default: [])
 # |-Turbo                = False
 # |-DDDBtag              = 'dddb-20171126'  (default: '')
-# |-UserAlgorithms       = [GaudiSequencer('ExtraHadronSelSeq'), DecayTreeTuple('MyTuple'), DecayTreeTuple('Hlt2BToHHHGammaEE_Inclusive_Line_ExtraHadron')]
+# |-UserAlgorithms       = [DecayTreeTuple('Hlt2BToHHHGammaEE_Inclusive_Line'), DecayTreeTuple('ExtraHadron'), DecayTreeTuple('ExtraKs0'), DecayTreeTuple('ExtraLambda')]
 # |                      (default: [])
 # |-RootInTES            = '/Event/HLT2'  (default: '')
 # |-DQFLAGStag           = ''
@@ -131,7 +131,7 @@
 ApplicationMgr    SUCCESS 
 ====================================================================================================================================
                                                    Welcome to DaVinci version v50r6
-                                          running on lxplus723.cern.ch on Mon Jun 15 16:21:30 2020
+                                          running on lxplus723.cern.ch on Thu Jun 18 16:56:27 2020
 ====================================================================================================================================
 ApplicationMgr       INFO Application Manager Configured successfully
 ToolSvc.GitDDDB      INFO opening Git repository '/cvmfs/lhcb.cern.ch/lib/lhcb/git-conddb/DDDB.git'
@@ -144,7 +144,7 @@ RndmGenSvc.Engine    INFO Generator engine type:CLHEP::RanluxEngine
 RndmGenSvc.Engine    INFO Current Seed:1234567 Luxury:3
 RndmGenSvc           INFO Using Random engine:HepRndm::Engine<CLHEP::RanluxEngine>
 TimingAuditor.T...   INFO This machine has a speed about   3.03 times the speed of a 2.8 GHz Xeon.
-NTupleSvc            INFO Added stream file:output/KstG/KstG_HHHGammaee.root as FILE1
+NTupleSvc            INFO Added stream file:output/KstG/KstG_HHHGammaEE.root as FILE1
 DaVinciEventSeq      INFO Member list: DaVinciInit/DaVinciInitAlg, GaudiSequencer/FilteredEventSeq, GaudiSequencer/LumiSeq
 DaVinciInitAlg    SUCCESS ==================================================================
 DaVinciInitAlg    SUCCESS Requested to process all events on input file(s)
@@ -156,10 +156,11 @@ HistogramDataSvc     INFO Added stream file:/cvmfs/lhcb.cern.ch/lib/lhcb/PARAM/P
 FilteredEventSeq     INFO Member list: GaudiSequencer/DaVinciEventInitSeq, GaudiSequencer/DaVinciAnalysisSeq
 DaVinciEventIni...   INFO Member list: EventNodeKiller/KillDAQ, UnpackParticlesAndVertices
 DaVinciAnalysisSeq   INFO Member list: GaudiSequencer/DaVinciUserSequence, GaudiSequencer/MonitoringSequence
-DaVinciUserSequ...   INFO Member list: GaudiSequencer/ExtraHadronSelSeq, DecayTreeTuple/MyTuple, DecayTreeTuple/Hlt2BToHHHGammaEE_Inclusive_Line_ExtraHadron, with rootInTES '/Event/HLT2/'
-ExtraHadronSelSeq    INFO Member list: LoKi::VoidFilter/SELECT:Hlt2BToHHHGammaEE_Inclusive_Line, LoKi::VoidFilter/SELECT:Hlt2BToHHHGammaEE_Inclusive_Line/ExtraHadron, CombineParticles/ExtraHadronSel, with rootInTES '/Event/HLT2/'
-MyTuple              INFO Will look for  ( ( B+  -> ^( ( D*(2010)+  -> ^( ( K*(892)0  -> ^( pi+ ) ^( pi- )) ) ^( pi+ )) ) ^( ( gamma  -> ^( e+ ) ^( e- )) )) || ( B-  -> ^( ( D*(2010)-  -> ^( ( K*(892)0  -> ^( pi+ ) ^( pi- )) ) ^( pi- )) ) ^( ( gamma  -> ^( e+ ) ^( e- )) )) ) 
-Hlt2BToHHHGamma...   INFO Will look for  ( ( B*+  -> ^( ( B+  -> ^( ( D*(2010)+  -> ^( ( K*(892)0  -> ^( pi+ ) ^( pi- )) ) ^( pi+ )) ) ^( ( gamma  -> ^( e+ ) ^( e- )) )) ) ^( pi+ )) || ( B*+  -> ^( ( B+  -> ^( ( D*(2010)+  -> ^( ( K*(892)0  -> ^( pi+ ) ^( pi- )) ) ^( pi+ )) ) ^( ( gamma  -> ^( e+ ) ^( e- )) )) ) ^( pi- )) || ( B*-  -> ^( ( B-  -> ^( ( D*(2010)-  -> ^( ( K*(892)0  -> ^( pi+ ) ^( pi- )) ) ^( pi- )) ) ^( ( gamma  -> ^( e+ ) ^( e- )) )) ) ^( pi+ )) || ( B*-  -> ^( ( B-  -> ^( ( D*(2010)-  -> ^( ( K*(892)0  -> ^( pi+ ) ^( pi- )) ) ^( pi- )) ) ^( ( gamma  -> ^( e+ ) ^( e- )) )) ) ^( pi- )) ) 
+DaVinciUserSequ...   INFO Member list: DecayTreeTuple/Hlt2BToHHHGammaEE_Inclusive_Line, DecayTreeTuple/ExtraHadron, DecayTreeTuple/ExtraKs0, DecayTreeTuple/ExtraLambda, with rootInTES '/Event/HLT2/'
+Hlt2BToHHHGamma...   INFO Will look for  ( ( B+  -> ^( ( D*(2010)+  -> ^( ( K*(892)0  -> ^( pi+ ) ^( pi- )) ) ^( pi+ )) ) ^( ( gamma  -> ^( e+ ) ^( e- )) )) || ( B-  -> ^( ( D*(2010)-  -> ^( ( K*(892)0  -> ^( pi+ ) ^( pi- )) ) ^( pi- )) ) ^( ( gamma  -> ^( e+ ) ^( e- )) )) ) 
+ExtraHadron          INFO Will look for  ( pi+ || pi- ) 
+ExtraKs0             INFO Will look for  ( KS0  -> ^( pi+ ) ^( pi- )) 
+ExtraLambda          INFO Will look for  ( ( Lambda0  -> ^( p+ ) ^( pi- )) || ( Lambda~0  -> ^( p~- ) ^( pi+ )) ) 
 MonitoringSequence   INFO Member list: 
 LumiSeq              INFO OR Member list: EventAccounting/EventAccount
 EventPersistenc...   INFO Added successfully Conversion service:RootCnvSvc
@@ -167,7 +168,8 @@ EventSelector        INFO Stream:EventSelector.DataStreamTool_1 Def:DATAFILE='ou
 ApplicationMgr       INFO Application Manager Initialized successfully
 ApplicationMgr       INFO Application Manager Started successfully
 EventSelector     SUCCESS Reading Event record 1. Record number within stream 1: 1
-ToolSvc.LoKi::V...   INFO Option for Optimised Kalman Filter fit is activated 
+Hlt2BToHHHGamma...   INFO The head of chain is a B+ : Will keep whole chain as is. 
+Hlt2BToHHHGamma...  ERROR DecayTreeTuple:: Can't get the tool 'MCTupleToolKinematic', check your syntax StatusCode=FAILURE
 IODataManager       ERROR Error: connectDataIO> failed to resolve FID:56B5B15A-9C75-E811-9B8B-FA163E67D0C3
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:56B5B15A-9C75-E811-9B8B-FA163E67D0C3:/Event/Rec
 MagneticFieldSvc     INFO Opened magnetic field file : /cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/FieldMap/v5r7/cdf/field.v5r0.c1.down.cdf
@@ -177,20 +179,18 @@ MagneticFieldSvc     INFO Opened magnetic field file : /cvmfs/lhcb.cern.ch/lib/l
 MagneticFieldSvc     INFO Map scaled by factor 1 with polarity internally used: -1 signed relative current: -1
 TransportSvc         INFO Initialize the static pointer to DetDesc::IGeometryErrorSvc
 TransportSvc         INFO Recovery of geometry errors is  ENABLED
-MyTuple              INFO The head of chain is a B+ : Will keep whole chain as is. 
-MyTuple             ERROR DecayTreeTuple:: Can't get the tool 'MCTupleToolKinematic', check your syntax StatusCode=FAILURE
-MyTuple              INFO Tree DecayTree initialized :-
-MyTuple              INFO  Event related tools : []
-MyTuple              INFO  Particle related stuffers :- 
-MyTuple              INFO   B+ (Bplus)                  : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
-MyTuple              INFO      D*(2010)+ (Dst_2010_plus) : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
-MyTuple              INFO         K*(892)0 (Kst_892_0)  : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
-MyTuple              INFO            pi+ (piplus)       : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
-MyTuple              INFO            pi- (piminus)      : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
-MyTuple              INFO         pi+ (piplus0)         : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
-MyTuple              INFO      gamma (gamma)            : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
-MyTuple              INFO         e+ (eplus)            : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
-MyTuple              INFO         e- (eminus)           : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+Hlt2BToHHHGamma...   INFO Tree DecayTree initialized :-
+Hlt2BToHHHGamma...   INFO  Event related tools : []
+Hlt2BToHHHGamma...   INFO  Particle related stuffers :- 
+Hlt2BToHHHGamma...   INFO   B+ (Bplus)                  : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+Hlt2BToHHHGamma...   INFO      D*(2010)+ (Dst_2010_plus) : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+Hlt2BToHHHGamma...   INFO         K*(892)0 (Kst_892_0)  : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+Hlt2BToHHHGamma...   INFO            pi+ (piplus)       : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+Hlt2BToHHHGamma...   INFO            pi- (piminus)      : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+Hlt2BToHHHGamma...   INFO         pi+ (piplus0)         : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+Hlt2BToHHHGamma...   INFO      gamma (gamma)            : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+Hlt2BToHHHGamma...   INFO         e+ (eplus)            : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+Hlt2BToHHHGamma...   INFO         e- (eminus)           : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:56B5B15A-9C75-E811-9B8B-FA163E67D0C3:/Event/MC
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:56B5B15A-9C75-E811-9B8B-FA163E67D0C3:/Event/pSim
 SEQ:MCParticles      INFO Member list: UnpackMCParticle, Gaudi::DataLink/LINK:MCParticles2MC
@@ -200,33 +200,41 @@ ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Long         Par
 ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Long         Particle=kaon        
 ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Long         Particle=proton      
 ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Long         Particle=ghost       
-RCWNTupleCnv         INFO Booked TTree with ID: DecayTree "DecayTree" in directory output/KstG/KstG_HHHGammaee.root:/MyTuple
-Hlt2BToHHHGamma...   INFO The head of chain is a B*+ : Will keep whole chain as is. 
-Hlt2BToHHHGamma...  ERROR DecayTreeTuple:: Can't get the tool 'MCTupleToolKinematic', check your syntax StatusCode=FAILURE
-Hlt2BToHHHGamma...   INFO Tree DecayTree initialized :-
-Hlt2BToHHHGamma...   INFO  Event related tools : []
-Hlt2BToHHHGamma...   INFO  Particle related stuffers :- 
-Hlt2BToHHHGamma...   INFO   B*+ (Bstplus)               : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
-Hlt2BToHHHGamma...   INFO      B+ (Bplus)               : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
-Hlt2BToHHHGamma...   INFO         D*(2010)+ (Dst_2010_plus) : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
-Hlt2BToHHHGamma...   INFO            K*(892)0 (Kst_892_0) : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
-Hlt2BToHHHGamma...   INFO               pi+ (piplus)    : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
-Hlt2BToHHHGamma...   INFO               pi- (piminus)   : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
-Hlt2BToHHHGamma...   INFO            pi+ (piplus0)      : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
-Hlt2BToHHHGamma...   INFO         gamma (gamma)         : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
-Hlt2BToHHHGamma...   INFO            e+ (eplus)         : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
-Hlt2BToHHHGamma...   INFO            e- (eminus)        : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
-Hlt2BToHHHGamma...   INFO      pi+ (piplus1)            : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
-RCWNTupleCnv         INFO Booked TTree with ID: DecayTree "DecayTree" in directory output/KstG/KstG_HHHGammaee.root:/Hlt2BToHHHGammaEE_Inclusive_Line_ExtraHadron
+RCWNTupleCnv         INFO Booked TTree with ID: DecayTree "DecayTree" in directory output/KstG/KstG_HHHGammaEE.root:/Hlt2BToHHHGammaEE_Inclusive_Line
+ExtraHadron          INFO The head of chain is a pi- : Will change to its antiparticle. Will change daughters to antiparticles. 
+ExtraHadron         ERROR DecayTreeTuple:: Can't get the tool 'MCTupleToolKinematic', check your syntax StatusCode=FAILURE
+ExtraHadron          INFO Tree DecayTree initialized :-
+ExtraHadron          INFO  Event related tools : []
+ExtraHadron          INFO  Particle related stuffers :- 
+ExtraHadron          INFO   pi+ (piplus)                : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+RCWNTupleCnv         INFO Booked TTree with ID: DecayTree "DecayTree" in directory output/KstG/KstG_HHHGammaEE.root:/ExtraHadron
 IODataManager       ERROR Error: connectDataIO> failed to resolve FID:521EAF52-9C75-E811-BD16-FA163ED9B0D9
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:521EAF52-9C75-E811-BD16-FA163ED9B0D9:/Event/Rec
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:521EAF52-9C75-E811-BD16-FA163ED9B0D9:/Event/MC
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:521EAF52-9C75-E811-BD16-FA163ED9B0D9:/Event/pSim
+ExtraKs0             INFO The head of chain is a KS0 : Will keep whole chain as is. 
+ExtraKs0            ERROR DecayTreeTuple:: Can't get the tool 'MCTupleToolKinematic', check your syntax StatusCode=FAILURE
+ExtraKs0             INFO Tree DecayTree initialized :-
+ExtraKs0             INFO  Event related tools : []
+ExtraKs0             INFO  Particle related stuffers :- 
+ExtraKs0             INFO   KS0 (KS0)                   : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+ExtraKs0             INFO      pi+ (piplus)             : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+ExtraKs0             INFO      pi- (piminus)            : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+RCWNTupleCnv         INFO Booked TTree with ID: DecayTree "DecayTree" in directory output/KstG/KstG_HHHGammaEE.root:/ExtraKs0
+ExtraLambda          INFO The head of chain is a Lambda~0 : Will change to its antiparticle. Will change daughters to antiparticles. 
+ExtraLambda         ERROR DecayTreeTuple:: Can't get the tool 'MCTupleToolKinematic', check your syntax StatusCode=FAILURE
+ExtraLambda          INFO Tree DecayTree initialized :-
+ExtraLambda          INFO  Event related tools : []
+ExtraLambda          INFO  Particle related stuffers :- 
+ExtraLambda          INFO   Lambda0 (Lambda0)           : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+ExtraLambda          INFO      p+ (pplus)               : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+ExtraLambda          INFO      pi- (piminus)            : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+RCWNTupleCnv         INFO Booked TTree with ID: DecayTree "DecayTree" in directory output/KstG/KstG_HHHGammaEE.root:/ExtraLambda
 IODataManager       ERROR Error: connectDataIO> failed to resolve FID:9091D273-B575-E811-AEA7-A4BF01277567
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:9091D273-B575-E811-AEA7-A4BF01277567:/Event/Rec
 IODataManager       ERROR Error: connectDataIO> failed to resolve FID:A6C740AB-B975-E811-A067-A4BF01125B58
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:A6C740AB-B975-E811-A067-A4BF01125B58:/Event/Rec
-DaVinciInitAlg       INFO Memory has changed from 1594400 to 1871604 KB (277204KB, 17.3861%) in last 1000 events
+DaVinciInitAlg       INFO Memory has changed from 785092 to 1044208 KB (259116KB, 33.0045%) in last 1000 events
 EventSelector     SUCCESS Reading Event record 1001. Record number within stream 1: 1001
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:A6C740AB-B975-E811-A067-A4BF01125B58:/Event/MC
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:A6C740AB-B975-E811-A067-A4BF01125B58:/Event/pSim
@@ -234,11 +242,18 @@ IODataManager       ERROR Error: connectDataIO> failed to resolve FID:A20FC05D-B
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:A20FC05D-BC75-E811-865E-001E67E6A206:/Event/Rec
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:A20FC05D-BC75-E811-865E-001E67E6A206:/Event/MC
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:A20FC05D-BC75-E811-865E-001E67E6A206:/Event/pSim
+ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Downstream   Particle=electron    
+ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Downstream   Particle=muon        
+ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Downstream   Particle=pion        
+ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Downstream   Particle=kaon        
+ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Downstream   Particle=proton      
+ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Downstream   Particle=ghost       
+DeVP                 INFO There are 208 sensors (left: 104, right: 104)
 IODataManager       ERROR Error: connectDataIO> failed to resolve FID:3CD0FD1B-C575-E811-B1AB-001E677927C2
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:3CD0FD1B-C575-E811-B1AB-001E677927C2:/Event/Rec
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:3CD0FD1B-C575-E811-B1AB-001E677927C2:/Event/MC
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:3CD0FD1B-C575-E811-B1AB-001E677927C2:/Event/pSim
-DaVinciInitAlg       INFO Memory has changed from 1871604 to 1872588 KB (984KB, 0.0525752%) in last 1000 events
+DaVinciInitAlg       INFO Memory has changed from 1044208 to 1220420 KB (176212KB, 16.8752%) in last 1000 events
 EventSelector     SUCCESS Reading Event record 2001. Record number within stream 1: 2001
 IODataManager       ERROR Error: connectDataIO> failed to resolve FID:CCE14D4E-BA7F-E811-9F59-A4BF0112BBFE
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:CCE14D4E-BA7F-E811-9F59-A4BF0112BBFE:/Event/Rec
@@ -254,7 +269,6 @@ IODataManager       ERROR Error: connectDataIO> failed to resolve FID:7865E8C6-B
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:7865E8C6-BD75-E811-8A96-008CFAF724BE:/Event/Rec
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:7865E8C6-BD75-E811-8A96-008CFAF724BE:/Event/MC
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:7865E8C6-BD75-E811-8A96-008CFAF724BE:/Event/pSim
-DaVinciInitAlg       INFO Memory has changed from 1872588 to 1873456 KB (868KB, 0.046353%) in last 1000 events
 EventSelector     SUCCESS Reading Event record 3001. Record number within stream 1: 3001
 IODataManager       ERROR Error: connectDataIO> failed to resolve FID:608153C9-BF75-E811-8A78-7CD30AD0944E
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:608153C9-BF75-E811-8A78-7CD30AD0944E:/Event/Rec
@@ -268,7 +282,6 @@ IODataManager       ERROR Error: connectDataIO> failed to resolve FID:56939EBC-B
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:56939EBC-BA75-E811-AAC6-3417EBE50720:/Event/Rec
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:56939EBC-BA75-E811-AAC6-3417EBE50720:/Event/MC
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:56939EBC-BA75-E811-AAC6-3417EBE50720:/Event/pSim
-DaVinciInitAlg       INFO Memory has changed from 1873456 to 1874688 KB (1232KB, 0.0657608%) in last 1000 events
 EventSelector     SUCCESS Reading Event record 4001. Record number within stream 1: 4001
 IODataManager       ERROR Error: connectDataIO> failed to resolve FID:1C23448B-B475-E811-B532-3417EBE64CB1
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:1C23448B-B475-E811-B532-3417EBE64CB1:/Event/Rec
@@ -278,7 +291,6 @@ IODataManager       ERROR Error: connectDataIO> failed to resolve FID:102AE05B-B
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:102AE05B-B675-E811-88E2-7CD30AD09DC0:/Event/Rec
 IODataManager       ERROR Error: connectDataIO> failed to resolve FID:5A2B630F-C675-E811-A776-008CFAFBDBA8
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:5A2B630F-C675-E811-A776-008CFAFBDBA8:/Event/Rec
-DaVinciInitAlg       INFO Memory has changed from 1874688 to 1876144 KB (1456KB, 0.0776663%) in last 1000 events
 EventSelector     SUCCESS Reading Event record 5001. Record number within stream 1: 5001
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:5A2B630F-C675-E811-A776-008CFAFBDBA8:/Event/MC
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:5A2B630F-C675-E811-A776-008CFAFBDBA8:/Event/pSim
@@ -292,7 +304,6 @@ RootCnvSvc          ERROR Error: createObj> Cannot access the object:1699DF86-B7
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:1699DF86-B775-E811-9091-7CD30AD08D94:/Event/pSim
 IODataManager       ERROR Error: connectDataIO> failed to resolve FID:329B74DA-BA75-E811-85CD-008CFAF75254
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:329B74DA-BA75-E811-85CD-008CFAF75254:/Event/Rec
-DaVinciInitAlg       INFO Memory has changed from 1876144 to 1877292 KB (1148KB, 0.0611893%) in last 1000 events
 EventSelector     SUCCESS Reading Event record 6001. Record number within stream 1: 6001
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:329B74DA-BA75-E811-85CD-008CFAF75254:/Event/MC
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:329B74DA-BA75-E811-85CD-008CFAF75254:/Event/pSim
@@ -309,13 +320,13 @@ ApplicationMgr       INFO Application Manager Stopped successfully
 HLT2_PsAndVsUnpackSUCCESS Number of counters : 8
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
  | "# Unpacked FlavourTags"                        |      6815 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
- | "# Unpacked MuonPIDs"                           |      6815 |      62338 |     9.1472 |     4.1009 |      1.0000 |      30.000 |
- | "# Unpacked Particles"                          |      6815 |     114439 |     16.792 |     9.3967 |      5.0000 |      96.000 |
- | "# Unpacked ProtoParticles"                     |      6815 |      74102 |     10.873 |     4.3961 |      3.0000 |      33.000 |
+ | "# Unpacked MuonPIDs"                           |      6815 |      69394 |     10.183 |     4.6301 |      1.0000 |      35.000 |
+ | "# Unpacked Particles"                          |      6815 |     129592 |     19.016 |     10.675 |      5.0000 |      99.000 |
+ | "# Unpacked ProtoParticles"                     |      6815 |      82198 |     12.061 |     5.0125 |      3.0000 |      40.000 |
  | "# Unpacked RecVertices"                        |      6815 |      39979 |     5.8663 |     2.1306 |      1.0000 |      14.000 |
- | "# Unpacked RichPIDs"                           |      6815 |      67233 |     9.8654 |     4.3729 |      2.0000 |      31.000 |
- | "# Unpacked Tracks"                             |      6815 |      73741 |     10.820 |     5.0874 |      2.0000 |      35.000 |
- | "# Unpacked Vertices"                           |      6815 |      23311 |     3.4205 |     2.5666 |      2.0000 |      44.000 |
+ | "# Unpacked RichPIDs"                           |      6815 |      75195 |     11.034 |     4.9777 |      2.0000 |      39.000 |
+ | "# Unpacked Tracks"                             |      6815 |      82738 |     12.141 |     5.7907 |      2.0000 |      42.000 |
+ | "# Unpacked Vertices"                           |      6815 |      29706 |     4.3589 |     3.2788 |      2.0000 |      48.000 |
 LINK:MCParticle...SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/0/1/0
 LINK:MCParticle...SUCCESS  #WARNINGS   = 44       Message = 'No valid data is found at '/Event/MC/Particles''
 LINK:MC2Sim4Par...SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/0/1/0
@@ -323,124 +334,118 @@ LINK:MC2Sim4Par...SUCCESS  #WARNINGS   = 45       Message = 'No valid data is fo
 DaVinciInitAlg    SUCCESS ==================================================================
 DaVinciInitAlg    SUCCESS 6815 events processed
 DaVinciInitAlg    SUCCESS ==================================================================
-SELECT:Hlt2BToH...SUCCESS Number of counters : 1
- |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- |*"#passed"                                       |      6815 |         44 |(0.6456346 +- 0.09701837)%|   -------   |   -------   |
-SELECT:Hlt2BToH...SUCCESS Number of counters : 1
- |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- |*"#passed"                                       |        44 |         44 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
-ExtraHadronSel    SUCCESS Number of counters : 16
- |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "# B*+ -> B+  pi+ "                             |        44 |        247 |     5.6136 |     7.7025 |      0.0000 |      36.000 |
- | "# B*+ -> B+  pi- "                             |        44 |        241 |     5.4773 |     8.7477 |      0.0000 |      48.000 |
- | "# B*- -> B-  pi+ "                             |        44 |        128 |     2.9091 |     3.8008 |      0.0000 |      16.000 |
- | "# B*- -> B-  pi- "                             |        44 |        156 |     3.5455 |     5.3020 |      0.0000 |      24.000 |
- | "# B+"                                          |        44 |         62 |     1.4091 |     2.1247 |      0.0000 |      12.000 |
- | "# B-"                                          |        44 |         41 |    0.93182 |     1.4522 |      0.0000 |      8.0000 |
- | "# Hlt2BToHHHGammaEE_Inclusive_Line"            |        44 |        103 |     2.3409 |     2.4303 |      1.0000 |      12.000 |
- | "# Hlt2BToHHHGammaEE_Inclusive_Line/ExtraHadron"|        44 |        363 |     8.2500 |     3.7303 |      1.0000 |      19.000 |
- | "# input particles"                             |        44 |        466 |     10.591 |     4.0414 |      2.0000 |      20.000 |
- | "# pi+"                                         |        44 |        179 |     4.0682 |     2.2603 |      0.0000 |      11.000 |
- | "# pi-"                                         |        44 |        184 |     4.1818 |     2.2082 |      0.0000 |      10.000 |
- | "# selected"                                    |        44 |        772 |     17.545 |     16.060 |      1.0000 |      84.000 |
- |*"#accept"                                       |        44 |         44 |( 100.0000 +- 0.000000)% |
- |*"#pass combcut"                                 |       773 |        773 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
- |*"#pass mother cut"                              |       773 |        772 |( 99.87063 +- 0.1292824)%|   -------   |   -------   |
- | "Error from IParticleCombiner, skip the combinat|         1 |          1 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
-MyTuple           SUCCESS Booked 1 N-Tuples and 0 Event Tag Collections
-MyTuple           SUCCESS List of booked N-Tuples in directory "FILE1/MyTuple"
-MyTuple           SUCCESS  ID=DecayTree     Title="DecayTree"                               #items=635{Bplus_ENDVERTEX_X,Bplus_ENDVERTEX_Y,Bplus_ENDVERTEX_Z,Bplus_ENDVERTEX_XERR,Bplus_}
-MyTuple           SUCCESS Number of counters : 4
+Hlt2BToHHHGamma...SUCCESS Booked 1 N-Tuples and 0 Event Tag Collections
+Hlt2BToHHHGamma...SUCCESS List of booked N-Tuples in directory "FILE1/Hlt2BToHHHGammaEE_Inclusive_Line"
+Hlt2BToHHHGamma...SUCCESS  ID=DecayTree     Title="DecayTree"                               #items=635{Bplus_ENDVERTEX_X,Bplus_ENDVERTEX_Y,Bplus_ENDVERTEX_Z,Bplus_ENDVERTEX_XERR,Bplus_}
+Hlt2BToHHHGamma...SUCCESS Number of counters : 4
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
  | "# Hlt2BToHHHGammaEE_Inclusive_Line"            |      6815 |        103 |   0.015114 |    0.27071 |      0.0000 |      12.000 |
  | "# input particles"                             |      6815 |        103 |   0.015114 |    0.27071 |      0.0000 |      12.000 |
  |*"#accept"                                       |      6815 |         44 |(0.6456346 +- 0.09701837)% |
  | "Event"                                         |      6815 |       6815 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
-MyTuple           SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/1/0/0
-MyTuple           SUCCESS  #ERRORS     = 1        Message = 'Can't get the tool 'MCTupleToolKinematic', check your syntax'
-Hlt2BToHHHGamma...SUCCESS Booked 1 N-Tuples and 0 Event Tag Collections
-Hlt2BToHHHGamma...SUCCESS List of booked N-Tuples in directory "FILE1/Hlt2BToHHHGammaEE_Inclusive_Line_ExtraHadron"
-Hlt2BToHHHGamma...SUCCESS  ID=DecayTree     Title="DecayTree"                               #items=776{Bstplus_ENDVERTEX_X,Bstplus_ENDVERTEX_Y,Bstplus_ENDVERTEX_Z,Bstplus_ENDVERTEX_XER}
-Hlt2BToHHHGamma...SUCCESS Number of counters : 4
- |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "# Phys/ExtraHadronSel"                         |      6815 |        772 |    0.11328 |     1.9079 |      0.0000 |      84.000 |
- | "# input particles"                             |      6815 |        772 |    0.11328 |     1.9079 |      0.0000 |      84.000 |
- |*"#accept"                                       |      6815 |         44 |(0.6456346 +- 0.09701837)% |
- | "Event"                                         |      6815 |       6815 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
 Hlt2BToHHHGamma...SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/1/0/0
 Hlt2BToHHHGamma...SUCCESS  #ERRORS     = 1        Message = 'Can't get the tool 'MCTupleToolKinematic', check your syntax'
+ExtraHadron       SUCCESS Booked 1 N-Tuples and 0 Event Tag Collections
+ExtraHadron       SUCCESS List of booked N-Tuples in directory "FILE1/ExtraHadron"
+ExtraHadron       SUCCESS  ID=DecayTree     Title="DecayTree"                               #items=74 {piplus_MC15TuneV1_ProbNNe,piplus_MC15TuneV1_ProbNNmu,piplus_MC15TuneV1_ProbNNpi,p}
+ExtraHadron       SUCCESS Number of counters : 4
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# Hlt2BToHHHGammaEE_Inclusive_Line/ExtraHadron"|      6815 |        363 |   0.053265 |    0.72556 |      0.0000 |      19.000 |
+ | "# input particles"                             |      6815 |        363 |   0.053265 |    0.72556 |      0.0000 |      19.000 |
+ |*"#accept"                                       |      6815 |         44 |(0.6456346 +- 0.09701837)% |
+ | "Event"                                         |      6815 |       6815 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+ExtraHadron       SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/1/0/0
+ExtraHadron       SUCCESS  #ERRORS     = 1        Message = 'Can't get the tool 'MCTupleToolKinematic', check your syntax'
+ExtraKs0          SUCCESS Booked 1 N-Tuples and 0 Event Tag Collections
+ExtraKs0          SUCCESS List of booked N-Tuples in directory "FILE1/ExtraKs0"
+ExtraKs0          SUCCESS  ID=DecayTree     Title="DecayTree"                               #items=212{KS0_ENDVERTEX_X,KS0_ENDVERTEX_Y,KS0_ENDVERTEX_Z,KS0_ENDVERTEX_XERR,KS0_ENDVERTEX_}
+ExtraKs0          SUCCESS Number of counters : 5
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# Hlt2BToHHHGammaEE_Inclusive_Line/ExtraKs0DD" |      6815 |          6 | 0.00088041 |   0.029659 |      0.0000 |      1.0000 |
+ | "# Hlt2BToHHHGammaEE_Inclusive_Line/ExtraKs0LL" |      6815 |         17 |  0.0024945 |   0.062894 |      0.0000 |      3.0000 |
+ | "# input particles"                             |      6815 |         23 |  0.0033749 |   0.071584 |      0.0000 |      3.0000 |
+ |*"#accept"                                       |      6815 |         18 |(0.2641233 +- 0.06217218)% |
+ | "Event"                                         |      6815 |       6815 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+ExtraKs0          SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/1/0/0
+ExtraKs0          SUCCESS  #ERRORS     = 1        Message = 'Can't get the tool 'MCTupleToolKinematic', check your syntax'
+ExtraLambda       SUCCESS Booked 1 N-Tuples and 0 Event Tag Collections
+ExtraLambda       SUCCESS List of booked N-Tuples in directory "FILE1/ExtraLambda"
+ExtraLambda       SUCCESS  ID=DecayTree     Title="DecayTree"                               #items=212{Lambda0_ENDVERTEX_X,Lambda0_ENDVERTEX_Y,Lambda0_ENDVERTEX_Z,Lambda0_ENDVERTEX_XER}
+ExtraLambda       SUCCESS Number of counters : 5
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# Hlt2BToHHHGammaEE_Inclusive_Line/ExtraLambdaD|      6815 |          3 | 0.00044021 |   0.020976 |      0.0000 |      1.0000 |
+ | "# Hlt2BToHHHGammaEE_Inclusive_Line/ExtraLambdaL|      6815 |          7 |  0.0010271 |   0.036326 |      0.0000 |      2.0000 |
+ | "# input particles"                             |      6815 |         10 |  0.0014674 |   0.045301 |      0.0000 |      2.0000 |
+ |*"#accept"                                       |      6815 |          8 |(0.1173881 +- 0.04147860)% |
+ | "Event"                                         |      6815 |       6815 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+ExtraLambda       SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/1/0/0
+ExtraLambda       SUCCESS  #ERRORS     = 1        Message = 'Can't get the tool 'MCTupleToolKinematic', check your syntax'
 RootHistSvc       WARNING no ROOT output file name, Histograms cannot be persistified
 EventLoopMgr         INFO Histograms converted successfully according to request.
 TransportSvc      SUCCESS  GEOMETRY ERRORS: 'Skip'     map has the size 0
 
-TransportSvc      SUCCESS  GEOMETRY ERRORS: 'Recover'  map has the size 0
+TransportSvc      SUCCESS  GEOMETRY ERRORS: 'Recover'  map has the size 3
+   |                      Logical Volume                     |    |  #          mean             RMS          min              max    |
+   | BeforeMagnetRegion/Rich1/lvRich1Master                  | mm | 1       20.005457                   0 20.005457           20.0054 |
+   | BeforeMagnetRegion/Rich1/lvRich1Master                  | X0 | 1       0.24920791                  0 0.24920791         0.249207 |
+   | BeforeMagnetRegion/Rich1/lvRich1SubMaster               | mm | 1       4.0012553                   0 4.0012553           4.00125 |
+   | BeforeMagnetRegion/Rich1/lvRich1SubMaster               | X0 | 1       0.011467257                 0 0.011467257       0.0114672 |
+   | BeforeMagnetRegion/VP/RFFoil/lvRFFoilCompTnTUnit        | mm | 28      0.046868801        0.12442097 1.7718428e-09      0.572784 |
+   | BeforeMagnetRegion/VP/RFFoil/lvRFFoilCompTnTUnit        | X0 | 28      0                           0 0                           |
 
 TransportSvc      SUCCESS  GEOMETRY ERRORS: 'Codes'    map has the size 0
 
 TransportSvc         INFO Reset the static pointer to DetDesc::IGeometyrErrorSvc
-RootCnvSvc           INFO Disconnected data IO:92677435-0CAF-EA11-B3D4-FA163E4B924C [output/KstG/KstG.mdst]
-DataOnDemandSvc      INFO Handled "DataFault" incidents: 152804/102547/419897(Alg/Node/Total).
+RootCnvSvc           INFO Disconnected data IO:E011CD5D-AFB0-EA11-95E9-FA163E4B924C [output/KstG/KstG.mdst]
+DataOnDemandSvc      INFO Handled "DataFault" incidents: 165308/140030/442557(Alg/Node/Total).
 ToolSvc              INFO Removing all tools created by ToolSvc
-ToolSvc.LoKi::V...SUCCESS Number of counters : 4
- |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "#iterations/1"                                 |       672 |       1319 |     1.9628 |    0.72792 |      1.0000 |      5.0000 |
- | "#iterations/2"                                 |       608 |       1433 |     2.3569 |    0.68531 |      2.0000 |      9.0000 |
- | "#iterations/Opt"                               |       772 |        826 |     1.0699 |    0.82247 |      0.0000 |      8.0000 |
- | "Seed:case(3)"                                  |         1 |
-ToolSvc.LoKi::V...SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/0/5/0
-ToolSvc.LoKi::V...SUCCESS  #WARNINGS   = 1        Message = 'No convergency has been reached [ExtraHadronSel]'
-ToolSvc.LoKi::V...SUCCESS  #WARNINGS   = 1        Message = '_iterate_opt: No convergency has been reached [ExtraHadronSel]'
-ToolSvc.LoKi::V...SUCCESS  #WARNINGS   = 1        Message = 'fit(): failure from _iterate() [ExtraHadronSel]'
-ToolSvc.LoKi::V...SUCCESS  #WARNINGS   = 1        Message = 'fit(): failure from fit [ExtraHadronSel]'
-ToolSvc.LoKi::V...SUCCESS  #WARNINGS   = 247      Message = 'fit(): measured mass error is a bit    non-positive, adjust to 1 MeV [ExtraHadronSel]'
-ToolSvc.HybridF...SUCCESS Number of counters : 1
- |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "# loaded from PYTHON"                          |         6 |          6 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
-ToolSvc.CoreFac...SUCCESS Number of counters : 1
- |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "# loaded from PYTHON"                          |         2 |          2 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
 DaVinciInitAlg....SUCCESS Booked 4 Histogram(s) : 1D=4 
 DaVinciInitAlg....SUCCESS Number of counters : 2
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "Delta Memory/MB"                               |      6806 |    280.192 |   0.041168 |     3.3079 |      0.0000 |      272.92 |
- | "Total Memory/MB"                               |      6815 |1.276208e+07 |     1872.6 |     21.983 |      1594.4 |      1878.4 |
+ | "Delta Memory/MB"                               |      6806 |    429.428 |   0.063096 |     3.4668 |      0.0000 |      225.51 |
+ | "Total Memory/MB"                               |      6815 |    8016723 |     1176.3 |     82.691 |      785.09 |      1221.2 |
 DaVinciInitAlg....SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/0/2/0
-DaVinciInitAlg....SUCCESS  #WARNINGS   = 1        Message = 'Delta Memory for the event exceeds 3*sigma'
-DaVinciInitAlg....SUCCESS  #WARNINGS   = 4        Message = 'Total Memory for the event exceeds 3*sigma'
+DaVinciInitAlg....SUCCESS  #WARNINGS   = 3        Message = 'Delta Memory for the event exceeds 3*sigma'
+DaVinciInitAlg....SUCCESS  #WARNINGS   = 100      Message = 'Total Memory for the event exceeds 3*sigma'
 ToolSvc.TrackSt...SUCCESS Number of counters : 2
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "Number of states added"                        |        44 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
- | "Number of tracks seen"                         |      6773 |        521 |   0.076923 |    0.99719 |      0.0000 |      22.000 |
+ | "Number of states added"                        |        44 |         64 |     1.4545 |     3.0856 |      0.0000 |      8.0000 |
+ | "Number of tracks seen"                         |      6773 |        577 |   0.085191 |     1.1097 |      0.0000 |      24.000 |
 TimingAuditor.T...   INFO ----------------------------------------------------------------------------------------------------------------------
 TimingAuditor.T...   INFO This machine has a speed about   3.03 times the speed of a 2.8 GHz Xeon.
 TimingAuditor.T...   INFO Algorithm                              (millisec) |    <user> |   <clock> |      min       max    sigma | entries | total (s) |
 TimingAuditor.T...   INFO ----------------------------------------------------------------------------------------------------------------------
-TimingAuditor.T...   INFO EVENT LOOP                                        |     5.175 |     5.391 |    2.658    9503.3   115.40 |    6815 |    36.746 |
-TimingAuditor.T...   INFO  DaVinciEventSeq                                  |     4.554 |     4.769 |    2.094    9503.3   115.39 |    6815 |    32.505 |
-TimingAuditor.T...   INFO   DaVinciInitAlg                                  |     0.067 |     0.058 |    0.047      12.4     0.16 |    6815 |     0.396 |
-TimingAuditor.T...   INFO   FilteredEventSeq                                |     4.473 |     4.696 |    2.033    9503.2   115.39 |    6815 |    32.008 |
-TimingAuditor.T...   INFO    DaVinciEventInitSeq                            |     2.170 |     2.187 |    1.406      95.8     4.64 |    6815 |    14.908 |
-TimingAuditor.T...   INFO     KillDAQ                                       |     0.007 |     0.007 |    0.005       0.1     0.00 |    6815 |     0.050 |
-TimingAuditor.T...   INFO     UnpackParticlesAndVertices                    |     2.151 |     2.173 |    1.392      95.7     4.64 |    6815 |    14.809 |
-TimingAuditor.T...   INFO    DaVinciAnalysisSeq                             |     2.294 |     2.503 |    0.606    9499.9   115.28 |    6815 |    17.061 |
-TimingAuditor.T...   INFO     DaVinciUserSequence                           |     2.289 |     2.495 |    0.599    9499.9   115.28 |    6815 |    17.010 |
-TimingAuditor.T...   INFO      ExtraHadronSelSeq                            |     1.229 |     1.302 |    0.036    8560.8   103.70 |    6815 |     8.880 |
-TimingAuditor.T...   INFO       SELECT:Hlt2BToHHHGammaEE_Inclusive_Line     |     0.052 |     0.038 |    0.007       3.4     0.05 |    6815 |     0.263 |
-TimingAuditor.T...   INFO       SELECT:Hlt2BToHHHGammaEE_Inclusive_Line/Extr|     0.000 |     0.019 |    0.005       0.6     0.09 |      44 |     0.001 |
-TimingAuditor.T...   INFO       ExtraHadronSel                              |   181.590 |   194.921 |    0.184    8560.5  1290.49 |      44 |     8.577 |
-TimingAuditor.T...   INFO      MyTuple                                      |     0.164 |     0.224 |    0.003     881.0    10.75 |    6815 |     1.532 |
-TimingAuditor.T...   INFO      Hlt2BToHHHGammaEE_Inclusive_Line_ExtraHadron |     0.374 |     0.384 |    0.002     240.0     5.93 |    6815 |     2.621 |
-TimingAuditor.T...   INFO     MonitoringSequence                            |     0.001 |     0.002 |    0.002       2.9     0.04 |    6815 |     0.019 |
-TimingAuditor.T...   INFO   LumiSeq                                         |     0.007 |     0.006 |    0.005       1.7     0.02 |    6815 |     0.048 |
-TimingAuditor.T...   INFO    EventAccount                                   |     0.002 |     0.002 |    0.002       1.7     0.02 |    6815 |     0.019 |
-TimingAuditor.T...   INFO *     HLT2_PsAndVsUnpack                          |     0.058 |     0.059 |    0.003      16.3     0.23 |  117685 |     7.025 |
-TimingAuditor.T...   INFO *       createODIN                                |     0.098 |     0.093 |    0.050       5.5     0.25 |    6773 |     0.635 |
-TimingAuditor.T...   INFO *      UnpackMCParticles                          |     0.030 |     0.036 |    0.026       1.1     0.03 |    9463 |     0.348 |
-TimingAuditor.T...   INFO *      SEQ:MCParticles                            |     0.003 |     0.003 |    0.002       0.4     0.01 |   18838 |     0.057 |
-TimingAuditor.T...   INFO *       UnpackMCParticle                          |     0.000 |     0.067 |    0.051       0.3     0.04 |      44 |     0.003 |
-TimingAuditor.T...   INFO *       LINK:MCParticles2MC                       |     0.227 |     0.041 |    0.036       0.1     0.01 |      44 |     0.002 |
-TimingAuditor.T...   INFO *        LINK:MC2Sim4Particles                    |     0.000 |     0.044 |    0.032       0.2     0.02 |      45 |     0.002 |
+TimingAuditor.T...   INFO EVENT LOOP                                        |     7.944 |     8.003 |    2.291   20479.3   267.78 |    6815 |    54.541 |
+TimingAuditor.T...   INFO  DaVinciEventSeq                                  |     7.310 |     7.373 |    1.694   20478.7   267.78 |    6815 |    50.251 |
+TimingAuditor.T...   INFO   DaVinciInitAlg                                  |     0.054 |     0.053 |    0.048       1.3     0.02 |    6815 |     0.366 |
+TimingAuditor.T...   INFO   FilteredEventSeq                                |     7.248 |     7.305 |    1.631   20478.6   267.78 |    6815 |    49.790 |
+TimingAuditor.T...   INFO    DaVinciEventInitSeq                            |     2.227 |     2.220 |    1.395      48.7     4.62 |    6815 |    15.135 |
+TimingAuditor.T...   INFO     KillDAQ                                       |     0.010 |     0.007 |    0.004       0.0     0.00 |    6815 |     0.049 |
+TimingAuditor.T...   INFO     UnpackParticlesAndVertices                    |     2.209 |     2.207 |    1.385      48.7     4.62 |    6815 |    15.042 |
+TimingAuditor.T...   INFO    DaVinciAnalysisSeq                             |     5.015 |     5.079 |    0.201   20475.4   267.72 |    6815 |    34.620 |
+TimingAuditor.T...   INFO     DaVinciUserSequence                           |     5.012 |     5.073 |    0.194   20475.4   267.72 |    6815 |    34.576 |
+TimingAuditor.T...   INFO      Hlt2BToHHHGammaEE_Inclusive_Line             |     1.278 |     1.313 |    0.003    8316.3   100.74 |    6815 |     8.955 |
+TimingAuditor.T...   INFO      ExtraHadron                                  |     0.010 |     0.014 |    0.002       5.1     0.16 |    6815 |     0.097 |
+TimingAuditor.T...   INFO      ExtraKs0                                     |     3.000 |     3.018 |    0.002   20462.2   247.87 |    6815 |    20.573 |
+TimingAuditor.T...   INFO      ExtraLambda                                  |     0.007 |     0.009 |    0.002      11.5     0.23 |    6815 |     0.064 |
+TimingAuditor.T...   INFO     MonitoringSequence                            |     0.000 |     0.002 |    0.002       0.0     0.00 |    6815 |     0.015 |
+TimingAuditor.T...   INFO   LumiSeq                                         |     0.002 |     0.006 |    0.005       0.0     0.00 |    6815 |     0.043 |
+TimingAuditor.T...   INFO    EventAccount                                   |     0.001 |     0.002 |    0.002       0.0     0.00 |    6815 |     0.016 |
+TimingAuditor.T...   INFO *     HLT2_PsAndVsUnpack                          |     0.043 |     0.045 |    0.003       4.3     0.19 |  154279 |     7.029 |
+TimingAuditor.T...   INFO *      createODIN                                 |     0.091 |     0.095 |    0.040       5.1     0.25 |    6773 |     0.649 |
+TimingAuditor.T...   INFO *      UnpackMCParticles                          |     0.006 |     0.047 |    0.026       0.4     0.05 |    1433 |     0.068 |
+TimingAuditor.T...   INFO *      SEQ:MCParticles                            |     0.003 |     0.004 |    0.002       0.4     0.01 |    2778 |     0.012 |
+TimingAuditor.T...   INFO *       UnpackMCParticle                          |     0.000 |     0.059 |    0.050       0.3     0.04 |      44 |     0.003 |
+TimingAuditor.T...   INFO *       LINK:MCParticles2MC                       |     0.000 |     0.039 |    0.036       0.1     0.01 |      44 |     0.002 |
+TimingAuditor.T...   INFO *        LINK:MC2Sim4Particles                    |     0.000 |     0.039 |    0.034       0.1     0.01 |      45 |     0.002 |
 TimingAuditor.T...   INFO ----------------------------------------------------------------------------------------------------------------------
 NTupleSvc            INFO NTuples saved successfully
+*****Chrono*****     INFO ****************************************************************************************************
+*****Chrono*****     INFO  The Final CPU consumption ( Chrono ) Table (ordered)
+*****Chrono*****     INFO ****************************************************************************************************
+DetailedMateria...   INFO Time User   : Tot= 20.1  [s] Ave/Min/Max=0.249(+- 2.22)/    0/ 20.1  [s] #= 81
+ChronoStatSvc        INFO Time User   : Tot= 38.1  [s]                                             #=  1
+*****Chrono*****     INFO ****************************************************************************************************
+ChronoStatSvc.f...   INFO  Service finalized successfully 
 ApplicationMgr       INFO Application Manager Finalized successfully
 ApplicationMgr      ERROR Application Manager Terminated with error code 2
