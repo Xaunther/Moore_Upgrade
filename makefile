@@ -10,7 +10,7 @@ ROOT=lb-run ROOT/6.18.04 root -l -b -q
 LbLogin8=export BINARY_TAG="x86_64-centos7-gcc8-opt" && export CMTCONFIG="x86_64-centos7-gcc8-opt"
 LbLogin9=export BINARY_TAG="x86_64-centos7-gcc9-opt" && export CMTCONFIG="x86_64-centos7-gcc9-opt"
 #List of MC samples #PhiG excluded as it is buggy
-MC_list=KstG K1G LambdaG
+MC_list=KstG K1G LambdaG XiG OmegaG
 
 #To Run all 4 lines on different samples. Use default config
 default_DST_output_list=$(foreach MC, $(MC_list), output/$(MC)/std_Moore.out)
