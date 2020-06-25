@@ -1,0 +1,2 @@
+OutputStream                           INFO Events output: 312
+2.9M	output/OmegaG/OmegaG.mdst

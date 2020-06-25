@@ -1,0 +1,875 @@
+# setting LC_ALL to "C"
+# --> Including file '/afs/cern.ch/work/a/aalfonso/private/moore_upgrade/DaVinci_Scripts/XiG.py'
+# <-- End of file '/afs/cern.ch/work/a/aalfonso/private/moore_upgrade/DaVinci_Scripts/XiG.py'
+# --> Including file '/afs/cern.ch/work/a/aalfonso/private/moore_upgrade/DaVinci_Scripts/ntuples_HHGamma.py'
+# WARNING: Property Hlt2BToHHGamma_Inclusive_Line.ErrorMax is deprecated:  [[deprecated]] max number of errors [Gaudi::Algorithm] 
+# WARNING: Property ExtraHadron.ErrorMax is deprecated:  [[deprecated]] max number of errors [Gaudi::Algorithm] 
+# WARNING: Property ExtraKs0.ErrorMax is deprecated:  [[deprecated]] max number of errors [Gaudi::Algorithm] 
+# WARNING: Property ExtraLambda.ErrorMax is deprecated:  [[deprecated]] max number of errors [Gaudi::Algorithm] 
+# <-- End of file '/afs/cern.ch/work/a/aalfonso/private/moore_upgrade/DaVinci_Scripts/ntuples_HHGamma.py'
+# applying configuration of RawEventFormatConf
+# /***** User RawEventFormatConf/RawEventFormatConf **************************************************
+# |-RecoDict               = {'Stripping17': 1.0, 'Reco12': 1.0, 'Reco14': 2.0, 'Reco15': 4.2, 'LHCb': 0.1, 'Reconstruction12': 1.0, 'Hlt': 0.1, 'S17': 1.0, 'R14': 2.0, 'Reconstruction14': 2.0, 'Boole': 0.0, 'S20': 2.0, 'S21': 4.0, 'Stripping20': 2.0, 'Moore': 0.3, 'L0': 0.0, 'R12': 1.0, 'Strip20': 2.0, 'Pit': 0.1, 'Strip17': 1.0}
+# |                        (default: None)
+# |-Locations              = {0.0: {'HltSelReports': 'DAQ/RawEvent', 'OTError': 'DAQ/RawEvent', 'VeloError': 'DAQ/RawEvent', 'UTFull': 'DAQ/RawEvent', 'UTPedestal': 'DAQ/RawEvent', 'PrsTrig': 'DAQ/RawEvent', 'HcalPackedError': 'DAQ/RawEvent', 'L0PUFull': 'DAQ/RawEvent', 'HltDecReports': 'DAQ/RawEvent', 'Rich': 'DAQ/RawEvent', 'VeloProcFull': 'DAQ/RawEvent', 'HltRoutingBits': 'DAQ/RawEvent', 'L0MuonError': 'DAQ/RawEvent', 'VL': 'DAQ/RawEvent', 'L0MuonProcCand': 'DAQ/RawEvent', 'TTPedestal': 'DAQ/RawEvent', 'L0DUError': 'DAQ/RawEvent', 'DstBank': 'DAQ/RawEvent', 'TT': 'DAQ/RawEvent', 'L0MuonProcData': 'DAQ/RawEvent', 'OTRaw': 'DAQ/RawEvent', 'EcalPacked': 'DAQ/RawEvent', 'PrsPacked': 'DAQ/RawEvent', 'VeloPedestal': 'DAQ/RawEvent', 'DAQ': 'DAQ/RawEvent', 'ITError': 'DAQ/RawEvent', 'FileID': 'DAQ/RawEvent', 'EcalTrig': 'DAQ/RawEvent', 'FTCluster': 'DAQ/RawEvent', 'L0PUError': 'DAQ/RawEvent', 'L0Calo': 'DAQ/RawEvent', 'VeloFull': 'DAQ/RawEvent', 'L0MuonCtrlAll': 'DAQ/RawEvent', 'HltVertexReports': 'DAQ/RawEvent', 'EcalE': 'DAQ/RawEvent', 'ITProcFull': 'DAQ/RawEvent', 'HltLumiSummary': 'DAQ/RawEvent', 'TestDet': 'DAQ/RawEvent', 'IT': 'DAQ/RawEvent', 'VP': 'DAQ/RawEvent', 'HcalTrig': 'DAQ/RawEvent', 'HcalE': 'DAQ/RawEvent', 'L0PU': 'DAQ/RawEvent', 'DstAddress': 'DAQ/RawEvent', 'UT': 'DAQ/RawEvent', 'TAEHeader': 'DAQ/RawEvent', 'ODIN': 'DAQ/RawEvent', 'PrsE': 'DAQ/RawEvent', 'PrsPackedError': 'DAQ/RawEvent', 'Velo': 'DAQ/RawEvent', 'Muon': 'DAQ/RawEvent', 'ITPedestal': 'DAQ/RawEvent', 'TTProcFull': 'DAQ/RawEvent', 'DstData': 'DAQ/RawEvent', 'GaudiSerialize': 'DAQ/RawEvent', 'TTFull': 'DAQ/RawEvent', 'L0MuonRaw': 'DAQ/RawEvent', 'UTError': 'DAQ/RawEvent', 'TTError': 'DAQ/RawEvent', 'EcalPackedError': 'DAQ/RawEvent', 'HcalPacked': 'DAQ/RawEvent', 'MuonFull': 'DAQ/RawEvent', 'L0CaloError': 'DAQ/RawEvent', 'GaudiHeader': 'DAQ/RawEvent', 'L0DU': 'DAQ/RawEvent', 'ITFull': 'DAQ/RawEvent', 'OT': 'DAQ/RawEvent', 'MuonError': 'DAQ/RawEvent', 'L0CaloFull': 'DAQ/RawEvent', 'L0Muon': 'DAQ/RawEvent'}, 1.0: {'HltSelReports': ['Trigger/RawEvent', 'DAQ/RawEvent'], 'OTError': 'DAQ/RawEvent', 'VeloError': 'DAQ/RawEvent', 'UTFull': 'DAQ/RawEvent', 'UTPedestal': 'DAQ/RawEvent', 'PrsTrig': 'DAQ/RawEvent', 'HcalPackedError': 'DAQ/RawEvent', 'L0PUFull': 'DAQ/RawEvent', 'HltDecReports': ['Trigger/RawEvent', 'DAQ/RawEvent'], 'Rich': 'DAQ/RawEvent', 'VeloProcFull': 'DAQ/RawEvent', 'HltRoutingBits': ['Trigger/RawEvent', 'DAQ/RawEvent'], 'L0MuonError': 'DAQ/RawEvent', 'VL': 'DAQ/RawEvent', 'L0MuonProcCand': ['Trigger/RawEvent', 'DAQ/RawEvent'], 'TTPedestal': 'DAQ/RawEvent', 'L0DUError': 'DAQ/RawEvent', 'DstBank': 'DAQ/RawEvent', 'TT': 'DAQ/RawEvent', 'L0MuonProcData': 'DAQ/RawEvent', 'OTRaw': 'DAQ/RawEvent', 'EcalPacked': 'DAQ/RawEvent', 'PrsPacked': 'DAQ/RawEvent', 'VeloPedestal': 'DAQ/RawEvent', 'DAQ': 'DAQ/RawEvent', 'ITError': 'DAQ/RawEvent', 'FileID': 'DAQ/RawEvent', 'EcalTrig': 'DAQ/RawEvent', 'FTCluster': 'DAQ/RawEvent', 'L0PUError': 'DAQ/RawEvent', 'L0Calo': ['Trigger/RawEvent', 'DAQ/RawEvent'], 'VeloFull': 'DAQ/RawEvent', 'L0MuonCtrlAll': 'DAQ/RawEvent', 'HltVertexReports': ['Trigger/RawEvent', 'DAQ/RawEvent'], 'EcalE': 'DAQ/RawEvent', 'ITProcFull': 'DAQ/RawEvent', 'HltLumiSummary': 'DAQ/RawEvent', 'TestDet': 'DAQ/RawEvent', 'IT': 'DAQ/RawEvent', 'VP': 'DAQ/RawEvent', 'HcalTrig': 'DAQ/RawEvent', 'HcalE': 'DAQ/RawEvent', 'L0PU': ['Trigger/RawEvent', 'DAQ/RawEvent'], 'DstAddress': 'DAQ/RawEvent', 'UT': 'DAQ/RawEvent', 'TAEHeader': 'DAQ/RawEvent', 'ODIN': ['Trigger/RawEvent', 'DAQ/RawEvent'], 'PrsE': 'DAQ/RawEvent', 'PrsPackedError': 'DAQ/RawEvent', 'Velo': 'DAQ/RawEvent', 'Muon': 'DAQ/RawEvent', 'ITPedestal': 'DAQ/RawEvent', 'TTProcFull': 'DAQ/RawEvent', 'DstData': 'DAQ/RawEvent', 'GaudiSerialize': 'DAQ/RawEvent', 'TTFull': 'DAQ/RawEvent', 'L0MuonRaw': 'DAQ/RawEvent', 'UTError': 'DAQ/RawEvent', 'TTError': 'DAQ/RawEvent', 'EcalPackedError': 'DAQ/RawEvent', 'HcalPacked': 'DAQ/RawEvent', 'MuonFull': 'DAQ/RawEvent', 'L0CaloError': 'DAQ/RawEvent', 'GaudiHeader': 'DAQ/RawEvent', 'L0DU': ['Trigger/RawEvent', 'DAQ/RawEvent'], 'ITFull': 'DAQ/RawEvent', 'OT': 'DAQ/RawEvent', 'MuonError': 'DAQ/RawEvent', 'L0CaloFull': ['Trigger/RawEvent', 'DAQ/RawEvent'], 'L0Muon': ['Trigger/RawEvent', 'DAQ/RawEvent']}, 2.0: {'HltSelReports': 'Trigger/RawEvent', 'OTError': 'Other/RawEvent', 'VeloError': 'Other/RawEvent', 'UTFull': 'Other/RawEvent', 'UTPedestal': 'Other/RawEvent', 'PrsTrig': 'Calo/RawEvent', 'HcalPackedError': 'Calo/RawEvent', 'L0PUFull': 'Other/RawEvent', 'HltDecReports': 'Trigger/RawEvent', 'Rich': 'Rich/RawEvent', 'VeloProcFull': 'Other/RawEvent', 'HltRoutingBits': 'Trigger/RawEvent', 'L0MuonError': 'Other/RawEvent', 'VL': 'Other/RawEvent', 'L0MuonProcCand': 'Trigger/RawEvent', 'TTPedestal': 'Other/RawEvent', 'L0DUError': 'Other/RawEvent', 'DstBank': 'Other/RawEvent', 'TT': 'Other/RawEvent', 'L0MuonProcData': 'Other/RawEvent', 'OTRaw': 'Other/RawEvent', 'EcalPacked': 'Calo/RawEvent', 'PrsPacked': 'Calo/RawEvent', 'VeloPedestal': 'Other/RawEvent', 'DAQ': 'Other/RawEvent', 'ITError': 'Other/RawEvent', 'FileID': 'Other/RawEvent', 'EcalTrig': 'Calo/RawEvent', 'FTCluster': 'Other/RawEvent', 'L0PUError': 'Other/RawEvent', 'L0Calo': 'Trigger/RawEvent', 'VeloFull': 'Other/RawEvent', 'L0MuonCtrlAll': 'Other/RawEvent', 'HltVertexReports': 'Trigger/RawEvent', 'EcalE': 'Calo/RawEvent', 'ITProcFull': 'Other/RawEvent', 'HltLumiSummary': 'Other/RawEvent', 'TestDet': 'Other/RawEvent', 'IT': 'Other/RawEvent', 'VP': 'Other/RawEvent', 'HcalTrig': 'Calo/RawEvent', 'HcalE': 'Calo/RawEvent', 'L0PU': 'Trigger/RawEvent', 'DstAddress': 'Other/RawEvent', 'UT': 'Other/RawEvent', 'TAEHeader': 'Other/RawEvent', 'ODIN': 'Trigger/RawEvent', 'PrsE': 'Calo/RawEvent', 'PrsPackedError': 'Calo/RawEvent', 'Velo': 'Other/RawEvent', 'Muon': 'Muon/RawEvent', 'ITPedestal': 'Other/RawEvent', 'TTProcFull': 'Other/RawEvent', 'DstData': 'Other/RawEvent', 'GaudiSerialize': 'Other/RawEvent', 'TTFull': 'Other/RawEvent', 'L0MuonRaw': 'Other/RawEvent', 'UTError': 'Other/RawEvent', 'TTError': 'Other/RawEvent', 'EcalPackedError': 'Calo/RawEvent', 'HcalPacked': 'Calo/RawEvent', 'MuonFull': 'Other/RawEvent', 'L0CaloError': 'Other/RawEvent', 'GaudiHeader': 'Other/RawEvent', 'L0DU': 'Trigger/RawEvent', 'ITFull': 'Other/RawEvent', 'OT': 'Other/RawEvent', 'MuonError': 'Other/RawEvent', 'L0CaloFull': 'Trigger/RawEvent', 'L0Muon': 'Trigger/RawEvent'}, 3.0: {'HltSelReports': 'Trigger/#TCK#/RawEvent', 'OTError': 'DAQ/RawEvent', 'VeloError': 'DAQ/RawEvent', 'UTFull': 'DAQ/RawEvent', 'UTPedestal': 'DAQ/RawEvent', 'PrsTrig': 'DAQ/RawEvent', 'HcalPackedError': 'DAQ/RawEvent', 'L0PUFull': 'DAQ/RawEvent', 'HltDecReports': 'Trigger/#TCK#/RawEvent', 'Rich': 'DAQ/RawEvent', 'VeloProcFull': 'DAQ/RawEvent', 'HltRoutingBits': 'Trigger/#TCK#/RawEvent', 'L0MuonError': 'DAQ/RawEvent', 'VL': 'DAQ/RawEvent', 'L0MuonProcCand': 'Trigger/#TCK#/RawEvent', 'TTPedestal': 'DAQ/RawEvent', 'L0DUError': 'DAQ/RawEvent', 'DstBank': 'DAQ/RawEvent', 'TT': 'DAQ/RawEvent', 'L0MuonProcData': 'DAQ/RawEvent', 'OTRaw': 'DAQ/RawEvent', 'EcalPacked': 'DAQ/RawEvent', 'PrsPacked': 'DAQ/RawEvent', 'VeloPedestal': 'DAQ/RawEvent', 'DAQ': 'DAQ/RawEvent', 'ITError': 'DAQ/RawEvent', 'FileID': 'DAQ/RawEvent', 'EcalTrig': 'DAQ/RawEvent', 'FTCluster': 'DAQ/RawEvent', 'L0PUError': 'DAQ/RawEvent', 'L0Calo': 'Trigger/#TCK#/RawEvent', 'VeloFull': 'DAQ/RawEvent', 'L0MuonCtrlAll': 'DAQ/RawEvent', 'HltVertexReports': 'Trigger/#TCK#/RawEvent', 'EcalE': 'DAQ/RawEvent', 'ITProcFull': 'DAQ/RawEvent', 'HltLumiSummary': 'DAQ/RawEvent', 'TestDet': 'DAQ/RawEvent', 'IT': 'DAQ/RawEvent', 'VP': 'DAQ/RawEvent', 'HcalTrig': 'DAQ/RawEvent', 'HcalE': 'DAQ/RawEvent', 'L0PU': 'Trigger/#TCK#/RawEvent', 'DstAddress': 'DAQ/RawEvent', 'UT': 'DAQ/RawEvent', 'TAEHeader': 'DAQ/RawEvent', 'ODIN': 'DAQ/RawEvent', 'PrsE': 'DAQ/RawEvent', 'PrsPackedError': 'DAQ/RawEvent', 'Velo': 'DAQ/RawEvent', 'Muon': 'DAQ/RawEvent', 'ITPedestal': 'DAQ/RawEvent', 'TTProcFull': 'DAQ/RawEvent', 'DstData': 'DAQ/RawEvent', 'GaudiSerialize': 'DAQ/RawEvent', 'TTFull': 'DAQ/RawEvent', 'L0MuonRaw': 'DAQ/RawEvent', 'UTError': 'DAQ/RawEvent', 'TTError': 'DAQ/RawEvent', 'EcalPackedError': 'DAQ/RawEvent', 'HcalPacked': 'DAQ/RawEvent', 'MuonFull': 'DAQ/RawEvent', 'L0CaloError': 'DAQ/RawEvent', 'GaudiHeader': 'DAQ/RawEvent', 'L0DU': 'Trigger/#TCK#/RawEvent', 'ITFull': 'DAQ/RawEvent', 'OT': 'DAQ/RawEvent', 'MuonError': 'DAQ/RawEvent', 'L0CaloFull': 'Trigger/#TCK#/RawEvent', 'L0Muon': 'Trigger/#TCK#/RawEvent'}, 4.0: {'HltSelReports': 'Trigger/RawEvent', 'OTError': 'Unstripped/RawEvent', 'VeloError': 'Unstripped/RawEvent', 'UTFull': 'Unstripped/RawEvent', 'UTPedestal': 'Unstripped/RawEvent', 'PrsTrig': 'Calo/RawEvent', 'HcalPackedError': 'Unstripped/RawEvent', 'L0PUFull': 'Unstripped/RawEvent', 'HltDecReports': 'Trigger/RawEvent', 'Rich': 'Rich/RawEvent', 'VeloProcFull': 'Unstripped/RawEvent', 'HltRoutingBits': 'Trigger/RawEvent', 'L0MuonError': 'Unstripped/RawEvent', 'VL': 'Unstripped/RawEvent', 'L0MuonProcCand': 'Trigger/RawEvent', 'TTPedestal': 'Unstripped/RawEvent', 'L0DUError': 'Unstripped/RawEvent', 'DstBank': 'Unstripped/RawEvent', 'TT': 'Tracker/RawEvent', 'L0MuonProcData': 'Unstripped/RawEvent', 'OTRaw': 'Unstripped/RawEvent', 'EcalPacked': 'Calo/RawEvent', 'PrsPacked': 'Calo/RawEvent', 'VeloPedestal': 'Unstripped/RawEvent', 'DAQ': 'Unstripped/RawEvent', 'ITError': 'Unstripped/RawEvent', 'FileID': 'Unstripped/RawEvent', 'EcalTrig': 'Calo/RawEvent', 'FTCluster': 'Tracker/RawEvent', 'L0PUError': 'Unstripped/RawEvent', 'L0Calo': 'Trigger/RawEvent', 'VeloFull': 'Unstripped/RawEvent', 'L0MuonCtrlAll': 'Unstripped/RawEvent', 'HltVertexReports': 'Trigger/RawEvent', 'EcalE': 'Calo/RawEvent', 'ITProcFull': 'Unstripped/RawEvent', 'HltLumiSummary': 'Unstripped/RawEvent', 'TestDet': 'Unstripped/RawEvent', 'IT': 'Tracker/RawEvent', 'VP': 'Velo/RawEvent', 'HcalTrig': 'Calo/RawEvent', 'HcalE': 'Calo/RawEvent', 'L0PU': 'Trigger/RawEvent', 'DstAddress': 'Unstripped/RawEvent', 'UT': 'Tracker/RawEvent', 'TAEHeader': 'Unstripped/RawEvent', 'ODIN': ['Trigger/RawEvent'], 'PrsE': 'Calo/RawEvent', 'PrsPackedError': 'Unstripped/RawEvent', 'Velo': 'Velo/RawEvent', 'Muon': 'Muon/RawEvent', 'ITPedestal': 'Unstripped/RawEvent', 'TTProcFull': 'Unstripped/RawEvent', 'DstData': 'Unstripped/RawEvent', 'GaudiSerialize': 'Unstripped/RawEvent', 'TTFull': 'Unstripped/RawEvent', 'L0MuonRaw': 'Unstripped/RawEvent', 'UTError': 'Unstripped/RawEvent', 'TTError': 'Unstripped/RawEvent', 'EcalPackedError': 'Unstripped/RawEvent', 'HcalPacked': 'Calo/RawEvent', 'MuonFull': 'Unstripped/RawEvent', 'L0CaloError': 'Unstripped/RawEvent', 'GaudiHeader': 'Unstripped/RawEvent', 'L0DU': 'Trigger/RawEvent', 'ITFull': 'Unstripped/RawEvent', 'OT': 'Tracker/RawEvent', 'MuonError': 'Unstripped/RawEvent', 'HltTrackReports': 'Trigger/RawEvent', 'L0CaloFull': 'Trigger/RawEvent', 'L0Muon': 'Trigger/RawEvent'}, 0.2: {'HltRoutingBits': 'DAQ/RawEvent', 'L0PUFull': 'DAQ/RawEvent', 'HltDecReports': 'DAQ/RawEvent', 'HltSelReports': 'DAQ/RawEvent', 'L0MuonError': 'DAQ/RawEvent', 'DstBank': 'DAQ/RawEvent', 'L0MuonProcCand': 'DAQ/RawEvent', 'L0CaloError': 'DAQ/RawEvent', 'TAEHeader': 'DAQ/RawEvent', 'L0MuonProcData': 'DAQ/RawEvent', 'DAQ': 'DAQ/RawEvent', 'DstAddress': 'DAQ/RawEvent', 'L0PUError': 'DAQ/RawEvent', 'L0Calo': 'DAQ/RawEvent', 'L0MuonCtrlAll': 'DAQ/RawEvent', 'HltVertexReports': 'DAQ/RawEvent', 'HltLumiSummary': 'DAQ/RawEvent', 'TestDet': 'DAQ/RawEvent', 'L0PU': 'DAQ/RawEvent', 'L0DUError': 'DAQ/RawEvent', 'ODIN': 'DAQ/RawEvent', 'FileID': 'DAQ/RawEvent', 'DstData': 'DAQ/RawEvent', 'GaudiSerialize': 'DAQ/RawEvent', 'L0MuonRaw': 'DAQ/RawEvent', 'GaudiHeader': 'DAQ/RawEvent', 'L0DU': 'DAQ/RawEvent', 'L0CaloFull': 'DAQ/RawEvent', 'L0Muon': 'DAQ/RawEvent'}, 0.1: {'HltSelReports': 'DAQ/RawEvent', 'OTError': 'DAQ/RawEvent', 'VeloError': 'DAQ/RawEvent', 'UTFull': 'DAQ/RawEvent', 'UTPedestal': 'DAQ/RawEvent', 'PrsTrig': 'DAQ/RawEvent', 'HcalPackedError': 'DAQ/RawEvent', 'L0PUFull': 'DAQ/RawEvent', 'HltDecReports': 'DAQ/RawEvent', 'Rich': 'DAQ/RawEvent', 'VeloProcFull': 'DAQ/RawEvent', 'HltRoutingBits': 'DAQ/RawEvent', 'L0MuonError': 'DAQ/RawEvent', 'VL': 'DAQ/RawEvent', 'L0MuonProcCand': 'DAQ/RawEvent', 'TTPedestal': 'DAQ/RawEvent', 'L0DUError': 'DAQ/RawEvent', 'DstBank': 'DAQ/RawEvent', 'TT': 'DAQ/RawEvent', 'L0MuonProcData': 'DAQ/RawEvent', 'OTRaw': 'DAQ/RawEvent', 'EcalPacked': 'DAQ/RawEvent', 'PrsPacked': 'DAQ/RawEvent', 'VeloPedestal': 'DAQ/RawEvent', 'DAQ': 'DAQ/RawEvent', 'ITError': 'DAQ/RawEvent', 'FileID': 'DAQ/RawEvent', 'EcalTrig': 'DAQ/RawEvent', 'FTCluster': 'DAQ/RawEvent', 'L0PUError': 'DAQ/RawEvent', 'L0Calo': 'DAQ/RawEvent', 'VeloFull': 'DAQ/RawEvent', 'L0MuonCtrlAll': 'DAQ/RawEvent', 'HltVertexReports': 'DAQ/RawEvent', 'EcalE': 'DAQ/RawEvent', 'ITProcFull': 'DAQ/RawEvent', 'HltLumiSummary': 'DAQ/RawEvent', 'TestDet': 'DAQ/RawEvent', 'IT': 'DAQ/RawEvent', 'VP': 'DAQ/RawEvent', 'HcalTrig': 'DAQ/RawEvent', 'HcalE': 'DAQ/RawEvent', 'L0PU': 'DAQ/RawEvent', 'DstAddress': 'DAQ/RawEvent', 'UT': 'DAQ/RawEvent', 'TAEHeader': 'DAQ/RawEvent', 'ODIN': 'DAQ/RawEvent', 'PrsE': 'DAQ/RawEvent', 'PrsPackedError': 'DAQ/RawEvent', 'Velo': 'DAQ/RawEvent', 'Muon': 'DAQ/RawEvent', 'ITPedestal': 'DAQ/RawEvent', 'TTProcFull': 'DAQ/RawEvent', 'DstData': 'DAQ/RawEvent', 'GaudiSerialize': 'DAQ/RawEvent', 'TTFull': 'DAQ/RawEvent', 'L0MuonRaw': 'DAQ/RawEvent', 'UTError': 'DAQ/RawEvent', 'TTError': 'DAQ/RawEvent', 'EcalPackedError': 'DAQ/RawEvent', 'HcalPacked': 'DAQ/RawEvent', 'MuonFull': 'DAQ/RawEvent', 'L0CaloError': 'DAQ/RawEvent', 'GaudiHeader': 'DAQ/RawEvent', 'L0DU': 'DAQ/RawEvent', 'ITFull': 'DAQ/RawEvent', 'OT': 'DAQ/RawEvent', 'MuonError': 'DAQ/RawEvent', 'HltTrackReports': 'DAQ/RawEvent', 'L0CaloFull': 'DAQ/RawEvent', 'L0Muon': 'DAQ/RawEvent'}, 2.2: {'HltSelReports': 'Trigger/RawEvent', 'OTError': 'Other/RawEvent', 'VeloError': 'Other/RawEvent', 'UTFull': 'Other/RawEvent', 'UTPedestal': 'Other/RawEvent', 'PrsTrig': 'Calo/RawEvent', 'HcalPackedError': 'Calo/RawEvent', 'L0PUFull': 'Other/RawEvent', 'HltDecReports': 'Trigger/RawEvent', 'Rich': 'Rich/RawEvent', 'VeloProcFull': 'Other/RawEvent', 'HltRoutingBits': 'Trigger/RawEvent', 'L0MuonError': 'Other/RawEvent', 'VL': 'Other/RawEvent', 'L0MuonProcCand': 'Trigger/RawEvent', 'TTPedestal': 'Other/RawEvent', 'L0DUError': 'Other/RawEvent', 'HC': 'Other/RawEvent', 'DstBank': 'Other/RawEvent', 'TT': 'Other/RawEvent', 'L0MuonProcData': 'Other/RawEvent', 'OTRaw': 'Other/RawEvent', 'EcalPacked': 'Calo/RawEvent', 'PrsPacked': 'Calo/RawEvent', 'VeloPedestal': 'Other/RawEvent', 'DAQ': 'Other/RawEvent', 'ITError': 'Other/RawEvent', 'FileID': 'Other/RawEvent', 'EcalTrig': 'Calo/RawEvent', 'FTCluster': 'Other/RawEvent', 'L0PUError': 'Other/RawEvent', 'L0Calo': 'Trigger/RawEvent', 'VeloFull': 'Other/RawEvent', 'L0MuonCtrlAll': 'Other/RawEvent', 'HltVertexReports': 'Trigger/RawEvent', 'EcalE': 'Calo/RawEvent', 'ITProcFull': 'Other/RawEvent', 'HltLumiSummary': 'Other/RawEvent', 'TestDet': 'Other/RawEvent', 'IT': 'Other/RawEvent', 'VP': 'Other/RawEvent', 'HcalTrig': 'Calo/RawEvent', 'HcalE': 'Calo/RawEvent', 'L0PU': 'Trigger/RawEvent', 'DstAddress': 'Other/RawEvent', 'UT': 'Other/RawEvent', 'TAEHeader': 'Other/RawEvent', 'ODIN': 'Trigger/RawEvent', 'PrsE': 'Calo/RawEvent', 'PrsPackedError': 'Calo/RawEvent', 'Velo': 'Other/RawEvent', 'Muon': 'Muon/RawEvent', 'ITPedestal': 'Other/RawEvent', 'TTProcFull': 'Other/RawEvent', 'DstData': 'Other/RawEvent', 'GaudiSerialize': 'Other/RawEvent', 'TTFull': 'Other/RawEvent', 'L0MuonRaw': 'Other/RawEvent', 'UTError': 'Other/RawEvent', 'TTError': 'Other/RawEvent', 'EcalPackedError': 'Calo/RawEvent', 'HcalPacked': 'Calo/RawEvent', 'MuonFull': 'Other/RawEvent', 'L0CaloError': 'Other/RawEvent', 'GaudiHeader': 'Other/RawEvent', 'L0DU': 'Trigger/RawEvent', 'ITFull': 'Other/RawEvent', 'OT': 'Other/RawEvent', 'MuonError': 'Other/RawEvent', 'HltTrackReports': 'Trigger/RawEvent', 'L0CaloFull': 'Trigger/RawEvent', 'L0Muon': 'Trigger/RawEvent'}, 3.1: {'HltSelReports': 'Trigger/#TCK#/RawEvent', 'OTError': 'Other/RawEvent', 'VeloError': 'Other/RawEvent', 'UTFull': 'Other/RawEvent', 'UTPedestal': 'Other/RawEvent', 'PrsTrig': 'Calo/RawEvent', 'HcalPackedError': 'Calo/RawEvent', 'L0PUFull': 'Other/RawEvent', 'HltDecReports': 'Trigger/#TCK#/RawEvent', 'Rich': 'Rich/RawEvent', 'VeloProcFull': 'Other/RawEvent', 'HltRoutingBits': 'Trigger/#TCK#/RawEvent', 'L0MuonError': 'Other/RawEvent', 'VL': 'Other/RawEvent', 'L0MuonProcCand': 'Trigger/#TCK#/RawEvent', 'TTPedestal': 'Other/RawEvent', 'L0DUError': 'Other/RawEvent', 'DstBank': 'Other/RawEvent', 'TT': 'Other/RawEvent', 'L0MuonProcData': 'Other/RawEvent', 'OTRaw': 'Other/RawEvent', 'EcalPacked': 'Calo/RawEvent', 'PrsPacked': 'Calo/RawEvent', 'VeloPedestal': 'Other/RawEvent', 'DAQ': 'Other/RawEvent', 'ITError': 'Other/RawEvent', 'FileID': 'Other/RawEvent', 'EcalTrig': 'Calo/RawEvent', 'FTCluster': 'Other/RawEvent', 'L0PUError': 'Other/RawEvent', 'L0Calo': 'Trigger/#TCK#/RawEvent', 'VeloFull': 'Other/RawEvent', 'L0MuonCtrlAll': 'Other/RawEvent', 'HltVertexReports': 'Trigger/#TCK#/RawEvent', 'EcalE': 'Calo/RawEvent', 'ITProcFull': 'Other/RawEvent', 'HltLumiSummary': 'Other/RawEvent', 'TestDet': 'Other/RawEvent', 'IT': 'Other/RawEvent', 'VP': 'Other/RawEvent', 'HcalTrig': 'Calo/RawEvent', 'HcalE': 'Calo/RawEvent', 'L0PU': 'Trigger/#TCK#/RawEvent', 'DstAddress': 'Other/RawEvent', 'UT': 'Other/RawEvent', 'TAEHeader': 'Other/RawEvent', 'ODIN': 'Trigger/#TCK#/RawEvent', 'PrsE': 'Calo/RawEvent', 'PrsPackedError': 'Calo/RawEvent', 'Velo': 'Other/RawEvent', 'Muon': 'Muon/RawEvent', 'ITPedestal': 'Other/RawEvent', 'TTProcFull': 'Other/RawEvent', 'DstData': 'Other/RawEvent', 'GaudiSerialize': 'Other/RawEvent', 'TTFull': 'Other/RawEvent', 'L0MuonRaw': 'Other/RawEvent', 'UTError': 'Other/RawEvent', 'TTError': 'Other/RawEvent', 'EcalPackedError': 'Calo/RawEvent', 'HcalPacked': 'Calo/RawEvent', 'MuonFull': 'Other/RawEvent', 'L0CaloError': 'Other/RawEvent', 'GaudiHeader': 'Other/RawEvent', 'L0DU': 'Trigger/#TCK#/RawEvent', 'ITFull': 'Other/RawEvent', 'OT': 'Other/RawEvent', 'MuonError': 'Other/RawEvent', 'L0CaloFull': 'Trigger/#TCK#/RawEvent', 'L0Muon': 'Trigger/#TCK#/RawEvent'}, 0.3: {'HltSelReports': 'DAQ/RawEvent', 'OTError': 'DAQ/RawEvent', 'VeloError': 'DAQ/RawEvent', 'UTFull': 'DAQ/RawEvent', 'UTPedestal': 'DAQ/RawEvent', 'PrsTrig': 'DAQ/RawEvent', 'HcalPackedError': 'DAQ/RawEvent', 'L0PUFull': 'DAQ/RawEvent', 'HltDecReports': 'DAQ/RawEvent', 'Rich': 'DAQ/RawEvent', 'VeloProcFull': 'DAQ/RawEvent', 'HltRoutingBits': 'DAQ/RawEvent', 'L0MuonError': 'DAQ/RawEvent', 'VL': 'DAQ/RawEvent', 'L0MuonProcCand': 'DAQ/RawEvent', 'TTPedestal': 'DAQ/RawEvent', 'L0DUError': 'DAQ/RawEvent', 'HC': 'DAQ/RawEvent', 'DstBank': 'DAQ/RawEvent', 'TT': 'DAQ/RawEvent', 'L0MuonProcData': 'DAQ/RawEvent', 'OTRaw': 'DAQ/RawEvent', 'EcalPacked': 'DAQ/RawEvent', 'PrsPacked': 'DAQ/RawEvent', 'VeloPedestal': 'DAQ/RawEvent', 'DAQ': 'DAQ/RawEvent', 'ITError': 'DAQ/RawEvent', 'FileID': 'DAQ/RawEvent', 'EcalTrig': 'DAQ/RawEvent', 'FTCluster': 'DAQ/RawEvent', 'L0PUError': 'DAQ/RawEvent', 'L0Calo': 'DAQ/RawEvent', 'VeloFull': 'DAQ/RawEvent', 'L0MuonCtrlAll': 'DAQ/RawEvent', 'HltVertexReports': 'DAQ/RawEvent', 'EcalE': 'DAQ/RawEvent', 'ITProcFull': 'DAQ/RawEvent', 'HltLumiSummary': 'DAQ/RawEvent', 'TestDet': 'DAQ/RawEvent', 'IT': 'DAQ/RawEvent', 'VP': 'DAQ/RawEvent', 'HcalTrig': 'DAQ/RawEvent', 'HcalE': 'DAQ/RawEvent', 'L0PU': 'DAQ/RawEvent', 'DstAddress': 'DAQ/RawEvent', 'UT': 'DAQ/RawEvent', 'TAEHeader': 'DAQ/RawEvent', 'ODIN': 'DAQ/RawEvent', 'PrsE': 'DAQ/RawEvent', 'PrsPackedError': 'DAQ/RawEvent', 'Velo': 'DAQ/RawEvent', 'Muon': 'DAQ/RawEvent', 'ITPedestal': 'DAQ/RawEvent', 'TTProcFull': 'DAQ/RawEvent', 'DstData': 'DAQ/RawEvent', 'GaudiSerialize': 'DAQ/RawEvent', 'TTFull': 'DAQ/RawEvent', 'L0MuonRaw': 'DAQ/RawEvent', 'UTError': 'DAQ/RawEvent', 'TTError': 'DAQ/RawEvent', 'EcalPackedError': 'DAQ/RawEvent', 'HcalPacked': 'DAQ/RawEvent', 'MuonFull': 'DAQ/RawEvent', 'L0CaloError': 'DAQ/RawEvent', 'GaudiHeader': 'DAQ/RawEvent', 'L0DU': 'DAQ/RawEvent', 'ITFull': 'DAQ/RawEvent', 'OT': 'DAQ/RawEvent', 'MuonError': 'DAQ/RawEvent', 'HltTrackReports': 'DAQ/RawEvent', 'L0CaloFull': 'DAQ/RawEvent', 'L0Muon': 'DAQ/RawEvent'}, 0.4: {'HltRoutingBits': 'DAQ/RawEvent', 'L0PUFull': 'DAQ/RawEvent', 'HltDecReports': 'DAQ/RawEvent', 'HC': 'DAQ/RawEvent', 'HltSelReports': 'DAQ/RawEvent', 'L0MuonError': 'DAQ/RawEvent', 'DstBank': 'DAQ/RawEvent', 'L0MuonProcCand': 'DAQ/RawEvent', 'L0CaloError': 'DAQ/RawEvent', 'TAEHeader': 'DAQ/RawEvent', 'L0MuonProcData': 'DAQ/RawEvent', 'DAQ': 'DAQ/RawEvent', 'DstAddress': 'DAQ/RawEvent', 'L0PUError': 'DAQ/RawEvent', 'L0Calo': 'DAQ/RawEvent', 'L0MuonCtrlAll': 'DAQ/RawEvent', 'HltVertexReports': 'DAQ/RawEvent', 'HltLumiSummary': 'DAQ/RawEvent', 'TestDet': 'DAQ/RawEvent', 'L0PU': 'DAQ/RawEvent', 'L0DUError': 'DAQ/RawEvent', 'ODIN': 'DAQ/RawEvent', 'FileID': 'DAQ/RawEvent', 'DstData': 'DAQ/RawEvent', 'GaudiSerialize': 'DAQ/RawEvent', 'L0MuonRaw': 'DAQ/RawEvent', 'GaudiHeader': 'DAQ/RawEvent', 'L0DU': 'DAQ/RawEvent', 'L0CaloFull': 'DAQ/RawEvent', 'L0Muon': 'DAQ/RawEvent'}, 4.3: {'HltSelReports': 'Trigger/RawEvent', 'OTError': 'Unstripped/RawEvent', 'VeloError': 'Unstripped/RawEvent', 'UTFull': 'Unstripped/RawEvent', 'UTPedestal': 'Unstripped/RawEvent', 'PrsTrig': 'Calo/RawEvent', 'HcalPackedError': 'Unstripped/RawEvent', 'L0PUFull': 'Unstripped/RawEvent', 'HltDecReports': 'Trigger/RawEvent', 'Rich': 'Rich/RawEvent', 'VeloProcFull': 'Unstripped/RawEvent', 'HltRoutingBits': 'Trigger/RawEvent', 'L0MuonError': 'Unstripped/RawEvent', 'VL': 'Unstripped/RawEvent', 'L0MuonProcCand': 'Trigger/RawEvent', 'TTPedestal': 'Unstripped/RawEvent', 'L0DUError': 'Unstripped/RawEvent', 'HC': 'HC/RawEvent', 'DstBank': 'Unstripped/RawEvent', 'TT': 'Tracker/RawEvent', 'L0MuonProcData': 'Unstripped/RawEvent', 'OTRaw': 'Unstripped/RawEvent', 'EcalPacked': 'Calo/RawEvent', 'PrsPacked': 'Calo/RawEvent', 'VeloPedestal': 'Unstripped/RawEvent', 'DAQ': 'Unstripped/RawEvent', 'ITError': 'Tracker/RawEvent', 'FileID': 'Unstripped/RawEvent', 'EcalTrig': 'Calo/RawEvent', 'FTCluster': 'Tracker/RawEvent', 'L0PUError': 'Unstripped/RawEvent', 'L0Calo': 'Trigger/RawEvent', 'VeloFull': 'Unstripped/RawEvent', 'L0MuonCtrlAll': 'Unstripped/RawEvent', 'HltVertexReports': 'Trigger/RawEvent', 'EcalE': 'Calo/RawEvent', 'ITProcFull': 'Unstripped/RawEvent', 'HltLumiSummary': 'Unstripped/RawEvent', 'TestDet': 'Unstripped/RawEvent', 'IT': 'Tracker/RawEvent', 'VP': 'Velo/RawEvent', 'HcalTrig': 'Calo/RawEvent', 'HcalE': 'Calo/RawEvent', 'L0PU': 'Trigger/RawEvent', 'DstAddress': 'Unstripped/RawEvent', 'UT': 'Tracker/RawEvent', 'TAEHeader': 'Unstripped/RawEvent', 'ODIN': ['Trigger/RawEvent'], 'PrsE': 'Calo/RawEvent', 'PrsPackedError': 'Unstripped/RawEvent', 'Velo': 'Velo/RawEvent', 'Muon': 'Muon/RawEvent', 'ITPedestal': 'Unstripped/RawEvent', 'TTProcFull': 'Unstripped/RawEvent', 'DstData': 'PersistReco/RawEvent', 'GaudiSerialize': 'Unstripped/RawEvent', 'TTFull': 'Unstripped/RawEvent', 'L0MuonRaw': 'Unstripped/RawEvent', 'UTError': 'Unstripped/RawEvent', 'TTError': 'Tracker/RawEvent', 'EcalPackedError': 'Unstripped/RawEvent', 'HcalPacked': 'Calo/RawEvent', 'MuonFull': 'Unstripped/RawEvent', 'L0CaloError': 'Unstripped/RawEvent', 'GaudiHeader': 'Unstripped/RawEvent', 'L0DU': 'Trigger/RawEvent', 'ITFull': 'Unstripped/RawEvent', 'OT': 'Tracker/RawEvent', 'MuonError': 'Unstripped/RawEvent', 'HltTrackReports': 'Trigger/RawEvent', 'L0CaloFull': 'Trigger/RawEvent', 'L0Muon': 'Trigger/RawEvent'}, 2.1: {'HltSelReports': 'Trigger/RawEvent', 'OTError': 'Other/RawEvent', 'VeloError': 'Other/RawEvent', 'UTFull': 'Other/RawEvent', 'UTPedestal': 'Other/RawEvent', 'PrsTrig': 'Calo/RawEvent', 'HcalPackedError': 'Calo/RawEvent', 'L0PUFull': 'Other/RawEvent', 'HltDecReports': 'Trigger/RawEvent', 'Rich': 'Rich/RawEvent', 'VeloProcFull': 'Other/RawEvent', 'HltRoutingBits': 'Trigger/RawEvent', 'L0MuonError': 'Other/RawEvent', 'VL': 'Other/RawEvent', 'L0MuonProcCand': 'Trigger/RawEvent', 'TTPedestal': 'Other/RawEvent', 'L0DUError': 'Other/RawEvent', 'DstBank': 'Other/RawEvent', 'TT': 'Other/RawEvent', 'L0MuonProcData': 'Other/RawEvent', 'OTRaw': 'Other/RawEvent', 'EcalPacked': 'Calo/RawEvent', 'PrsPacked': 'Calo/RawEvent', 'VeloPedestal': 'Other/RawEvent', 'DAQ': 'Other/RawEvent', 'ITError': 'Other/RawEvent', 'FileID': 'Other/RawEvent', 'EcalTrig': 'Calo/RawEvent', 'FTCluster': 'Other/RawEvent', 'L0PUError': 'Other/RawEvent', 'L0Calo': 'Trigger/RawEvent', 'VeloFull': 'Other/RawEvent', 'L0MuonCtrlAll': 'Other/RawEvent', 'HltVertexReports': 'Trigger/RawEvent', 'EcalE': 'Calo/RawEvent', 'ITProcFull': 'Other/RawEvent', 'HltLumiSummary': 'Other/RawEvent', 'TestDet': 'Other/RawEvent', 'IT': 'Other/RawEvent', 'VP': 'Other/RawEvent', 'HcalTrig': 'Calo/RawEvent', 'HcalE': 'Calo/RawEvent', 'L0PU': 'Trigger/RawEvent', 'DstAddress': 'Other/RawEvent', 'UT': 'Other/RawEvent', 'TAEHeader': 'Other/RawEvent', 'ODIN': 'Trigger/RawEvent', 'PrsE': 'Calo/RawEvent', 'PrsPackedError': 'Calo/RawEvent', 'Velo': 'Other/RawEvent', 'Muon': 'Muon/RawEvent', 'ITPedestal': 'Other/RawEvent', 'TTProcFull': 'Other/RawEvent', 'DstData': 'Other/RawEvent', 'GaudiSerialize': 'Other/RawEvent', 'TTFull': 'Other/RawEvent', 'L0MuonRaw': 'Other/RawEvent', 'UTError': 'Other/RawEvent', 'TTError': 'Other/RawEvent', 'EcalPackedError': 'Calo/RawEvent', 'HcalPacked': 'Calo/RawEvent', 'MuonFull': 'Other/RawEvent', 'L0CaloError': 'Other/RawEvent', 'GaudiHeader': 'Other/RawEvent', 'L0DU': 'Trigger/RawEvent', 'ITFull': 'Other/RawEvent', 'OT': 'Other/RawEvent', 'MuonError': 'Other/RawEvent', 'HltTrackReports': 'Trigger/RawEvent', 'L0CaloFull': 'Trigger/RawEvent', 'L0Muon': 'Trigger/RawEvent'}, 4.1: {'HltSelReports': 'Trigger/RawEvent', 'OTError': 'Unstripped/RawEvent', 'VeloError': 'Unstripped/RawEvent', 'UTFull': 'Unstripped/RawEvent', 'UTPedestal': 'Unstripped/RawEvent', 'PrsTrig': 'Calo/RawEvent', 'HcalPackedError': 'Unstripped/RawEvent', 'L0PUFull': 'Unstripped/RawEvent', 'HltDecReports': 'Trigger/RawEvent', 'Rich': 'Rich/RawEvent', 'VeloProcFull': 'Unstripped/RawEvent', 'HltRoutingBits': 'Trigger/RawEvent', 'L0MuonError': 'Unstripped/RawEvent', 'VL': 'Unstripped/RawEvent', 'L0MuonProcCand': 'Trigger/RawEvent', 'TTPedestal': 'Unstripped/RawEvent', 'L0DUError': 'Unstripped/RawEvent', 'HC': 'HC/RawEvent', 'DstBank': 'Unstripped/RawEvent', 'TT': 'Tracker/RawEvent', 'L0MuonProcData': 'Unstripped/RawEvent', 'OTRaw': 'Unstripped/RawEvent', 'EcalPacked': 'Calo/RawEvent', 'PrsPacked': 'Calo/RawEvent', 'VeloPedestal': 'Unstripped/RawEvent', 'DAQ': 'Unstripped/RawEvent', 'ITError': 'Unstripped/RawEvent', 'FileID': 'Unstripped/RawEvent', 'EcalTrig': 'Calo/RawEvent', 'FTCluster': 'Tracker/RawEvent', 'L0PUError': 'Unstripped/RawEvent', 'L0Calo': 'Trigger/RawEvent', 'VeloFull': 'Unstripped/RawEvent', 'L0MuonCtrlAll': 'Unstripped/RawEvent', 'HltVertexReports': 'Trigger/RawEvent', 'EcalE': 'Calo/RawEvent', 'ITProcFull': 'Unstripped/RawEvent', 'HltLumiSummary': 'Unstripped/RawEvent', 'TestDet': 'Unstripped/RawEvent', 'IT': 'Tracker/RawEvent', 'VP': 'Velo/RawEvent', 'HcalTrig': 'Calo/RawEvent', 'HcalE': 'Calo/RawEvent', 'L0PU': 'Trigger/RawEvent', 'DstAddress': 'Unstripped/RawEvent', 'UT': 'Tracker/RawEvent', 'TAEHeader': 'Unstripped/RawEvent', 'ODIN': ['Trigger/RawEvent'], 'PrsE': 'Calo/RawEvent', 'PrsPackedError': 'Unstripped/RawEvent', 'Velo': 'Velo/RawEvent', 'Muon': 'Muon/RawEvent', 'ITPedestal': 'Unstripped/RawEvent', 'TTProcFull': 'Unstripped/RawEvent', 'DstData': 'Unstripped/RawEvent', 'GaudiSerialize': 'Unstripped/RawEvent', 'TTFull': 'Unstripped/RawEvent', 'L0MuonRaw': 'Unstripped/RawEvent', 'UTError': 'Unstripped/RawEvent', 'TTError': 'Unstripped/RawEvent', 'EcalPackedError': 'Unstripped/RawEvent', 'HcalPacked': 'Calo/RawEvent', 'MuonFull': 'Unstripped/RawEvent', 'L0CaloError': 'Unstripped/RawEvent', 'GaudiHeader': 'Unstripped/RawEvent', 'L0DU': 'Trigger/RawEvent', 'ITFull': 'Unstripped/RawEvent', 'OT': 'Tracker/RawEvent', 'MuonError': 'Unstripped/RawEvent', 'HltTrackReports': 'Trigger/RawEvent', 'L0CaloFull': 'Trigger/RawEvent', 'L0Muon': 'Trigger/RawEvent'}, 3.3: {'HltSelReports': 'Trigger/#TCK#/RawEvent', 'OTError': 'Other/RawEvent', 'VeloError': 'Other/RawEvent', 'UTFull': 'Other/RawEvent', 'UTPedestal': 'Other/RawEvent', 'PrsTrig': 'Calo/RawEvent', 'HcalPackedError': 'Calo/RawEvent', 'L0PUFull': 'Other/RawEvent', 'HltDecReports': 'Trigger/#TCK#/RawEvent', 'Rich': 'Rich/RawEvent', 'VeloProcFull': 'Other/RawEvent', 'HltRoutingBits': 'Trigger/#TCK#/RawEvent', 'L0MuonError': 'Other/RawEvent', 'VL': 'Other/RawEvent', 'L0MuonProcCand': 'Trigger/#L0TCK#/RawEvent', 'TTPedestal': 'Other/RawEvent', 'L0DUError': 'Other/RawEvent', 'DstBank': 'Other/RawEvent', 'TT': 'Other/RawEvent', 'L0MuonProcData': 'Other/RawEvent', 'OTRaw': 'Other/RawEvent', 'EcalPacked': 'Calo/RawEvent', 'PrsPacked': 'Calo/RawEvent', 'VeloPedestal': 'Other/RawEvent', 'DAQ': 'Other/RawEvent', 'ITError': 'Other/RawEvent', 'FileID': 'Other/RawEvent', 'EcalTrig': 'Calo/RawEvent', 'FTCluster': 'Other/RawEvent', 'L0PUError': 'Other/RawEvent', 'L0Calo': 'Trigger/#L0TCK#/RawEvent', 'VeloFull': 'Other/RawEvent', 'L0MuonCtrlAll': 'Other/RawEvent', 'HltVertexReports': 'Trigger/#TCK#/RawEvent', 'EcalE': 'Calo/RawEvent', 'ITProcFull': 'Other/RawEvent', 'HltLumiSummary': 'Other/RawEvent', 'TestDet': 'Other/RawEvent', 'IT': 'Other/RawEvent', 'VP': 'Other/RawEvent', 'HcalTrig': 'Calo/RawEvent', 'HcalE': 'Calo/RawEvent', 'L0PU': 'Trigger/#L0TCK#/RawEvent', 'DstAddress': 'Other/RawEvent', 'UT': 'Other/RawEvent', 'TAEHeader': 'Other/RawEvent', 'ODIN': ['Trigger/#TCK#/RawEvent', 'Trigger/#L0TCK#/RawEvent'], 'PrsE': 'Calo/RawEvent', 'PrsPackedError': 'Calo/RawEvent', 'Velo': 'Other/RawEvent', 'Muon': 'Muon/RawEvent', 'ITPedestal': 'Other/RawEvent', 'TTProcFull': 'Other/RawEvent', 'DstData': 'Other/RawEvent', 'GaudiSerialize': 'Other/RawEvent', 'TTFull': 'Other/RawEvent', 'L0MuonRaw': 'Other/RawEvent', 'UTError': 'Other/RawEvent', 'TTError': 'Other/RawEvent', 'EcalPackedError': 'Calo/RawEvent', 'HcalPacked': 'Calo/RawEvent', 'MuonFull': 'Other/RawEvent', 'L0CaloError': 'Other/RawEvent', 'GaudiHeader': 'Other/RawEvent', 'L0DU': 'Trigger/#L0TCK#/RawEvent', 'ITFull': 'Other/RawEvent', 'OT': 'Other/RawEvent', 'MuonError': 'Other/RawEvent', 'L0CaloFull': 'Trigger/#L0TCK#/RawEvent', 'L0Muon': 'Trigger/#L0TCK#/RawEvent'}, 4.2: {'HltSelReports': 'Trigger/RawEvent', 'OTError': 'Unstripped/RawEvent', 'VeloError': 'Unstripped/RawEvent', 'UTFull': 'Unstripped/RawEvent', 'UTPedestal': 'Unstripped/RawEvent', 'PrsTrig': 'Calo/RawEvent', 'HcalPackedError': 'Unstripped/RawEvent', 'L0PUFull': 'Unstripped/RawEvent', 'HltDecReports': 'Trigger/RawEvent', 'Rich': 'Rich/RawEvent', 'VeloProcFull': 'Unstripped/RawEvent', 'HltRoutingBits': 'Trigger/RawEvent', 'L0MuonError': 'Unstripped/RawEvent', 'VL': 'Unstripped/RawEvent', 'L0MuonProcCand': 'Trigger/RawEvent', 'TTPedestal': 'Unstripped/RawEvent', 'L0DUError': 'Unstripped/RawEvent', 'HC': 'HC/RawEvent', 'DstBank': 'Unstripped/RawEvent', 'TT': 'Tracker/RawEvent', 'L0MuonProcData': 'Unstripped/RawEvent', 'OTRaw': 'Unstripped/RawEvent', 'EcalPacked': 'Calo/RawEvent', 'PrsPacked': 'Calo/RawEvent', 'VeloPedestal': 'Unstripped/RawEvent', 'DAQ': 'Unstripped/RawEvent', 'ITError': 'Tracker/RawEvent', 'FileID': 'Unstripped/RawEvent', 'EcalTrig': 'Calo/RawEvent', 'FTCluster': 'Tracker/RawEvent', 'L0PUError': 'Unstripped/RawEvent', 'L0Calo': 'Trigger/RawEvent', 'VeloFull': 'Unstripped/RawEvent', 'L0MuonCtrlAll': 'Unstripped/RawEvent', 'HltVertexReports': 'Trigger/RawEvent', 'EcalE': 'Calo/RawEvent', 'ITProcFull': 'Unstripped/RawEvent', 'HltLumiSummary': 'Unstripped/RawEvent', 'TestDet': 'Unstripped/RawEvent', 'IT': 'Tracker/RawEvent', 'VP': 'Velo/RawEvent', 'HcalTrig': 'Calo/RawEvent', 'HcalE': 'Calo/RawEvent', 'L0PU': 'Trigger/RawEvent', 'DstAddress': 'Unstripped/RawEvent', 'UT': 'Tracker/RawEvent', 'TAEHeader': 'Unstripped/RawEvent', 'ODIN': ['Trigger/RawEvent'], 'PrsE': 'Calo/RawEvent', 'PrsPackedError': 'Unstripped/RawEvent', 'Velo': 'Velo/RawEvent', 'Muon': 'Muon/RawEvent', 'ITPedestal': 'Unstripped/RawEvent', 'TTProcFull': 'Unstripped/RawEvent', 'DstData': 'Unstripped/RawEvent', 'GaudiSerialize': 'Unstripped/RawEvent', 'TTFull': 'Unstripped/RawEvent', 'L0MuonRaw': 'Unstripped/RawEvent', 'UTError': 'Unstripped/RawEvent', 'TTError': 'Tracker/RawEvent', 'EcalPackedError': 'Unstripped/RawEvent', 'HcalPacked': 'Calo/RawEvent', 'MuonFull': 'Unstripped/RawEvent', 'L0CaloError': 'Unstripped/RawEvent', 'GaudiHeader': 'Unstripped/RawEvent', 'L0DU': 'Trigger/RawEvent', 'ITFull': 'Unstripped/RawEvent', 'OT': 'Tracker/RawEvent', 'MuonError': 'Unstripped/RawEvent', 'HltTrackReports': 'Trigger/RawEvent', 'L0CaloFull': 'Trigger/RawEvent', 'L0Muon': 'Trigger/RawEvent'}, 3.2: {'OTError': 'Other/RawEvent', 'VeloError': 'Other/RawEvent', 'UTFull': 'Other/RawEvent', 'UTPedestal': 'Other/RawEvent', 'PrsTrig': 'Calo/RawEvent', 'HcalPackedError': 'Calo/RawEvent', 'L0PUFull': 'Other/RawEvent', 'UT': 'Other/RawEvent', 'Rich': 'Rich/RawEvent', 'VeloProcFull': 'Other/RawEvent', 'L0MuonError': 'Other/RawEvent', 'VL': 'Other/RawEvent', 'L0MuonProcCand': 'Trigger/#L0TCK#/RawEvent', 'TTPedestal': 'Other/RawEvent', 'L0DUError': 'Other/RawEvent', 'DstBank': 'Other/RawEvent', 'TT': 'Other/RawEvent', 'OTRaw': 'Other/RawEvent', 'EcalPacked': 'Calo/RawEvent', 'PrsPacked': 'Calo/RawEvent', 'VeloPedestal': 'Other/RawEvent', 'DAQ': 'Other/RawEvent', 'ITError': 'Other/RawEvent', 'FileID': 'Other/RawEvent', 'EcalTrig': 'Calo/RawEvent', 'FTCluster': 'Other/RawEvent', 'L0PUError': 'Other/RawEvent', 'L0Calo': 'Trigger/#L0TCK#/RawEvent', 'VeloFull': 'Other/RawEvent', 'L0MuonCtrlAll': 'Other/RawEvent', 'L0MuonProcData': 'Other/RawEvent', 'EcalE': 'Calo/RawEvent', 'ITProcFull': 'Other/RawEvent', 'HltLumiSummary': 'Other/RawEvent', 'TestDet': 'Other/RawEvent', 'IT': 'Other/RawEvent', 'VP': 'Other/RawEvent', 'HcalTrig': 'Calo/RawEvent', 'HcalE': 'Calo/RawEvent', 'L0PU': 'Trigger/#L0TCK#/RawEvent', 'DstAddress': 'Other/RawEvent', 'TAEHeader': 'Other/RawEvent', 'ODIN': 'Trigger/#L0TCK#/RawEvent', 'PrsE': 'Calo/RawEvent', 'PrsPackedError': 'Calo/RawEvent', 'Velo': 'Other/RawEvent', 'Muon': 'Muon/RawEvent', 'ITPedestal': 'Other/RawEvent', 'TTProcFull': 'Other/RawEvent', 'DstData': 'Other/RawEvent', 'GaudiSerialize': 'Other/RawEvent', 'TTFull': 'Other/RawEvent', 'L0MuonRaw': 'Other/RawEvent', 'UTError': 'Other/RawEvent', 'TTError': 'Other/RawEvent', 'EcalPackedError': 'Calo/RawEvent', 'HcalPacked': 'Calo/RawEvent', 'MuonFull': 'Other/RawEvent', 'L0CaloError': 'Other/RawEvent', 'GaudiHeader': 'Other/RawEvent', 'L0DU': 'Trigger/#L0TCK#/RawEvent', 'ITFull': 'Other/RawEvent', 'OT': 'Other/RawEvent', 'MuonError': 'Other/RawEvent', 'L0CaloFull': 'Trigger/#L0TCK#/RawEvent', 'L0Muon': 'Trigger/#L0TCK#/RawEvent'}}
+# |                        (default: None)
+# |-TCKReplacePattern      = '#TCK#'
+# |-GenericReplacePatterns = {}  (default: {})
+# |-TCK                    = None
+# \----- (End of User RawEventFormatConf/RawEventFormatConf) -----------------------------------------
+# applying configuration of DaVinci
+# DaVinci                   INFO    Applying DaVinci configuration
+# DaVinci                   INFO    /***** User DaVinci/DaVinci ************************************************************************
+|-MainOptions          = ''
+|-TupleFile            = 'output/XiG/XiG_HHGamma.root'  (default: '')
+|-SkipEvents           = 0
+|-RootCompressionLevel = 'LZMA:6'
+|-Input                = []  (default: [])
+|-Turbo                = False
+|-DDDBtag              = 'dddb-20190223'  (default: '')
+|-UserAlgorithms       = [DecayTreeTuple('Hlt2BToHHGamma_Inclusive_Line'), DecayTreeTuple('ExtraHadron'), DecayTreeTuple('ExtraKs0'), DecayTreeTuple('ExtraLambda')]
+|                      (default: [])
+|-RootInTES            = '/Event/HLT2'  (default: '')
+|-DQFLAGStag           = ''
+|-Lumi                 = False  (default: False)
+|-MoniSequence         = []  (default: [])
+|-VerboseMessages      = False
+|-InputType            = 'MDST'  (default: 'DST')
+|-ProductionType       = 'None'
+|-PrintFreq            = 1000
+|-Detectors            = ['Velo', 'PuVeto', 'Rich1', 'Rich2', 'TT', 'IT', 'OT', 'Spd', 'Prs', 'Ecal', 'Hcal', 'Muon', 'Magnet', 'Tr']
+|                      (default: ['Velo', 'PuVeto', 'Rich1', 'Rich2', 'TT', 'IT', 'OT', 'Spd', 'Prs', 'Ecal', 'Hcal', 'Muon', 'Magnet', 'Tr'])
+|-EvtMax               = -1
+|-CondDBtag            = 'sim-20180530-vc-md100'  (default: '')
+|-MergeGenFSR          = False
+|-Simulation           = True  (default: False)
+|-DataType             = 'Upgrade'  (default: '')
+|-RedoMCLinks          = False
+|-IgnoreDQFlags        = False
+|-HistogramFile        = ''
+|-WriteFSR             = True
+|-EnableUnpack         = None
+|-EventPreFilters      = []  (default: [])
+\----- (End of User DaVinci/DaVinci) ---------------------------------------------------------------
+# DaVinci                   WARNING RootInTES for MC-uDST ("/Event/HLT2") is not equal to "/Event/AllStreams"
+# --> Including file '/cvmfs/lhcb.cern.ch/lib/lhcb/LHCB/LHCB_v50r6/GaudiConf/options/PreloadUnits.opts'
+# --> Including file '/cvmfs/lhcb.cern.ch/lib/lhcb/LHCB/LHCB_v50r6/GaudiConf/options/units.opts'
+# <-- End of file '/cvmfs/lhcb.cern.ch/lib/lhcb/LHCB/LHCB_v50r6/GaudiConf/options/units.opts'
+# <-- End of file '/cvmfs/lhcb.cern.ch/lib/lhcb/LHCB/LHCB_v50r6/GaudiConf/options/PreloadUnits.opts'
+# DaVinci                   INFO    Creating Lumi Algorithms
+# DaVinci                   INFO    Define CondDB( Upgrade = True ) 
+# DaVinci                   WARNING It is suspicious that the list of ``Detectors'' is not specified though ``DataType=Upgrade'' ...
+# DaVinci                   WARNING Sure that none of the upgrade-only detectors ['VP', 'UT', 'FT', 'Rich1Pmt', 'Rich2Pmt'] are to be specified via ``Detectors''?
+# DaVinci                   INFO    No MainOptions specified. DaVinci() will import no options file!
+# DaVinci                   INFO    Creating User Algorithms
+# DaVinci                   INFO    Append to Main Sequence has been called
+# DaVinci                   INFO    Creating Moni Algorithms
+# DaVinci                   INFO    Append to Moni Sequence has been called
+# PhysConf.MicroDST         INFO    Disable GFAL
+# PhysConf.MicroDST         INFO    Reconfigure uDST to use    RootInTES='/Event/HLT2/'
+# PhysConf.MicroDST         INFO    Configure L0&HLT decoding  RootInTES='/Event/HLT2/'
+# PhysConf.MicroDST         INFO    Configure node-killer agent for ('/Event/DAQ', '/Event/pRec') 
+# PhysConf.MicroDST         INFO    Configure ODIN,Raw,Summary&Reports RootInTES='/Event/HLT2/'
+# DaVinci                   INFO    Set RootInTES=/Event/HLT2 for DaVinciUserSequence
+# DaVinci                   INFO    Set RootInTES=/Event/HLT2 for Hlt2BToHHGamma_Inclusive_Line
+# DaVinci                   INFO    Set RootInTES=/Event/HLT2 for ExtraHadron
+# DaVinci                   INFO    Set RootInTES=/Event/HLT2 for ExtraKs0
+# DaVinci                   INFO    Set RootInTES=/Event/HLT2 for ExtraLambda
+# /***** User DaVinci/DaVinci ************************************************************************
+# |-MainOptions          = ''
+# |-TupleFile            = 'output/XiG/XiG_HHGamma.root'  (default: '')
+# |-SkipEvents           = 0
+# |-RootCompressionLevel = 'LZMA:6'
+# |-Input                = []  (default: [])
+# |-Turbo                = False
+# |-DDDBtag              = 'dddb-20190223'  (default: '')
+# |-UserAlgorithms       = [DecayTreeTuple('Hlt2BToHHGamma_Inclusive_Line'), DecayTreeTuple('ExtraHadron'), DecayTreeTuple('ExtraKs0'), DecayTreeTuple('ExtraLambda')]
+# |                      (default: [])
+# |-RootInTES            = '/Event/HLT2'  (default: '')
+# |-DQFLAGStag           = ''
+# |-Lumi                 = False  (default: False)
+# |-MoniSequence         = []  (default: [])
+# |-VerboseMessages      = False
+# |-InputType            = 'MDST'  (default: 'DST')
+# |-ProductionType       = 'None'
+# |-PrintFreq            = 1000
+# |-Detectors            = ['Velo', 'PuVeto', 'Rich1', 'Rich2', 'TT', 'IT', 'OT', 'Spd', 'Prs', 'Ecal', 'Hcal', 'Muon', 'Magnet', 'Tr']
+# |                      (default: ['Velo', 'PuVeto', 'Rich1', 'Rich2', 'TT', 'IT', 'OT', 'Spd', 'Prs', 'Ecal', 'Hcal', 'Muon', 'Magnet', 'Tr'])
+# |-EvtMax               = -1
+# |-CondDBtag            = 'sim-20180530-vc-md100'  (default: '')
+# |-MergeGenFSR          = False
+# |-Simulation           = True  (default: False)
+# |-DataType             = 'Upgrade'  (default: '')
+# |-RedoMCLinks          = False
+# |-IgnoreDQFlags        = True  (default: False)
+# |-HistogramFile        = ''
+# |-WriteFSR             = True
+# |-EnableUnpack         = None
+# |-EventPreFilters      = []  (default: [])
+# \----- (End of User DaVinci/DaVinci) ---------------------------------------------------------------
+# skipping configuration of LumiIntegratorConf
+# applying configuration of AnalysisConf
+# Applying Analysis configuration
+# /***** User AnalysisConf/AnalysisConf **************************************************************
+# |-DataType    = 'Upgrade'  (default: '')
+# |-OutputLevel = 3
+# |-RedoMCLinks = False
+# |-RootInTES   = '/Event/HLT2'  (default: '')
+# |-Simulation  = True  (default: False)
+# |-InputType   = 'MDST'  (default: '')
+# \----- (End of User AnalysisConf/AnalysisConf) -----------------------------------------------------
+# WARNING: file '/cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/TCK/L0TCK/v5r32/options/L0DUConfig.opts' already included, ignored.
+# WARNING: Property 'DataType' is set in both 'DigiConf' and 'SimConf', using 'DigiConf.DataType'
+# No Writer defined for DIGI
+# WARNING: something else configured a decoder already, Trig/L0/Calo L0CaloCandidatesFromRaw/L0CaloFromRaw
+# WARNING: something else configured a decoder already, Trig/L0/FullCalo L0CaloCandidatesFromRaw/L0CaloFromRaw
+# WARNING: something else configured a decoder already, Trig/L0/L0DUReport L0DUDecoder/L0DUFromRaw
+# WARNING: something else configured a decoder already, Trig/L0/MuonCtrl L0MuonCandidatesFromRaw/L0MuonFromRaw
+# WARNING: something else configured a decoder already, Trig/L0/MuonBCSU L0MuonCandidatesFromRaw/L0MuonFromRaw
+# WARNING: something else configured a decoder already, Trig/L0/MuonData L0MuonCandidatesFromRaw/L0MuonFromRaw
+# PhysConf.MicroDST         INFO    Add           killer agent for: ['/Event/DAQ', '/Event/pRec']
+ApplicationMgr    SUCCESS 
+====================================================================================================================================
+                                                   Welcome to DaVinci version v50r6
+                                          running on lxplus723.cern.ch on Thu Jun 25 15:41:21 2020
+====================================================================================================================================
+ApplicationMgr       INFO Application Manager Configured successfully
+ToolSvc.GitDDDB      INFO opening Git repository '/cvmfs/lhcb.cern.ch/lib/lhcb/git-conddb/DDDB.git'
+ToolSvc.GitDDDB      INFO using commit 'upgrade/dddb-20190223' corresponding to c444749be50b56d937872a46368a95e0e716e784
+ToolSvc.GitSIMCOND   INFO opening Git repository '/cvmfs/lhcb.cern.ch/lib/lhcb/git-conddb/SIMCOND.git'
+ToolSvc.GitSIMCOND   INFO using commit 'upgrade/sim-20180530-vc-md100' corresponding to 7db2a32a63761eda1338a12fc643c76a22f55a62
+DetectorPersist...   INFO Added successfully Conversion service:XmlCnvSvc
+DetectorDataSvc   SUCCESS Detector description database: git:/lhcb.xml
+RndmGenSvc.Engine    INFO Generator engine type:CLHEP::RanluxEngine
+RndmGenSvc.Engine    INFO Current Seed:1234567 Luxury:3
+RndmGenSvc           INFO Using Random engine:HepRndm::Engine<CLHEP::RanluxEngine>
+TimingAuditor.T...   INFO This machine has a speed about   3.03 times the speed of a 2.8 GHz Xeon.
+NTupleSvc            INFO Added stream file:output/XiG/XiG_HHGamma.root as FILE1
+DaVinciEventSeq      INFO Member list: DaVinciInit/DaVinciInitAlg, GaudiSequencer/FilteredEventSeq, GaudiSequencer/LumiSeq
+DaVinciInitAlg    SUCCESS ==================================================================
+DaVinciInitAlg    SUCCESS Requested to process all events on input file(s)
+DaVinciInitAlg    SUCCESS ==================================================================
+RootHistSvc          INFO Writing ROOT histograms to: UndefinedROOTOutputFileName
+HistogramPersis...   INFO Added successfully Conversion service:RootHistSvc
+HistogramDataSvc     INFO Added stream file:/cvmfs/lhcb.cern.ch/lib/lhcb/PARAM/ParamFiles/v8r29/data/JetEnergyCorrections_R05_v3.root as JEC14R05
+HistogramDataSvc     INFO Added stream file:/cvmfs/lhcb.cern.ch/lib/lhcb/PARAM/ParamFiles/v8r29/data/JetEnergyCorrections_R07_v3.root as JEC14R07
+FilteredEventSeq     INFO Member list: GaudiSequencer/DaVinciEventInitSeq, GaudiSequencer/DaVinciAnalysisSeq
+DaVinciEventIni...   INFO Member list: EventNodeKiller/KillDAQ, UnpackParticlesAndVertices
+DaVinciAnalysisSeq   INFO Member list: GaudiSequencer/DaVinciUserSequence, GaudiSequencer/MonitoringSequence
+DaVinciUserSequ...   INFO Member list: DecayTreeTuple/Hlt2BToHHGamma_Inclusive_Line, DecayTreeTuple/ExtraHadron, DecayTreeTuple/ExtraKs0, DecayTreeTuple/ExtraLambda, with rootInTES '/Event/HLT2/'
+Hlt2BToHHGamma_...   INFO Will look for  ( B0  -> ^( ( K*(892)0  -> ^( pi+ ) ^( pi- )) ) ^( gamma )) 
+ExtraHadron          INFO Will look for  ( pi+ || pi- ) 
+ExtraKs0             INFO Will look for  ( KS0  -> ^( pi+ ) ^( pi- )) 
+ExtraLambda          INFO Will look for  ( ( Lambda0  -> ^( p+ ) ^( pi- )) || ( Lambda~0  -> ^( p~- ) ^( pi+ )) ) 
+MonitoringSequence   INFO Member list: 
+LumiSeq              INFO OR Member list: EventAccounting/EventAccount
+EventPersistenc...   INFO Added successfully Conversion service:RootCnvSvc
+EventSelector        INFO Stream:EventSelector.DataStreamTool_1 Def:DATAFILE='output/XiG/XiG.mdst' SVC='Gaudi::RootEvtSelector' OPT='READ'
+ApplicationMgr       INFO Application Manager Initialized successfully
+ApplicationMgr       INFO Application Manager Started successfully
+EventSelector     SUCCESS Reading Event record 1. Record number within stream 1: 1
+Hlt2BToHHGamma_...   INFO The head of chain is a B0 : Will keep whole chain as is. 
+Hlt2BToHHGamma_...  ERROR DecayTreeTuple:: Can't get the tool 'MCTupleToolKinematic', check your syntax StatusCode=FAILURE
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:B2723D48-9AAB-EA11-ACFE-0800383D272A
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:B2723D48-9AAB-EA11-ACFE-0800383D272A:/Event/Rec
+MagneticFieldSvc     INFO Opened magnetic field file : /cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/FieldMap/v5r7/cdf/field.v5r0.c1.down.cdf
+MagneticFieldSvc     INFO Opened magnetic field file : /cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/FieldMap/v5r7/cdf/field.v5r0.c2.down.cdf
+MagneticFieldSvc     INFO Opened magnetic field file : /cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/FieldMap/v5r7/cdf/field.v5r0.c3.down.cdf
+MagneticFieldSvc     INFO Opened magnetic field file : /cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/FieldMap/v5r7/cdf/field.v5r0.c4.down.cdf
+MagneticFieldSvc     INFO Map scaled by factor 1 with polarity internally used: -1 signed relative current: -1
+TransportSvc         INFO Initialize the static pointer to DetDesc::IGeometryErrorSvc
+TransportSvc         INFO Recovery of geometry errors is  ENABLED
+Hlt2BToHHGamma_...   INFO Tree DecayTree initialized :-
+Hlt2BToHHGamma_...   INFO  Event related tools : []
+Hlt2BToHHGamma_...   INFO  Particle related stuffers :- 
+Hlt2BToHHGamma_...   INFO   B0 (B0)                     : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+Hlt2BToHHGamma_...   INFO      K*(892)0 (Kst_892_0)     : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+Hlt2BToHHGamma_...   INFO         pi+ (piplus)          : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+Hlt2BToHHGamma_...   INFO         pi- (piminus)         : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+Hlt2BToHHGamma_...   INFO      gamma (gamma)            : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:B2723D48-9AAB-EA11-ACFE-0800383D272A:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:B2723D48-9AAB-EA11-ACFE-0800383D272A:/Event/pSim
+SEQ:MCParticles      INFO Member list: UnpackMCParticle, Gaudi::DataLink/LINK:MCParticles2MC
+ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Long         Particle=electron    
+ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Long         Particle=muon        
+ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Long         Particle=pion        
+ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Long         Particle=kaon        
+ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Long         Particle=proton      
+ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Long         Particle=ghost       
+Hlt2BToHHGamma_...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+RCWNTupleCnv         INFO Booked TTree with ID: DecayTree "DecayTree" in directory output/XiG/XiG_HHGamma.root:/Hlt2BToHHGamma_Inclusive_Line
+ExtraHadron          INFO The head of chain is a pi- : Will change to its antiparticle. Will change daughters to antiparticles. 
+ExtraHadron         ERROR DecayTreeTuple:: Can't get the tool 'MCTupleToolKinematic', check your syntax StatusCode=FAILURE
+ExtraHadron          INFO Tree DecayTree initialized :-
+ExtraHadron          INFO  Event related tools : []
+ExtraHadron          INFO  Particle related stuffers :- 
+ExtraHadron          INFO   pi+ (piplus)                : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+RCWNTupleCnv         INFO Booked TTree with ID: DecayTree "DecayTree" in directory output/XiG/XiG_HHGamma.root:/ExtraHadron
+ExtraKs0             INFO The head of chain is a KS0 : Will keep whole chain as is. 
+ExtraKs0            ERROR DecayTreeTuple:: Can't get the tool 'MCTupleToolKinematic', check your syntax StatusCode=FAILURE
+ExtraKs0             INFO Tree DecayTree initialized :-
+ExtraKs0             INFO  Event related tools : []
+ExtraKs0             INFO  Particle related stuffers :- 
+ExtraKs0             INFO   KS0 (KS0)                   : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+ExtraKs0             INFO      pi+ (piplus)             : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+ExtraKs0             INFO      pi- (piminus)            : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+RCWNTupleCnv         INFO Booked TTree with ID: DecayTree "DecayTree" in directory output/XiG/XiG_HHGamma.root:/ExtraKs0
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:2A37152C-ABAC-EA11-A204-FA163EA97A47
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:2A37152C-ABAC-EA11-A204-FA163EA97A47:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:741AFC08-ABAC-EA11-9032-FA163EFB4EE2
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:741AFC08-ABAC-EA11-9032-FA163EFB4EE2:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:741AFC08-ABAC-EA11-9032-FA163EFB4EE2:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:741AFC08-ABAC-EA11-9032-FA163EFB4EE2:/Event/pSim
+Hlt2BToHHGamma_...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+Hlt2BToHHGamma_...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+ExtraLambda          INFO The head of chain is a Lambda~0 : Will change to its antiparticle. Will change daughters to antiparticles. 
+ExtraLambda         ERROR DecayTreeTuple:: Can't get the tool 'MCTupleToolKinematic', check your syntax StatusCode=FAILURE
+ExtraLambda          INFO Tree DecayTree initialized :-
+ExtraLambda          INFO  Event related tools : []
+ExtraLambda          INFO  Particle related stuffers :- 
+ExtraLambda          INFO   Lambda0 (Lambda0)           : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+ExtraLambda          INFO      p+ (pplus)               : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+ExtraLambda          INFO      pi- (piminus)            : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+RCWNTupleCnv         INFO Booked TTree with ID: DecayTree "DecayTree" in directory output/XiG/XiG_HHGamma.root:/ExtraLambda
+Hlt2BToHHGamma_...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+Hlt2BToHHGamma_...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:C84BBB51-B4AC-EA11-B51E-FA163EAAB6C7
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:C84BBB51-B4AC-EA11-B51E-FA163EAAB6C7:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:C84BBB51-B4AC-EA11-B51E-FA163EAAB6C7:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:C84BBB51-B4AC-EA11-B51E-FA163EAAB6C7:/Event/pSim
+Hlt2BToHHGamma_...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+Hlt2BToHHGamma_...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Downstream   Particle=electron    
+ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Downstream   Particle=muon        
+ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Downstream   Particle=pion        
+ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Downstream   Particle=kaon        
+ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Downstream   Particle=proton      
+ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Downstream   Particle=ghost       
+DeVP                 INFO There are 208 sensors (left: 104, right: 104)
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:CA490E93-ACAC-EA11-B937-FA163EA1F8AD
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:CA490E93-ACAC-EA11-B937-FA163EA1F8AD:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:9C82245F-B5AC-EA11-9989-FA163E213795
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:9C82245F-B5AC-EA11-9989-FA163E213795:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:00941A28-A9AC-EA11-9085-FA163EFEE6FB
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:00941A28-A9AC-EA11-9085-FA163EFEE6FB:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:AC5BDA60-B0AC-EA11-BA27-FA163ED2BD26
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:AC5BDA60-B0AC-EA11-BA27-FA163ED2BD26:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:AC5BDA60-B0AC-EA11-BA27-FA163ED2BD26:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:AC5BDA60-B0AC-EA11-BA27-FA163ED2BD26:/Event/pSim
+ToolSvc.LoKi::D...  ERROR LoKi::DistanceCalculator:: Error in matrix inversion [Hlt2BToHHGamma_Inclusive_Line] StatusCode=905
+Hlt2BToHHGamma_...WARNING TupleToolGeometry:: The WARNING message is suppressed : 'Could not fill Flight' StatusCode=905
+Hlt2BToHHGamma_...  FATAL Tool 'TupleToolGeometry' acting on particle 'Kst_892_0' returned a failure status.
+Hlt2BToHHGamma_...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+Hlt2BToHHGamma_...  FATAL Failed to fill a candidate. Please fix your options.
+Hlt2BToHHGamma_...  FATAL ### NOTE : This is a new behaviour since bug https://savannah.cern.ch/bugs/?102616
+Hlt2BToHHGamma_...  FATAL ### NOTE : If you think this is wrong, report to lhcb-davinci@cern.ch
+Hlt2BToHHGamma_...WARNING Continuing from error (cnt=1, max= 'ErrorMax':4294967295)
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:243403CE-ABAC-EA11-A150-FA163E5EE4C1
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:243403CE-ABAC-EA11-A150-FA163E5EE4C1:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:243403CE-ABAC-EA11-A150-FA163E5EE4C1:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:243403CE-ABAC-EA11-A150-FA163E5EE4C1:/Event/pSim
+Hlt2BToHHGamma_...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+Hlt2BToHHGamma_...WARNING TupleToolGeometry:: The WARNING message is suppressed : 'Will not fill geometry tuple for neutral Calo particles. No worry'
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:48F7B9AD-B5AC-EA11-8A30-FA163EAA38C8
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:48F7B9AD-B5AC-EA11-8A30-FA163EAA38C8:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:48F7B9AD-B5AC-EA11-8A30-FA163EAA38C8:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:48F7B9AD-B5AC-EA11-8A30-FA163EAA38C8:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:04A00FF6-ADAC-EA11-9619-FA163EECE48A
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:04A00FF6-ADAC-EA11-9619-FA163EECE48A:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:24CFAD41-ACAC-EA11-9EB2-FA163E0F0054
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:24CFAD41-ACAC-EA11-9EB2-FA163E0F0054:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:24CFAD41-ACAC-EA11-9EB2-FA163E0F0054:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:24CFAD41-ACAC-EA11-9EB2-FA163E0F0054:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:4AAC93F8-ACAC-EA11-B8DA-FA163EC7D747
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:4AAC93F8-ACAC-EA11-B8DA-FA163EC7D747:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:5851C459-C2AC-EA11-8CF1-FA163EB4E14F
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:5851C459-C2AC-EA11-8CF1-FA163EB4E14F:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:5851C459-C2AC-EA11-8CF1-FA163EB4E14F:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:5851C459-C2AC-EA11-8CF1-FA163EB4E14F:/Event/pSim
+ToolSvc.LoKi::D...  ERROR LoKi::DistanceCalculator:: The   ERROR message is suppressed : 'Error in matrix inversion [Hlt2BToHHGamma_Inclusive_Line]' StatusCode=905
+Hlt2BToHHGamma_...  FATAL Tool 'TupleToolGeometry' acting on particle 'Kst_892_0' returned a failure status.
+Hlt2BToHHGamma_...  FATAL Failed to fill a candidate. Please fix your options.
+Hlt2BToHHGamma_...  FATAL ### NOTE : This is a new behaviour since bug https://savannah.cern.ch/bugs/?102616
+Hlt2BToHHGamma_...  FATAL ### NOTE : If you think this is wrong, report to lhcb-davinci@cern.ch
+Hlt2BToHHGamma_...WARNING Continuing from error (cnt=2, max= 'ErrorMax':4294967295)
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:BA7C518A-AEAC-EA11-9C6B-FA163E9765AB
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:BA7C518A-AEAC-EA11-9C6B-FA163E9765AB:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:1E79F741-AAAC-EA11-B799-FA163E9DD5FD
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:1E79F741-AAAC-EA11-B799-FA163E9DD5FD:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:7274B964-ADAC-EA11-B3F5-FA163E113A95
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:7274B964-ADAC-EA11-B3F5-FA163E113A95:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:7274B964-ADAC-EA11-B3F5-FA163E113A95:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:7274B964-ADAC-EA11-B3F5-FA163E113A95:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:58B60EB7-B5AC-EA11-A0AF-FA163ED305A9
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:58B60EB7-B5AC-EA11-A0AF-FA163ED305A9:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:36654199-B4AC-EA11-8DFA-FA163E53314F
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:36654199-B4AC-EA11-8DFA-FA163E53314F:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:36654199-B4AC-EA11-8DFA-FA163E53314F:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:36654199-B4AC-EA11-8DFA-FA163E53314F:/Event/pSim
+Hlt2BToHHGamma_...  FATAL Tool 'TupleToolGeometry' acting on particle 'Kst_892_0' returned a failure status.
+Hlt2BToHHGamma_...  FATAL Failed to fill a candidate. Please fix your options.
+Hlt2BToHHGamma_...  FATAL ### NOTE : This is a new behaviour since bug https://savannah.cern.ch/bugs/?102616
+Hlt2BToHHGamma_...  FATAL ### NOTE : If you think this is wrong, report to lhcb-davinci@cern.ch
+Hlt2BToHHGamma_...WARNING Continuing from error (cnt=3, max= 'ErrorMax':4294967295)
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:CA307076-ADAC-EA11-B6F9-FA163E24819F
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:CA307076-ADAC-EA11-B6F9-FA163E24819F:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:86EA8D34-B1AC-EA11-8A5E-54AB3A774074
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:86EA8D34-B1AC-EA11-8A5E-54AB3A774074:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:36F0B3CD-B4AC-EA11-A24E-FA163E0B6017
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:36F0B3CD-B4AC-EA11-A24E-FA163E0B6017:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:603EE04F-B1AC-EA11-9C81-FA163E994161
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:603EE04F-B1AC-EA11-9C81-FA163E994161:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:603EE04F-B1AC-EA11-9C81-FA163E994161:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:603EE04F-B1AC-EA11-9C81-FA163E994161:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:26C802F0-B7AC-EA11-9B07-FA163E55B8A3
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:26C802F0-B7AC-EA11-9B07-FA163E55B8A3:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:18ECE81E-B5AC-EA11-8496-FA163ECED4FA
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:18ECE81E-B5AC-EA11-8496-FA163ECED4FA:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:FE3EA97A-B0AC-EA11-93C3-FA163E504D52
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:FE3EA97A-B0AC-EA11-93C3-FA163E504D52:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:0EE50C11-BAAC-EA11-B6AF-FA163E4045D3
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:0EE50C11-BAAC-EA11-B6AF-FA163E4045D3:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:06F6F436-BCAC-EA11-B695-FA163E8C592C
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:06F6F436-BCAC-EA11-B695-FA163E8C592C:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:AEDA636C-BDAC-EA11-AD82-FA163E2C7335
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:AEDA636C-BDAC-EA11-AD82-FA163E2C7335:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:AEDA636C-BDAC-EA11-AD82-FA163E2C7335:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:AEDA636C-BDAC-EA11-AD82-FA163E2C7335:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:FE489EDD-BCAC-EA11-841E-FA163ED91D70
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:FE489EDD-BCAC-EA11-841E-FA163ED91D70:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:FE489EDD-BCAC-EA11-841E-FA163ED91D70:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:FE489EDD-BCAC-EA11-841E-FA163ED91D70:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:68A35346-BCAC-EA11-A2FE-FA163E87B629
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:68A35346-BCAC-EA11-A2FE-FA163E87B629:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:68A35346-BCAC-EA11-A2FE-FA163E87B629:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:68A35346-BCAC-EA11-A2FE-FA163E87B629:/Event/pSim
+Hlt2BToHHGamma_...  FATAL Tool 'TupleToolGeometry' acting on particle 'Kst_892_0' returned a failure status.
+Hlt2BToHHGamma_...  FATAL Failed to fill a candidate. Please fix your options.
+Hlt2BToHHGamma_...  FATAL ### NOTE : This is a new behaviour since bug https://savannah.cern.ch/bugs/?102616
+Hlt2BToHHGamma_...  FATAL ### NOTE : If you think this is wrong, report to lhcb-davinci@cern.ch
+Hlt2BToHHGamma_...WARNING Continuing from error (cnt=4, max= 'ErrorMax':4294967295)
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:E2049E02-B7AC-EA11-97FC-FA163E2F04B9
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:E2049E02-B7AC-EA11-97FC-FA163E2F04B9:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:FA058654-B4AC-EA11-A519-FA163ECFD3F7
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:FA058654-B4AC-EA11-A519-FA163ECFD3F7:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:20F3C87D-C1AC-EA11-A9AC-FA163EE34880
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:20F3C87D-C1AC-EA11-A9AC-FA163EE34880:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:20F3C87D-C1AC-EA11-A9AC-FA163EE34880:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:20F3C87D-C1AC-EA11-A9AC-FA163EE34880:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:C67623CA-B9AC-EA11-8ABF-FA163E7B7DA0
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:C67623CA-B9AC-EA11-8ABF-FA163E7B7DA0:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:84170CBE-C4AC-EA11-8CD1-FA163E42E22D
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:84170CBE-C4AC-EA11-8CD1-FA163E42E22D:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:84170CBE-C4AC-EA11-8CD1-FA163E42E22D:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:84170CBE-C4AC-EA11-8CD1-FA163E42E22D:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:6A4611DD-B3AC-EA11-BC07-FA163E188D34
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:6A4611DD-B3AC-EA11-BC07-FA163E188D34:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:3488D0CF-B4AC-EA11-8CED-FA163E82B51B
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:3488D0CF-B4AC-EA11-8CED-FA163E82B51B:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:3488D0CF-B4AC-EA11-8CED-FA163E82B51B:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:3488D0CF-B4AC-EA11-8CED-FA163E82B51B:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:02B3EFCF-BAAC-EA11-9FC9-FA163EA6C68D
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:02B3EFCF-BAAC-EA11-9FC9-FA163EA6C68D:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:02B3EFCF-BAAC-EA11-9FC9-FA163EA6C68D:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:02B3EFCF-BAAC-EA11-9FC9-FA163EA6C68D:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:18925C5C-BDAC-EA11-A4B4-FA163E6CCAC8
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:18925C5C-BDAC-EA11-A4B4-FA163E6CCAC8:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:3CA7CEEE-B6AC-EA11-BC27-FA163EFB4755
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:3CA7CEEE-B6AC-EA11-BC27-FA163EFB4755:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:3CA7CEEE-B6AC-EA11-BC27-FA163EFB4755:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:3CA7CEEE-B6AC-EA11-BC27-FA163EFB4755:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:C6AA7B7B-B8AC-EA11-A98D-FA163EB22887
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:C6AA7B7B-B8AC-EA11-A98D-FA163EB22887:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:923D7FE9-BAAC-EA11-8EEC-FA163E870E48
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:923D7FE9-BAAC-EA11-8EEC-FA163E870E48:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:10B1BB2E-B6AC-EA11-B43C-FA163E77803F
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:10B1BB2E-B6AC-EA11-B43C-FA163E77803F:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:10B1BB2E-B6AC-EA11-B43C-FA163E77803F:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:10B1BB2E-B6AC-EA11-B43C-FA163E77803F:/Event/pSim
+Hlt2BToHHGamma_...  FATAL Tool 'TupleToolGeometry' acting on particle 'Kst_892_0' returned a failure status.
+Hlt2BToHHGamma_...  FATAL Failed to fill a candidate. Please fix your options.
+Hlt2BToHHGamma_...  FATAL ### NOTE : This is a new behaviour since bug https://savannah.cern.ch/bugs/?102616
+Hlt2BToHHGamma_...  FATAL ### NOTE : If you think this is wrong, report to lhcb-davinci@cern.ch
+Hlt2BToHHGamma_...WARNING Continuing from error (cnt=5, max= 'ErrorMax':4294967295)
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:38CD9889-B7AC-EA11-AB72-FA163E7A811B
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:38CD9889-B7AC-EA11-AB72-FA163E7A811B:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:38CD9889-B7AC-EA11-AB72-FA163E7A811B:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:38CD9889-B7AC-EA11-AB72-FA163E7A811B:/Event/pSim
+Hlt2BToHHGamma_...  FATAL Tool 'TupleToolGeometry' acting on particle 'Kst_892_0' returned a failure status.
+Hlt2BToHHGamma_...  FATAL Failed to fill a candidate. Please fix your options.
+Hlt2BToHHGamma_...  FATAL ### NOTE : This is a new behaviour since bug https://savannah.cern.ch/bugs/?102616
+Hlt2BToHHGamma_...  FATAL ### NOTE : If you think this is wrong, report to lhcb-davinci@cern.ch
+Hlt2BToHHGamma_...WARNING Continuing from error (cnt=6, max= 'ErrorMax':4294967295)
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:D60B9E91-B4AC-EA11-A6E3-FA163E41730C
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:D60B9E91-B4AC-EA11-A6E3-FA163E41730C:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:C09EABEA-BCAC-EA11-BE9A-FA163EC9EBE1
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:C09EABEA-BCAC-EA11-BE9A-FA163EC9EBE1:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:C09EABEA-BCAC-EA11-BE9A-FA163EC9EBE1:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:C09EABEA-BCAC-EA11-BE9A-FA163EC9EBE1:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:A649C257-BCAC-EA11-A6A3-FA163E78BFA7
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:A649C257-BCAC-EA11-A6A3-FA163E78BFA7:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:A649C257-BCAC-EA11-A6A3-FA163E78BFA7:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:A649C257-BCAC-EA11-A6A3-FA163E78BFA7:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:78302051-BBAC-EA11-A2A9-FA163E831747
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:78302051-BBAC-EA11-A2A9-FA163E831747:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:78302051-BBAC-EA11-A2A9-FA163E831747:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:78302051-BBAC-EA11-A2A9-FA163E831747:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:FE08DB78-B6AC-EA11-8C99-FA163E6276B9
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:FE08DB78-B6AC-EA11-8C99-FA163E6276B9:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:FEBF7214-BDAC-EA11-9CF7-FA163E5D9A37
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:FEBF7214-BDAC-EA11-9CF7-FA163E5D9A37:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:FEBF7214-BDAC-EA11-9CF7-FA163E5D9A37:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:FEBF7214-BDAC-EA11-9CF7-FA163E5D9A37:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:28B801D2-BCAC-EA11-95D7-FA163ED92B94
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:28B801D2-BCAC-EA11-95D7-FA163ED92B94:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:8A012F13-BCAC-EA11-BC5E-FA163E604A7B
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:8A012F13-BCAC-EA11-BC5E-FA163E604A7B:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:8A012F13-BCAC-EA11-BC5E-FA163E604A7B:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:8A012F13-BCAC-EA11-BC5E-FA163E604A7B:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:1831A851-BAAC-EA11-A656-FA163EBC51EF
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:1831A851-BAAC-EA11-A656-FA163EBC51EF:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:30888536-BBAC-EA11-9114-FA163EBFAC8C
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:30888536-BBAC-EA11-9114-FA163EBFAC8C:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:30888536-BBAC-EA11-9114-FA163EBFAC8C:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:30888536-BBAC-EA11-9114-FA163EBFAC8C:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:C868A4F8-BBAC-EA11-BE58-FA163EF4F4B6
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:C868A4F8-BBAC-EA11-BE58-FA163EF4F4B6:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:C868A4F8-BBAC-EA11-BE58-FA163EF4F4B6:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:C868A4F8-BBAC-EA11-BE58-FA163EF4F4B6:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:D66D8817-BAAC-EA11-BBA2-FA163E0E1B3F
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:D66D8817-BAAC-EA11-BBA2-FA163E0E1B3F:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:D66D8817-BAAC-EA11-BBA2-FA163E0E1B3F:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:D66D8817-BAAC-EA11-BBA2-FA163E0E1B3F:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:52409E18-BEAC-EA11-A4FE-FA163E621293
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:52409E18-BEAC-EA11-A4FE-FA163E621293:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:620844B6-C0AC-EA11-B435-FA163EA0EAFA
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:620844B6-C0AC-EA11-B435-FA163EA0EAFA:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:468583B3-B9AC-EA11-BAF3-FA163E8BD75B
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:468583B3-B9AC-EA11-BAF3-FA163E8BD75B:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:468583B3-B9AC-EA11-BAF3-FA163E8BD75B:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:468583B3-B9AC-EA11-BAF3-FA163E8BD75B:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:CCB16284-C0AC-EA11-B15D-FA163E4B896F
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:CCB16284-C0AC-EA11-B15D-FA163E4B896F:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:A60703A6-BFAC-EA11-8F42-FA163E79E20A
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:A60703A6-BFAC-EA11-8F42-FA163E79E20A:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:D29DAB40-C4AC-EA11-90D5-FA163E814E19
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:D29DAB40-C4AC-EA11-90D5-FA163E814E19:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:3600767B-C1AC-EA11-ADA0-FA163E1350BF
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:3600767B-C1AC-EA11-ADA0-FA163E1350BF:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:3600767B-C1AC-EA11-ADA0-FA163E1350BF:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:3600767B-C1AC-EA11-ADA0-FA163E1350BF:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:6A24F05A-C4AC-EA11-8577-FA163EAA7553
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:6A24F05A-C4AC-EA11-8577-FA163EAA7553:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:6A24F05A-C4AC-EA11-8577-FA163EAA7553:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:6A24F05A-C4AC-EA11-8577-FA163EAA7553:/Event/pSim
+Hlt2BToHHGamma_...  FATAL Tool 'TupleToolGeometry' acting on particle 'Kst_892_0' returned a failure status.
+Hlt2BToHHGamma_...  FATAL Failed to fill a candidate. Please fix your options.
+Hlt2BToHHGamma_...  FATAL ### NOTE : This is a new behaviour since bug https://savannah.cern.ch/bugs/?102616
+Hlt2BToHHGamma_...  FATAL ### NOTE : If you think this is wrong, report to lhcb-davinci@cern.ch
+Hlt2BToHHGamma_...WARNING Continuing from error (cnt=7, max= 'ErrorMax':4294967295)
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:38BF371D-C5AC-EA11-A57F-FA163E818217
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:38BF371D-C5AC-EA11-A57F-FA163E818217:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:38BF371D-C5AC-EA11-A57F-FA163E818217:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:38BF371D-C5AC-EA11-A57F-FA163E818217:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:FE517270-F7AC-EA11-BB15-FA163E47A227
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:FE517270-F7AC-EA11-BB15-FA163E47A227:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:FE517270-F7AC-EA11-BB15-FA163E47A227:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:FE517270-F7AC-EA11-BB15-FA163E47A227:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:78CD18FB-F3AC-EA11-A8C2-AC1F6BC71164
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:78CD18FB-F3AC-EA11-A8C2-AC1F6BC71164:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:78CD18FB-F3AC-EA11-A8C2-AC1F6BC71164:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:78CD18FB-F3AC-EA11-A8C2-AC1F6BC71164:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:861B6849-4AAD-EA11-A0A1-FA163E52A62B
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:861B6849-4AAD-EA11-A0A1-FA163E52A62B:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:A4EE0B44-DDAD-EA11-8FD7-001E67C8096C
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:A4EE0B44-DDAD-EA11-8FD7-001E67C8096C:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:A4EE0B44-DDAD-EA11-8FD7-001E67C8096C:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:A4EE0B44-DDAD-EA11-8FD7-001E67C8096C:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:2CC6B5A4-EBAD-EA11-AFCE-001E67D1E5D7
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:2CC6B5A4-EBAD-EA11-AFCE-001E67D1E5D7:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:C820C8AA-EBAD-EA11-8087-FA163E22C4D2
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:C820C8AA-EBAD-EA11-8087-FA163E22C4D2:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:C820C8AA-EBAD-EA11-8087-FA163E22C4D2:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:C820C8AA-EBAD-EA11-8087-FA163E22C4D2:/Event/pSim
+Hlt2BToHHGamma_...  FATAL Tool 'TupleToolGeometry' acting on particle 'Kst_892_0' returned a failure status.
+Hlt2BToHHGamma_...  FATAL Failed to fill a candidate. Please fix your options.
+Hlt2BToHHGamma_...  FATAL ### NOTE : This is a new behaviour since bug https://savannah.cern.ch/bugs/?102616
+Hlt2BToHHGamma_...  FATAL ### NOTE : If you think this is wrong, report to lhcb-davinci@cern.ch
+Hlt2BToHHGamma_...WARNING Continuing from error (cnt=8, max= 'ErrorMax':4294967295)
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:58E421B9-F3AD-EA11-8A6A-FA163EEDC289
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:58E421B9-F3AD-EA11-8A6A-FA163EEDC289:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:58E421B9-F3AD-EA11-8A6A-FA163EEDC289:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:58E421B9-F3AD-EA11-8A6A-FA163EEDC289:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:F8EAD3E5-EBAD-EA11-B71F-FA163EBED02E
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:F8EAD3E5-EBAD-EA11-B71F-FA163EBED02E:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:F8EAD3E5-EBAD-EA11-B71F-FA163EBED02E:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:F8EAD3E5-EBAD-EA11-B71F-FA163EBED02E:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:08E0B777-F3AD-EA11-927A-001E67D191F4
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:08E0B777-F3AD-EA11-927A-001E67D191F4:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:B4780F88-F6AD-EA11-85FC-001E67D3181E
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:B4780F88-F6AD-EA11-85FC-001E67D3181E:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:B4780F88-F6AD-EA11-85FC-001E67D3181E:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:B4780F88-F6AD-EA11-85FC-001E67D3181E:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:686F20F3-F2AD-EA11-AB79-FA163EFACF2B
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:686F20F3-F2AD-EA11-AB79-FA163EFACF2B:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:686F20F3-F2AD-EA11-AB79-FA163EFACF2B:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:686F20F3-F2AD-EA11-AB79-FA163EFACF2B:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:908C9AE1-F9AD-EA11-A5DF-FA163EFE897C
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:908C9AE1-F9AD-EA11-A5DF-FA163EFE897C:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:549A1B24-0FAE-EA11-A6A1-FA163E47C125
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:549A1B24-0FAE-EA11-A6A1-FA163E47C125:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:549A1B24-0FAE-EA11-A6A1-FA163E47C125:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:549A1B24-0FAE-EA11-A6A1-FA163E47C125:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:3C7155A0-3FAE-EA11-B5A8-FA163E342834
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:3C7155A0-3FAE-EA11-B5A8-FA163E342834:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:78784A14-84AE-EA11-BAAC-FA163E78AB69
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:78784A14-84AE-EA11-BAAC-FA163E78AB69:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:5EAD1DB0-49AF-EA11-82A2-FA163EAE0189
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:5EAD1DB0-49AF-EA11-82A2-FA163EAE0189:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:5EAD1DB0-49AF-EA11-82A2-FA163EAE0189:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:5EAD1DB0-49AF-EA11-82A2-FA163EAE0189:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:E487B527-4DAF-EA11-ACB5-FA163ED7A211
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:E487B527-4DAF-EA11-ACB5-FA163ED7A211:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:E86A0A7B-4FAF-EA11-8FED-FA163E2511F2
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:E86A0A7B-4FAF-EA11-8FED-FA163E2511F2:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:E86A0A7B-4FAF-EA11-8FED-FA163E2511F2:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:E86A0A7B-4FAF-EA11-8FED-FA163E2511F2:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:4496377A-50AF-EA11-9457-FA163E5A06C1
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:4496377A-50AF-EA11-9457-FA163E5A06C1:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:4496377A-50AF-EA11-9457-FA163E5A06C1:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:4496377A-50AF-EA11-9457-FA163E5A06C1:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:B6EC5C4C-54AF-EA11-90EC-FA163E1BAFBB
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:B6EC5C4C-54AF-EA11-90EC-FA163E1BAFBB:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:CAFF5BCD-52AF-EA11-B985-FA163EAF9E94
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:CAFF5BCD-52AF-EA11-B985-FA163EAF9E94:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:F28E1A72-56AF-EA11-87E9-FA163EB45786
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:F28E1A72-56AF-EA11-87E9-FA163EB45786:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:F28E1A72-56AF-EA11-87E9-FA163EB45786:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:F28E1A72-56AF-EA11-87E9-FA163EB45786:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:9202D1AF-58AF-EA11-8B68-FA163E727784
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:9202D1AF-58AF-EA11-8B68-FA163E727784:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:4E586692-5BAF-EA11-BC8F-FA163EF8FF9F
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:4E586692-5BAF-EA11-BC8F-FA163EF8FF9F:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:4E586692-5BAF-EA11-BC8F-FA163EF8FF9F:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:4E586692-5BAF-EA11-BC8F-FA163EF8FF9F:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:344C6653-5CAF-EA11-94BA-FA163E60990F
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:344C6653-5CAF-EA11-94BA-FA163E60990F:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:344C6653-5CAF-EA11-94BA-FA163E60990F:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:344C6653-5CAF-EA11-94BA-FA163E60990F:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:94A3295B-FCAF-EA11-92C3-54AB3A794A3C
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:94A3295B-FCAF-EA11-92C3-54AB3A794A3C:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:94A3295B-FCAF-EA11-92C3-54AB3A794A3C:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:94A3295B-FCAF-EA11-92C3-54AB3A794A3C:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:6443F48B-1DB0-EA11-ABCA-FA163E9B4502
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:6443F48B-1DB0-EA11-ABCA-FA163E9B4502:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:6443F48B-1DB0-EA11-ABCA-FA163E9B4502:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:6443F48B-1DB0-EA11-ABCA-FA163E9B4502:/Event/pSim
+Hlt2BToHHGamma_...  FATAL Tool 'TupleToolGeometry' acting on particle 'Kst_892_0' returned a failure status.
+Hlt2BToHHGamma_...  FATAL Failed to fill a candidate. Please fix your options.
+Hlt2BToHHGamma_...  FATAL ### NOTE : This is a new behaviour since bug https://savannah.cern.ch/bugs/?102616
+Hlt2BToHHGamma_...  FATAL ### NOTE : If you think this is wrong, report to lhcb-davinci@cern.ch
+Hlt2BToHHGamma_...WARNING Continuing from error (cnt=9, max= 'ErrorMax':4294967295)
+Hlt2BToHHGamma_...  FATAL Tool 'TupleToolGeometry' acting on particle 'Kst_892_0' returned a failure status.
+Hlt2BToHHGamma_...  FATAL Failed to fill a candidate. Please fix your options.
+Hlt2BToHHGamma_...  FATAL ### NOTE : This is a new behaviour since bug https://savannah.cern.ch/bugs/?102616
+Hlt2BToHHGamma_...  FATAL ### NOTE : If you think this is wrong, report to lhcb-davinci@cern.ch
+Hlt2BToHHGamma_...WARNING Continuing from error (cnt=10, max= 'ErrorMax':4294967295)
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:ACF66D08-1FB3-EA11-A736-FA163E194479
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:ACF66D08-1FB3-EA11-A736-FA163E194479:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:ACF66D08-1FB3-EA11-A736-FA163E194479:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:ACF66D08-1FB3-EA11-A736-FA163E194479:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:943B5FB2-45AB-EA11-B3C9-0800383D45DE
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:943B5FB2-45AB-EA11-B3C9-0800383D45DE:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:943B5FB2-45AB-EA11-B3C9-0800383D45DE:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:943B5FB2-45AB-EA11-B3C9-0800383D45DE:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:2289445D-8EAB-EA11-859C-0800383D466E
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:2289445D-8EAB-EA11-859C-0800383D466E:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:2289445D-8EAB-EA11-859C-0800383D466E:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:2289445D-8EAB-EA11-859C-0800383D466E:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:7E66BB9E-9CAB-EA11-9502-0800383D3BA6
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:7E66BB9E-9CAB-EA11-9502-0800383D3BA6:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:7E66BB9E-9CAB-EA11-9502-0800383D3BA6:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:7E66BB9E-9CAB-EA11-9502-0800383D3BA6:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:A0346E6B-A8AD-EA11-82DE-48FD8EE73ADF
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:A0346E6B-A8AD-EA11-82DE-48FD8EE73ADF:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:B4F706CD-CCAD-EA11-9360-F02FA768CB66
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:B4F706CD-CCAD-EA11-9360-F02FA768CB66:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:96337C57-CDAD-EA11-8F32-AC1F6B0DE33C
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:96337C57-CDAD-EA11-8F32-AC1F6B0DE33C:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:96337C57-CDAD-EA11-8F32-AC1F6B0DE33C:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:96337C57-CDAD-EA11-8F32-AC1F6B0DE33C:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:F07968D3-CEAD-EA11-8BA5-0090FAA57780
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:F07968D3-CEAD-EA11-8BA5-0090FAA57780:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:F07968D3-CEAD-EA11-8BA5-0090FAA57780:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:F07968D3-CEAD-EA11-8BA5-0090FAA57780:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:86BB9551-D8AD-EA11-93B3-48D539F38886
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:86BB9551-D8AD-EA11-93B3-48D539F38886:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:F81B23F8-E0AD-EA11-AC95-48D539F385F6
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:F81B23F8-E0AD-EA11-AC95-48D539F385F6:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:F81B23F8-E0AD-EA11-AC95-48D539F385F6:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:F81B23F8-E0AD-EA11-AC95-48D539F385F6:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:ACC648A1-EAAD-EA11-A031-48FD8EE73ABB
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:ACC648A1-EAAD-EA11-A031-48FD8EE73ABB:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:ACC648A1-EAAD-EA11-A031-48FD8EE73ABB:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:ACC648A1-EAAD-EA11-A031-48FD8EE73ABB:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:988BEBB3-F7AD-EA11-A700-A0369FE2C020
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:988BEBB3-F7AD-EA11-A700-A0369FE2C020:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:18D34DED-02AE-EA11-A10E-A0369FE2C024
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:18D34DED-02AE-EA11-A10E-A0369FE2C024:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:1207194F-16AE-EA11-9CC2-F02FA768CB64
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:1207194F-16AE-EA11-9CC2-F02FA768CB64:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:645FDC73-31B0-EA11-84E1-0090FAA575D0
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:645FDC73-31B0-EA11-84E1-0090FAA575D0:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:645FDC73-31B0-EA11-84E1-0090FAA575D0:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:645FDC73-31B0-EA11-84E1-0090FAA575D0:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:CC754C85-A8AC-EA11-B154-001E67792484
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:CC754C85-A8AC-EA11-B154-001E67792484:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:CC754C85-A8AC-EA11-B154-001E67792484:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:CC754C85-A8AC-EA11-B154-001E67792484:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:BE590961-B7AC-EA11-BD3A-0800383D4116
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:BE590961-B7AC-EA11-BD3A-0800383D4116:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:BE590961-B7AC-EA11-BD3A-0800383D4116:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:BE590961-B7AC-EA11-BD3A-0800383D4116:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:18426253-58AB-EA11-877B-0800383D3BEE
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:18426253-58AB-EA11-877B-0800383D3BEE:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:B2A2D36D-8AAC-EA11-BAE3-0800383D37DA
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:B2A2D36D-8AAC-EA11-BAE3-0800383D37DA:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:B2A2D36D-8AAC-EA11-BAE3-0800383D37DA:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:B2A2D36D-8AAC-EA11-BAE3-0800383D37DA:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:92061D19-C0AC-EA11-A264-0800383D317A
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:92061D19-C0AC-EA11-A264-0800383D317A:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:92061D19-C0AC-EA11-A264-0800383D317A:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:92061D19-C0AC-EA11-A264-0800383D317A:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:4ABA55B8-CCAC-EA11-A07F-0800383D473A
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:4ABA55B8-CCAC-EA11-A07F-0800383D473A:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:C4E6DD07-CCAC-EA11-A925-0800383D4332
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:C4E6DD07-CCAC-EA11-A925-0800383D4332:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:78E904F8-DEAD-EA11-B379-B02628DEB0C0
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:78E904F8-DEAD-EA11-B379-B02628DEB0C0:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:78E904F8-DEAD-EA11-B379-B02628DEB0C0:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:78E904F8-DEAD-EA11-B379-B02628DEB0C0:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:067E27EC-F0AD-EA11-A656-509A4C748045
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:067E27EC-F0AD-EA11-A656-509A4C748045:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:067E27EC-F0AD-EA11-A656-509A4C748045:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:067E27EC-F0AD-EA11-A656-509A4C748045:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:AECBD88F-14AE-EA11-84BE-509A4C7489AF
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:AECBD88F-14AE-EA11-84BE-509A4C7489AF:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:AECBD88F-14AE-EA11-84BE-509A4C7489AF:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:AECBD88F-14AE-EA11-84BE-509A4C7489AF:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:365BA7E9-18B0-EA11-B8FF-509A4C748A30
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:365BA7E9-18B0-EA11-B8FF-509A4C748A30:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:365BA7E9-18B0-EA11-B8FF-509A4C748A30:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:365BA7E9-18B0-EA11-B8FF-509A4C748A30:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:AA58FD3F-1BB3-EA11-9ED8-509A4C748A76
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:AA58FD3F-1BB3-EA11-9ED8-509A4C748A76:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:54D38967-1AB3-EA11-8F4E-0800383D4932
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:54D38967-1AB3-EA11-8F4E-0800383D4932:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:74A4C67B-F2AC-EA11-9EF9-0800383D4332
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:74A4C67B-F2AC-EA11-9EF9-0800383D4332:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:74A4C67B-F2AC-EA11-9EF9-0800383D4332:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:74A4C67B-F2AC-EA11-9EF9-0800383D4332:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:808A8692-DDAD-EA11-B0DE-3CFDFE9E1A28
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:808A8692-DDAD-EA11-B0DE-3CFDFE9E1A28:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:808A8692-DDAD-EA11-B0DE-3CFDFE9E1A28:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:808A8692-DDAD-EA11-B0DE-3CFDFE9E1A28:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:FC8D98A1-ECAD-EA11-B074-78E7D1651098
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:FC8D98A1-ECAD-EA11-B074-78E7D1651098:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:B872E967-25AE-EA11-B5E6-00266CFFCA1C
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:B872E967-25AE-EA11-B5E6-00266CFFCA1C:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:B872E967-25AE-EA11-B5E6-00266CFFCA1C:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:B872E967-25AE-EA11-B5E6-00266CFFCA1C:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:78D2D74E-1CB3-EA11-B63A-6CC2173BC0B0
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:78D2D74E-1CB3-EA11-B63A-6CC2173BC0B0:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:F48D5674-A6AC-EA11-9699-0242AC1C0512
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:F48D5674-A6AC-EA11-9699-0242AC1C0512:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:6806A3B0-49AD-EA11-8C74-0800383D3F8A
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:6806A3B0-49AD-EA11-8C74-0800383D3F8A:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:6806A3B0-49AD-EA11-8C74-0800383D3F8A:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:6806A3B0-49AD-EA11-8C74-0800383D3F8A:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:98D9A234-E5AD-EA11-BF12-0242AC1C051F
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:98D9A234-E5AD-EA11-BF12-0242AC1C051F:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:74CFC214-FFAD-EA11-88FB-0242AC1C050E
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:74CFC214-FFAD-EA11-88FB-0242AC1C050E:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:74CFC214-FFAD-EA11-88FB-0242AC1C050E:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:74CFC214-FFAD-EA11-88FB-0242AC1C050E:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:925B12DC-15AE-EA11-8EF6-0242AC1C050C
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:925B12DC-15AE-EA11-8EF6-0242AC1C050C:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:E8D0D7F4-A2AE-EA11-8119-0242AC1C0516
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:E8D0D7F4-A2AE-EA11-8119-0242AC1C0516:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:B4F71DD2-67B0-EA11-98BD-0242AC1C0509
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:B4F71DD2-67B0-EA11-98BD-0242AC1C0509:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:B4F71DD2-67B0-EA11-98BD-0242AC1C0509:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:B4F71DD2-67B0-EA11-98BD-0242AC1C0509:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:F6CFB350-BFAC-EA11-BA59-0800383D48EA
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:F6CFB350-BFAC-EA11-BA59-0800383D48EA:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:F6CFB350-BFAC-EA11-BA59-0800383D48EA:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:F6CFB350-BFAC-EA11-BA59-0800383D48EA:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:EA1B8D78-C9AC-EA11-A56E-0800383D2886
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:EA1B8D78-C9AC-EA11-A56E-0800383D2886:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:EA1B8D78-C9AC-EA11-A56E-0800383D2886:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:EA1B8D78-C9AC-EA11-A56E-0800383D2886:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:CCA5ECE7-00AE-EA11-B3CE-00259059EB28
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:CCA5ECE7-00AE-EA11-B3CE-00259059EB28:/Event/Rec
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:B26D7D07-1BAE-EA11-9F7B-B42E99AA3274
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:B26D7D07-1BAE-EA11-9F7B-B42E99AA3274:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:B26D7D07-1BAE-EA11-9F7B-B42E99AA3274:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:B26D7D07-1BAE-EA11-9F7B-B42E99AA3274:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:34EF3070-23B3-EA11-820F-00259059DAAC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:34EF3070-23B3-EA11-820F-00259059DAAC:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:34EF3070-23B3-EA11-820F-00259059DAAC:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:34EF3070-23B3-EA11-820F-00259059DAAC:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:42EAF5A2-B0AC-EA11-B871-0800383D4476
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:42EAF5A2-B0AC-EA11-B871-0800383D4476:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:42EAF5A2-B0AC-EA11-B871-0800383D4476:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:42EAF5A2-B0AC-EA11-B871-0800383D4476:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:1885AA8D-B9AC-EA11-9D4A-0800383D421E
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:1885AA8D-B9AC-EA11-9D4A-0800383D421E:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:1885AA8D-B9AC-EA11-9D4A-0800383D421E:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:1885AA8D-B9AC-EA11-9D4A-0800383D421E:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:808BE1EF-0FAE-EA11-9DD5-A0369F13FC74
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:808BE1EF-0FAE-EA11-9DD5-A0369F13FC74:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:808BE1EF-0FAE-EA11-9DD5-A0369F13FC74:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:808BE1EF-0FAE-EA11-9DD5-A0369F13FC74:/Event/pSim
+EventLoopMgr         INFO No more events in event selection 
+ApplicationMgr       INFO Application Manager Stopped successfully
+HLT2_PsAndVsUnpackSUCCESS Number of counters : 8
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# Unpacked FlavourTags"                        |       314 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# Unpacked MuonPIDs"                           |       314 |       4173 |     13.290 |     5.3919 |      3.0000 |      34.000 |
+ | "# Unpacked Particles"                          |       314 |       7445 |     23.710 |     11.380 |      6.0000 |      93.000 |
+ | "# Unpacked ProtoParticles"                     |       314 |       4865 |     15.494 |     5.8070 |      4.0000 |      40.000 |
+ | "# Unpacked RecVertices"                        |       314 |       1875 |     5.9713 |     2.2380 |      1.0000 |      14.000 |
+ | "# Unpacked RichPIDs"                           |       314 |       4516 |     14.382 |     5.7023 |      3.0000 |      36.000 |
+ | "# Unpacked Tracks"                             |       314 |       5286 |     16.834 |     7.2568 |      3.0000 |      46.000 |
+ | "# Unpacked Vertices"                           |       314 |       1845 |     5.8758 |     4.2778 |      2.0000 |      32.000 |
+LINK:MCParticle...SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/0/1/0
+LINK:MCParticle...SUCCESS  #WARNINGS   = 121      Message = 'No valid data is found at '/Event/MC/Particles''
+LINK:MC2Sim4Par...SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/0/1/0
+LINK:MC2Sim4Par...SUCCESS  #WARNINGS   = 122      Message = 'No valid data is found at '/Event/HLT2/pMC/Particles''
+DaVinciInitAlg    SUCCESS ==================================================================
+DaVinciInitAlg    SUCCESS 314 events processed
+DaVinciInitAlg    SUCCESS ==================================================================
+Hlt2BToHHGamma_...SUCCESS Booked 1 N-Tuples and 0 Event Tag Collections
+Hlt2BToHHGamma_...SUCCESS List of booked N-Tuples in directory "FILE1/Hlt2BToHHGamma_Inclusive_Line"
+Hlt2BToHHGamma_...SUCCESS  ID=DecayTree     Title="DecayTree"                               #items=295{B0_ENDVERTEX_X,B0_ENDVERTEX_Y,B0_ENDVERTEX_Z,B0_ENDVERTEX_XERR,B0_ENDVERTEX_YERR,}
+Hlt2BToHHGamma_...SUCCESS Number of counters : 4
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# Hlt2BToHHGamma_Inclusive_Line"               |       314 |        140 |    0.44586 |    0.61193 |      0.0000 |      3.0000 |
+ | "# input particles"                             |       314 |        140 |    0.44586 |    0.61193 |      0.0000 |      3.0000 |
+ |*"#accept"                                       |       314 |        111 |( 35.35032 +- 2.697833)% |
+ | "Event"                                         |       314 |        314 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+Hlt2BToHHGamma_...SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/1/0/0
+Hlt2BToHHGamma_...SUCCESS  #ERRORS     = 1        Message = 'Can't get the tool 'MCTupleToolKinematic', check your syntax'
+ExtraHadron       SUCCESS Booked 1 N-Tuples and 0 Event Tag Collections
+ExtraHadron       SUCCESS List of booked N-Tuples in directory "FILE1/ExtraHadron"
+ExtraHadron       SUCCESS  ID=DecayTree     Title="DecayTree"                               #items=74 {piplus_MC15TuneV1_ProbNNe,piplus_MC15TuneV1_ProbNNmu,piplus_MC15TuneV1_ProbNNpi,p}
+ExtraHadron       SUCCESS Number of counters : 4
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# Hlt2BToHHGamma_Inclusive_Line/ExtraHadron"   |       314 |       1159 |     3.6911 |     5.4903 |      0.0000 |      22.000 |
+ | "# input particles"                             |       314 |       1159 |     3.6911 |     5.4903 |      0.0000 |      22.000 |
+ |*"#accept"                                       |       314 |        121 |( 38.53503 +- 2.746483)% |
+ | "Event"                                         |       314 |        314 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+ExtraHadron       SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/1/0/0
+ExtraHadron       SUCCESS  #ERRORS     = 1        Message = 'Can't get the tool 'MCTupleToolKinematic', check your syntax'
+ExtraKs0          SUCCESS Booked 1 N-Tuples and 0 Event Tag Collections
+ExtraKs0          SUCCESS List of booked N-Tuples in directory "FILE1/ExtraKs0"
+ExtraKs0          SUCCESS  ID=DecayTree     Title="DecayTree"                               #items=212{KS0_ENDVERTEX_X,KS0_ENDVERTEX_Y,KS0_ENDVERTEX_Z,KS0_ENDVERTEX_XERR,KS0_ENDVERTEX_}
+ExtraKs0          SUCCESS Number of counters : 5
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# Hlt2BToHHGamma_Inclusive_Line/ExtraKs0DD"    |       314 |         22 |   0.070064 |    0.25525 |      0.0000 |      1.0000 |
+ | "# Hlt2BToHHGamma_Inclusive_Line/ExtraKs0LL"    |       314 |         27 |   0.085987 |    0.31257 |      0.0000 |      2.0000 |
+ | "# input particles"                             |       314 |         49 |    0.15605 |    0.41221 |      0.0000 |      2.0000 |
+ |*"#accept"                                       |       314 |         43 |( 13.69427 +- 1.940101)% |
+ | "Event"                                         |       314 |        314 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+ExtraKs0          SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/1/0/0
+ExtraKs0          SUCCESS  #ERRORS     = 1        Message = 'Can't get the tool 'MCTupleToolKinematic', check your syntax'
+ExtraLambda       SUCCESS Booked 1 N-Tuples and 0 Event Tag Collections
+ExtraLambda       SUCCESS List of booked N-Tuples in directory "FILE1/ExtraLambda"
+ExtraLambda       SUCCESS  ID=DecayTree     Title="DecayTree"                               #items=212{Lambda0_ENDVERTEX_X,Lambda0_ENDVERTEX_Y,Lambda0_ENDVERTEX_Z,Lambda0_ENDVERTEX_XER}
+ExtraLambda       SUCCESS Number of counters : 5
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# Hlt2BToHHGamma_Inclusive_Line/ExtraLambdaDD" |       314 |         12 |   0.038217 |    0.20767 |      0.0000 |      2.0000 |
+ | "# Hlt2BToHHGamma_Inclusive_Line/ExtraLambdaLL" |       314 |         16 |   0.050955 |    0.23394 |      0.0000 |      2.0000 |
+ | "# input particles"                             |       314 |         28 |   0.089172 |    0.31675 |      0.0000 |      2.0000 |
+ |*"#accept"                                       |       314 |         25 |( 7.961783 +- 1.527652)% |
+ | "Event"                                         |       314 |        314 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+ExtraLambda       SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/1/0/0
+ExtraLambda       SUCCESS  #ERRORS     = 1        Message = 'Can't get the tool 'MCTupleToolKinematic', check your syntax'
+RootHistSvc       WARNING no ROOT output file name, Histograms cannot be persistified
+EventLoopMgr         INFO Histograms converted successfully according to request.
+TransportSvc      SUCCESS  GEOMETRY ERRORS: 'Skip'     map has the size 0
+
+TransportSvc      SUCCESS  GEOMETRY ERRORS: 'Recover'  map has the size 6
+   |                      Logical Volume                     |    |  #          mean             RMS          min              max    |
+   | BeforeMagnetRegion/Rich1/lvRich1Master                  | mm | 4       20.015419        0.0080222554 20.007345           20.0275 |
+   | BeforeMagnetRegion/Rich1/lvRich1Master                  | X0 | 4       0.24933199      9.9933206e-05 0.24923142         0.249482 |
+   | BeforeMagnetRegion/Rich1/lvRich1SubMaster               | mm | 1       4.0015062                   0 4.0015062           4.00150 |
+   | BeforeMagnetRegion/Rich1/lvRich1SubMaster               | X0 | 1       0.011467976                 0 0.011467976       0.0114679 |
+   | BeforeMagnetRegion/UT/Modules/lvCableS                  | mm | 1       0.0050991171                0 0.0050991171     0.00509911 |
+   | BeforeMagnetRegion/UT/Modules/lvCableS                  | X0 | 1       0.00031943708               0 0.00031943708   0.000319437 |
+   | BeforeMagnetRegion/UT/Modules/lvModuleA                 | mm | 2       0.01938961      1.2965005e-05 0.019376645       0.0194025 |
+   | BeforeMagnetRegion/UT/Modules/lvModuleA                 | X0 | 2       8.5044992e-05   5.6865957e-08 8.4988126e-05   8.5101858e- |
+   | BeforeMagnetRegion/UT/Modules/lvModuleC                 | mm | 2       0.019133042     8.4617894e-05 0.019048424        0.019217 |
+   | BeforeMagnetRegion/UT/Modules/lvModuleC                 | X0 | 2       8.3919656e-05   3.7114352e-07 8.3548512e-05   8.4290799e- |
+   | BeforeMagnetRegion/VP/RFFoil/lvRFFoilCompTnTUnit        | mm | 71      0.025451302       0.067669199 1.1212469e-09      0.350734 |
+   | BeforeMagnetRegion/VP/RFFoil/lvRFFoilCompTnTUnit        | X0 | 71      0                           0 0                           |
+
+TransportSvc      SUCCESS  GEOMETRY ERRORS: 'Codes'    map has the size 0
+
+TransportSvc         INFO Reset the static pointer to DetDesc::IGeometyrErrorSvc
+RootCnvSvc           INFO Disconnected data IO:B4BC88DA-D3B6-EA11-B545-FA163E4B924C [output/XiG/XiG.mdst]
+DataOnDemandSvc      INFO Handled "DataFault" incidents: 14155/6922/32349(Alg/Node/Total).
+ToolSvc              INFO Removing all tools created by ToolSvc
+ToolSvc.LoKi::D...SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/1/0/0
+ToolSvc.LoKi::D...SUCCESS  #ERRORS     = 10       Message = 'Error in matrix inversion [Hlt2BToHHGamma_Inclusive_Line]'
+Hlt2BToHHGamma_...SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/0/2/0
+Hlt2BToHHGamma_...SUCCESS  #WARNINGS   = 10       Message = 'Could not fill Flight'
+Hlt2BToHHGamma_...SUCCESS  #WARNINGS   = 138      Message = 'Will not fill geometry tuple for neutral Calo particles. No worry'
+DaVinciInitAlg....SUCCESS Booked 4 Histogram(s) : 1D=4 
+DaVinciInitAlg....SUCCESS Number of counters : 2
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "Delta Memory/MB"                               |       305 |    175.992 |    0.57702 |     10.038 |      0.0000 |      175.59 |
+ | "Total Memory/MB"                               |       314 |   374111.8 |     1191.4 |     36.790 |      784.79 |      1197.4 |
+ToolSvc.TrackSt...SUCCESS Number of counters : 2
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "Number of states added"                        |       121 |        208 |     1.7190 |     3.4431 |      0.0000 |      16.000 |
+ | "Number of tracks seen"                         |       314 |       1525 |     4.8567 |     6.8905 |      0.0000 |      26.000 |
+TimingAuditor.T...   INFO ----------------------------------------------------------------------------------------------------------------------
+TimingAuditor.T...   INFO This machine has a speed about   3.03 times the speed of a 2.8 GHz Xeon.
+TimingAuditor.T...   INFO Algorithm                              (millisec) |    <user> |   <clock> |      min       max    sigma | entries | total (s) |
+TimingAuditor.T...   INFO ----------------------------------------------------------------------------------------------------------------------
+TimingAuditor.T...   INFO EVENT LOOP                                        |   104.108 |   194.513 |    2.458   30792.3  2285.91 |     314 |    61.077 |
+TimingAuditor.T...   INFO  DaVinciEventSeq                                  |   103.535 |   193.518 |    1.860   30791.6  2285.47 |     314 |    60.765 |
+TimingAuditor.T...   INFO   DaVinciInitAlg                                  |     0.191 |     0.216 |    0.056      33.3     1.90 |     314 |     0.068 |
+TimingAuditor.T...   INFO   FilteredEventSeq                                |   103.343 |   193.281 |    1.790   30791.5  2284.26 |     314 |    60.691 |
+TimingAuditor.T...   INFO    DaVinciEventInitSeq                            |     2.898 |     5.875 |    1.566     624.7    36.16 |     314 |     1.845 |
+TimingAuditor.T...   INFO     KillDAQ                                       |     0.031 |     0.008 |    0.006       0.1     0.00 |     314 |     0.003 |
+TimingAuditor.T...   INFO     UnpackParticlesAndVertices                    |     2.834 |     5.857 |    1.552     624.6    36.16 |     314 |     1.839 |
+TimingAuditor.T...   INFO    DaVinciAnalysisSeq                             |   100.445 |   187.385 |    0.205   30784.5  2261.52 |     314 |    58.839 |
+TimingAuditor.T...   INFO     DaVinciUserSequence                           |   100.445 |   187.376 |    0.199   30784.5  2261.52 |     314 |    58.836 |
+TimingAuditor.T...   INFO      Hlt2BToHHGamma_Inclusive_Line                |    28.949 |    86.072 |    0.003   25687.4  1449.69 |     314 |    27.027 |
+TimingAuditor.T...   INFO      ExtraHadron                                  |     0.732 |     1.107 |    0.002      20.5     2.09 |     314 |     0.348 |
+TimingAuditor.T...   INFO      ExtraKs0                                     |    69.872 |    99.104 |    0.002   30761.4  1735.90 |     314 |    31.119 |
+TimingAuditor.T...   INFO      ExtraLambda                                  |     0.509 |     0.576 |    0.002      34.6     2.83 |     314 |     0.181 |
+TimingAuditor.T...   INFO     MonitoringSequence                            |     0.000 |     0.002 |    0.002       0.0     0.00 |     314 |     0.001 |
+TimingAuditor.T...   INFO   LumiSeq                                         |     0.000 |     0.009 |    0.006       0.4     0.02 |     314 |     0.003 |
+TimingAuditor.T...   INFO    EventAccount                                   |     0.000 |     0.004 |    0.002       0.4     0.02 |     314 |     0.001 |
+TimingAuditor.T...   INFO *     HLT2_PsAndVsUnpack                          |     0.049 |     0.069 |    0.003      24.0     0.57 |    7267 |     0.503 |
+TimingAuditor.T...   INFO *      createODIN                                 |     0.063 |     0.143 |    0.068       6.4     0.40 |     314 |     0.045 |
+TimingAuditor.T...   INFO *      HLT2_pRec_Calo_Photons_Converter           |     0.247 |     0.203 |    0.067       4.3     0.61 |     121 |     0.025 |
+TimingAuditor.T...   INFO *      UnpackMCParticles                          |     0.082 |     0.070 |    0.026       4.1     0.15 |    2191 |     0.156 |
+TimingAuditor.T...   INFO *      SEQ:MCParticles                            |     0.002 |     0.008 |    0.002       4.2     0.08 |    4140 |     0.033 |
+TimingAuditor.T...   INFO *       UnpackMCParticle                          |     0.082 |     0.093 |    0.050       4.2     0.37 |     121 |     0.011 |
+TimingAuditor.T...   INFO *       LINK:MCParticles2MC                       |     0.000 |     0.045 |    0.036       0.3     0.03 |     121 |     0.006 |
+TimingAuditor.T...   INFO *        LINK:MC2Sim4Particles                    |     0.081 |     0.074 |    0.034       4.1     0.37 |     122 |     0.009 |
+TimingAuditor.T...   INFO ----------------------------------------------------------------------------------------------------------------------
+NTupleSvc            INFO NTuples saved successfully
+*****Chrono*****     INFO ****************************************************************************************************
+*****Chrono*****     INFO  The Final CPU consumption ( Chrono ) Table (ordered)
+*****Chrono*****     INFO ****************************************************************************************************
+DetailedMateria...   INFO Time User   : Tot= 21.4  [s] Ave/Min/Max=0.0813(+- 1.31)/    0/ 21.3  [s] #=264
+ChronoStatSvc        INFO Time User   : Tot= 24.1  [s]                                             #=  1
+*****Chrono*****     INFO ****************************************************************************************************
+ChronoStatSvc.f...   INFO  Service finalized successfully 
+ApplicationMgr       INFO Application Manager Finalized successfully
+ApplicationMgr      ERROR Application Manager Terminated with error code 2

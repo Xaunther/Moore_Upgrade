@@ -1,0 +1,2 @@
+OutputStream                           INFO Events output: 314
+2.9M	output/XiG/XiG.mdst
