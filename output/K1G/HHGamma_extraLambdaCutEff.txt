@@ -22,5 +22,24 @@ Event weight:
 (Lambda0_IPCHI2_OWNPV < 0.3)   |  0.0877419
 (Lambda0_IPCHI2_OWNPV < 0.4)   |  0.108387
 (Lambda0_IPCHI2_OWNPV < 0.5)   |  0.135484
+(Lambda0_IPCHI2_OWNPV < 0.6)   |  0.156129
+(Lambda0_IPCHI2_OWNPV < 0.7)   |  0.183226
+(Lambda0_IPCHI2_OWNPV < 0.8)   |  0.2
+(Lambda0_IPCHI2_OWNPV < 0.9)   |  0.216774
+(Lambda0_IPCHI2_OWNPV < 1.0)   |  0.237419
+(Lambda0_IPCHI2_OWNPV < 2.0)   |  0.437419
+(Lambda0_IPCHI2_OWNPV < 3.0)   |  0.56129
+(Lambda0_IPCHI2_OWNPV < 4.0)   |  0.636129
+(Lambda0_IPCHI2_OWNPV < 5.0)   |  0.685161
+(Lambda0_IPCHI2_OWNPV < 6.0)   |  0.734194
+(Lambda0_IPCHI2_OWNPV < 7.0)   |  0.762581
+(Lambda0_IPCHI2_OWNPV < 8.0)   |  0.792258
+(Lambda0_IPCHI2_OWNPV < 9.0)   |  0.806452
+(Lambda0_IPCHI2_OWNPV < 10.0)  |  0.830968
+(Lambda0_IPCHI2_OWNPV < 12.0)  |  0.876129
+(Lambda0_IPCHI2_OWNPV < 14.0)  |  0.914839
+(Lambda0_IPCHI2_OWNPV < 16.0)  |  0.953548
+(Lambda0_IPCHI2_OWNPV < 18.0)  |  0.972903
+(Lambda0_IPCHI2_OWNPV < 20.0)  |  0.996129
 Global                         |  0.014194
 Error                          |  0.004249
