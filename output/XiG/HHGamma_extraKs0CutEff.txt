@@ -7,31 +7,31 @@ Event weight:
           Efficiency for each cut, and global          
 -------------------------------------------------------
 (KS0_PT > 500)             |  1
-(KS0_PT > 600)             |  0.918367
-(KS0_PT > 700)             |  0.795918
-(KS0_PT > 800)             |  0.673469
-(KS0_PT > 900)             |  0.571429
-(KS0_PT > 1000)            |  0.510204
-(KS0_IPCHI2_OWNPV < 0.05)  |  0.0204082
-(KS0_IPCHI2_OWNPV < 0.06)  |  0.0204082
-(KS0_IPCHI2_OWNPV < 0.07)  |  0.0204082
-(KS0_IPCHI2_OWNPV < 0.08)  |  0.0408163
-(KS0_IPCHI2_OWNPV < 0.09)  |  0.0408163
-(KS0_IPCHI2_OWNPV < 0.1)   |  0.0408163
-(KS0_IPCHI2_OWNPV < 0.2)   |  0.142857
-(KS0_IPCHI2_OWNPV < 0.3)   |  0.204082
-(KS0_IPCHI2_OWNPV < 0.4)   |  0.265306
-(KS0_IPCHI2_OWNPV < 0.5)   |  0.285714
-(KS0_IPCHI2_OWNPV < 0.6)   |  0.306122
-(KS0_IPCHI2_OWNPV < 0.7)   |  0.306122
-(KS0_IPCHI2_OWNPV < 0.8)   |  0.367347
-(KS0_IPCHI2_OWNPV < 0.9)   |  0.408163
-(KS0_IPCHI2_OWNPV < 1.0)   |  0.408163
-(KS0_IPCHI2_OWNPV < 2.0)   |  0.530612
-(KS0_IPCHI2_OWNPV < 3.0)   |  0.673469
-(KS0_IPCHI2_OWNPV < 4.0)   |  0.836735
-(KS0_IPCHI2_OWNPV < 5.0)   |  0.918367
-(KS0_IPCHI2_OWNPV < 6.0)   |  0.959184
+(KS0_PT > 600)             |  0.945946
+(KS0_PT > 700)             |  0.837838
+(KS0_PT > 800)             |  0.756757
+(KS0_PT > 900)             |  0.621622
+(KS0_PT > 1000)            |  0.567568
+(KS0_IPCHI2_OWNPV < 0.05)  |  0.027027
+(KS0_IPCHI2_OWNPV < 0.06)  |  0.027027
+(KS0_IPCHI2_OWNPV < 0.07)  |  0.027027
+(KS0_IPCHI2_OWNPV < 0.08)  |  0.0540541
+(KS0_IPCHI2_OWNPV < 0.09)  |  0.0540541
+(KS0_IPCHI2_OWNPV < 0.1)   |  0.0540541
+(KS0_IPCHI2_OWNPV < 0.2)   |  0.162162
+(KS0_IPCHI2_OWNPV < 0.3)   |  0.216216
+(KS0_IPCHI2_OWNPV < 0.4)   |  0.297297
+(KS0_IPCHI2_OWNPV < 0.5)   |  0.324324
+(KS0_IPCHI2_OWNPV < 0.6)   |  0.351351
+(KS0_IPCHI2_OWNPV < 0.7)   |  0.351351
+(KS0_IPCHI2_OWNPV < 0.8)   |  0.378378
+(KS0_IPCHI2_OWNPV < 0.9)   |  0.378378
+(KS0_IPCHI2_OWNPV < 1.0)   |  0.378378
+(KS0_IPCHI2_OWNPV < 2.0)   |  0.486486
+(KS0_IPCHI2_OWNPV < 3.0)   |  0.648649
+(KS0_IPCHI2_OWNPV < 4.0)   |  0.837838
+(KS0_IPCHI2_OWNPV < 5.0)   |  0.918919
+(KS0_IPCHI2_OWNPV < 6.0)   |  0.972973
 (KS0_IPCHI2_OWNPV < 7.0)   |  1
 (KS0_IPCHI2_OWNPV < 8.0)   |  1
 (KS0_IPCHI2_OWNPV < 9.0)   |  1
@@ -41,5 +41,5 @@ Event weight:
 (KS0_IPCHI2_OWNPV < 16.0)  |  1
 (KS0_IPCHI2_OWNPV < 18.0)  |  1
 (KS0_IPCHI2_OWNPV < 20.0)  |  1
-Global                     |  0.020408
-Error                      |  0.020199
+Global                     |  0.027027
+Error                      |  0.026659

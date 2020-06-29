@@ -6,6 +6,8 @@
 # WARNING: Property ExtraHadron.ErrorMax is deprecated:  [[deprecated]] max number of errors [Gaudi::Algorithm] 
 # WARNING: Property ExtraKs0.ErrorMax is deprecated:  [[deprecated]] max number of errors [Gaudi::Algorithm] 
 # WARNING: Property ExtraLambda.ErrorMax is deprecated:  [[deprecated]] max number of errors [Gaudi::Algorithm] 
+# WARNING: Property ExtraGamma.ErrorMax is deprecated:  [[deprecated]] max number of errors [Gaudi::Algorithm] 
+# WARNING: Property ExtraPi0.ErrorMax is deprecated:  [[deprecated]] max number of errors [Gaudi::Algorithm] 
 # <-- End of file '/afs/cern.ch/work/a/aalfonso/private/moore_upgrade/DaVinci_Scripts/ntuples_HHHGamma.py'
 # applying configuration of RawEventFormatConf
 # /***** User RawEventFormatConf/RawEventFormatConf **************************************************
@@ -27,7 +29,7 @@
 |-Input                = []  (default: [])
 |-Turbo                = False
 |-DDDBtag              = 'dddb-20190223'  (default: '')
-|-UserAlgorithms       = [DecayTreeTuple('Hlt2BToHHHGamma_Inclusive_Line'), DecayTreeTuple('ExtraHadron'), DecayTreeTuple('ExtraKs0'), DecayTreeTuple('ExtraLambda')]
+|-UserAlgorithms       = [DecayTreeTuple('Hlt2BToHHHGamma_Inclusive_Line'), DecayTreeTuple('ExtraHadron'), DecayTreeTuple('ExtraKs0'), DecayTreeTuple('ExtraLambda'), DecayTreeTuple('ExtraGamma'), DecayTreeTuple('ExtraPi0')]
 |                      (default: [])
 |-RootInTES            = '/Event/HLT2'  (default: '')
 |-DQFLAGStag           = ''
@@ -75,6 +77,8 @@
 # DaVinci                   INFO    Set RootInTES=/Event/HLT2 for ExtraHadron
 # DaVinci                   INFO    Set RootInTES=/Event/HLT2 for ExtraKs0
 # DaVinci                   INFO    Set RootInTES=/Event/HLT2 for ExtraLambda
+# DaVinci                   INFO    Set RootInTES=/Event/HLT2 for ExtraGamma
+# DaVinci                   INFO    Set RootInTES=/Event/HLT2 for ExtraPi0
 # /***** User DaVinci/DaVinci ************************************************************************
 # |-MainOptions          = ''
 # |-TupleFile            = 'output/XiG/XiG_HHHGamma.root'  (default: '')
@@ -83,7 +87,7 @@
 # |-Input                = []  (default: [])
 # |-Turbo                = False
 # |-DDDBtag              = 'dddb-20190223'  (default: '')
-# |-UserAlgorithms       = [DecayTreeTuple('Hlt2BToHHHGamma_Inclusive_Line'), DecayTreeTuple('ExtraHadron'), DecayTreeTuple('ExtraKs0'), DecayTreeTuple('ExtraLambda')]
+# |-UserAlgorithms       = [DecayTreeTuple('Hlt2BToHHHGamma_Inclusive_Line'), DecayTreeTuple('ExtraHadron'), DecayTreeTuple('ExtraKs0'), DecayTreeTuple('ExtraLambda'), DecayTreeTuple('ExtraGamma'), DecayTreeTuple('ExtraPi0')]
 # |                      (default: [])
 # |-RootInTES            = '/Event/HLT2'  (default: '')
 # |-DQFLAGStag           = ''
@@ -131,7 +135,7 @@
 ApplicationMgr    SUCCESS 
 ====================================================================================================================================
                                                    Welcome to DaVinci version v50r6
-                                          running on lxplus723.cern.ch on Thu Jun 25 15:45:37 2020
+                                          running on lxplus723.cern.ch on Fri Jun 26 15:09:51 2020
 ====================================================================================================================================
 ApplicationMgr       INFO Application Manager Configured successfully
 ToolSvc.GitDDDB      INFO opening Git repository '/cvmfs/lhcb.cern.ch/lib/lhcb/git-conddb/DDDB.git'
@@ -156,11 +160,13 @@ HistogramDataSvc     INFO Added stream file:/cvmfs/lhcb.cern.ch/lib/lhcb/PARAM/P
 FilteredEventSeq     INFO Member list: GaudiSequencer/DaVinciEventInitSeq, GaudiSequencer/DaVinciAnalysisSeq
 DaVinciEventIni...   INFO Member list: EventNodeKiller/KillDAQ, UnpackParticlesAndVertices
 DaVinciAnalysisSeq   INFO Member list: GaudiSequencer/DaVinciUserSequence, GaudiSequencer/MonitoringSequence
-DaVinciUserSequ...   INFO Member list: DecayTreeTuple/Hlt2BToHHHGamma_Inclusive_Line, DecayTreeTuple/ExtraHadron, DecayTreeTuple/ExtraKs0, DecayTreeTuple/ExtraLambda, with rootInTES '/Event/HLT2/'
+DaVinciUserSequ...   INFO Member list: DecayTreeTuple/Hlt2BToHHHGamma_Inclusive_Line, DecayTreeTuple/ExtraHadron, DecayTreeTuple/ExtraKs0, DecayTreeTuple/ExtraLambda, DecayTreeTuple/ExtraGamma, DecayTreeTuple/ExtraPi0, with rootInTES '/Event/HLT2/'
 Hlt2BToHHHGamma...   INFO Will look for  ( ( B+  -> ^( ( D*(2010)+  -> ^( ( K*(892)0  -> ^( pi+ ) ^( pi- )) ) ^( pi+ )) ) ^( gamma )) || ( B-  -> ^( ( D*(2010)-  -> ^( ( K*(892)0  -> ^( pi+ ) ^( pi- )) ) ^( pi- )) ) ^( gamma )) ) 
 ExtraHadron          INFO Will look for  ( pi+ || pi- ) 
 ExtraKs0             INFO Will look for  ( KS0  -> ^( pi+ ) ^( pi- )) 
 ExtraLambda          INFO Will look for  ( ( Lambda0  -> ^( p+ ) ^( pi- )) || ( Lambda~0  -> ^( p~- ) ^( pi+ )) ) 
+ExtraGamma           INFO Will look for  gamma 
+ExtraPi0             INFO Will look for  pi0 
 MonitoringSequence   INFO Member list: 
 LumiSeq              INFO OR Member list: EventAccounting/EventAccount
 EventPersistenc...   INFO Added successfully Conversion service:RootCnvSvc
@@ -168,764 +174,95 @@ EventSelector        INFO Stream:EventSelector.DataStreamTool_1 Def:DATAFILE='ou
 ApplicationMgr       INFO Application Manager Initialized successfully
 ApplicationMgr       INFO Application Manager Started successfully
 EventSelector     SUCCESS Reading Event record 1. Record number within stream 1: 1
-Hlt2BToHHHGamma...   INFO The head of chain is a B+ : Will keep whole chain as is. 
-Hlt2BToHHHGamma...  ERROR DecayTreeTuple:: Can't get the tool 'MCTupleToolKinematic', check your syntax StatusCode=FAILURE
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:2A37152C-ABAC-EA11-A204-FA163EA97A47
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:2A37152C-ABAC-EA11-A204-FA163EA97A47:/Event/Rec
-MagneticFieldSvc     INFO Opened magnetic field file : /cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/FieldMap/v5r7/cdf/field.v5r0.c1.down.cdf
-MagneticFieldSvc     INFO Opened magnetic field file : /cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/FieldMap/v5r7/cdf/field.v5r0.c2.down.cdf
-MagneticFieldSvc     INFO Opened magnetic field file : /cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/FieldMap/v5r7/cdf/field.v5r0.c3.down.cdf
-MagneticFieldSvc     INFO Opened magnetic field file : /cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/FieldMap/v5r7/cdf/field.v5r0.c4.down.cdf
-MagneticFieldSvc     INFO Map scaled by factor 1 with polarity internally used: -1 signed relative current: -1
-TransportSvc         INFO Initialize the static pointer to DetDesc::IGeometryErrorSvc
-TransportSvc         INFO Recovery of geometry errors is  ENABLED
-Hlt2BToHHHGamma...   INFO Tree DecayTree initialized :-
-Hlt2BToHHHGamma...   INFO  Event related tools : []
-Hlt2BToHHHGamma...   INFO  Particle related stuffers :- 
-Hlt2BToHHHGamma...   INFO   B+ (Bplus)                  : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
-Hlt2BToHHHGamma...   INFO      D*(2010)+ (Dst_2010_plus) : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
-Hlt2BToHHHGamma...   INFO         K*(892)0 (Kst_892_0)  : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
-Hlt2BToHHHGamma...   INFO            pi+ (piplus)       : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
-Hlt2BToHHHGamma...   INFO            pi- (piminus)      : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
-Hlt2BToHHHGamma...   INFO         pi+ (piplus0)         : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
-Hlt2BToHHHGamma...   INFO      gamma (gamma)            : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:2A37152C-ABAC-EA11-A204-FA163EA97A47:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:2A37152C-ABAC-EA11-A204-FA163EA97A47:/Event/pSim
-SEQ:MCParticles      INFO Member list: UnpackMCParticle, Gaudi::DataLink/LINK:MCParticles2MC
-ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Long         Particle=electron    
-ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Long         Particle=muon        
-ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Long         Particle=pion        
-ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Long         Particle=kaon        
-ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Long         Particle=proton      
-ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Long         Particle=ghost       
-Hlt2BToHHHGamma...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
-RCWNTupleCnv         INFO Booked TTree with ID: DecayTree "DecayTree" in directory output/XiG/XiG_HHHGamma.root:/Hlt2BToHHHGamma_Inclusive_Line
-Hlt2BToHHHGamma...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
-ExtraHadron          INFO The head of chain is a pi- : Will change to its antiparticle. Will change daughters to antiparticles. 
-ExtraHadron         ERROR DecayTreeTuple:: Can't get the tool 'MCTupleToolKinematic', check your syntax StatusCode=FAILURE
-ExtraHadron          INFO Tree DecayTree initialized :-
-ExtraHadron          INFO  Event related tools : []
-ExtraHadron          INFO  Particle related stuffers :- 
-ExtraHadron          INFO   pi+ (piplus)                : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
-RCWNTupleCnv         INFO Booked TTree with ID: DecayTree "DecayTree" in directory output/XiG/XiG_HHHGamma.root:/ExtraHadron
-ExtraKs0             INFO The head of chain is a KS0 : Will keep whole chain as is. 
-ExtraKs0            ERROR DecayTreeTuple:: Can't get the tool 'MCTupleToolKinematic', check your syntax StatusCode=FAILURE
-ExtraKs0             INFO Tree DecayTree initialized :-
-ExtraKs0             INFO  Event related tools : []
-ExtraKs0             INFO  Particle related stuffers :- 
-ExtraKs0             INFO   KS0 (KS0)                   : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
-ExtraKs0             INFO      pi+ (piplus)             : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
-ExtraKs0             INFO      pi- (piminus)            : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
-ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Downstream   Particle=electron    
-ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Downstream   Particle=muon        
-ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Downstream   Particle=pion        
-ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Downstream   Particle=kaon        
-ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Downstream   Particle=proton      
-ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Downstream   Particle=ghost       
-DeVP                 INFO There are 208 sensors (left: 104, right: 104)
-RCWNTupleCnv         INFO Booked TTree with ID: DecayTree "DecayTree" in directory output/XiG/XiG_HHHGamma.root:/ExtraKs0
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:741AFC08-ABAC-EA11-9032-FA163EFB4EE2
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:741AFC08-ABAC-EA11-9032-FA163EFB4EE2:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:741AFC08-ABAC-EA11-9032-FA163EFB4EE2:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:741AFC08-ABAC-EA11-9032-FA163EFB4EE2:/Event/pSim
-Hlt2BToHHHGamma...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
-Hlt2BToHHHGamma...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
-Hlt2BToHHHGamma...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
-ExtraLambda          INFO The head of chain is a Lambda~0 : Will change to its antiparticle. Will change daughters to antiparticles. 
-ExtraLambda         ERROR DecayTreeTuple:: Can't get the tool 'MCTupleToolKinematic', check your syntax StatusCode=FAILURE
-ExtraLambda          INFO Tree DecayTree initialized :-
-ExtraLambda          INFO  Event related tools : []
-ExtraLambda          INFO  Particle related stuffers :- 
-ExtraLambda          INFO   Lambda0 (Lambda0)           : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
-ExtraLambda          INFO      p+ (pplus)               : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
-ExtraLambda          INFO      pi- (piminus)            : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
-RCWNTupleCnv         INFO Booked TTree with ID: DecayTree "DecayTree" in directory output/XiG/XiG_HHHGamma.root:/ExtraLambda
-Hlt2BToHHHGamma...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
-Hlt2BToHHHGamma...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:C84BBB51-B4AC-EA11-B51E-FA163EAAB6C7
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:C84BBB51-B4AC-EA11-B51E-FA163EAAB6C7:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:C84BBB51-B4AC-EA11-B51E-FA163EAAB6C7:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:C84BBB51-B4AC-EA11-B51E-FA163EAAB6C7:/Event/pSim
-Hlt2BToHHHGamma...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
-Hlt2BToHHHGamma...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
-Hlt2BToHHHGamma...WARNING TupleToolGeometry:: The WARNING message is suppressed : 'Will not fill geometry tuple for neutral Calo particles. No worry'
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:CA490E93-ACAC-EA11-B937-FA163EA1F8AD
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:CA490E93-ACAC-EA11-B937-FA163EA1F8AD:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:CA490E93-ACAC-EA11-B937-FA163EA1F8AD:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:CA490E93-ACAC-EA11-B937-FA163EA1F8AD:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:9C82245F-B5AC-EA11-9989-FA163E213795
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:9C82245F-B5AC-EA11-9989-FA163E213795:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:9C82245F-B5AC-EA11-9989-FA163E213795:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:9C82245F-B5AC-EA11-9989-FA163E213795:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:00941A28-A9AC-EA11-9085-FA163EFEE6FB
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:00941A28-A9AC-EA11-9085-FA163EFEE6FB:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:00941A28-A9AC-EA11-9085-FA163EFEE6FB:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:00941A28-A9AC-EA11-9085-FA163EFEE6FB:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:AC5BDA60-B0AC-EA11-BA27-FA163ED2BD26
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:AC5BDA60-B0AC-EA11-BA27-FA163ED2BD26:/Event/Rec
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:243403CE-ABAC-EA11-A150-FA163E5EE4C1
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:243403CE-ABAC-EA11-A150-FA163E5EE4C1:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:243403CE-ABAC-EA11-A150-FA163E5EE4C1:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:243403CE-ABAC-EA11-A150-FA163E5EE4C1:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:48F7B9AD-B5AC-EA11-8A30-FA163EAA38C8
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:48F7B9AD-B5AC-EA11-8A30-FA163EAA38C8:/Event/Rec
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:04A00FF6-ADAC-EA11-9619-FA163EECE48A
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:04A00FF6-ADAC-EA11-9619-FA163EECE48A:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:04A00FF6-ADAC-EA11-9619-FA163EECE48A:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:04A00FF6-ADAC-EA11-9619-FA163EECE48A:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:24CFAD41-ACAC-EA11-9EB2-FA163E0F0054
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:24CFAD41-ACAC-EA11-9EB2-FA163E0F0054:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:24CFAD41-ACAC-EA11-9EB2-FA163E0F0054:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:24CFAD41-ACAC-EA11-9EB2-FA163E0F0054:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:4AAC93F8-ACAC-EA11-B8DA-FA163EC7D747
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:4AAC93F8-ACAC-EA11-B8DA-FA163EC7D747:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:4AAC93F8-ACAC-EA11-B8DA-FA163EC7D747:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:4AAC93F8-ACAC-EA11-B8DA-FA163EC7D747:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:5851C459-C2AC-EA11-8CF1-FA163EB4E14F
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:5851C459-C2AC-EA11-8CF1-FA163EB4E14F:/Event/Rec
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:BA7C518A-AEAC-EA11-9C6B-FA163E9765AB
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:BA7C518A-AEAC-EA11-9C6B-FA163E9765AB:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:BA7C518A-AEAC-EA11-9C6B-FA163E9765AB:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:BA7C518A-AEAC-EA11-9C6B-FA163E9765AB:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:1E79F741-AAAC-EA11-B799-FA163E9DD5FD
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:1E79F741-AAAC-EA11-B799-FA163E9DD5FD:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:1E79F741-AAAC-EA11-B799-FA163E9DD5FD:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:1E79F741-AAAC-EA11-B799-FA163E9DD5FD:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:7274B964-ADAC-EA11-B3F5-FA163E113A95
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:7274B964-ADAC-EA11-B3F5-FA163E113A95:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:7274B964-ADAC-EA11-B3F5-FA163E113A95:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:7274B964-ADAC-EA11-B3F5-FA163E113A95:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:58B60EB7-B5AC-EA11-A0AF-FA163ED305A9
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:58B60EB7-B5AC-EA11-A0AF-FA163ED305A9:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:58B60EB7-B5AC-EA11-A0AF-FA163ED305A9:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:58B60EB7-B5AC-EA11-A0AF-FA163ED305A9:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:36654199-B4AC-EA11-8DFA-FA163E53314F
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:36654199-B4AC-EA11-8DFA-FA163E53314F:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:36654199-B4AC-EA11-8DFA-FA163E53314F:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:36654199-B4AC-EA11-8DFA-FA163E53314F:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:CA307076-ADAC-EA11-B6F9-FA163E24819F
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:CA307076-ADAC-EA11-B6F9-FA163E24819F:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:CA307076-ADAC-EA11-B6F9-FA163E24819F:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:CA307076-ADAC-EA11-B6F9-FA163E24819F:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:86EA8D34-B1AC-EA11-8A5E-54AB3A774074
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:86EA8D34-B1AC-EA11-8A5E-54AB3A774074:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:86EA8D34-B1AC-EA11-8A5E-54AB3A774074:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:86EA8D34-B1AC-EA11-8A5E-54AB3A774074:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:36F0B3CD-B4AC-EA11-A24E-FA163E0B6017
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:36F0B3CD-B4AC-EA11-A24E-FA163E0B6017:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:36F0B3CD-B4AC-EA11-A24E-FA163E0B6017:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:36F0B3CD-B4AC-EA11-A24E-FA163E0B6017:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:603EE04F-B1AC-EA11-9C81-FA163E994161
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:603EE04F-B1AC-EA11-9C81-FA163E994161:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:603EE04F-B1AC-EA11-9C81-FA163E994161:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:603EE04F-B1AC-EA11-9C81-FA163E994161:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:26C802F0-B7AC-EA11-9B07-FA163E55B8A3
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:26C802F0-B7AC-EA11-9B07-FA163E55B8A3:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:26C802F0-B7AC-EA11-9B07-FA163E55B8A3:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:26C802F0-B7AC-EA11-9B07-FA163E55B8A3:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:18ECE81E-B5AC-EA11-8496-FA163ECED4FA
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:18ECE81E-B5AC-EA11-8496-FA163ECED4FA:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:18ECE81E-B5AC-EA11-8496-FA163ECED4FA:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:18ECE81E-B5AC-EA11-8496-FA163ECED4FA:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:FE3EA97A-B0AC-EA11-93C3-FA163E504D52
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:FE3EA97A-B0AC-EA11-93C3-FA163E504D52:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:FE3EA97A-B0AC-EA11-93C3-FA163E504D52:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:FE3EA97A-B0AC-EA11-93C3-FA163E504D52:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:0EE50C11-BAAC-EA11-B6AF-FA163E4045D3
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:0EE50C11-BAAC-EA11-B6AF-FA163E4045D3:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:0EE50C11-BAAC-EA11-B6AF-FA163E4045D3:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:0EE50C11-BAAC-EA11-B6AF-FA163E4045D3:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:06F6F436-BCAC-EA11-B695-FA163E8C592C
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:06F6F436-BCAC-EA11-B695-FA163E8C592C:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:06F6F436-BCAC-EA11-B695-FA163E8C592C:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:06F6F436-BCAC-EA11-B695-FA163E8C592C:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:AEDA636C-BDAC-EA11-AD82-FA163E2C7335
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:AEDA636C-BDAC-EA11-AD82-FA163E2C7335:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:AEDA636C-BDAC-EA11-AD82-FA163E2C7335:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:AEDA636C-BDAC-EA11-AD82-FA163E2C7335:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:FE489EDD-BCAC-EA11-841E-FA163ED91D70
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:FE489EDD-BCAC-EA11-841E-FA163ED91D70:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:FE489EDD-BCAC-EA11-841E-FA163ED91D70:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:FE489EDD-BCAC-EA11-841E-FA163ED91D70:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:68A35346-BCAC-EA11-A2FE-FA163E87B629
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:68A35346-BCAC-EA11-A2FE-FA163E87B629:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:68A35346-BCAC-EA11-A2FE-FA163E87B629:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:68A35346-BCAC-EA11-A2FE-FA163E87B629:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:E2049E02-B7AC-EA11-97FC-FA163E2F04B9
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:E2049E02-B7AC-EA11-97FC-FA163E2F04B9:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:E2049E02-B7AC-EA11-97FC-FA163E2F04B9:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:E2049E02-B7AC-EA11-97FC-FA163E2F04B9:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:FA058654-B4AC-EA11-A519-FA163ECFD3F7
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:FA058654-B4AC-EA11-A519-FA163ECFD3F7:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:FA058654-B4AC-EA11-A519-FA163ECFD3F7:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:FA058654-B4AC-EA11-A519-FA163ECFD3F7:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:20F3C87D-C1AC-EA11-A9AC-FA163EE34880
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:20F3C87D-C1AC-EA11-A9AC-FA163EE34880:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:20F3C87D-C1AC-EA11-A9AC-FA163EE34880:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:20F3C87D-C1AC-EA11-A9AC-FA163EE34880:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:C67623CA-B9AC-EA11-8ABF-FA163E7B7DA0
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:C67623CA-B9AC-EA11-8ABF-FA163E7B7DA0:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:C67623CA-B9AC-EA11-8ABF-FA163E7B7DA0:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:C67623CA-B9AC-EA11-8ABF-FA163E7B7DA0:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:84170CBE-C4AC-EA11-8CD1-FA163E42E22D
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:84170CBE-C4AC-EA11-8CD1-FA163E42E22D:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:84170CBE-C4AC-EA11-8CD1-FA163E42E22D:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:84170CBE-C4AC-EA11-8CD1-FA163E42E22D:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:6A4611DD-B3AC-EA11-BC07-FA163E188D34
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:6A4611DD-B3AC-EA11-BC07-FA163E188D34:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:6A4611DD-B3AC-EA11-BC07-FA163E188D34:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:6A4611DD-B3AC-EA11-BC07-FA163E188D34:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:3488D0CF-B4AC-EA11-8CED-FA163E82B51B
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:3488D0CF-B4AC-EA11-8CED-FA163E82B51B:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:3488D0CF-B4AC-EA11-8CED-FA163E82B51B:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:3488D0CF-B4AC-EA11-8CED-FA163E82B51B:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:02B3EFCF-BAAC-EA11-9FC9-FA163EA6C68D
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:02B3EFCF-BAAC-EA11-9FC9-FA163EA6C68D:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:02B3EFCF-BAAC-EA11-9FC9-FA163EA6C68D:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:02B3EFCF-BAAC-EA11-9FC9-FA163EA6C68D:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:18925C5C-BDAC-EA11-A4B4-FA163E6CCAC8
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:18925C5C-BDAC-EA11-A4B4-FA163E6CCAC8:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:18925C5C-BDAC-EA11-A4B4-FA163E6CCAC8:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:18925C5C-BDAC-EA11-A4B4-FA163E6CCAC8:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:3CA7CEEE-B6AC-EA11-BC27-FA163EFB4755
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:3CA7CEEE-B6AC-EA11-BC27-FA163EFB4755:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:3CA7CEEE-B6AC-EA11-BC27-FA163EFB4755:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:3CA7CEEE-B6AC-EA11-BC27-FA163EFB4755:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:C6AA7B7B-B8AC-EA11-A98D-FA163EB22887
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:C6AA7B7B-B8AC-EA11-A98D-FA163EB22887:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:C6AA7B7B-B8AC-EA11-A98D-FA163EB22887:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:C6AA7B7B-B8AC-EA11-A98D-FA163EB22887:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:923D7FE9-BAAC-EA11-8EEC-FA163E870E48
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:923D7FE9-BAAC-EA11-8EEC-FA163E870E48:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:923D7FE9-BAAC-EA11-8EEC-FA163E870E48:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:923D7FE9-BAAC-EA11-8EEC-FA163E870E48:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:10B1BB2E-B6AC-EA11-B43C-FA163E77803F
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:10B1BB2E-B6AC-EA11-B43C-FA163E77803F:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:10B1BB2E-B6AC-EA11-B43C-FA163E77803F:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:10B1BB2E-B6AC-EA11-B43C-FA163E77803F:/Event/pSim
-ToolSvc.LoKi::D...  ERROR LoKi::DistanceCalculator:: Error in matrix inversion [Hlt2BToHHHGamma_Inclusive_Line] StatusCode=905
-Hlt2BToHHHGamma...WARNING TupleToolGeometry:: The WARNING message is suppressed : 'Could not fill Flight' StatusCode=905
-Hlt2BToHHHGamma...  FATAL Tool 'TupleToolGeometry' acting on particle 'Dst_2010_plus' returned a failure status.
-Hlt2BToHHHGamma...  FATAL Failed to fill a candidate. Please fix your options.
-Hlt2BToHHHGamma...  FATAL ### NOTE : This is a new behaviour since bug https://savannah.cern.ch/bugs/?102616
-Hlt2BToHHHGamma...  FATAL ### NOTE : If you think this is wrong, report to lhcb-davinci@cern.ch
-Hlt2BToHHHGamma...WARNING Continuing from error (cnt=1, max= 'ErrorMax':4294967295)
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:38CD9889-B7AC-EA11-AB72-FA163E7A811B
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:38CD9889-B7AC-EA11-AB72-FA163E7A811B:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:38CD9889-B7AC-EA11-AB72-FA163E7A811B:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:38CD9889-B7AC-EA11-AB72-FA163E7A811B:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:D60B9E91-B4AC-EA11-A6E3-FA163E41730C
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:D60B9E91-B4AC-EA11-A6E3-FA163E41730C:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:D60B9E91-B4AC-EA11-A6E3-FA163E41730C:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:D60B9E91-B4AC-EA11-A6E3-FA163E41730C:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:C09EABEA-BCAC-EA11-BE9A-FA163EC9EBE1
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:C09EABEA-BCAC-EA11-BE9A-FA163EC9EBE1:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:C09EABEA-BCAC-EA11-BE9A-FA163EC9EBE1:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:C09EABEA-BCAC-EA11-BE9A-FA163EC9EBE1:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:A649C257-BCAC-EA11-A6A3-FA163E78BFA7
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:A649C257-BCAC-EA11-A6A3-FA163E78BFA7:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:A649C257-BCAC-EA11-A6A3-FA163E78BFA7:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:A649C257-BCAC-EA11-A6A3-FA163E78BFA7:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:78302051-BBAC-EA11-A2A9-FA163E831747
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:78302051-BBAC-EA11-A2A9-FA163E831747:/Event/Rec
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:FE08DB78-B6AC-EA11-8C99-FA163E6276B9
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:FE08DB78-B6AC-EA11-8C99-FA163E6276B9:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:FE08DB78-B6AC-EA11-8C99-FA163E6276B9:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:FE08DB78-B6AC-EA11-8C99-FA163E6276B9:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:FEBF7214-BDAC-EA11-9CF7-FA163E5D9A37
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:FEBF7214-BDAC-EA11-9CF7-FA163E5D9A37:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:FEBF7214-BDAC-EA11-9CF7-FA163E5D9A37:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:FEBF7214-BDAC-EA11-9CF7-FA163E5D9A37:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:28B801D2-BCAC-EA11-95D7-FA163ED92B94
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:28B801D2-BCAC-EA11-95D7-FA163ED92B94:/Event/Rec
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:8A012F13-BCAC-EA11-BC5E-FA163E604A7B
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:8A012F13-BCAC-EA11-BC5E-FA163E604A7B:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:8A012F13-BCAC-EA11-BC5E-FA163E604A7B:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:8A012F13-BCAC-EA11-BC5E-FA163E604A7B:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:1831A851-BAAC-EA11-A656-FA163EBC51EF
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:1831A851-BAAC-EA11-A656-FA163EBC51EF:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:1831A851-BAAC-EA11-A656-FA163EBC51EF:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:1831A851-BAAC-EA11-A656-FA163EBC51EF:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:30888536-BBAC-EA11-9114-FA163EBFAC8C
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:30888536-BBAC-EA11-9114-FA163EBFAC8C:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:30888536-BBAC-EA11-9114-FA163EBFAC8C:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:30888536-BBAC-EA11-9114-FA163EBFAC8C:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:C868A4F8-BBAC-EA11-BE58-FA163EF4F4B6
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:C868A4F8-BBAC-EA11-BE58-FA163EF4F4B6:/Event/Rec
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:D66D8817-BAAC-EA11-BBA2-FA163E0E1B3F
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:D66D8817-BAAC-EA11-BBA2-FA163E0E1B3F:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:D66D8817-BAAC-EA11-BBA2-FA163E0E1B3F:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:D66D8817-BAAC-EA11-BBA2-FA163E0E1B3F:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:52409E18-BEAC-EA11-A4FE-FA163E621293
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:52409E18-BEAC-EA11-A4FE-FA163E621293:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:52409E18-BEAC-EA11-A4FE-FA163E621293:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:52409E18-BEAC-EA11-A4FE-FA163E621293:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:620844B6-C0AC-EA11-B435-FA163EA0EAFA
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:620844B6-C0AC-EA11-B435-FA163EA0EAFA:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:620844B6-C0AC-EA11-B435-FA163EA0EAFA:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:620844B6-C0AC-EA11-B435-FA163EA0EAFA:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:468583B3-B9AC-EA11-BAF3-FA163E8BD75B
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:468583B3-B9AC-EA11-BAF3-FA163E8BD75B:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:468583B3-B9AC-EA11-BAF3-FA163E8BD75B:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:468583B3-B9AC-EA11-BAF3-FA163E8BD75B:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:CCB16284-C0AC-EA11-B15D-FA163E4B896F
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:CCB16284-C0AC-EA11-B15D-FA163E4B896F:/Event/Rec
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:A60703A6-BFAC-EA11-8F42-FA163E79E20A
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:A60703A6-BFAC-EA11-8F42-FA163E79E20A:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:A60703A6-BFAC-EA11-8F42-FA163E79E20A:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:A60703A6-BFAC-EA11-8F42-FA163E79E20A:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:D29DAB40-C4AC-EA11-90D5-FA163E814E19
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:D29DAB40-C4AC-EA11-90D5-FA163E814E19:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:D29DAB40-C4AC-EA11-90D5-FA163E814E19:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:D29DAB40-C4AC-EA11-90D5-FA163E814E19:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:3600767B-C1AC-EA11-ADA0-FA163E1350BF
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:3600767B-C1AC-EA11-ADA0-FA163E1350BF:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:3600767B-C1AC-EA11-ADA0-FA163E1350BF:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:3600767B-C1AC-EA11-ADA0-FA163E1350BF:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:6A24F05A-C4AC-EA11-8577-FA163EAA7553
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:6A24F05A-C4AC-EA11-8577-FA163EAA7553:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:6A24F05A-C4AC-EA11-8577-FA163EAA7553:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:6A24F05A-C4AC-EA11-8577-FA163EAA7553:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:38BF371D-C5AC-EA11-A57F-FA163E818217
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:38BF371D-C5AC-EA11-A57F-FA163E818217:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:38BF371D-C5AC-EA11-A57F-FA163E818217:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:38BF371D-C5AC-EA11-A57F-FA163E818217:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:FE517270-F7AC-EA11-BB15-FA163E47A227
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:FE517270-F7AC-EA11-BB15-FA163E47A227:/Event/Rec
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:78CD18FB-F3AC-EA11-A8C2-AC1F6BC71164
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:78CD18FB-F3AC-EA11-A8C2-AC1F6BC71164:/Event/Rec
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:861B6849-4AAD-EA11-A0A1-FA163E52A62B
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:861B6849-4AAD-EA11-A0A1-FA163E52A62B:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:861B6849-4AAD-EA11-A0A1-FA163E52A62B:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:861B6849-4AAD-EA11-A0A1-FA163E52A62B:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:A4EE0B44-DDAD-EA11-8FD7-001E67C8096C
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:A4EE0B44-DDAD-EA11-8FD7-001E67C8096C:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:A4EE0B44-DDAD-EA11-8FD7-001E67C8096C:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:A4EE0B44-DDAD-EA11-8FD7-001E67C8096C:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:2CC6B5A4-EBAD-EA11-AFCE-001E67D1E5D7
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:2CC6B5A4-EBAD-EA11-AFCE-001E67D1E5D7:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:2CC6B5A4-EBAD-EA11-AFCE-001E67D1E5D7:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:2CC6B5A4-EBAD-EA11-AFCE-001E67D1E5D7:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:C820C8AA-EBAD-EA11-8087-FA163E22C4D2
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:C820C8AA-EBAD-EA11-8087-FA163E22C4D2:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:C820C8AA-EBAD-EA11-8087-FA163E22C4D2:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:C820C8AA-EBAD-EA11-8087-FA163E22C4D2:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:58E421B9-F3AD-EA11-8A6A-FA163EEDC289
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:58E421B9-F3AD-EA11-8A6A-FA163EEDC289:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:58E421B9-F3AD-EA11-8A6A-FA163EEDC289:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:58E421B9-F3AD-EA11-8A6A-FA163EEDC289:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:F8EAD3E5-EBAD-EA11-B71F-FA163EBED02E
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:F8EAD3E5-EBAD-EA11-B71F-FA163EBED02E:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:F8EAD3E5-EBAD-EA11-B71F-FA163EBED02E:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:F8EAD3E5-EBAD-EA11-B71F-FA163EBED02E:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:08E0B777-F3AD-EA11-927A-001E67D191F4
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:08E0B777-F3AD-EA11-927A-001E67D191F4:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:08E0B777-F3AD-EA11-927A-001E67D191F4:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:08E0B777-F3AD-EA11-927A-001E67D191F4:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:B4780F88-F6AD-EA11-85FC-001E67D3181E
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:B4780F88-F6AD-EA11-85FC-001E67D3181E:/Event/Rec
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:686F20F3-F2AD-EA11-AB79-FA163EFACF2B
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:686F20F3-F2AD-EA11-AB79-FA163EFACF2B:/Event/Rec
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:908C9AE1-F9AD-EA11-A5DF-FA163EFE897C
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:908C9AE1-F9AD-EA11-A5DF-FA163EFE897C:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:908C9AE1-F9AD-EA11-A5DF-FA163EFE897C:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:908C9AE1-F9AD-EA11-A5DF-FA163EFE897C:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:549A1B24-0FAE-EA11-A6A1-FA163E47C125
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:549A1B24-0FAE-EA11-A6A1-FA163E47C125:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:549A1B24-0FAE-EA11-A6A1-FA163E47C125:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:549A1B24-0FAE-EA11-A6A1-FA163E47C125:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:3C7155A0-3FAE-EA11-B5A8-FA163E342834
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:3C7155A0-3FAE-EA11-B5A8-FA163E342834:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:3C7155A0-3FAE-EA11-B5A8-FA163E342834:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:3C7155A0-3FAE-EA11-B5A8-FA163E342834:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:78784A14-84AE-EA11-BAAC-FA163E78AB69
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:78784A14-84AE-EA11-BAAC-FA163E78AB69:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:78784A14-84AE-EA11-BAAC-FA163E78AB69:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:78784A14-84AE-EA11-BAAC-FA163E78AB69:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:5EAD1DB0-49AF-EA11-82A2-FA163EAE0189
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:5EAD1DB0-49AF-EA11-82A2-FA163EAE0189:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:5EAD1DB0-49AF-EA11-82A2-FA163EAE0189:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:5EAD1DB0-49AF-EA11-82A2-FA163EAE0189:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:E487B527-4DAF-EA11-ACB5-FA163ED7A211
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:E487B527-4DAF-EA11-ACB5-FA163ED7A211:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:E487B527-4DAF-EA11-ACB5-FA163ED7A211:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:E487B527-4DAF-EA11-ACB5-FA163ED7A211:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:E86A0A7B-4FAF-EA11-8FED-FA163E2511F2
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:E86A0A7B-4FAF-EA11-8FED-FA163E2511F2:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:E86A0A7B-4FAF-EA11-8FED-FA163E2511F2:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:E86A0A7B-4FAF-EA11-8FED-FA163E2511F2:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:4496377A-50AF-EA11-9457-FA163E5A06C1
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:4496377A-50AF-EA11-9457-FA163E5A06C1:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:4496377A-50AF-EA11-9457-FA163E5A06C1:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:4496377A-50AF-EA11-9457-FA163E5A06C1:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:B6EC5C4C-54AF-EA11-90EC-FA163E1BAFBB
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:B6EC5C4C-54AF-EA11-90EC-FA163E1BAFBB:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:B6EC5C4C-54AF-EA11-90EC-FA163E1BAFBB:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:B6EC5C4C-54AF-EA11-90EC-FA163E1BAFBB:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:CAFF5BCD-52AF-EA11-B985-FA163EAF9E94
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:CAFF5BCD-52AF-EA11-B985-FA163EAF9E94:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:CAFF5BCD-52AF-EA11-B985-FA163EAF9E94:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:CAFF5BCD-52AF-EA11-B985-FA163EAF9E94:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:F28E1A72-56AF-EA11-87E9-FA163EB45786
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:F28E1A72-56AF-EA11-87E9-FA163EB45786:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:F28E1A72-56AF-EA11-87E9-FA163EB45786:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:F28E1A72-56AF-EA11-87E9-FA163EB45786:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:9202D1AF-58AF-EA11-8B68-FA163E727784
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:9202D1AF-58AF-EA11-8B68-FA163E727784:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:9202D1AF-58AF-EA11-8B68-FA163E727784:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:9202D1AF-58AF-EA11-8B68-FA163E727784:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:4E586692-5BAF-EA11-BC8F-FA163EF8FF9F
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:4E586692-5BAF-EA11-BC8F-FA163EF8FF9F:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:4E586692-5BAF-EA11-BC8F-FA163EF8FF9F:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:4E586692-5BAF-EA11-BC8F-FA163EF8FF9F:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:344C6653-5CAF-EA11-94BA-FA163E60990F
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:344C6653-5CAF-EA11-94BA-FA163E60990F:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:344C6653-5CAF-EA11-94BA-FA163E60990F:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:344C6653-5CAF-EA11-94BA-FA163E60990F:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:94A3295B-FCAF-EA11-92C3-54AB3A794A3C
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:94A3295B-FCAF-EA11-92C3-54AB3A794A3C:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:94A3295B-FCAF-EA11-92C3-54AB3A794A3C:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:94A3295B-FCAF-EA11-92C3-54AB3A794A3C:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:6443F48B-1DB0-EA11-ABCA-FA163E9B4502
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:6443F48B-1DB0-EA11-ABCA-FA163E9B4502:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:6443F48B-1DB0-EA11-ABCA-FA163E9B4502:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:6443F48B-1DB0-EA11-ABCA-FA163E9B4502:/Event/pSim
-ToolSvc.LoKi::D...  ERROR LoKi::DistanceCalculator:: The   ERROR message is suppressed : 'Error in matrix inversion [Hlt2BToHHHGamma_Inclusive_Line]' StatusCode=905
-Hlt2BToHHHGamma...  FATAL Tool 'TupleToolGeometry' acting on particle 'Dst_2010_plus' returned a failure status.
-Hlt2BToHHHGamma...  FATAL Failed to fill a candidate. Please fix your options.
-Hlt2BToHHHGamma...  FATAL ### NOTE : This is a new behaviour since bug https://savannah.cern.ch/bugs/?102616
-Hlt2BToHHHGamma...  FATAL ### NOTE : If you think this is wrong, report to lhcb-davinci@cern.ch
-Hlt2BToHHHGamma...WARNING Continuing from error (cnt=2, max= 'ErrorMax':4294967295)
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:ACF66D08-1FB3-EA11-A736-FA163E194479
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:ACF66D08-1FB3-EA11-A736-FA163E194479:/Event/Rec
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:943B5FB2-45AB-EA11-B3C9-0800383D45DE
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:943B5FB2-45AB-EA11-B3C9-0800383D45DE:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:943B5FB2-45AB-EA11-B3C9-0800383D45DE:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:943B5FB2-45AB-EA11-B3C9-0800383D45DE:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:2289445D-8EAB-EA11-859C-0800383D466E
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:2289445D-8EAB-EA11-859C-0800383D466E:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:2289445D-8EAB-EA11-859C-0800383D466E:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:2289445D-8EAB-EA11-859C-0800383D466E:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:7E66BB9E-9CAB-EA11-9502-0800383D3BA6
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:7E66BB9E-9CAB-EA11-9502-0800383D3BA6:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:7E66BB9E-9CAB-EA11-9502-0800383D3BA6:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:7E66BB9E-9CAB-EA11-9502-0800383D3BA6:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:A0346E6B-A8AD-EA11-82DE-48FD8EE73ADF
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:A0346E6B-A8AD-EA11-82DE-48FD8EE73ADF:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:A0346E6B-A8AD-EA11-82DE-48FD8EE73ADF:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:A0346E6B-A8AD-EA11-82DE-48FD8EE73ADF:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:B4F706CD-CCAD-EA11-9360-F02FA768CB66
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:B4F706CD-CCAD-EA11-9360-F02FA768CB66:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:B4F706CD-CCAD-EA11-9360-F02FA768CB66:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:B4F706CD-CCAD-EA11-9360-F02FA768CB66:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:96337C57-CDAD-EA11-8F32-AC1F6B0DE33C
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:96337C57-CDAD-EA11-8F32-AC1F6B0DE33C:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:96337C57-CDAD-EA11-8F32-AC1F6B0DE33C:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:96337C57-CDAD-EA11-8F32-AC1F6B0DE33C:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:F07968D3-CEAD-EA11-8BA5-0090FAA57780
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:F07968D3-CEAD-EA11-8BA5-0090FAA57780:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:F07968D3-CEAD-EA11-8BA5-0090FAA57780:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:F07968D3-CEAD-EA11-8BA5-0090FAA57780:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:86BB9551-D8AD-EA11-93B3-48D539F38886
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:86BB9551-D8AD-EA11-93B3-48D539F38886:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:86BB9551-D8AD-EA11-93B3-48D539F38886:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:86BB9551-D8AD-EA11-93B3-48D539F38886:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:F81B23F8-E0AD-EA11-AC95-48D539F385F6
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:F81B23F8-E0AD-EA11-AC95-48D539F385F6:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:F81B23F8-E0AD-EA11-AC95-48D539F385F6:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:F81B23F8-E0AD-EA11-AC95-48D539F385F6:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:ACC648A1-EAAD-EA11-A031-48FD8EE73ABB
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:ACC648A1-EAAD-EA11-A031-48FD8EE73ABB:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:ACC648A1-EAAD-EA11-A031-48FD8EE73ABB:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:ACC648A1-EAAD-EA11-A031-48FD8EE73ABB:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:988BEBB3-F7AD-EA11-A700-A0369FE2C020
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:988BEBB3-F7AD-EA11-A700-A0369FE2C020:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:988BEBB3-F7AD-EA11-A700-A0369FE2C020:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:988BEBB3-F7AD-EA11-A700-A0369FE2C020:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:18D34DED-02AE-EA11-A10E-A0369FE2C024
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:18D34DED-02AE-EA11-A10E-A0369FE2C024:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:18D34DED-02AE-EA11-A10E-A0369FE2C024:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:18D34DED-02AE-EA11-A10E-A0369FE2C024:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:1207194F-16AE-EA11-9CC2-F02FA768CB64
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:1207194F-16AE-EA11-9CC2-F02FA768CB64:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:1207194F-16AE-EA11-9CC2-F02FA768CB64:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:1207194F-16AE-EA11-9CC2-F02FA768CB64:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:645FDC73-31B0-EA11-84E1-0090FAA575D0
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:645FDC73-31B0-EA11-84E1-0090FAA575D0:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:645FDC73-31B0-EA11-84E1-0090FAA575D0:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:645FDC73-31B0-EA11-84E1-0090FAA575D0:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:CC754C85-A8AC-EA11-B154-001E67792484
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:CC754C85-A8AC-EA11-B154-001E67792484:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:CC754C85-A8AC-EA11-B154-001E67792484:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:CC754C85-A8AC-EA11-B154-001E67792484:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:BE590961-B7AC-EA11-BD3A-0800383D4116
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:BE590961-B7AC-EA11-BD3A-0800383D4116:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:BE590961-B7AC-EA11-BD3A-0800383D4116:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:BE590961-B7AC-EA11-BD3A-0800383D4116:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:18426253-58AB-EA11-877B-0800383D3BEE
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:18426253-58AB-EA11-877B-0800383D3BEE:/Event/Rec
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:B2A2D36D-8AAC-EA11-BAE3-0800383D37DA
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:B2A2D36D-8AAC-EA11-BAE3-0800383D37DA:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:B2A2D36D-8AAC-EA11-BAE3-0800383D37DA:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:B2A2D36D-8AAC-EA11-BAE3-0800383D37DA:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:92061D19-C0AC-EA11-A264-0800383D317A
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:92061D19-C0AC-EA11-A264-0800383D317A:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:92061D19-C0AC-EA11-A264-0800383D317A:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:92061D19-C0AC-EA11-A264-0800383D317A:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:4ABA55B8-CCAC-EA11-A07F-0800383D473A
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:4ABA55B8-CCAC-EA11-A07F-0800383D473A:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:4ABA55B8-CCAC-EA11-A07F-0800383D473A:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:4ABA55B8-CCAC-EA11-A07F-0800383D473A:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:C4E6DD07-CCAC-EA11-A925-0800383D4332
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:C4E6DD07-CCAC-EA11-A925-0800383D4332:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:C4E6DD07-CCAC-EA11-A925-0800383D4332:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:C4E6DD07-CCAC-EA11-A925-0800383D4332:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:78E904F8-DEAD-EA11-B379-B02628DEB0C0
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:78E904F8-DEAD-EA11-B379-B02628DEB0C0:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:78E904F8-DEAD-EA11-B379-B02628DEB0C0:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:78E904F8-DEAD-EA11-B379-B02628DEB0C0:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:067E27EC-F0AD-EA11-A656-509A4C748045
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:067E27EC-F0AD-EA11-A656-509A4C748045:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:067E27EC-F0AD-EA11-A656-509A4C748045:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:067E27EC-F0AD-EA11-A656-509A4C748045:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:AECBD88F-14AE-EA11-84BE-509A4C7489AF
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:AECBD88F-14AE-EA11-84BE-509A4C7489AF:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:AECBD88F-14AE-EA11-84BE-509A4C7489AF:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:AECBD88F-14AE-EA11-84BE-509A4C7489AF:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:365BA7E9-18B0-EA11-B8FF-509A4C748A30
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:365BA7E9-18B0-EA11-B8FF-509A4C748A30:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:365BA7E9-18B0-EA11-B8FF-509A4C748A30:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:365BA7E9-18B0-EA11-B8FF-509A4C748A30:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:AA58FD3F-1BB3-EA11-9ED8-509A4C748A76
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:AA58FD3F-1BB3-EA11-9ED8-509A4C748A76:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:AA58FD3F-1BB3-EA11-9ED8-509A4C748A76:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:AA58FD3F-1BB3-EA11-9ED8-509A4C748A76:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:54D38967-1AB3-EA11-8F4E-0800383D4932
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:54D38967-1AB3-EA11-8F4E-0800383D4932:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:54D38967-1AB3-EA11-8F4E-0800383D4932:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:54D38967-1AB3-EA11-8F4E-0800383D4932:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:74A4C67B-F2AC-EA11-9EF9-0800383D4332
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:74A4C67B-F2AC-EA11-9EF9-0800383D4332:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:74A4C67B-F2AC-EA11-9EF9-0800383D4332:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:74A4C67B-F2AC-EA11-9EF9-0800383D4332:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:808A8692-DDAD-EA11-B0DE-3CFDFE9E1A28
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:808A8692-DDAD-EA11-B0DE-3CFDFE9E1A28:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:808A8692-DDAD-EA11-B0DE-3CFDFE9E1A28:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:808A8692-DDAD-EA11-B0DE-3CFDFE9E1A28:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:FC8D98A1-ECAD-EA11-B074-78E7D1651098
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:FC8D98A1-ECAD-EA11-B074-78E7D1651098:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:FC8D98A1-ECAD-EA11-B074-78E7D1651098:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:FC8D98A1-ECAD-EA11-B074-78E7D1651098:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:B872E967-25AE-EA11-B5E6-00266CFFCA1C
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:B872E967-25AE-EA11-B5E6-00266CFFCA1C:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:B872E967-25AE-EA11-B5E6-00266CFFCA1C:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:B872E967-25AE-EA11-B5E6-00266CFFCA1C:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:78D2D74E-1CB3-EA11-B63A-6CC2173BC0B0
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:78D2D74E-1CB3-EA11-B63A-6CC2173BC0B0:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:78D2D74E-1CB3-EA11-B63A-6CC2173BC0B0:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:78D2D74E-1CB3-EA11-B63A-6CC2173BC0B0:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:F48D5674-A6AC-EA11-9699-0242AC1C0512
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:F48D5674-A6AC-EA11-9699-0242AC1C0512:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:F48D5674-A6AC-EA11-9699-0242AC1C0512:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:F48D5674-A6AC-EA11-9699-0242AC1C0512:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:6806A3B0-49AD-EA11-8C74-0800383D3F8A
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:6806A3B0-49AD-EA11-8C74-0800383D3F8A:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:6806A3B0-49AD-EA11-8C74-0800383D3F8A:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:6806A3B0-49AD-EA11-8C74-0800383D3F8A:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:98D9A234-E5AD-EA11-BF12-0242AC1C051F
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:98D9A234-E5AD-EA11-BF12-0242AC1C051F:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:98D9A234-E5AD-EA11-BF12-0242AC1C051F:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:98D9A234-E5AD-EA11-BF12-0242AC1C051F:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:74CFC214-FFAD-EA11-88FB-0242AC1C050E
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:74CFC214-FFAD-EA11-88FB-0242AC1C050E:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:74CFC214-FFAD-EA11-88FB-0242AC1C050E:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:74CFC214-FFAD-EA11-88FB-0242AC1C050E:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:925B12DC-15AE-EA11-8EF6-0242AC1C050C
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:925B12DC-15AE-EA11-8EF6-0242AC1C050C:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:925B12DC-15AE-EA11-8EF6-0242AC1C050C:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:925B12DC-15AE-EA11-8EF6-0242AC1C050C:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:E8D0D7F4-A2AE-EA11-8119-0242AC1C0516
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:E8D0D7F4-A2AE-EA11-8119-0242AC1C0516:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:E8D0D7F4-A2AE-EA11-8119-0242AC1C0516:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:E8D0D7F4-A2AE-EA11-8119-0242AC1C0516:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:B4F71DD2-67B0-EA11-98BD-0242AC1C0509
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:B4F71DD2-67B0-EA11-98BD-0242AC1C0509:/Event/Rec
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:F6CFB350-BFAC-EA11-BA59-0800383D48EA
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:F6CFB350-BFAC-EA11-BA59-0800383D48EA:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:F6CFB350-BFAC-EA11-BA59-0800383D48EA:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:F6CFB350-BFAC-EA11-BA59-0800383D48EA:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:EA1B8D78-C9AC-EA11-A56E-0800383D2886
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:EA1B8D78-C9AC-EA11-A56E-0800383D2886:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:EA1B8D78-C9AC-EA11-A56E-0800383D2886:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:EA1B8D78-C9AC-EA11-A56E-0800383D2886:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:CCA5ECE7-00AE-EA11-B3CE-00259059EB28
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:CCA5ECE7-00AE-EA11-B3CE-00259059EB28:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:CCA5ECE7-00AE-EA11-B3CE-00259059EB28:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:CCA5ECE7-00AE-EA11-B3CE-00259059EB28:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:B26D7D07-1BAE-EA11-9F7B-B42E99AA3274
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:B26D7D07-1BAE-EA11-9F7B-B42E99AA3274:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:B26D7D07-1BAE-EA11-9F7B-B42E99AA3274:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:B26D7D07-1BAE-EA11-9F7B-B42E99AA3274:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:34EF3070-23B3-EA11-820F-00259059DAAC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:34EF3070-23B3-EA11-820F-00259059DAAC:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:34EF3070-23B3-EA11-820F-00259059DAAC:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:34EF3070-23B3-EA11-820F-00259059DAAC:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:42EAF5A2-B0AC-EA11-B871-0800383D4476
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:42EAF5A2-B0AC-EA11-B871-0800383D4476:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:42EAF5A2-B0AC-EA11-B871-0800383D4476:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:42EAF5A2-B0AC-EA11-B871-0800383D4476:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:1885AA8D-B9AC-EA11-9D4A-0800383D421E
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:1885AA8D-B9AC-EA11-9D4A-0800383D421E:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:1885AA8D-B9AC-EA11-9D4A-0800383D421E:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:1885AA8D-B9AC-EA11-9D4A-0800383D421E:/Event/pSim
-IODataManager       ERROR Error: connectDataIO> failed to resolve FID:808BE1EF-0FAE-EA11-9DD5-A0369F13FC74
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:808BE1EF-0FAE-EA11-9DD5-A0369F13FC74:/Event/Rec
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:808BE1EF-0FAE-EA11-9DD5-A0369F13FC74:/Event/MC
-RootCnvSvc          ERROR Error: createObj> Cannot access the object:808BE1EF-0FAE-EA11-9DD5-A0369F13FC74:/Event/pSim
 EventLoopMgr         INFO No more events in event selection 
 ApplicationMgr       INFO Application Manager Stopped successfully
 HLT2_PsAndVsUnpackSUCCESS Number of counters : 8
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "# Unpacked FlavourTags"                        |       314 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
- | "# Unpacked MuonPIDs"                           |       314 |       4173 |     13.290 |     5.3919 |      3.0000 |      34.000 |
- | "# Unpacked Particles"                          |       314 |       7445 |     23.710 |     11.380 |      6.0000 |      93.000 |
- | "# Unpacked ProtoParticles"                     |       314 |       4865 |     15.494 |     5.8070 |      4.0000 |      40.000 |
- | "# Unpacked RecVertices"                        |       314 |       1875 |     5.9713 |     2.2380 |      1.0000 |      14.000 |
- | "# Unpacked RichPIDs"                           |       314 |       4516 |     14.382 |     5.7023 |      3.0000 |      36.000 |
- | "# Unpacked Tracks"                             |       314 |       5286 |     16.834 |     7.2568 |      3.0000 |      46.000 |
- | "# Unpacked Vertices"                           |       314 |       1845 |     5.8758 |     4.2778 |      2.0000 |      32.000 |
-LINK:MCParticle...SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/0/1/0
-LINK:MCParticle...SUCCESS  #WARNINGS   = 243      Message = 'No valid data is found at '/Event/MC/Particles''
-LINK:MC2Sim4Par...SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/0/1/0
-LINK:MC2Sim4Par...SUCCESS  #WARNINGS   = 244      Message = 'No valid data is found at '/Event/HLT2/pMC/Particles''
+ | "# Unpacked FlavourTags"                        |        91 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# Unpacked MuonPIDs"                           |        91 |       1073 |     11.791 |     4.8754 |      3.0000 |      25.000 |
+ | "# Unpacked Particles"                          |        91 |      30487 |     335.02 |     140.20 |      77.000 |      685.00 |
+ | "# Unpacked ProtoParticles"                     |        91 |      12244 |     134.55 |     42.672 |      40.000 |      226.00 |
+ | "# Unpacked RecVertices"                        |        91 |        510 |     5.6044 |     2.1832 |      1.0000 |      11.000 |
+ | "# Unpacked RichPIDs"                           |        91 |       1155 |     12.692 |     5.1690 |      3.0000 |      26.000 |
+ | "# Unpacked Tracks"                             |        91 |       1356 |     14.901 |     6.3748 |      3.0000 |      33.000 |
+ | "# Unpacked Vertices"                           |        91 |        259 |     2.8462 |     1.0579 |      2.0000 |      7.0000 |
 DaVinciInitAlg    SUCCESS ==================================================================
-DaVinciInitAlg    SUCCESS 314 events processed
+DaVinciInitAlg    SUCCESS 91 events processed
 DaVinciInitAlg    SUCCESS ==================================================================
-Hlt2BToHHHGamma...SUCCESS Booked 1 N-Tuples and 0 Event Tag Collections
-Hlt2BToHHHGamma...SUCCESS List of booked N-Tuples in directory "FILE1/Hlt2BToHHHGamma_Inclusive_Line"
-Hlt2BToHHHGamma...SUCCESS  ID=DecayTree     Title="DecayTree"                               #items=436{Bplus_ENDVERTEX_X,Bplus_ENDVERTEX_Y,Bplus_ENDVERTEX_Z,Bplus_ENDVERTEX_XERR,Bplus_}
 Hlt2BToHHHGamma...SUCCESS Number of counters : 4
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "# Hlt2BToHHHGamma_Inclusive_Line"              |       314 |        497 |     1.5828 |     1.8376 |      0.0000 |      18.000 |
- | "# input particles"                             |       314 |        497 |     1.5828 |     1.8376 |      0.0000 |      18.000 |
- |*"#accept"                                       |       314 |        241 |( 76.75159 +- 2.383831)% |
- | "Event"                                         |       314 |        314 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
-Hlt2BToHHHGamma...SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/1/0/0
-Hlt2BToHHHGamma...SUCCESS  #ERRORS     = 1        Message = 'Can't get the tool 'MCTupleToolKinematic', check your syntax'
-ExtraHadron       SUCCESS Booked 1 N-Tuples and 0 Event Tag Collections
-ExtraHadron       SUCCESS List of booked N-Tuples in directory "FILE1/ExtraHadron"
-ExtraHadron       SUCCESS  ID=DecayTree     Title="DecayTree"                               #items=74 {piplus_MC15TuneV1_ProbNNe,piplus_MC15TuneV1_ProbNNmu,piplus_MC15TuneV1_ProbNNpi,p}
+ | "# Hlt2BToHHHGamma_Inclusive_Line"              |        91 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# input particles"                             |        91 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ |*"#accept"                                       |        91 |          0 |( 0.000000 +- 0.000000)% |
+ | "Event"                                         |        91 |         91 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
 ExtraHadron       SUCCESS Number of counters : 4
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "# Hlt2BToHHHGamma_Inclusive_Line/ExtraHadron"  |       314 |       2386 |     7.5987 |     5.8040 |      0.0000 |      30.000 |
- | "# input particles"                             |       314 |       2386 |     7.5987 |     5.8040 |      0.0000 |      30.000 |
- |*"#accept"                                       |       314 |        243 |( 77.38854 +- 2.360684)% |
- | "Event"                                         |       314 |        314 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
-ExtraHadron       SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/1/0/0
-ExtraHadron       SUCCESS  #ERRORS     = 1        Message = 'Can't get the tool 'MCTupleToolKinematic', check your syntax'
-ExtraKs0          SUCCESS Booked 1 N-Tuples and 0 Event Tag Collections
-ExtraKs0          SUCCESS List of booked N-Tuples in directory "FILE1/ExtraKs0"
-ExtraKs0          SUCCESS  ID=DecayTree     Title="DecayTree"                               #items=212{KS0_ENDVERTEX_X,KS0_ENDVERTEX_Y,KS0_ENDVERTEX_Z,KS0_ENDVERTEX_XERR,KS0_ENDVERTEX_}
+ | "# Hlt2BToHHHGamma_Inclusive_Line/ExtraHadron"  |        91 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# input particles"                             |        91 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ |*"#accept"                                       |        91 |          0 |( 0.000000 +- 0.000000)% |
+ | "Event"                                         |        91 |         91 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
 ExtraKs0          SUCCESS Number of counters : 5
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "# Hlt2BToHHHGamma_Inclusive_Line/ExtraKs0DD"   |       314 |         56 |    0.17834 |    0.44440 |      0.0000 |      3.0000 |
- | "# Hlt2BToHHHGamma_Inclusive_Line/ExtraKs0LL"   |       314 |         64 |    0.20382 |    0.47537 |      0.0000 |      3.0000 |
- | "# input particles"                             |       314 |        120 |    0.38217 |    0.70064 |      0.0000 |      4.0000 |
- |*"#accept"                                       |       314 |         91 |( 28.98089 +- 2.560228)% |
- | "Event"                                         |       314 |        314 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
-ExtraKs0          SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/1/0/0
-ExtraKs0          SUCCESS  #ERRORS     = 1        Message = 'Can't get the tool 'MCTupleToolKinematic', check your syntax'
-ExtraLambda       SUCCESS Booked 1 N-Tuples and 0 Event Tag Collections
-ExtraLambda       SUCCESS List of booked N-Tuples in directory "FILE1/ExtraLambda"
-ExtraLambda       SUCCESS  ID=DecayTree     Title="DecayTree"                               #items=212{Lambda0_ENDVERTEX_X,Lambda0_ENDVERTEX_Y,Lambda0_ENDVERTEX_Z,Lambda0_ENDVERTEX_XER}
+ | "# Hlt2BToHHHGamma_Inclusive_Line/ExtraKs0DD"   |        91 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# Hlt2BToHHHGamma_Inclusive_Line/ExtraKs0LL"   |        91 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# input particles"                             |        91 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ |*"#accept"                                       |        91 |          0 |( 0.000000 +- 0.000000)% |
+ | "Event"                                         |        91 |         91 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
 ExtraLambda       SUCCESS Number of counters : 5
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "# Hlt2BToHHHGamma_Inclusive_Line/ExtraLambdaDD"|       314 |         38 |    0.12102 |    0.39665 |      0.0000 |      3.0000 |
- | "# Hlt2BToHHHGamma_Inclusive_Line/ExtraLambdaLL"|       314 |         24 |   0.076433 |    0.27742 |      0.0000 |      2.0000 |
- | "# input particles"                             |       314 |         62 |    0.19745 |    0.49763 |      0.0000 |      3.0000 |
- |*"#accept"                                       |       314 |         51 |( 16.24204 +- 2.081462)% |
- | "Event"                                         |       314 |        314 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
-ExtraLambda       SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/1/0/0
-ExtraLambda       SUCCESS  #ERRORS     = 1        Message = 'Can't get the tool 'MCTupleToolKinematic', check your syntax'
+ | "# Hlt2BToHHHGamma_Inclusive_Line/ExtraLambdaDD"|        91 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# Hlt2BToHHHGamma_Inclusive_Line/ExtraLambdaLL"|        91 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# input particles"                             |        91 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ |*"#accept"                                       |        91 |          0 |( 0.000000 +- 0.000000)% |
+ | "Event"                                         |        91 |         91 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+ExtraGamma        SUCCESS Number of counters : 4
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# Hlt2BToHHHGamma_Inclusive_Line/ExtraGamma"   |        91 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# input particles"                             |        91 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ |*"#accept"                                       |        91 |          0 |( 0.000000 +- 0.000000)% |
+ | "Event"                                         |        91 |         91 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+ExtraPi0          SUCCESS Number of counters : 5
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# Hlt2BToHHHGamma_Inclusive_Line/ExtraPi0Merged|        91 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# Hlt2BToHHHGamma_Inclusive_Line/ExtraPi0Resolv|        91 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# input particles"                             |        91 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ |*"#accept"                                       |        91 |          0 |( 0.000000 +- 0.000000)% |
+ | "Event"                                         |        91 |         91 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
 RootHistSvc       WARNING no ROOT output file name, Histograms cannot be persistified
 EventLoopMgr         INFO Histograms converted successfully according to request.
-TransportSvc      SUCCESS  GEOMETRY ERRORS: 'Skip'     map has the size 0
-
-TransportSvc      SUCCESS  GEOMETRY ERRORS: 'Recover'  map has the size 7
-   |                      Logical Volume                     |    |  #          mean             RMS          min              max    |
-   | BeforeMagnetRegion/Rich1/lvRich1Master                  | mm | 11      20.011068        0.0064998357 20.005621           20.0275 |
-   | BeforeMagnetRegion/Rich1/lvRich1Master                  | X0 | 11      0.2492778       8.0968429e-05 0.24920994         0.249482 |
-   | BeforeMagnetRegion/Rich1/lvRich1SubMaster               | mm | 15      14.875039           40.684818 4.0010787           167.103 |
-   | BeforeMagnetRegion/Rich1/lvRich1SubMaster               | X0 | 15      0.042630594        0.11659922 0.01146675         0.478904 |
-   | BeforeMagnetRegion/UT/Modules/lvCableL                  | mm | 1       0.010239357                 0 0.010239357       0.0102393 |
-   | BeforeMagnetRegion/UT/Modules/lvCableL                  | X0 | 1       0.00064145031               0 0.00064145031   0.000641450 |
-   | BeforeMagnetRegion/UT/Modules/lvCableS                  | mm | 1       0.0050991171                0 0.0050991171     0.00509911 |
-   | BeforeMagnetRegion/UT/Modules/lvCableS                  | X0 | 1       0.00031943708               0 0.00031943708   0.000319437 |
-   | BeforeMagnetRegion/UT/Modules/lvModuleA                 | mm | 3       0.019401082     1.9371396e-05 0.019376645       0.0194240 |
-   | BeforeMagnetRegion/UT/Modules/lvModuleA                 | X0 | 3       8.5095307e-05   8.4965101e-08 8.4988126e-05   8.5195938e- |
-   | BeforeMagnetRegion/UT/Modules/lvModuleC                 | mm | 4       0.019076156     2.1181634e-05 0.019048532       0.0191063 |
-   | BeforeMagnetRegion/UT/Modules/lvModuleC                 | X0 | 4       8.3670149e-05   9.2905008e-08 8.3548985e-05   8.3802544e- |
-   | BeforeMagnetRegion/VP/RFFoil/lvRFFoilCompTnTUnit        | mm | 282     0.010202821       0.037314667 1.778365e-10       0.331086 |
-   | BeforeMagnetRegion/VP/RFFoil/lvRFFoilCompTnTUnit        | X0 | 282     0                           0 0                           |
-
-TransportSvc      SUCCESS  GEOMETRY ERRORS: 'Codes'    map has the size 0
-
-TransportSvc         INFO Reset the static pointer to DetDesc::IGeometyrErrorSvc
-RootCnvSvc           INFO Disconnected data IO:B4BC88DA-D3B6-EA11-B545-FA163E4B924C [output/XiG/XiG.mdst]
-DataOnDemandSvc      INFO Handled "DataFault" incidents: 27210/7081/55079(Alg/Node/Total).
+RootCnvSvc           INFO Disconnected data IO:2D7773A6-B7A2-11EA-8499-FA163E4B924C [output/XiG/XiG.mdst]
+DataOnDemandSvc      INFO Handled "DataFault" incidents: 1752/1439/4473(Alg/Node/Total).
 ToolSvc              INFO Removing all tools created by ToolSvc
-ToolSvc.LoKi::D...SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/1/0/0
-ToolSvc.LoKi::D...SUCCESS  #ERRORS     = 2        Message = 'Error in matrix inversion [Hlt2BToHHHGamma_Inclusive_Line]'
-Hlt2BToHHHGamma...SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/0/2/0
-Hlt2BToHHHGamma...SUCCESS  #WARNINGS   = 2        Message = 'Could not fill Flight'
-Hlt2BToHHHGamma...SUCCESS  #WARNINGS   = 497      Message = 'Will not fill geometry tuple for neutral Calo particles. No worry'
 DaVinciInitAlg....SUCCESS Booked 4 Histogram(s) : 1D=4 
 DaVinciInitAlg....SUCCESS Number of counters : 2
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "Delta Memory/MB"                               |       305 |       1.84 |  0.0060328 |   0.085363 |      0.0000 |      1.4400 |
- | "Total Memory/MB"                               |       314 |   376280.2 |     1198.3 |     32.906 |      784.79 |      1201.7 |
+ | "Delta Memory/MB"                               |        82 |        0.7 |  0.0085366 |   0.058133 |      0.0000 |     0.48800 |
+ | "Total Memory/MB"                               |        91 |   72060.69 |     791.88 |    0.74752 |      785.35 |      792.15 |
 DaVinciInitAlg....SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/0/1/0
-DaVinciInitAlg....SUCCESS  #WARNINGS   = 2        Message = 'Delta Memory for the event exceeds 3*sigma'
-ToolSvc.TrackSt...SUCCESS Number of counters : 2
- |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "Number of states added"                        |       243 |        631 |     2.5967 |     4.9000 |      0.0000 |      24.000 |
- | "Number of tracks seen"                         |       313 |       3625 |     11.581 |     8.0012 |      0.0000 |      36.000 |
+DaVinciInitAlg....SUCCESS  #WARNINGS   = 1        Message = 'Delta Memory for the event exceeds 3*sigma'
 TimingAuditor.T...   INFO ----------------------------------------------------------------------------------------------------------------------
 TimingAuditor.T...   INFO This machine has a speed about   2.94 times the speed of a 2.8 GHz Xeon.
 TimingAuditor.T...   INFO Algorithm                              (millisec) |    <user> |   <clock> |      min       max    sigma | entries | total (s) |
 TimingAuditor.T...   INFO ----------------------------------------------------------------------------------------------------------------------
-TimingAuditor.T...   INFO EVENT LOOP                                        |   115.828 |   175.741 |    2.718   47600.0  2685.12 |     314 |    55.183 |
-TimingAuditor.T...   INFO  DaVinciEventSeq                                  |   114.936 |   174.626 |    2.070   47600.0  2685.18 |     314 |    54.833 |
-TimingAuditor.T...   INFO   DaVinciInitAlg                                  |     0.031 |     0.134 |    0.057       5.9     0.33 |     314 |     0.042 |
-TimingAuditor.T...   INFO   FilteredEventSeq                                |   114.904 |   174.470 |    1.978   47599.8  2685.18 |     314 |    54.784 |
-TimingAuditor.T...   INFO    DaVinciEventInitSeq                            |     2.802 |     5.425 |    1.659     337.3    23.69 |     314 |     1.704 |
-TimingAuditor.T...   INFO     KillDAQ                                       |     0.000 |     0.020 |    0.007       3.1     0.17 |     314 |     0.006 |
-TimingAuditor.T...   INFO     UnpackParticlesAndVertices                    |     2.770 |     5.394 |    1.646     337.3    23.69 |     314 |     1.694 |
-TimingAuditor.T...   INFO    DaVinciAnalysisSeq                             |   112.101 |   169.036 |    0.218   47408.1  2674.54 |     314 |    53.078 |
-TimingAuditor.T...   INFO     DaVinciUserSequence                           |   112.101 |   169.026 |    0.211   47408.1  2674.54 |     314 |    53.074 |
-TimingAuditor.T...   INFO      Hlt2BToHHHGamma_Inclusive_Line               |    35.541 |    69.771 |    0.004   18316.3  1033.39 |     314 |    21.908 |
-TimingAuditor.T...   INFO      ExtraHadron                                  |     1.369 |     2.075 |    0.002      17.5     2.52 |     314 |     0.652 |
-TimingAuditor.T...   INFO      ExtraKs0                                     |    73.471 |    95.492 |    0.002   29072.6  1640.51 |     314 |    29.985 |
-TimingAuditor.T...   INFO      ExtraLambda                                  |     1.369 |     1.300 |    0.002      30.0     3.82 |     314 |     0.408 |
-TimingAuditor.T...   INFO     MonitoringSequence                            |     0.000 |     0.002 |    0.002       0.0     0.00 |     314 |     0.001 |
-TimingAuditor.T...   INFO   LumiSeq                                         |     0.000 |     0.008 |    0.006       0.0     0.00 |     314 |     0.003 |
-TimingAuditor.T...   INFO    EventAccount                                   |     0.000 |     0.003 |    0.002       0.0     0.00 |     314 |     0.001 |
-TimingAuditor.T...   INFO *     HLT2_PsAndVsUnpack                          |     0.044 |     0.065 |    0.003      25.3     0.50 |    6940 |     0.455 |
-TimingAuditor.T...   INFO *      createODIN                                 |     0.159 |     0.226 |    0.064      14.4     1.03 |     313 |     0.071 |
-TimingAuditor.T...   INFO *      UnpackMCParticles                          |     0.060 |     0.065 |    0.026      16.5     0.29 |    6652 |     0.435 |
-TimingAuditor.T...   INFO *      SEQ:MCParticles                            |     0.002 |     0.005 |    0.002       4.3     0.05 |   12818 |     0.074 |
-TimingAuditor.T...   INFO *       UnpackMCParticle                          |     0.000 |     0.076 |    0.050       4.2     0.27 |     243 |     0.019 |
-TimingAuditor.T...   INFO *       LINK:MCParticles2MC                       |     0.041 |     0.042 |    0.035       0.2     0.01 |     243 |     0.010 |
-TimingAuditor.T...   INFO *        LINK:MC2Sim4Particles                    |     0.000 |     0.058 |    0.033       4.2     0.27 |     244 |     0.014 |
-TimingAuditor.T...   INFO *      HLT2_pRec_Calo_Photons_Converter           |     0.288 |     0.309 |    0.078      14.4     1.11 |     243 |     0.075 |
+TimingAuditor.T...   INFO EVENT LOOP                                        |     9.450 |    13.702 |    5.708     445.7    46.00 |      91 |     1.247 |
+TimingAuditor.T...   INFO  DaVinciEventSeq                                  |     9.340 |    13.625 |    5.675     441.9    45.60 |      91 |     1.240 |
+TimingAuditor.T...   INFO   DaVinciInitAlg                                  |     0.109 |     0.351 |    0.073      21.0     2.19 |      91 |     0.032 |
+TimingAuditor.T...   INFO   FilteredEventSeq                                |     9.230 |    13.246 |    5.545     420.4    43.37 |      91 |     1.205 |
+TimingAuditor.T...   INFO    DaVinciEventInitSeq                            |     5.714 |     9.413 |    2.018     392.0    40.78 |      91 |     0.857 |
+TimingAuditor.T...   INFO     KillDAQ                                       |     0.000 |     0.008 |    0.006       0.0     0.00 |      91 |     0.001 |
+TimingAuditor.T...   INFO     UnpackParticlesAndVertices                    |     5.714 |     9.392 |    2.000     392.0    40.78 |      91 |     0.855 |
+TimingAuditor.T...   INFO    DaVinciAnalysisSeq                             |     3.516 |     3.823 |    3.440      28.4     2.61 |      91 |     0.348 |
+TimingAuditor.T...   INFO     DaVinciUserSequence                           |     3.516 |     3.812 |    3.430      28.4     2.61 |      91 |     0.347 |
+TimingAuditor.T...   INFO      Hlt2BToHHHGamma_Inclusive_Line               |     0.000 |     0.020 |    0.005       1.2     0.13 |      91 |     0.002 |
+TimingAuditor.T...   INFO      ExtraHadron                                  |     0.000 |     0.003 |    0.002       0.0     0.00 |      91 |     0.000 |
+TimingAuditor.T...   INFO      ExtraKs0                                     |     0.000 |     0.003 |    0.003       0.0     0.00 |      91 |     0.000 |
+TimingAuditor.T...   INFO      ExtraLambda                                  |     0.000 |     0.003 |    0.002       0.0     0.00 |      91 |     0.000 |
+TimingAuditor.T...   INFO      ExtraGamma                                   |     0.000 |     0.003 |    0.002       0.0     0.00 |      91 |     0.000 |
+TimingAuditor.T...   INFO      ExtraPi0                                     |     0.000 |     0.003 |    0.002       0.0     0.00 |      91 |     0.000 |
+TimingAuditor.T...   INFO     MonitoringSequence                            |     0.000 |     0.002 |    0.002       0.0     0.00 |      91 |     0.000 |
+TimingAuditor.T...   INFO   LumiSeq                                         |     0.000 |     0.014 |    0.008       0.4     0.04 |      91 |     0.001 |
+TimingAuditor.T...   INFO    EventAccount                                   |     0.000 |     0.007 |    0.003       0.4     0.04 |      91 |     0.001 |
+TimingAuditor.T...   INFO *     HLT2_PsAndVsUnpack                          |     0.039 |     0.068 |    0.003       4.2     0.29 |    1752 |     0.120 |
 TimingAuditor.T...   INFO ----------------------------------------------------------------------------------------------------------------------
-NTupleSvc            INFO NTuples saved successfully
-*****Chrono*****     INFO ****************************************************************************************************
-*****Chrono*****     INFO  The Final CPU consumption ( Chrono ) Table (ordered)
-*****Chrono*****     INFO ****************************************************************************************************
-DetailedMateria...   INFO Time User   : Tot= 22.2  [s] Ave/Min/Max=0.0277(+-0.769)/    0/ 21.8  [s] #=800
-ChronoStatSvc        INFO Time User   : Tot=   28  [s]                                             #=  1
-*****Chrono*****     INFO ****************************************************************************************************
-ChronoStatSvc.f...   INFO  Service finalized successfully 
 ApplicationMgr       INFO Application Manager Finalized successfully
-ApplicationMgr      ERROR Application Manager Terminated with error code 2
+ApplicationMgr       INFO Application Manager Terminated successfully

@@ -7,39 +7,39 @@ Event weight:
           Efficiency for each cut, and global          
 -------------------------------------------------------
 (Lambda0_PT > 500)             |  1
-(Lambda0_PT > 600)             |  0.929385
-(Lambda0_PT > 700)             |  0.854214
-(Lambda0_PT > 800)             |  0.785877
-(Lambda0_PT > 900)             |  0.70691
-(Lambda0_PT > 1000)            |  0.64085
-(Lambda0_IPCHI2_OWNPV < 0.05)  |  0.0205011
-(Lambda0_IPCHI2_OWNPV < 0.06)  |  0.0250569
-(Lambda0_IPCHI2_OWNPV < 0.07)  |  0.0280942
-(Lambda0_IPCHI2_OWNPV < 0.08)  |  0.0296128
-(Lambda0_IPCHI2_OWNPV < 0.09)  |  0.0334093
-(Lambda0_IPCHI2_OWNPV < 0.1)   |  0.0379651
-(Lambda0_IPCHI2_OWNPV < 0.2)   |  0.0637813
-(Lambda0_IPCHI2_OWNPV < 0.3)   |  0.100228
-(Lambda0_IPCHI2_OWNPV < 0.4)   |  0.122248
-(Lambda0_IPCHI2_OWNPV < 0.5)   |  0.150342
-(Lambda0_IPCHI2_OWNPV < 0.6)   |  0.170843
-(Lambda0_IPCHI2_OWNPV < 0.7)   |  0.198178
-(Lambda0_IPCHI2_OWNPV < 0.8)   |  0.225513
-(Lambda0_IPCHI2_OWNPV < 0.9)   |  0.24981
-(Lambda0_IPCHI2_OWNPV < 1.0)   |  0.268033
-(Lambda0_IPCHI2_OWNPV < 2.0)   |  0.46773
-(Lambda0_IPCHI2_OWNPV < 3.0)   |  0.580106
-(Lambda0_IPCHI2_OWNPV < 4.0)   |  0.658314
-(Lambda0_IPCHI2_OWNPV < 5.0)   |  0.712984
-(Lambda0_IPCHI2_OWNPV < 6.0)   |  0.758542
-(Lambda0_IPCHI2_OWNPV < 7.0)   |  0.802582
-(Lambda0_IPCHI2_OWNPV < 8.0)   |  0.831435
-(Lambda0_IPCHI2_OWNPV < 9.0)   |  0.849658
-(Lambda0_IPCHI2_OWNPV < 10.0)  |  0.868641
-(Lambda0_IPCHI2_OWNPV < 12.0)  |  0.902809
-(Lambda0_IPCHI2_OWNPV < 14.0)  |  0.926348
-(Lambda0_IPCHI2_OWNPV < 16.0)  |  0.950645
-(Lambda0_IPCHI2_OWNPV < 18.0)  |  0.975702
-(Lambda0_IPCHI2_OWNPV < 20.0)  |  0.996963
-Global                         |  0.012908
-Error                          |  0.003110
+(Lambda0_PT > 600)             |  0.932692
+(Lambda0_PT > 700)             |  0.857517
+(Lambda0_PT > 800)             |  0.791958
+(Lambda0_PT > 900)             |  0.708916
+(Lambda0_PT > 1000)            |  0.645979
+(Lambda0_IPCHI2_OWNPV < 0.05)  |  0.0227273
+(Lambda0_IPCHI2_OWNPV < 0.06)  |  0.027972
+(Lambda0_IPCHI2_OWNPV < 0.07)  |  0.0314685
+(Lambda0_IPCHI2_OWNPV < 0.08)  |  0.0332168
+(Lambda0_IPCHI2_OWNPV < 0.09)  |  0.0375874
+(Lambda0_IPCHI2_OWNPV < 0.1)   |  0.0428322
+(Lambda0_IPCHI2_OWNPV < 0.2)   |  0.0725524
+(Lambda0_IPCHI2_OWNPV < 0.3)   |  0.11451
+(Lambda0_IPCHI2_OWNPV < 0.4)   |  0.13986
+(Lambda0_IPCHI2_OWNPV < 0.5)   |  0.172203
+(Lambda0_IPCHI2_OWNPV < 0.6)   |  0.195804
+(Lambda0_IPCHI2_OWNPV < 0.7)   |  0.227273
+(Lambda0_IPCHI2_OWNPV < 0.8)   |  0.258741
+(Lambda0_IPCHI2_OWNPV < 0.9)   |  0.286713
+(Lambda0_IPCHI2_OWNPV < 1.0)   |  0.307692
+(Lambda0_IPCHI2_OWNPV < 2.0)   |  0.537587
+(Lambda0_IPCHI2_OWNPV < 3.0)   |  0.666958
+(Lambda0_IPCHI2_OWNPV < 4.0)   |  0.756993
+(Lambda0_IPCHI2_OWNPV < 5.0)   |  0.81993
+(Lambda0_IPCHI2_OWNPV < 6.0)   |  0.872378
+(Lambda0_IPCHI2_OWNPV < 7.0)   |  0.923077
+(Lambda0_IPCHI2_OWNPV < 8.0)   |  0.956294
+(Lambda0_IPCHI2_OWNPV < 9.0)   |  0.977273
+(Lambda0_IPCHI2_OWNPV < 10.0)  |  0.999126
+(Lambda0_IPCHI2_OWNPV < 12.0)  |  0.999126
+(Lambda0_IPCHI2_OWNPV < 14.0)  |  0.999126
+(Lambda0_IPCHI2_OWNPV < 16.0)  |  0.999126
+(Lambda0_IPCHI2_OWNPV < 18.0)  |  0.999126
+(Lambda0_IPCHI2_OWNPV < 20.0)  |  0.999126
+Global                         |  0.014860
+Error                          |  0.003577

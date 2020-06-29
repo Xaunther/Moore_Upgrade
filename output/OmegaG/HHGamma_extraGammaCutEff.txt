@@ -1,0 +1,31 @@
+Selection efficiencies applied on output/OmegaG/OmegaG_HHGamma.root: 
+Event weight: 
+
+                     Preselection                     
+------------------------------------------------------
+
+          Efficiency for each cut, and global          
+-------------------------------------------------------
+(gamma_PT > 1000)  |  0.0774213
+(gamma_PT > 1100)  |  0.0639523
+(gamma_PT > 1200)  |  0.0541847
+(gamma_PT > 1300)  |  0.046679
+(gamma_PT > 1400)  |  0.0403043
+(gamma_PT > 1500)  |  0.0350607
+(gamma_PT > 1600)  |  0.0311536
+(gamma_PT > 1700)  |  0.0279663
+(gamma_PT > 1800)  |  0.0253958
+(gamma_PT > 1900)  |  0.0229282
+(gamma_PT > 2000)  |  0.0215916
+(gamma_PT > 2100)  |  0.0193296
+(gamma_PT > 2200)  |  0.0172733
+(gamma_PT > 2300)  |  0.0162451
+(gamma_PT > 2400)  |  0.0143944
+(gamma_PT > 2500)  |  0.0128521
+(gamma_PT > 2600)  |  0.0119268
+(gamma_PT > 2700)  |  0.0111043
+(gamma_PT > 2800)  |  0.0102817
+(gamma_PT > 2900)  |  0.00976763
+(gamma_PT > 3000)  |  0.009562
+Global             |  0.009562
+Error              |  0.000987
