@@ -1,0 +1,31 @@
+Selection efficiencies applied on output/PhiG/PhiG_HHGamma.root: 
+Event weight: 
+
+                     Preselection                     
+------------------------------------------------------
+
+          Efficiency for each cut, and global          
+-------------------------------------------------------
+(gamma_PT > 1000)  |  1
+(gamma_PT > 1100)  |  1
+(gamma_PT > 1200)  |  1
+(gamma_PT > 1300)  |  1
+(gamma_PT > 1400)  |  1
+(gamma_PT > 1500)  |  0.871552
+(gamma_PT > 1600)  |  0.77383
+(gamma_PT > 1700)  |  0.700157
+(gamma_PT > 1800)  |  0.641803
+(gamma_PT > 1900)  |  0.592703
+(gamma_PT > 2000)  |  0.552636
+(gamma_PT > 2100)  |  0.506241
+(gamma_PT > 2200)  |  0.465913
+(gamma_PT > 2300)  |  0.433092
+(gamma_PT > 2400)  |  0.405639
+(gamma_PT > 2500)  |  0.378012
+(gamma_PT > 2600)  |  0.356102
+(gamma_PT > 2700)  |  0.335719
+(gamma_PT > 2800)  |  0.317694
+(gamma_PT > 2900)  |  0.300672
+(gamma_PT > 3000)  |  0.284785
+Global             |  0.284785
+Error              |  0.002982

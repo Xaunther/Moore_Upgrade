@@ -38,7 +38,7 @@
 ApplicationMgr    SUCCESS 
 ====================================================================================================================================
                                                    Welcome to Moore version v51r0
-                                          running on lxplus723.cern.ch on Mon Jun 29 17:33:04 2020
+                                          running on lxplus723.cern.ch on Tue Jun 30 12:03:41 2020
 ====================================================================================================================================
 ApplicationMgr       INFO Application Manager Configured successfully
 ToolSvc.GitDDDB                        INFO opening Git repository '/cvmfs/lhcb.cern.ch/lib/lhcb/git-conddb/DDDB.git'
@@ -65,13 +65,13 @@ bankKiller                          SUCCESS bankKiller : all banks of type 'HltS
 bankKiller                          SUCCESS bankKiller : all banks of type 'HltLumiSummary' will be removed.
 bankKiller                          SUCCESS bankKiller : all banks of type 'HltRoutingBits' will be removed.
 bankKiller                             INFO Killing banks from first raw event in '[/Event/Trigger/RawEvent, /Event/Unstripped/RawEvent]'
-FunctionalParticleMaker#1.LoKi::...    INFO CUT: ' ( (TrTYPE==5) &TrALL) ' 
-MergedPi0Maker                         INFO  Following technique(s) will be used for CL evaluation : [IsPhoton]
-MergedPi0Maker                         INFO  Switch to [CaloTrMatch] if one technique is not available 
-FunctionalParticleMaker#3.LoKi::...    INFO CUT: ' ( (TrTYPE==5) &TrALL) ' 
-FunctionalParticleMaker#2.LoKi::...    INFO CUT: ' ( (TrTYPE==3) &TrALL) ' 
 ResolvedPi0Maker.PhotonMaker#1         INFO  Following technique(s) will be used for CL evaluation : [IsNotH]
 ResolvedPi0Maker.PhotonMaker#1         INFO  Switch to [PhotonDLL] if one technique is not available 
+MergedPi0Maker                         INFO  Following technique(s) will be used for CL evaluation : [IsPhoton]
+MergedPi0Maker                         INFO  Switch to [CaloTrMatch] if one technique is not available 
+FunctionalParticleMaker#1.LoKi::...    INFO CUT: ' ( (TrTYPE==5) &TrALL) ' 
+FunctionalParticleMaker#3.LoKi::...    INFO CUT: ' ( (TrTYPE==5) &TrALL) ' 
+FunctionalParticleMaker#2.LoKi::...    INFO CUT: ' ( (TrTYPE==3) &TrALL) ' 
 EventPersistencySvc                    INFO Added successfully Conversion service:RootCnvSvc
 OutputStream                           INFO Data source: EventDataSvc output: DATAFILE='output/LambdaG/LambdaG.mdst' SVC='Gaudi::RootCnvSvc' OPT='RECREATE'
 HiveDataBrokerSvc                   WARNING non-reentrant algorithm: UnpackRecVertex/UnpackRecVertices
@@ -105,32 +105,32 @@ HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDeskt
 HiveDataBrokerSvc                   WARNING non-reentrant algorithm: bankKiller
 HiveDataBrokerSvc                   WARNING non-reentrant algorithm: HltDecReportsWriter
 HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#39
-HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#4
-HiveDataBrokerSvc                   WARNING non-reentrant algorithm: CombineParticles/CombineParticles#2
-HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#5
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: ResolvedPi0Maker
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#14
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#15
 HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#40
-HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#6
-HiveDataBrokerSvc                   WARNING non-reentrant algorithm: CombineParticles/CombineParticles#3
-HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#7
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#12
 HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#41
 HiveDataBrokerSvc                   WARNING non-reentrant algorithm: MergedPi0Maker
 HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#13
 HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#42
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#6
 HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#10
 HiveDataBrokerSvc                   WARNING non-reentrant algorithm: CombineParticles/CombineParticles#5
 HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#11
 HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#43
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#4
 HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#8
 HiveDataBrokerSvc                   WARNING non-reentrant algorithm: CombineParticles/CombineParticles#4
 HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#9
 HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#44
-HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#12
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: CombineParticles/CombineParticles#2
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#5
 HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#45
-HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#3
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: CombineParticles/CombineParticles#3
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#7
 HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#46
-HiveDataBrokerSvc                   WARNING non-reentrant algorithm: ResolvedPi0Maker
-HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#14
-HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#15
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#3
 HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#47
 HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#48
 HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#49
@@ -170,7 +170,7 @@ HiveDataBrokerSvc                   WARNING non-reentrant algorithm: OutputStrea
 HLTControlFlowMgr                      INFO Concurrency level information:
 HLTControlFlowMgr                      INFO  o Number of events slots: 1
 HLTControlFlowMgr                      INFO  o TBB thread pool size:  'ThreadPoolSize':1
-HLTControlFlowMgr                      INFO ---> End of Initialization. This took 88831 ms
+HLTControlFlowMgr                      INFO ---> End of Initialization. This took 35898 ms
 ApplicationMgr                         INFO Application Manager Initialized successfully
 DeVP                                   INFO There are 208 sensors (left: 104, right: 104)
 DeFTDetector                           INFO Current FT geometry version =   63
@@ -182,8 +182,8 @@ EventSelector                       SUCCESS Reading Event record 1. Record numbe
 TransportSvc                           INFO Initialize the static pointer to DetDesc::IGeometryErrorSvc
 TransportSvc                           INFO Recovery of geometry errors is  ENABLED
 ToolSvc.LoKi::VertexFitter             INFO Option for Optimised Kalman Filter fit is activated 
-HLTControlFlowMgr                      INFO Timing started at: 17:35:39
-IODataManager                          INFO Referring to dataset output/LambdaG/LambdaG.mdst by its file ID:354472B8-BA1E-11EA-966A-FA163E4B924C
+HLTControlFlowMgr                      INFO Timing started at: 12:04:52
+IODataManager                          INFO Referring to dataset output/LambdaG/LambdaG.mdst by its file ID:2764CD64-BAB9-11EA-9073-FA163E4B924C
 EventSelector                          INFO Stream:EventSelector.DataStreamTool_2 Def:DATAFILE='root://x509up_u98003@eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/Upgrade/LDST/00076702/0000/00076702_00000002_1.ldst' SVC='Gaudi::RootEvtSelector' OPT='READ' IgnoreChecksum='YES'
 LoKiSvc.REPORT                      WARNING LoKi::Particles::MCorrectedWithBestVertex: 	 mCorrDir: M^2 < 0 !! [CombineParticles#7] StatusCode=FAILURE
 LoKiSvc.REPORT                      WARNING LoKi::Particles::MCorrectedWithBestVertex: 	 mCorrDir: M^2 < 0 !! [FilterDesktop#17] StatusCode=FAILURE
@@ -336,7 +336,7 @@ EventSelector                          INFO Stream:EventSelector.DataStreamTool_
 IODataManager                          INFO Disconnect from dataset root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00076702/0000/00076702_00000054_1.ldst [1448F93B-AE94-E811-BEDB-509A4C7480BA]
 RootCnvSvc                             INFO Removed disconnected IO  stream:1448F93B-AE94-E811-BEDB-509A4C7480BA [root://x509up_u98003@ccxrootdlhcb.in2p3.fr//pnfs/in2p3.fr/data/lhcb/MC/Upgrade/LDST/00076702/0000/00076702_00000054_1.ldst]
 HLTControlFlowMgr                      INFO No more events in event selection 
-HLTControlFlowMgr                      INFO ---> Loop over 35668 Events Finished -  WSS 1359.73, timed 35658 Events: 1424845 ms, Evts/s = 25.0259
+HLTControlFlowMgr                      INFO ---> Loop over 35668 Events Finished -  WSS 1381.06, timed 35658 Events: 1157828 ms, Evts/s = 30.7973
 ApplicationMgr                         INFO Application Manager Stopped successfully
 DeterministicPrescaler              SUCCESS Number of counters : 1
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
@@ -540,78 +540,49 @@ FilterDesktop#39                    SUCCESS Number of counters : 5
  |*"#accept"                                       |       192 |          4 |( 2.083333 +- 1.030759)% |
  |*"#passed"                                       |       192 |          4 |( 2.083333 +- 1.030759)%|   -------   |   -------   |
  |*"efficiency"                                    |         4 |          4 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
-FilterDesktop#4                     SUCCESS Number of counters : 5
+ResolvedPi0Maker                       INFO  - Pi0MakerBase Summary -----
+ResolvedPi0Maker                       INFO  Created : 244.917 pi0per event
+ResolvedPi0Maker                       INFO  --------------------------------
+ResolvedPi0Maker                    SUCCESS Number of counters : 3
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "# FunctionalParticleMaker/Particles"           |       192 |      26007 |     135.45 |     59.084 |      17.000 |      354.00 |
- | "# input particles"                             |       192 |      26007 |     135.45 |     59.084 |      17.000 |      354.00 |
  |*"#accept"                                       |       192 |        192 |( 100.0000 +- 0.000000)% |
- | "#passed"                                       |       192 |       3302 |     17.198 |     8.4768 |      3.0000 |      44.000 |
- |*"efficiency"                                    |     26007 |       3302 |( 12.69658 +- 0.2064495)%|   -------   |   -------   |
-CombineParticles#2                  SUCCESS Number of counters : 10
+ | "Created resolved pi0"                          |     47024 |      47024 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+ | "Created resolved pi0->gg"                      |     47024 |      47024 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+FilterDesktop#14                    SUCCESS Number of counters : 5
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "# FilterDesktop#4/Particles"                   |       192 |       3302 |     17.198 |     8.4768 |      3.0000 |      44.000 |
- | "# KS0 -> pi+  pi- "                            |       192 |        245 |     1.2760 |     1.6176 |      0.0000 |      9.0000 |
- | "# input particles"                             |       192 |       3302 |     17.198 |     8.4768 |      3.0000 |      44.000 |
- | "# pi+"                                         |       192 |       1701 |     8.8594 |     5.1109 |      1.0000 |      32.000 |
- | "# pi-"                                         |       192 |       1601 |     8.3385 |     4.3187 |      1.0000 |      22.000 |
- | "# selected"                                    |       192 |        245 |     1.2760 |     1.6176 |      0.0000 |      9.0000 |
- |*"#accept"                                       |       192 |        113 |( 58.85417 +- 3.551411)% |
- |*"#pass combcut"                                 |     16784 |       1940 |( 11.55863 +- 0.2467932)%|   -------   |   -------   |
- |*"#pass mother cut"                              |      1940 |        245 |( 12.62887 +- 0.7541631)%|   -------   |   -------   |
- | "Error from IParticleCombiner, skip the combinat|        56 |         56 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
-FilterDesktop#5                     SUCCESS Number of counters : 5
+ | "# ResolvedPi0Maker/Particles"                  |       192 |      65014 |     338.61 |     155.55 |      36.000 |      888.00 |
+ | "# input particles"                             |       192 |      65014 |     338.61 |     155.55 |      36.000 |      888.00 |
+ |*"#accept"                                       |       192 |        192 |( 100.0000 +- 0.000000)% |
+ | "#passed"                                       |       192 |      23715 |     123.52 |     63.923 |      7.0000 |      363.00 |
+ |*"efficiency"                                    |     65014 |      23715 |( 36.47676 +- 0.1887865)%|   -------   |   -------   |
+FilterDesktop#15                    SUCCESS Number of counters : 5
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "# CombineParticles#2/Particles"                |       192 |        245 |     1.2760 |     1.6176 |      0.0000 |      9.0000 |
- | "# input particles"                             |       192 |        245 |     1.2760 |     1.6176 |      0.0000 |      9.0000 |
- |*"#accept"                                       |       192 |         46 |( 23.95833 +- 3.080374)% |
- | "#passed"                                       |       192 |         53 |    0.27604 |    0.52226 |      0.0000 |      2.0000 |
- |*"efficiency"                                    |       245 |         53 |( 21.63265 +- 2.630507)%|   -------   |   -------   |
+ | "# FilterDesktop#14/Particles"                  |       192 |      23715 |     123.52 |     63.923 |      7.0000 |      363.00 |
+ | "# input particles"                             |       192 |      23715 |     123.52 |     63.923 |      7.0000 |      363.00 |
+ |*"#accept"                                       |       192 |        168 |( 87.50000 +- 2.386758)% |
+ | "#passed"                                       |       192 |        692 |     3.6042 |     3.1737 |      0.0000 |      20.000 |
+ |*"efficiency"                                    |     23715 |        692 |( 2.917984 +- 0.1092948)%|   -------   |   -------   |
 FilterDesktop#40                    SUCCESS Number of counters : 5
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "# FilterDesktop#5"                             |       192 |         53 |    0.27604 |    0.52226 |      0.0000 |      2.0000 |
- | "# input particles"                             |       192 |         53 |    0.27604 |    0.52226 |      0.0000 |      2.0000 |
- |*"#accept"                                       |       192 |         46 |( 23.95833 +- 3.080374)% |
- | "#passed"                                       |       192 |         53 |    0.27604 |    0.52226 |      0.0000 |      2.0000 |
- |*"efficiency"                                    |        53 |         53 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
-FunctionalParticleMaker#1           SUCCESS Number of counters : 4
+ | "# FilterDesktop#15"                            |       192 |        692 |     3.6042 |     3.1737 |      0.0000 |      20.000 |
+ | "# input particles"                             |       192 |        692 |     3.6042 |     3.1737 |      0.0000 |      20.000 |
+ |*"#accept"                                       |       192 |        168 |( 87.50000 +- 2.386758)% |
+ | "#passed"                                       |       192 |        692 |     3.6042 |     3.1737 |      0.0000 |      20.000 |
+ |*"efficiency"                                    |       692 |        692 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
+FilterDesktop#12                    SUCCESS Number of counters : 5
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- |*"# passed ProtoParticle filter"                 |      6086 |       6086 |( 100.0000 +- 0.000000)% |
- |*"# passed Track filter"                         |     40076 |       6086 |( 15.18615 +- 0.1792730)% |
- | "Nb created anti-particles"                     |       192 |       2936 |     15.292 |     8.3034 |           2 |          49 |
- | "Nb created particles"                          |       192 |       3150 |     16.406 |     8.3804 |           1 |          45 |
-FilterDesktop#6                     SUCCESS Number of counters : 5
- |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "# FunctionalParticleMaker#1/Particles"         |       192 |       6086 |     31.698 |     15.946 |      3.0000 |      94.000 |
- | "# input particles"                             |       192 |       6086 |     31.698 |     15.946 |      3.0000 |      94.000 |
+ | "# PhotonMakerAlg/Particles"                    |       192 |      23721 |     123.55 |     32.970 |      34.000 |      199.00 |
+ | "# input particles"                             |       192 |      23721 |     123.55 |     32.970 |      34.000 |      199.00 |
  |*"#accept"                                       |       192 |        192 |( 100.0000 +- 0.000000)% |
- | "#passed"                                       |       192 |       3196 |     16.646 |     9.5862 |      1.0000 |      56.000 |
- |*"efficiency"                                    |      6086 |       3196 |( 52.51397 +- 0.6401097)%|   -------   |   -------   |
-CombineParticles#3                  SUCCESS Number of counters : 10
- |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "# FilterDesktop#6/Particles"                   |       192 |       3196 |     16.646 |     9.5862 |      1.0000 |      56.000 |
- | "# KS0 -> pi+  pi- "                            |       192 |        186 |    0.96875 |     1.3186 |      0.0000 |      10.000 |
- | "# input particles"                             |       192 |       3196 |     16.646 |     9.5862 |      1.0000 |      56.000 |
- | "# pi+"                                         |       192 |       1620 |     8.4375 |     5.0277 |      1.0000 |      31.000 |
- | "# pi-"                                         |       192 |       1576 |     8.2083 |     5.1131 |      0.0000 |      29.000 |
- | "# selected"                                    |       192 |        186 |    0.96875 |     1.3186 |      0.0000 |      10.000 |
- |*"#accept"                                       |       192 |        109 |( 56.77083 +- 3.575201)% |
- |*"#pass combcut"                                 |     17183 |       2935 |( 17.08084 +- 0.2870996)%|   -------   |   -------   |
- |*"#pass mother cut"                              |      2935 |        186 |( 6.337308 +- 0.4497091)%|   -------   |   -------   |
- | "Error from IParticleCombiner, skip the combinat|        76 |         76 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
-FilterDesktop#7                     SUCCESS Number of counters : 5
- |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "# CombineParticles#3/Particles"                |       192 |        186 |    0.96875 |     1.3186 |      0.0000 |      10.000 |
- | "# input particles"                             |       192 |        186 |    0.96875 |     1.3186 |      0.0000 |      10.000 |
- |*"#accept"                                       |       192 |         55 |( 28.64583 +- 3.262795)% |
- | "#passed"                                       |       192 |         59 |    0.30729 |    0.50451 |      0.0000 |      2.0000 |
- |*"efficiency"                                    |       186 |         59 |( 31.72043 +- 3.412388)%|   -------   |   -------   |
+ | "#passed"                                       |       192 |        801 |     4.1719 |     2.0983 |      1.0000 |      11.000 |
+ |*"efficiency"                                    |     23721 |        801 |( 3.376755 +- 0.1172800)%|   -------   |   -------   |
 FilterDesktop#41                    SUCCESS Number of counters : 5
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "# FilterDesktop#7"                             |       192 |         59 |    0.30729 |    0.50451 |      0.0000 |      2.0000 |
- | "# input particles"                             |       192 |         59 |    0.30729 |    0.50451 |      0.0000 |      2.0000 |
- |*"#accept"                                       |       192 |         55 |( 28.64583 +- 3.262795)% |
- | "#passed"                                       |       192 |         59 |    0.30729 |    0.50451 |      0.0000 |      2.0000 |
- |*"efficiency"                                    |        59 |         59 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
+ | "# FilterDesktop#12"                            |       192 |        801 |     4.1719 |     2.0983 |      1.0000 |      11.000 |
+ | "# input particles"                             |       192 |        801 |     4.1719 |     2.0983 |      1.0000 |      11.000 |
+ |*"#accept"                                       |       192 |        192 |( 100.0000 +- 0.000000)% |
+ | "#passed"                                       |       192 |        801 |     4.1719 |     2.0983 |      1.0000 |      11.000 |
+ |*"efficiency"                                    |       801 |        801 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
 MergedPi0Maker                         INFO  - Pi0MakerBase Summary -----
 MergedPi0Maker                         INFO  Created : 1.25 pi0per event
 MergedPi0Maker                         INFO  --------------------------------
@@ -634,6 +605,19 @@ FilterDesktop#42                    SUCCESS Number of counters : 5
  |*"#accept"                                       |       192 |        139 |( 72.39583 +- 3.226216)% |
  | "#passed"                                       |       192 |        240 |     1.2500 |     1.0753 |      0.0000 |      5.0000 |
  |*"efficiency"                                    |       240 |        240 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
+FunctionalParticleMaker#1           SUCCESS Number of counters : 4
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ |*"# passed ProtoParticle filter"                 |      6086 |       6086 |( 100.0000 +- 0.000000)% |
+ |*"# passed Track filter"                         |     40076 |       6086 |( 15.18615 +- 0.1792730)% |
+ | "Nb created anti-particles"                     |       192 |       2936 |     15.292 |     8.3034 |           2 |          49 |
+ | "Nb created particles"                          |       192 |       3150 |     16.406 |     8.3804 |           1 |          45 |
+FilterDesktop#6                     SUCCESS Number of counters : 5
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# FunctionalParticleMaker#1/Particles"         |       192 |       6086 |     31.698 |     15.946 |      3.0000 |      94.000 |
+ | "# input particles"                             |       192 |       6086 |     31.698 |     15.946 |      3.0000 |      94.000 |
+ |*"#accept"                                       |       192 |        192 |( 100.0000 +- 0.000000)% |
+ | "#passed"                                       |       192 |       3196 |     16.646 |     9.5862 |      1.0000 |      56.000 |
+ |*"efficiency"                                    |      6086 |       3196 |( 52.51397 +- 0.6401097)%|   -------   |   -------   |
 FunctionalParticleMaker#3           SUCCESS Number of counters : 4
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
  |*"# passed ProtoParticle filter"                 |      6086 |       6086 |( 100.0000 +- 0.000000)% |
@@ -677,6 +661,13 @@ FilterDesktop#43                    SUCCESS Number of counters : 5
  |*"#accept"                                       |       192 |         27 |( 14.06250 +- 2.508834)% |
  | "#passed"                                       |       192 |         28 |    0.14583 |    0.36740 |      0.0000 |      2.0000 |
  |*"efficiency"                                    |        28 |         28 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
+FilterDesktop#4                     SUCCESS Number of counters : 5
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# FunctionalParticleMaker/Particles"           |       192 |      26007 |     135.45 |     59.084 |      17.000 |      354.00 |
+ | "# input particles"                             |       192 |      26007 |     135.45 |     59.084 |      17.000 |      354.00 |
+ |*"#accept"                                       |       192 |        192 |( 100.0000 +- 0.000000)% |
+ | "#passed"                                       |       192 |       3302 |     17.198 |     8.4768 |      3.0000 |      44.000 |
+ |*"efficiency"                                    |     26007 |       3302 |( 12.69658 +- 0.2064495)%|   -------   |   -------   |
 FunctionalParticleMaker#2           SUCCESS Number of counters : 4
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
  |*"# passed ProtoParticle filter"                 |     26007 |      26007 |( 100.0000 +- 0.000000)% |
@@ -720,20 +711,58 @@ FilterDesktop#44                    SUCCESS Number of counters : 5
  |*"#accept"                                       |       192 |         20 |( 10.41667 +- 2.204588)% |
  | "#passed"                                       |       192 |         25 |    0.13021 |    0.41923 |      0.0000 |      3.0000 |
  |*"efficiency"                                    |        25 |         25 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
-FilterDesktop#12                    SUCCESS Number of counters : 5
+CombineParticles#2                  SUCCESS Number of counters : 10
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "# PhotonMakerAlg/Particles"                    |       192 |      23721 |     123.55 |     32.970 |      34.000 |      199.00 |
- | "# input particles"                             |       192 |      23721 |     123.55 |     32.970 |      34.000 |      199.00 |
- |*"#accept"                                       |       192 |        192 |( 100.0000 +- 0.000000)% |
- | "#passed"                                       |       192 |      23721 |     123.55 |     32.970 |      34.000 |      199.00 |
- |*"efficiency"                                    |     23721 |      23721 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
+ | "# FilterDesktop#4/Particles"                   |       192 |       3302 |     17.198 |     8.4768 |      3.0000 |      44.000 |
+ | "# KS0 -> pi+  pi- "                            |       192 |        245 |     1.2760 |     1.6176 |      0.0000 |      9.0000 |
+ | "# input particles"                             |       192 |       3302 |     17.198 |     8.4768 |      3.0000 |      44.000 |
+ | "# pi+"                                         |       192 |       1701 |     8.8594 |     5.1109 |      1.0000 |      32.000 |
+ | "# pi-"                                         |       192 |       1601 |     8.3385 |     4.3187 |      1.0000 |      22.000 |
+ | "# selected"                                    |       192 |        245 |     1.2760 |     1.6176 |      0.0000 |      9.0000 |
+ |*"#accept"                                       |       192 |        113 |( 58.85417 +- 3.551411)% |
+ |*"#pass combcut"                                 |     16784 |       1940 |( 11.55863 +- 0.2467932)%|   -------   |   -------   |
+ |*"#pass mother cut"                              |      1940 |        245 |( 12.62887 +- 0.7541631)%|   -------   |   -------   |
+ | "Error from IParticleCombiner, skip the combinat|        56 |         56 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+FilterDesktop#5                     SUCCESS Number of counters : 5
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# CombineParticles#2/Particles"                |       192 |        245 |     1.2760 |     1.6176 |      0.0000 |      9.0000 |
+ | "# input particles"                             |       192 |        245 |     1.2760 |     1.6176 |      0.0000 |      9.0000 |
+ |*"#accept"                                       |       192 |         46 |( 23.95833 +- 3.080374)% |
+ | "#passed"                                       |       192 |         53 |    0.27604 |    0.52226 |      0.0000 |      2.0000 |
+ |*"efficiency"                                    |       245 |         53 |( 21.63265 +- 2.630507)%|   -------   |   -------   |
 FilterDesktop#45                    SUCCESS Number of counters : 5
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "# FilterDesktop#12"                            |       192 |      23721 |     123.55 |     32.970 |      34.000 |      199.00 |
- | "# input particles"                             |       192 |      23721 |     123.55 |     32.970 |      34.000 |      199.00 |
- |*"#accept"                                       |       192 |        192 |( 100.0000 +- 0.000000)% |
- | "#passed"                                       |       192 |      23721 |     123.55 |     32.970 |      34.000 |      199.00 |
- |*"efficiency"                                    |     23721 |      23721 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
+ | "# FilterDesktop#5"                             |       192 |         53 |    0.27604 |    0.52226 |      0.0000 |      2.0000 |
+ | "# input particles"                             |       192 |         53 |    0.27604 |    0.52226 |      0.0000 |      2.0000 |
+ |*"#accept"                                       |       192 |         46 |( 23.95833 +- 3.080374)% |
+ | "#passed"                                       |       192 |         53 |    0.27604 |    0.52226 |      0.0000 |      2.0000 |
+ |*"efficiency"                                    |        53 |         53 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
+CombineParticles#3                  SUCCESS Number of counters : 10
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# FilterDesktop#6/Particles"                   |       192 |       3196 |     16.646 |     9.5862 |      1.0000 |      56.000 |
+ | "# KS0 -> pi+  pi- "                            |       192 |        186 |    0.96875 |     1.3186 |      0.0000 |      10.000 |
+ | "# input particles"                             |       192 |       3196 |     16.646 |     9.5862 |      1.0000 |      56.000 |
+ | "# pi+"                                         |       192 |       1620 |     8.4375 |     5.0277 |      1.0000 |      31.000 |
+ | "# pi-"                                         |       192 |       1576 |     8.2083 |     5.1131 |      0.0000 |      29.000 |
+ | "# selected"                                    |       192 |        186 |    0.96875 |     1.3186 |      0.0000 |      10.000 |
+ |*"#accept"                                       |       192 |        109 |( 56.77083 +- 3.575201)% |
+ |*"#pass combcut"                                 |     17183 |       2935 |( 17.08084 +- 0.2870996)%|   -------   |   -------   |
+ |*"#pass mother cut"                              |      2935 |        186 |( 6.337308 +- 0.4497091)%|   -------   |   -------   |
+ | "Error from IParticleCombiner, skip the combinat|        76 |         76 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+FilterDesktop#7                     SUCCESS Number of counters : 5
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# CombineParticles#3/Particles"                |       192 |        186 |    0.96875 |     1.3186 |      0.0000 |      10.000 |
+ | "# input particles"                             |       192 |        186 |    0.96875 |     1.3186 |      0.0000 |      10.000 |
+ |*"#accept"                                       |       192 |         55 |( 28.64583 +- 3.262795)% |
+ | "#passed"                                       |       192 |         59 |    0.30729 |    0.50451 |      0.0000 |      2.0000 |
+ |*"efficiency"                                    |       186 |         59 |( 31.72043 +- 3.412388)%|   -------   |   -------   |
+FilterDesktop#46                    SUCCESS Number of counters : 5
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# FilterDesktop#7"                             |       192 |         59 |    0.30729 |    0.50451 |      0.0000 |      2.0000 |
+ | "# input particles"                             |       192 |         59 |    0.30729 |    0.50451 |      0.0000 |      2.0000 |
+ |*"#accept"                                       |       192 |         55 |( 28.64583 +- 3.262795)% |
+ | "#passed"                                       |       192 |         59 |    0.30729 |    0.50451 |      0.0000 |      2.0000 |
+ |*"efficiency"                                    |        59 |         59 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
 FilterDesktop#3                     SUCCESS Number of counters : 5
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
  | "# FunctionalParticleMaker/Particles"           |       192 |      26007 |     135.45 |     59.084 |      17.000 |      354.00 |
@@ -741,42 +770,13 @@ FilterDesktop#3                     SUCCESS Number of counters : 5
  |*"#accept"                                       |       192 |        191 |( 99.47917 +- 0.5194752)% |
  | "#passed"                                       |       192 |       1731 |     9.0156 |     4.2969 |      0.0000 |      22.000 |
  |*"efficiency"                                    |     26007 |       1731 |( 6.655900 +- 0.1545616)%|   -------   |   -------   |
-FilterDesktop#46                    SUCCESS Number of counters : 5
+FilterDesktop#47                    SUCCESS Number of counters : 5
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
  | "# FilterDesktop#3"                             |       192 |       1731 |     9.0156 |     4.2969 |      0.0000 |      22.000 |
  | "# input particles"                             |       192 |       1731 |     9.0156 |     4.2969 |      0.0000 |      22.000 |
  |*"#accept"                                       |       192 |        191 |( 99.47917 +- 0.5194752)% |
  | "#passed"                                       |       192 |       1731 |     9.0156 |     4.2969 |      0.0000 |      22.000 |
  |*"efficiency"                                    |      1731 |       1731 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
-ResolvedPi0Maker                       INFO  - Pi0MakerBase Summary -----
-ResolvedPi0Maker                       INFO  Created : 244.917 pi0per event
-ResolvedPi0Maker                       INFO  --------------------------------
-ResolvedPi0Maker                    SUCCESS Number of counters : 3
- |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- |*"#accept"                                       |       192 |        192 |( 100.0000 +- 0.000000)% |
- | "Created resolved pi0"                          |     47024 |      47024 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
- | "Created resolved pi0->gg"                      |     47024 |      47024 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
-FilterDesktop#14                    SUCCESS Number of counters : 5
- |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "# ResolvedPi0Maker/Particles"                  |       192 |      65014 |     338.61 |     155.55 |      36.000 |      888.00 |
- | "# input particles"                             |       192 |      65014 |     338.61 |     155.55 |      36.000 |      888.00 |
- |*"#accept"                                       |       192 |        192 |( 100.0000 +- 0.000000)% |
- | "#passed"                                       |       192 |      23715 |     123.52 |     63.923 |      7.0000 |      363.00 |
- |*"efficiency"                                    |     65014 |      23715 |( 36.47676 +- 0.1887865)%|   -------   |   -------   |
-FilterDesktop#15                    SUCCESS Number of counters : 5
- |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "# FilterDesktop#14/Particles"                  |       192 |      23715 |     123.52 |     63.923 |      7.0000 |      363.00 |
- | "# input particles"                             |       192 |      23715 |     123.52 |     63.923 |      7.0000 |      363.00 |
- |*"#accept"                                       |       192 |        192 |( 100.0000 +- 0.000000)% |
- | "#passed"                                       |       192 |      23715 |     123.52 |     63.923 |      7.0000 |      363.00 |
- |*"efficiency"                                    |     23715 |      23715 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
-FilterDesktop#47                    SUCCESS Number of counters : 5
- |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "# FilterDesktop#15"                            |       192 |      23715 |     123.52 |     63.923 |      7.0000 |      363.00 |
- | "# input particles"                             |       192 |      23715 |     123.52 |     63.923 |      7.0000 |      363.00 |
- |*"#accept"                                       |       192 |        192 |( 100.0000 +- 0.000000)% |
- | "#passed"                                       |       192 |      23715 |     123.52 |     63.923 |      7.0000 |      363.00 |
- |*"efficiency"                                    |     23715 |      23715 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
 FilterDesktop#48                    SUCCESS Number of counters : 5
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
  | "# FilterDesktop#19"                            |       192 |        337 |     1.7552 |     2.5388 |      0.0000 |      26.000 |
@@ -786,18 +786,18 @@ FilterDesktop#48                    SUCCESS Number of counters : 5
  |*"efficiency"                                    |       337 |        337 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
 FilterDesktop#49                    SUCCESS Number of counters : 5
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "# FilterDesktop#5"                             |       192 |         53 |    0.27604 |    0.52226 |      0.0000 |      2.0000 |
- | "# input particles"                             |       192 |         53 |    0.27604 |    0.52226 |      0.0000 |      2.0000 |
- |*"#accept"                                       |       192 |         46 |( 23.95833 +- 3.080374)% |
- | "#passed"                                       |       192 |         53 |    0.27604 |    0.52226 |      0.0000 |      2.0000 |
- |*"efficiency"                                    |        53 |         53 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
+ | "# FilterDesktop#15"                            |       192 |        692 |     3.6042 |     3.1737 |      0.0000 |      20.000 |
+ | "# input particles"                             |       192 |        692 |     3.6042 |     3.1737 |      0.0000 |      20.000 |
+ |*"#accept"                                       |       192 |        168 |( 87.50000 +- 2.386758)% |
+ | "#passed"                                       |       192 |        692 |     3.6042 |     3.1737 |      0.0000 |      20.000 |
+ |*"efficiency"                                    |       692 |        692 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
 FilterDesktop#50                    SUCCESS Number of counters : 5
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "# FilterDesktop#7"                             |       192 |         59 |    0.30729 |    0.50451 |      0.0000 |      2.0000 |
- | "# input particles"                             |       192 |         59 |    0.30729 |    0.50451 |      0.0000 |      2.0000 |
- |*"#accept"                                       |       192 |         55 |( 28.64583 +- 3.262795)% |
- | "#passed"                                       |       192 |         59 |    0.30729 |    0.50451 |      0.0000 |      2.0000 |
- |*"efficiency"                                    |        59 |         59 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
+ | "# FilterDesktop#12"                            |       192 |        801 |     4.1719 |     2.0983 |      1.0000 |      11.000 |
+ | "# input particles"                             |       192 |        801 |     4.1719 |     2.0983 |      1.0000 |      11.000 |
+ |*"#accept"                                       |       192 |        192 |( 100.0000 +- 0.000000)% |
+ | "#passed"                                       |       192 |        801 |     4.1719 |     2.0983 |      1.0000 |      11.000 |
+ |*"efficiency"                                    |       801 |        801 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
 FilterDesktop#51                    SUCCESS Number of counters : 5
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
  | "# FilterDesktop#13"                            |       192 |        240 |     1.2500 |     1.0753 |      0.0000 |      5.0000 |
@@ -821,25 +821,25 @@ FilterDesktop#53                    SUCCESS Number of counters : 5
  |*"efficiency"                                    |        25 |         25 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
 FilterDesktop#54                    SUCCESS Number of counters : 5
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "# FilterDesktop#12"                            |       192 |      23721 |     123.55 |     32.970 |      34.000 |      199.00 |
- | "# input particles"                             |       192 |      23721 |     123.55 |     32.970 |      34.000 |      199.00 |
- |*"#accept"                                       |       192 |        192 |( 100.0000 +- 0.000000)% |
- | "#passed"                                       |       192 |      23721 |     123.55 |     32.970 |      34.000 |      199.00 |
- |*"efficiency"                                    |     23721 |      23721 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
+ | "# FilterDesktop#5"                             |       192 |         53 |    0.27604 |    0.52226 |      0.0000 |      2.0000 |
+ | "# input particles"                             |       192 |         53 |    0.27604 |    0.52226 |      0.0000 |      2.0000 |
+ |*"#accept"                                       |       192 |         46 |( 23.95833 +- 3.080374)% |
+ | "#passed"                                       |       192 |         53 |    0.27604 |    0.52226 |      0.0000 |      2.0000 |
+ |*"efficiency"                                    |        53 |         53 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
 FilterDesktop#55                    SUCCESS Number of counters : 5
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# FilterDesktop#7"                             |       192 |         59 |    0.30729 |    0.50451 |      0.0000 |      2.0000 |
+ | "# input particles"                             |       192 |         59 |    0.30729 |    0.50451 |      0.0000 |      2.0000 |
+ |*"#accept"                                       |       192 |         55 |( 28.64583 +- 3.262795)% |
+ | "#passed"                                       |       192 |         59 |    0.30729 |    0.50451 |      0.0000 |      2.0000 |
+ |*"efficiency"                                    |        59 |         59 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
+FilterDesktop#56                    SUCCESS Number of counters : 5
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
  | "# FilterDesktop#3"                             |       192 |       1731 |     9.0156 |     4.2969 |      0.0000 |      22.000 |
  | "# input particles"                             |       192 |       1731 |     9.0156 |     4.2969 |      0.0000 |      22.000 |
  |*"#accept"                                       |       192 |        191 |( 99.47917 +- 0.5194752)% |
  | "#passed"                                       |       192 |       1731 |     9.0156 |     4.2969 |      0.0000 |      22.000 |
  |*"efficiency"                                    |      1731 |       1731 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
-FilterDesktop#56                    SUCCESS Number of counters : 5
- |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "# FilterDesktop#15"                            |       192 |      23715 |     123.52 |     63.923 |      7.0000 |      363.00 |
- | "# input particles"                             |       192 |      23715 |     123.52 |     63.923 |      7.0000 |      363.00 |
- |*"#accept"                                       |       192 |        192 |( 100.0000 +- 0.000000)% |
- | "#passed"                                       |       192 |      23715 |     123.52 |     63.923 |      7.0000 |      363.00 |
- |*"efficiency"                                    |     23715 |      23715 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
 FilterDesktop#21                    SUCCESS Number of counters : 5
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
  | "# FilterDesktop#2"                             |       192 |         60 |    0.31250 |    0.51665 |      0.0000 |      2.0000 |
@@ -849,18 +849,18 @@ FilterDesktop#21                    SUCCESS Number of counters : 5
  |*"efficiency"                                    |        60 |         60 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
 FilterDesktop#22                    SUCCESS Number of counters : 5
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "# FilterDesktop#5"                             |       192 |         53 |    0.27604 |    0.52226 |      0.0000 |      2.0000 |
- | "# input particles"                             |       192 |         53 |    0.27604 |    0.52226 |      0.0000 |      2.0000 |
- |*"#accept"                                       |       192 |         46 |( 23.95833 +- 3.080374)% |
- | "#passed"                                       |       192 |         53 |    0.27604 |    0.52226 |      0.0000 |      2.0000 |
- |*"efficiency"                                    |        53 |         53 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
+ | "# FilterDesktop#15"                            |       192 |        692 |     3.6042 |     3.1737 |      0.0000 |      20.000 |
+ | "# input particles"                             |       192 |        692 |     3.6042 |     3.1737 |      0.0000 |      20.000 |
+ |*"#accept"                                       |       192 |        168 |( 87.50000 +- 2.386758)% |
+ | "#passed"                                       |       192 |        692 |     3.6042 |     3.1737 |      0.0000 |      20.000 |
+ |*"efficiency"                                    |       692 |        692 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
 FilterDesktop#23                    SUCCESS Number of counters : 5
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "# FilterDesktop#7"                             |       192 |         59 |    0.30729 |    0.50451 |      0.0000 |      2.0000 |
- | "# input particles"                             |       192 |         59 |    0.30729 |    0.50451 |      0.0000 |      2.0000 |
- |*"#accept"                                       |       192 |         55 |( 28.64583 +- 3.262795)% |
- | "#passed"                                       |       192 |         59 |    0.30729 |    0.50451 |      0.0000 |      2.0000 |
- |*"efficiency"                                    |        59 |         59 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
+ | "# FilterDesktop#12"                            |       192 |        801 |     4.1719 |     2.0983 |      1.0000 |      11.000 |
+ | "# input particles"                             |       192 |        801 |     4.1719 |     2.0983 |      1.0000 |      11.000 |
+ |*"#accept"                                       |       192 |        192 |( 100.0000 +- 0.000000)% |
+ | "#passed"                                       |       192 |        801 |     4.1719 |     2.0983 |      1.0000 |      11.000 |
+ |*"efficiency"                                    |       801 |        801 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
 FilterDesktop#24                    SUCCESS Number of counters : 5
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
  | "# FilterDesktop#13"                            |       192 |        240 |     1.2500 |     1.0753 |      0.0000 |      5.0000 |
@@ -884,25 +884,25 @@ FilterDesktop#26                    SUCCESS Number of counters : 5
  |*"efficiency"                                    |        25 |         25 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
 FilterDesktop#27                    SUCCESS Number of counters : 5
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "# FilterDesktop#12"                            |       192 |      23721 |     123.55 |     32.970 |      34.000 |      199.00 |
- | "# input particles"                             |       192 |      23721 |     123.55 |     32.970 |      34.000 |      199.00 |
- |*"#accept"                                       |       192 |        192 |( 100.0000 +- 0.000000)% |
- | "#passed"                                       |       192 |      23721 |     123.55 |     32.970 |      34.000 |      199.00 |
- |*"efficiency"                                    |     23721 |      23721 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
+ | "# FilterDesktop#5"                             |       192 |         53 |    0.27604 |    0.52226 |      0.0000 |      2.0000 |
+ | "# input particles"                             |       192 |         53 |    0.27604 |    0.52226 |      0.0000 |      2.0000 |
+ |*"#accept"                                       |       192 |         46 |( 23.95833 +- 3.080374)% |
+ | "#passed"                                       |       192 |         53 |    0.27604 |    0.52226 |      0.0000 |      2.0000 |
+ |*"efficiency"                                    |        53 |         53 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
 FilterDesktop#28                    SUCCESS Number of counters : 5
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# FilterDesktop#7"                             |       192 |         59 |    0.30729 |    0.50451 |      0.0000 |      2.0000 |
+ | "# input particles"                             |       192 |         59 |    0.30729 |    0.50451 |      0.0000 |      2.0000 |
+ |*"#accept"                                       |       192 |         55 |( 28.64583 +- 3.262795)% |
+ | "#passed"                                       |       192 |         59 |    0.30729 |    0.50451 |      0.0000 |      2.0000 |
+ |*"efficiency"                                    |        59 |         59 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
+FilterDesktop#29                    SUCCESS Number of counters : 5
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
  | "# FilterDesktop#3"                             |       192 |       1731 |     9.0156 |     4.2969 |      0.0000 |      22.000 |
  | "# input particles"                             |       192 |       1731 |     9.0156 |     4.2969 |      0.0000 |      22.000 |
  |*"#accept"                                       |       192 |        191 |( 99.47917 +- 0.5194752)% |
  | "#passed"                                       |       192 |       1731 |     9.0156 |     4.2969 |      0.0000 |      22.000 |
  |*"efficiency"                                    |      1731 |       1731 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
-FilterDesktop#29                    SUCCESS Number of counters : 5
- |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "# FilterDesktop#15"                            |       192 |      23715 |     123.52 |     63.923 |      7.0000 |      363.00 |
- | "# input particles"                             |       192 |      23715 |     123.52 |     63.923 |      7.0000 |      363.00 |
- |*"#accept"                                       |       192 |        192 |( 100.0000 +- 0.000000)% |
- | "#passed"                                       |       192 |      23715 |     123.52 |     63.923 |      7.0000 |      363.00 |
- |*"efficiency"                                    |     23715 |      23715 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
 FilterDesktop#30                    SUCCESS Number of counters : 5
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
  | "# FilterDesktop#17"                            |       192 |         13 |   0.067708 |    0.30720 |      0.0000 |      2.0000 |
@@ -912,18 +912,18 @@ FilterDesktop#30                    SUCCESS Number of counters : 5
  |*"efficiency"                                    |        13 |         13 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
 FilterDesktop#31                    SUCCESS Number of counters : 5
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "# FilterDesktop#5"                             |       192 |         53 |    0.27604 |    0.52226 |      0.0000 |      2.0000 |
- | "# input particles"                             |       192 |         53 |    0.27604 |    0.52226 |      0.0000 |      2.0000 |
- |*"#accept"                                       |       192 |         46 |( 23.95833 +- 3.080374)% |
- | "#passed"                                       |       192 |         53 |    0.27604 |    0.52226 |      0.0000 |      2.0000 |
- |*"efficiency"                                    |        53 |         53 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
+ | "# FilterDesktop#15"                            |       192 |        692 |     3.6042 |     3.1737 |      0.0000 |      20.000 |
+ | "# input particles"                             |       192 |        692 |     3.6042 |     3.1737 |      0.0000 |      20.000 |
+ |*"#accept"                                       |       192 |        168 |( 87.50000 +- 2.386758)% |
+ | "#passed"                                       |       192 |        692 |     3.6042 |     3.1737 |      0.0000 |      20.000 |
+ |*"efficiency"                                    |       692 |        692 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
 FilterDesktop#32                    SUCCESS Number of counters : 5
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "# FilterDesktop#7"                             |       192 |         59 |    0.30729 |    0.50451 |      0.0000 |      2.0000 |
- | "# input particles"                             |       192 |         59 |    0.30729 |    0.50451 |      0.0000 |      2.0000 |
- |*"#accept"                                       |       192 |         55 |( 28.64583 +- 3.262795)% |
- | "#passed"                                       |       192 |         59 |    0.30729 |    0.50451 |      0.0000 |      2.0000 |
- |*"efficiency"                                    |        59 |         59 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
+ | "# FilterDesktop#12"                            |       192 |        801 |     4.1719 |     2.0983 |      1.0000 |      11.000 |
+ | "# input particles"                             |       192 |        801 |     4.1719 |     2.0983 |      1.0000 |      11.000 |
+ |*"#accept"                                       |       192 |        192 |( 100.0000 +- 0.000000)% |
+ | "#passed"                                       |       192 |        801 |     4.1719 |     2.0983 |      1.0000 |      11.000 |
+ |*"efficiency"                                    |       801 |        801 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
 FilterDesktop#33                    SUCCESS Number of counters : 5
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
  | "# FilterDesktop#13"                            |       192 |        240 |     1.2500 |     1.0753 |      0.0000 |      5.0000 |
@@ -947,150 +947,150 @@ FilterDesktop#35                    SUCCESS Number of counters : 5
  |*"efficiency"                                    |        25 |         25 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
 FilterDesktop#36                    SUCCESS Number of counters : 5
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "# FilterDesktop#12"                            |       192 |      23721 |     123.55 |     32.970 |      34.000 |      199.00 |
- | "# input particles"                             |       192 |      23721 |     123.55 |     32.970 |      34.000 |      199.00 |
- |*"#accept"                                       |       192 |        192 |( 100.0000 +- 0.000000)% |
- | "#passed"                                       |       192 |      23721 |     123.55 |     32.970 |      34.000 |      199.00 |
- |*"efficiency"                                    |     23721 |      23721 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
+ | "# FilterDesktop#5"                             |       192 |         53 |    0.27604 |    0.52226 |      0.0000 |      2.0000 |
+ | "# input particles"                             |       192 |         53 |    0.27604 |    0.52226 |      0.0000 |      2.0000 |
+ |*"#accept"                                       |       192 |         46 |( 23.95833 +- 3.080374)% |
+ | "#passed"                                       |       192 |         53 |    0.27604 |    0.52226 |      0.0000 |      2.0000 |
+ |*"efficiency"                                    |        53 |         53 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
 FilterDesktop#37                    SUCCESS Number of counters : 5
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# FilterDesktop#7"                             |       192 |         59 |    0.30729 |    0.50451 |      0.0000 |      2.0000 |
+ | "# input particles"                             |       192 |         59 |    0.30729 |    0.50451 |      0.0000 |      2.0000 |
+ |*"#accept"                                       |       192 |         55 |( 28.64583 +- 3.262795)% |
+ | "#passed"                                       |       192 |         59 |    0.30729 |    0.50451 |      0.0000 |      2.0000 |
+ |*"efficiency"                                    |        59 |         59 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
+FilterDesktop#38                    SUCCESS Number of counters : 5
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
  | "# FilterDesktop#3"                             |       192 |       1731 |     9.0156 |     4.2969 |      0.0000 |      22.000 |
  | "# input particles"                             |       192 |       1731 |     9.0156 |     4.2969 |      0.0000 |      22.000 |
  |*"#accept"                                       |       192 |        191 |( 99.47917 +- 0.5194752)% |
  | "#passed"                                       |       192 |       1731 |     9.0156 |     4.2969 |      0.0000 |      22.000 |
  |*"efficiency"                                    |      1731 |       1731 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
-FilterDesktop#38                    SUCCESS Number of counters : 5
- |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "# FilterDesktop#15"                            |       192 |      23715 |     123.52 |     63.923 |      7.0000 |      363.00 |
- | "# input particles"                             |       192 |      23715 |     123.52 |     63.923 |      7.0000 |      363.00 |
- |*"#accept"                                       |       192 |        192 |( 100.0000 +- 0.000000)% |
- | "#passed"                                       |       192 |      23715 |     123.52 |     63.923 |      7.0000 |      363.00 |
- |*"efficiency"                                    |     23715 |      23715 |( 100.0000 +- 0.000000)%|   -------   |   -------   |
 OutputStream                           INFO Events output: 192
 HLTControlFlowMgr                      INFO Memory pool: used 0.000610352 +/- 0 MiB (min: 0, max: 0) in 1 +/- 0 blocks (allocated >once in 0 +/- 0% events). Allocated capacity was 10 +/- 0 MiB (min: 10, max: 10) and 2 +/- 0 (min: 2, max: 2) requests were served
 HLTControlFlowMgr                      INFO Timing table:
-HLTControlFlowMgr                      INFO Average ticks per millisecond: 2207497
+HLTControlFlowMgr                      INFO Average ticks per millisecond: 2195329
 HLTControlFlowMgr                      INFO 
  | Name of Algorithm                                       | Execution Count | Total Time / s  | Avg. Time / us   |
- | "Gaudi__Hive__FetchDataFromFile#10"                     |           35668 |           0.257 |            7.193 |
- | "UnpackChargedProtos"                                   |           35668 |          13.714 |          384.504 |
- | "ChargedProtoCombineDLLsAlg"                            |           35668 |           8.220 |          230.452 |
- | "Gaudi__Hive__FetchDataFromFile#5"                      |           35668 |           0.193 |            5.411 |
- | "UnpackMuonPIDs"                                        |           35668 |           2.029 |           56.886 |
- | "ChargedProtoParticleAddMuonInfo"                       |           35668 |           4.922 |          137.983 |
- | "Gaudi__Hive__FetchDataFromFile#6"                      |           35668 |           0.204 |            5.728 |
- | "UnpackRichPIDs"                                        |           35668 |           6.028 |          168.999 |
- | "ChargedProtoParticleAddRichInfo"                       |           35668 |           9.765 |          273.777 |
- | "CopyLinePersistenceLocations"                          |             192 |           0.965 |         5023.845 |
- | "CopyParticle2PVRelationsFromLinePersistenceLocations"  |             192 |           0.359 |         1867.410 |
- | "Gaudi__Hive__FetchDataFromFile#11"                     |           35668 |         817.170 |        22910.463 |
- | "createODIN"                                            |           35668 |           1.469 |           41.185 |
- | "DeterministicPrescaler"                                |           35668 |           0.165 |            4.638 |
- | "DeterministicPrescaler#1"                              |           35668 |           0.169 |            4.725 |
- | "DeterministicPrescaler#2"                              |           35668 |           0.134 |            3.759 |
- | "DeterministicPrescaler#3"                              |           35668 |           0.139 |            3.900 |
- | "ExecutionReportsWriter"                                |             192 |           0.002 |           12.700 |
- | "FunctionalParticleMaker"                               |           35668 |           5.296 |          148.481 |
- | "FilterDesktop"                                         |           35668 |          25.979 |          728.355 |
- | "CombineParticles"                                      |           35668 |           5.245 |          147.058 |
- | "FunctionalParticleMaker#4"                             |           35668 |           5.113 |          143.358 |
- | "FilterDesktop#16"                                      |           35668 |           1.612 |           45.199 |
- | "CombineParticles#6"                                    |           35668 |          91.177 |         2556.259 |
- | "CombineParticles#7"                                    |           35668 |           3.384 |           94.888 |
- | "FilterDesktop#17"                                      |           35668 |           0.728 |           20.400 |
- | "Gaudi__Hive__FetchDataFromFile#9"                      |           35668 |           0.187 |            5.246 |
- | "UnpackNeutralProtos"                                   |           35668 |          11.742 |          329.190 |
- | "PhotonMakerAlg"                                        |           35668 |          16.774 |          470.278 |
- | "FilterDesktop#1"                                       |           35668 |           0.972 |           27.249 |
- | "FilterDesktop#18"                                      |           35668 |          49.391 |         1384.750 |
- | "CombineParticles#8"                                    |           35668 |           6.593 |          184.848 |
- | "CombineParticles#9"                                    |           35668 |           3.648 |          102.281 |
- | "FilterDesktop#19"                                      |           35668 |           1.835 |           51.447 |
- | "CombineParticles#1"                                    |           35668 |           3.311 |           92.822 |
- | "FilterDesktop#2"                                       |           35668 |           1.045 |           29.305 |
- | "CombineParticles#10"                                   |           35668 |           3.552 |           99.588 |
- | "FilterDesktop#20"                                      |           35668 |           1.392 |           39.035 |
- | "Gaudi__Hive__FetchDataFromFile"                        |           35668 |           0.437 |           12.245 |
- | "UnpackRecVertices"                                     |           35668 |          43.291 |         1213.716 |
- | "FilterDesktop#21"                                      |             192 |           0.025 |          128.287 |
- | "FilterDesktop#4"                                       |             192 |           1.069 |         5566.008 |
- | "CombineParticles#2"                                    |             192 |           0.066 |          344.027 |
- | "FilterDesktop#5"                                       |             192 |           0.011 |           57.104 |
- | "FilterDesktop#22"                                      |             192 |           0.005 |           24.090 |
- | "FunctionalParticleMaker#1"                             |             192 |           0.018 |           94.077 |
- | "FilterDesktop#6"                                       |             192 |           0.004 |           23.030 |
- | "CombineParticles#3"                                    |             192 |           7.735 |        40287.062 |
- | "FilterDesktop#7"                                       |             192 |           0.024 |          127.376 |
- | "FilterDesktop#23"                                      |             192 |           0.005 |           24.204 |
- | "MergedPi0Maker"                                        |             192 |           0.027 |          139.071 |
- | "FilterDesktop#13"                                      |             192 |           0.004 |           18.324 |
- | "FilterDesktop#24"                                      |             192 |           0.008 |           39.693 |
- | "FunctionalParticleMaker#3"                             |             192 |           0.026 |          133.660 |
- | "FilterDesktop#10"                                      |             192 |           0.005 |           24.992 |
- | "CombineParticles#5"                                    |             192 |           0.754 |         3929.500 |
- | "FilterDesktop#11"                                      |             192 |           0.009 |           46.197 |
- | "FilterDesktop#25"                                      |             192 |           0.003 |           15.143 |
- | "FunctionalParticleMaker#2"                             |             192 |           0.045 |          233.585 |
- | "FilterDesktop#8"                                       |             192 |           1.229 |         6400.251 |
- | "CombineParticles#4"                                    |             192 |           0.070 |          366.977 |
- | "FilterDesktop#9"                                       |             192 |           0.005 |           28.148 |
- | "FilterDesktop#26"                                      |             192 |           0.003 |           14.949 |
- | "FilterDesktop#12"                                      |             192 |           0.018 |           93.734 |
- | "FilterDesktop#27"                                      |             192 |           0.371 |         1932.027 |
- | "FilterDesktop#3"                                       |             192 |           0.270 |         1406.465 |
- | "FilterDesktop#28"                                      |             192 |           0.059 |          308.388 |
- | "ResolvedPi0Maker"                                      |             192 |           1.813 |         9442.458 |
- | "FilterDesktop#14"                                      |             192 |           0.014 |           70.572 |
- | "FilterDesktop#15"                                      |             192 |           0.008 |           40.792 |
- | "FilterDesktop#29"                                      |             192 |           0.531 |         2767.365 |
- | "FilterDesktop#30"                                      |             192 |           0.003 |           17.663 |
- | "FilterDesktop#31"                                      |             192 |           0.004 |           21.759 |
- | "FilterDesktop#32"                                      |             192 |           0.004 |           22.462 |
- | "FilterDesktop#33"                                      |             192 |           0.008 |           40.762 |
- | "FilterDesktop#34"                                      |             192 |           0.003 |           16.161 |
- | "FilterDesktop#35"                                      |             192 |           0.003 |           14.638 |
- | "FilterDesktop#36"                                      |             192 |           0.407 |         2118.712 |
- | "FilterDesktop#37"                                      |             192 |           0.064 |          332.794 |
- | "FilterDesktop#38"                                      |             192 |           0.526 |         2741.766 |
- | "FilterDesktop#39"                                      |             192 |           0.003 |           18.208 |
- | "FilterDesktop#40"                                      |             192 |           0.004 |           21.046 |
- | "FilterDesktop#41"                                      |             192 |           0.005 |           28.081 |
- | "FilterDesktop#42"                                      |             192 |           0.011 |           58.248 |
- | "FilterDesktop#43"                                      |             192 |           0.003 |           17.144 |
- | "FilterDesktop#44"                                      |             192 |           0.003 |           16.985 |
- | "FilterDesktop#45"                                      |             192 |           0.384 |         1999.827 |
- | "FilterDesktop#46"                                      |             192 |           0.047 |          246.845 |
- | "FilterDesktop#47"                                      |             192 |           0.518 |         2698.309 |
- | "FilterDesktop#48"                                      |             192 |           0.022 |          116.872 |
- | "FilterDesktop#49"                                      |             192 |           0.005 |           23.861 |
- | "FilterDesktop#50"                                      |             192 |           0.004 |           22.578 |
- | "FilterDesktop#51"                                      |             192 |           0.015 |           76.036 |
- | "FilterDesktop#52"                                      |             192 |           0.003 |           15.648 |
- | "FilterDesktop#53"                                      |             192 |           0.003 |           15.553 |
- | "FilterDesktop#54"                                      |             192 |           0.400 |         2084.279 |
- | "FilterDesktop#55"                                      |             192 |           0.056 |          289.778 |
- | "FilterDesktop#56"                                      |             192 |           0.561 |         2919.784 |
- | "HltDecReportsWriter"                                   |             192 |           0.004 |           19.874 |
- | "Hlt__RoutingBitsWriter"                                |             192 |           0.002 |           11.657 |
- | "OutputStream"                                          |             192 |           4.335 |        22579.409 |
- | "PackCaloHypo"                                          |             192 |           0.007 |           35.551 |
- | "PackCaloHypo#1"                                        |             192 |           0.003 |           14.262 |
- | "PackCaloHypo#2"                                        |             192 |           0.002 |            9.430 |
- | "PackCaloHypo#3"                                        |             192 |           0.002 |            9.115 |
- | "PackParticlesAndVertices"                              |             192 |           0.111 |          577.281 |
- | "Gaudi__Hive__FetchDataFromFile#1"                      |           35668 |           0.325 |            9.119 |
- | "UnpackCaloElectrons"                                   |           35668 |           5.489 |          153.890 |
- | "Gaudi__Hive__FetchDataFromFile#3"                      |           35668 |           0.231 |            6.488 |
- | "UnpackCaloMergedPi0s"                                  |           35668 |           0.706 |           19.791 |
- | "Gaudi__Hive__FetchDataFromFile#2"                      |           35668 |           0.230 |            6.437 |
- | "UnpackCaloPhotons"                                     |           35668 |           3.627 |          101.680 |
- | "Gaudi__Hive__FetchDataFromFile#4"                      |           35668 |           0.208 |            5.827 |
- | "UnpackCaloSplitPhotons"                                |           35668 |           0.984 |           27.589 |
- | "Gaudi__Hive__FetchDataFromFile#7"                      |           35668 |           0.218 |            6.123 |
- | "UnpackBestTracks"                                      |           35668 |          25.226 |          707.248 |
- | "Gaudi__Hive__FetchDataFromFile#8"                      |           35668 |           0.252 |            7.058 |
- | "UnpackMuonTracks"                                      |           35668 |           1.174 |           32.906 |
- | "bankKiller"                                            |             192 |           0.005 |           25.371 |
+ | "Gaudi__Hive__FetchDataFromFile#10"                     |           35668 |           0.220 |            6.156 |
+ | "UnpackChargedProtos"                                   |           35668 |          10.641 |          298.347 |
+ | "ChargedProtoCombineDLLsAlg"                            |           35668 |           6.710 |          188.125 |
+ | "Gaudi__Hive__FetchDataFromFile#5"                      |           35668 |           0.167 |            4.689 |
+ | "UnpackMuonPIDs"                                        |           35668 |           1.505 |           42.197 |
+ | "ChargedProtoParticleAddMuonInfo"                       |           35668 |           4.046 |          113.424 |
+ | "Gaudi__Hive__FetchDataFromFile#6"                      |           35668 |           0.184 |            5.172 |
+ | "UnpackRichPIDs"                                        |           35668 |           4.160 |          116.639 |
+ | "ChargedProtoParticleAddRichInfo"                       |           35668 |           7.797 |          218.588 |
+ | "CopyLinePersistenceLocations"                          |             192 |           0.266 |         1385.487 |
+ | "CopyParticle2PVRelationsFromLinePersistenceLocations"  |             192 |           0.074 |          386.560 |
+ | "Gaudi__Hive__FetchDataFromFile#11"                     |           35668 |         784.602 |        21997.353 |
+ | "createODIN"                                            |           35668 |           1.012 |           28.379 |
+ | "DeterministicPrescaler"                                |           35668 |           0.135 |            3.788 |
+ | "DeterministicPrescaler#1"                              |           35668 |           0.125 |            3.508 |
+ | "DeterministicPrescaler#2"                              |           35668 |           0.100 |            2.809 |
+ | "DeterministicPrescaler#3"                              |           35668 |           0.096 |            2.690 |
+ | "ExecutionReportsWriter"                                |             192 |           0.002 |           12.147 |
+ | "FunctionalParticleMaker"                               |           35668 |           4.035 |          113.133 |
+ | "FilterDesktop"                                         |           35668 |          19.249 |          539.672 |
+ | "CombineParticles"                                      |           35668 |           3.760 |          105.428 |
+ | "FunctionalParticleMaker#4"                             |           35668 |           4.075 |          114.248 |
+ | "FilterDesktop#16"                                      |           35668 |           1.354 |           37.957 |
+ | "CombineParticles#6"                                    |           35668 |          75.538 |         2117.813 |
+ | "CombineParticles#7"                                    |           35668 |           2.508 |           70.324 |
+ | "FilterDesktop#17"                                      |           35668 |           0.501 |           14.033 |
+ | "Gaudi__Hive__FetchDataFromFile#9"                      |           35668 |           0.161 |            4.509 |
+ | "UnpackNeutralProtos"                                   |           35668 |           8.749 |          245.281 |
+ | "PhotonMakerAlg"                                        |           35668 |          12.686 |          355.677 |
+ | "FilterDesktop#1"                                       |           35668 |           0.701 |           19.641 |
+ | "FilterDesktop#18"                                      |           35668 |          39.819 |         1116.385 |
+ | "CombineParticles#8"                                    |           35668 |           5.044 |          141.419 |
+ | "CombineParticles#9"                                    |           35668 |           2.871 |           80.484 |
+ | "FilterDesktop#19"                                      |           35668 |           1.390 |           38.984 |
+ | "CombineParticles#1"                                    |           35668 |           2.555 |           71.646 |
+ | "FilterDesktop#2"                                       |           35668 |           0.778 |           21.825 |
+ | "CombineParticles#10"                                   |           35668 |           2.819 |           79.041 |
+ | "FilterDesktop#20"                                      |           35668 |           1.006 |           28.200 |
+ | "Gaudi__Hive__FetchDataFromFile"                        |           35668 |           0.341 |            9.551 |
+ | "UnpackRecVertices"                                     |           35668 |          35.489 |          994.982 |
+ | "FilterDesktop#21"                                      |             192 |           0.004 |           23.074 |
+ | "ResolvedPi0Maker"                                      |             192 |           1.424 |         7414.518 |
+ | "FilterDesktop#14"                                      |             192 |           0.012 |           60.641 |
+ | "FilterDesktop#15"                                      |             192 |           0.004 |           20.406 |
+ | "FilterDesktop#22"                                      |             192 |           0.016 |           84.343 |
+ | "FilterDesktop#12"                                      |             192 |           0.005 |           24.063 |
+ | "FilterDesktop#23"                                      |             192 |           0.015 |           75.678 |
+ | "MergedPi0Maker"                                        |             192 |           0.017 |           86.849 |
+ | "FilterDesktop#13"                                      |             192 |           0.002 |           12.845 |
+ | "FilterDesktop#24"                                      |             192 |           0.006 |           33.303 |
+ | "FunctionalParticleMaker#1"                             |             192 |           0.016 |           85.397 |
+ | "FilterDesktop#6"                                       |             192 |           0.004 |           22.263 |
+ | "FunctionalParticleMaker#3"                             |             192 |           0.008 |           41.380 |
+ | "FilterDesktop#10"                                      |             192 |           0.004 |           18.880 |
+ | "CombineParticles#5"                                    |             192 |           4.021 |        20941.795 |
+ | "FilterDesktop#11"                                      |             192 |           0.008 |           39.177 |
+ | "FilterDesktop#25"                                      |             192 |           0.003 |           13.827 |
+ | "FilterDesktop#4"                                       |             192 |           0.930 |         4845.426 |
+ | "FunctionalParticleMaker#2"                             |             192 |           0.031 |          161.612 |
+ | "FilterDesktop#8"                                       |             192 |           0.911 |         4744.419 |
+ | "CombineParticles#4"                                    |             192 |           0.063 |          330.442 |
+ | "FilterDesktop#9"                                       |             192 |           0.005 |           26.609 |
+ | "FilterDesktop#26"                                      |             192 |           0.002 |           12.897 |
+ | "CombineParticles#2"                                    |             192 |           0.046 |          239.066 |
+ | "FilterDesktop#5"                                       |             192 |           0.006 |           32.543 |
+ | "FilterDesktop#27"                                      |             192 |           0.003 |           16.982 |
+ | "CombineParticles#3"                                    |             192 |           2.557 |        13320.015 |
+ | "FilterDesktop#7"                                       |             192 |           0.009 |           45.447 |
+ | "FilterDesktop#28"                                      |             192 |           0.003 |           18.062 |
+ | "FilterDesktop#3"                                       |             192 |           0.225 |         1170.015 |
+ | "FilterDesktop#29"                                      |             192 |           0.044 |          229.566 |
+ | "FilterDesktop#30"                                      |             192 |           0.003 |           13.046 |
+ | "FilterDesktop#31"                                      |             192 |           0.016 |           82.632 |
+ | "FilterDesktop#32"                                      |             192 |           0.015 |           75.964 |
+ | "FilterDesktop#33"                                      |             192 |           0.006 |           32.948 |
+ | "FilterDesktop#34"                                      |             192 |           0.003 |           13.994 |
+ | "FilterDesktop#35"                                      |             192 |           0.002 |           12.723 |
+ | "FilterDesktop#36"                                      |             192 |           0.003 |           16.944 |
+ | "FilterDesktop#37"                                      |             192 |           0.003 |           17.762 |
+ | "FilterDesktop#38"                                      |             192 |           0.044 |          229.487 |
+ | "FilterDesktop#39"                                      |             192 |           0.003 |           13.601 |
+ | "FilterDesktop#40"                                      |             192 |           0.021 |          107.913 |
+ | "FilterDesktop#41"                                      |             192 |           0.015 |           80.297 |
+ | "FilterDesktop#42"                                      |             192 |           0.008 |           39.226 |
+ | "FilterDesktop#43"                                      |             192 |           0.004 |           18.291 |
+ | "FilterDesktop#44"                                      |             192 |           0.003 |           15.411 |
+ | "FilterDesktop#45"                                      |             192 |           0.004 |           19.412 |
+ | "FilterDesktop#46"                                      |             192 |           0.004 |           22.539 |
+ | "FilterDesktop#47"                                      |             192 |           0.045 |          236.639 |
+ | "FilterDesktop#48"                                      |             192 |           0.011 |           59.439 |
+ | "FilterDesktop#49"                                      |             192 |           0.018 |           92.646 |
+ | "FilterDesktop#50"                                      |             192 |           0.016 |           81.693 |
+ | "FilterDesktop#51"                                      |             192 |           0.007 |           35.895 |
+ | "FilterDesktop#52"                                      |             192 |           0.003 |           15.114 |
+ | "FilterDesktop#53"                                      |             192 |           0.003 |           14.691 |
+ | "FilterDesktop#54"                                      |             192 |           0.003 |           17.892 |
+ | "FilterDesktop#55"                                      |             192 |           0.004 |           19.141 |
+ | "FilterDesktop#56"                                      |             192 |           0.045 |          233.387 |
+ | "HltDecReportsWriter"                                   |             192 |           0.002 |           12.621 |
+ | "Hlt__RoutingBitsWriter"                                |             192 |           0.002 |           10.219 |
+ | "OutputStream"                                          |             192 |           1.104 |         5750.465 |
+ | "PackCaloHypo"                                          |             192 |           0.003 |           18.100 |
+ | "PackCaloHypo#1"                                        |             192 |           0.002 |           10.511 |
+ | "PackCaloHypo#2"                                        |             192 |           0.002 |            9.008 |
+ | "PackCaloHypo#3"                                        |             192 |           0.002 |            8.319 |
+ | "PackParticlesAndVertices"                              |             192 |           0.055 |          288.844 |
+ | "Gaudi__Hive__FetchDataFromFile#1"                      |           35668 |           0.269 |            7.546 |
+ | "UnpackCaloElectrons"                                   |           35668 |           3.583 |          100.461 |
+ | "Gaudi__Hive__FetchDataFromFile#3"                      |           35668 |           0.190 |            5.328 |
+ | "UnpackCaloMergedPi0s"                                  |           35668 |           0.487 |           13.664 |
+ | "Gaudi__Hive__FetchDataFromFile#2"                      |           35668 |           0.190 |            5.337 |
+ | "UnpackCaloPhotons"                                     |           35668 |           2.356 |           66.050 |
+ | "Gaudi__Hive__FetchDataFromFile#4"                      |           35668 |           0.167 |            4.689 |
+ | "UnpackCaloSplitPhotons"                                |           35668 |           0.731 |           20.489 |
+ | "Gaudi__Hive__FetchDataFromFile#7"                      |           35668 |           0.197 |            5.524 |
+ | "UnpackBestTracks"                                      |           35668 |          18.995 |          532.562 |
+ | "Gaudi__Hive__FetchDataFromFile#8"                      |           35668 |           0.220 |            6.175 |
+ | "UnpackMuonTracks"                                      |           35668 |           0.964 |           27.033 |
+ | "bankKiller"                                            |             192 |           0.004 |           22.483 |
 
 HLTControlFlowMgr                      INFO 
 LAZY_AND: moore                                                                                              #=35668   Sum=192         Eff=|(0.5382976 +- 0.0387436)%|
@@ -1170,44 +1170,44 @@ LAZY_AND: moore                                                                 
   NONLAZY_OR: LineMovers                                                                                     #=192     Sum=192         Eff=|( 100.0000 +- 0.00000 )%|
    NONLAZY_OR: Hlt2BToHHHGammaEE_Inclusive_LineDecisionMovers                                                #=192     Sum=192         Eff=|( 100.0000 +- 0.00000 )%|
     FilterDesktop/FilterDesktop#39                                                                           #=192     Sum=4           Eff=|( 2.083333 +- 1.03076 )%|
-    FilterDesktop/FilterDesktop#40                                                                           #=192     Sum=46          Eff=|( 23.95833 +- 3.08037 )%|
-    FilterDesktop/FilterDesktop#41                                                                           #=192     Sum=55          Eff=|( 28.64583 +- 3.26279 )%|
+    FilterDesktop/FilterDesktop#40                                                                           #=192     Sum=168         Eff=|( 87.50000 +- 2.38676 )%|
+    FilterDesktop/FilterDesktop#41                                                                           #=192     Sum=192         Eff=|( 100.0000 +- 0.00000 )%|
     FilterDesktop/FilterDesktop#42                                                                           #=192     Sum=139         Eff=|( 72.39583 +- 3.22622 )%|
     FilterDesktop/FilterDesktop#43                                                                           #=192     Sum=27          Eff=|( 14.06250 +- 2.50883 )%|
     FilterDesktop/FilterDesktop#44                                                                           #=192     Sum=20          Eff=|( 10.41667 +- 2.20459 )%|
-    FilterDesktop/FilterDesktop#45                                                                           #=192     Sum=192         Eff=|( 100.0000 +- 0.00000 )%|
-    FilterDesktop/FilterDesktop#46                                                                           #=192     Sum=191         Eff=|( 99.47917 +- 0.519475)%|
-    FilterDesktop/FilterDesktop#47                                                                           #=192     Sum=192         Eff=|( 100.0000 +- 0.00000 )%|
+    FilterDesktop/FilterDesktop#45                                                                           #=192     Sum=46          Eff=|( 23.95833 +- 3.08037 )%|
+    FilterDesktop/FilterDesktop#46                                                                           #=192     Sum=55          Eff=|( 28.64583 +- 3.26279 )%|
+    FilterDesktop/FilterDesktop#47                                                                           #=192     Sum=191         Eff=|( 99.47917 +- 0.519475)%|
    NONLAZY_OR: Hlt2BToHHHGamma_Inclusive_LineDecisionMovers                                                  #=192     Sum=192         Eff=|( 100.0000 +- 0.00000 )%|
     FilterDesktop/FilterDesktop#48                                                                           #=192     Sum=149         Eff=|( 77.60417 +- 3.00868 )%|
-    FilterDesktop/FilterDesktop#49                                                                           #=192     Sum=46          Eff=|( 23.95833 +- 3.08037 )%|
-    FilterDesktop/FilterDesktop#50                                                                           #=192     Sum=55          Eff=|( 28.64583 +- 3.26279 )%|
+    FilterDesktop/FilterDesktop#49                                                                           #=192     Sum=168         Eff=|( 87.50000 +- 2.38676 )%|
+    FilterDesktop/FilterDesktop#50                                                                           #=192     Sum=192         Eff=|( 100.0000 +- 0.00000 )%|
     FilterDesktop/FilterDesktop#51                                                                           #=192     Sum=139         Eff=|( 72.39583 +- 3.22622 )%|
     FilterDesktop/FilterDesktop#52                                                                           #=192     Sum=27          Eff=|( 14.06250 +- 2.50883 )%|
     FilterDesktop/FilterDesktop#53                                                                           #=192     Sum=20          Eff=|( 10.41667 +- 2.20459 )%|
-    FilterDesktop/FilterDesktop#54                                                                           #=192     Sum=192         Eff=|( 100.0000 +- 0.00000 )%|
-    FilterDesktop/FilterDesktop#55                                                                           #=192     Sum=191         Eff=|( 99.47917 +- 0.519475)%|
-    FilterDesktop/FilterDesktop#56                                                                           #=192     Sum=192         Eff=|( 100.0000 +- 0.00000 )%|
+    FilterDesktop/FilterDesktop#54                                                                           #=192     Sum=46          Eff=|( 23.95833 +- 3.08037 )%|
+    FilterDesktop/FilterDesktop#55                                                                           #=192     Sum=55          Eff=|( 28.64583 +- 3.26279 )%|
+    FilterDesktop/FilterDesktop#56                                                                           #=192     Sum=191         Eff=|( 99.47917 +- 0.519475)%|
    NONLAZY_OR: Hlt2BToHHGamma_Inclusive_LineDecisionMovers                                                   #=192     Sum=192         Eff=|( 100.0000 +- 0.00000 )%|
     FilterDesktop/FilterDesktop#21                                                                           #=192     Sum=55          Eff=|( 28.64583 +- 3.26279 )%|
-    FilterDesktop/FilterDesktop#22                                                                           #=192     Sum=46          Eff=|( 23.95833 +- 3.08037 )%|
-    FilterDesktop/FilterDesktop#23                                                                           #=192     Sum=55          Eff=|( 28.64583 +- 3.26279 )%|
+    FilterDesktop/FilterDesktop#22                                                                           #=192     Sum=168         Eff=|( 87.50000 +- 2.38676 )%|
+    FilterDesktop/FilterDesktop#23                                                                           #=192     Sum=192         Eff=|( 100.0000 +- 0.00000 )%|
     FilterDesktop/FilterDesktop#24                                                                           #=192     Sum=139         Eff=|( 72.39583 +- 3.22622 )%|
     FilterDesktop/FilterDesktop#25                                                                           #=192     Sum=27          Eff=|( 14.06250 +- 2.50883 )%|
     FilterDesktop/FilterDesktop#26                                                                           #=192     Sum=20          Eff=|( 10.41667 +- 2.20459 )%|
-    FilterDesktop/FilterDesktop#27                                                                           #=192     Sum=192         Eff=|( 100.0000 +- 0.00000 )%|
-    FilterDesktop/FilterDesktop#28                                                                           #=192     Sum=191         Eff=|( 99.47917 +- 0.519475)%|
-    FilterDesktop/FilterDesktop#29                                                                           #=192     Sum=192         Eff=|( 100.0000 +- 0.00000 )%|
+    FilterDesktop/FilterDesktop#27                                                                           #=192     Sum=46          Eff=|( 23.95833 +- 3.08037 )%|
+    FilterDesktop/FilterDesktop#28                                                                           #=192     Sum=55          Eff=|( 28.64583 +- 3.26279 )%|
+    FilterDesktop/FilterDesktop#29                                                                           #=192     Sum=191         Eff=|( 99.47917 +- 0.519475)%|
    NONLAZY_OR: Hlt2BToHHGammaee_Inclusive_LineDecisionMovers                                                 #=192     Sum=192         Eff=|( 100.0000 +- 0.00000 )%|
     FilterDesktop/FilterDesktop#30                                                                           #=192     Sum=10          Eff=|( 5.208333 +- 1.60355 )%|
-    FilterDesktop/FilterDesktop#31                                                                           #=192     Sum=46          Eff=|( 23.95833 +- 3.08037 )%|
-    FilterDesktop/FilterDesktop#32                                                                           #=192     Sum=55          Eff=|( 28.64583 +- 3.26279 )%|
+    FilterDesktop/FilterDesktop#31                                                                           #=192     Sum=168         Eff=|( 87.50000 +- 2.38676 )%|
+    FilterDesktop/FilterDesktop#32                                                                           #=192     Sum=192         Eff=|( 100.0000 +- 0.00000 )%|
     FilterDesktop/FilterDesktop#33                                                                           #=192     Sum=139         Eff=|( 72.39583 +- 3.22622 )%|
     FilterDesktop/FilterDesktop#34                                                                           #=192     Sum=27          Eff=|( 14.06250 +- 2.50883 )%|
     FilterDesktop/FilterDesktop#35                                                                           #=192     Sum=20          Eff=|( 10.41667 +- 2.20459 )%|
-    FilterDesktop/FilterDesktop#36                                                                           #=192     Sum=192         Eff=|( 100.0000 +- 0.00000 )%|
-    FilterDesktop/FilterDesktop#37                                                                           #=192     Sum=191         Eff=|( 99.47917 +- 0.519475)%|
-    FilterDesktop/FilterDesktop#38                                                                           #=192     Sum=192         Eff=|( 100.0000 +- 0.00000 )%|
+    FilterDesktop/FilterDesktop#36                                                                           #=192     Sum=46          Eff=|( 23.95833 +- 3.08037 )%|
+    FilterDesktop/FilterDesktop#37                                                                           #=192     Sum=55          Eff=|( 28.64583 +- 3.26279 )%|
+    FilterDesktop/FilterDesktop#38                                                                           #=192     Sum=191         Eff=|( 99.47917 +- 0.519475)%|
   CopyLinePersistenceLocations/CopyLinePersistenceLocations                                                  #=192     Sum=192         Eff=|( 100.0000 +- 0.00000 )%|
   CopyParticle2PVRelationsFromLinePersistenceLocations/CopyParticle2PVRelationsFromLinePersistenceLocations  #=192     Sum=192         Eff=|( 100.0000 +- 0.00000 )%|
   PackParticlesAndVertices/PackParticlesAndVertices                                                          #=192     Sum=192         Eff=|( 100.0000 +- 0.00000 )%|
@@ -1320,22 +1320,6 @@ ToolSvc.LoKi::VertexFitter          SUCCESS  #WARNINGS   = 11       Message = 'f
 ToolSvc.LoKi::VertexFitter          SUCCESS  #WARNINGS   = 3        Message = 'fit(): measured mass error is a bit    non-positive, adjust to 1 MeV [CombineParticles#7]'
 ToolSvc.LoKi::VertexFitter          SUCCESS  #WARNINGS   = 5        Message = 'fit(): measured mass is non-positive , adjust to 1 MeV [CombineParticles#10]'
 ToolSvc.LoKi::VertexFitter          SUCCESS  #WARNINGS   = 3        Message = 'fit(): measured mass is non-positive , adjust to 1 MeV [CombineParticles#7]'
-ResolvedPi0Maker.PhotonMaker#1         INFO ResolvedPi0Maker.PhotonMaker#1 -  Summary -----
-ResolvedPi0Maker.PhotonMaker#1         INFO  Created : 100.438 gamma per event
-ResolvedPi0Maker.PhotonMaker#1         INFO  ---------------------------
-ResolvedPi0Maker.PhotonMaker#1      SUCCESS Number of counters : 2
- |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "Confidence Level"                              |     19284 |   1530.859 |   0.079385 |
- | "Created unConverted photons"                   |       192 |      19284 |     100.44 |
-CombineParticles#4.LoKi::Lifetim... SUCCESS Number of counters : 3
- |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "#iterations"                                   |       142 |        729 |     5.1338 |     2.9027 |      2.0000 |      19.000 |
- | "chi2"                                          |        26 |   68161.01 |     2621.6 |     7684.0 |      9.5481 |      40293. |
- | "ctau"                                          |        26 |  -885.3728 |    -34.053 |     280.71 |     -829.21 |      804.14 |
-CombineParticles#4.LoKi::Lifetim... SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/0/3/0
-CombineParticles#4.LoKi::Lifetim... SUCCESS  #WARNINGS   = 26       Message = 'Error from LoKi::DirectionFitBase'
-CombineParticles#4.LoKi::Lifetim... SUCCESS  #WARNINGS   = 26       Message = 'There is no convergency'
-CombineParticles#4.LoKi::Lifetim... SUCCESS  #WARNINGS   = 26       Message = 'fit_: the error from iterate'
 CombineParticles#2.LoKi::Lifetim... SUCCESS Number of counters : 3
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
  | "#iterations"                                   |       337 |       1493 |     4.4303 |     2.3446 |      2.0000 |      18.000 |
@@ -1345,6 +1329,22 @@ CombineParticles#2.LoKi::Lifetim... SUCCESS Exceptions/Errors/Warnings/Infos Sta
 CombineParticles#2.LoKi::Lifetim... SUCCESS  #WARNINGS   = 18       Message = 'Error from LoKi::DirectionFitBase'
 CombineParticles#2.LoKi::Lifetim... SUCCESS  #WARNINGS   = 18       Message = 'There is no convergency'
 CombineParticles#2.LoKi::Lifetim... SUCCESS  #WARNINGS   = 18       Message = 'fit_: the error from iterate'
+CombineParticles#4.LoKi::Lifetim... SUCCESS Number of counters : 3
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "#iterations"                                   |       142 |        729 |     5.1338 |     2.9027 |      2.0000 |      19.000 |
+ | "chi2"                                          |        26 |   68161.01 |     2621.6 |     7684.0 |      9.5481 |      40293. |
+ | "ctau"                                          |        26 |  -885.3728 |    -34.053 |     280.71 |     -829.21 |      804.14 |
+CombineParticles#4.LoKi::Lifetim... SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/0/3/0
+CombineParticles#4.LoKi::Lifetim... SUCCESS  #WARNINGS   = 26       Message = 'Error from LoKi::DirectionFitBase'
+CombineParticles#4.LoKi::Lifetim... SUCCESS  #WARNINGS   = 26       Message = 'There is no convergency'
+CombineParticles#4.LoKi::Lifetim... SUCCESS  #WARNINGS   = 26       Message = 'fit_: the error from iterate'
+ResolvedPi0Maker.PhotonMaker#1         INFO ResolvedPi0Maker.PhotonMaker#1 -  Summary -----
+ResolvedPi0Maker.PhotonMaker#1         INFO  Created : 100.438 gamma per event
+ResolvedPi0Maker.PhotonMaker#1         INFO  ---------------------------
+ResolvedPi0Maker.PhotonMaker#1      SUCCESS Number of counters : 2
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "Confidence Level"                              |     19284 |   1530.859 |   0.079385 |
+ | "Created unConverted photons"                   |       192 |      19284 |     100.44 |
 PhotonMakerAlg.PhotonMaker             INFO PhotonMakerAlg.PhotonMaker -  Summary -----
 PhotonMakerAlg.PhotonMaker             INFO  Created : 116.481 gamma per event
 PhotonMakerAlg.PhotonMaker             INFO  ---------------------------
@@ -1382,15 +1382,16 @@ ToolSvc.PPFactoryHybridFactory      SUCCESS Number of counters : 1
 ToolSvc.LoKi::DistanceCalculator    SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/0/2/0
 ToolSvc.LoKi::DistanceCalculator    SUCCESS  #WARNINGS   = 44       Message = 'There is no convergency-III [CombineParticles]'
 ToolSvc.LoKi::DistanceCalculator    SUCCESS  #WARNINGS   = 11       Message = 'There is no convergency-III [FilterDesktop#2]'
+RootCnvSvc                             INFO Disconnected data IO:2764CD64-BAB9-11EA-9073-FA163E4B924C [output/LambdaG/LambdaG.mdst]
 RootCnvSvc                             INFO Disconnected data IO:2E8EDAE5-A994-E811-81B3-002655218B90 [root://shark12.grid.surfsara.nl:1094/pnfs/grid.sara.nl/data/lhcb/MC/Upgrade/LDST/00076702/0000/00076702_00000058_1.ldst]
-RootCnvSvc                             INFO Disconnected data IO:354472B8-BA1E-11EA-966A-FA163E4B924C [output/LambdaG/LambdaG.mdst]
 RootCnvSvc                             INFO Disconnected data IO:68C67E20-A994-E811-B335-B083FED25983 [root://shark3.grid.surfsara.nl:1094/pnfs/grid.sara.nl/data/lhcb/MC/Upgrade/LDST/00076702/0000/00076702_00000064_1.ldst]
 RootCnvSvc                             INFO Disconnected data IO:B8812935-AD8E-E811-A9E2-EC0D9A8B3024 [root://lobster7.grid.surfsara.nl:1094/pnfs/grid.sara.nl/data/lhcb/MC/Upgrade/LDST/00076702/0000/00076702_00000042_1.ldst]
+XMLCatalog                             INFO File 'test_catalog.xml' does not exist. New file created.
 *****Chrono*****                       INFO ****************************************************************************************************
 *****Chrono*****                       INFO  The Final CPU consumption ( Chrono ) Table (ordered)
 *****Chrono*****                       INFO ****************************************************************************************************
-DetailedMaterialLocator                INFO Time User   : Tot= 6.33  [s] Ave/Min/Max=0.000491(+- 0.00216)/       0/    0.01  [s] #=12892
-ChronoStatSvc                          INFO Time User   : Tot= 13.3[min]  #=  1
+DetailedMaterialLocator                INFO Time User   : Tot= 6.19  [s] Ave/Min/Max= 0.00048(+- 0.00214)/       0/    0.01  [s] #=12892
+ChronoStatSvc                          INFO Time User   : Tot= 12.5[min]  #=  1
 *****Chrono*****                       INFO ****************************************************************************************************
 ChronoStatSvc.finalize()               INFO  Service finalized successfully 
 ApplicationMgr                         INFO Application Manager Finalized successfully

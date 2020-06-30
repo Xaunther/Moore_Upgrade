@@ -1,0 +1,627 @@
+# setting LC_ALL to "C"
+# --> Including file '/afs/cern.ch/work/a/aalfonso/private/moore_upgrade/DaVinci_Scripts/PhiG.py'
+# <-- End of file '/afs/cern.ch/work/a/aalfonso/private/moore_upgrade/DaVinci_Scripts/PhiG.py'
+# --> Including file '/afs/cern.ch/work/a/aalfonso/private/moore_upgrade/DaVinci_Scripts/ntuples_HHGamma.py'
+# WARNING: Property Hlt2BToHHGamma_Inclusive_Line.ErrorMax is deprecated:  [[deprecated]] max number of errors [Gaudi::Algorithm] 
+# WARNING: Property ExtraHadron.ErrorMax is deprecated:  [[deprecated]] max number of errors [Gaudi::Algorithm] 
+# WARNING: Property ExtraKs0.ErrorMax is deprecated:  [[deprecated]] max number of errors [Gaudi::Algorithm] 
+# WARNING: Property ExtraLambda.ErrorMax is deprecated:  [[deprecated]] max number of errors [Gaudi::Algorithm] 
+# WARNING: Property ExtraGamma.ErrorMax is deprecated:  [[deprecated]] max number of errors [Gaudi::Algorithm] 
+# WARNING: Property ExtraPi0.ErrorMax is deprecated:  [[deprecated]] max number of errors [Gaudi::Algorithm] 
+# <-- End of file '/afs/cern.ch/work/a/aalfonso/private/moore_upgrade/DaVinci_Scripts/ntuples_HHGamma.py'
+# applying configuration of RawEventFormatConf
+# /***** User RawEventFormatConf/RawEventFormatConf **************************************************
+# |-RecoDict               = {'Stripping17': 1.0, 'Reco12': 1.0, 'Reco14': 2.0, 'Reco15': 4.2, 'LHCb': 0.1, 'Reconstruction12': 1.0, 'Hlt': 0.1, 'S17': 1.0, 'R14': 2.0, 'Reconstruction14': 2.0, 'Boole': 0.0, 'S20': 2.0, 'S21': 4.0, 'Stripping20': 2.0, 'Moore': 0.3, 'L0': 0.0, 'R12': 1.0, 'Strip20': 2.0, 'Pit': 0.1, 'Strip17': 1.0}
+# |                        (default: None)
+# |-Locations              = {0.0: {'HltSelReports': 'DAQ/RawEvent', 'OTError': 'DAQ/RawEvent', 'VeloError': 'DAQ/RawEvent', 'UTFull': 'DAQ/RawEvent', 'UTPedestal': 'DAQ/RawEvent', 'PrsTrig': 'DAQ/RawEvent', 'HcalPackedError': 'DAQ/RawEvent', 'L0PUFull': 'DAQ/RawEvent', 'HltDecReports': 'DAQ/RawEvent', 'Rich': 'DAQ/RawEvent', 'VeloProcFull': 'DAQ/RawEvent', 'HltRoutingBits': 'DAQ/RawEvent', 'L0MuonError': 'DAQ/RawEvent', 'VL': 'DAQ/RawEvent', 'L0MuonProcCand': 'DAQ/RawEvent', 'TTPedestal': 'DAQ/RawEvent', 'L0DUError': 'DAQ/RawEvent', 'DstBank': 'DAQ/RawEvent', 'TT': 'DAQ/RawEvent', 'L0MuonProcData': 'DAQ/RawEvent', 'OTRaw': 'DAQ/RawEvent', 'EcalPacked': 'DAQ/RawEvent', 'PrsPacked': 'DAQ/RawEvent', 'VeloPedestal': 'DAQ/RawEvent', 'DAQ': 'DAQ/RawEvent', 'ITError': 'DAQ/RawEvent', 'FileID': 'DAQ/RawEvent', 'EcalTrig': 'DAQ/RawEvent', 'FTCluster': 'DAQ/RawEvent', 'L0PUError': 'DAQ/RawEvent', 'L0Calo': 'DAQ/RawEvent', 'VeloFull': 'DAQ/RawEvent', 'L0MuonCtrlAll': 'DAQ/RawEvent', 'HltVertexReports': 'DAQ/RawEvent', 'EcalE': 'DAQ/RawEvent', 'ITProcFull': 'DAQ/RawEvent', 'HltLumiSummary': 'DAQ/RawEvent', 'TestDet': 'DAQ/RawEvent', 'IT': 'DAQ/RawEvent', 'VP': 'DAQ/RawEvent', 'HcalTrig': 'DAQ/RawEvent', 'HcalE': 'DAQ/RawEvent', 'L0PU': 'DAQ/RawEvent', 'DstAddress': 'DAQ/RawEvent', 'UT': 'DAQ/RawEvent', 'TAEHeader': 'DAQ/RawEvent', 'ODIN': 'DAQ/RawEvent', 'PrsE': 'DAQ/RawEvent', 'PrsPackedError': 'DAQ/RawEvent', 'Velo': 'DAQ/RawEvent', 'Muon': 'DAQ/RawEvent', 'ITPedestal': 'DAQ/RawEvent', 'TTProcFull': 'DAQ/RawEvent', 'DstData': 'DAQ/RawEvent', 'GaudiSerialize': 'DAQ/RawEvent', 'TTFull': 'DAQ/RawEvent', 'L0MuonRaw': 'DAQ/RawEvent', 'UTError': 'DAQ/RawEvent', 'TTError': 'DAQ/RawEvent', 'EcalPackedError': 'DAQ/RawEvent', 'HcalPacked': 'DAQ/RawEvent', 'MuonFull': 'DAQ/RawEvent', 'L0CaloError': 'DAQ/RawEvent', 'GaudiHeader': 'DAQ/RawEvent', 'L0DU': 'DAQ/RawEvent', 'ITFull': 'DAQ/RawEvent', 'OT': 'DAQ/RawEvent', 'MuonError': 'DAQ/RawEvent', 'L0CaloFull': 'DAQ/RawEvent', 'L0Muon': 'DAQ/RawEvent'}, 1.0: {'HltSelReports': ['Trigger/RawEvent', 'DAQ/RawEvent'], 'OTError': 'DAQ/RawEvent', 'VeloError': 'DAQ/RawEvent', 'UTFull': 'DAQ/RawEvent', 'UTPedestal': 'DAQ/RawEvent', 'PrsTrig': 'DAQ/RawEvent', 'HcalPackedError': 'DAQ/RawEvent', 'L0PUFull': 'DAQ/RawEvent', 'HltDecReports': ['Trigger/RawEvent', 'DAQ/RawEvent'], 'Rich': 'DAQ/RawEvent', 'VeloProcFull': 'DAQ/RawEvent', 'HltRoutingBits': ['Trigger/RawEvent', 'DAQ/RawEvent'], 'L0MuonError': 'DAQ/RawEvent', 'VL': 'DAQ/RawEvent', 'L0MuonProcCand': ['Trigger/RawEvent', 'DAQ/RawEvent'], 'TTPedestal': 'DAQ/RawEvent', 'L0DUError': 'DAQ/RawEvent', 'DstBank': 'DAQ/RawEvent', 'TT': 'DAQ/RawEvent', 'L0MuonProcData': 'DAQ/RawEvent', 'OTRaw': 'DAQ/RawEvent', 'EcalPacked': 'DAQ/RawEvent', 'PrsPacked': 'DAQ/RawEvent', 'VeloPedestal': 'DAQ/RawEvent', 'DAQ': 'DAQ/RawEvent', 'ITError': 'DAQ/RawEvent', 'FileID': 'DAQ/RawEvent', 'EcalTrig': 'DAQ/RawEvent', 'FTCluster': 'DAQ/RawEvent', 'L0PUError': 'DAQ/RawEvent', 'L0Calo': ['Trigger/RawEvent', 'DAQ/RawEvent'], 'VeloFull': 'DAQ/RawEvent', 'L0MuonCtrlAll': 'DAQ/RawEvent', 'HltVertexReports': ['Trigger/RawEvent', 'DAQ/RawEvent'], 'EcalE': 'DAQ/RawEvent', 'ITProcFull': 'DAQ/RawEvent', 'HltLumiSummary': 'DAQ/RawEvent', 'TestDet': 'DAQ/RawEvent', 'IT': 'DAQ/RawEvent', 'VP': 'DAQ/RawEvent', 'HcalTrig': 'DAQ/RawEvent', 'HcalE': 'DAQ/RawEvent', 'L0PU': ['Trigger/RawEvent', 'DAQ/RawEvent'], 'DstAddress': 'DAQ/RawEvent', 'UT': 'DAQ/RawEvent', 'TAEHeader': 'DAQ/RawEvent', 'ODIN': ['Trigger/RawEvent', 'DAQ/RawEvent'], 'PrsE': 'DAQ/RawEvent', 'PrsPackedError': 'DAQ/RawEvent', 'Velo': 'DAQ/RawEvent', 'Muon': 'DAQ/RawEvent', 'ITPedestal': 'DAQ/RawEvent', 'TTProcFull': 'DAQ/RawEvent', 'DstData': 'DAQ/RawEvent', 'GaudiSerialize': 'DAQ/RawEvent', 'TTFull': 'DAQ/RawEvent', 'L0MuonRaw': 'DAQ/RawEvent', 'UTError': 'DAQ/RawEvent', 'TTError': 'DAQ/RawEvent', 'EcalPackedError': 'DAQ/RawEvent', 'HcalPacked': 'DAQ/RawEvent', 'MuonFull': 'DAQ/RawEvent', 'L0CaloError': 'DAQ/RawEvent', 'GaudiHeader': 'DAQ/RawEvent', 'L0DU': ['Trigger/RawEvent', 'DAQ/RawEvent'], 'ITFull': 'DAQ/RawEvent', 'OT': 'DAQ/RawEvent', 'MuonError': 'DAQ/RawEvent', 'L0CaloFull': ['Trigger/RawEvent', 'DAQ/RawEvent'], 'L0Muon': ['Trigger/RawEvent', 'DAQ/RawEvent']}, 2.0: {'HltSelReports': 'Trigger/RawEvent', 'OTError': 'Other/RawEvent', 'VeloError': 'Other/RawEvent', 'UTFull': 'Other/RawEvent', 'UTPedestal': 'Other/RawEvent', 'PrsTrig': 'Calo/RawEvent', 'HcalPackedError': 'Calo/RawEvent', 'L0PUFull': 'Other/RawEvent', 'HltDecReports': 'Trigger/RawEvent', 'Rich': 'Rich/RawEvent', 'VeloProcFull': 'Other/RawEvent', 'HltRoutingBits': 'Trigger/RawEvent', 'L0MuonError': 'Other/RawEvent', 'VL': 'Other/RawEvent', 'L0MuonProcCand': 'Trigger/RawEvent', 'TTPedestal': 'Other/RawEvent', 'L0DUError': 'Other/RawEvent', 'DstBank': 'Other/RawEvent', 'TT': 'Other/RawEvent', 'L0MuonProcData': 'Other/RawEvent', 'OTRaw': 'Other/RawEvent', 'EcalPacked': 'Calo/RawEvent', 'PrsPacked': 'Calo/RawEvent', 'VeloPedestal': 'Other/RawEvent', 'DAQ': 'Other/RawEvent', 'ITError': 'Other/RawEvent', 'FileID': 'Other/RawEvent', 'EcalTrig': 'Calo/RawEvent', 'FTCluster': 'Other/RawEvent', 'L0PUError': 'Other/RawEvent', 'L0Calo': 'Trigger/RawEvent', 'VeloFull': 'Other/RawEvent', 'L0MuonCtrlAll': 'Other/RawEvent', 'HltVertexReports': 'Trigger/RawEvent', 'EcalE': 'Calo/RawEvent', 'ITProcFull': 'Other/RawEvent', 'HltLumiSummary': 'Other/RawEvent', 'TestDet': 'Other/RawEvent', 'IT': 'Other/RawEvent', 'VP': 'Other/RawEvent', 'HcalTrig': 'Calo/RawEvent', 'HcalE': 'Calo/RawEvent', 'L0PU': 'Trigger/RawEvent', 'DstAddress': 'Other/RawEvent', 'UT': 'Other/RawEvent', 'TAEHeader': 'Other/RawEvent', 'ODIN': 'Trigger/RawEvent', 'PrsE': 'Calo/RawEvent', 'PrsPackedError': 'Calo/RawEvent', 'Velo': 'Other/RawEvent', 'Muon': 'Muon/RawEvent', 'ITPedestal': 'Other/RawEvent', 'TTProcFull': 'Other/RawEvent', 'DstData': 'Other/RawEvent', 'GaudiSerialize': 'Other/RawEvent', 'TTFull': 'Other/RawEvent', 'L0MuonRaw': 'Other/RawEvent', 'UTError': 'Other/RawEvent', 'TTError': 'Other/RawEvent', 'EcalPackedError': 'Calo/RawEvent', 'HcalPacked': 'Calo/RawEvent', 'MuonFull': 'Other/RawEvent', 'L0CaloError': 'Other/RawEvent', 'GaudiHeader': 'Other/RawEvent', 'L0DU': 'Trigger/RawEvent', 'ITFull': 'Other/RawEvent', 'OT': 'Other/RawEvent', 'MuonError': 'Other/RawEvent', 'L0CaloFull': 'Trigger/RawEvent', 'L0Muon': 'Trigger/RawEvent'}, 3.0: {'HltSelReports': 'Trigger/#TCK#/RawEvent', 'OTError': 'DAQ/RawEvent', 'VeloError': 'DAQ/RawEvent', 'UTFull': 'DAQ/RawEvent', 'UTPedestal': 'DAQ/RawEvent', 'PrsTrig': 'DAQ/RawEvent', 'HcalPackedError': 'DAQ/RawEvent', 'L0PUFull': 'DAQ/RawEvent', 'HltDecReports': 'Trigger/#TCK#/RawEvent', 'Rich': 'DAQ/RawEvent', 'VeloProcFull': 'DAQ/RawEvent', 'HltRoutingBits': 'Trigger/#TCK#/RawEvent', 'L0MuonError': 'DAQ/RawEvent', 'VL': 'DAQ/RawEvent', 'L0MuonProcCand': 'Trigger/#TCK#/RawEvent', 'TTPedestal': 'DAQ/RawEvent', 'L0DUError': 'DAQ/RawEvent', 'DstBank': 'DAQ/RawEvent', 'TT': 'DAQ/RawEvent', 'L0MuonProcData': 'DAQ/RawEvent', 'OTRaw': 'DAQ/RawEvent', 'EcalPacked': 'DAQ/RawEvent', 'PrsPacked': 'DAQ/RawEvent', 'VeloPedestal': 'DAQ/RawEvent', 'DAQ': 'DAQ/RawEvent', 'ITError': 'DAQ/RawEvent', 'FileID': 'DAQ/RawEvent', 'EcalTrig': 'DAQ/RawEvent', 'FTCluster': 'DAQ/RawEvent', 'L0PUError': 'DAQ/RawEvent', 'L0Calo': 'Trigger/#TCK#/RawEvent', 'VeloFull': 'DAQ/RawEvent', 'L0MuonCtrlAll': 'DAQ/RawEvent', 'HltVertexReports': 'Trigger/#TCK#/RawEvent', 'EcalE': 'DAQ/RawEvent', 'ITProcFull': 'DAQ/RawEvent', 'HltLumiSummary': 'DAQ/RawEvent', 'TestDet': 'DAQ/RawEvent', 'IT': 'DAQ/RawEvent', 'VP': 'DAQ/RawEvent', 'HcalTrig': 'DAQ/RawEvent', 'HcalE': 'DAQ/RawEvent', 'L0PU': 'Trigger/#TCK#/RawEvent', 'DstAddress': 'DAQ/RawEvent', 'UT': 'DAQ/RawEvent', 'TAEHeader': 'DAQ/RawEvent', 'ODIN': 'DAQ/RawEvent', 'PrsE': 'DAQ/RawEvent', 'PrsPackedError': 'DAQ/RawEvent', 'Velo': 'DAQ/RawEvent', 'Muon': 'DAQ/RawEvent', 'ITPedestal': 'DAQ/RawEvent', 'TTProcFull': 'DAQ/RawEvent', 'DstData': 'DAQ/RawEvent', 'GaudiSerialize': 'DAQ/RawEvent', 'TTFull': 'DAQ/RawEvent', 'L0MuonRaw': 'DAQ/RawEvent', 'UTError': 'DAQ/RawEvent', 'TTError': 'DAQ/RawEvent', 'EcalPackedError': 'DAQ/RawEvent', 'HcalPacked': 'DAQ/RawEvent', 'MuonFull': 'DAQ/RawEvent', 'L0CaloError': 'DAQ/RawEvent', 'GaudiHeader': 'DAQ/RawEvent', 'L0DU': 'Trigger/#TCK#/RawEvent', 'ITFull': 'DAQ/RawEvent', 'OT': 'DAQ/RawEvent', 'MuonError': 'DAQ/RawEvent', 'L0CaloFull': 'Trigger/#TCK#/RawEvent', 'L0Muon': 'Trigger/#TCK#/RawEvent'}, 4.0: {'HltSelReports': 'Trigger/RawEvent', 'OTError': 'Unstripped/RawEvent', 'VeloError': 'Unstripped/RawEvent', 'UTFull': 'Unstripped/RawEvent', 'UTPedestal': 'Unstripped/RawEvent', 'PrsTrig': 'Calo/RawEvent', 'HcalPackedError': 'Unstripped/RawEvent', 'L0PUFull': 'Unstripped/RawEvent', 'HltDecReports': 'Trigger/RawEvent', 'Rich': 'Rich/RawEvent', 'VeloProcFull': 'Unstripped/RawEvent', 'HltRoutingBits': 'Trigger/RawEvent', 'L0MuonError': 'Unstripped/RawEvent', 'VL': 'Unstripped/RawEvent', 'L0MuonProcCand': 'Trigger/RawEvent', 'TTPedestal': 'Unstripped/RawEvent', 'L0DUError': 'Unstripped/RawEvent', 'DstBank': 'Unstripped/RawEvent', 'TT': 'Tracker/RawEvent', 'L0MuonProcData': 'Unstripped/RawEvent', 'OTRaw': 'Unstripped/RawEvent', 'EcalPacked': 'Calo/RawEvent', 'PrsPacked': 'Calo/RawEvent', 'VeloPedestal': 'Unstripped/RawEvent', 'DAQ': 'Unstripped/RawEvent', 'ITError': 'Unstripped/RawEvent', 'FileID': 'Unstripped/RawEvent', 'EcalTrig': 'Calo/RawEvent', 'FTCluster': 'Tracker/RawEvent', 'L0PUError': 'Unstripped/RawEvent', 'L0Calo': 'Trigger/RawEvent', 'VeloFull': 'Unstripped/RawEvent', 'L0MuonCtrlAll': 'Unstripped/RawEvent', 'HltVertexReports': 'Trigger/RawEvent', 'EcalE': 'Calo/RawEvent', 'ITProcFull': 'Unstripped/RawEvent', 'HltLumiSummary': 'Unstripped/RawEvent', 'TestDet': 'Unstripped/RawEvent', 'IT': 'Tracker/RawEvent', 'VP': 'Velo/RawEvent', 'HcalTrig': 'Calo/RawEvent', 'HcalE': 'Calo/RawEvent', 'L0PU': 'Trigger/RawEvent', 'DstAddress': 'Unstripped/RawEvent', 'UT': 'Tracker/RawEvent', 'TAEHeader': 'Unstripped/RawEvent', 'ODIN': ['Trigger/RawEvent'], 'PrsE': 'Calo/RawEvent', 'PrsPackedError': 'Unstripped/RawEvent', 'Velo': 'Velo/RawEvent', 'Muon': 'Muon/RawEvent', 'ITPedestal': 'Unstripped/RawEvent', 'TTProcFull': 'Unstripped/RawEvent', 'DstData': 'Unstripped/RawEvent', 'GaudiSerialize': 'Unstripped/RawEvent', 'TTFull': 'Unstripped/RawEvent', 'L0MuonRaw': 'Unstripped/RawEvent', 'UTError': 'Unstripped/RawEvent', 'TTError': 'Unstripped/RawEvent', 'EcalPackedError': 'Unstripped/RawEvent', 'HcalPacked': 'Calo/RawEvent', 'MuonFull': 'Unstripped/RawEvent', 'L0CaloError': 'Unstripped/RawEvent', 'GaudiHeader': 'Unstripped/RawEvent', 'L0DU': 'Trigger/RawEvent', 'ITFull': 'Unstripped/RawEvent', 'OT': 'Tracker/RawEvent', 'MuonError': 'Unstripped/RawEvent', 'HltTrackReports': 'Trigger/RawEvent', 'L0CaloFull': 'Trigger/RawEvent', 'L0Muon': 'Trigger/RawEvent'}, 0.2: {'HltRoutingBits': 'DAQ/RawEvent', 'L0PUFull': 'DAQ/RawEvent', 'HltDecReports': 'DAQ/RawEvent', 'HltSelReports': 'DAQ/RawEvent', 'L0MuonError': 'DAQ/RawEvent', 'DstBank': 'DAQ/RawEvent', 'L0MuonProcCand': 'DAQ/RawEvent', 'L0CaloError': 'DAQ/RawEvent', 'TAEHeader': 'DAQ/RawEvent', 'L0MuonProcData': 'DAQ/RawEvent', 'DAQ': 'DAQ/RawEvent', 'DstAddress': 'DAQ/RawEvent', 'L0PUError': 'DAQ/RawEvent', 'L0Calo': 'DAQ/RawEvent', 'L0MuonCtrlAll': 'DAQ/RawEvent', 'HltVertexReports': 'DAQ/RawEvent', 'HltLumiSummary': 'DAQ/RawEvent', 'TestDet': 'DAQ/RawEvent', 'L0PU': 'DAQ/RawEvent', 'L0DUError': 'DAQ/RawEvent', 'ODIN': 'DAQ/RawEvent', 'FileID': 'DAQ/RawEvent', 'DstData': 'DAQ/RawEvent', 'GaudiSerialize': 'DAQ/RawEvent', 'L0MuonRaw': 'DAQ/RawEvent', 'GaudiHeader': 'DAQ/RawEvent', 'L0DU': 'DAQ/RawEvent', 'L0CaloFull': 'DAQ/RawEvent', 'L0Muon': 'DAQ/RawEvent'}, 0.1: {'HltSelReports': 'DAQ/RawEvent', 'OTError': 'DAQ/RawEvent', 'VeloError': 'DAQ/RawEvent', 'UTFull': 'DAQ/RawEvent', 'UTPedestal': 'DAQ/RawEvent', 'PrsTrig': 'DAQ/RawEvent', 'HcalPackedError': 'DAQ/RawEvent', 'L0PUFull': 'DAQ/RawEvent', 'HltDecReports': 'DAQ/RawEvent', 'Rich': 'DAQ/RawEvent', 'VeloProcFull': 'DAQ/RawEvent', 'HltRoutingBits': 'DAQ/RawEvent', 'L0MuonError': 'DAQ/RawEvent', 'VL': 'DAQ/RawEvent', 'L0MuonProcCand': 'DAQ/RawEvent', 'TTPedestal': 'DAQ/RawEvent', 'L0DUError': 'DAQ/RawEvent', 'DstBank': 'DAQ/RawEvent', 'TT': 'DAQ/RawEvent', 'L0MuonProcData': 'DAQ/RawEvent', 'OTRaw': 'DAQ/RawEvent', 'EcalPacked': 'DAQ/RawEvent', 'PrsPacked': 'DAQ/RawEvent', 'VeloPedestal': 'DAQ/RawEvent', 'DAQ': 'DAQ/RawEvent', 'ITError': 'DAQ/RawEvent', 'FileID': 'DAQ/RawEvent', 'EcalTrig': 'DAQ/RawEvent', 'FTCluster': 'DAQ/RawEvent', 'L0PUError': 'DAQ/RawEvent', 'L0Calo': 'DAQ/RawEvent', 'VeloFull': 'DAQ/RawEvent', 'L0MuonCtrlAll': 'DAQ/RawEvent', 'HltVertexReports': 'DAQ/RawEvent', 'EcalE': 'DAQ/RawEvent', 'ITProcFull': 'DAQ/RawEvent', 'HltLumiSummary': 'DAQ/RawEvent', 'TestDet': 'DAQ/RawEvent', 'IT': 'DAQ/RawEvent', 'VP': 'DAQ/RawEvent', 'HcalTrig': 'DAQ/RawEvent', 'HcalE': 'DAQ/RawEvent', 'L0PU': 'DAQ/RawEvent', 'DstAddress': 'DAQ/RawEvent', 'UT': 'DAQ/RawEvent', 'TAEHeader': 'DAQ/RawEvent', 'ODIN': 'DAQ/RawEvent', 'PrsE': 'DAQ/RawEvent', 'PrsPackedError': 'DAQ/RawEvent', 'Velo': 'DAQ/RawEvent', 'Muon': 'DAQ/RawEvent', 'ITPedestal': 'DAQ/RawEvent', 'TTProcFull': 'DAQ/RawEvent', 'DstData': 'DAQ/RawEvent', 'GaudiSerialize': 'DAQ/RawEvent', 'TTFull': 'DAQ/RawEvent', 'L0MuonRaw': 'DAQ/RawEvent', 'UTError': 'DAQ/RawEvent', 'TTError': 'DAQ/RawEvent', 'EcalPackedError': 'DAQ/RawEvent', 'HcalPacked': 'DAQ/RawEvent', 'MuonFull': 'DAQ/RawEvent', 'L0CaloError': 'DAQ/RawEvent', 'GaudiHeader': 'DAQ/RawEvent', 'L0DU': 'DAQ/RawEvent', 'ITFull': 'DAQ/RawEvent', 'OT': 'DAQ/RawEvent', 'MuonError': 'DAQ/RawEvent', 'HltTrackReports': 'DAQ/RawEvent', 'L0CaloFull': 'DAQ/RawEvent', 'L0Muon': 'DAQ/RawEvent'}, 2.2: {'HltSelReports': 'Trigger/RawEvent', 'OTError': 'Other/RawEvent', 'VeloError': 'Other/RawEvent', 'UTFull': 'Other/RawEvent', 'UTPedestal': 'Other/RawEvent', 'PrsTrig': 'Calo/RawEvent', 'HcalPackedError': 'Calo/RawEvent', 'L0PUFull': 'Other/RawEvent', 'HltDecReports': 'Trigger/RawEvent', 'Rich': 'Rich/RawEvent', 'VeloProcFull': 'Other/RawEvent', 'HltRoutingBits': 'Trigger/RawEvent', 'L0MuonError': 'Other/RawEvent', 'VL': 'Other/RawEvent', 'L0MuonProcCand': 'Trigger/RawEvent', 'TTPedestal': 'Other/RawEvent', 'L0DUError': 'Other/RawEvent', 'HC': 'Other/RawEvent', 'DstBank': 'Other/RawEvent', 'TT': 'Other/RawEvent', 'L0MuonProcData': 'Other/RawEvent', 'OTRaw': 'Other/RawEvent', 'EcalPacked': 'Calo/RawEvent', 'PrsPacked': 'Calo/RawEvent', 'VeloPedestal': 'Other/RawEvent', 'DAQ': 'Other/RawEvent', 'ITError': 'Other/RawEvent', 'FileID': 'Other/RawEvent', 'EcalTrig': 'Calo/RawEvent', 'FTCluster': 'Other/RawEvent', 'L0PUError': 'Other/RawEvent', 'L0Calo': 'Trigger/RawEvent', 'VeloFull': 'Other/RawEvent', 'L0MuonCtrlAll': 'Other/RawEvent', 'HltVertexReports': 'Trigger/RawEvent', 'EcalE': 'Calo/RawEvent', 'ITProcFull': 'Other/RawEvent', 'HltLumiSummary': 'Other/RawEvent', 'TestDet': 'Other/RawEvent', 'IT': 'Other/RawEvent', 'VP': 'Other/RawEvent', 'HcalTrig': 'Calo/RawEvent', 'HcalE': 'Calo/RawEvent', 'L0PU': 'Trigger/RawEvent', 'DstAddress': 'Other/RawEvent', 'UT': 'Other/RawEvent', 'TAEHeader': 'Other/RawEvent', 'ODIN': 'Trigger/RawEvent', 'PrsE': 'Calo/RawEvent', 'PrsPackedError': 'Calo/RawEvent', 'Velo': 'Other/RawEvent', 'Muon': 'Muon/RawEvent', 'ITPedestal': 'Other/RawEvent', 'TTProcFull': 'Other/RawEvent', 'DstData': 'Other/RawEvent', 'GaudiSerialize': 'Other/RawEvent', 'TTFull': 'Other/RawEvent', 'L0MuonRaw': 'Other/RawEvent', 'UTError': 'Other/RawEvent', 'TTError': 'Other/RawEvent', 'EcalPackedError': 'Calo/RawEvent', 'HcalPacked': 'Calo/RawEvent', 'MuonFull': 'Other/RawEvent', 'L0CaloError': 'Other/RawEvent', 'GaudiHeader': 'Other/RawEvent', 'L0DU': 'Trigger/RawEvent', 'ITFull': 'Other/RawEvent', 'OT': 'Other/RawEvent', 'MuonError': 'Other/RawEvent', 'HltTrackReports': 'Trigger/RawEvent', 'L0CaloFull': 'Trigger/RawEvent', 'L0Muon': 'Trigger/RawEvent'}, 3.1: {'HltSelReports': 'Trigger/#TCK#/RawEvent', 'OTError': 'Other/RawEvent', 'VeloError': 'Other/RawEvent', 'UTFull': 'Other/RawEvent', 'UTPedestal': 'Other/RawEvent', 'PrsTrig': 'Calo/RawEvent', 'HcalPackedError': 'Calo/RawEvent', 'L0PUFull': 'Other/RawEvent', 'HltDecReports': 'Trigger/#TCK#/RawEvent', 'Rich': 'Rich/RawEvent', 'VeloProcFull': 'Other/RawEvent', 'HltRoutingBits': 'Trigger/#TCK#/RawEvent', 'L0MuonError': 'Other/RawEvent', 'VL': 'Other/RawEvent', 'L0MuonProcCand': 'Trigger/#TCK#/RawEvent', 'TTPedestal': 'Other/RawEvent', 'L0DUError': 'Other/RawEvent', 'DstBank': 'Other/RawEvent', 'TT': 'Other/RawEvent', 'L0MuonProcData': 'Other/RawEvent', 'OTRaw': 'Other/RawEvent', 'EcalPacked': 'Calo/RawEvent', 'PrsPacked': 'Calo/RawEvent', 'VeloPedestal': 'Other/RawEvent', 'DAQ': 'Other/RawEvent', 'ITError': 'Other/RawEvent', 'FileID': 'Other/RawEvent', 'EcalTrig': 'Calo/RawEvent', 'FTCluster': 'Other/RawEvent', 'L0PUError': 'Other/RawEvent', 'L0Calo': 'Trigger/#TCK#/RawEvent', 'VeloFull': 'Other/RawEvent', 'L0MuonCtrlAll': 'Other/RawEvent', 'HltVertexReports': 'Trigger/#TCK#/RawEvent', 'EcalE': 'Calo/RawEvent', 'ITProcFull': 'Other/RawEvent', 'HltLumiSummary': 'Other/RawEvent', 'TestDet': 'Other/RawEvent', 'IT': 'Other/RawEvent', 'VP': 'Other/RawEvent', 'HcalTrig': 'Calo/RawEvent', 'HcalE': 'Calo/RawEvent', 'L0PU': 'Trigger/#TCK#/RawEvent', 'DstAddress': 'Other/RawEvent', 'UT': 'Other/RawEvent', 'TAEHeader': 'Other/RawEvent', 'ODIN': 'Trigger/#TCK#/RawEvent', 'PrsE': 'Calo/RawEvent', 'PrsPackedError': 'Calo/RawEvent', 'Velo': 'Other/RawEvent', 'Muon': 'Muon/RawEvent', 'ITPedestal': 'Other/RawEvent', 'TTProcFull': 'Other/RawEvent', 'DstData': 'Other/RawEvent', 'GaudiSerialize': 'Other/RawEvent', 'TTFull': 'Other/RawEvent', 'L0MuonRaw': 'Other/RawEvent', 'UTError': 'Other/RawEvent', 'TTError': 'Other/RawEvent', 'EcalPackedError': 'Calo/RawEvent', 'HcalPacked': 'Calo/RawEvent', 'MuonFull': 'Other/RawEvent', 'L0CaloError': 'Other/RawEvent', 'GaudiHeader': 'Other/RawEvent', 'L0DU': 'Trigger/#TCK#/RawEvent', 'ITFull': 'Other/RawEvent', 'OT': 'Other/RawEvent', 'MuonError': 'Other/RawEvent', 'L0CaloFull': 'Trigger/#TCK#/RawEvent', 'L0Muon': 'Trigger/#TCK#/RawEvent'}, 0.3: {'HltSelReports': 'DAQ/RawEvent', 'OTError': 'DAQ/RawEvent', 'VeloError': 'DAQ/RawEvent', 'UTFull': 'DAQ/RawEvent', 'UTPedestal': 'DAQ/RawEvent', 'PrsTrig': 'DAQ/RawEvent', 'HcalPackedError': 'DAQ/RawEvent', 'L0PUFull': 'DAQ/RawEvent', 'HltDecReports': 'DAQ/RawEvent', 'Rich': 'DAQ/RawEvent', 'VeloProcFull': 'DAQ/RawEvent', 'HltRoutingBits': 'DAQ/RawEvent', 'L0MuonError': 'DAQ/RawEvent', 'VL': 'DAQ/RawEvent', 'L0MuonProcCand': 'DAQ/RawEvent', 'TTPedestal': 'DAQ/RawEvent', 'L0DUError': 'DAQ/RawEvent', 'HC': 'DAQ/RawEvent', 'DstBank': 'DAQ/RawEvent', 'TT': 'DAQ/RawEvent', 'L0MuonProcData': 'DAQ/RawEvent', 'OTRaw': 'DAQ/RawEvent', 'EcalPacked': 'DAQ/RawEvent', 'PrsPacked': 'DAQ/RawEvent', 'VeloPedestal': 'DAQ/RawEvent', 'DAQ': 'DAQ/RawEvent', 'ITError': 'DAQ/RawEvent', 'FileID': 'DAQ/RawEvent', 'EcalTrig': 'DAQ/RawEvent', 'FTCluster': 'DAQ/RawEvent', 'L0PUError': 'DAQ/RawEvent', 'L0Calo': 'DAQ/RawEvent', 'VeloFull': 'DAQ/RawEvent', 'L0MuonCtrlAll': 'DAQ/RawEvent', 'HltVertexReports': 'DAQ/RawEvent', 'EcalE': 'DAQ/RawEvent', 'ITProcFull': 'DAQ/RawEvent', 'HltLumiSummary': 'DAQ/RawEvent', 'TestDet': 'DAQ/RawEvent', 'IT': 'DAQ/RawEvent', 'VP': 'DAQ/RawEvent', 'HcalTrig': 'DAQ/RawEvent', 'HcalE': 'DAQ/RawEvent', 'L0PU': 'DAQ/RawEvent', 'DstAddress': 'DAQ/RawEvent', 'UT': 'DAQ/RawEvent', 'TAEHeader': 'DAQ/RawEvent', 'ODIN': 'DAQ/RawEvent', 'PrsE': 'DAQ/RawEvent', 'PrsPackedError': 'DAQ/RawEvent', 'Velo': 'DAQ/RawEvent', 'Muon': 'DAQ/RawEvent', 'ITPedestal': 'DAQ/RawEvent', 'TTProcFull': 'DAQ/RawEvent', 'DstData': 'DAQ/RawEvent', 'GaudiSerialize': 'DAQ/RawEvent', 'TTFull': 'DAQ/RawEvent', 'L0MuonRaw': 'DAQ/RawEvent', 'UTError': 'DAQ/RawEvent', 'TTError': 'DAQ/RawEvent', 'EcalPackedError': 'DAQ/RawEvent', 'HcalPacked': 'DAQ/RawEvent', 'MuonFull': 'DAQ/RawEvent', 'L0CaloError': 'DAQ/RawEvent', 'GaudiHeader': 'DAQ/RawEvent', 'L0DU': 'DAQ/RawEvent', 'ITFull': 'DAQ/RawEvent', 'OT': 'DAQ/RawEvent', 'MuonError': 'DAQ/RawEvent', 'HltTrackReports': 'DAQ/RawEvent', 'L0CaloFull': 'DAQ/RawEvent', 'L0Muon': 'DAQ/RawEvent'}, 0.4: {'HltRoutingBits': 'DAQ/RawEvent', 'L0PUFull': 'DAQ/RawEvent', 'HltDecReports': 'DAQ/RawEvent', 'HC': 'DAQ/RawEvent', 'HltSelReports': 'DAQ/RawEvent', 'L0MuonError': 'DAQ/RawEvent', 'DstBank': 'DAQ/RawEvent', 'L0MuonProcCand': 'DAQ/RawEvent', 'L0CaloError': 'DAQ/RawEvent', 'TAEHeader': 'DAQ/RawEvent', 'L0MuonProcData': 'DAQ/RawEvent', 'DAQ': 'DAQ/RawEvent', 'DstAddress': 'DAQ/RawEvent', 'L0PUError': 'DAQ/RawEvent', 'L0Calo': 'DAQ/RawEvent', 'L0MuonCtrlAll': 'DAQ/RawEvent', 'HltVertexReports': 'DAQ/RawEvent', 'HltLumiSummary': 'DAQ/RawEvent', 'TestDet': 'DAQ/RawEvent', 'L0PU': 'DAQ/RawEvent', 'L0DUError': 'DAQ/RawEvent', 'ODIN': 'DAQ/RawEvent', 'FileID': 'DAQ/RawEvent', 'DstData': 'DAQ/RawEvent', 'GaudiSerialize': 'DAQ/RawEvent', 'L0MuonRaw': 'DAQ/RawEvent', 'GaudiHeader': 'DAQ/RawEvent', 'L0DU': 'DAQ/RawEvent', 'L0CaloFull': 'DAQ/RawEvent', 'L0Muon': 'DAQ/RawEvent'}, 4.3: {'HltSelReports': 'Trigger/RawEvent', 'OTError': 'Unstripped/RawEvent', 'VeloError': 'Unstripped/RawEvent', 'UTFull': 'Unstripped/RawEvent', 'UTPedestal': 'Unstripped/RawEvent', 'PrsTrig': 'Calo/RawEvent', 'HcalPackedError': 'Unstripped/RawEvent', 'L0PUFull': 'Unstripped/RawEvent', 'HltDecReports': 'Trigger/RawEvent', 'Rich': 'Rich/RawEvent', 'VeloProcFull': 'Unstripped/RawEvent', 'HltRoutingBits': 'Trigger/RawEvent', 'L0MuonError': 'Unstripped/RawEvent', 'VL': 'Unstripped/RawEvent', 'L0MuonProcCand': 'Trigger/RawEvent', 'TTPedestal': 'Unstripped/RawEvent', 'L0DUError': 'Unstripped/RawEvent', 'HC': 'HC/RawEvent', 'DstBank': 'Unstripped/RawEvent', 'TT': 'Tracker/RawEvent', 'L0MuonProcData': 'Unstripped/RawEvent', 'OTRaw': 'Unstripped/RawEvent', 'EcalPacked': 'Calo/RawEvent', 'PrsPacked': 'Calo/RawEvent', 'VeloPedestal': 'Unstripped/RawEvent', 'DAQ': 'Unstripped/RawEvent', 'ITError': 'Tracker/RawEvent', 'FileID': 'Unstripped/RawEvent', 'EcalTrig': 'Calo/RawEvent', 'FTCluster': 'Tracker/RawEvent', 'L0PUError': 'Unstripped/RawEvent', 'L0Calo': 'Trigger/RawEvent', 'VeloFull': 'Unstripped/RawEvent', 'L0MuonCtrlAll': 'Unstripped/RawEvent', 'HltVertexReports': 'Trigger/RawEvent', 'EcalE': 'Calo/RawEvent', 'ITProcFull': 'Unstripped/RawEvent', 'HltLumiSummary': 'Unstripped/RawEvent', 'TestDet': 'Unstripped/RawEvent', 'IT': 'Tracker/RawEvent', 'VP': 'Velo/RawEvent', 'HcalTrig': 'Calo/RawEvent', 'HcalE': 'Calo/RawEvent', 'L0PU': 'Trigger/RawEvent', 'DstAddress': 'Unstripped/RawEvent', 'UT': 'Tracker/RawEvent', 'TAEHeader': 'Unstripped/RawEvent', 'ODIN': ['Trigger/RawEvent'], 'PrsE': 'Calo/RawEvent', 'PrsPackedError': 'Unstripped/RawEvent', 'Velo': 'Velo/RawEvent', 'Muon': 'Muon/RawEvent', 'ITPedestal': 'Unstripped/RawEvent', 'TTProcFull': 'Unstripped/RawEvent', 'DstData': 'PersistReco/RawEvent', 'GaudiSerialize': 'Unstripped/RawEvent', 'TTFull': 'Unstripped/RawEvent', 'L0MuonRaw': 'Unstripped/RawEvent', 'UTError': 'Unstripped/RawEvent', 'TTError': 'Tracker/RawEvent', 'EcalPackedError': 'Unstripped/RawEvent', 'HcalPacked': 'Calo/RawEvent', 'MuonFull': 'Unstripped/RawEvent', 'L0CaloError': 'Unstripped/RawEvent', 'GaudiHeader': 'Unstripped/RawEvent', 'L0DU': 'Trigger/RawEvent', 'ITFull': 'Unstripped/RawEvent', 'OT': 'Tracker/RawEvent', 'MuonError': 'Unstripped/RawEvent', 'HltTrackReports': 'Trigger/RawEvent', 'L0CaloFull': 'Trigger/RawEvent', 'L0Muon': 'Trigger/RawEvent'}, 2.1: {'HltSelReports': 'Trigger/RawEvent', 'OTError': 'Other/RawEvent', 'VeloError': 'Other/RawEvent', 'UTFull': 'Other/RawEvent', 'UTPedestal': 'Other/RawEvent', 'PrsTrig': 'Calo/RawEvent', 'HcalPackedError': 'Calo/RawEvent', 'L0PUFull': 'Other/RawEvent', 'HltDecReports': 'Trigger/RawEvent', 'Rich': 'Rich/RawEvent', 'VeloProcFull': 'Other/RawEvent', 'HltRoutingBits': 'Trigger/RawEvent', 'L0MuonError': 'Other/RawEvent', 'VL': 'Other/RawEvent', 'L0MuonProcCand': 'Trigger/RawEvent', 'TTPedestal': 'Other/RawEvent', 'L0DUError': 'Other/RawEvent', 'DstBank': 'Other/RawEvent', 'TT': 'Other/RawEvent', 'L0MuonProcData': 'Other/RawEvent', 'OTRaw': 'Other/RawEvent', 'EcalPacked': 'Calo/RawEvent', 'PrsPacked': 'Calo/RawEvent', 'VeloPedestal': 'Other/RawEvent', 'DAQ': 'Other/RawEvent', 'ITError': 'Other/RawEvent', 'FileID': 'Other/RawEvent', 'EcalTrig': 'Calo/RawEvent', 'FTCluster': 'Other/RawEvent', 'L0PUError': 'Other/RawEvent', 'L0Calo': 'Trigger/RawEvent', 'VeloFull': 'Other/RawEvent', 'L0MuonCtrlAll': 'Other/RawEvent', 'HltVertexReports': 'Trigger/RawEvent', 'EcalE': 'Calo/RawEvent', 'ITProcFull': 'Other/RawEvent', 'HltLumiSummary': 'Other/RawEvent', 'TestDet': 'Other/RawEvent', 'IT': 'Other/RawEvent', 'VP': 'Other/RawEvent', 'HcalTrig': 'Calo/RawEvent', 'HcalE': 'Calo/RawEvent', 'L0PU': 'Trigger/RawEvent', 'DstAddress': 'Other/RawEvent', 'UT': 'Other/RawEvent', 'TAEHeader': 'Other/RawEvent', 'ODIN': 'Trigger/RawEvent', 'PrsE': 'Calo/RawEvent', 'PrsPackedError': 'Calo/RawEvent', 'Velo': 'Other/RawEvent', 'Muon': 'Muon/RawEvent', 'ITPedestal': 'Other/RawEvent', 'TTProcFull': 'Other/RawEvent', 'DstData': 'Other/RawEvent', 'GaudiSerialize': 'Other/RawEvent', 'TTFull': 'Other/RawEvent', 'L0MuonRaw': 'Other/RawEvent', 'UTError': 'Other/RawEvent', 'TTError': 'Other/RawEvent', 'EcalPackedError': 'Calo/RawEvent', 'HcalPacked': 'Calo/RawEvent', 'MuonFull': 'Other/RawEvent', 'L0CaloError': 'Other/RawEvent', 'GaudiHeader': 'Other/RawEvent', 'L0DU': 'Trigger/RawEvent', 'ITFull': 'Other/RawEvent', 'OT': 'Other/RawEvent', 'MuonError': 'Other/RawEvent', 'HltTrackReports': 'Trigger/RawEvent', 'L0CaloFull': 'Trigger/RawEvent', 'L0Muon': 'Trigger/RawEvent'}, 4.1: {'HltSelReports': 'Trigger/RawEvent', 'OTError': 'Unstripped/RawEvent', 'VeloError': 'Unstripped/RawEvent', 'UTFull': 'Unstripped/RawEvent', 'UTPedestal': 'Unstripped/RawEvent', 'PrsTrig': 'Calo/RawEvent', 'HcalPackedError': 'Unstripped/RawEvent', 'L0PUFull': 'Unstripped/RawEvent', 'HltDecReports': 'Trigger/RawEvent', 'Rich': 'Rich/RawEvent', 'VeloProcFull': 'Unstripped/RawEvent', 'HltRoutingBits': 'Trigger/RawEvent', 'L0MuonError': 'Unstripped/RawEvent', 'VL': 'Unstripped/RawEvent', 'L0MuonProcCand': 'Trigger/RawEvent', 'TTPedestal': 'Unstripped/RawEvent', 'L0DUError': 'Unstripped/RawEvent', 'HC': 'HC/RawEvent', 'DstBank': 'Unstripped/RawEvent', 'TT': 'Tracker/RawEvent', 'L0MuonProcData': 'Unstripped/RawEvent', 'OTRaw': 'Unstripped/RawEvent', 'EcalPacked': 'Calo/RawEvent', 'PrsPacked': 'Calo/RawEvent', 'VeloPedestal': 'Unstripped/RawEvent', 'DAQ': 'Unstripped/RawEvent', 'ITError': 'Unstripped/RawEvent', 'FileID': 'Unstripped/RawEvent', 'EcalTrig': 'Calo/RawEvent', 'FTCluster': 'Tracker/RawEvent', 'L0PUError': 'Unstripped/RawEvent', 'L0Calo': 'Trigger/RawEvent', 'VeloFull': 'Unstripped/RawEvent', 'L0MuonCtrlAll': 'Unstripped/RawEvent', 'HltVertexReports': 'Trigger/RawEvent', 'EcalE': 'Calo/RawEvent', 'ITProcFull': 'Unstripped/RawEvent', 'HltLumiSummary': 'Unstripped/RawEvent', 'TestDet': 'Unstripped/RawEvent', 'IT': 'Tracker/RawEvent', 'VP': 'Velo/RawEvent', 'HcalTrig': 'Calo/RawEvent', 'HcalE': 'Calo/RawEvent', 'L0PU': 'Trigger/RawEvent', 'DstAddress': 'Unstripped/RawEvent', 'UT': 'Tracker/RawEvent', 'TAEHeader': 'Unstripped/RawEvent', 'ODIN': ['Trigger/RawEvent'], 'PrsE': 'Calo/RawEvent', 'PrsPackedError': 'Unstripped/RawEvent', 'Velo': 'Velo/RawEvent', 'Muon': 'Muon/RawEvent', 'ITPedestal': 'Unstripped/RawEvent', 'TTProcFull': 'Unstripped/RawEvent', 'DstData': 'Unstripped/RawEvent', 'GaudiSerialize': 'Unstripped/RawEvent', 'TTFull': 'Unstripped/RawEvent', 'L0MuonRaw': 'Unstripped/RawEvent', 'UTError': 'Unstripped/RawEvent', 'TTError': 'Unstripped/RawEvent', 'EcalPackedError': 'Unstripped/RawEvent', 'HcalPacked': 'Calo/RawEvent', 'MuonFull': 'Unstripped/RawEvent', 'L0CaloError': 'Unstripped/RawEvent', 'GaudiHeader': 'Unstripped/RawEvent', 'L0DU': 'Trigger/RawEvent', 'ITFull': 'Unstripped/RawEvent', 'OT': 'Tracker/RawEvent', 'MuonError': 'Unstripped/RawEvent', 'HltTrackReports': 'Trigger/RawEvent', 'L0CaloFull': 'Trigger/RawEvent', 'L0Muon': 'Trigger/RawEvent'}, 3.3: {'HltSelReports': 'Trigger/#TCK#/RawEvent', 'OTError': 'Other/RawEvent', 'VeloError': 'Other/RawEvent', 'UTFull': 'Other/RawEvent', 'UTPedestal': 'Other/RawEvent', 'PrsTrig': 'Calo/RawEvent', 'HcalPackedError': 'Calo/RawEvent', 'L0PUFull': 'Other/RawEvent', 'HltDecReports': 'Trigger/#TCK#/RawEvent', 'Rich': 'Rich/RawEvent', 'VeloProcFull': 'Other/RawEvent', 'HltRoutingBits': 'Trigger/#TCK#/RawEvent', 'L0MuonError': 'Other/RawEvent', 'VL': 'Other/RawEvent', 'L0MuonProcCand': 'Trigger/#L0TCK#/RawEvent', 'TTPedestal': 'Other/RawEvent', 'L0DUError': 'Other/RawEvent', 'DstBank': 'Other/RawEvent', 'TT': 'Other/RawEvent', 'L0MuonProcData': 'Other/RawEvent', 'OTRaw': 'Other/RawEvent', 'EcalPacked': 'Calo/RawEvent', 'PrsPacked': 'Calo/RawEvent', 'VeloPedestal': 'Other/RawEvent', 'DAQ': 'Other/RawEvent', 'ITError': 'Other/RawEvent', 'FileID': 'Other/RawEvent', 'EcalTrig': 'Calo/RawEvent', 'FTCluster': 'Other/RawEvent', 'L0PUError': 'Other/RawEvent', 'L0Calo': 'Trigger/#L0TCK#/RawEvent', 'VeloFull': 'Other/RawEvent', 'L0MuonCtrlAll': 'Other/RawEvent', 'HltVertexReports': 'Trigger/#TCK#/RawEvent', 'EcalE': 'Calo/RawEvent', 'ITProcFull': 'Other/RawEvent', 'HltLumiSummary': 'Other/RawEvent', 'TestDet': 'Other/RawEvent', 'IT': 'Other/RawEvent', 'VP': 'Other/RawEvent', 'HcalTrig': 'Calo/RawEvent', 'HcalE': 'Calo/RawEvent', 'L0PU': 'Trigger/#L0TCK#/RawEvent', 'DstAddress': 'Other/RawEvent', 'UT': 'Other/RawEvent', 'TAEHeader': 'Other/RawEvent', 'ODIN': ['Trigger/#TCK#/RawEvent', 'Trigger/#L0TCK#/RawEvent'], 'PrsE': 'Calo/RawEvent', 'PrsPackedError': 'Calo/RawEvent', 'Velo': 'Other/RawEvent', 'Muon': 'Muon/RawEvent', 'ITPedestal': 'Other/RawEvent', 'TTProcFull': 'Other/RawEvent', 'DstData': 'Other/RawEvent', 'GaudiSerialize': 'Other/RawEvent', 'TTFull': 'Other/RawEvent', 'L0MuonRaw': 'Other/RawEvent', 'UTError': 'Other/RawEvent', 'TTError': 'Other/RawEvent', 'EcalPackedError': 'Calo/RawEvent', 'HcalPacked': 'Calo/RawEvent', 'MuonFull': 'Other/RawEvent', 'L0CaloError': 'Other/RawEvent', 'GaudiHeader': 'Other/RawEvent', 'L0DU': 'Trigger/#L0TCK#/RawEvent', 'ITFull': 'Other/RawEvent', 'OT': 'Other/RawEvent', 'MuonError': 'Other/RawEvent', 'L0CaloFull': 'Trigger/#L0TCK#/RawEvent', 'L0Muon': 'Trigger/#L0TCK#/RawEvent'}, 4.2: {'HltSelReports': 'Trigger/RawEvent', 'OTError': 'Unstripped/RawEvent', 'VeloError': 'Unstripped/RawEvent', 'UTFull': 'Unstripped/RawEvent', 'UTPedestal': 'Unstripped/RawEvent', 'PrsTrig': 'Calo/RawEvent', 'HcalPackedError': 'Unstripped/RawEvent', 'L0PUFull': 'Unstripped/RawEvent', 'HltDecReports': 'Trigger/RawEvent', 'Rich': 'Rich/RawEvent', 'VeloProcFull': 'Unstripped/RawEvent', 'HltRoutingBits': 'Trigger/RawEvent', 'L0MuonError': 'Unstripped/RawEvent', 'VL': 'Unstripped/RawEvent', 'L0MuonProcCand': 'Trigger/RawEvent', 'TTPedestal': 'Unstripped/RawEvent', 'L0DUError': 'Unstripped/RawEvent', 'HC': 'HC/RawEvent', 'DstBank': 'Unstripped/RawEvent', 'TT': 'Tracker/RawEvent', 'L0MuonProcData': 'Unstripped/RawEvent', 'OTRaw': 'Unstripped/RawEvent', 'EcalPacked': 'Calo/RawEvent', 'PrsPacked': 'Calo/RawEvent', 'VeloPedestal': 'Unstripped/RawEvent', 'DAQ': 'Unstripped/RawEvent', 'ITError': 'Tracker/RawEvent', 'FileID': 'Unstripped/RawEvent', 'EcalTrig': 'Calo/RawEvent', 'FTCluster': 'Tracker/RawEvent', 'L0PUError': 'Unstripped/RawEvent', 'L0Calo': 'Trigger/RawEvent', 'VeloFull': 'Unstripped/RawEvent', 'L0MuonCtrlAll': 'Unstripped/RawEvent', 'HltVertexReports': 'Trigger/RawEvent', 'EcalE': 'Calo/RawEvent', 'ITProcFull': 'Unstripped/RawEvent', 'HltLumiSummary': 'Unstripped/RawEvent', 'TestDet': 'Unstripped/RawEvent', 'IT': 'Tracker/RawEvent', 'VP': 'Velo/RawEvent', 'HcalTrig': 'Calo/RawEvent', 'HcalE': 'Calo/RawEvent', 'L0PU': 'Trigger/RawEvent', 'DstAddress': 'Unstripped/RawEvent', 'UT': 'Tracker/RawEvent', 'TAEHeader': 'Unstripped/RawEvent', 'ODIN': ['Trigger/RawEvent'], 'PrsE': 'Calo/RawEvent', 'PrsPackedError': 'Unstripped/RawEvent', 'Velo': 'Velo/RawEvent', 'Muon': 'Muon/RawEvent', 'ITPedestal': 'Unstripped/RawEvent', 'TTProcFull': 'Unstripped/RawEvent', 'DstData': 'Unstripped/RawEvent', 'GaudiSerialize': 'Unstripped/RawEvent', 'TTFull': 'Unstripped/RawEvent', 'L0MuonRaw': 'Unstripped/RawEvent', 'UTError': 'Unstripped/RawEvent', 'TTError': 'Tracker/RawEvent', 'EcalPackedError': 'Unstripped/RawEvent', 'HcalPacked': 'Calo/RawEvent', 'MuonFull': 'Unstripped/RawEvent', 'L0CaloError': 'Unstripped/RawEvent', 'GaudiHeader': 'Unstripped/RawEvent', 'L0DU': 'Trigger/RawEvent', 'ITFull': 'Unstripped/RawEvent', 'OT': 'Tracker/RawEvent', 'MuonError': 'Unstripped/RawEvent', 'HltTrackReports': 'Trigger/RawEvent', 'L0CaloFull': 'Trigger/RawEvent', 'L0Muon': 'Trigger/RawEvent'}, 3.2: {'OTError': 'Other/RawEvent', 'VeloError': 'Other/RawEvent', 'UTFull': 'Other/RawEvent', 'UTPedestal': 'Other/RawEvent', 'PrsTrig': 'Calo/RawEvent', 'HcalPackedError': 'Calo/RawEvent', 'L0PUFull': 'Other/RawEvent', 'UT': 'Other/RawEvent', 'Rich': 'Rich/RawEvent', 'VeloProcFull': 'Other/RawEvent', 'L0MuonError': 'Other/RawEvent', 'VL': 'Other/RawEvent', 'L0MuonProcCand': 'Trigger/#L0TCK#/RawEvent', 'TTPedestal': 'Other/RawEvent', 'L0DUError': 'Other/RawEvent', 'DstBank': 'Other/RawEvent', 'TT': 'Other/RawEvent', 'OTRaw': 'Other/RawEvent', 'EcalPacked': 'Calo/RawEvent', 'PrsPacked': 'Calo/RawEvent', 'VeloPedestal': 'Other/RawEvent', 'DAQ': 'Other/RawEvent', 'ITError': 'Other/RawEvent', 'FileID': 'Other/RawEvent', 'EcalTrig': 'Calo/RawEvent', 'FTCluster': 'Other/RawEvent', 'L0PUError': 'Other/RawEvent', 'L0Calo': 'Trigger/#L0TCK#/RawEvent', 'VeloFull': 'Other/RawEvent', 'L0MuonCtrlAll': 'Other/RawEvent', 'L0MuonProcData': 'Other/RawEvent', 'EcalE': 'Calo/RawEvent', 'ITProcFull': 'Other/RawEvent', 'HltLumiSummary': 'Other/RawEvent', 'TestDet': 'Other/RawEvent', 'IT': 'Other/RawEvent', 'VP': 'Other/RawEvent', 'HcalTrig': 'Calo/RawEvent', 'HcalE': 'Calo/RawEvent', 'L0PU': 'Trigger/#L0TCK#/RawEvent', 'DstAddress': 'Other/RawEvent', 'TAEHeader': 'Other/RawEvent', 'ODIN': 'Trigger/#L0TCK#/RawEvent', 'PrsE': 'Calo/RawEvent', 'PrsPackedError': 'Calo/RawEvent', 'Velo': 'Other/RawEvent', 'Muon': 'Muon/RawEvent', 'ITPedestal': 'Other/RawEvent', 'TTProcFull': 'Other/RawEvent', 'DstData': 'Other/RawEvent', 'GaudiSerialize': 'Other/RawEvent', 'TTFull': 'Other/RawEvent', 'L0MuonRaw': 'Other/RawEvent', 'UTError': 'Other/RawEvent', 'TTError': 'Other/RawEvent', 'EcalPackedError': 'Calo/RawEvent', 'HcalPacked': 'Calo/RawEvent', 'MuonFull': 'Other/RawEvent', 'L0CaloError': 'Other/RawEvent', 'GaudiHeader': 'Other/RawEvent', 'L0DU': 'Trigger/#L0TCK#/RawEvent', 'ITFull': 'Other/RawEvent', 'OT': 'Other/RawEvent', 'MuonError': 'Other/RawEvent', 'L0CaloFull': 'Trigger/#L0TCK#/RawEvent', 'L0Muon': 'Trigger/#L0TCK#/RawEvent'}}
+# |                        (default: None)
+# |-TCKReplacePattern      = '#TCK#'
+# |-GenericReplacePatterns = {}  (default: {})
+# |-TCK                    = None
+# \----- (End of User RawEventFormatConf/RawEventFormatConf) -----------------------------------------
+# applying configuration of DaVinci
+# DaVinci                   INFO    Applying DaVinci configuration
+# DaVinci                   INFO    /***** User DaVinci/DaVinci ************************************************************************
+|-MainOptions          = ''
+|-TupleFile            = 'output/PhiG/PhiG_HHGamma.root'  (default: '')
+|-SkipEvents           = 0
+|-RootCompressionLevel = 'LZMA:6'
+|-Input                = []  (default: [])
+|-Turbo                = False
+|-DDDBtag              = 'dddb-20171126'  (default: '')
+|-UserAlgorithms       = [DecayTreeTuple('Hlt2BToHHGamma_Inclusive_Line'), DecayTreeTuple('ExtraHadron'), DecayTreeTuple('ExtraKs0'), DecayTreeTuple('ExtraLambda'), DecayTreeTuple('ExtraGamma'), DecayTreeTuple('ExtraPi0')]
+|                      (default: [])
+|-RootInTES            = '/Event/HLT2'  (default: '')
+|-DQFLAGStag           = ''
+|-Lumi                 = False  (default: False)
+|-MoniSequence         = []  (default: [])
+|-VerboseMessages      = False
+|-InputType            = 'MDST'  (default: 'DST')
+|-ProductionType       = 'None'
+|-PrintFreq            = 1000
+|-Detectors            = ['Velo', 'PuVeto', 'Rich1', 'Rich2', 'TT', 'IT', 'OT', 'Spd', 'Prs', 'Ecal', 'Hcal', 'Muon', 'Magnet', 'Tr']
+|                      (default: ['Velo', 'PuVeto', 'Rich1', 'Rich2', 'TT', 'IT', 'OT', 'Spd', 'Prs', 'Ecal', 'Hcal', 'Muon', 'Magnet', 'Tr'])
+|-EvtMax               = -1
+|-CondDBtag            = 'sim-20171127-vc-md100'  (default: '')
+|-MergeGenFSR          = False
+|-Simulation           = True  (default: False)
+|-DataType             = 'Upgrade'  (default: '')
+|-RedoMCLinks          = False
+|-IgnoreDQFlags        = False
+|-HistogramFile        = ''
+|-WriteFSR             = True
+|-EnableUnpack         = None
+|-EventPreFilters      = []  (default: [])
+\----- (End of User DaVinci/DaVinci) ---------------------------------------------------------------
+# DaVinci                   WARNING RootInTES for MC-uDST ("/Event/HLT2") is not equal to "/Event/AllStreams"
+# --> Including file '/cvmfs/lhcb.cern.ch/lib/lhcb/LHCB/LHCB_v50r6/GaudiConf/options/PreloadUnits.opts'
+# --> Including file '/cvmfs/lhcb.cern.ch/lib/lhcb/LHCB/LHCB_v50r6/GaudiConf/options/units.opts'
+# <-- End of file '/cvmfs/lhcb.cern.ch/lib/lhcb/LHCB/LHCB_v50r6/GaudiConf/options/units.opts'
+# <-- End of file '/cvmfs/lhcb.cern.ch/lib/lhcb/LHCB/LHCB_v50r6/GaudiConf/options/PreloadUnits.opts'
+# DaVinci                   INFO    Creating Lumi Algorithms
+# DaVinci                   INFO    Define CondDB( Upgrade = True ) 
+# DaVinci                   WARNING It is suspicious that the list of ``Detectors'' is not specified though ``DataType=Upgrade'' ...
+# DaVinci                   WARNING Sure that none of the upgrade-only detectors ['VP', 'UT', 'FT', 'Rich1Pmt', 'Rich2Pmt'] are to be specified via ``Detectors''?
+# DaVinci                   INFO    No MainOptions specified. DaVinci() will import no options file!
+# DaVinci                   INFO    Creating User Algorithms
+# DaVinci                   INFO    Append to Main Sequence has been called
+# DaVinci                   INFO    Creating Moni Algorithms
+# DaVinci                   INFO    Append to Moni Sequence has been called
+# PhysConf.MicroDST         INFO    Disable GFAL
+# PhysConf.MicroDST         INFO    Reconfigure uDST to use    RootInTES='/Event/HLT2/'
+# PhysConf.MicroDST         INFO    Configure L0&HLT decoding  RootInTES='/Event/HLT2/'
+# PhysConf.MicroDST         INFO    Configure node-killer agent for ('/Event/DAQ', '/Event/pRec') 
+# PhysConf.MicroDST         INFO    Configure ODIN,Raw,Summary&Reports RootInTES='/Event/HLT2/'
+# DaVinci                   INFO    Set RootInTES=/Event/HLT2 for DaVinciUserSequence
+# DaVinci                   INFO    Set RootInTES=/Event/HLT2 for Hlt2BToHHGamma_Inclusive_Line
+# DaVinci                   INFO    Set RootInTES=/Event/HLT2 for ExtraHadron
+# DaVinci                   INFO    Set RootInTES=/Event/HLT2 for ExtraKs0
+# DaVinci                   INFO    Set RootInTES=/Event/HLT2 for ExtraLambda
+# DaVinci                   INFO    Set RootInTES=/Event/HLT2 for ExtraGamma
+# DaVinci                   INFO    Set RootInTES=/Event/HLT2 for ExtraPi0
+# /***** User DaVinci/DaVinci ************************************************************************
+# |-MainOptions          = ''
+# |-TupleFile            = 'output/PhiG/PhiG_HHGamma.root'  (default: '')
+# |-SkipEvents           = 0
+# |-RootCompressionLevel = 'LZMA:6'
+# |-Input                = []  (default: [])
+# |-Turbo                = False
+# |-DDDBtag              = 'dddb-20171126'  (default: '')
+# |-UserAlgorithms       = [DecayTreeTuple('Hlt2BToHHGamma_Inclusive_Line'), DecayTreeTuple('ExtraHadron'), DecayTreeTuple('ExtraKs0'), DecayTreeTuple('ExtraLambda'), DecayTreeTuple('ExtraGamma'), DecayTreeTuple('ExtraPi0')]
+# |                      (default: [])
+# |-RootInTES            = '/Event/HLT2'  (default: '')
+# |-DQFLAGStag           = ''
+# |-Lumi                 = False  (default: False)
+# |-MoniSequence         = []  (default: [])
+# |-VerboseMessages      = False
+# |-InputType            = 'MDST'  (default: 'DST')
+# |-ProductionType       = 'None'
+# |-PrintFreq            = 1000
+# |-Detectors            = ['Velo', 'PuVeto', 'Rich1', 'Rich2', 'TT', 'IT', 'OT', 'Spd', 'Prs', 'Ecal', 'Hcal', 'Muon', 'Magnet', 'Tr']
+# |                      (default: ['Velo', 'PuVeto', 'Rich1', 'Rich2', 'TT', 'IT', 'OT', 'Spd', 'Prs', 'Ecal', 'Hcal', 'Muon', 'Magnet', 'Tr'])
+# |-EvtMax               = -1
+# |-CondDBtag            = 'sim-20171127-vc-md100'  (default: '')
+# |-MergeGenFSR          = False
+# |-Simulation           = True  (default: False)
+# |-DataType             = 'Upgrade'  (default: '')
+# |-RedoMCLinks          = False
+# |-IgnoreDQFlags        = True  (default: False)
+# |-HistogramFile        = ''
+# |-WriteFSR             = True
+# |-EnableUnpack         = None
+# |-EventPreFilters      = []  (default: [])
+# \----- (End of User DaVinci/DaVinci) ---------------------------------------------------------------
+# skipping configuration of LumiIntegratorConf
+# applying configuration of AnalysisConf
+# Applying Analysis configuration
+# /***** User AnalysisConf/AnalysisConf **************************************************************
+# |-DataType    = 'Upgrade'  (default: '')
+# |-OutputLevel = 3
+# |-RedoMCLinks = False
+# |-RootInTES   = '/Event/HLT2'  (default: '')
+# |-Simulation  = True  (default: False)
+# |-InputType   = 'MDST'  (default: '')
+# \----- (End of User AnalysisConf/AnalysisConf) -----------------------------------------------------
+# WARNING: file '/cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/TCK/L0TCK/v5r32/options/L0DUConfig.opts' already included, ignored.
+# WARNING: Property 'DataType' is set in both 'DigiConf' and 'SimConf', using 'DigiConf.DataType'
+# No Writer defined for DIGI
+# WARNING: something else configured a decoder already, Trig/L0/Calo L0CaloCandidatesFromRaw/L0CaloFromRaw
+# WARNING: something else configured a decoder already, Trig/L0/FullCalo L0CaloCandidatesFromRaw/L0CaloFromRaw
+# WARNING: something else configured a decoder already, Trig/L0/L0DUReport L0DUDecoder/L0DUFromRaw
+# WARNING: something else configured a decoder already, Trig/L0/MuonCtrl L0MuonCandidatesFromRaw/L0MuonFromRaw
+# WARNING: something else configured a decoder already, Trig/L0/MuonBCSU L0MuonCandidatesFromRaw/L0MuonFromRaw
+# WARNING: something else configured a decoder already, Trig/L0/MuonData L0MuonCandidatesFromRaw/L0MuonFromRaw
+# PhysConf.MicroDST         INFO    Add           killer agent for: ['/Event/DAQ', '/Event/pRec']
+ApplicationMgr    SUCCESS 
+====================================================================================================================================
+                                                   Welcome to DaVinci version v50r6
+                                          running on lxplus723.cern.ch on Tue Jun 30 13:00:18 2020
+====================================================================================================================================
+ApplicationMgr       INFO Application Manager Configured successfully
+ToolSvc.GitDDDB      INFO opening Git repository '/cvmfs/lhcb.cern.ch/lib/lhcb/git-conddb/DDDB.git'
+ToolSvc.GitDDDB      INFO using commit 'upgrade/dddb-20171126' corresponding to 3ca3610ca2465697d0ee7666bc3a8bc2f5c88438
+ToolSvc.GitSIMCOND   INFO opening Git repository '/cvmfs/lhcb.cern.ch/lib/lhcb/git-conddb/SIMCOND.git'
+ToolSvc.GitSIMCOND   INFO using commit 'upgrade/sim-20171127-vc-md100' corresponding to 143109bc764c9a5cb34a04ce227d005e20236caa
+DetectorPersist...   INFO Added successfully Conversion service:XmlCnvSvc
+DetectorDataSvc   SUCCESS Detector description database: git:/lhcb.xml
+RndmGenSvc.Engine    INFO Generator engine type:CLHEP::RanluxEngine
+RndmGenSvc.Engine    INFO Current Seed:1234567 Luxury:3
+RndmGenSvc           INFO Using Random engine:HepRndm::Engine<CLHEP::RanluxEngine>
+TimingAuditor.T...   INFO This machine has a speed about   3.03 times the speed of a 2.8 GHz Xeon.
+NTupleSvc            INFO Added stream file:output/PhiG/PhiG_HHGamma.root as FILE1
+DaVinciEventSeq      INFO Member list: DaVinciInit/DaVinciInitAlg, GaudiSequencer/FilteredEventSeq, GaudiSequencer/LumiSeq
+DaVinciInitAlg    SUCCESS ==================================================================
+DaVinciInitAlg    SUCCESS Requested to process all events on input file(s)
+DaVinciInitAlg    SUCCESS ==================================================================
+RootHistSvc          INFO Writing ROOT histograms to: UndefinedROOTOutputFileName
+HistogramPersis...   INFO Added successfully Conversion service:RootHistSvc
+HistogramDataSvc     INFO Added stream file:/cvmfs/lhcb.cern.ch/lib/lhcb/PARAM/ParamFiles/v8r29/data/JetEnergyCorrections_R05_v3.root as JEC14R05
+HistogramDataSvc     INFO Added stream file:/cvmfs/lhcb.cern.ch/lib/lhcb/PARAM/ParamFiles/v8r29/data/JetEnergyCorrections_R07_v3.root as JEC14R07
+FilteredEventSeq     INFO Member list: GaudiSequencer/DaVinciEventInitSeq, GaudiSequencer/DaVinciAnalysisSeq
+DaVinciEventIni...   INFO Member list: EventNodeKiller/KillDAQ, UnpackParticlesAndVertices
+DaVinciAnalysisSeq   INFO Member list: GaudiSequencer/DaVinciUserSequence, GaudiSequencer/MonitoringSequence
+DaVinciUserSequ...   INFO Member list: DecayTreeTuple/Hlt2BToHHGamma_Inclusive_Line, DecayTreeTuple/ExtraHadron, DecayTreeTuple/ExtraKs0, DecayTreeTuple/ExtraLambda, DecayTreeTuple/ExtraGamma, DecayTreeTuple/ExtraPi0, with rootInTES '/Event/HLT2/'
+Hlt2BToHHGamma_...   INFO Will look for  ( B0  -> ^( ( K*(892)0  -> ^( pi+ ) ^( pi- )) ) ^( gamma )) 
+ExtraHadron          INFO Will look for  ( pi+ || pi- ) 
+ExtraKs0             INFO Will look for  ( KS0  -> ^( pi+ ) ^( pi- )) 
+ExtraLambda          INFO Will look for  ( ( Lambda0  -> ^( p+ ) ^( pi- )) || ( Lambda~0  -> ^( p~- ) ^( pi+ )) ) 
+ExtraGamma           INFO Will look for  gamma 
+ExtraPi0             INFO Will look for  pi0 
+MonitoringSequence   INFO Member list: 
+LumiSeq              INFO OR Member list: EventAccounting/EventAccount
+EventPersistenc...   INFO Added successfully Conversion service:RootCnvSvc
+EventSelector        INFO Stream:EventSelector.DataStreamTool_1 Def:DATAFILE='output/PhiG/PhiG.mdst' SVC='Gaudi::RootEvtSelector' OPT='READ'
+ApplicationMgr       INFO Application Manager Initialized successfully
+ApplicationMgr       INFO Application Manager Started successfully
+EventSelector     SUCCESS Reading Event record 1. Record number within stream 1: 1
+Hlt2BToHHGamma_...   INFO The head of chain is a B0 : Will keep whole chain as is. 
+Hlt2BToHHGamma_...  ERROR DecayTreeTuple:: Can't get the tool 'MCTupleToolKinematic', check your syntax StatusCode=FAILURE
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:F29E3DDA-9C75-E811-A7A5-02163E013C70
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:F29E3DDA-9C75-E811-A7A5-02163E013C70:/Event/Rec
+MagneticFieldSvc     INFO Opened magnetic field file : /cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/FieldMap/v5r7/cdf/field.v5r0.c1.down.cdf
+MagneticFieldSvc     INFO Opened magnetic field file : /cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/FieldMap/v5r7/cdf/field.v5r0.c2.down.cdf
+MagneticFieldSvc     INFO Opened magnetic field file : /cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/FieldMap/v5r7/cdf/field.v5r0.c3.down.cdf
+MagneticFieldSvc     INFO Opened magnetic field file : /cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/FieldMap/v5r7/cdf/field.v5r0.c4.down.cdf
+MagneticFieldSvc     INFO Map scaled by factor 1 with polarity internally used: -1 signed relative current: -1
+TransportSvc         INFO Initialize the static pointer to DetDesc::IGeometryErrorSvc
+TransportSvc         INFO Recovery of geometry errors is  ENABLED
+Hlt2BToHHGamma_...   INFO Tree DecayTree initialized :-
+Hlt2BToHHGamma_...   INFO  Event related tools : []
+Hlt2BToHHGamma_...   INFO  Particle related stuffers :- 
+Hlt2BToHHGamma_...   INFO   B0 (B0)                     : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+Hlt2BToHHGamma_...   INFO      K*(892)0 (Kst_892_0)     : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+Hlt2BToHHGamma_...   INFO         pi+ (piplus)          : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+Hlt2BToHHGamma_...   INFO         pi- (piminus)         : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+Hlt2BToHHGamma_...   INFO      gamma (gamma)            : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:F29E3DDA-9C75-E811-A7A5-02163E013C70:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:F29E3DDA-9C75-E811-A7A5-02163E013C70:/Event/pSim
+SEQ:MCParticles      INFO Member list: UnpackMCParticle, Gaudi::DataLink/LINK:MCParticles2MC
+ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Long         Particle=electron    
+ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Long         Particle=muon        
+ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Long         Particle=pion        
+ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Long         Particle=kaon        
+ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Long         Particle=proton      
+ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Long         Particle=ghost       
+Hlt2BToHHGamma_...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+RCWNTupleCnv         INFO Booked TTree with ID: DecayTree "DecayTree" in directory output/PhiG/PhiG_HHGamma.root:/Hlt2BToHHGamma_Inclusive_Line
+ExtraHadron          INFO The head of chain is a pi+ : Will keep whole chain as is. 
+ExtraHadron         ERROR DecayTreeTuple:: Can't get the tool 'MCTupleToolKinematic', check your syntax StatusCode=FAILURE
+ExtraHadron          INFO Tree DecayTree initialized :-
+ExtraHadron          INFO  Event related tools : []
+ExtraHadron          INFO  Particle related stuffers :- 
+ExtraHadron          INFO   pi+ (piplus)                : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+RCWNTupleCnv         INFO Booked TTree with ID: DecayTree "DecayTree" in directory output/PhiG/PhiG_HHGamma.root:/ExtraHadron
+ExtraLambda          INFO The head of chain is a Lambda0 : Will keep whole chain as is. 
+ExtraLambda         ERROR DecayTreeTuple:: Can't get the tool 'MCTupleToolKinematic', check your syntax StatusCode=FAILURE
+ExtraLambda          INFO Tree DecayTree initialized :-
+ExtraLambda          INFO  Event related tools : []
+ExtraLambda          INFO  Particle related stuffers :- 
+ExtraLambda          INFO   Lambda0 (Lambda0)           : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+ExtraLambda          INFO      p+ (pplus)               : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+ExtraLambda          INFO      pi- (piminus)            : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Downstream   Particle=electron    
+ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Downstream   Particle=muon        
+ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Downstream   Particle=pion        
+ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Downstream   Particle=kaon        
+ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Downstream   Particle=proton      
+ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Downstream   Particle=ghost       
+DeVP                 INFO There are 208 sensors (left: 104, right: 104)
+RCWNTupleCnv         INFO Booked TTree with ID: DecayTree "DecayTree" in directory output/PhiG/PhiG_HHGamma.root:/ExtraLambda
+ExtraGamma           INFO The head of chain is a gamma : Will keep whole chain as is. 
+ExtraGamma          ERROR DecayTreeTuple:: Can't get the tool 'MCTupleToolKinematic', check your syntax StatusCode=FAILURE
+ExtraGamma           INFO Tree DecayTree initialized :-
+ExtraGamma           INFO  Event related tools : []
+ExtraGamma           INFO  Particle related stuffers :- 
+ExtraGamma           INFO   gamma (gamma)               : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+ExtraGamma.Tupl...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+RCWNTupleCnv         INFO Booked TTree with ID: DecayTree "DecayTree" in directory output/PhiG/PhiG_HHGamma.root:/ExtraGamma
+ExtraGamma.Tupl...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+ExtraGamma.Tupl...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+ExtraGamma.Tupl...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+ExtraPi0             INFO The head of chain is a pi0 : Will keep whole chain as is. 
+ExtraPi0            ERROR DecayTreeTuple:: Can't get the tool 'MCTupleToolKinematic', check your syntax StatusCode=FAILURE
+ExtraPi0             INFO Tree DecayTree initialized :-
+ExtraPi0             INFO  Event related tools : []
+ExtraPi0             INFO  Particle related stuffers :- 
+ExtraPi0             INFO   pi0 (pi0)                   : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+ExtraPi0.TupleT...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+RCWNTupleCnv         INFO Booked TTree with ID: DecayTree "DecayTree" in directory output/PhiG/PhiG_HHGamma.root:/ExtraPi0
+ExtraPi0.TupleT...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+ExtraPi0.TupleT...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+ExtraPi0.TupleT...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+ExtraPi0.TupleT...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+ExtraPi0.TupleT...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+Hlt2BToHHGamma_...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+ExtraGamma.Tupl...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+ExtraGamma.Tupl...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+Hlt2BToHHGamma_...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+ExtraGamma.Tupl...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+ExtraGamma.Tupl...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+ExtraGamma.Tupl...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+ExtraGamma.Tupl...WARNING TupleToolGeometry:: The WARNING message is suppressed : 'Will not fill geometry tuple for neutral Calo particles. No worry'
+ExtraPi0.TupleT...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+ExtraPi0.TupleT...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+ExtraPi0.TupleT...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+ExtraPi0.TupleT...WARNING TupleToolGeometry:: The WARNING message is suppressed : 'Will not fill geometry tuple for neutral Calo particles. No worry'
+Hlt2BToHHGamma_...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+Hlt2BToHHGamma_...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+Hlt2BToHHGamma_...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+Hlt2BToHHGamma_...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+Hlt2BToHHGamma_...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+Hlt2BToHHGamma_...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+ExtraKs0             INFO The head of chain is a KS0 : Will keep whole chain as is. 
+ExtraKs0            ERROR DecayTreeTuple:: Can't get the tool 'MCTupleToolKinematic', check your syntax StatusCode=FAILURE
+ExtraKs0             INFO Tree DecayTree initialized :-
+ExtraKs0             INFO  Event related tools : []
+ExtraKs0             INFO  Particle related stuffers :- 
+ExtraKs0             INFO   KS0 (KS0)                   : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+ExtraKs0             INFO      pi+ (piplus)             : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+ExtraKs0             INFO      pi- (piminus)            : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
+RCWNTupleCnv         INFO Booked TTree with ID: DecayTree "DecayTree" in directory output/PhiG/PhiG_HHGamma.root:/ExtraKs0
+Hlt2BToHHGamma_...WARNING TupleToolGeometry:: The WARNING message is suppressed : 'Will not fill geometry tuple for neutral Calo particles. No worry'
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:60B9993C-9C75-E811-877B-FA163EC51D71
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:60B9993C-9C75-E811-877B-FA163EC51D71:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:60B9993C-9C75-E811-877B-FA163EC51D71:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:60B9993C-9C75-E811-877B-FA163EC51D71:/Event/pSim
+DaVinciInitAlg       INFO Memory has changed from 785256 to 1198412 KB (413156KB, 52.6142%) in last 1000 events
+EventSelector     SUCCESS Reading Event record 1001. Record number within stream 1: 1001
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:5AFA97EA-9B75-E811-85E3-FA163EEBFBDA
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:5AFA97EA-9B75-E811-85E3-FA163EEBFBDA:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:5AFA97EA-9B75-E811-85E3-FA163EEBFBDA:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:5AFA97EA-9B75-E811-85E3-FA163EEBFBDA:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:70E02B28-9C75-E811-A152-02163E013D0B
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:70E02B28-9C75-E811-A152-02163E013D0B:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:70E02B28-9C75-E811-A152-02163E013D0B:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:70E02B28-9C75-E811-A152-02163E013D0B:/Event/pSim
+DaVinciInitAlg       INFO Memory has changed from 1198412 to 1200576 KB (2164KB, 0.180572%) in last 1000 events
+EventSelector     SUCCESS Reading Event record 2001. Record number within stream 1: 2001
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:4842D86A-6876-E811-94A4-02163E00C495
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:4842D86A-6876-E811-94A4-02163E00C495:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:4842D86A-6876-E811-94A4-02163E00C495:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:4842D86A-6876-E811-94A4-02163E00C495:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:F2C63F6C-B97E-E811-959C-02163E017F01
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:F2C63F6C-B97E-E811-959C-02163E017F01:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:F2C63F6C-B97E-E811-959C-02163E017F01:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:F2C63F6C-B97E-E811-959C-02163E017F01:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:96EE2FF7-B87E-E811-9140-02163E012B53
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:96EE2FF7-B87E-E811-9140-02163E012B53:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:96EE2FF7-B87E-E811-9140-02163E012B53:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:96EE2FF7-B87E-E811-9140-02163E012B53:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:A4CE1697-A275-E811-BD53-A4BF011253A8
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:A4CE1697-A275-E811-BD53-A4BF011253A8:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:A4CE1697-A275-E811-BD53-A4BF011253A8:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:A4CE1697-A275-E811-BD53-A4BF011253A8:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:56368EFF-9E75-E811-992F-001E6779261A
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:56368EFF-9E75-E811-992F-001E6779261A:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:56368EFF-9E75-E811-992F-001E6779261A:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:56368EFF-9E75-E811-992F-001E6779261A:/Event/pSim
+DaVinciInitAlg       INFO Memory has changed from 1200576 to 1200744 KB (168KB, 0.0139933%) in last 1000 events
+EventSelector     SUCCESS Reading Event record 3001. Record number within stream 1: 3001
+ToolSvc.LoKi::D...  ERROR LoKi::DistanceCalculator:: Error in matrix inversion [Hlt2BToHHGamma_Inclusive_Line] StatusCode=905
+Hlt2BToHHGamma_...WARNING TupleToolGeometry:: The WARNING message is suppressed : 'Could not fill Flight' StatusCode=905
+Hlt2BToHHGamma_...  FATAL Tool 'TupleToolGeometry' acting on particle 'Kst_892_0' returned a failure status.
+Hlt2BToHHGamma_...  FATAL Failed to fill a candidate. Please fix your options.
+Hlt2BToHHGamma_...  FATAL ### NOTE : This is a new behaviour since bug https://savannah.cern.ch/bugs/?102616
+Hlt2BToHHGamma_...  FATAL ### NOTE : If you think this is wrong, report to lhcb-davinci@cern.ch
+Hlt2BToHHGamma_...WARNING Continuing from error (cnt=1, max= 'ErrorMax':4294967295)
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:0C263679-A575-E811-9BAF-A4BF011258A0
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:0C263679-A575-E811-9BAF-A4BF011258A0:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:0C263679-A575-E811-9BAF-A4BF011258A0:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:0C263679-A575-E811-9BAF-A4BF011258A0:/Event/pSim
+DaVinciInitAlg       INFO Memory has changed from 1200744 to 1201144 KB (400KB, 0.0333127%) in last 1000 events
+EventSelector     SUCCESS Reading Event record 4001. Record number within stream 1: 4001
+ToolSvc.LoKi::D...  ERROR LoKi::DistanceCalculator:: The   ERROR message is suppressed : 'Error in matrix inversion [Hlt2BToHHGamma_Inclusive_Line]' StatusCode=905
+Hlt2BToHHGamma_...  FATAL Tool 'TupleToolGeometry' acting on particle 'Kst_892_0' returned a failure status.
+Hlt2BToHHGamma_...  FATAL Failed to fill a candidate. Please fix your options.
+Hlt2BToHHGamma_...  FATAL ### NOTE : This is a new behaviour since bug https://savannah.cern.ch/bugs/?102616
+Hlt2BToHHGamma_...  FATAL ### NOTE : If you think this is wrong, report to lhcb-davinci@cern.ch
+Hlt2BToHHGamma_...WARNING Continuing from error (cnt=2, max= 'ErrorMax':4294967295)
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:34CFB5A5-BA7E-E811-B874-001E67E6F4B3
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:34CFB5A5-BA7E-E811-B874-001E67E6F4B3:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:34CFB5A5-BA7E-E811-B874-001E67E6F4B3:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:34CFB5A5-BA7E-E811-B874-001E67E6F4B3:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:8C9EDFE5-BA7E-E811-A0F9-A4BF01125478
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:8C9EDFE5-BA7E-E811-A0F9-A4BF01125478:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:8C9EDFE5-BA7E-E811-A0F9-A4BF01125478:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:8C9EDFE5-BA7E-E811-A0F9-A4BF01125478:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:94314430-A275-E811-91E4-509A4C8339EC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:94314430-A275-E811-91E4-509A4C8339EC:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:94314430-A275-E811-91E4-509A4C8339EC:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:94314430-A275-E811-91E4-509A4C8339EC:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:9A70AEF2-C175-E811-9D5F-509A4C7480B1
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:9A70AEF2-C175-E811-9D5F-509A4C7480B1:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:9A70AEF2-C175-E811-9D5F-509A4C7480B1:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:9A70AEF2-C175-E811-9D5F-509A4C7480B1:/Event/pSim
+Hlt2BToHHGamma_...  FATAL Tool 'TupleToolGeometry' acting on particle 'Kst_892_0' returned a failure status.
+Hlt2BToHHGamma_...  FATAL Failed to fill a candidate. Please fix your options.
+Hlt2BToHHGamma_...  FATAL ### NOTE : This is a new behaviour since bug https://savannah.cern.ch/bugs/?102616
+Hlt2BToHHGamma_...  FATAL ### NOTE : If you think this is wrong, report to lhcb-davinci@cern.ch
+Hlt2BToHHGamma_...WARNING Continuing from error (cnt=3, max= 'ErrorMax':4294967295)
+Hlt2BToHHGamma_...  FATAL Tool 'TupleToolGeometry' acting on particle 'Kst_892_0' returned a failure status.
+Hlt2BToHHGamma_...  FATAL Failed to fill a candidate. Please fix your options.
+Hlt2BToHHGamma_...  FATAL ### NOTE : This is a new behaviour since bug https://savannah.cern.ch/bugs/?102616
+Hlt2BToHHGamma_...  FATAL ### NOTE : If you think this is wrong, report to lhcb-davinci@cern.ch
+Hlt2BToHHGamma_...WARNING Continuing from error (cnt=4, max= 'ErrorMax':4294967295)
+DaVinciInitAlg       INFO Memory has changed from 1201144 to 1207856 KB (6712KB, 0.558801%) in last 1000 events
+EventSelector     SUCCESS Reading Event record 5001. Record number within stream 1: 5001
+Hlt2BToHHGamma_...  FATAL Tool 'TupleToolGeometry' acting on particle 'Kst_892_0' returned a failure status.
+Hlt2BToHHGamma_...  FATAL Failed to fill a candidate. Please fix your options.
+Hlt2BToHHGamma_...  FATAL ### NOTE : This is a new behaviour since bug https://savannah.cern.ch/bugs/?102616
+Hlt2BToHHGamma_...  FATAL ### NOTE : If you think this is wrong, report to lhcb-davinci@cern.ch
+Hlt2BToHHGamma_...WARNING Continuing from error (cnt=5, max= 'ErrorMax':4294967295)
+Hlt2BToHHGamma_...  FATAL Tool 'TupleToolGeometry' acting on particle 'Kst_892_0' returned a failure status.
+Hlt2BToHHGamma_...  FATAL Failed to fill a candidate. Please fix your options.
+Hlt2BToHHGamma_...  FATAL ### NOTE : This is a new behaviour since bug https://savannah.cern.ch/bugs/?102616
+Hlt2BToHHGamma_...  FATAL ### NOTE : If you think this is wrong, report to lhcb-davinci@cern.ch
+Hlt2BToHHGamma_...WARNING Continuing from error (cnt=6, max= 'ErrorMax':4294967295)
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:6EF9CC57-AF75-E811-9E65-509A4C748A42
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:6EF9CC57-AF75-E811-9E65-509A4C748A42:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:6EF9CC57-AF75-E811-9E65-509A4C748A42:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:6EF9CC57-AF75-E811-9E65-509A4C748A42:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:84C435EC-A875-E811-8423-008CFAF73232
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:84C435EC-A875-E811-8423-008CFAF73232:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:84C435EC-A875-E811-8423-008CFAF73232:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:84C435EC-A875-E811-8423-008CFAF73232:/Event/pSim
+Hlt2BToHHGamma_...  FATAL Tool 'TupleToolGeometry' acting on particle 'Kst_892_0' returned a failure status.
+Hlt2BToHHGamma_...  FATAL Failed to fill a candidate. Please fix your options.
+Hlt2BToHHGamma_...  FATAL ### NOTE : This is a new behaviour since bug https://savannah.cern.ch/bugs/?102616
+Hlt2BToHHGamma_...  FATAL ### NOTE : If you think this is wrong, report to lhcb-davinci@cern.ch
+Hlt2BToHHGamma_...WARNING Continuing from error (cnt=7, max= 'ErrorMax':4294967295)
+DaVinciInitAlg       INFO Memory has changed from 1207856 to 1208664 KB (808KB, 0.0668954%) in last 1000 events
+EventSelector     SUCCESS Reading Event record 6001. Record number within stream 1: 6001
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:2A338F03-AB75-E811-A674-3417EBE64BB8
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:2A338F03-AB75-E811-A674-3417EBE64BB8:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:2A338F03-AB75-E811-A674-3417EBE64BB8:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:2A338F03-AB75-E811-A674-3417EBE64BB8:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:D0FAA963-A475-E811-B9BB-509A4C748114
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:D0FAA963-A475-E811-B9BB-509A4C748114:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:D0FAA963-A475-E811-B9BB-509A4C748114:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:D0FAA963-A475-E811-B9BB-509A4C748114:/Event/pSim
+EventSelector     SUCCESS Reading Event record 7001. Record number within stream 1: 7001
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:4C98D6CA-EC75-E811-9C2C-509A4C845414
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:4C98D6CA-EC75-E811-9C2C-509A4C845414:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:4C98D6CA-EC75-E811-9C2C-509A4C845414:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:4C98D6CA-EC75-E811-9C2C-509A4C845414:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:5ACFE3E2-7578-E811-9568-509A4C74806E
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:5ACFE3E2-7578-E811-9568-509A4C74806E:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:5ACFE3E2-7578-E811-9568-509A4C74806E:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:5ACFE3E2-7578-E811-9568-509A4C74806E:/Event/pSim
+DaVinciInitAlg       INFO Memory has changed from 1208664 to 1208932 KB (268KB, 0.0221732%) in last 1000 events
+EventSelector     SUCCESS Reading Event record 8001. Record number within stream 1: 8001
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:92734EAC-D67F-E811-A38D-008CFAFBE5E0
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:92734EAC-D67F-E811-A38D-008CFAFBE5E0:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:92734EAC-D67F-E811-A38D-008CFAFBE5E0:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:92734EAC-D67F-E811-A38D-008CFAFBE5E0:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:5CDEDF47-B17F-E811-8673-008CFAF72404
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:5CDEDF47-B17F-E811-8673-008CFAF72404:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:5CDEDF47-B17F-E811-8673-008CFAF72404:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:5CDEDF47-B17F-E811-8673-008CFAF72404:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:9C72E469-C976-E811-933F-B083FED71AAA
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:9C72E469-C976-E811-933F-B083FED71AAA:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:9C72E469-C976-E811-933F-B083FED71AAA:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:9C72E469-C976-E811-933F-B083FED71AAA:/Event/pSim
+IODataManager       ERROR Error: connectDataIO> failed to resolve FID:B8774BF6-B67E-E811-B0ED-EC0D9A8C128C
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:B8774BF6-B67E-E811-B0ED-EC0D9A8C128C:/Event/Rec
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:B8774BF6-B67E-E811-B0ED-EC0D9A8C128C:/Event/MC
+RootCnvSvc          ERROR Error: createObj> Cannot access the object:B8774BF6-B67E-E811-B0ED-EC0D9A8C128C:/Event/pSim
+EventLoopMgr         INFO No more events in event selection 
+ApplicationMgr       INFO Application Manager Stopped successfully
+HLT2_PsAndVsUnpackSUCCESS Number of counters : 8
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# Unpacked FlavourTags"                        |      8552 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# Unpacked MuonPIDs"                           |      8552 |      83990 |     9.8211 |     4.5119 |      1.0000 |      32.000 |
+ | "# Unpacked Particles"                          |      8552 |     255387 |     29.863 |     17.902 |      6.0000 |      144.00 |
+ | "# Unpacked ProtoParticles"                     |      8552 |     148817 |     17.401 |     8.6154 |      3.0000 |      61.000 |
+ | "# Unpacked RecVertices"                        |      8552 |      48794 |     5.7056 |     2.0999 |      1.0000 |      18.000 |
+ | "# Unpacked RichPIDs"                           |      8552 |      90686 |     10.604 |     4.8657 |      2.0000 |      33.000 |
+ | "# Unpacked Tracks"                             |      8552 |      99525 |     11.638 |     5.6313 |      2.0000 |      43.000 |
+ | "# Unpacked Vertices"                           |      8552 |      35266 |     4.1237 |     2.9732 |      2.0000 |      34.000 |
+LINK:MCParticle...SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/0/1/0
+LINK:MCParticle...SUCCESS  #WARNINGS   = 7587     Message = 'No valid data is found at '/Event/MC/Particles''
+LINK:MC2Sim4Par...SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/0/1/0
+LINK:MC2Sim4Par...SUCCESS  #WARNINGS   = 7588     Message = 'No valid data is found at '/Event/HLT2/pMC/Particles''
+DaVinciInitAlg    SUCCESS ==================================================================
+DaVinciInitAlg    SUCCESS 8552 events processed
+DaVinciInitAlg    SUCCESS ==================================================================
+Hlt2BToHHGamma_...SUCCESS Booked 1 N-Tuples and 0 Event Tag Collections
+Hlt2BToHHGamma_...SUCCESS List of booked N-Tuples in directory "FILE1/Hlt2BToHHGamma_Inclusive_Line"
+Hlt2BToHHGamma_...SUCCESS  ID=DecayTree     Title="DecayTree"                               #items=295{B0_ENDVERTEX_X,B0_ENDVERTEX_Y,B0_ENDVERTEX_Z,B0_ENDVERTEX_XERR,B0_ENDVERTEX_YERR,}
+Hlt2BToHHGamma_...SUCCESS Number of counters : 4
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# Hlt2BToHHGamma_Inclusive_Line"               |      8552 |       7958 |    0.93054 |    0.39624 |      0.0000 |      4.0000 |
+ | "# input particles"                             |      8552 |       7958 |    0.93054 |    0.39624 |      0.0000 |      4.0000 |
+ |*"#accept"                                       |      8552 |       7580 |( 88.63424 +- 0.3432150)% |
+ | "Event"                                         |      8552 |       8552 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+Hlt2BToHHGamma_...SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/1/0/0
+Hlt2BToHHGamma_...SUCCESS  #ERRORS     = 1        Message = 'Can't get the tool 'MCTupleToolKinematic', check your syntax'
+ExtraHadron       SUCCESS Booked 1 N-Tuples and 0 Event Tag Collections
+ExtraHadron       SUCCESS List of booked N-Tuples in directory "FILE1/ExtraHadron"
+ExtraHadron       SUCCESS  ID=DecayTree     Title="DecayTree"                               #items=74 {piplus_MC15TuneV1_ProbNNe,piplus_MC15TuneV1_ProbNNmu,piplus_MC15TuneV1_ProbNNpi,p}
+ExtraHadron       SUCCESS Number of counters : 4
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# Hlt2BToHHGamma_Inclusive_Line/ExtraHadron"   |      8552 |      51346 |     6.0040 |     4.2836 |      0.0000 |      27.000 |
+ | "# input particles"                             |      8552 |      51346 |     6.0040 |     4.2836 |      0.0000 |      27.000 |
+ |*"#accept"                                       |      8552 |       7467 |( 87.31291 +- 0.3599038)% |
+ | "Event"                                         |      8552 |       8552 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+ExtraHadron       SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/1/0/0
+ExtraHadron       SUCCESS  #ERRORS     = 1        Message = 'Can't get the tool 'MCTupleToolKinematic', check your syntax'
+ExtraKs0          SUCCESS Booked 1 N-Tuples and 0 Event Tag Collections
+ExtraKs0          SUCCESS List of booked N-Tuples in directory "FILE1/ExtraKs0"
+ExtraKs0          SUCCESS  ID=DecayTree     Title="DecayTree"                               #items=212{KS0_ENDVERTEX_X,KS0_ENDVERTEX_Y,KS0_ENDVERTEX_Z,KS0_ENDVERTEX_XERR,KS0_ENDVERTEX_}
+ExtraKs0          SUCCESS Number of counters : 5
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# Hlt2BToHHGamma_Inclusive_Line/ExtraKs0DD"    |      8552 |       1507 |    0.17622 |    0.42812 |      0.0000 |      3.0000 |
+ | "# Hlt2BToHHGamma_Inclusive_Line/ExtraKs0LL"    |      8552 |       1881 |    0.21995 |    0.49781 |      0.0000 |      4.0000 |
+ | "# input particles"                             |      8552 |       3388 |    0.39616 |    0.67216 |      0.0000 |      5.0000 |
+ |*"#accept"                                       |      8552 |       2651 |( 30.99860 +- 0.5001107)% |
+ | "Event"                                         |      8552 |       8552 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+ExtraKs0          SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/1/0/0
+ExtraKs0          SUCCESS  #ERRORS     = 1        Message = 'Can't get the tool 'MCTupleToolKinematic', check your syntax'
+ExtraLambda       SUCCESS Booked 1 N-Tuples and 0 Event Tag Collections
+ExtraLambda       SUCCESS List of booked N-Tuples in directory "FILE1/ExtraLambda"
+ExtraLambda       SUCCESS  ID=DecayTree     Title="DecayTree"                               #items=212{Lambda0_ENDVERTEX_X,Lambda0_ENDVERTEX_Y,Lambda0_ENDVERTEX_Z,Lambda0_ENDVERTEX_XER}
+ExtraLambda       SUCCESS Number of counters : 5
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# Hlt2BToHHGamma_Inclusive_Line/ExtraLambdaDD" |      8552 |        689 |   0.080566 |    0.28803 |      0.0000 |      3.0000 |
+ | "# Hlt2BToHHGamma_Inclusive_Line/ExtraLambdaLL" |      8552 |        767 |   0.089687 |    0.32045 |      0.0000 |      3.0000 |
+ | "# input particles"                             |      8552 |       1456 |    0.17025 |    0.43846 |      0.0000 |      4.0000 |
+ |*"#accept"                                       |      8552 |       1266 |( 14.80355 +- 0.3840254)% |
+ | "Event"                                         |      8552 |       8552 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+ExtraLambda       SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/1/0/0
+ExtraLambda       SUCCESS  #ERRORS     = 1        Message = 'Can't get the tool 'MCTupleToolKinematic', check your syntax'
+ExtraGamma        SUCCESS Booked 1 N-Tuples and 0 Event Tag Collections
+ExtraGamma        SUCCESS List of booked N-Tuples in directory "FILE1/ExtraGamma"
+ExtraGamma        SUCCESS  ID=DecayTree     Title="DecayTree"                               #items=25 {gamma_P,gamma_PT,gamma_PE,gamma_PX,gamma_PY,gamma_PZ,gamma_M,gamma_TRUEID,gamma_T}
+ExtraGamma        SUCCESS Number of counters : 4
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# Hlt2BToHHGamma_Inclusive_Line/ExtraGamma"    |      8552 |      22912 |     2.6791 |     2.0462 |      0.0000 |      16.000 |
+ | "# input particles"                             |      8552 |      22912 |     2.6791 |     2.0462 |      0.0000 |      16.000 |
+ |*"#accept"                                       |      8552 |       7587 |( 88.71609 +- 0.3421347)% |
+ | "Event"                                         |      8552 |       8552 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+ExtraGamma        SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/1/0/0
+ExtraGamma        SUCCESS  #ERRORS     = 1        Message = 'Can't get the tool 'MCTupleToolKinematic', check your syntax'
+ExtraPi0          SUCCESS Booked 1 N-Tuples and 0 Event Tag Collections
+ExtraPi0          SUCCESS List of booked N-Tuples in directory "FILE1/ExtraPi0"
+ExtraPi0          SUCCESS  ID=DecayTree     Title="DecayTree"                               #items=27 {pi0_P,pi0_PT,pi0_PE,pi0_PX,pi0_PY,pi0_PZ,pi0_MM,pi0_MMERR,pi0_M,pi0_TRUEID,pi0_TR}
+ExtraPi0          SUCCESS Number of counters : 5
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# Hlt2BToHHGamma_Inclusive_Line/ExtraPi0Merged"|      8552 |       5724 |    0.66932 |    0.87535 |      0.0000 |      6.0000 |
+ | "# Hlt2BToHHGamma_Inclusive_Line/ExtraPi0Resolve|      8552 |      16672 |     1.9495 |     2.3803 |      0.0000 |      17.000 |
+ | "# input particles"                             |      8552 |      22396 |     2.6188 |     2.7792 |      0.0000 |      20.000 |
+ |*"#accept"                                       |      8552 |       6325 |( 73.95931 +- 0.4745575)% |
+ | "Event"                                         |      8552 |       8552 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
+ExtraPi0          SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/1/0/0
+ExtraPi0          SUCCESS  #ERRORS     = 1        Message = 'Can't get the tool 'MCTupleToolKinematic', check your syntax'
+RootHistSvc       WARNING no ROOT output file name, Histograms cannot be persistified
+EventLoopMgr         INFO Histograms converted successfully according to request.
+TransportSvc      SUCCESS  GEOMETRY ERRORS: 'Skip'     map has the size 2
+   |                      Logical Volume                     |    |  #          mean             RMS          min              max    |
+   | BeforeMagnetRegion/Rich1/lvRich1SubMaster               | mm | 10      -7.9528722          1.1442642 -9.7812846         -5.49317 |
+   | BeforeMagnetRegion/Rich1/lvRich1SubMaster               | X0 | 10      -0.0031716204   0.00045633469 -0.0039007947   -0.00219068 |
+   | BeforeMagnetRegion/lvBeforeMagnetRegion                 | mm | 3       -41.476979          17.255192 -60.374443         -18.6575 |
+   | BeforeMagnetRegion/lvBeforeMagnetRegion                 | X0 | 3       -0.12030516       0.050049174 -0.17511779      -0.0541166 |
+
+TransportSvc      SUCCESS  GEOMETRY ERRORS: 'Recover'  map has the size 16
+   |                      Logical Volume                     |    |  #          mean             RMS          min              max    |
+   | BeforeMagnetRegion/Rich1/lvRich1Master                  | mm | 188     19.478774           11.911283 0.40768971          91.8643 |
+   | BeforeMagnetRegion/Rich1/lvRich1Master                  | X0 | 188     0.21822098        0.065408058 0.001168404        0.263275 |
+   | BeforeMagnetRegion/Rich1/lvRich1Mirror1Master           | mm | 14      2.4285661           1.4529666 0.53065516          6.24856 |
+   | BeforeMagnetRegion/Rich1/lvRich1Mirror1Master           | X0 | 14      0.0002909034    0.00036698542 0                0.00085797 |
+   | BeforeMagnetRegion/Rich1/lvRich1SubMaster               | mm | 191     33.757153           72.620931 4.0007164           315.114 |
+   | BeforeMagnetRegion/Rich1/lvRich1SubMaster               | X0 | 191     0.093108156        0.20616778 0                  0.903090 |
+   | BeforeMagnetRegion/VP/RFFoil/lvRFFoilCompTnTUnit        | mm | 4806    0.015302282       0.054649567 1.2974986e-11       1.00036 |
+   | BeforeMagnetRegion/VP/RFFoil/lvRFFoilCompTnTUnit        | X0 | 4806    0                           0 0                           |
+   | BeforeMagnetRegion/VP/RFFoil/lvRFFoilInter10            | mm | 1       0.05485789                  0 0.05485789         0.054857 |
+   | BeforeMagnetRegion/VP/RFFoil/lvRFFoilInter10            | X0 | 1       0                           0 0                           |
+   | BeforeMagnetRegion/VP/RFFoil/lvRFFoilInter18            | mm | 6       0.13958007          0.1139367 0.022572552        0.308091 |
+   | BeforeMagnetRegion/VP/RFFoil/lvRFFoilInter18            | X0 | 6       0                           0 0                           |
+   | BeforeMagnetRegion/VP/RFFoil/lvRFFoilInter19            | mm | 4       0.463108           0.25763042 0.088908649        0.734074 |
+   | BeforeMagnetRegion/VP/RFFoil/lvRFFoilInter19            | X0 | 4       0                           0 0                           |
+   | BeforeMagnetRegion/VP/RFFoil/lvRFFoilInter20            | mm | 8       0.7709583           1.3386136 0.017724504         4.29188 |
+   | BeforeMagnetRegion/VP/RFFoil/lvRFFoilInter20            | X0 | 8       0                           0 0                           |
+   | BeforeMagnetRegion/VP/RFFoil/lvRFFoilInter21            | mm | 3       0.65915872         0.84808452 0.0350659           1.85819 |
+   | BeforeMagnetRegion/VP/RFFoil/lvRFFoilInter21            | X0 | 3       0                           0 0                           |
+   | BeforeMagnetRegion/VP/RFFoil/lvRFFoilInter22            | mm | 1       0.13453717                  0 0.13453717         0.134537 |
+   | BeforeMagnetRegion/VP/RFFoil/lvRFFoilInter22            | X0 | 1       0                           0 0                           |
+   | BeforeMagnetRegion/VP/RFFoil/lvRFFoilInter23            | mm | 2       0.31109952         0.15200739 0.15909213         0.463106 |
+   | BeforeMagnetRegion/VP/RFFoil/lvRFFoilInter23            | X0 | 2       0                           0 0                           |
+   | BeforeMagnetRegion/VP/RFFoil/lvRFFoilInter24            | mm | 1       0.46007465                  0 0.46007465         0.460074 |
+   | BeforeMagnetRegion/VP/RFFoil/lvRFFoilInter24            | X0 | 1       0                           0 0                           |
+   | BeforeMagnetRegion/VP/RFFoil/lvRFFoilInter3             | mm | 2       0.27911049         0.12302529 0.15608521         0.402135 |
+   | BeforeMagnetRegion/VP/RFFoil/lvRFFoilInter3             | X0 | 2       0                           0 0                           |
+   | BeforeMagnetRegion/VP/RFFoil/lvRFFoilInter4             | mm | 4       0.37183528         0.30889841 0.045904816        0.767138 |
+   | BeforeMagnetRegion/VP/RFFoil/lvRFFoilInter4             | X0 | 4       0                           0 0                           |
+   | BeforeMagnetRegion/VP/lvVP                              | mm | 2       0.0078982584     0.0038922582 0.0040060002      0.0117905 |
+   | BeforeMagnetRegion/VP/lvVP                              | X0 | 2       0.0004613574    0.00022735672 0.00023400068   0.000688714 |
+   | BeforeMagnetRegion/lvBeforeMagnetRegion                 | mm | 6       42.351693           27.767238 0.58765286          75.3633 |
+   | BeforeMagnetRegion/lvBeforeMagnetRegion                 | X0 | 6       0.098554721       0.098981742 1.8415815e-05      0.218346 |
+
+TransportSvc      SUCCESS  GEOMETRY ERRORS: 'Codes'    map has the size 0
+
+TransportSvc         INFO Reset the static pointer to DetDesc::IGeometyrErrorSvc
+RootCnvSvc           INFO Disconnected data IO:2354AFB4-BAB9-11EA-8A1A-FA163E4B924C [output/PhiG/PhiG.mdst]
+DataOnDemandSvc      INFO Handled "DataFault" incidents: 710325/231379/1453498(Alg/Node/Total).
+ToolSvc              INFO Removing all tools created by ToolSvc
+ExtraPi0.TupleT...SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/0/1/0
+ExtraPi0.TupleT...SUCCESS  #WARNINGS   = 22396    Message = 'Will not fill geometry tuple for neutral Calo particles. No worry'
+ExtraGamma.Tupl...SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/0/1/0
+ExtraGamma.Tupl...SUCCESS  #WARNINGS   = 22912    Message = 'Will not fill geometry tuple for neutral Calo particles. No worry'
+ToolSvc.LoKi::D...SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/1/0/0
+ToolSvc.LoKi::D...SUCCESS  #ERRORS     = 7        Message = 'Error in matrix inversion [Hlt2BToHHGamma_Inclusive_Line]'
+Hlt2BToHHGamma_...SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/0/2/0
+Hlt2BToHHGamma_...SUCCESS  #WARNINGS   = 7        Message = 'Could not fill Flight'
+Hlt2BToHHGamma_...SUCCESS  #WARNINGS   = 7956     Message = 'Will not fill geometry tuple for neutral Calo particles. No worry'
+DaVinciInitAlg....SUCCESS Booked 4 Histogram(s) : 1D=4 
+DaVinciInitAlg....SUCCESS Number of counters : 2
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "Delta Memory/MB"                               |      8543 |      23.04 |  0.0026969 |    0.10975 |      0.0000 |      8.9120 |
+ | "Total Memory/MB"                               |      8552 |1.029634e+07 |     1204.0 |     6.4934 |      785.26 |      1208.9 |
+DaVinciInitAlg....SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/0/1/0
+DaVinciInitAlg....SUCCESS  #WARNINGS   = 6        Message = 'Delta Memory for the event exceeds 3*sigma'
+ToolSvc.TrackSt...SUCCESS Number of counters : 2
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "Number of states added"                        |      7587 |      14992 |     1.9760 |     4.0028 |      0.0000 |      32.000 |
+ | "Number of tracks seen"                         |      8552 |      74964 |     8.7657 |     5.3178 |      0.0000 |      33.000 |
+TimingAuditor.T...   INFO ----------------------------------------------------------------------------------------------------------------------
+TimingAuditor.T...   INFO This machine has a speed about   3.03 times the speed of a 2.8 GHz Xeon.
+TimingAuditor.T...   INFO Algorithm                              (millisec) |    <user> |   <clock> |      min       max    sigma | entries | total (s) |
+TimingAuditor.T...   INFO ----------------------------------------------------------------------------------------------------------------------
+TimingAuditor.T...   INFO EVENT LOOP                                        |    15.968 |    16.003 |    2.501   28321.0   306.55 |    8552 |   136.866 |
+TimingAuditor.T...   INFO  DaVinciEventSeq                                  |    15.327 |    15.339 |    1.911   28319.1   306.53 |    8552 |   131.183 |
+TimingAuditor.T...   INFO   DaVinciInitAlg                                  |     0.076 |     0.071 |    0.049       1.8     0.04 |    8552 |     0.607 |
+TimingAuditor.T...   INFO   FilteredEventSeq                                |    15.232 |    15.251 |    1.837   28317.2   306.51 |    8552 |   130.427 |
+TimingAuditor.T...   INFO    DaVinciEventInitSeq                            |     2.556 |     2.532 |    1.457      60.5     5.09 |    8552 |    21.654 |
+TimingAuditor.T...   INFO     KillDAQ                                       |     0.008 |     0.008 |    0.006       0.0     0.00 |    8552 |     0.072 |
+TimingAuditor.T...   INFO     UnpackParticlesAndVertices                    |     2.538 |     2.515 |    1.442      60.5     5.09 |    8552 |    21.515 |
+TimingAuditor.T...   INFO    DaVinciAnalysisSeq                             |    12.668 |    12.712 |    0.299   28279.7   306.08 |    8552 |   108.721 |
+TimingAuditor.T...   INFO     DaVinciUserSequence                           |    12.654 |    12.704 |    0.293   28279.7   306.08 |    8552 |   108.652 |
+TimingAuditor.T...   INFO      Hlt2BToHHGamma_Inclusive_Line                |     4.786 |     4.793 |    0.003    8246.5    89.60 |    8552 |    40.991 |
+TimingAuditor.T...   INFO      ExtraHadron                                  |     1.703 |     1.715 |    0.002     343.1    10.52 |    8552 |    14.675 |
+TimingAuditor.T...   INFO      ExtraKs0                                     |     2.060 |     2.068 |    0.002      51.2     4.00 |    8552 |    17.691 |
+TimingAuditor.T...   INFO      ExtraLambda                                  |     3.063 |     3.063 |    0.002   20014.9   216.43 |    8552 |    26.203 |
+TimingAuditor.T...   INFO      ExtraGamma                                   |     0.335 |     0.361 |    0.002     104.9     1.99 |    8552 |     3.091 |
+TimingAuditor.T...   INFO      ExtraPi0                                     |     0.429 |     0.427 |    0.002      76.7     1.78 |    8552 |     3.656 |
+TimingAuditor.T...   INFO     MonitoringSequence                            |     0.001 |     0.002 |    0.002       0.0     0.00 |    8552 |     0.021 |
+TimingAuditor.T...   INFO   LumiSeq                                         |     0.005 |     0.008 |    0.006       0.2     0.00 |    8552 |     0.070 |
+TimingAuditor.T...   INFO    EventAccount                                   |     0.002 |     0.003 |    0.002       0.2     0.00 |    8552 |     0.027 |
+TimingAuditor.T...   INFO *     HLT2_PsAndVsUnpack                          |     0.042 |     0.042 |    0.003       9.2     0.19 |  218148 |     9.336 |
+TimingAuditor.T...   INFO *      createODIN                                 |     0.136 |     0.123 |    0.056       3.0     0.20 |    8552 |     1.060 |
+TimingAuditor.T...   INFO *      HLT2_pRec_Calo_Photons_Converter           |     0.125 |     0.126 |    0.047       6.2     0.55 |    7587 |     0.963 |
+TimingAuditor.T...   INFO *      UnpackMCParticles                          |     0.048 |     0.048 |    0.024       9.6     0.06 |  158546 |     7.699 |
+TimingAuditor.T...   INFO *      SEQ:MCParticles                            |     0.003 |     0.005 |    0.002       8.9     0.02 |  301918 |     1.525 |
+TimingAuditor.T...   INFO *       UnpackMCParticle                          |     0.051 |     0.051 |    0.046       0.3     0.01 |    7587 |     0.390 |
+TimingAuditor.T...   INFO *       LINK:MCParticles2MC                       |     0.039 |     0.037 |    0.033       0.2     0.00 |    7587 |     0.282 |
+TimingAuditor.T...   INFO *        LINK:MC2Sim4Particles                    |     0.036 |     0.036 |    0.032       0.2     0.00 |    7588 |     0.275 |
+TimingAuditor.T...   INFO *      HLT2_pRec_Calo_MergedPi0s_Converter        |     0.047 |     0.065 |    0.018       0.7     0.03 |    3993 |     0.260 |
+TimingAuditor.T...   INFO *      HLT2_pRec_Calo_SplitPhotons_Converter      |     0.045 |     0.053 |    0.012       0.8     0.10 |    3993 |     0.212 |
+TimingAuditor.T...   INFO ----------------------------------------------------------------------------------------------------------------------
+NTupleSvc            INFO NTuples saved successfully
+*****Chrono*****     INFO ****************************************************************************************************
+*****Chrono*****     INFO  The Final CPU consumption ( Chrono ) Table (ordered)
+*****Chrono*****     INFO ****************************************************************************************************
+DetailedMateria...   INFO Time User   : Tot= 30.4  [s] Ave/Min/Max=0.0016(+-0.143)/    0/ 19.7  [s] #=19063
+ChronoStatSvc        INFO Time User   : Tot=  128  [s]                                             #=  1
+*****Chrono*****     INFO ****************************************************************************************************
+ChronoStatSvc.f...   INFO  Service finalized successfully 
+ApplicationMgr       INFO Application Manager Finalized successfully
+ApplicationMgr      ERROR Application Manager Terminated with error code 2

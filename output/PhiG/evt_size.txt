@@ -1,2 +1,2 @@
-OutputStream                           INFO Events output: 2415
-16M	output/PhiG/PhiG.mdst
+OutputStream                           INFO Events output: 8552
+72M	output/PhiG/PhiG.mdst

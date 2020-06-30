@@ -1,2 +1,2 @@
 OutputStream                           INFO Events output: 6815
-175M	output/KstG/KstG.mdst
+61M	output/KstG/KstG.mdst

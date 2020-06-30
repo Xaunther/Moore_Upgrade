@@ -135,7 +135,7 @@
 ApplicationMgr    SUCCESS 
 ====================================================================================================================================
                                                    Welcome to DaVinci version v50r6
-                                          running on lxplus723.cern.ch on Mon Jun 29 18:51:48 2020
+                                          running on lxplus723.cern.ch on Tue Jun 30 13:03:27 2020
 ====================================================================================================================================
 ApplicationMgr       INFO Application Manager Configured successfully
 ToolSvc.GitDDDB      INFO opening Git repository '/cvmfs/lhcb.cern.ch/lib/lhcb/git-conddb/DDDB.git'
@@ -147,7 +147,7 @@ DetectorDataSvc   SUCCESS Detector description database: git:/lhcb.xml
 RndmGenSvc.Engine    INFO Generator engine type:CLHEP::RanluxEngine
 RndmGenSvc.Engine    INFO Current Seed:1234567 Luxury:3
 RndmGenSvc           INFO Using Random engine:HepRndm::Engine<CLHEP::RanluxEngine>
-TimingAuditor.T...   INFO This machine has a speed about   3.03 times the speed of a 2.8 GHz Xeon.
+TimingAuditor.T...   INFO This machine has a speed about   2.94 times the speed of a 2.8 GHz Xeon.
 NTupleSvc            INFO Added stream file:output/KstG/KstG_HHGammaEE.root as FILE1
 DaVinciEventSeq      INFO Member list: DaVinciInit/DaVinciInitAlg, GaudiSequencer/FilteredEventSeq, GaudiSequencer/LumiSeq
 DaVinciInitAlg    SUCCESS ==================================================================
@@ -222,13 +222,6 @@ ExtraGamma.Tupl...WARNING TupleToolGeometry:: Will not fill geometry tuple for n
 RCWNTupleCnv         INFO Booked TTree with ID: DecayTree "DecayTree" in directory output/KstG/KstG_HHGammaEE.root:/ExtraGamma
 ExtraGamma.Tupl...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
 ExtraGamma.Tupl...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
-ExtraGamma.Tupl...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
-ExtraGamma.Tupl...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
-ExtraGamma.Tupl...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
-ExtraGamma.Tupl...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
-ExtraGamma.Tupl...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
-ExtraGamma.Tupl...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
-ExtraGamma.Tupl...WARNING TupleToolGeometry:: The WARNING message is suppressed : 'Will not fill geometry tuple for neutral Calo particles. No worry'
 ExtraPi0             INFO The head of chain is a pi0 : Will keep whole chain as is. 
 ExtraPi0            ERROR DecayTreeTuple:: Can't get the tool 'MCTupleToolKinematic', check your syntax StatusCode=FAILURE
 ExtraPi0             INFO Tree DecayTree initialized :-
@@ -241,11 +234,6 @@ ExtraPi0.TupleT...WARNING TupleToolGeometry:: Will not fill geometry tuple for n
 ExtraPi0.TupleT...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
 ExtraPi0.TupleT...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
 ExtraPi0.TupleT...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
-ExtraPi0.TupleT...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
-ExtraPi0.TupleT...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
-ExtraPi0.TupleT...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
-ExtraPi0.TupleT...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
-ExtraPi0.TupleT...WARNING TupleToolGeometry:: The WARNING message is suppressed : 'Will not fill geometry tuple for neutral Calo particles. No worry'
 ExtraKs0             INFO The head of chain is a KS0 : Will keep whole chain as is. 
 ExtraKs0            ERROR DecayTreeTuple:: Can't get the tool 'MCTupleToolKinematic', check your syntax StatusCode=FAILURE
 ExtraKs0             INFO Tree DecayTree initialized :-
@@ -262,6 +250,9 @@ ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Downstream   Par
 ToolSvc.Charged...   INFO ANNPID : Tune=MC15TuneV1    TrackType=Downstream   Particle=ghost       
 DeVP                 INFO There are 208 sensors (left: 104, right: 104)
 RCWNTupleCnv         INFO Booked TTree with ID: DecayTree "DecayTree" in directory output/KstG/KstG_HHGammaEE.root:/ExtraKs0
+ExtraGamma.Tupl...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+ExtraGamma.Tupl...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+ExtraPi0.TupleT...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
 ExtraLambda          INFO The head of chain is a Lambda0 : Will keep whole chain as is. 
 ExtraLambda         ERROR DecayTreeTuple:: Can't get the tool 'MCTupleToolKinematic', check your syntax StatusCode=FAILURE
 ExtraLambda          INFO Tree DecayTree initialized :-
@@ -271,6 +262,15 @@ ExtraLambda          INFO   Lambda0 (Lambda0)           : TupleToolANNPID, Tuple
 ExtraLambda          INFO      p+ (pplus)               : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
 ExtraLambda          INFO      pi- (piminus)            : TupleToolANNPID, TupleToolAngles, TupleToolGeometry, TupleToolKinematic, TupleToolMCTruth, TupleToolPid, TupleToolTrackInfo
 RCWNTupleCnv         INFO Booked TTree with ID: DecayTree "DecayTree" in directory output/KstG/KstG_HHGammaEE.root:/ExtraLambda
+ExtraGamma.Tupl...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+ExtraGamma.Tupl...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+ExtraPi0.TupleT...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+ExtraPi0.TupleT...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+ExtraPi0.TupleT...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+ExtraGamma.Tupl...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+ExtraGamma.Tupl...WARNING TupleToolGeometry:: Will not fill geometry tuple for neutral Calo particles. No worry
+ExtraGamma.Tupl...WARNING TupleToolGeometry:: The WARNING message is suppressed : 'Will not fill geometry tuple for neutral Calo particles. No worry'
+ExtraPi0.TupleT...WARNING TupleToolGeometry:: The WARNING message is suppressed : 'Will not fill geometry tuple for neutral Calo particles. No worry'
 IODataManager       ERROR Error: connectDataIO> failed to resolve FID:521EAF52-9C75-E811-BD16-FA163ED9B0D9
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:521EAF52-9C75-E811-BD16-FA163ED9B0D9:/Event/Rec
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:521EAF52-9C75-E811-BD16-FA163ED9B0D9:/Event/MC
@@ -281,7 +281,7 @@ RootCnvSvc          ERROR Error: createObj> Cannot access the object:9091D273-B5
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:9091D273-B575-E811-AEA7-A4BF01277567:/Event/pSim
 IODataManager       ERROR Error: connectDataIO> failed to resolve FID:A6C740AB-B975-E811-A067-A4BF01125B58
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:A6C740AB-B975-E811-A067-A4BF01125B58:/Event/Rec
-DaVinciInitAlg       INFO Memory has changed from 785340 to 1211844 KB (426504KB, 54.3082%) in last 1000 events
+DaVinciInitAlg       INFO Memory has changed from 785248 to 1208352 KB (423104KB, 53.8816%) in last 1000 events
 EventSelector     SUCCESS Reading Event record 1001. Record number within stream 1: 1001
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:A6C740AB-B975-E811-A067-A4BF01125B58:/Event/MC
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:A6C740AB-B975-E811-A067-A4BF01125B58:/Event/pSim
@@ -293,7 +293,7 @@ IODataManager       ERROR Error: connectDataIO> failed to resolve FID:3CD0FD1B-C
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:3CD0FD1B-C575-E811-B1AB-001E677927C2:/Event/Rec
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:3CD0FD1B-C575-E811-B1AB-001E677927C2:/Event/MC
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:3CD0FD1B-C575-E811-B1AB-001E677927C2:/Event/pSim
-DaVinciInitAlg       INFO Memory has changed from 1211844 to 1214060 KB (2216KB, 0.182862%) in last 1000 events
+DaVinciInitAlg       INFO Memory has changed from 1208352 to 1209224 KB (872KB, 0.0721644%) in last 1000 events
 EventSelector     SUCCESS Reading Event record 2001. Record number within stream 1: 2001
 IODataManager       ERROR Error: connectDataIO> failed to resolve FID:CCE14D4E-BA7F-E811-9F59-A4BF0112BBFE
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:CCE14D4E-BA7F-E811-9F59-A4BF0112BBFE:/Event/Rec
@@ -311,7 +311,7 @@ IODataManager       ERROR Error: connectDataIO> failed to resolve FID:7865E8C6-B
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:7865E8C6-BD75-E811-8A96-008CFAF724BE:/Event/Rec
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:7865E8C6-BD75-E811-8A96-008CFAF724BE:/Event/MC
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:7865E8C6-BD75-E811-8A96-008CFAF724BE:/Event/pSim
-DaVinciInitAlg       INFO Memory has changed from 1214060 to 1214524 KB (464KB, 0.0382189%) in last 1000 events
+DaVinciInitAlg       INFO Memory has changed from 1209224 to 1211164 KB (1940KB, 0.160433%) in last 1000 events
 EventSelector     SUCCESS Reading Event record 3001. Record number within stream 1: 3001
 IODataManager       ERROR Error: connectDataIO> failed to resolve FID:608153C9-BF75-E811-8A78-7CD30AD0944E
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:608153C9-BF75-E811-8A78-7CD30AD0944E:/Event/Rec
@@ -325,7 +325,7 @@ IODataManager       ERROR Error: connectDataIO> failed to resolve FID:56939EBC-B
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:56939EBC-BA75-E811-AAC6-3417EBE50720:/Event/Rec
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:56939EBC-BA75-E811-AAC6-3417EBE50720:/Event/MC
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:56939EBC-BA75-E811-AAC6-3417EBE50720:/Event/pSim
-DaVinciInitAlg       INFO Memory has changed from 1214524 to 1216684 KB (2160KB, 0.177847%) in last 1000 events
+DaVinciInitAlg       INFO Memory has changed from 1211164 to 1211552 KB (388KB, 0.0320353%) in last 1000 events
 EventSelector     SUCCESS Reading Event record 4001. Record number within stream 1: 4001
 IODataManager       ERROR Error: connectDataIO> failed to resolve FID:1C23448B-B475-E811-B532-3417EBE64CB1
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:1C23448B-B475-E811-B532-3417EBE64CB1:/Event/Rec
@@ -339,6 +339,7 @@ IODataManager       ERROR Error: connectDataIO> failed to resolve FID:5A2B630F-C
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:5A2B630F-C675-E811-A776-008CFAFBDBA8:/Event/Rec
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:5A2B630F-C675-E811-A776-008CFAFBDBA8:/Event/MC
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:5A2B630F-C675-E811-A776-008CFAFBDBA8:/Event/pSim
+DaVinciInitAlg       INFO Memory has changed from 1211552 to 1213596 KB (2044KB, 0.168709%) in last 1000 events
 EventSelector     SUCCESS Reading Event record 5001. Record number within stream 1: 5001
 IODataManager       ERROR Error: connectDataIO> failed to resolve FID:665BBCC3-BD75-E811-BDAC-7CD30ACE15FA
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:665BBCC3-BD75-E811-BDAC-7CD30ACE15FA:/Event/Rec
@@ -352,7 +353,7 @@ IODataManager       ERROR Error: connectDataIO> failed to resolve FID:329B74DA-B
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:329B74DA-BA75-E811-85CD-008CFAF75254:/Event/Rec
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:329B74DA-BA75-E811-85CD-008CFAF75254:/Event/MC
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:329B74DA-BA75-E811-85CD-008CFAF75254:/Event/pSim
-DaVinciInitAlg       INFO Memory has changed from 1216684 to 1218072 KB (1388KB, 0.114081%) in last 1000 events
+DaVinciInitAlg       INFO Memory has changed from 1213596 to 1213832 KB (236KB, 0.0194463%) in last 1000 events
 EventSelector     SUCCESS Reading Event record 6001. Record number within stream 1: 6001
 IODataManager       ERROR Error: connectDataIO> failed to resolve FID:CAC486D5-B475-E811-8750-7CD30AD09C52
 RootCnvSvc          ERROR Error: createObj> Cannot access the object:CAC486D5-B475-E811-8750-7CD30AD09C52:/Event/Rec
@@ -372,8 +373,8 @@ HLT2_PsAndVsUnpackSUCCESS Number of counters : 8
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
  | "# Unpacked FlavourTags"                        |      6815 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
  | "# Unpacked MuonPIDs"                           |      6815 |      68834 |     10.100 |     4.5797 |      1.0000 |      35.000 |
- | "# Unpacked Particles"                          |      6815 |    2526608 |     370.74 |     207.58 |      12.000 |      1421.0 |
- | "# Unpacked ProtoParticles"                     |      6815 |     821673 |     120.57 |     38.482 |      9.0000 |      224.00 |
+ | "# Unpacked Particles"                          |      6815 |     215322 |     31.595 |     19.011 |      6.0000 |      214.00 |
+ | "# Unpacked ProtoParticles"                     |      6815 |     123281 |     18.090 |     8.7547 |      3.0000 |      63.000 |
  | "# Unpacked RecVertices"                        |      6815 |      39979 |     5.8663 |     2.1306 |      1.0000 |      14.000 |
  | "# Unpacked RichPIDs"                           |      6815 |      74550 |     10.939 |     4.9162 |      2.0000 |      39.000 |
  | "# Unpacked Tracks"                             |      6815 |      81995 |     12.032 |     5.7145 |      2.0000 |      42.000 |
@@ -436,9 +437,9 @@ ExtraGamma        SUCCESS List of booked N-Tuples in directory "FILE1/ExtraGamma
 ExtraGamma        SUCCESS  ID=DecayTree     Title="DecayTree"                               #items=25 {gamma_P,gamma_PT,gamma_PE,gamma_PX,gamma_PY,gamma_PZ,gamma_M,gamma_TRUEID,gamma_T}
 ExtraGamma        SUCCESS Number of counters : 4
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "# Hlt2BToHHGammaee_Inclusive_Line/ExtraGamma"  |      6815 |      39782 |     5.8374 |     25.990 |      0.0000 |      182.00 |
- | "# input particles"                             |      6815 |      39782 |     5.8374 |     25.990 |      0.0000 |      182.00 |
- |*"#accept"                                       |      6815 |        360 |( 5.282465 +- 0.2709571)% |
+ | "# Hlt2BToHHGammaee_Inclusive_Line/ExtraGamma"  |      6815 |        824 |    0.12091 |    0.68720 |      0.0000 |      16.000 |
+ | "# input particles"                             |      6815 |        824 |    0.12091 |    0.68720 |      0.0000 |      16.000 |
+ |*"#accept"                                       |      6815 |        299 |( 4.387381 +- 0.2481003)% |
  | "Event"                                         |      6815 |       6815 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
 ExtraGamma        SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/1/0/0
 ExtraGamma        SUCCESS  #ERRORS     = 1        Message = 'Can't get the tool 'MCTupleToolKinematic', check your syntax'
@@ -448,9 +449,9 @@ ExtraPi0          SUCCESS  ID=DecayTree     Title="DecayTree"                   
 ExtraPi0          SUCCESS Number of counters : 5
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
  | "# Hlt2BToHHGammaee_Inclusive_Line/ExtraPi0Merge|      6815 |        211 |   0.030961 |    0.22935 |      0.0000 |      5.0000 |
- | "# Hlt2BToHHGammaee_Inclusive_Line/ExtraPi0Resol|      6815 |      36999 |     5.4291 |     26.563 |      0.0000 |      279.00 |
- | "# input particles"                             |      6815 |      37210 |     5.4600 |     26.714 |      0.0000 |      279.00 |
- |*"#accept"                                       |      6815 |        360 |( 5.282465 +- 0.2709571)% |
+ | "# Hlt2BToHHGammaee_Inclusive_Line/ExtraPi0Resol|      6815 |        765 |    0.11225 |    0.72368 |      0.0000 |      14.000 |
+ | "# input particles"                             |      6815 |        976 |    0.14321 |    0.87805 |      0.0000 |      16.000 |
+ |*"#accept"                                       |      6815 |        281 |( 4.123258 +- 0.2408485)% |
  | "Event"                                         |      6815 |       6815 |     1.0000 |     0.0000 |      1.0000 |      1.0000 |
 ExtraPi0          SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/1/0/0
 ExtraPi0          SUCCESS  #ERRORS     = 1        Message = 'Can't get the tool 'MCTupleToolKinematic', check your syntax'
@@ -475,18 +476,18 @@ TransportSvc      SUCCESS  GEOMETRY ERRORS: 'Recover'  map has the size 4
 TransportSvc      SUCCESS  GEOMETRY ERRORS: 'Codes'    map has the size 0
 
 TransportSvc         INFO Reset the static pointer to DetDesc::IGeometyrErrorSvc
-RootCnvSvc           INFO Disconnected data IO:2F84F0DC-BA1E-11EA-A60D-FA163E4B924C [output/KstG/KstG.mdst]
-DataOnDemandSvc      INFO Handled "DataFault" incidents: 465437/193453/884904(Alg/Node/Total).
+RootCnvSvc           INFO Disconnected data IO:2350B580-BAB9-11EA-B15F-FA163E4B924C [output/KstG/KstG.mdst]
+DataOnDemandSvc      INFO Handled "DataFault" incidents: 235924/189560/576358(Alg/Node/Total).
 ToolSvc              INFO Removing all tools created by ToolSvc
 ExtraPi0.TupleT...SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/0/1/0
-ExtraPi0.TupleT...SUCCESS  #WARNINGS   = 37210    Message = 'Will not fill geometry tuple for neutral Calo particles. No worry'
+ExtraPi0.TupleT...SUCCESS  #WARNINGS   = 976      Message = 'Will not fill geometry tuple for neutral Calo particles. No worry'
 ExtraGamma.Tupl...SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/0/1/0
-ExtraGamma.Tupl...SUCCESS  #WARNINGS   = 39782    Message = 'Will not fill geometry tuple for neutral Calo particles. No worry'
+ExtraGamma.Tupl...SUCCESS  #WARNINGS   = 824      Message = 'Will not fill geometry tuple for neutral Calo particles. No worry'
 DaVinciInitAlg....SUCCESS Booked 4 Histogram(s) : 1D=4 
 DaVinciInitAlg....SUCCESS Number of counters : 2
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "Delta Memory/MB"                               |      6806 |     425.72 |   0.062551 |     3.4840 |      0.0000 |      220.54 |
- | "Total Memory/MB"                               |      6815 |    8261117 |     1212.2 |     25.452 |      785.34 |      1219.0 |
+ | "Delta Memory/MB"                               |      6806 |      422.3 |   0.062048 |     3.4651 |      0.0000 |      216.41 |
+ | "Total Memory/MB"                               |      6815 |    8236292 |     1208.6 |     25.421 |      785.25 |      1214.6 |
 DaVinciInitAlg....SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/0/1/0
 DaVinciInitAlg....SUCCESS  #WARNINGS   = 1        Message = 'Delta Memory for the event exceeds 3*sigma'
 ToolSvc.TrackSt...SUCCESS Number of counters : 2
@@ -494,44 +495,44 @@ ToolSvc.TrackSt...SUCCESS Number of counters : 2
  | "Number of states added"                        |       360 |        744 |     2.0667 |     4.0216 |      0.0000 |      24.000 |
  | "Number of tracks seen"                         |      6807 |       3782 |    0.55560 |     2.5744 |      0.0000 |      27.000 |
 TimingAuditor.T...   INFO ----------------------------------------------------------------------------------------------------------------------
-TimingAuditor.T...   INFO This machine has a speed about   3.03 times the speed of a 2.8 GHz Xeon.
+TimingAuditor.T...   INFO This machine has a speed about   2.94 times the speed of a 2.8 GHz Xeon.
 TimingAuditor.T...   INFO Algorithm                              (millisec) |    <user> |   <clock> |      min       max    sigma | entries | total (s) |
 TimingAuditor.T...   INFO ----------------------------------------------------------------------------------------------------------------------
-TimingAuditor.T...   INFO EVENT LOOP                                        |    12.457 |    12.943 |    2.654   19463.1   261.65 |    6815 |    88.210 |
-TimingAuditor.T...   INFO  DaVinciEventSeq                                  |    11.722 |    12.224 |    2.001   19462.5   261.65 |    6815 |    83.311 |
-TimingAuditor.T...   INFO   DaVinciInitAlg                                  |     0.076 |     0.083 |    0.051      11.3     0.23 |    6815 |     0.569 |
-TimingAuditor.T...   INFO   FilteredEventSeq                                |    11.631 |    12.123 |    1.929   19462.4   261.65 |    6815 |    82.621 |
-TimingAuditor.T...   INFO    DaVinciEventInitSeq                            |     4.711 |     4.924 |    1.619      60.4     5.62 |    6815 |    33.558 |
-TimingAuditor.T...   INFO     KillDAQ                                       |     0.002 |     0.008 |    0.006       0.3     0.00 |    6815 |     0.057 |
-TimingAuditor.T...   INFO     UnpackParticlesAndVertices                    |     4.698 |     4.907 |    1.604      60.4     5.62 |    6815 |    33.443 |
-TimingAuditor.T...   INFO    DaVinciAnalysisSeq                             |     6.911 |     7.192 |    0.299   19447.6   261.47 |    6815 |    49.017 |
-TimingAuditor.T...   INFO     DaVinciUserSequence                           |     6.898 |     7.184 |    0.292   19447.6   261.47 |    6815 |    48.963 |
-TimingAuditor.T...   INFO      Hlt2BToHHGammaee_Inclusive_Line              |     1.696 |     1.836 |    0.003    9277.1   112.39 |    6815 |    12.517 |
-TimingAuditor.T...   INFO      ExtraHadron                                  |     0.073 |     0.086 |    0.002       7.6     0.41 |    6815 |     0.589 |
-TimingAuditor.T...   INFO      ExtraKs0                                     |     2.878 |     2.984 |    0.002   19418.9   235.23 |    6815 |    20.341 |
-TimingAuditor.T...   INFO      ExtraLambda                                  |     0.045 |     0.052 |    0.002      19.3     0.63 |    6815 |     0.356 |
-TimingAuditor.T...   INFO      ExtraGamma                                   |     1.103 |     1.143 |    0.002     112.0     6.20 |    6815 |     7.793 |
-TimingAuditor.T...   INFO      ExtraPi0                                     |     0.670 |     0.665 |    0.002     105.9     4.32 |    6815 |     4.537 |
-TimingAuditor.T...   INFO     MonitoringSequence                            |     0.002 |     0.002 |    0.002       0.1     0.00 |    6815 |     0.017 |
-TimingAuditor.T...   INFO   LumiSeq                                         |     0.002 |     0.007 |    0.006       1.2     0.02 |    6815 |     0.054 |
-TimingAuditor.T...   INFO    EventAccount                                   |     0.001 |     0.003 |    0.002       1.2     0.02 |    6815 |     0.023 |
-TimingAuditor.T...   INFO *     HLT2_PsAndVsUnpack                          |     0.043 |     0.045 |    0.003      27.8     0.25 |  206170 |     9.281 |
-TimingAuditor.T...   INFO *      createODIN                                 |     0.160 |     0.136 |    0.049       3.9     0.12 |    6807 |     0.930 |
-TimingAuditor.T...   INFO *      UnpackMCParticles                          |     0.032 |     0.033 |    0.025       6.2     0.05 |   84051 |     2.782 |
-TimingAuditor.T...   INFO *      SEQ:MCParticles                            |     0.001 |     0.002 |    0.002       0.9     0.01 |  167382 |     0.495 |
-TimingAuditor.T...   INFO *       UnpackMCParticle                          |     0.027 |     0.058 |    0.050       0.7     0.04 |     360 |     0.021 |
-TimingAuditor.T...   INFO *       LINK:MCParticles2MC                       |     0.055 |     0.040 |    0.035       0.1     0.01 |     360 |     0.014 |
-TimingAuditor.T...   INFO *        LINK:MC2Sim4Particles                    |     0.027 |     0.041 |    0.032       0.7     0.04 |     361 |     0.015 |
-TimingAuditor.T...   INFO *      HLT2_pRec_Calo_Photons_Converter           |     8.250 |     8.613 |    0.114      50.0    11.62 |     360 |     3.101 |
-TimingAuditor.T...   INFO *      HLT2_pRec_Calo_MergedPi0s_Converter        |     0.261 |     0.181 |    0.020       0.6     0.06 |     153 |     0.028 |
-TimingAuditor.T...   INFO *      HLT2_pRec_Calo_SplitPhotons_Converter      |     0.065 |     0.187 |    0.012       0.5     0.07 |     153 |     0.029 |
+TimingAuditor.T...   INFO EVENT LOOP                                        |     8.409 |     8.483 |    2.418   19951.6   261.85 |    6815 |    57.814 |
+TimingAuditor.T...   INFO  DaVinciEventSeq                                  |     7.807 |     7.848 |    1.816   19951.0   261.85 |    6815 |    53.486 |
+TimingAuditor.T...   INFO   DaVinciInitAlg                                  |     0.044 |     0.055 |    0.048       0.9     0.02 |    6815 |     0.379 |
+TimingAuditor.T...   INFO   FilteredEventSeq                                |     7.753 |     7.776 |    1.753   19950.9   261.85 |    6815 |    53.000 |
+TimingAuditor.T...   INFO    DaVinciEventInitSeq                            |     2.443 |     2.433 |    1.434      49.0     4.74 |    6815 |    16.585 |
+TimingAuditor.T...   INFO     KillDAQ                                       |     0.004 |     0.007 |    0.005       0.0     0.00 |    6815 |     0.052 |
+TimingAuditor.T...   INFO     UnpackParticlesAndVertices                    |     2.429 |     2.419 |    1.420      49.0     4.74 |    6815 |    16.486 |
+TimingAuditor.T...   INFO    DaVinciAnalysisSeq                             |     5.308 |     5.337 |    0.292   19947.8   261.79 |    6815 |    36.377 |
+TimingAuditor.T...   INFO     DaVinciUserSequence                           |     5.297 |     5.330 |    0.285   19947.8   261.79 |    6815 |    36.330 |
+TimingAuditor.T...   INFO      Hlt2BToHHGammaee_Inclusive_Line              |     1.633 |     1.657 |    0.003    8306.4   100.63 |    6815 |    11.299 |
+TimingAuditor.T...   INFO      ExtraHadron                                  |     0.086 |     0.081 |    0.002       8.2     0.39 |    6815 |     0.558 |
+TimingAuditor.T...   INFO      ExtraKs0                                     |     3.037 |     3.055 |    0.002   19935.8   241.49 |    6815 |    20.820 |
+TimingAuditor.T...   INFO      ExtraLambda                                  |     0.048 |     0.049 |    0.002      16.2     0.59 |    6815 |     0.338 |
+TimingAuditor.T...   INFO      ExtraGamma                                   |     0.070 |     0.075 |    0.002      11.4     0.59 |    6815 |     0.513 |
+TimingAuditor.T...   INFO      ExtraPi0                                     |     0.024 |     0.036 |    0.002       5.9     0.25 |    6815 |     0.249 |
+TimingAuditor.T...   INFO     MonitoringSequence                            |     0.004 |     0.002 |    0.002       0.0     0.00 |    6815 |     0.016 |
+TimingAuditor.T...   INFO   LumiSeq                                         |     0.005 |     0.006 |    0.005       0.0     0.00 |    6815 |     0.044 |
+TimingAuditor.T...   INFO    EventAccount                                   |     0.001 |     0.002 |    0.002       0.0     0.00 |    6815 |     0.016 |
+TimingAuditor.T...   INFO *     HLT2_PsAndVsUnpack                          |     0.035 |     0.036 |    0.003       2.0     0.18 |  202277 |     7.392 |
+TimingAuditor.T...   INFO *      createODIN                                 |     0.092 |     0.107 |    0.045       9.3     0.26 |    6807 |     0.735 |
+TimingAuditor.T...   INFO *      UnpackMCParticles                          |     0.048 |     0.047 |    0.025       0.4     0.05 |    8859 |     0.425 |
+TimingAuditor.T...   INFO *      SEQ:MCParticles                            |     0.002 |     0.004 |    0.002       0.3     0.01 |   16998 |     0.080 |
+TimingAuditor.T...   INFO *       UnpackMCParticle                          |     0.000 |     0.053 |    0.047       0.3     0.01 |     360 |     0.019 |
+TimingAuditor.T...   INFO *       LINK:MCParticles2MC                       |     0.083 |     0.037 |    0.034       0.1     0.00 |     360 |     0.013 |
+TimingAuditor.T...   INFO *        LINK:MC2Sim4Particles                    |     0.000 |     0.037 |    0.032       0.1     0.00 |     361 |     0.014 |
+TimingAuditor.T...   INFO *      HLT2_pRec_Calo_Photons_Converter           |     1.202 |     1.299 |    0.045       6.4     2.26 |     316 |     0.411 |
+TimingAuditor.T...   INFO *      HLT2_pRec_Calo_MergedPi0s_Converter        |     0.065 |     0.129 |    0.017       0.3     0.07 |     153 |     0.020 |
+TimingAuditor.T...   INFO *      HLT2_pRec_Calo_SplitPhotons_Converter      |     0.326 |     0.296 |    0.012       0.6     0.22 |     153 |     0.045 |
 TimingAuditor.T...   INFO ----------------------------------------------------------------------------------------------------------------------
 NTupleSvc            INFO NTuples saved successfully
 *****Chrono*****     INFO ****************************************************************************************************
 *****Chrono*****     INFO  The Final CPU consumption ( Chrono ) Table (ordered)
 *****Chrono*****     INFO ****************************************************************************************************
-DetailedMateria...   INFO Time User   : Tot= 18.9  [s] Ave/Min/Max=0.0199(+-0.594)/    0/ 18.3  [s] #=948
-ChronoStatSvc        INFO Time User   : Tot= 75.5  [s]                                             #=  1
+DetailedMateria...   INFO Time User   : Tot= 20.1  [s] Ave/Min/Max=0.0212(+-0.638)/    0/ 19.7  [s] #=948
+ChronoStatSvc        INFO Time User   : Tot=   49  [s]                                             #=  1
 *****Chrono*****     INFO ****************************************************************************************************
 ChronoStatSvc.f...   INFO  Service finalized successfully 
 ApplicationMgr       INFO Application Manager Finalized successfully

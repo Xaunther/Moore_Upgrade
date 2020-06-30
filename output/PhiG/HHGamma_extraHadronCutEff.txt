@@ -1,0 +1,26 @@
+Selection efficiencies applied on output/PhiG/PhiG_HHGamma.root: 
+Event weight: 
+
+                     Preselection                     
+------------------------------------------------------
+
+          Efficiency for each cut, and global          
+-------------------------------------------------------
+(piplus_PT > 500)             |  1
+(piplus_PT > 600)             |  0.798076
+(piplus_PT > 700)             |  0.638726
+(piplus_PT > 800)             |  0.517801
+(piplus_PT > 900)             |  0.424532
+(piplus_PT > 1000)            |  0.351498
+(piplus_IPCHI2_OWNPV < 0.05)  |  0.114069
+(piplus_IPCHI2_OWNPV < 0.06)  |  0.138122
+(piplus_IPCHI2_OWNPV < 0.07)  |  0.159915
+(piplus_IPCHI2_OWNPV < 0.08)  |  0.182896
+(piplus_IPCHI2_OWNPV < 0.09)  |  0.203716
+(piplus_IPCHI2_OWNPV < 0.1)   |  0.225801
+(piplus_IPCHI2_OWNPV < 0.2)   |  0.439781
+(piplus_IPCHI2_OWNPV < 0.3)   |  0.637596
+(piplus_IPCHI2_OWNPV < 0.4)   |  0.824407
+(piplus_IPCHI2_OWNPV < 0.5)   |  1
+Global                        |  0.038250
+Error                         |  0.000846

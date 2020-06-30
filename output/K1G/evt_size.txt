@@ -1,2 +1,2 @@
 OutputStream                           INFO Events output: 4556
-120M	output/K1G/K1G.mdst
+43M	output/K1G/K1G.mdst
