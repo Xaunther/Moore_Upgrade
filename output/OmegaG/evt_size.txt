@@ -1,2 +1,2 @@
-OutputStream                           INFO Events output: 82
-2.3M	output/OmegaG/OmegaG.mdst
+OutputStream                           INFO Events output: 253
+7.7M	output/OmegaG/OmegaG.mdst

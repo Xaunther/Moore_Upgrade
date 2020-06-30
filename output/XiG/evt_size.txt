@@ -1,2 +1,2 @@
-OutputStream                           INFO Events output: 91
-2.6M	output/XiG/XiG.mdst
+OutputStream                           INFO Events output: 245
+7.4M	output/XiG/XiG.mdst
