@@ -1,0 +1,69 @@
+// DO NOT EDIT: this file is auto-generated from /afs/cern.ch/work/a/aalfonso/private/LHCb/stack/utils/template.code-workspace
+{
+    "extensions": {
+        "recommendations": [
+            "eamodio.gitlens",
+            "ms-python.python",
+            "ms-python.vscode-pylance",
+            "ms-vscode.cpptools",
+            "ms-vsliveshare.vsliveshare",
+            "twxs.cmake",
+            "lextudio.restructuredtext",
+            "davidanson.vscode-markdownlint",
+            "streetsidesoftware.code-spell-checker"
+        ]
+    },
+    "folders": [
+	{
+	    "path": "./"
+	}
+    ],
+    "settings": {
+        "C_Cpp.clang_format_fallbackStyle": "none",
+        "C_Cpp.clang_format_path": "/cvmfs/lhcb.cern.ch/lib/bin/x86_64-centos7/lcg-clang-format-8.0.0",
+        "C_Cpp.clang_format_style": "file",
+        "C_Cpp.configurationWarnings": "Disabled",
+        "C_Cpp.default.cStandard": "c11",
+        "C_Cpp.default.compileCommands": "/afs/cern.ch/work/a/aalfonso/private/LHCb/stack/.output/compile_commands-Moore.json",
+        "C_Cpp.default.compilerPath": "/cvmfs/lhcb.cern.ch/lib/lcg/releases/gcc/9.2.0-afc57/x86_64-centos7/bin/g++",
+        "C_Cpp.default.cppStandard": "c++17",
+        "C_Cpp.default.defines": [],
+        "C_Cpp.default.includePath": [
+            "/afs/cern.ch/work/a/aalfonso/private/LHCb/stack/**"
+        ],
+        "C_Cpp.default.intelliSenseMode": "clang-x64",
+        "cSpell.dictionaries": [
+            "lhcb"
+        ],
+        "cSpell.dictionaryDefinitions": [
+            {
+                "name": "lhcb",
+                "path": "/afs/cern.ch/work/a/aalfonso/private/LHCb/stack/utils/dictionary.txt"
+            }
+        ],
+        "cSpell.includeRegExpList": [
+            "string",
+            "(\"\"\"|''')[^\\1]*\\1",
+            "CStyleComment",
+            "#.*"
+        ],
+        "cSpell.language": "en,en-GB",
+        "files.associations": {
+            "*.C": "cpp",
+            "*.icpp": "cpp"
+        },
+        "files.trimTrailingWhitespace": true,
+        "python.envFile": "/afs/cern.ch/work/a/aalfonso/private/LHCb/stack/.output/runtime-Moore.env",
+        "python.formatting.provider": "yapf",
+        "python.formatting.yapfPath": "/afs/cern.ch/work/a/aalfonso/private/LHCb/stack/.output/yapf",
+        "python.languageServer": "Pylance",
+        "python.linting.enabled": true,
+        "python.linting.flake8Args": [
+            "--select=F"
+        ],
+        "python.linting.flake8Enabled": true,
+        "python.linting.flake8Path": "/afs/cern.ch/work/a/aalfonso/private/LHCb/stack/.output/flake8",
+        "python.linting.pylintEnabled": false,
+        "python.pythonPath": "/cvmfs/lhcb.cern.ch/lib/lcg/releases/LCG_97a/Python/2.7.16/x86_64-centos7-gcc9-opt/bin/python"
+    }
+}
