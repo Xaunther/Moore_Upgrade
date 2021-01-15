@@ -3,6 +3,7 @@
 #Moore installation
 MOORE=../LHCb/stack/Moore
 #DaVinci version to use
+DAVINCI=lb-run DaVinci/v52r0
 #ROOT version to use
 ROOT=root -l -b -q
 #Gcc compilers
