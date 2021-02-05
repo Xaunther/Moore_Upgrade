@@ -19,6 +19,8 @@ The flow is controlled with a makefile. The MCs used are `KstG, PhiG, K1G, Lambd
 
 The outputs are all saved in the output folder. Interesting results are all tagged in the repository so that they can be accessed in the future. The list of previous and a short description is added here.
 
+- [Loose_extra_cuts_2k](https://gitlab.cern.ch/aalfonso/moore_upgrade/-/tree/Loose_extra_cuts_2k): Loose extraselection cuts. Ran on 2000 events per MC sample.
+
 ## Dependencies
 
 In order to run all the scripts provided, other software must be prepared beforehand. Here are instructions to get everything ready.
