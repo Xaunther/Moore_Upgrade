@@ -1,0 +1,36 @@
+Multiplicity applied on  output/KstG/AllLines_Moore.root  output/PhiG/AllLines_Moore.root  output/K1G/AllLines_Moore.root  output/LambdaG/AllLines_Moore.root  output/XiG/AllLines_Moore.root  output/OmegaG/AllLines_Moore.root, using: 
+Reference Tree: HHGammaEETuple/DecayTree
+Extra Tree: HHGammaEE_ExtraKs0Tuple/DecayTree
+
+               Multiplicity for each cut               
+-------------------------------------------------------
+Ks0_PT > 500             |  0.5
+Ks0_PT > 600             |  0.5
+Ks0_PT > 700             |  0.46875
+Ks0_PT > 800             |  0.46875
+Ks0_PT > 900             |  0.4375
+Ks0_PT > 1000            |  0.34375
+Ks0_IPCHI2_OWNPV < 0.05  |  0
+Ks0_IPCHI2_OWNPV < 0.06  |  0
+Ks0_IPCHI2_OWNPV < 0.07  |  0.03125
+Ks0_IPCHI2_OWNPV < 0.08  |  0.03125
+Ks0_IPCHI2_OWNPV < 0.09  |  0.03125
+Ks0_IPCHI2_OWNPV < 0.1   |  0.03125
+Ks0_IPCHI2_OWNPV < 0.2   |  0.125
+Ks0_IPCHI2_OWNPV < 0.3   |  0.15625
+Ks0_IPCHI2_OWNPV < 0.4   |  0.1875
+Ks0_IPCHI2_OWNPV < 0.5   |  0.21875
+Ks0_IPCHI2_OWNPV < 0.6   |  0.21875
+Ks0_IPCHI2_OWNPV < 0.7   |  0.25
+Ks0_IPCHI2_OWNPV < 0.8   |  0.25
+Ks0_IPCHI2_OWNPV < 0.9   |  0.28125
+Ks0_IPCHI2_OWNPV < 1.0   |  0.3125
+Ks0_IPCHI2_OWNPV < 2.0   |  0.4375
+Ks0_IPCHI2_OWNPV < 3.0   |  0.4375
+Ks0_IPCHI2_OWNPV < 4.0   |  0.4375
+Ks0_IPCHI2_OWNPV < 5.0   |  0.4375
+Ks0_IPCHI2_OWNPV < 6.0   |  0.4375
+Ks0_IPCHI2_OWNPV < 7.0   |  0.4375
+Ks0_IPCHI2_OWNPV < 8.0   |  0.46875
+Ks0_IPCHI2_OWNPV < 9.0   |  0.5
+Ks0_IPCHI2_OWNPV < 10.0  |  0.5

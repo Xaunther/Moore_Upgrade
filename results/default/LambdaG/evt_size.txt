@@ -1,2 +1,0 @@
-OutputStream                           INFO Events output: 257
-1005K	output/LambdaG/LambdaG.dst

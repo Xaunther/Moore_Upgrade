@@ -36,3 +36,10 @@ make.log
 #Moore product files
 *.gv
 test_catalog.xml
+
+#Metadata produced by MooreAnalysis
+output/*/*.metadata.json
+
+#vscode settings
+.vscode/
+*.code-workspace
