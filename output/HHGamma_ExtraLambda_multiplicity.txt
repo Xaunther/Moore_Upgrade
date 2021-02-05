@@ -1,0 +1,36 @@
+Multiplicity applied on  output/KstG/AllLines_Moore.root  output/PhiG/AllLines_Moore.root  output/K1G/AllLines_Moore.root  output/LambdaG/AllLines_Moore.root  output/XiG/AllLines_Moore.root  output/OmegaG/AllLines_Moore.root, using: 
+Reference Tree: HHGammaTuple/DecayTree
+Extra Tree: HHGamma_ExtraLambdaTuple/DecayTree
+
+               Multiplicity for each cut               
+-------------------------------------------------------
+Lambda_PT > 500             |  0.161426
+Lambda_PT > 600             |  0.148847
+Lambda_PT > 700             |  0.146751
+Lambda_PT > 800             |  0.134172
+Lambda_PT > 900             |  0.121593
+Lambda_PT > 1000            |  0.102725
+Lambda_IPCHI2_OWNPV < 0.05  |  0.00209644
+Lambda_IPCHI2_OWNPV < 0.06  |  0.00209644
+Lambda_IPCHI2_OWNPV < 0.07  |  0.00209644
+Lambda_IPCHI2_OWNPV < 0.08  |  0.00209644
+Lambda_IPCHI2_OWNPV < 0.09  |  0.00419287
+Lambda_IPCHI2_OWNPV < 0.1   |  0.00838574
+Lambda_IPCHI2_OWNPV < 0.2   |  0.0146751
+Lambda_IPCHI2_OWNPV < 0.3   |  0.0188679
+Lambda_IPCHI2_OWNPV < 0.4   |  0.0314465
+Lambda_IPCHI2_OWNPV < 0.5   |  0.0377358
+Lambda_IPCHI2_OWNPV < 0.6   |  0.0419287
+Lambda_IPCHI2_OWNPV < 0.7   |  0.0440252
+Lambda_IPCHI2_OWNPV < 0.8   |  0.0503145
+Lambda_IPCHI2_OWNPV < 0.9   |  0.0587002
+Lambda_IPCHI2_OWNPV < 1.0   |  0.0587002
+Lambda_IPCHI2_OWNPV < 2.0   |  0.0985325
+Lambda_IPCHI2_OWNPV < 3.0   |  0.1174
+Lambda_IPCHI2_OWNPV < 4.0   |  0.129979
+Lambda_IPCHI2_OWNPV < 5.0   |  0.138365
+Lambda_IPCHI2_OWNPV < 6.0   |  0.144654
+Lambda_IPCHI2_OWNPV < 7.0   |  0.150943
+Lambda_IPCHI2_OWNPV < 8.0   |  0.161426
+Lambda_IPCHI2_OWNPV < 9.0   |  0.161426
+Lambda_IPCHI2_OWNPV < 10.0  |  0.161426

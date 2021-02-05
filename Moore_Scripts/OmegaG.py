@@ -2,6 +2,10 @@ from Moore import options
 from Gaudi.Configuration import INFO
 import os
 
+#Options for running over data with FT raw bank version 6.
+from RecoConf.hlt1_tracking import default_ft_decoding_version
+default_ft_decoding_version.global_bind(value=6)
+
 #Define decay name, will be used around
 decname = "OmegaG"
 decdesc = "16103332"
@@ -18,14 +22,12 @@ with open("DSTs/{0}_{1}_MagDown.dir".format(decname, decdesc)) as f:
 f.close()
 options.input_type = 'ROOT'
 options.input_raw_format = 4.3
-options.evt_max = -1
-options.print_freq = 10000
+options.evt_max = 2000
+options.print_freq = 50
 options.data_type = 'Upgrade'
 options.dddb_tag = 'dddb-20190223'
 options.conddb_tag = 'sim-20180530-vc-md100'
 options.simulation = True
-options.output_file = outfolder+decname+'.mdst'
+options.output_file = outfolder
 options.output_type = 'ROOT'
 options.output_level = INFO
-options.control_flow_file = outfolder+'control_flow.gv'
-options.data_flow_file = outfolder+'data_flow.gv'

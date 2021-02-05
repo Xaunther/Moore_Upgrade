@@ -1,140 +1,106 @@
 #Makefile to remember the different commands to run things
 
-#Moore installation
-MOORE=../LHCb/stack/Moore
-#DaVinci version to use
-DAVINCI=lb-run DaVinci/v52r0
-#ROOT version to use
-ROOT=root -l -b -q
-#Gcc compilers
-#LbLogin8=export BINARY_TAG="x86_64-centos7-gcc8-opt" && export CMTCONFIG="x86_64-centos7-gcc8-opt"
-#LbLogin9=export BINARY_TAG="x86_64-centos7-gcc9-opt" && export CMTCONFIG="x86_64-centos7-gcc9-opt"
-#List of MC samples #PhiG excluded as it is buggy
+#Stack installation
+STACKDIR=../LHCb/stack
+MOOREANALYSIS=$(STACKDIR)/MooreAnalysis
+MOORE=$(STACKDIR)/Moore
+DAVINCI=$(STACKDIR)/DaVinci
+
+#Where folder with root scripts (https://gitlab.cern.ch/aalfonso-Analysis-Tools/root) resides
+#Needs compilation before running
+ANALYSIS_TOOLS_ROOT=../root
+
+#Folder with upgrade-bandwith-studies repo (https://gitlab.cern.ch/lhcb-HLT/upgrade-bandwidth-studies)
+#Also needs compilation
+UPGRADE_BANDWIDTH_STUDIES=../upgrade-bandwidth-studies
+
+#List of MC samples available
 MC_list=KstG PhiG K1G LambdaG XiG OmegaG
 
-#To Run all 4 lines on different samples. Use default config
-default_DST_output_list=$(foreach MC, $(MC_list), output/$(MC)/std_Moore.out)
-default_DST_output: $(default_DST_output_list)
-$(default_DST_output_list): output/%/std_Moore.out: Moore_Scripts/%.py
+#List of reconstructibles for each MC
+KstG_reconstructibles=Kplus,piminus
+PhiG_reconstructibles=Kplus,Kminus
+K1G_reconstructibles=Kplus,piminus,piplus
+LambdaG_reconstructibles=pplus,piminus
+XiG_reconstructibles=pplus,piminus,piminus0
+OmegaG_reconstructibles=pplus,piminus,Kminus
+
+#List of extra selection containers
+extra_container_list=ExtraHadron ExtraKs0 ExtraLambda ExtraGamma ExtraPi0Merged ExtraPi0Resolved
+
+#List of important make commands
+all: all_MA all_Moore
+#Produce efficiencies for all radiative lines and all radiative channels included in MC_list
+.PHONY: all_MA
+#Produce ntuples with events that pass at least one of a collection of HLT lines (FILTERING)
+.PHONY: all_Moore
+
+################################### MOORE ANALYSIS PART ###################################
+#Produce ntuples from MooreAnalysis.
+#They produce MCDecayTreeTuples so all possible events that can be reconstructed with MC matching,
+#just FLAGGING whether they pass the HLT lines of interest or not
+alltuple_MA_list = $(foreach MC, $(MC_list),output/$(MC)/AllLines_MA.root)
+alltuples_MA: $(alltuple_MA_list)
+$(alltuple_MA_list): output/%/AllLines_MA.root:
 	mkdir -p output/$*
-	$(MOORE)/run gaudirun.py Moore_Scripts/$*.py Moore_Scripts/AllLines.py | tee $@
+	$(MOOREANALYSIS)/run gaudirun.py MooreAnalysis_Scripts/$*.py MooreAnalysis_Scripts/AllLines.py
+
+#Produce efficiency results by using the ntuple info
+#We use reconstructible children, which only takes children with pseudorapidity in LHCb range
+alleff_MA_list = $(foreach MC, $(MC_list),output/$(MC)/AllLines_eff_MA.txt)
+alleffs_MA: $(alleff_MA_list)
+$(alleff_MA_list): output/%/AllLines_eff_MA.txt: output/%/AllLines_MA.root
+	$(MOOREANALYSIS)/run $(MOOREANALYSIS)/HltEfficiencyChecker/scripts/hlt_line_efficiencies.py $< --level Hlt2 --reconstructible-children=$($*_reconstructibles) > $@
+
+#Run all Moore Analysis part
+all_MA: alleffs_MA
+
+################################### MOORE PART ###################################
+#Produce DSTs from Moore.
+#They produce FILTERED DSTs where only events that pass any HLT line are stored.
+allDST_Moore_list=$(foreach MC, $(MC_list),output/$(MC)/AllLines_Moore.mdst)
+allDSTs_Moore: $(allDST_Moore_list)
+$(allDST_Moore_list): output/%/AllLines_Moore.mdst:
+	mkdir -p output/$*
+	$(MOORE)/run gaudirun.py Moore_Scripts/$*.py Moore_Scripts/AllLines.py | tee output/$*/AllLines_Moore.out
 	rm -f test_catalog.xml
 
-#Also, we want to run each line separately, for each MC sample
+#Once the mDSTs have been produced, we can run a hacked script from upgrade-bandwidth-studies
+allEvtSizes_Moore_list=$(foreach MC, $(MC_list),output/$(MC)/AllLines_EvtSize_Moore.txt)
+allEvtSizes_Moore: $(allEvtSizes_Moore_list)
+$(allEvtSizes_Moore_list): output/%/AllLines_EvtSize_Moore.txt: output/%/AllLines_Moore.mdst
+	$(UPGRADE_BANDWIDTH_STUDIES)/run python options/event_size.py $< --path=/Event/HLT2 --banned Sim MC | tee $@
+
+
+#Time to produce ntuples
+alltuple_Moore_list=$(foreach MC, $(MC_list),output/$(MC)/AllLines_Moore.root)
+alltuples_Moore: $(alltuple_Moore_list)
+$(alltuple_Moore_list): output/%/AllLines_Moore.root: output/%/AllLines_Moore.mdst
+	$(DAVINCI)/run gaudirun.py DaVinci_Scripts/$*.py DaVinci_Scripts/AllLines.py
+
+#We have the ntuples, now time to extract the multiplicity of each extra container.
+#For each line, we loop over all the containers
 #HHGamma
-default_ntuple_HHGamma_output_list=$(foreach MC, $(MC_list), output/$(MC)/std_DV_HHGamma.out)
-default_ntuple_HHGamma_output: $(default_ntuple_HHGamma_output_list)
-$(default_ntuple_HHGamma_output_list): output/%/std_DV_HHGamma.out: output/%/std_Moore.out
-	$(DAVINCI) gaudirun.py DaVinci_Scripts/$*.py DaVinci_Scripts/ntuples_HHGamma.py | tee $@
+HHGamma_multiplicity_list=$(foreach extra_container, $(extra_container_list), output/HHGamma_${extra_container}_multiplicity.txt)
+HHGamma_multiplicities: $(HHGamma_multiplicity_list)
+$(HHGamma_multiplicity_list): output/HHGamma_%_multiplicity.txt: $(alltuple_Moore_list) Cuts/%_cuts.txt
+	$(ANALYSIS_TOOLS_ROOT)/Multiplicity_Extrasel.out "$(alltuple_Moore_list)" Cuts/$*_cuts.txt $@ HHGammaTuple/DecayTree HHGamma_$*Tuple/DecayTree
 #HHGammaEE
-default_ntuple_HHGammaEE_output_list=$(foreach MC, $(MC_list), output/$(MC)/std_DV_HHGammaEE.out)
-default_ntuple_HHGammaEE_output: $(default_ntuple_HHGammaEE_output_list)
-$(default_ntuple_HHGammaEE_output_list): output/%/std_DV_HHGammaEE.out: output/%/std_Moore.out
-	$(DAVINCI) gaudirun.py DaVinci_Scripts/$*.py DaVinci_Scripts/ntuples_HHGammaEE.py | tee $@
+HHGammaEE_multiplicity_list=$(foreach extra_container, $(extra_container_list), output/HHGammaEE_${extra_container}_multiplicity.txt)
+HHGammaEE_multiplicities: $(HHGammaEE_multiplicity_list)
+$(HHGammaEE_multiplicity_list): output/HHGammaEE_%_multiplicity.txt: $(alltuple_Moore_list) Cuts/%_cuts.txt
+	$(ANALYSIS_TOOLS_ROOT)/Multiplicity_Extrasel.out "$(alltuple_Moore_list)" Cuts/$*_cuts.txt $@ HHGammaEETuple/DecayTree HHGammaEE_$*Tuple/DecayTree
 #HHHGamma
-default_ntuple_HHHGamma_output_list=$(foreach MC, $(MC_list), output/$(MC)/std_DV_HHHGamma.out)
-default_ntuple_HHHGamma_output: $(default_ntuple_HHHGamma_output_list)
-$(default_ntuple_HHHGamma_output_list): output/%/std_DV_HHHGamma.out: output/%/std_Moore.out
-	$(DAVINCI) gaudirun.py DaVinci_Scripts/$*.py DaVinci_Scripts/ntuples_HHHGamma.py | tee $@
+HHHGamma_multiplicity_list=$(foreach extra_container, $(extra_container_list), output/HHHGamma_${extra_container}_multiplicity.txt)
+HHHGamma_multiplicities: $(HHHGamma_multiplicity_list)
+$(HHHGamma_multiplicity_list): output/HHHGamma_%_multiplicity.txt: $(alltuple_Moore_list) Cuts/%_cuts.txt
+	$(ANALYSIS_TOOLS_ROOT)/Multiplicity_Extrasel.out "$(alltuple_Moore_list)" Cuts/$*_cuts.txt $@ HHHGammaTuple/DecayTree HHHGamma_$*Tuple/DecayTree
 #HHHGammaEE
-default_ntuple_HHHGammaEE_output_list=$(foreach MC, $(MC_list), output/$(MC)/std_DV_HHHGammaEE.out)
-default_ntuple_HHHGammaEE_output: $(default_ntuple_HHHGammaEE_output_list)
-$(default_ntuple_HHHGammaEE_output_list): output/%/std_DV_HHHGammaEE.out: output/%/std_Moore.out
-	$(DAVINCI) gaudirun.py DaVinci_Scripts/$*.py DaVinci_Scripts/ntuples_HHHGammaEE.py | tee $@
-.PHONY: default_ntuple_output
-default_ntuple_output: default_ntuple_HHGamma_output default_ntuple_HHGammaEE_output default_ntuple_HHHGamma_output default_ntuple_HHHGammaEE_output
+HHHGammaEE_multiplicity_list=$(foreach extra_container, $(extra_container_list), output/HHHGammaEE_${extra_container}_multiplicity.txt)
+HHHGammaEE_multiplicities: $(HHHGammaEE_multiplicity_list)
+$(HHHGammaEE_multiplicity_list): output/HHHGammaEE_%_multiplicity.txt: $(alltuple_Moore_list) Cuts/%_cuts.txt
+	$(ANALYSIS_TOOLS_ROOT)/Multiplicity_Extrasel.out "$(alltuple_Moore_list)" Cuts/$*_cuts.txt $@ "HHHGammaEETuple/DecayTree" HHHGammaEE_$*Tuple/DecayTree
+#Run all Moore part
+all_Moore: HHGamma_multiplicities HHGammaEE_multiplicities HHHGamma_multiplicities HHHGammaEE_multiplicities allEvtSizes_Moore
 
-#Another thingy to do here is to clunkily get the average event size
-default_DST_size_list=$(foreach MC, $(MC_list), output/$(MC)/evt_size.txt)
-default_DST_size: $(default_DST_size_list)
-$(default_DST_size_list): output/%/evt_size.txt: output/%/std_Moore.out
-	grep "Events output" output/$*/std_Moore.out > $@
-	du -sh output/$*/$*.mdst >> $@
 
-########################################## ROOT #######################################
-#Once we have the ntuples
-#Plot all variables of some relevant ntuple(s)
-#HHGamma Line
-default_HHGamma_VarList=$(foreach MC, $(MC_list), output/$(MC)/HHGamma_VarList.txt)
-default_HHGamma_Var: $(default_HHGamma_VarList)
-$(default_HHGamma_VarList): output/%/HHGamma_VarList.txt: output/%/std_DV_HHGamma.out
-	$(ROOT) src/getvars.C\(\"output/$*/$*_HHGamma.root\",\"$@\",\"Hlt2BToHHGamma_Inclusive_Line/DecayTree\"\)
-	mkdir -p output/$*/plots/
-	mkdir -p output/$*/plots/HHGamma
-	../root/PlotUsedVars.out $@ output/$*/$*_HHGamma.root "" E1  output/$*/plots/HHGamma/ Hlt2BToHHGamma_Inclusive_Line/DecayTree
-#Extra hadron
-default_ExtraHadron_VarList=$(foreach MC, $(MC_list), output/$(MC)/ExtraHadron_VarList.txt)
-default_ExtraHadron_Var: $(default_ExtraHadron_VarList)
-$(default_ExtraHadron_VarList): output/%/ExtraHadron_VarList.txt: output/%/std_DV_HHGamma.out
-	$(ROOT) src/getvars.C\(\"output/$*/$*_HHGamma.root\",\"$@\",\"ExtraHadron/DecayTree\"\)
-	mkdir -p output/$*/plots/
-	mkdir -p output/$*/plots/HHGamma
-	mkdir -p output/$*/plots/HHGamma/ExtraHadron
-	../root/PlotUsedVars.out $@ output/$*/$*_HHGamma.root "" E1  output/$*/plots/HHGamma/ExtraHadron/ ExtraHadron/DecayTree
-#Extra Ks0
-default_Ks0_VarList=$(foreach MC, $(MC_list), output/$(MC)/Ks0_VarList.txt)
-default_Ks0_Var: $(default_Ks0_VarList)
-$(default_Ks0_VarList): output/%/Ks0_VarList.txt: output/%/std_DV_HHGamma.out
-	$(ROOT) src/getvars.C\(\"output/$*/$*_HHGamma.root\",\"$@\",\"ExtraKs0/DecayTree\"\)
-	mkdir -p output/$*/plots/
-	mkdir -p output/$*/plots/HHGamma
-	mkdir -p output/$*/plots/HHGamma/ExtraKs0
-	../root/PlotUsedVars.out $@ output/$*/$*_HHGamma.root "" E1  output/$*/plots/HHGamma/ExtraKs0/ ExtraKs0/DecayTree
-#Extra Lambda
-default_Lambda_VarList=$(foreach MC, $(MC_list), output/$(MC)/Lambda_VarList.txt)
-default_Lambda_Var: $(default_Lambda_VarList)
-$(default_Lambda_VarList): output/%/Lambda_VarList.txt: output/%/std_DV_HHGamma.out
-	$(ROOT) src/getvars.C\(\"output/$*/$*_HHGamma.root\",\"$@\",\"ExtraLambda/DecayTree\"\)
-	mkdir -p output/$*/plots/
-	mkdir -p output/$*/plots/HHGamma
-	mkdir -p output/$*/plots/HHGamma/ExtraLambda
-	../root/PlotUsedVars.out $@ output/$*/$*_HHGamma.root "" E1  output/$*/plots/HHGamma/ExtraLambda/ ExtraLambda/DecayTree
-#Extra Gamma
-default_Gamma_VarList=$(foreach MC, $(MC_list), output/$(MC)/Gamma_VarList.txt)
-default_Gamma_Var: $(default_Gamma_VarList)
-$(default_Gamma_VarList): output/%/Gamma_VarList.txt: output/%/std_DV_HHGamma.out
-	$(ROOT) src/getvars.C\(\"output/$*/$*_HHGamma.root\",\"$@\",\"ExtraGamma/DecayTree\"\)
-	mkdir -p output/$*/plots/
-	mkdir -p output/$*/plots/HHGamma
-	mkdir -p output/$*/plots/HHGamma/ExtraGamma
-	../root/PlotUsedVars.out $@ output/$*/$*_HHGamma.root "" E1  output/$*/plots/HHGamma/ExtraGamma/ ExtraGamma/DecayTree
-#Extra Pi0
-default_Pi0_VarList=$(foreach MC, $(MC_list), output/$(MC)/Pi0_VarList.txt)
-default_Pi0_Var: $(default_Pi0_VarList)
-$(default_Pi0_VarList): output/%/Pi0_VarList.txt: output/%/std_DV_HHGamma.out
-	$(ROOT) src/getvars.C\(\"output/$*/$*_HHGamma.root\",\"$@\",\"ExtraPi0/DecayTree\"\)
-	mkdir -p output/$*/plots/
-	mkdir -p output/$*/plots/HHGamma
-	mkdir -p output/$*/plots/HHGamma/ExtraPi0
-	../root/PlotUsedVars.out $@ output/$*/$*_HHGamma.root "" E1  output/$*/plots/HHGamma/ExtraPi0/ ExtraPi0/DecayTree
-
-#Efficiency of extracuts
-#Hadron
-default_HHGamma_extraHadronCutEff_list=$(foreach MC, $(MC_list), output/$(MC)/HHGamma_extraHadronCutEff.txt)
-default_HHGamma_extraHadronCutEff: $(default_HHGamma_extraHadronCutEff_list)
-$(default_HHGamma_extraHadronCutEff_list): output/%/HHGamma_extraHadronCutEff.txt: output/%/std_DV_HHGamma.out Cuts/extraHadroncuts.txt
-	../root/CutEff.out output/$*/$*_HHGamma.root Cuts/extraHadroncuts.txt "" $@ "" ExtraHadron/DecayTree
-#Ks0
-default_HHGamma_extraKs0CutEff_list=$(foreach MC, $(MC_list), output/$(MC)/HHGamma_extraKs0CutEff.txt)
-default_HHGamma_extraKs0CutEff: $(default_HHGamma_extraKs0CutEff_list)
-$(default_HHGamma_extraKs0CutEff_list): output/%/HHGamma_extraKs0CutEff.txt: output/%/std_DV_HHGamma.out Cuts/extraKs0cuts.txt
-	../root/CutEff.out output/$*/$*_HHGamma.root Cuts/extraKs0cuts.txt "" $@ "" ExtraKs0/DecayTree
-#Lambda
-default_HHGamma_extraLambdaCutEff_list=$(foreach MC, $(MC_list), output/$(MC)/HHGamma_extraLambdaCutEff.txt)
-default_HHGamma_extraLambdaCutEff: $(default_HHGamma_extraLambdaCutEff_list)
-$(default_HHGamma_extraLambdaCutEff_list): output/%/HHGamma_extraLambdaCutEff.txt: output/%/std_DV_HHGamma.out Cuts/extraLambdacuts.txt
-	../root/CutEff.out output/$*/$*_HHGamma.root Cuts/extraLambdacuts.txt "" $@ "" ExtraLambda/DecayTree
-#Gamma
-default_HHGamma_extraGammaCutEff_list=$(foreach MC, $(MC_list), output/$(MC)/HHGamma_extraGammaCutEff.txt)
-default_HHGamma_extraGammaCutEff: $(default_HHGamma_extraGammaCutEff_list)
-$(default_HHGamma_extraGammaCutEff_list): output/%/HHGamma_extraGammaCutEff.txt: output/%/std_DV_HHGamma.out Cuts/extraGammacuts.txt
-	../root/CutEff.out output/$*/$*_HHGamma.root Cuts/extraGammacuts.txt "" $@ "" ExtraGamma/DecayTree
-#Pi0
-default_HHGamma_extraPi0CutEff_list=$(foreach MC, $(MC_list), output/$(MC)/HHGamma_extraPi0CutEff.txt)
-default_HHGamma_extraPi0CutEff: $(default_HHGamma_extraPi0CutEff_list)
-$(default_HHGamma_extraPi0CutEff_list): output/%/HHGamma_extraPi0CutEff.txt: output/%/std_DV_HHGamma.out Cuts/extraPi0cuts.txt
-	../root/CutEff.out output/$*/$*_HHGamma.root Cuts/extraPi0cuts.txt "" $@ "" ExtraPi0/DecayTree
-
-#Run all default stuff
-.PHONY: all_default
-all_default: default_ntuple_output default_DST_size default_HHGamma_Var default_ExtraHadron_Var default_Ks0_Var default_Lambda_Var default_Gamma_Var default_Pi0_Var default_HHGamma_extraHadronCutEff default_HHGamma_extraKs0CutEff default_HHGamma_extraLambdaCutEff default_HHGamma_extraGammaCutEff default_HHGamma_extraPi0CutEff
