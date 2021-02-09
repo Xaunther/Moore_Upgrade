@@ -69,7 +69,7 @@ $(allDST_Moore_list): output/%/AllLines_Moore.mdst:
 allEvtSizes_Moore_list=$(foreach MC, $(MC_list),output/$(MC)/AllLines_EvtSize_Moore.txt)
 allEvtSizes_Moore: $(allEvtSizes_Moore_list)
 $(allEvtSizes_Moore_list): output/%/AllLines_EvtSize_Moore.txt: output/%/AllLines_Moore.mdst
-	$(UPGRADE_BANDWIDTH_STUDIES)/run python options/event_size.py $< --path=/Event/HLT2 --banned Sim MC | tee $@
+	env BINARY_TAG=x86_64-centos7-gcc9-opt $(UPGRADE_BANDWIDTH_STUDIES)/run python options/event_size.py $< --path=/Event/HLT2 --banned Sim MC | tee $@
 
 
 #Time to produce ntuples
