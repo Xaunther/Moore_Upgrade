@@ -18,9 +18,6 @@ try:
 except:
     pass
 
-with open("DSTs/{0}_{1}_MagDown.dir".format(decname, decdesc)) as f:
-    options.input_files = f.read().splitlines()
-f.close()
 options.input_type = 'ROOT'
 options.input_raw_format = 4.3
 options.evt_max = 2000

@@ -16,6 +16,13 @@ UPGRADE_BANDWIDTH_STUDIES=../upgrade-bandwidth-studies
 
 #List of MC samples available
 MC_list=KstG PhiG K1G LambdaG XiG OmegaG
+#ProdIDs for each MC
+KstG_prodID=75829
+PhiG_prodID=75812
+K1G_prodID=75816
+LambdaG_prodID=76702
+XiG_prodID=109825
+OmegaG_prodID=109823
 
 #List of reconstructibles for each MC
 KstG_reconstructibles=Kplus,piminus
@@ -35,19 +42,35 @@ all: all_MA all_Moore
 #Produce ntuples with events that pass at least one of a collection of HLT lines (FILTERING)
 .PHONY: all_Moore
 
+################################### Input options files ###################################
+#Produce input scripts from the ProdIDs (these commands might need rerunning every few months to update PFNs)
+.PHONY: input_options_LFNs input_options_PFNs
+#This is a prerrequisite for both MooreAnalysis and Moore workflows
+#First, get input LFNs from prodID
+input_options_LFNs_list=$(foreach MC, $(MC_list),Gaudi_inputs/$(MC)_input_LFNs.py)
+input_options_LFNs: $(input_options_LFNs_list)
+$(input_options_LFNs_list): Gaudi_inputs/%_input_LFNs.py:
+	lb-dirac dirac-bookkeeping-get-files --Prod $($*_prodID) --OptionsFile $@
+#Now translate this list into a PFN list which can be used in Gaudi software
+input_options_PFNs_list=$(foreach MC, $(MC_list),Gaudi_inputs/$(MC)_input_PFNs.py)
+input_options_PFNs: $(input_options_PFNs_list)
+$(input_options_PFNs_list): Gaudi_inputs/%_input_PFNs.py: Gaudi_inputs/%_input_LFNs.py
+	lb-dirac dirac-bookkeeping-genXMLCatalog --Options $< --NewOptions $@
+
 ################################### MOORE ANALYSIS PART ###################################
 #Produce ntuples from MooreAnalysis.
+.PHONY: alltuples_MA alleffs_MA
 #They produce MCDecayTreeTuples so all possible events that can be reconstructed with MC matching,
 #just FLAGGING whether they pass the HLT lines of interest or not
-alltuple_MA_list = $(foreach MC, $(MC_list),output/$(MC)/AllLines_MA.root)
+alltuple_MA_list=$(foreach MC, $(MC_list),output/$(MC)/AllLines_MA.root)
 alltuples_MA: $(alltuple_MA_list)
-$(alltuple_MA_list): output/%/AllLines_MA.root:
+$(alltuple_MA_list): output/%/AllLines_MA.root: Gaudi_inputs/%_input_PFNs.py
 	mkdir -p output/$*
-	$(MOOREANALYSIS)/run gaudirun.py MooreAnalysis_Scripts/$*.py MooreAnalysis_Scripts/AllLines.py
+	$(MOOREANALYSIS)/run gaudirun.py MooreAnalysis_Scripts/$*.py MooreAnalysis_Scripts/AllLines.py Gaudi_inputs/$*_input_PFNs.py
 
 #Produce efficiency results by using the ntuple info
 #We use reconstructible children, which only takes children with pseudorapidity in LHCb range
-alleff_MA_list = $(foreach MC, $(MC_list),output/$(MC)/AllLines_eff_MA.txt)
+alleff_MA_list=$(foreach MC, $(MC_list),output/$(MC)/AllLines_eff_MA.txt)
 alleffs_MA: $(alleff_MA_list)
 $(alleff_MA_list): output/%/AllLines_eff_MA.txt: output/%/AllLines_MA.root
 	$(MOOREANALYSIS)/run $(MOOREANALYSIS)/HltEfficiencyChecker/scripts/hlt_line_efficiencies.py $< --level Hlt2 --reconstructible-children=$($*_reconstructibles) > $@
@@ -57,12 +80,13 @@ all_MA: alleffs_MA
 
 ################################### MOORE PART ###################################
 #Produce DSTs from Moore.
+.PHONY: allDSTs_Moore allEvtSizes_Moore alltuples_Moore
 #They produce FILTERED DSTs where only events that pass any HLT line are stored.
 allDST_Moore_list=$(foreach MC, $(MC_list),output/$(MC)/AllLines_Moore.mdst)
 allDSTs_Moore: $(allDST_Moore_list)
-$(allDST_Moore_list): output/%/AllLines_Moore.mdst:
+$(allDST_Moore_list): output/%/AllLines_Moore.mdst: Gaudi_inputs/%_input_PFNs.py
 	mkdir -p output/$*
-	$(MOORE)/run gaudirun.py Moore_Scripts/$*.py Moore_Scripts/AllLines.py | tee output/$*/AllLines_Moore.out
+	$(MOORE)/run gaudirun.py Moore_Scripts/$*.py Moore_Scripts/AllLines.py Gaudi_inputs/$*_input_PFNs.py | tee output/$*/AllLines_Moore.out
 	rm -f test_catalog.xml
 
 #Once the mDSTs have been produced, we can run a hacked script from upgrade-bandwidth-studies
@@ -79,6 +103,7 @@ $(alltuple_Moore_list): output/%/AllLines_Moore.root: output/%/AllLines_Moore.md
 	$(DAVINCI)/run gaudirun.py DaVinci_Scripts/$*.py DaVinci_Scripts/AllLines.py
 
 #We have the ntuples, now time to extract the multiplicity of each extra container.
+.PHONY: HHGamma_multiplicities HHGammaEE_multiplicities HHHGamma_multiplicities HHHGammaEE_multiplicities
 #For each line, we loop over all the containers
 #HHGamma
 HHGamma_multiplicity_list=$(foreach extra_container, $(extra_container_list), output/HHGamma_${extra_container}_multiplicity.txt)

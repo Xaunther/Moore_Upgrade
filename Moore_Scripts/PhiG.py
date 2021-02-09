@@ -13,12 +13,9 @@ try:
 except:
     pass
 
-with open("DSTs/{0}_{1}_MagDown.dir".format(decname, decdesc)) as f:
-    options.input_files = f.read().splitlines()
-f.close()
 options.input_type = 'ROOT'
 options.input_raw_format = 4.3
-options.evt_max = -1
+options.evt_max = 20000
 options.print_freq = 250
 options.data_type = 'Upgrade'
 options.dddb_tag = 'dddb-20171126'
