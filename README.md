@@ -20,6 +20,7 @@ The flow is controlled with a makefile. The MCs used are `KstG, PhiG, K1G, Lambd
 The outputs are all saved in the output folder. Interesting results are all tagged in the repository so that they can be accessed in the future. The list of previous and a short description is added here.
 
 - [Loose_extra_cuts_2k](https://gitlab.cern.ch/aalfonso/moore_upgrade/-/tree/Loose_extra_cuts_2k): Loose extraselection cuts. Ran on 2000 events per MC sample.
+- [Average_extra_cuts_2k](https://gitlab.cern.ch/aalfonso/moore_upgrade/-/tree/Average_extra_cuts_2k): Average extraselection cuts with maximum 3-4 of each extra particles per event. Ran on 2000 events per MC sample.
 
 ## Dependencies
 
