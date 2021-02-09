@@ -1,11 +1,11 @@
-Multiplicity applied on  output/KstG/AllLines_Moore.root  output/PhiG/AllLines_Moore.root  output/K1G/AllLines_Moore.root  output/LambdaG/AllLines_Moore.root  output/XiG/AllLines_Moore.root  output/OmegaG/AllLines_Moore.root, using: 
+Multiplicity applied on output/KstG/AllLines_Moore.root output/PhiG/AllLines_Moore.root output/K1G/AllLines_Moore.root output/LambdaG/AllLines_Moore.root output/XiG/AllLines_Moore.root output/OmegaG/AllLines_Moore.root, using: 
 Reference Tree: HHHGammaEETuple/DecayTree
 Extra Tree: HHHGammaEE_ExtraGammaTuple/DecayTree
 
                Multiplicity for each cut               
 -------------------------------------------------------
-gamma_PT > 1000  |  4.75
-gamma_PT > 1100  |  3
+gamma_PT > 1000  |  2
+gamma_PT > 1100  |  2
 gamma_PT > 1200  |  2
 gamma_PT > 1300  |  2
 gamma_PT > 1400  |  2
