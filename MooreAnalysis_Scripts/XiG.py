@@ -24,8 +24,6 @@ except:
 
 options.input_type = 'ROOT'
 options.input_raw_format = 4.3
-options.evt_max = 2000
-options.print_freq = 50
 options.data_type = 'Upgrade'
 options.dddb_tag = 'dddb-20190223'
 options.conddb_tag = 'sim-20180530-vc-md100'

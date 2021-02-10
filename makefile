@@ -66,7 +66,7 @@ alltuple_MA_list=$(foreach MC, $(MC_list),output/$(MC)/AllLines_MA.root)
 alltuples_MA: $(alltuple_MA_list)
 $(alltuple_MA_list): output/%/AllLines_MA.root: Gaudi_inputs/%_input_PFNs.py
 	mkdir -p output/$*
-	$(MOOREANALYSIS)/run gaudirun.py MooreAnalysis_Scripts/$*.py MooreAnalysis_Scripts/AllLines.py Gaudi_inputs/$*_input_PFNs.py
+	$(MOOREANALYSIS)/run gaudirun.py MooreAnalysis_Scripts/$*.py MooreAnalysis_Scripts/AllLines.py Gaudi_inputs/$*_input_PFNs.py options/2000_Evts.py
 
 #Produce efficiency results by using the ntuple info
 #We use reconstructible children, which only takes children with pseudorapidity in LHCb range
@@ -86,14 +86,14 @@ allDST_Moore_list=$(foreach MC, $(MC_list),output/$(MC)/AllLines_Moore.mdst)
 allDSTs_Moore: $(allDST_Moore_list)
 $(allDST_Moore_list): output/%/AllLines_Moore.mdst: Gaudi_inputs/%_input_PFNs.py
 	mkdir -p output/$*
-	$(MOORE)/run gaudirun.py Moore_Scripts/$*.py Moore_Scripts/AllLines.py Gaudi_inputs/$*_input_PFNs.py | tee output/$*/AllLines_Moore.out
+	$(MOORE)/run gaudirun.py Moore_Scripts/$*.py Moore_Scripts/AllLines.py Gaudi_inputs/$*_input_PFNs.py options/20000_Evts.py | tee output/$*/AllLines_Moore.out
 	rm -f test_catalog.xml
 
 #Once the mDSTs have been produced, we can run a hacked script from upgrade-bandwidth-studies
 allEvtSizes_Moore_list=$(foreach MC, $(MC_list),output/$(MC)/AllLines_EvtSize_Moore.txt)
 allEvtSizes_Moore: $(allEvtSizes_Moore_list)
 $(allEvtSizes_Moore_list): output/%/AllLines_EvtSize_Moore.txt: output/%/AllLines_Moore.mdst
-	env BINARY_TAG=x86_64-centos7-gcc9-opt $(UPGRADE_BANDWIDTH_STUDIES)/run python options/event_size.py $< --path=/Event/HLT2 --banned Sim MC | tee $@
+	env BINARY_TAG=x86_64-centos7-gcc9-opt $(UPGRADE_BANDWIDTH_STUDIES)/run python scripts/event_size.py $< --path=/Event/HLT2 --banned Sim MC | tee $@
 
 
 #Time to produce ntuples
