@@ -10,10 +10,6 @@ DAVINCI=$(STACKDIR)/DaVinci
 #Needs compilation before running
 ANALYSIS_TOOLS_ROOT=../root
 
-#Folder with upgrade-bandwith-studies repo (https://gitlab.cern.ch/lhcb-HLT/upgrade-bandwidth-studies)
-#Also needs compilation
-UPGRADE_BANDWIDTH_STUDIES=../upgrade-bandwidth-studies
-
 #List of MC samples available
 MC_list=KstG PhiG K1G LambdaG XiG OmegaG
 #ProdIDs for each MC
@@ -93,7 +89,7 @@ $(allDST_Moore_list): output/%/AllLines_Moore.mdst: Gaudi_inputs/%_input_PFNs.py
 allEvtSizes_Moore_list=$(foreach MC, $(MC_list),output/$(MC)/AllLines_EvtSize_Moore.txt)
 allEvtSizes_Moore: $(allEvtSizes_Moore_list)
 $(allEvtSizes_Moore_list): output/%/AllLines_EvtSize_Moore.txt: output/%/AllLines_Moore.mdst
-	env BINARY_TAG=x86_64-centos7-gcc9-opt $(UPGRADE_BANDWIDTH_STUDIES)/run python scripts/event_size.py $< --path=/Event/HLT2 --banned Sim MC | tee $@
+	$(MOORE)/run python scripts/event_size.py $< --path=/Event/HLT2 --banned Sim MC | tee $@
 
 
 #Time to produce ntuples
