@@ -4,19 +4,100 @@ Extra Tree: HHGammaEE_ExtraHadronTuple/DecayTree
 
                Multiplicity for each cut               
 -------------------------------------------------------
-pi_PT > 500             |  3.0625
-pi_PT > 600             |  3.0625
-pi_PT > 700             |  3.0625
-pi_PT > 800             |  3.0625
-pi_PT > 900             |  2.53125
-pi_PT > 1000            |  2.15625
-pi_IPCHI2_OWNPV < 0.05  |  0.40625
-pi_IPCHI2_OWNPV < 0.06  |  0.53125
-pi_IPCHI2_OWNPV < 0.07  |  0.53125
-pi_IPCHI2_OWNPV < 0.08  |  0.59375
-pi_IPCHI2_OWNPV < 0.09  |  0.6875
-pi_IPCHI2_OWNPV < 0.1   |  0.6875
-pi_IPCHI2_OWNPV < 0.2   |  1.40625
-pi_IPCHI2_OWNPV < 0.3   |  1.90625
-pi_IPCHI2_OWNPV < 0.4   |  2.4375
-pi_IPCHI2_OWNPV < 0.5   |  3.03125
+pi_PT > 500                          |  20.4242
+pi_PT > 600                          |  20.4242
+pi_PT > 700                          |  20.4242
+pi_PT > 800                          |  20.4242
+pi_PT > 900                          |  17.3636
+pi_PT > 1000                         |  14.9091
+pi_PT > 800 && pi_MIPCHI2DV > 0      |  20.4242
+pi_PT > 800 && pi_MIPCHI2DV > 0.5    |  17.0909
+pi_PT > 800 && pi_MIPCHI2DV > 1.0    |  15.3636
+pi_PT > 800 && pi_MIPCHI2DV > 1.5    |  13.6061
+pi_PT > 800 && pi_MIPCHI2DV > 2.0    |  11.9697
+pi_PT > 800 && pi_MIPCHI2DV > 2.5    |  10.9091
+pi_PT > 800 && pi_MIPCHI2DV > 3.0    |  10.1818
+pi_PT > 800 && pi_MIPCHI2DV > 3.5    |  9.42424
+pi_PT > 800 && pi_MIPCHI2DV > 4.0    |  8.90909
+pi_PT > 800 && pi_MIPCHI2DV > 4.5    |  8.48485
+pi_PT > 800 && pi_MIPCHI2DV > 5.0    |  8.0303
+pi_PT > 800 && pi_MIPCHI2DV > 6.0    |  7.48485
+pi_PT > 800 && pi_MIPCHI2DV > 7.0    |  6.93939
+pi_PT > 800 && pi_MIPCHI2DV > 8.0    |  6.60606
+pi_PT > 800 && pi_MIPCHI2DV > 9.0    |  6.36364
+pi_PT > 800 && pi_MIPCHI2DV > 10.0   |  6.30303
+pi_PT > 800 && pi_MIPCHI2DV > 11.0   |  6.15152
+pi_PT > 800 && pi_MIPCHI2DV > 12.0   |  5.90909
+pi_PT > 800 && pi_MIPCHI2DV > 13.0   |  5.87879
+pi_PT > 800 && pi_MIPCHI2DV > 14.0   |  5.78788
+pi_PT > 800 && pi_MIPCHI2DV > 15.0   |  5.75758
+pi_PT > 800 && pi_MIPCHI2DV > 16.0   |  5.72727
+pi_PT > 800 && pi_MIPCHI2DV > 17.0   |  5.69697
+pi_PT > 800 && pi_MIPCHI2DV > 18.0   |  5.66667
+pi_PT > 800 && pi_MIPCHI2DV > 19.0   |  5.63636
+pi_PT > 800 && pi_MIPCHI2DV > 20.0   |  5.60606
+pi_PT > 800 && pi_MIPCHI2DV > 21.0   |  5.48485
+pi_PT > 800 && pi_MIPCHI2DV > 22.0   |  5.48485
+pi_PT > 800 && pi_MIPCHI2DV > 23.0   |  5.48485
+pi_PT > 800 && pi_MIPCHI2DV > 24.0   |  5.48485
+pi_PT > 800 && pi_MIPCHI2DV > 25.0   |  5.48485
+pi_PT > 800 && pi_MIPCHI2DV > 0.5    |  17.0909
+pi_PT > 800 && pi_MIPCHI2DV > 1.0    |  15.3636
+pi_PT > 900 && pi_MIPCHI2DV > 0      |  17.3636
+pi_PT > 900 && pi_MIPCHI2DV > 1.5    |  11.9697
+pi_PT > 900 && pi_MIPCHI2DV > 2.0    |  10.6364
+pi_PT > 900 && pi_MIPCHI2DV > 2.5    |  9.63636
+pi_PT > 900 && pi_MIPCHI2DV > 3.0    |  9
+pi_PT > 900 && pi_MIPCHI2DV > 3.5    |  8.30303
+pi_PT > 900 && pi_MIPCHI2DV > 4.0    |  7.81818
+pi_PT > 900 && pi_MIPCHI2DV > 4.5    |  7.42424
+pi_PT > 900 && pi_MIPCHI2DV > 5.0    |  7.12121
+pi_PT > 900 && pi_MIPCHI2DV > 6.0    |  6.69697
+pi_PT > 900 && pi_MIPCHI2DV > 7.0    |  6.24242
+pi_PT > 900 && pi_MIPCHI2DV > 8.0    |  5.90909
+pi_PT > 900 && pi_MIPCHI2DV > 9.0    |  5.66667
+pi_PT > 900 && pi_MIPCHI2DV > 10.0   |  5.60606
+pi_PT > 900 && pi_MIPCHI2DV > 11.0   |  5.54545
+pi_PT > 900 && pi_MIPCHI2DV > 12.0   |  5.30303
+pi_PT > 900 && pi_MIPCHI2DV > 13.0   |  5.27273
+pi_PT > 900 && pi_MIPCHI2DV > 14.0   |  5.21212
+pi_PT > 900 && pi_MIPCHI2DV > 15.0   |  5.18182
+pi_PT > 900 && pi_MIPCHI2DV > 16.0   |  5.15152
+pi_PT > 900 && pi_MIPCHI2DV > 17.0   |  5.15152
+pi_PT > 900 && pi_MIPCHI2DV > 18.0   |  5.12121
+pi_PT > 900 && pi_MIPCHI2DV > 19.0   |  5.09091
+pi_PT > 900 && pi_MIPCHI2DV > 20.0   |  5.06061
+pi_PT > 900 && pi_MIPCHI2DV > 21.0   |  4.9697
+pi_PT > 900 && pi_MIPCHI2DV > 22.0   |  4.9697
+pi_PT > 900 && pi_MIPCHI2DV > 23.0   |  4.9697
+pi_PT > 900 && pi_MIPCHI2DV > 24.0   |  4.9697
+pi_PT > 900 && pi_MIPCHI2DV > 25.0   |  4.9697
+pi_PT > 1000 && pi_MIPCHI2DV > 0     |  14.9091
+pi_PT > 1000 && pi_MIPCHI2DV > 1.5   |  10.4242
+pi_PT > 1000 && pi_MIPCHI2DV > 2.0   |  9.21212
+pi_PT > 1000 && pi_MIPCHI2DV > 2.5   |  8.33333
+pi_PT > 1000 && pi_MIPCHI2DV > 3.0   |  7.87879
+pi_PT > 1000 && pi_MIPCHI2DV > 3.5   |  7.30303
+pi_PT > 1000 && pi_MIPCHI2DV > 4.0   |  6.93939
+pi_PT > 1000 && pi_MIPCHI2DV > 4.5   |  6.60606
+pi_PT > 1000 && pi_MIPCHI2DV > 5.0   |  6.39394
+pi_PT > 1000 && pi_MIPCHI2DV > 6.0   |  6
+pi_PT > 1000 && pi_MIPCHI2DV > 7.0   |  5.69697
+pi_PT > 1000 && pi_MIPCHI2DV > 8.0   |  5.42424
+pi_PT > 1000 && pi_MIPCHI2DV > 9.0   |  5.24242
+pi_PT > 1000 && pi_MIPCHI2DV > 10.0  |  5.18182
+pi_PT > 1000 && pi_MIPCHI2DV > 11.0  |  5.15152
+pi_PT > 1000 && pi_MIPCHI2DV > 12.0  |  4.9697
+pi_PT > 1000 && pi_MIPCHI2DV > 13.0  |  4.93939
+pi_PT > 1000 && pi_MIPCHI2DV > 14.0  |  4.87879
+pi_PT > 1000 && pi_MIPCHI2DV > 15.0  |  4.84848
+pi_PT > 1000 && pi_MIPCHI2DV > 16.0  |  4.81818
+pi_PT > 1000 && pi_MIPCHI2DV > 17.0  |  4.81818
+pi_PT > 1000 && pi_MIPCHI2DV > 18.0  |  4.81818
+pi_PT > 1000 && pi_MIPCHI2DV > 19.0  |  4.78788
+pi_PT > 1000 && pi_MIPCHI2DV > 20.0  |  4.75758
+pi_PT > 1000 && pi_MIPCHI2DV > 21.0  |  4.69697
+pi_PT > 1000 && pi_MIPCHI2DV > 22.0  |  4.69697
+pi_PT > 1000 && pi_MIPCHI2DV > 23.0  |  4.69697
+pi_PT > 1000 && pi_MIPCHI2DV > 24.0  |  4.69697
+pi_PT > 1000 && pi_MIPCHI2DV > 25.0  |  4.69697

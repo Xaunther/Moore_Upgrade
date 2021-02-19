@@ -15,6 +15,9 @@ DEFAULT_TUPLE_TOOLS = (
     #"MCTupleToolKinematic",
 )
 
+#List of extra LoKi variables to add
+LoKi_variables = {"MIPCHI2DV": "MIPCHI2DV(PRIMARY)"}
+
 
 #Returns full decay descriptor for a given key
 def get_full_decaydescriptor(linename):
@@ -144,12 +147,10 @@ def get_extra_inputs(linename, extraname):
     ]
     #Extra Lambda
     extra_inputs["ExtraLambda"] = [
-        AutomaticData(
-            "Hlt2BTo{0}_Inclusive_Line/ExtraLambdaLL/Particles".format(
-                linename)).outputLocation(),
-        AutomaticData(
-            "Hlt2BTo{0}_Inclusive_Line/ExtraLambdaDD/Particles".format(
-                linename)).outputLocation(),
+        AutomaticData("Hlt2BTo{0}_Inclusive_Line/ExtraLambdaLL/Particles".
+                      format(linename)).outputLocation(),
+        AutomaticData("Hlt2BTo{0}_Inclusive_Line/ExtraLambdaDD/Particles".
+                      format(linename)).outputLocation(),
     ]
     #Extra Gamma
     extra_inputs["ExtraGamma"] = [
@@ -158,14 +159,12 @@ def get_extra_inputs(linename, extraname):
     ]
     #Extra Pi0Merged
     extra_inputs["ExtraPi0Merged"] = [
-        AutomaticData(
-            "Hlt2BTo{0}_Inclusive_Line/ExtraPi0Merged/Particles".format(
-                linename)).outputLocation(),
+        AutomaticData("Hlt2BTo{0}_Inclusive_Line/ExtraPi0Merged/Particles".
+                      format(linename)).outputLocation(),
     ]
     extra_inputs["ExtraPi0Resolved"] = [
-        AutomaticData(
-            "Hlt2BTo{0}_Inclusive_Line/ExtraPi0Resolved/Particles".format(
-                linename)).outputLocation(),
+        AutomaticData("Hlt2BTo{0}_Inclusive_Line/ExtraPi0Resolved/Particles".
+                      format(linename)).outputLocation(),
     ]
     return extra_inputs[extraname]
 
@@ -199,6 +198,10 @@ def get_extra_ntuples(linename):
             extrasel)].addTupleTool("TupleToolANNPID").ANNPIDTunes = [
                 "MC15TuneV1"
             ]
+        lokitool = extra_ntuples["{0}_{1}".format(
+            linename, extrasel)].addTupleTool(
+                "LoKi::Hybrid::TupleTool/{0}_{1}".format(linename, extrasel))
+        lokitool.Variables = LoKi_variables
     return extra_ntuples
 
 
@@ -229,6 +232,9 @@ def get_ntuples():
         #Tupletools
         radiative_ntuples[linename].addTupleTool(
             "TupleToolANNPID").ANNPIDTunes = ["MC15TuneV1"]
+        lokitool = radiative_ntuples[linename].addTupleTool(
+            "LoKi::Hybrid::TupleTool/{0}".format(linename))
+        lokitool.Variables = LoKi_variables
         #Add extra selections
         radiative_ntuples.update(get_extra_ntuples(linename))
 

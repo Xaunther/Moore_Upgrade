@@ -1,43 +1,43 @@
-== Refs (0 B) ==
+[?1034h== Refs (0 B) ==
 +------+------------------+----------------+-------+
 | Path | Uncompressed (B) | Compressed (B) | Ratio |
 +------+------------------+----------------+-------+
 +------+------------------+----------------+-------+
-== Event (18632 B/event) ==
+== Event (37466 B/event) ==
 +----------------------------------------------+------------------+----------------+-------+
 | Path                                         | Uncompressed (B) | Compressed (B) | Ratio |
 +----------------------------------------------+------------------+----------------+-------+
-| /Event/HLT2                                  |       151        |       92       |  1.64 |
-| /Event/HLT2/pPhys                            |       336        |      255       |  1.32 |
-| /Event/HLT2/pPhys/FlavourTags                |       141        |       91       |  1.54 |
-| /Event/HLT2/pPhys/P2IntRelations             |       128        |       80       |  1.59 |
-| /Event/HLT2/pPhys/PartToRelatedInfoRelations |       154        |      104       |  1.48 |
-| /Event/HLT2/pPhys/Particles                  |       7541       |      2690      |  2.80 |
-| /Event/HLT2/pPhys/RecVertices                |       151        |       96       |  1.57 |
-| /Event/HLT2/pPhys/Relations                  |       821        |      394       |  2.08 |
-| /Event/HLT2/pPhys/Vertices                   |       1166       |      509       |  2.29 |
-| /Event/HLT2/pRec                             |       246        |      147       |  1.67 |
-| /Event/HLT2/pRec/Calo                        |       187        |      187       |  1.00 |
-| /Event/HLT2/pRec/Calo/Electrons              |       804        |      617       |  1.30 |
-| /Event/HLT2/pRec/Calo/MergedPi0s             |       279        |      174       |  1.60 |
-| /Event/HLT2/pRec/Calo/Photons                |       1339       |      948       |  1.41 |
-| /Event/HLT2/pRec/Calo/SplitPhotons           |       363        |      307       |  1.18 |
-| /Event/HLT2/pRec/Muon                        |       125        |       80       |  1.55 |
-| /Event/HLT2/pRec/Muon/CustomPIDs             |       109        |       75       |  1.45 |
-| /Event/HLT2/pRec/Muon/MuonPID                |       107        |       74       |  1.46 |
-| /Event/HLT2/pRec/ProtoP                      |       157        |       98       |  1.60 |
-| /Event/HLT2/pRec/ProtoP/Charged              |       4306       |      1715      |  2.51 |
-| /Event/HLT2/pRec/ProtoP/Custom               |       141        |       92       |  1.53 |
-| /Event/HLT2/pRec/ProtoP/Neutrals             |       2522       |      1001      |  2.52 |
-| /Event/HLT2/pRec/Rich                        |       125        |       80       |  1.55 |
-| /Event/HLT2/pRec/Rich/CustomPIDs             |       109        |       75       |  1.45 |
-| /Event/HLT2/pRec/Rich/PIDs                   |       646        |      415       |  1.56 |
-| /Event/HLT2/pRec/Track                       |       126        |       81       |  1.55 |
-| /Event/HLT2/pRec/Track/Best                  |       9302       |      5709      |  1.63 |
-| /Event/HLT2/pRec/Track/Custom                |       4140       |      1928      |  2.15 |
-| /Event/HLT2/pRec/Vertex                      |        95        |       64       |  1.49 |
-| /Event/HLT2/pRec/Vertex/Primary              |       615        |      440       |  1.40 |
+| /Event/HLT2                                  |       162        |      105       |  1.55 |
+| /Event/HLT2/pPhys                            |       346        |      265       |  1.31 |
+| /Event/HLT2/pPhys/FlavourTags                |       154        |      113       |  1.37 |
+| /Event/HLT2/pPhys/P2IntRelations             |       136        |       93       |  1.46 |
+| /Event/HLT2/pPhys/PartToRelatedInfoRelations |       170        |      129       |  1.32 |
+| /Event/HLT2/pPhys/Particles                  |      12062       |      4301      |  2.80 |
+| /Event/HLT2/pPhys/RecVertices                |       164        |      121       |  1.35 |
+| /Event/HLT2/pPhys/Relations                  |       1302       |      487       |  2.67 |
+| /Event/HLT2/pPhys/Vertices                   |       1136       |      554       |  2.05 |
+| /Event/HLT2/pRec                             |       261        |      168       |  1.55 |
+| /Event/HLT2/pRec/Calo                        |       205        |      204       |  1.00 |
+| /Event/HLT2/pRec/Calo/Electrons              |       2003       |      1347      |  1.49 |
+| /Event/HLT2/pRec/Calo/MergedPi0s             |       308        |      200       |  1.54 |
+| /Event/HLT2/pRec/Calo/Photons                |       1708       |      1133      |  1.51 |
+| /Event/HLT2/pRec/Calo/SplitPhotons           |       397        |      380       |  1.05 |
+| /Event/HLT2/pRec/Muon                        |       145        |      108       |  1.34 |
+| /Event/HLT2/pRec/Muon/CustomPIDs             |       117        |       90       |  1.30 |
+| /Event/HLT2/pRec/Muon/MuonPID                |       115        |       88       |  1.31 |
+| /Event/HLT2/pRec/ProtoP                      |       170        |      113       |  1.50 |
+| /Event/HLT2/pRec/ProtoP/Charged              |      12521       |      4301      |  2.91 |
+| /Event/HLT2/pRec/ProtoP/Custom               |       155        |      114       |  1.36 |
+| /Event/HLT2/pRec/ProtoP/Neutrals             |       1946       |      727       |  2.68 |
+| /Event/HLT2/pRec/Rich                        |       145        |      108       |  1.34 |
+| /Event/HLT2/pRec/Rich/CustomPIDs             |       117        |       90       |  1.30 |
+| /Event/HLT2/pRec/Rich/PIDs                   |       1599       |      771       |  2.07 |
+| /Event/HLT2/pRec/Track                       |       145        |      108       |  1.34 |
+| /Event/HLT2/pRec/Track/Best                  |      27777       |     15921      |  1.74 |
+| /Event/HLT2/pRec/Track/Custom                |      11889       |      4841      |  2.46 |
+| /Event/HLT2/pRec/Vertex                      |       109        |       79       |  1.38 |
+| /Event/HLT2/pRec/Vertex/Primary              |       524        |      394       |  1.33 |
 +----------------------------------------------+------------------+----------------+-------+
 == Total ==
-Disk size: 12485 kB
-Trees size: 12458 kB
+Disk size: 6392 kB
+Trees size: 6368 kB

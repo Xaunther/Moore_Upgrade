@@ -4,24 +4,24 @@ Extra Tree: HHGamma_ExtraGammaTuple/DecayTree
 
                Multiplicity for each cut               
 -------------------------------------------------------
-gamma_PT > 1000  |  3.08595
-gamma_PT > 1100  |  3.08595
-gamma_PT > 1200  |  3.08595
-gamma_PT > 1300  |  3.08595
-gamma_PT > 1400  |  3.08595
-gamma_PT > 1500  |  2.69182
-gamma_PT > 1600  |  2.38784
-gamma_PT > 1700  |  2.15304
-gamma_PT > 1800  |  1.95388
-gamma_PT > 1900  |  1.80294
-gamma_PT > 2000  |  1.67925
-gamma_PT > 2100  |  1.53669
-gamma_PT > 2200  |  1.43396
-gamma_PT > 2300  |  1.33753
-gamma_PT > 2400  |  1.26205
-gamma_PT > 2500  |  1.19078
-gamma_PT > 2600  |  1.12159
-gamma_PT > 2700  |  1.04403
-gamma_PT > 2800  |  0.987421
-gamma_PT > 2900  |  0.93501
-gamma_PT > 3000  |  0.87631
+gamma_PT > 1000  |  2.45702
+gamma_PT > 1100  |  2.45702
+gamma_PT > 1200  |  2.45702
+gamma_PT > 1300  |  2.45702
+gamma_PT > 1400  |  2.45702
+gamma_PT > 1500  |  2.45702
+gamma_PT > 1600  |  2.45702
+gamma_PT > 1700  |  2.22013
+gamma_PT > 1800  |  2.02096
+gamma_PT > 1900  |  1.88679
+gamma_PT > 2000  |  1.75472
+gamma_PT > 2100  |  1.61635
+gamma_PT > 2200  |  1.4717
+gamma_PT > 2300  |  1.36059
+gamma_PT > 2400  |  1.27463
+gamma_PT > 2500  |  1.19287
+gamma_PT > 2600  |  1.12788
+gamma_PT > 2700  |  1.06289
+gamma_PT > 2800  |  1.00629
+gamma_PT > 2900  |  0.960168
+gamma_PT > 3000  |  0.916143
