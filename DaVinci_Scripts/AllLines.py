@@ -13,9 +13,8 @@ IOHelper('ROOT').inputFiles(
     ['output/{0}/{1}_Moore.mdst'.format(os.environ["DECNAME"], linename)],
     clear=True)
 
-dtts = get_ntuples()
-
+dtts, seqs = get_ntuples()
 #DaVinci configuration. #Use ALL declared dtts!
-DaVinci().UserAlgorithms = dtts.values()
+DaVinci().UserAlgorithms = seqs.values() + dtts.values()
 DaVinci().TupleFile = 'output/{0}/{1}_Moore.root'.format(
     os.environ["DECNAME"], linename)
