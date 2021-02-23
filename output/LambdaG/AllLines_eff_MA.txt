@@ -1,11 +1,11 @@
-------------------------------------------------------------------------------------
-INFO:	 Starting /afs/cern.ch/work/a/aalfonso/private/LHCb/stack/MooreAnalysis/HltEfficiencyChecker/scripts/hlt_line_efficiencies.py...
+[?1034h------------------------------------------------------------------------------------
+INFO:	 Starting /home/mettatonvm/LHCb/stack/MooreAnalysis/HltEfficiencyChecker/scripts/hlt_line_efficiencies.py...
 ------------------------------------------------------------------------------------
 INFO:	 No lines specified. Defaulting to all...
 Hlt2 integrated efficiencies for the lines with denominator: CanRecoChildren
 ------------------------------------------------------------------------------------
+Line:	 Hlt2BToHHGammaEE_Inclusive_LineDecision 	 Efficiency:	 0.000 +/- 0.000
 Line:	 Hlt2BToHHGamma_Inclusive_LineDecision   	 Efficiency:	 0.000 +/- 0.000
-Line:	 Hlt2BToHHGammaee_Inclusive_LineDecision 	 Efficiency:	 0.000 +/- 0.000
 Line:	 Hlt2BToHHHGammaEE_Inclusive_LineDecision	 Efficiency:	 0.000 +/- 0.000
 Line:	 Hlt2BToHHHGamma_Inclusive_LineDecision  	 Efficiency:	 0.000 +/- 0.000
 ------------------------------------------------------------------------------------
