@@ -62,7 +62,7 @@ alltuple_MA_list=$(foreach MC, $(MC_list),output/$(MC)/AllLines_MA.root)
 alltuples_MA: $(alltuple_MA_list)
 $(alltuple_MA_list): output/%/AllLines_MA.root: Gaudi_inputs/%_input_PFNs.py
 	mkdir -p output/$*
-	$(MOOREANALYSIS)/run gaudirun.py MooreAnalysis_Scripts/$*.py options/2000_Evts.py MooreAnalysis_Scripts/AllLines.py Gaudi_inputs/$*_input_PFNs.py
+	$(MOOREANALYSIS)/run gaudirun.py MooreAnalysis_Scripts/$*.py options/2000_Evts.py MooreAnalysis_Scripts/AllLines.py Gaudi_inputs/$*_input_PFNs.py | tee output/$*/AllLines_MA.out
 
 #Produce efficiency results by using the ntuple info
 #We use reconstructible children, which only takes children with pseudorapidity in LHCb range
@@ -71,8 +71,13 @@ alleffs_MA: $(alleff_MA_list)
 $(alleff_MA_list): output/%/AllLines_eff_MA.txt: output/%/AllLines_MA.root
 	$(MOOREANALYSIS)/run $(MOOREANALYSIS)/HltEfficiencyChecker/scripts/hlt_line_efficiencies.py $< --level Hlt2 --reconstructible-children=$($*_reconstructibles) > $@
 
+#Another thing, get correlation matrices for the 4 trigger lines, in each MC
+allcorrelations_MA_list=$(foreach MC, $(MC_list),output/$(MC)/CorrelationMatrix_MA.md)
+allcorrelations_MA: $(allcorrelations_MA_list)
+$(allcorrelations_MA_list): output/%/CorrelationMatrix_MA.md: output/%/AllLines_MA.root Cuts/HLT2_radiative_cuts.txt
+	$(ANALYSIS_TOOLS_ROOT)/CutCorrelation.out $^ $@ MCDecayTreeTuple/MCDecayTree
 #Run all Moore Analysis part
-all_MA: alleffs_MA
+all_MA: alleffs_MA allcorrelations_MA
 
 ################################### MOORE PART ###################################
 #Produce DSTs from Moore.
@@ -82,7 +87,7 @@ allDST_Moore_list=$(foreach MC, $(MC_list),output/$(MC)/AllLines_Moore.mdst)
 allDSTs_Moore: $(allDST_Moore_list)
 $(allDST_Moore_list): output/%/AllLines_Moore.mdst: Gaudi_inputs/%_input_PFNs.py
 	mkdir -p output/$*
-	$(MOORE)/run gaudirun.py Moore_Scripts/$*.py options/20000_Evts.py Moore_Scripts/AllLines.py Gaudi_inputs/$*_input_PFNs.py | tee output/$*/AllLines_Moore.out
+	$(MOORE)/run gaudirun.py Moore_Scripts/$*.py options/2000_Evts.py Moore_Scripts/AllLines.py Gaudi_inputs/$*_input_PFNs.py | tee output/$*/AllLines_Moore.out
 	rm -f test_catalog.xml
 
 #Once the mDSTs have been produced, we can run a hacked script from upgrade-bandwidth-studies
