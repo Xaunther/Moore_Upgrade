@@ -3,7 +3,7 @@
 | Path | Uncompressed (B) | Compressed (B) | Ratio |
 +------+------------------+----------------+-------+
 +------+------------------+----------------+-------+
-== Event (27290 B/event) ==
+== Event (13112 B/event) ==
 +----------------------------------------------+------------------+----------------+-------+
 | Path                                         | Uncompressed (B) | Compressed (B) | Ratio |
 +----------------------------------------------+------------------+----------------+-------+
@@ -12,32 +12,32 @@
 | /Event/HLT2/pPhys/FlavourTags                |       107        |       41       |  2.60 |
 | /Event/HLT2/pPhys/P2IntRelations             |        99        |       38       |  2.56 |
 | /Event/HLT2/pPhys/PartToRelatedInfoRelations |       117        |       47       |  2.48 |
-| /Event/HLT2/pPhys/Particles                  |       8953       |      3127      |  2.86 |
+| /Event/HLT2/pPhys/Particles                  |       5530       |      2025      |  2.73 |
 | /Event/HLT2/pPhys/RecVertices                |       119        |       46       |  2.58 |
-| /Event/HLT2/pPhys/Relations                  |       1003       |      353       |  2.84 |
+| /Event/HLT2/pPhys/Relations                  |       692        |      292       |  2.36 |
 | /Event/HLT2/pPhys/Vertices                   |       858        |      372       |  2.31 |
 | /Event/HLT2/pRec                             |       211        |       80       |  2.64 |
 | /Event/HLT2/pRec/Calo                        |       155        |      152       |  1.02 |
-| /Event/HLT2/pRec/Calo/Electrons              |       1462       |      997       |  1.47 |
+| /Event/HLT2/pRec/Calo/Electrons              |       587        |      460       |  1.28 |
 | /Event/HLT2/pRec/Calo/MergedPi0s             |       197        |       81       |  2.43 |
-| /Event/HLT2/pRec/Calo/Photons                |       1442       |      984       |  1.47 |
+| /Event/HLT2/pRec/Calo/Photons                |       927        |      679       |  1.37 |
 | /Event/HLT2/pRec/Calo/SplitPhotons           |       264        |      241       |  1.09 |
 | /Event/HLT2/pRec/Muon                        |        99        |       39       |  2.52 |
 | /Event/HLT2/pRec/Muon/CustomPIDs             |        76        |       30       |  2.52 |
 | /Event/HLT2/pRec/Muon/MuonPID                |        75        |       29       |  2.54 |
 | /Event/HLT2/pRec/ProtoP                      |       127        |       48       |  2.62 |
-| /Event/HLT2/pRec/ProtoP/Charged              |       9193       |      3221      |  2.85 |
+| /Event/HLT2/pRec/ProtoP/Charged              |       3039       |      1301      |  2.33 |
 | /Event/HLT2/pRec/ProtoP/Custom               |       107        |       41       |  2.57 |
 | /Event/HLT2/pRec/ProtoP/Neutrals             |       1639       |      672       |  2.44 |
 | /Event/HLT2/pRec/Rich                        |        99        |       39       |  2.52 |
 | /Event/HLT2/pRec/Rich/CustomPIDs             |        76        |       30       |  2.52 |
-| /Event/HLT2/pRec/Rich/PIDs                   |       1198       |      591       |  2.03 |
+| /Event/HLT2/pRec/Rich/PIDs                   |       458        |      277       |  1.65 |
 | /Event/HLT2/pRec/Track                       |        99        |       39       |  2.54 |
-| /Event/HLT2/pRec/Track/Best                  |      20378       |     11789      |  1.73 |
-| /Event/HLT2/pRec/Track/Custom                |       8628       |      3610      |  2.39 |
+| /Event/HLT2/pRec/Track/Best                  |       6424       |      4040      |  1.59 |
+| /Event/HLT2/pRec/Track/Custom                |       2895       |      1420      |  2.04 |
 | /Event/HLT2/pRec/Vertex                      |        71        |       30       |  2.39 |
 | /Event/HLT2/pRec/Vertex/Primary              |       491        |      327       |  1.50 |
 +----------------------------------------------+------------------+----------------+-------+
 == Total ==
-Disk size: 155003 kB
-Trees size: 154898 kB
+Disk size: 151249 kB
+Trees size: 151145 kB
