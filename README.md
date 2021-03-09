@@ -34,10 +34,6 @@ First, LHCb software is needed, and the [makefile](makefile) is prepared to run 
 - **[MooreAnalysis](https://gitlab.cern.ch/lhcb/MooreAnalysis/)**: Helper repository to retrieve efficiencies and/or rates.
 - **[DaVinci](https://gitlab.cern.ch/lhcb/DaVinci)**: Repository to produce ntuples from mDSTs.
 
-### Upgrade-bandwidth-studies
-
-This repository is needed to get the average event size. The repository is [here](https://gitlab.cern.ch/lhcb-HLT/upgrade-bandwidth-studies) and contains instructions on how to compile it. It was a package first used to test upgrade HLT line in a stripping-like fashion. Now one of its scripts is used to get a nice view of the mDST average event size.
-
 ### aalfonso-Analysis-Tools/root
 
 Personal repository with many root scripts. It is [here](https://gitlab.cern.ch/aalfonso-Analysis-Tools/root) and contains instructions on how to compile it. It is used to retrieve the multiplicity of the extraselections.
