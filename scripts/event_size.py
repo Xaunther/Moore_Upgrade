@@ -111,16 +111,16 @@ def event_size(fname, order, pathname, bannednames):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('file', help='DST file to analyse')
-    parser.add_argument('--order',
-                        choices=ORDERING,
-                        default='name',
-                        help='How to order the printed branches')
-    parser.add_argument('--path',
-                        default='',
-                        help='Specify which branches must be shown and summed')
-    parser.add_argument('--banned',
-                        default=None,
-                        nargs='*',
-                        help='Ban branches containing this')
+    parser.add_argument(
+        '--order',
+        choices=ORDERING,
+        default='name',
+        help='How to order the printed branches')
+    parser.add_argument(
+        '--path',
+        default='',
+        help='Specify which branches must be shown and summed')
+    parser.add_argument(
+        '--banned', default=[], nargs='*', help='Ban branches containing this')
     args = parser.parse_args()
     event_size(args.file, args.order, args.path, args.banned)

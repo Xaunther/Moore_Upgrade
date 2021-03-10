@@ -94,7 +94,7 @@ $(allDST_Moore_list): output/%/AllLines_Moore.mdst: Gaudi_inputs/%_input_PFNs.py
 allEvtSizes_Moore_list=$(foreach MC, $(MC_list),output/$(MC)/AllLines_EvtSize_Moore.txt)
 allEvtSizes_Moore: $(allEvtSizes_Moore_list)
 $(allEvtSizes_Moore_list): output/%/AllLines_EvtSize_Moore.txt: output/%/AllLines_Moore.mdst
-	$(MOORE)/run python scripts/event_size.py $< --path=/Event/HLT2 --banned Sim MC | tee $@
+	$(MOORE)/run python scripts/event_size.py $< | tee $@
 
 
 #Time to produce ntuples
