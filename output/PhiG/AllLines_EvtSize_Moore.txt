@@ -7,7 +7,7 @@
 | Links      |       1808       |      797       |  2.27 |
 | Params     |       166        |      166       |  1.00 |
 +------------+------------------+----------------+-------+
-== Event (570241 B/event) ==
+== Event (576184 B/event) ==
 +-----------------------------------+------------------+----------------+-------+
 | Path                              | Uncompressed (B) | Compressed (B) | Ratio |
 +-----------------------------------+------------------+----------------+-------+
@@ -23,7 +23,7 @@
 | /Event/HLT2                       |        70        |       28       |  2.50 |
 | /Event/HLT2/pSim                  |        98        |       38       |  2.55 |
 | /Event/HLT2/pSim/MCParticles      |      17265       |      5819      |  2.97 |
-| /Event/HLT2/pSim/MCVertices       |       9567       |      2813      |  3.40 |
+| /Event/HLT2/pSim/MCVertices       |       9567       |      2811      |  3.40 |
 | /Event/Link                       |       236        |       89       |  2.65 |
 | /Event/Link/Raw                   |       211        |       79       |  2.66 |
 | /Event/Link/Raw/Ecal              |        71        |       29       |  2.42 |
@@ -35,7 +35,7 @@
 | /Event/Link/Raw/Muon              |        71        |       29       |  2.42 |
 | /Event/Link/Raw/Muon/Digits       |       6352       |      1195      |  5.32 |
 | /Event/Link/Raw/UT                |        98        |       39       |  2.49 |
-| /Event/Link/Raw/UT/Clusters       |      36429       |      9863      |  3.69 |
+| /Event/Link/Raw/UT/Clusters       |      36430       |      9865      |  3.69 |
 | /Event/Link/Raw/VP                |        98        |       39       |  2.49 |
 | /Event/Link/Raw/VP/Digits         |      120301      |     32504      |  3.70 |
 | /Event/Link/Rec                   |        98        |       38       |  2.59 |
@@ -65,7 +65,7 @@
 | /Event/NextNext/MC                |        71        |       29       |  2.45 |
 | /Event/NextNext/MC/Header         |       487        |      254       |  1.91 |
 | /Event/PersistReco                |        71        |       29       |  2.44 |
-| /Event/PersistReco/RawEvent       |       4305       |      4283      |  1.01 |
+| /Event/PersistReco/RawEvent       |      10238       |     10215      |  1.00 |
 | /Event/Prev                       |       125        |       47       |  2.64 |
 | /Event/Prev/Gen                   |        98        |       38       |  2.55 |
 | /Event/Prev/Gen/Collisions        |       1221       |      633       |  1.93 |
@@ -83,9 +83,9 @@
 | /Event/Rec/Status                 |       168        |       70       |  2.38 |
 | /Event/Rec/Summary                |       264        |      242       |  1.09 |
 | /Event/Rich                       |        70        |       28       |  2.48 |
-| /Event/Rich/RawEvent              |      32583       |      9773      |  3.33 |
+| /Event/Rich/RawEvent              |      32583       |      9778      |  3.33 |
 | /Event/Tracker                    |        70        |       28       |  2.46 |
-| /Event/Tracker/RawEvent           |      27058       |     17824      |  1.52 |
+| /Event/Tracker/RawEvent           |      27059       |     17828      |  1.52 |
 | /Event/Trigger                    |        70        |       28       |  2.46 |
 | /Event/Trigger/RawEvent           |       516        |      453       |  1.14 |
 | /Event/Unstripped                 |        71        |       29       |  2.44 |
@@ -101,7 +101,7 @@
 | /Event/pRec/Muon                  |        70        |       29       |  2.44 |
 | /Event/pRec/Muon/MuonPID          |       6178       |      753       |  8.20 |
 | /Event/pRec/ProtoP                |        98        |       38       |  2.55 |
-| /Event/pRec/ProtoP/Charged        |      43794       |     12121      |  3.61 |
+| /Event/pRec/ProtoP/Charged        |      43795       |     12123      |  3.61 |
 | /Event/pRec/ProtoP/Neutrals       |      36432       |      7909      |  4.61 |
 | /Event/pRec/Rich                  |        70        |       29       |  2.44 |
 | /Event/pRec/Rich/PIDs             |       6836       |      1849      |  3.70 |
@@ -116,5 +116,5 @@
 | /Event/pSim/MCVertices            |      384112      |     128709     |  2.98 |
 +-----------------------------------+------------------+----------------+-------+
 == Total ==
-Disk size: 148920 kB
-Trees size: 148836 kB
+Disk size: 150472 kB
+Trees size: 150387 kB

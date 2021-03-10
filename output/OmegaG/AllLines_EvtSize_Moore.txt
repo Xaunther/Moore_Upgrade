@@ -7,7 +7,7 @@
 | Links      |       2919       |      1029      |  2.84 |
 | Params     |       168        |      168       |  1.00 |
 +------------+------------------+----------------+-------+
-== Event (3797612 B/event) ==
+== Event (3804884 B/event) ==
 +--------------------------------------------------------+------------------+----------------+-------+
 | Path                                                   | Uncompressed (B) | Compressed (B) | Ratio |
 +--------------------------------------------------------+------------------+----------------+-------+
@@ -22,8 +22,8 @@
 | /Event/HC/RawEvent                                     |       253        |      253       |  1.00 |
 | /Event/HLT2                                            |       237        |      237       |  1.00 |
 | /Event/HLT2/pSim                                       |       271        |      271       |  1.00 |
-| /Event/HLT2/pSim/MCParticles                           |      14564       |      5243      |  2.78 |
-| /Event/HLT2/pSim/MCVertices                            |       8122       |      2691      |  3.02 |
+| /Event/HLT2/pSim/MCParticles                           |      14564       |      5251      |  2.77 |
+| /Event/HLT2/pSim/MCVertices                            |       8122       |      2687      |  3.02 |
 | /Event/Link                                            |       381        |      312       |  1.22 |
 | /Event/Link/MC                                         |       267        |      267       |  1.00 |
 | /Event/Link/MC/Particles2MCRichTracks                  |       8460       |      1599      |  5.29 |
@@ -136,7 +136,7 @@
 | /Event/NextNext/pSim/VP                                |       261        |      261       |  1.00 |
 | /Event/NextNext/pSim/VP/Hits                           |      134294      |     44611      |  3.01 |
 | /Event/PersistReco                                     |       251        |      251       |  1.00 |
-| /Event/PersistReco/RawEvent                            |       4416       |      4416      |  1.00 |
+| /Event/PersistReco/RawEvent                            |      11684       |     11684      |  1.00 |
 | /Event/Prev                                            |       285        |      285       |  1.00 |
 | /Event/Prev/Gen                                        |       269        |      269       |  1.00 |
 | /Event/Prev/Gen/Collisions                             |       1511       |      815       |  1.85 |
@@ -245,5 +245,5 @@
 | /Event/pSim/VP/Hits                                    |      108380      |     35845      |  3.02 |
 +--------------------------------------------------------+------------------+----------------+-------+
 == Total ==
-Disk size: 7626 kB
-Trees size: 7598 kB
+Disk size: 7640 kB
+Trees size: 7613 kB

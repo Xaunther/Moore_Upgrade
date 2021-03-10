@@ -7,7 +7,7 @@
 | Links      |       1900       |      837       |  2.27 |
 | Params     |       165        |      165       |  1.00 |
 +------------+------------------+----------------+-------+
-== Event (615424 B/event) ==
+== Event (621391 B/event) ==
 +-----------------------------------+------------------+----------------+-------+
 | Path                              | Uncompressed (B) | Compressed (B) | Ratio |
 +-----------------------------------+------------------+----------------+-------+
@@ -23,7 +23,7 @@
 | /Event/HLT2                       |        76        |       39       |  1.93 |
 | /Event/HLT2/pSim                  |       105        |       51       |  2.03 |
 | /Event/HLT2/pSim/MCParticles      |      18310       |      6126      |  2.99 |
-| /Event/HLT2/pSim/MCVertices       |      10201       |      3004      |  3.40 |
+| /Event/HLT2/pSim/MCVertices       |      10201       |      3007      |  3.39 |
 | /Event/Link                       |       249        |      116       |  2.13 |
 | /Event/Link/Raw                   |       226        |      110       |  2.04 |
 | /Event/Link/Raw/Ecal              |        78        |       41       |  1.89 |
@@ -67,7 +67,7 @@
 | /Event/NextNext/MC                |        77        |       40       |  1.90 |
 | /Event/NextNext/MC/Header         |       513        |      338       |  1.51 |
 | /Event/PersistReco                |        77        |       40       |  1.90 |
-| /Event/PersistReco/RawEvent       |       5767       |      5747      |  1.00 |
+| /Event/PersistReco/RawEvent       |      11731       |     11711      |  1.00 |
 | /Event/Prev                       |       132        |       62       |  2.11 |
 | /Event/Prev/Gen                   |       105        |       51       |  2.03 |
 | /Event/Prev/Gen/Collisions        |       1244       |      651       |  1.91 |
@@ -120,5 +120,5 @@
 | /Event/pSim/Rich/DigitSummaries   |      131505      |     18050      |  7.29 |
 +-----------------------------------+------------------+----------------+-------+
 == Total ==
-Disk size: 73293 kB
-Trees size: 73238 kB
+Disk size: 74003 kB
+Trees size: 73949 kB
