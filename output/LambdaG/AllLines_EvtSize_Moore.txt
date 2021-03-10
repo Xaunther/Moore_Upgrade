@@ -1,43 +1,124 @@
-[?1034h== Refs (0 B) ==
-+------+------------------+----------------+-------+
-| Path | Uncompressed (B) | Compressed (B) | Ratio |
-+------+------------------+----------------+-------+
-+------+------------------+----------------+-------+
-== Event (20387 B/event) ==
-+----------------------------------------------+------------------+----------------+-------+
-| Path                                         | Uncompressed (B) | Compressed (B) | Ratio |
-+----------------------------------------------+------------------+----------------+-------+
-| /Event/HLT2                                  |       162        |      105       |  1.55 |
-| /Event/HLT2/pPhys                            |       346        |      265       |  1.31 |
-| /Event/HLT2/pPhys/FlavourTags                |       154        |      113       |  1.37 |
-| /Event/HLT2/pPhys/P2IntRelations             |       136        |       93       |  1.46 |
-| /Event/HLT2/pPhys/PartToRelatedInfoRelations |       170        |      129       |  1.32 |
-| /Event/HLT2/pPhys/Particles                  |       7672       |      2954      |  2.60 |
-| /Event/HLT2/pPhys/RecVertices                |       164        |      121       |  1.35 |
-| /Event/HLT2/pPhys/Relations                  |       916        |      434       |  2.11 |
-| /Event/HLT2/pPhys/Vertices                   |       1136       |      554       |  2.05 |
-| /Event/HLT2/pRec                             |       261        |      168       |  1.55 |
-| /Event/HLT2/pRec/Calo                        |       205        |      204       |  1.00 |
-| /Event/HLT2/pRec/Calo/Electrons              |       958        |      745       |  1.29 |
-| /Event/HLT2/pRec/Calo/MergedPi0s             |       308        |      200       |  1.54 |
-| /Event/HLT2/pRec/Calo/Photons                |       1105       |      770       |  1.43 |
-| /Event/HLT2/pRec/Calo/SplitPhotons           |       397        |      380       |  1.05 |
-| /Event/HLT2/pRec/Muon                        |       145        |      108       |  1.34 |
-| /Event/HLT2/pRec/Muon/CustomPIDs             |       117        |       90       |  1.30 |
-| /Event/HLT2/pRec/Muon/MuonPID                |       115        |       88       |  1.31 |
-| /Event/HLT2/pRec/ProtoP                      |       170        |      113       |  1.50 |
-| /Event/HLT2/pRec/ProtoP/Charged              |       5024       |      1991      |  2.52 |
-| /Event/HLT2/pRec/ProtoP/Custom               |       155        |      114       |  1.36 |
-| /Event/HLT2/pRec/ProtoP/Neutrals             |       1946       |      727       |  2.68 |
-| /Event/HLT2/pRec/Rich                        |       145        |      108       |  1.34 |
-| /Event/HLT2/pRec/Rich/CustomPIDs             |       117        |       90       |  1.30 |
-| /Event/HLT2/pRec/Rich/PIDs                   |       741        |      466       |  1.59 |
-| /Event/HLT2/pRec/Track                       |       145        |      108       |  1.34 |
-| /Event/HLT2/pRec/Track/Best                  |      10588       |      6485      |  1.63 |
-| /Event/HLT2/pRec/Track/Custom                |       4778       |      2179      |  2.19 |
-| /Event/HLT2/pRec/Vertex                      |       109        |       79       |  1.38 |
-| /Event/HLT2/pRec/Vertex/Primary              |       524        |      394       |  1.33 |
-+----------------------------------------------+------------------+----------------+-------+
+[?1034h== Refs (2561 B) ==
++------------+------------------+----------------+-------+
+| Path       | Uncompressed (B) | Compressed (B) | Ratio |
++------------+------------------+----------------+-------+
+| Containers |       3312       |      1054      |  3.14 |
+| Databases  |       672        |      501       |  1.34 |
+| Links      |       1900       |      837       |  2.27 |
+| Params     |       169        |      169       |  1.00 |
++------------+------------------+----------------+-------+
+== Event (763118 B/event) ==
++-----------------------------------+------------------+----------------+-------+
+| Path                              | Uncompressed (B) | Compressed (B) | Ratio |
++-----------------------------------+------------------+----------------+-------+
+| /Event                            |       620        |      247       |  2.51 |
+| /Event/Calo                       |       103        |       72       |  1.42 |
+| /Event/Calo/RawEvent              |      12297       |      9563      |  1.29 |
+| /Event/Gen                        |       162        |      104       |  1.55 |
+| /Event/Gen/BeamParameters         |       274        |      211       |  1.30 |
+| /Event/Gen/Collisions             |       1396       |      695       |  2.01 |
+| /Event/Gen/Header                 |       567        |      349       |  1.62 |
+| /Event/HC                         |       102        |       72       |  1.42 |
+| /Event/HC/RawEvent                |       109        |       82       |  1.32 |
+| /Event/HLT2                       |       103        |       72       |  1.42 |
+| /Event/HLT2/pSim                  |       141        |      105       |  1.34 |
+| /Event/HLT2/pSim/MCParticles      |      22000       |      7195      |  3.06 |
+| /Event/HLT2/pSim/MCVertices       |      12279       |      3464      |  3.54 |
+| /Event/Link                       |       281        |      169       |  1.66 |
+| /Event/Link/Raw                   |       260        |      165       |  1.57 |
+| /Event/Link/Raw/Ecal              |       108        |       77       |  1.40 |
+| /Event/Link/Raw/Ecal/Digits       |      579307      |     122153     |  4.74 |
+| /Event/Link/Raw/FT                |       143        |      109       |  1.31 |
+| /Event/Link/Raw/FT/LiteClusters   |      153110      |     18795      |  8.15 |
+| /Event/Link/Raw/Hcal              |       108        |       77       |  1.40 |
+| /Event/Link/Raw/Hcal/Digits       |      78933       |     18829      |  4.19 |
+| /Event/Link/Raw/Muon              |       108        |       77       |  1.40 |
+| /Event/Link/Raw/Muon/Digits       |       8797       |      1492      |  5.90 |
+| /Event/Link/Raw/UT                |       143        |      109       |  1.31 |
+| /Event/Link/Raw/UT/Clusters       |      46346       |     12528      |  3.70 |
+| /Event/Link/Raw/VP                |       143        |      109       |  1.31 |
+| /Event/Link/Raw/VP/Digits         |      147344      |     39369      |  3.74 |
+| /Event/Link/Rec                   |       141        |      103       |  1.36 |
+| /Event/Link/Rec/Calo              |       204        |      203       |  1.01 |
+| /Event/Link/Rec/Calo/Electrons    |      113013      |     24131      |  4.68 |
+| /Event/Link/Rec/Calo/MergedPi0s   |      12152       |      3191      |  3.81 |
+| /Event/Link/Rec/Calo/Photons      |      71509       |     16120      |  4.44 |
+| /Event/Link/Rec/Calo/SplitPhotons |      22094       |      5216      |  4.24 |
+| /Event/Link/Rec/Track             |       108        |       77       |  1.39 |
+| /Event/Link/Rec/Track/Best        |      10656       |      1801      |  5.92 |
+| /Event/MC                         |       196        |      196       |  1.00 |
+| /Event/MC/DigiHeader              |       237        |      173       |  1.37 |
+| /Event/MC/Header                  |       567        |      386       |  1.47 |
+| /Event/MC/Muon                    |       105        |       74       |  1.41 |
+| /Event/MC/Muon/DigitsInfo         |       3942       |      1065      |  3.70 |
+| /Event/MC/TrackInfo               |      12569       |      2966      |  4.24 |
+| /Event/Muon                       |       103        |       72       |  1.42 |
+| /Event/Muon/RawEvent              |       2324       |      2283      |  1.02 |
+| /Event/Next                       |       162        |      107       |  1.51 |
+| /Event/Next/Gen                   |       141        |      104       |  1.35 |
+| /Event/Next/Gen/Collisions        |       1200       |      645       |  1.86 |
+| /Event/Next/Gen/Header            |       522        |      320       |  1.63 |
+| /Event/Next/MC                    |       105        |       74       |  1.41 |
+| /Event/Next/MC/Header             |       534        |      385       |  1.39 |
+| /Event/NextNext                   |       165        |      110       |  1.50 |
+| /Event/NextNext/Gen               |       143        |      107       |  1.34 |
+| /Event/NextNext/Gen/Collisions    |       1120       |      596       |  1.88 |
+| /Event/NextNext/Gen/Header        |       510        |      323       |  1.58 |
+| /Event/NextNext/MC                |       107        |       76       |  1.40 |
+| /Event/NextNext/MC/Header         |       523        |      388       |  1.35 |
+| /Event/PersistReco                |       107        |       76       |  1.40 |
+| /Event/PersistReco/RawEvent       |       5578       |      5565      |  1.00 |
+| /Event/Prev                       |       162        |      107       |  1.51 |
+| /Event/Prev/Gen                   |       141        |      104       |  1.35 |
+| /Event/Prev/Gen/Collisions        |       900        |      508       |  1.77 |
+| /Event/Prev/Gen/Header            |       479        |      348       |  1.38 |
+| /Event/Prev/MC                    |       105        |       74       |  1.41 |
+| /Event/Prev/MC/Header             |       479        |      379       |  1.26 |
+| /Event/PrevPrev                   |       165        |      110       |  1.50 |
+| /Event/PrevPrev/Gen               |       143        |      106       |  1.35 |
+| /Event/PrevPrev/Gen/Collisions    |       1386       |      729       |  1.90 |
+| /Event/PrevPrev/Gen/Header        |       572        |      362       |  1.58 |
+| /Event/PrevPrev/MC                |       107        |       76       |  1.40 |
+| /Event/PrevPrev/MC/Header         |       572        |      396       |  1.44 |
+| /Event/Rec                        |       162        |      106       |  1.53 |
+| /Event/Rec/Header                 |       316        |      255       |  1.24 |
+| /Event/Rec/Status                 |       213        |      158       |  1.35 |
+| /Event/Rec/Summary                |       308        |      294       |  1.05 |
+| /Event/Rich                       |       103        |       72       |  1.42 |
+| /Event/Rich/RawEvent              |      40345       |     11806      |  3.42 |
+| /Event/Tracker                    |       105        |       74       |  1.41 |
+| /Event/Tracker/RawEvent           |      32219       |     21560      |  1.49 |
+| /Event/Trigger                    |       105        |       74       |  1.41 |
+| /Event/Trigger/RawEvent           |       586        |      572       |  1.03 |
+| /Event/Unstripped                 |       106        |       75       |  1.40 |
+| /Event/Unstripped/RawEvent        |       113        |       86       |  1.30 |
+| /Event/Velo                       |       103        |       72       |  1.42 |
+| /Event/Velo/RawEvent              |      20278       |     13134      |  1.54 |
+| /Event/pRec                       |       257        |      164       |  1.57 |
+| /Event/pRec/Calo                  |       201        |      200       |  1.01 |
+| /Event/pRec/Calo/Electrons        |      14331       |      7233      |  1.98 |
+| /Event/pRec/Calo/MergedPi0s       |       1459       |      308       |  4.74 |
+| /Event/pRec/Calo/Photons          |      13002       |      6717      |  1.94 |
+| /Event/pRec/Calo/SplitPhotons     |       2542       |      1370      |  1.86 |
+| /Event/pRec/Muon                  |       106        |       75       |  1.40 |
+| /Event/pRec/Muon/MuonPID          |       8363       |      934       |  8.95 |
+| /Event/pRec/ProtoP                |       143        |      106       |  1.35 |
+| /Event/pRec/ProtoP/Charged        |      59102       |     16046      |  3.68 |
+| /Event/pRec/ProtoP/Neutrals       |      42929       |      9360      |  4.59 |
+| /Event/pRec/Rich                  |       106        |       75       |  1.40 |
+| /Event/pRec/Rich/PIDs             |       9086       |      2330      |  3.90 |
+| /Event/pRec/Track                 |       142        |      105       |  1.35 |
+| /Event/pRec/Track/Best            |      136473      |     63511      |  2.15 |
+| /Event/pRec/Track/Muon            |       3376       |      797       |  4.23 |
+| /Event/pRec/Vertex                |       143        |      106       |  1.35 |
+| /Event/pRec/Vertex/Primary        |       3266       |      1205      |  2.71 |
+| /Event/pRec/Vertex/V0             |       149        |      108       |  1.38 |
+| /Event/pSim                       |       363        |      258       |  1.41 |
+| /Event/pSim/MCParticles           |      506601      |     107409     |  4.72 |
+| /Event/pSim/MCVertices            |      495308      |     166799     |  2.97 |
+| /Event/pSim/Rich                  |       237        |      235       |  1.01 |
+| /Event/pSim/Rich/DigitSummaries   |      166073      |     22760      |  7.30 |
++-----------------------------------+------------------+----------------+-------+
 == Total ==
-Disk size: 6255 kB
-Trees size: 6230 kB
+Disk size: 6129 kB
+Trees size: 6108 kB

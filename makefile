@@ -1,7 +1,7 @@
 #Makefile to remember the different commands to run things
 
 #Stack installation
-STACKDIR=../LHCb/stack
+STACKDIR=../stack
 MOOREANALYSIS=$(STACKDIR)/MooreAnalysis
 MOORE=$(STACKDIR)/Moore
 DAVINCI=$(STACKDIR)/DaVinci
