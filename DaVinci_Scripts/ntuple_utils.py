@@ -2,21 +2,24 @@
 from Configurables import DecayTreeTuple
 from DecayTreeTuple import Configuration
 from PhysSelPython.Selections import AutomaticData, SelectionSequence, CombineSelection
-
-#List of default tuple tools
-DEFAULT_TUPLE_TOOLS = (
-    "TupleToolKinematic",
-    #"TupleToolPid",
-    "TupleToolGeometry",
-    "TupleToolTrackInfo",
-    "TupleToolAngles",
-    "TupleToolRecoStats",
-    #"TupleToolMCTruth",
-    #"MCTupleToolKinematic",
-)
+from DecayTreeTuple import DecayTreeTupleTruthUtils
 
 #List of extra LoKi variables to add
 LoKi_variables = {"MIPCHI2DV": "MIPCHI2DV(PRIMARY)"}
+
+#MCMatch tools and configurations
+relations = [
+    "Relations/ChargedPP2MCP",
+    "Relations/NeutralPP2MCP",
+]
+mc_tools = [
+    'MCTupleToolKinematic',
+    # ...plus any other MC tuple tools you'd like to use
+]
+mc_tool_list = [
+    "TupleToolMCBackgroundInfo",
+    "TupleToolMCTruth",
+]
 
 
 #Return list of "simplified" decay descriptors for a given HLT2 + extrasel combination
@@ -148,36 +151,44 @@ def get_extra_inputs_sel(linename, extraname):
     extra_inputs = {}
     #Extra Hadron
     extra_inputs["ExtraHadron"] = [
-        AutomaticData("Hlt2BTo{0}_Inclusive_Line/ExtraHadron/Particles".format(
-            linename)),
+        AutomaticData(
+            "/Event/HLT2/Hlt2BTo{0}_Inclusive_Line/ExtraHadron/Particles".
+            format(linename)),
     ]
     #Extra Ks0
     extra_inputs["ExtraKs0"] = [
         AutomaticData(
-            "Hlt2BTo{0}_Inclusive_Line/ExtraKs0LL/Particles".format(linename)),
+            "/Event/HLT2/Hlt2BTo{0}_Inclusive_Line/ExtraKs0LL/Particles".
+            format(linename)),
         AutomaticData(
-            "Hlt2BTo{0}_Inclusive_Line/ExtraKs0DD/Particles".format(linename)),
+            "/Event/HLT2/Hlt2BTo{0}_Inclusive_Line/ExtraKs0DD/Particles".
+            format(linename)),
     ]
     #Extra Lambda
     extra_inputs["ExtraLambda"] = [
-        AutomaticData("Hlt2BTo{0}_Inclusive_Line/ExtraLambdaLL/Particles".
-                      format(linename)),
-        AutomaticData("Hlt2BTo{0}_Inclusive_Line/ExtraLambdaDD/Particles".
-                      format(linename)),
+        AutomaticData(
+            "/Event/HLT2/Hlt2BTo{0}_Inclusive_Line/ExtraLambdaLL/Particles".
+            format(linename)),
+        AutomaticData(
+            "/Event/HLT2/Hlt2BTo{0}_Inclusive_Line/ExtraLambdaDD/Particles".
+            format(linename)),
     ]
     #Extra Gamma
     extra_inputs["ExtraGamma"] = [
         AutomaticData(
-            "Hlt2BTo{0}_Inclusive_Line/ExtraGamma/Particles".format(linename)),
+            "/Event/HLT2/Hlt2BTo{0}_Inclusive_Line/ExtraGamma/Particles".
+            format(linename)),
     ]
     #Extra Pi0Merged
     extra_inputs["ExtraPi0Merged"] = [
-        AutomaticData("Hlt2BTo{0}_Inclusive_Line/ExtraPi0Merged/Particles".
-                      format(linename)),
+        AutomaticData(
+            "/Event/HLT2/Hlt2BTo{0}_Inclusive_Line/ExtraPi0Merged/Particles".
+            format(linename)),
     ]
     extra_inputs["ExtraPi0Resolved"] = [
-        AutomaticData("Hlt2BTo{0}_Inclusive_Line/ExtraPi0Resolved/Particles".
-                      format(linename)),
+        AutomaticData(
+            "/Event/HLT2/Hlt2BTo{0}_Inclusive_Line/ExtraPi0Resolved/Particles".
+            format(linename)),
     ]
     return extra_inputs[extraname]
 
@@ -199,7 +210,8 @@ def get_extra_combined_ntuples(linename, extrasel):
     #Inputs
     inputs = get_extra_inputs_sel(linename, extrasel)
     inputs.append(
-        AutomaticData("Hlt2BTo{0}_Inclusive_Line/Particles".format(linename)))
+        AutomaticData("/Event/HLT2/Hlt2BTo{0}_Inclusive_Line/Particles".format(
+            linename)))
     #Combine the inputs
     extra_comb = CombineSelection(
         "Combine_HLT2{0}_{1}".format(linename, extrasel),
@@ -217,10 +229,13 @@ def get_extra_combined_ntuples(linename, extrasel):
         Inputs=[extra_seq.outputLocation()],
         Decay=get_full_decaydescriptor("{0}_{1}_Combo".format(
             linename, extrasel)),
-        ToolList=list(DEFAULT_TUPLE_TOOLS),
     )
     #Tupletools
-    dtt.addTupleTool("TupleToolANNPID").ANNPIDTunes = ["MC15TuneV1"]
+    #MC tools
+    dtt.ToolList += mc_tool_list
+    DecayTreeTupleTruthUtils.makeTruth(
+        dtt, relations, mc_tools, stream="/Event/HLT2")
+    #Other tools
     lokitool = dtt.addTupleTool("LoKi::Hybrid::TupleTool/{0}_{1}_Combo".format(
         linename, extrasel))
     lokitool.Variables = LoKi_variables
@@ -249,17 +264,20 @@ def get_extra_ntuples(linename):
             "{0}_{1}Tuple".format(linename, extrasel),
             Inputs=get_extra_inputs(linename, extrasel),
             Decay=get_full_decaydescriptor(extrasel),
-            ToolList=list(DEFAULT_TUPLE_TOOLS),
         )
         #Branches
         extra_ntuples["{0}_{1}".format(linename, extrasel)].addBranches(
             get_branches(extrasel))
         #Tupletools
-        extra_ntuples["{0}_{1}".format(
-            linename,
-            extrasel)].addTupleTool("TupleToolANNPID").ANNPIDTunes = [
-                "MC15TuneV1"
-            ]
+        #MC tools
+        extra_ntuples["{0}_{1}".format(linename,
+                                       extrasel)].ToolList += mc_tool_list
+        DecayTreeTupleTruthUtils.makeTruth(
+            extra_ntuples["{0}_{1}".format(linename, extrasel)],
+            relations,
+            mc_tools,
+            stream="/Event/HLT2")
+        #Other tools
         lokitool = extra_ntuples["{0}_{1}".format(
             linename, extrasel)].addTupleTool(
                 "LoKi::Hybrid::TupleTool/{0}_{1}".format(linename, extrasel))
@@ -288,17 +306,23 @@ def get_ntuples():
         radiative_ntuples[linename] = DecayTreeTuple(
             "{0}Tuple".format(linename),
             Inputs=[
-                AutomaticData("Hlt2BTo{0}_Inclusive_Line/Particles".format(
-                    linename)).outputLocation()
+                AutomaticData(
+                    "/Event/HLT2/Hlt2BTo{0}_Inclusive_Line/Particles".format(
+                        linename)).outputLocation()
             ],
             Decay=get_full_decaydescriptor(linename),
-            ToolList=list(DEFAULT_TUPLE_TOOLS),
         )
         #Branches
         radiative_ntuples[linename].addBranches(get_branches(linename))
         #Tupletools
-        radiative_ntuples[linename].addTupleTool(
-            "TupleToolANNPID").ANNPIDTunes = ["MC15TuneV1"]
+        #MC tools
+        radiative_ntuples[linename].ToolList += mc_tool_list
+        DecayTreeTupleTruthUtils.makeTruth(
+            radiative_ntuples[linename],
+            relations,
+            mc_tools,
+            stream="/Event/HLT2")
+        #Other tools
         lokitool = radiative_ntuples[linename].addTupleTool(
             "LoKi::Hybrid::TupleTool/{0}".format(linename))
         lokitool.Variables = LoKi_variables
