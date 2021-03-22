@@ -7,7 +7,7 @@
 | Links      |       1900       |      837       |  2.27 |
 | Params     |       169        |      169       |  1.00 |
 +------------+------------------+----------------+-------+
-== Event (773079 B/event) ==
+== Event (773038 B/event) ==
 +-----------------------------------+------------------+----------------+-------+
 | Path                              | Uncompressed (B) | Compressed (B) | Ratio |
 +-----------------------------------+------------------+----------------+-------+
@@ -22,8 +22,8 @@
 | /Event/HC/RawEvent                |       109        |       82       |  1.32 |
 | /Event/HLT2                       |       103        |       72       |  1.42 |
 | /Event/HLT2/pSim                  |       141        |      105       |  1.34 |
-| /Event/HLT2/pSim/MCParticles      |      22000       |      7201      |  3.05 |
-| /Event/HLT2/pSim/MCVertices       |      12279       |      3491      |  3.52 |
+| /Event/HLT2/pSim/MCParticles      |      22000       |      7185      |  3.06 |
+| /Event/HLT2/pSim/MCVertices       |      12279       |      3472      |  3.54 |
 | /Event/Link                       |       281        |      169       |  1.66 |
 | /Event/Link/Raw                   |       260        |      165       |  1.57 |
 | /Event/Link/Raw/Ecal              |       108        |       77       |  1.40 |
@@ -67,7 +67,7 @@
 | /Event/NextNext/MC                |       107        |       76       |  1.40 |
 | /Event/NextNext/MC/Header         |       523        |      388       |  1.35 |
 | /Event/PersistReco                |       107        |       76       |  1.40 |
-| /Event/PersistReco/RawEvent       |      15505       |     15492      |  1.00 |
+| /Event/PersistReco/RawEvent       |      15501       |     15487      |  1.00 |
 | /Event/Prev                       |       162        |      107       |  1.51 |
 | /Event/Prev/Gen                   |       141        |      104       |  1.35 |
 | /Event/Prev/Gen/Collisions        |       900        |      508       |  1.77 |

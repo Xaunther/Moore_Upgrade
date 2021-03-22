@@ -23,7 +23,7 @@
 | /Event/HLT2                       |        70        |       28       |  2.50 |
 | /Event/HLT2/pSim                  |        98        |       38       |  2.55 |
 | /Event/HLT2/pSim/MCParticles      |      17265       |      5819      |  2.97 |
-| /Event/HLT2/pSim/MCVertices       |       9567       |      2811      |  3.40 |
+| /Event/HLT2/pSim/MCVertices       |       9567       |      2812      |  3.40 |
 | /Event/Link                       |       236        |       89       |  2.65 |
 | /Event/Link/Raw                   |       211        |       79       |  2.66 |
 | /Event/Link/Raw/Ecal              |        71        |       29       |  2.42 |
@@ -116,5 +116,5 @@
 | /Event/pSim/MCVertices            |      384112      |     128709     |  2.98 |
 +-----------------------------------+------------------+----------------+-------+
 == Total ==
-Disk size: 150472 kB
+Disk size: 150471 kB
 Trees size: 150387 kB

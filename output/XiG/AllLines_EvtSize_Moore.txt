@@ -7,7 +7,7 @@
 | Links      |       2919       |      1029      |  2.84 |
 | Params     |       165        |      165       |  1.00 |
 +------------+------------------+----------------+-------+
-== Event (3166342 B/event) ==
+== Event (3166390 B/event) ==
 +--------------------------------------------------------+------------------+----------------+-------+
 | Path                                                   | Uncompressed (B) | Compressed (B) | Ratio |
 +--------------------------------------------------------+------------------+----------------+-------+
@@ -22,8 +22,8 @@
 | /Event/HC/RawEvent                                     |       253        |      253       |  1.00 |
 | /Event/HLT2                                            |       237        |      237       |  1.00 |
 | /Event/HLT2/pSim                                       |       271        |      271       |  1.00 |
-| /Event/HLT2/pSim/MCParticles                           |       9076       |      3431      |  2.65 |
-| /Event/HLT2/pSim/MCVertices                            |       5358       |      1901      |  2.82 |
+| /Event/HLT2/pSim/MCParticles                           |       9076       |      3463      |  2.62 |
+| /Event/HLT2/pSim/MCVertices                            |       5358       |      1905      |  2.81 |
 | /Event/Link                                            |       381        |      312       |  1.22 |
 | /Event/Link/MC                                         |       267        |      267       |  1.00 |
 | /Event/Link/MC/Particles2MCRichTracks                  |       4524       |      1057      |  4.28 |
@@ -136,7 +136,7 @@
 | /Event/NextNext/pSim/VP                                |       261        |      261       |  1.00 |
 | /Event/NextNext/pSim/VP/Hits                           |      116198      |     38763      |  3.00 |
 | /Event/PersistReco                                     |       251        |      251       |  1.00 |
-| /Event/PersistReco/RawEvent                            |      11092       |     11092      |  1.00 |
+| /Event/PersistReco/RawEvent                            |      11104       |     11104      |  1.00 |
 | /Event/Prev                                            |       285        |      285       |  1.00 |
 | /Event/Prev/Gen                                        |       269        |      269       |  1.00 |
 | /Event/Prev/Gen/Collisions                             |       1106       |      719       |  1.54 |

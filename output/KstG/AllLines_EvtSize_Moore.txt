@@ -7,7 +7,7 @@
 | Links      |       1900       |      837       |  2.27 |
 | Params     |       166        |      166       |  1.00 |
 +------------+------------------+----------------+-------+
-== Event (637801 B/event) ==
+== Event (637804 B/event) ==
 +-----------------------------------+------------------+----------------+-------+
 | Path                              | Uncompressed (B) | Compressed (B) | Ratio |
 +-----------------------------------+------------------+----------------+-------+
@@ -22,8 +22,8 @@
 | /Event/HC/RawEvent                |        76        |       33       |  2.26 |
 | /Event/HLT2                       |        72        |       33       |  2.21 |
 | /Event/HLT2/pSim                  |       101        |       45       |  2.25 |
-| /Event/HLT2/pSim/MCParticles      |      18373       |      6137      |  2.99 |
-| /Event/HLT2/pSim/MCVertices       |      10214       |      3004      |  3.40 |
+| /Event/HLT2/pSim/MCParticles      |      18373       |      6140      |  2.99 |
+| /Event/HLT2/pSim/MCVertices       |      10214       |      3003      |  3.40 |
 | /Event/Link                       |       243        |      103       |  2.34 |
 | /Event/Link/Raw                   |       219        |       95       |  2.29 |
 | /Event/Link/Raw/Ecal              |        74        |       34       |  2.15 |
@@ -67,7 +67,7 @@
 | /Event/NextNext/MC                |        74        |       34       |  2.17 |
 | /Event/NextNext/MC/Header         |       510        |      311       |  1.64 |
 | /Event/PersistReco                |        74        |       34       |  2.16 |
-| /Event/PersistReco/RawEvent       |      11453       |     11432      |  1.00 |
+| /Event/PersistReco/RawEvent       |      11454       |     11433      |  1.00 |
 | /Event/Prev                       |       128        |       54       |  2.35 |
 | /Event/Prev/Gen                   |       101        |       44       |  2.26 |
 | /Event/Prev/Gen/Collisions        |       1205       |      631       |  1.91 |
@@ -120,5 +120,5 @@
 | /Event/pSim/Rich/DigitSummaries   |      137112      |     18790      |  7.30 |
 +-----------------------------------+------------------+----------------+-------+
 == Total ==
-Disk size: 102754 kB
-Trees size: 102689 kB
+Disk size: 102755 kB
+Trees size: 102690 kB

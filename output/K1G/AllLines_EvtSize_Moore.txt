@@ -7,7 +7,7 @@
 | Links      |       1900       |      837       |  2.27 |
 | Params     |       165        |      165       |  1.00 |
 +------------+------------------+----------------+-------+
-== Event (621391 B/event) ==
+== Event (621392 B/event) ==
 +-----------------------------------+------------------+----------------+-------+
 | Path                              | Uncompressed (B) | Compressed (B) | Ratio |
 +-----------------------------------+------------------+----------------+-------+
@@ -22,8 +22,8 @@
 | /Event/HC/RawEvent                |        78        |       38       |  2.07 |
 | /Event/HLT2                       |        76        |       39       |  1.93 |
 | /Event/HLT2/pSim                  |       105        |       51       |  2.03 |
-| /Event/HLT2/pSim/MCParticles      |      18310       |      6126      |  2.99 |
-| /Event/HLT2/pSim/MCVertices       |      10201       |      3007      |  3.39 |
+| /Event/HLT2/pSim/MCParticles      |      18310       |      6123      |  2.99 |
+| /Event/HLT2/pSim/MCVertices       |      10201       |      3010      |  3.39 |
 | /Event/Link                       |       249        |      116       |  2.13 |
 | /Event/Link/Raw                   |       226        |      110       |  2.04 |
 | /Event/Link/Raw/Ecal              |        78        |       41       |  1.89 |
