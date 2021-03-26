@@ -212,13 +212,13 @@ def get_extra_combined_ntuples(linename, extrasel):
     inputs.append(
         AutomaticData("/Event/HLT2/Hlt2BTo{0}_Inclusive_Line/Particles".format(
             linename)))
-    #Combine the inputs
+    #Combine the inputs. Combination and mother cuts are some dummy cuts to make it work
     extra_comb = CombineSelection(
         "Combine_HLT2{0}_{1}".format(linename, extrasel),
         inputs=inputs,
         DecayDescriptors=get_combo_decaydescriptor(linename, extrasel),
         CombinationCut=("APT > 0 * GeV"),
-        MotherCut=("MIPCHI2DV(PRIMARY) > 0"),
+        MotherCut=("BPVDIRA() < 2"),
     )
     #Make the sequence
     extra_seq = SelectionSequence(
@@ -240,7 +240,9 @@ def get_extra_combined_ntuples(linename, extrasel):
         linename, extrasel))
     lokitool.Variables = LoKi_variables
     #Return dictionary and the sequence
-    seq_dict = {"{0}_{1}_Combo".format(linename, extrasel): extra_seq}
+    seq_dict = {
+        "{0}_{1}_Combo".format(linename, extrasel): extra_seq.sequence()
+    }
     dtt_dict = {"{0}_{1}_Combo".format(linename, extrasel): dtt}
     return dtt_dict, seq_dict
 
