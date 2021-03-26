@@ -39,6 +39,8 @@ test_catalog.xml
 
 #Metadata produced by MooreAnalysis
 output/*/*.metadata.json
+#TCK jsons produced. These are sensitive to the stack version, so better not keep them in the repo
+output/*/*_tck.json
 
 #vscode settings
 .vscode/
