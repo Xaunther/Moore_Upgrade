@@ -34,4 +34,4 @@ if (not reco_from_file):
     public_tools = [stateProvider_with_simplified_geom()]
 
 with reconstruction.bind(from_file=reco_from_file):
-    run_moore_with_tuples(options, os.environ["DECAY"], public_tools)
+    run_moore_with_tuples(options, False, os.environ["DECAY"], public_tools)
