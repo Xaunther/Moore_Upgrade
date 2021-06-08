@@ -40,11 +40,16 @@ Personal repository with many root scripts. It is [here](https://gitlab.cern.ch/
 
 ## Setup
 
-Once the packages have been downloaded, you need to configure the first lines in the [makefile](makefile) to match your installation paths (no automation in this part... yet):
+By default the makefile will assume that the stack and aalfonso-Analysis-Tools/root are under ../stack and ../root. If that is your case, everything is already configured as long as your stack has MooreAnalysis, Moore and DaVinci.
 
+Otherwise, you need to configure the first lines in the [makefile](makefile) to match your installation paths
+
+- `ANALYSIS_TOOLS_ROOT`: Path to [aalfonso-Analysis-Tools/root](https://gitlab.cern.ch/aalfonso-Analysis-Tools/root) folder.
+- `STACKDIR` (optional): Path to your stack folder. If you compile your own stack, only configuring this variable should accomodate all three LHCb packages.
 - `MOOREANALYSIS`: Path to [MooreAnalysis](https://gitlab.cern.ch/lhcb/MooreAnalysis/) folder.
 - `MOORE`: Path to [Moore](https://gitlab.cern.ch/lhcb/Moore) folder.
 - `DAVINCI`: Path to [DaVinci](https://gitlab.cern.ch/lhcb/DaVinci) folder.
-- `ANALYSIS_TOOLS_ROOT`: Path to [aalfonso-Analysis-Tools/root](https://gitlab.cern.ch/aalfonso-Analysis-Tools/root) folder.
-- `UPGRADE_BANDWIDTH_STUDIES`: Path to [Upgrade-bandwidth-studies](https://gitlab.cern.ch/lhcb-HLT/upgrade-bandwidth-studies) folder.
-- `STACKDIR` (optional): Path to your stack folder. If you compile your own stack, only configuring this variable should accomodate all three LHCb packages.
+
+## Snakemake
+
+You can also use snakemake to run the desired scripts.
