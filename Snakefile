@@ -1,6 +1,3 @@
-onerror:
-    print("errors have ocurred, please check everything")
-
 # Snakemake for moore_upgrade
 
 #Stack installation
@@ -15,6 +12,7 @@ ANALYSIS_TOOLS_ROOT= "../root"
 
 #List of MC samples available
 MC_list=["KstG", "PhiG", "K1G", "LambdaG", "XiG", "OmegaG"] # "KstG", "PhiG", "K1G", "LambdaG", "XiG", "OmegaG"
+lines = ["HHGamma","HHGammaEE","HHHGamma","HHGammaEE"]
 
 # Production IDs for each MC
 prodIDs={
@@ -44,9 +42,29 @@ extra_container_list = ["ExtraHadron", "ExtraKs0", "ExtraLambda", "ExtraGamma", 
 # RULES
 # ------ #
 
-################################### Input options files ###################################
+onerror:
+    print("errors have ocurred, please check everything")
 
+################################### ALL ###################################
+rule all:
+    """All MooreAnalysis and all Moore"""
+    input:
+        expand("Gaudi_inputs/{MC}_input_LFNs.py", MC=MC_list),
+        expand("Gaudi_inputs/{MC}_input_PFNs.py", MC=MC_list),
+        expand("output/{MC}/AllLines_MA.root", MC=MC_list),
+        report(expand("output/{MC}/AllLines_eff_MA.txt", MC=MC_list)),
+        report(expand("output/{MC}/CorrelationMatrix_MA.md", MC=MC_list)),
+        expand("output/{MC}/AllLines_Moore.mdst", MC=MC_list),
+        report(expand("output/{MC}/AllLines_EvtSize_Moore.txt", MC=MC_list)),
+        expand("output/{MC}/AllLines_Moore.root", MC=MC_list),
+        expand("output/multiplicities/{line}_{extra}_multiplicity.txt",
+            line=lines,extra=extra_container_list)
+
+
+################################### Input options files ###################################
+#Produce input scripts from the ProdIDs (these commands might need rerunning every few months to update PFNs)
 rule all_LFNs:
+    """ get input LFNs from prodID"""
     input: expand("Gaudi_inputs/{MC}_input_LFNs.py", MC=MC_list)
 
 rule get_LFN:
@@ -57,6 +75,7 @@ rule get_LFN:
         "lb-dirac dirac-bookkeeping-get-files --Prod {params.prodID} --OptionsFile {output}"
 
 rule all_PFNs:
+    """translate the LFN list into a PFN list which can be used in Gaudi software"""
     input: expand("Gaudi_inputs/{MC}_input_PFNs.py", MC=MC_list)
 
 rule get_PFN:
@@ -65,22 +84,24 @@ rule get_PFN:
     shell:
         "lb-dirac dirac-bookkeeping-genXMLCatalog --Options {input} --NewOptions {output}"
 
+
 ################################### MOORE ANALYSIS PART ###################################
 rule all_MA:
     input:
         expand("Gaudi_inputs/{MC}_input_LFNs.py", MC=MC_list),
         expand("Gaudi_inputs/{MC}_input_PFNs.py", MC=MC_list),
         expand("output/{MC}/AllLines_MA.root", MC=MC_list),
-        expand("output/{MC}/AllLines_eff_MA.txt", MC=MC_list),
-        expand("output/{MC}/CorrelationMatrix_MA.md", MC=MC_list)
+        report(expand("output/{MC}/AllLines_eff_MA.txt", MC=MC_list)),
+        report(expand("output/{MC}/CorrelationMatrix_MA.md", MC=MC_list))
 
 
-#Produce ntuples from MooreAnalysis.
-#They produce MCDecayTreeTuples so all possible events that can be reconstructed with MC matching,
-#just FLAGGING whether they pass the HLT lines of interest or not
 rule alltuples_MA:
+    """
+    Produce ntuples from MooreAnalysis.
+    They produce MCDecayTreeTuples so all possible events that can be reconstructed with MC matching,
+    just FLAGGING whether they pass the HLT lines of interest or not
+    """
     input: expand("output/{MC}/AllLines_MA.root", MC=MC_list)
-    # input: "output/KstG/AllLines_MA.root"
 
 rule MA_tuple:
     input: "Gaudi_inputs/{MC}_input_PFNs.py"
@@ -93,43 +114,33 @@ rule MA_tuple:
         try:
             shell("set +e")
             shell(ma_script+options+tee)
-            shell('touch tmp_check.txt')
+            shell("set -e")
         except:
             print("except: errors during MA_tuple")
-    # shell:
-    #     'mkdir -p output/{wildcards.MC} \n'
-    #     '{MOOREANALYSIS}/run gaudirun.py MooreAnalysis_Scripts/{wildcards.MC}.py '
-    #     ' options/2000_Evts.py MooreAnalysis_Scripts/AllLines.py Gaudi_inputs/{wildcards.MC}_input_PFNs.py '
-    #     ' | tee output/{wildcards.MC}/AllLines_MA.out'
 
 
-#Produce efficiency results by using the ntuple info
-#We use reconstructible children, which only takes children with pseudorapidity in LHCb range
 rule alleffs_MA:
+    """
+    Produce efficiency results by using the ntuple info
+    We use reconstructible children, which only takes children with pseudorapidity in LHCb range
+    """
     input: expand("output/{MC}/AllLines_eff_MA.txt", MC=MC_list)
-    # input: "output/KstG/AllLines_eff_MA.txt"
 
 rule MA_efficience:
     input: "output/{MC}/AllLines_MA.root"
     output: "output/{MC}/AllLines_eff_MA.txt"
     params:
         reconstructibles=lambda wcs: reconstructibles_d[wcs.MC]
-    # run:
-    #     shell('mkdir -p output/{wildcards.MC}')
-    #     ma_script = f'{MOOREANALYSIS}/run {MOOREANALYSIS}/HltEfficiencyChecker/scripts/hlt_line_efficiencies.py'
-    #     options   = f' {input} --level Hlt2 --reconstructible-children={params.reconstructibles}'
-    #     tee       = f' | tee {output}'
-    #     shell(ma_script+options+tee)
     shell:
         'mkdir -p output/{wildcards.MC} \n'
         '{MOOREANALYSIS}/run {MOOREANALYSIS}/HltEfficiencyChecker/scripts/hlt_line_efficiencies.py'
         ' {input} --level Hlt2 --reconstructible-children={params.reconstructibles}'
         ' | tee {output}'
 
-#Another thing, get correlation matrices for the 4 trigger lines, in each MC
+
 rule allcorrelations_MA:
+    """get correlation matrices for the 4 trigger lines, in each MC"""
     input: expand("output/{MC}/CorrelationMatrix_MA.md", MC=MC_list)
-    # input: "output/KstG/CorrelationMatrix_MA.md"
 
 rule MA_correlation:
     input: "output/{MC}/AllLines_MA.root", "Cuts/HLT2_radiative_cuts.txt"
@@ -141,13 +152,17 @@ rule MA_correlation:
 ################################### MOORE PART ###################################
 rule all_Moore:
     input:
-        expand("output/{MC}/AllLines_Moore.mdst", MC=MC_list)
-# .PHONY: allDSTs_Moore allEvtSizes_Moore alltuples_Moore
+        expand("output/{MC}/AllLines_Moore.mdst", MC=MC_list),
+        report(expand("output/{MC}/AllLines_EvtSize_Moore.txt", MC=MC_list)),
+        expand("output/{MC}/AllLines_Moore.root", MC=MC_list),
+        report(expand("output/multiplicities/{line}_{extra}_multiplicity.txt",
+            line=lines,extra=extra_container_list))
 
-
-#Produce DSTs from Moore.
-#They produce FILTERED DSTs where only events that pass any HLT line are stored.
 rule allDSTs_Moore:
+    """
+    Produce DSTs from Moore.
+    They produce FILTERED DSTs where only events that pass any HLT line are stored.
+    """
     input: expand("output/{MC}/AllLines_Moore.mdst", MC=MC_list)
 
 rule Dst_Moore:
@@ -160,8 +175,9 @@ rule Dst_Moore:
         "| tee output/{wildcards.MC}/AllLines_Moore.out \n"
         "rm -f test_catalog.xml"
 
-# #Once the mDSTs have been produced, we can run a hacked script from upgrade-bandwidth-studies
+
 rule allEvtSizes_Moore:
+    """Once the mDSTs have been produced, we can run a hacked script from upgrade-bandwidth-studies"""
     input: expand("output/{MC}/AllLines_EvtSize_Moore.txt", MC=MC_list)
 
 rule EvtSize_Moore:
@@ -172,8 +188,9 @@ rule EvtSize_Moore:
         "| tee {output}"
 
 
-# #Time to produce ntuples
+
 rule allTuples_Moore:
+    """Time to produce ntuples"""
     input: expand("output/{MC}/AllLines_Moore.root", MC=MC_list)
 
 rule Tuple_Moore:
@@ -182,8 +199,12 @@ rule Tuple_Moore:
     shell:
         "{DAVINCI}/run gaudirun.py DaVinci_Scripts/{wildcards.MC}.py DaVinci_Scripts/AllLines.py"
 
-#For each line, we loop over all the containers
-lines = ["HHGamma","HHGammaEE","HHHGamma","HHGammaEE"]
+
+rule lines_multiplicities:
+    """For each line, we loop over all the containers"""
+    input:
+        expand("output/multiplicities/{line}_{extra}_multiplicity.txt",
+            line=lines,extra=extra_container_list)
 
 rule line_extra_multiplicities:
     input:
@@ -196,21 +217,23 @@ rule line_extra_multiplicities:
         ' Cuts/{wildcards.extra}_cuts.txt {output} {wildcards.line}Tuple/DecayTree'
         ' {wildcards.line}_{wildcards.extra}Tuple/DecayTree '
 
-rule lines_multiplicities:
+#HHGamma
+rule HHGamma_extra_multiplicities:
     input:
-        expand("output/multiplicities/{line}_{extra}_multiplicity.txt",
-            line=lines,extra=extra_container_list)
-
-# #HHGamma
-# rule HHGamma_extra_multiplicities:
-#     input:
-#         tuples= expand("output/{MC}/AllLines_Moore.root", MC=MC_list),
-#         cuts=   "Cuts/{extra}_cuts.txt",
-#     output:
-#         "output/multiplicities/HHGamma_{extra}_multiplicity.txt"
-#     shell:
-#         '{ANALYSIS_TOOLS_ROOT}/Multiplicity_Extrasel.out "{input.tuples}" '
-#         ' Cuts/{wildcards.extra}_cuts.txt {output} HHGammaTuple/DecayTree HHGamma_{wildcards.extra}Tuple/DecayTree '
-
-# rule HHGamma_multiplicities:
-#     input: expand("output/multiplicities/HHGamma_{extra}_multiplicity.txt",extra=extra_container_list)
+        expand("output/multiplicities/HHGamma_{extra}_multiplicity.txt",
+            extra=extra_container_list)
+#HHGammaEE
+rule HHGammaEE_extra_multiplicities:
+    input:
+        expand("output/multiplicities/HHGammaEE_{extra}_multiplicity.txt",
+            extra=extra_container_list)
+#HHHGamma
+rule HHHGamma_extra_multiplicities:
+    input:
+        expand("output/multiplicities/HHHGamma_{extra}_multiplicity.txt",
+            extra=extra_container_list)
+#HHHGammaEE
+rule HHHGammaEE_extra_multiplicities:
+    input:
+        expand("output/multiplicities/HHHGammaEE_{extra}_multiplicity.txt",
+            extra=extra_container_list)

@@ -52,4 +52,16 @@ Otherwise, you need to configure the first lines in the [makefile](makefile) to 
 
 ## Snakemake
 
-You can also use snakemake to run the desired scripts.
+You can also use snakemake to run the desired scripts. Targets share the same names as in the makefile, just substitute `make target` by `snakemake -j 1 target`.
+Additionally you can specify other usefull flags:
+
+`-n dry-run, -p print commands, -r reason, -j run in parallel`
+
+To enter an environment where snakemake is installed on lxplus type `lb-conda default`
+
+The workflow can be found in the report or in the DAGs:
+
+- All MA:
+![all_MA](dags/dag_allMA.png)
+- All Moore:
+![all_Moore](dags/dag_allMoore.png)

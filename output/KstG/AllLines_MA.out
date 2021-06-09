@@ -1,9 +1,9 @@
 # setting LC_ALL to "C"
-# --> Including file '/afs/cern.ch/work/a/alobosal/Trigger/moore_upgrade/Moore_Scripts/KstG.py'
-# <-- End of file '/afs/cern.ch/work/a/alobosal/Trigger/moore_upgrade/Moore_Scripts/KstG.py'
+# --> Including file '/afs/cern.ch/work/a/alobosal/Trigger/moore_upgrade/MooreAnalysis_Scripts/KstG.py'
+# <-- End of file '/afs/cern.ch/work/a/alobosal/Trigger/moore_upgrade/MooreAnalysis_Scripts/KstG.py'
 # --> Including file '/afs/cern.ch/work/a/alobosal/Trigger/moore_upgrade/options/2000_Evts.py'
 # <-- End of file '/afs/cern.ch/work/a/alobosal/Trigger/moore_upgrade/options/2000_Evts.py'
-# --> Including file '/afs/cern.ch/work/a/alobosal/Trigger/moore_upgrade/Moore_Scripts/AllLines.py'
+# --> Including file '/afs/cern.ch/work/a/alobosal/Trigger/moore_upgrade/MooreAnalysis_Scripts/AllLines.py'
 # Disabling Python logging messages below threshold
 /***** User ApplicationOptions/ApplicationOptions **************************************************
 |-auditors              = []  (default: [])
@@ -21,16 +21,16 @@
 |-input_files           = []  (default: [])
 |-input_raw_format      = 4.3  (default: 0.3)
 |-input_type            = 'ROOT'  (default: '')
-|-lines_maker           = None
+|-lines_maker           = <function make_lines at 0x7fec1f508c08>  (default: None)
 |-memory_pool_size      = 10485760  (default: 10485760)
 |-msg_svc_format        = '% F%35W%S %7W%R%T %0W%M'  (default: '% F%35W%S %7W%R%T %0W%M')
 |-msg_svc_time_format   = '%Y-%m-%d %H:%M:%S UTC'  (default: '%Y-%m-%d %H:%M:%S UTC')
 |-n_event_slots         = 1  (default: -1)
 |-n_threads             = 1  (default: 1)
-|-ntuple_file           = ''  (default: '')
-|-output_file           = 'output/KstG/AllLines_Moore.mdst'  (default: '')
+|-ntuple_file           = 'output/KstG/AllLines_MA.root'  (default: '')
+|-output_file           = ''  (default: '')
 |-output_level          = 3  (default: 3)
-|-output_type           = 'ROOT'  (default: '')
+|-output_type           = ''  (default: '')
 |-print_freq            = 50  (default: 10000)
 |-python_logging_level  = 30  (default: 30)
 |-scheduler_legacy_mode = True  (default: True)
@@ -38,11 +38,10 @@
 |-tck                   = 0  (default: 0)
 |-use_iosvc             = False  (default: False)
 \----- (End of User ApplicationOptions/ApplicationOptions) -----------------------------------------
-# WARNING: Neutral truth-matching not supported for lines using reconstruction-from-raw; skipping
 ApplicationMgr    SUCCESS 
 ====================================================================================================================================
-                                                   Welcome to Moore version v52r0
-                                          running on lxplus718.cern.ch on Wed Jun  9 16:48:19 2021
+                                                   Welcome to MooreAnalysis version v1r0
+                                          running on lxplus718.cern.ch on Wed Jun  9 16:17:16 2021
 ====================================================================================================================================
 ApplicationMgr       INFO Application Manager Configured successfully
 ToolSvc.GitDDDB                        INFO opening Git repository '/cvmfs/lhcb.cern.ch/lib/lhcb/git-conddb/DDDB.git'
@@ -51,7 +50,10 @@ ToolSvc.GitSIMCOND                     INFO opening Git repository '/cvmfs/lhcb.
 ToolSvc.GitSIMCOND                     INFO using commit 'upgrade/sim-20171127-vc-md100' corresponding to 143109bc764c9a5cb34a04ce227d005e20236caa
 DetectorPersistencySvc                 INFO Added successfully Conversion service:XmlCnvSvc
 DetectorDataSvc                     SUCCESS Detector description database: git:/lhcb.xml
+NTupleSvc                              INFO Added stream file:output/KstG/AllLines_MA.root as FILE1
 HLTControlFlowMgr                      INFO Start initialization
+RootHistSvc                            INFO Writing ROOT histograms to: output/KstG/AllLines_MA.root
+HistogramPersistencySvc                INFO Added successfully Conversion service:RootHistSvc
 EventClockSvc.FakeEventTime            INFO Event times generated from 0 with steps of 0
 EventClockSvc.FakeEventTime            INFO Run numbers generated from 0 every 0 events
 MagneticFieldSvc                       INFO Opened magnetic field file : /cvmfs/lhcb.cern.ch/lib/lhcb/DBASE/FieldMap/v5r7/cdf/field.v5r0.c1.down.cdf
@@ -121,9 +123,16 @@ FunctionalParticleMaker#3.LoKi::...    INFO CUT: ' ( (TrTYPE==5) &TrALL) '
 create data set info Default
 create data set info Default
 create data set info Default
-HltPackedDataWriter                    INFO Configured to persist containers  '/Event/HLT2/pPhys/Particles', '/Event/HLT2/pPhys/Vertices', '/Event/HLT2/pPhys/RecVertices', '/Event/HLT2/pPhys/FlavourTags', '/Event/HLT2/pPhys/Relations', '/Event/HLT2/pPhys/PartToRelatedInfoRelations', '/Event/HLT2/pPhys/P2IntRelations', '/Event/HLT2/pPhys/PP2MCPRelations', '/Event/HLT2/pRec/ProtoP/Custom', '/Event/HLT2/pRec/Muon/CustomPIDs', '/Event/HLT2/pRec/Rich/CustomPIDs', '/Event/HLT2/pRec/Track/Custom', '/Event/HLT2/pRec/ProtoP/Charged', '/Event/HLT2/pRec/Vertex/Primary', '/Event/HLT2/pRec/Calo/Photons', '/Event/HLT2/pRec/Rich/PIDs', '/Event/HLT2/pRec/ProtoP/Neutrals', '/Event/HLT2/pRec/Track/Best', '/Event/HLT2/pRec/Muon/MuonPID', '/Event/HLT2/pRec/Calo/SplitPhotons', '/Event/HLT2/pRec/Calo/Electrons', '/Event/HLT2/pRec/Calo/MergedPi0s',
-EventPersistencySvc                    INFO Added successfully Conversion service:RootCnvSvc
-CopyInputStream                        INFO Data source: EventDataSvc output: DATAFILE='output/KstG/AllLines_Moore.mdst' SVC='Gaudi::RootCnvSvc' OPT='RECREATE'
+ToolSvc.MCReconstructible.Selector     INFO MCParticle Momentum cut     : 0 GeV/c < P < 1.79769e+305 GeV/c
+ToolSvc.MCReconstructible.Selector     INFO            Beta * gamma cut : 0 < beta*gamma
+ToolSvc.MCReconstructible.Selector     INFO            Eta cut          : -1.79769e+308 < P < 1.79769e+308
+MCDecayTreeTuple                       INFO Tools to be used : TupleToolEventInfo/TupleToolEventInfo, TupleToolTrigger/TupleToolTrigger, MCTupleToolKinematic/MCTupleToolKinematic, MCTupleToolReconstructed/MCTupleToolReconstructed, 
+MCDecayTreeTuple                       INFO Will look for  ( ( B0  -> ^( ( K*(892)0  -> ^(  K+ ) ^(  pi- )) )  gamma ) || ( B~0  -> ^( ( K*(892)~0  -> ^(  K- ) ^(  pi+ )) )  gamma ) ) 
+MCDecayTreeTuple                       INFO Explicit sub decays :4
+MCDecayTreeTuple.B0                    INFO MCDecayTreeTuple.B0 : ( ( B0  -> ( K*(892)0  ->  K+   pi- )   gamma ) || ( B~0  -> ( K*(892)~0  ->  K-   pi+ )   gamma ) ) 
+MCDecayTreeTuple.Kplus                 INFO MCDecayTreeTuple.Kplus : ( ( B0  -> ( K*(892)0  -> ^(  K+ )  pi- )   gamma ) || ( B~0  -> ( K*(892)~0  -> ^(  K- )  pi+ )   gamma ) ) 
+MCDecayTreeTuple.Kst_892_0             INFO MCDecayTreeTuple.Kst_892_0 : ( ( B0  -> ^( ( K*(892)0  ->  K+   pi- ) )  gamma ) || ( B~0  -> ^( ( K*(892)~0  ->  K-   pi+ ) )  gamma ) ) 
+MCDecayTreeTuple.piminus               INFO MCDecayTreeTuple.piminus : ( ( B0  -> ( K*(892)0  ->  K+  ^(  pi- ))   gamma ) || ( B~0  -> ( K*(892)~0  ->  K-  ^(  pi+ ))   gamma ) ) 
 HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop
 HiveDataBrokerSvc                   WARNING non-reentrant algorithm: CombineParticles
 HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDesktop/FilterDesktop#24
@@ -198,29 +207,14 @@ HiveDataBrokerSvc                   WARNING non-reentrant algorithm: FilterDeskt
 HiveDataBrokerSvc                   WARNING non-reentrant algorithm: HltDecReportsWriter
 HiveDataBrokerSvc                   WARNING non-reentrant algorithm: UnpackMCVertex/UnpackMCVertices
 HiveDataBrokerSvc                   WARNING non-reentrant algorithm: UnpackMCParticle/UnpackMCParticles
-HiveDataBrokerSvc                   WARNING non-reentrant algorithm: CopyLinePersistenceLocations
-HiveDataBrokerSvc                   WARNING non-reentrant algorithm: CopyParticle2PVRelationsFromLinePersistenceLocations
-HiveDataBrokerSvc                   WARNING non-reentrant algorithm: MicroDST::RelationsClonerAlg<LHCb::RelationWeighted1D<LHCb::ProtoParticle,LHCb::MCParticle,double> >/CopyProtoParticle2MCRelations
-HiveDataBrokerSvc                   WARNING non-reentrant algorithm: CopySignalMCParticles
-HiveDataBrokerSvc                   WARNING non-reentrant algorithm: PackParticlesAndVertices
-HiveDataBrokerSvc                   WARNING non-reentrant algorithm: PackProtoParticle/PackChargedProtos
-HiveDataBrokerSvc                   WARNING non-reentrant algorithm: PackRecVertex/PackPVs
-HiveDataBrokerSvc                   WARNING non-reentrant algorithm: DataPacking::Pack<LHCb::RichPIDPacker>/PackRichPIDs
-HiveDataBrokerSvc                   WARNING non-reentrant algorithm: PackProtoParticle/PackNeutralProtos
-HiveDataBrokerSvc                   WARNING non-reentrant algorithm: PackTrack/PackTracks
-HiveDataBrokerSvc                   WARNING non-reentrant algorithm: DataPacking::Pack<LHCb::MuonPIDPacker>/PackMuonPIDs
-HiveDataBrokerSvc                   WARNING non-reentrant algorithm: PackMCParticle
-HiveDataBrokerSvc                   WARNING non-reentrant algorithm: PackMCVertex
-HiveDataBrokerSvc                   WARNING non-reentrant algorithm: HltPackedDataWriter
-HiveDataBrokerSvc                   WARNING non-reentrant algorithm: AddressKillerAlg
-HiveDataBrokerSvc                   WARNING non-reentrant algorithm: RawEventSimpleCombiner
-HiveDataBrokerSvc                   WARNING non-reentrant algorithm: CopyInputStream
+HiveDataBrokerSvc                   WARNING non-reentrant algorithm: MCDecayTreeTuple
 HLTControlFlowMgr                      INFO Concurrency level information:
 HLTControlFlowMgr                      INFO  o Number of events slots: 1
 HLTControlFlowMgr                      INFO  o TBB thread pool size:  'ThreadPoolSize':1
-HLTControlFlowMgr                      INFO ---> End of Initialization. This took 291591 ms
+HLTControlFlowMgr                      INFO ---> End of Initialization. This took 218622 ms
 ApplicationMgr                         INFO Application Manager Initialized successfully
 ApplicationMgr                         INFO Application Manager Started successfully
+EventPersistencySvc                    INFO Added successfully Conversion service:RootCnvSvc
 EventSelector                          INFO Stream:EventSelector.DataStreamTool_1 Def:DATAFILE='root://x509up_u137253@lhcbxrootd-kit.gridka.de//pnfs/gridka.de/lhcb/LHCb-Disk/lhcb/MC/Upgrade/LDST/00075829/0000/00075829_00000023_1.ldst' SVC='Gaudi::RootEvtSelector' OPT='READ'
 HLTControlFlowMgr                      INFO Will measure time between events 200 and 1800 (stop might be some events later)
 HLTControlFlowMgr                      INFO Starting loop on events
@@ -238,12 +232,21 @@ CaloFutureMergedPi0.EcalCovariance     INFO CoherentNoise 	 : [1.3, 1.3, 1.3] AD
 CaloFutureMergedPi0.EcalCovariance     INFO ConstantE 	 : [0, 0, 0] MeV	 : from Covariance DB
 CaloFutureMergedPi0.EcalCovariance     INFO ConstantX 	 : [9, 2, 0.5] mm	 : from Covariance DB
 CaloFutureMergedPi0.EcalCovariance     INFO ConstantY 	 : [9, 2, 0.5] mm	 : from Covariance DB
-IODataManager                          INFO Referring to dataset output/KstG/AllLines_Moore.mdst by its file ID:8E45453A-C932-11EB-8BC7-FA163EE75D30
+RFileCnv                               INFO opening Root file "output/KstG/AllLines_MA.root" for writing
+MCDecayTreeTuple                       INFO The head of chain is a B~0 : Will change to its antiparticle. Will change daughters to antiparticles. 
+MCDecayTreeTuple                       INFO Tree MCDecayTree initialized :-
+MCDecayTreeTuple                       INFO  Event related tools : [TupleToolEventInfo, TupleToolTrigger, TupleToolEventInfo, TupleToolTrigger]
+MCDecayTreeTuple                       INFO  Particle related stuffers :- 
+MCDecayTreeTuple                       INFO   B0 (B0)                     : none
+MCDecayTreeTuple                       INFO      K*(892)0 (Kst_892_0)     : none
+MCDecayTreeTuple                       INFO         K+ (Kplus)            : none
+MCDecayTreeTuple                       INFO         pi- (piminus)         : none
+RCWNTupleCnv                           INFO Booked TTree with ID: MCDecayTree "MCDecayTree" in directory output/KstG/AllLines_MA.root:/MCDecayTreeTuple
 EventSelector                       SUCCESS Reading Event record 51. Record number within stream 1: 51
 FunctionalChargedProtoParticleMa...    INFO Suppressing message: 'Very large value (> 1e6 mm) for state position. Breaking iteration'
 EventSelector                       SUCCESS Reading Event record 101. Record number within stream 1: 101
 EventSelector                       SUCCESS Reading Event record 151. Record number within stream 1: 151
-HLTControlFlowMgr                      INFO Timing started at: 16:57:37
+HLTControlFlowMgr                      INFO Timing started at: 16:23:11
 EventSelector                       SUCCESS Reading Event record 201. Record number within stream 1: 201
 EventSelector                       SUCCESS Reading Event record 251. Record number within stream 1: 251
 EventSelector                       SUCCESS Reading Event record 301. Record number within stream 1: 301
@@ -276,12 +279,12 @@ EventSelector                       SUCCESS Reading Event record 1601. Record nu
 EventSelector                       SUCCESS Reading Event record 1651. Record number within stream 1: 1651
 EventSelector                       SUCCESS Reading Event record 1701. Record number within stream 1: 1701
 EventSelector                       SUCCESS Reading Event record 1751. Record number within stream 1: 1751
-HLTControlFlowMgr                      INFO Timing stopped at: 17:11:42
+HLTControlFlowMgr                      INFO Timing stopped at: 16:34:25
 EventSelector                       SUCCESS Reading Event record 1801. Record number within stream 1: 1801
 EventSelector                       SUCCESS Reading Event record 1851. Record number within stream 1: 1851
 EventSelector                       SUCCESS Reading Event record 1901. Record number within stream 1: 1901
 EventSelector                       SUCCESS Reading Event record 1951. Record number within stream 1: 1951
-HLTControlFlowMgr                      INFO ---> Loop over 2000 Events Finished -  WSS 2175.65, timed 1600 Events: 845294 ms, Evts/s = 1.89283
+HLTControlFlowMgr                      INFO ---> Loop over 2000 Events Finished -  WSS 2123.95, timed 1600 Events: 674226 ms, Evts/s = 2.37309
 BremChi22IDFuture                      INFO Number of counters : 2
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
  | "#links in table"                               |      2000 |     461849 |     230.92 |     102.39 |      14.000 |      872.00 |
@@ -344,10 +347,6 @@ CaloFutureShowerOverlap                INFO Number of counters : 5
  | "Delta(Y)"                                      |    673532 |   1349.866 |  0.0020042 |     5.1540 |     -89.783 |      71.759 |
  | "Delta(Z)"                                      |    673532 |1.014996e-09 | 1.5070e-15 | 1.1115e-12 | -1.8190e-12 |  1.8190e-12 |
  | "negative E clusters (removed)"                 |      2000 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
-ChargedProtoParticleAssociator         INFO Number of counters : 2
- |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- |*"Efficiency"                                    |     21245 |      17218 |( 81.04495 +- 0.2689039)% |
- | "MC particles per ProtoParticle"                |     17218 |      19548 |     1.1353 |
 ClassifyPhotonElectronAlg              INFO Number of counters : 14
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
  | "Electron Delta(E)"                             |    280413 |5.523648e+07 |     196.98 |     240.38 |    -13247.0 |     11808.0 |
@@ -1147,6 +1146,10 @@ LHCb__Phys__ParticleMakers__Phot...    INFO Number of counters : 3
  | "Confidence Level"                              |    231268 |   117648.9 |    0.50871 |    0.29907 |    0.035546 |      0.9973 |
  | "Created photons"                               |    282828 |
  | "Selected photons"                              |      2000 |     231268 |     115.63 |     36.908 |      5.0000 |      207.00 |
+MCDecayTreeTuple                       INFO Number of counters : 2
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ |*"#accept"                                       |      2000 |       1458 |( 72.90000 +- 0.9938788)% |
+ | "Event"                                         |      2000 |
 PrForwardTrackingVelo                  INFO Number of counters : 3
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
  | "Accepted input tracks"                         |      2000 |     433998 |     217.00 |
@@ -1156,9 +1159,6 @@ PrForwardTrackingVelo.PrAddUTHit...    INFO Number of counters : 2
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
  | "#UT hits added"                                |    195420 |     772276 |     3.9519 |
  | "#tracks with hits added"                       |    195420 |
-PrLHCbID2MCParticle                    INFO Number of counters : 1
- |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- | "#removed null MCParticles"                     |   1584161 |          0 |     0.0000 |
 PrLongLivedTracking                    INFO Number of counters : 1
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
  | "#Downstream tracks made"                       |      2000 |     247687 |     123.84 |
@@ -1177,10 +1177,6 @@ PrStorePrUTHits                        INFO Number of counters : 1
 PrStoreUTHit                           INFO Number of counters : 1
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
  | "#banks"                                        |      2000 |     360000 |     180.00 |
-PrTrackAssociator                      INFO Number of counters : 2
- |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
- |*"Efficiency"                                    |     69028 |      60268 |( 87.30950 +- 0.1266944)% |
- | "MC particles per track"                        |     60268 |      62741 |     1.0410 |
 PrVeloUT                               INFO Number of counters : 2
  |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
  | "#seeds"                                        |      2000 |     448513 |     224.26 |
@@ -1287,376 +1283,317 @@ VeloKalman                             INFO Number of counters : 1
  | "Nb of Produced Tracks"                         |      2000 |      80547 |     40.273 |
 ApplicationMgr                         INFO Application Manager Stopped successfully
 FutureCellularAutomatonAlg             INFO Built <229.863> cellular automaton clusters/event  with <3.7305> iterations (min,max)=(2,7) on average 
-CopyInputStream                        INFO Events output: 156
-HLTControlFlowMgr                      INFO Memory pool: used 3.50651 +/- 0.00345805 MiB (min: 3, max: 5) in 1 +/- 0 blocks (allocated >once in 0 +/- 0% events). Allocated capacity was 10 +/- 0 MiB (min: 10, max: 10) and 42.5215 +/- 0.110855 (min: 32, max: 70) requests were served
+MCDecayTreeTuple                    SUCCESS Booked 1 N-Tuples and 0 Event Tag Collections
+MCDecayTreeTuple                    SUCCESS List of booked N-Tuples in directory "FILE1/MCDecayTreeTuple"
+MCDecayTreeTuple                    SUCCESS  ID=MCDecayTree   Title="MCDecayTree"                             #items=125{B0_TRUEP_E,B0_TRUEP_X,B0_TRUEP_Y,B0_TRUEP_Z,B0_TRUEPT,B0_TRUEORIGINVERTEX_X,B0_TR}
+HLTControlFlowMgr                      INFO Memory pool: used 3.50639 +/- 0.00345805 MiB (min: 3, max: 5) in 1 +/- 0 blocks (allocated >once in 0 +/- 0% events). Allocated capacity was 10 +/- 0 MiB (min: 10, max: 10) and 42.5215 +/- 0.110855 (min: 32, max: 70) requests were served
 HLTControlFlowMgr                      INFO Timing table:
 HLTControlFlowMgr                      INFO Average ticks per millisecond: 1000000
 HLTControlFlowMgr                      INFO 
  | Name of Algorithm                                                 | Execution Count | Total Time / s  | Avg. Time / us   |
- | "AddressKillerAlg"                                                |             156 |           0.093 |          598.887 |
- | "Gaudi__Hive__FetchLeavesFromFile"                                |            2000 |         385.310 |       192655.064 |
- | "CopyInputStream"                                                 |             156 |          91.264 |       585027.383 |
- | "CopyLinePersistenceLocations"                                    |             156 |           0.641 |         4113.986 |
- | "CopyParticle2PVRelationsFromLinePersistenceLocations"            |             156 |           0.287 |         1842.237 |
- | "CopyProtoParticle2MCRelations"                                   |             156 |           0.627 |         4024.779 |
- | "CopySignalMCParticles"                                           |             156 |           0.060 |          387.369 |
- | "PackMuonPIDs"                                                    |             156 |           0.004 |           26.881 |
- | "PackRichPIDs"                                                    |             156 |           0.005 |           33.440 |
- | "Gaudi__Hive__FetchDataFromFile#5"                                |            2000 |           0.041 |           20.690 |
- | "createODIN"                                                      |            2000 |           0.060 |           30.285 |
- | "DeterministicPrescaler"                                          |            2000 |           0.010 |            5.486 |
- | "DeterministicPrescaler#1"                                        |            2000 |           0.005 |            2.633 |
- | "DeterministicPrescaler#2"                                        |            2000 |           0.006 |            3.194 |
- | "DeterministicPrescaler#3"                                        |            2000 |           0.005 |            2.904 |
- | "ExecutionReportsWriter"                                          |             156 |           0.002 |           17.715 |
- | "Gaudi__Hive__FetchDataFromFile"                                  |            2000 |           0.008 |            4.253 |
- | "DummyEventTime"                                                  |            2000 |           0.015 |            7.953 |
- | "reserveIOV"                                                      |            2000 |           0.028 |           14.241 |
- | "VeloClusterTrackingSIMD"                                         |            2000 |           3.406 |         1703.418 |
- | "TracksVPMergerConverter"                                         |            2000 |           1.529 |          764.838 |
- | "LHCb__Converters__Track__v1__fromV2TrackV1Track"                 |            2000 |           1.484 |          742.274 |
- | "TrackBeamLineVertexFinderSoA"                                    |            2000 |           0.881 |          440.969 |
- | "LHCb__Converters__RecVertex__v2__fromVectorLHCbRecVertices"      |            2000 |           0.048 |           24.288 |
- | "Gaudi__Hive__FetchDataFromFile#1"                                |            2000 |           0.018 |            9.054 |
- | "FTRawBankDecoder"                                                |            2000 |           0.729 |          364.868 |
- | "PrStorePrUTHits"                                                 |            2000 |           0.496 |          248.462 |
- | "PrVeloUT"                                                        |            2000 |           1.462 |          731.002 |
- | "SciFiTrackForwardingStoreHit"                                    |            2000 |           0.143 |           71.879 |
- | "SciFiTrackForwarding"                                            |            2000 |           0.492 |          246.156 |
- | "VeloKalman"                                                      |            2000 |           0.047 |           23.565 |
- | "TracksUTConverter"                                               |            2000 |           0.385 |          192.691 |
- | "TracksFTConverter"                                               |            2000 |           0.206 |          103.477 |
- | "TracksFitConverter"                                              |            2000 |           0.158 |           79.001 |
- | "LHCb__Converters__Track__v1__fromV2TrackV1Track#3"               |            2000 |           0.204 |          102.412 |
- | "LHCb__Converters__Track__v1__fromV2TrackV1Track#1"               |            2000 |           0.218 |          109.028 |
- | "PrStoreFTHit"                                                    |            2000 |           0.264 |          132.462 |
- | "PrHybridSeeding"                                                 |            2000 |          29.097 |        14548.692 |
- | "PrStoreSciFiHits"                                                |            2000 |           0.442 |          221.325 |
- | "LHCb__Converters__Track__PrSeeding__fromTrackv2PrSeedingTracks"  |            2000 |          13.445 |         6722.878 |
- | "PrMatchNN"                                                       |            2000 |           5.861 |         2930.710 |
- | "TracksMatchConverter"                                            |            2000 |           0.810 |          405.439 |
- | "LHCb__Converters__Track__v1__fromV2TrackV1Track#7"               |            2000 |           0.716 |          358.353 |
- | "LHCb__Converters__Track__v1__fromV2TrackV1Track#5"               |            2000 |           0.776 |          388.445 |
- | "PrForwardTrackingVelo"                                           |            2000 |          54.816 |        27408.280 |
- | "TracksFTConverter#1"                                             |            2000 |           0.615 |          307.740 |
- | "LHCb__Converters__Track__v1__fromV2TrackV1Track#4"               |            2000 |           0.561 |          280.832 |
- | "PrLongLivedTracking"                                             |            2000 |          31.078 |        15539.269 |
- | "TracksDownstreamConverter"                                       |            2000 |           0.716 |          358.261 |
- | "LHCb__Converters__Track__v1__fromV2TrackV1Track#6"               |            2000 |           0.657 |          328.931 |
- | "PrStoreUTHit"                                                    |            2000 |           0.623 |          311.961 |
- | "VPClus"                                                          |            2000 |           0.959 |          479.982 |
- | "TrackBestTrackCreator"                                           |            2000 |         221.382 |       110691.078 |
- | "InEcalFutureAcceptanceAlg"                                       |            2000 |           2.197 |         1098.510 |
- | "Gaudi__Hive__FetchDataFromFile#3"                                |            2000 |           0.031 |           15.547 |
- | "FutureEcalZSup"                                                  |            2000 |           1.501 |          750.935 |
- | "FutureCellularAutomatonAlg"                                      |            2000 |           5.883 |         2941.591 |
- | "CaloFutureShowerOverlap"                                         |            2000 |          10.773 |         5386.751 |
- | "CaloFutureClusterCovarianceAlg"                                  |            2000 |           1.059 |          529.589 |
- | "FuturePhotonMatchAlg"                                            |            2000 |          24.850 |        12425.397 |
- | "FutureClusChi22ID"                                               |            2000 |           0.247 |          123.509 |
- | "LHCb__Converters__Calo__Cluster__v1__fromV2"                     |            2000 |           4.684 |         2342.409 |
- | "ClassifyPhotonElectronAlg"                                       |            2000 |           3.012 |         1506.232 |
- | "LHCb__Converters__Calo__Hypo__v1__fromV2#1"                      |            2000 |           3.006 |         1503.211 |
- | "FutureElectronMatchAlg"                                          |            2000 |          41.020 |        20510.446 |
- | "LHCb__Converters__Calo__Hypo2TrackTable__v1__fromV2"             |            2000 |           3.900 |         1950.331 |
- | "FutureTrack2EcalEAlg"                                            |            2000 |           1.363 |          681.929 |
- | "FutureEcalPIDmuAlg"                                              |            2000 |           0.200 |          100.177 |
- | "FutureEcalChi22ID"                                               |            2000 |           0.168 |           84.322 |
- | "FutureEcalPIDeAlg"                                               |            2000 |           0.160 |           80.219 |
- | "FutureInBremFutureAcceptanceAlg"                                 |            2000 |           0.387 |          193.644 |
- | "LHCb__Converters__Calo__Hypo__v1__fromV2"                        |            2000 |           3.003 |         1501.566 |
- | "BremMatchAlgFuture"                                              |            2000 |          17.218 |         8609.360 |
- | "LHCb__Converters__Calo__Hypo2TrackTable__v1__fromV2#1"           |            2000 |           7.284 |         3642.260 |
- | "FutureHcalZSup"                                                  |            2000 |           0.293 |          146.818 |
- | "InHcalFutureAcceptanceAlg"                                       |            2000 |           1.603 |          801.819 |
- | "FutureTrack2HcalEAlg"                                            |            2000 |           0.802 |          401.455 |
- | "FutureHcalPIDeAlg"                                               |            2000 |           0.133 |           66.939 |
- | "FutureHcalPIDmuAlg"                                              |            2000 |           0.095 |           47.577 |
- | "BremChi22IDFuture"                                               |            2000 |           0.200 |          100.107 |
- | "BremPIDeAlgFuture"                                               |            2000 |           0.188 |           94.104 |
- | "Rich__Future__Rec__TrackFilter"                                  |            2000 |           0.067 |           33.755 |
- | "RichTrackSegmentsDownstream"                                     |            2000 |           1.030 |          515.461 |
- | "RichEmittedYieldsDownstream"                                     |            2000 |           0.044 |           22.469 |
- | "RichEmittedCKAnglesDownstream"                                   |            2000 |           0.082 |           41.026 |
- | "RichMassConesDownstream"                                         |            2000 |           2.190 |         1095.138 |
- | "RichDetectableYieldsDownstream"                                  |            2000 |           0.063 |           31.705 |
- | "RichGeomEffDownstream"                                           |            2000 |           0.196 |           98.385 |
- | "RichSignalYieldsDownstream"                                      |            2000 |           0.034 |           17.031 |
- | "Gaudi__Hive__FetchDataFromFile#2"                                |            2000 |           0.027 |           13.782 |
- | "RichRawDecoder"                                                  |            2000 |           0.721 |          360.776 |
- | "RichPixelClustering"                                             |            2000 |           1.169 |          584.586 |
- | "RichSIMDPixels"                                                  |            2000 |           2.150 |         1075.279 |
- | "RichTkSegmentSelDownstream"                                      |            2000 |           0.032 |           16.472 |
- | "RichTrackGloPointsDownstream"                                    |            2000 |           0.134 |           67.317 |
- | "RichTrackLocPointsDownstream"                                    |            2000 |           0.026 |           13.282 |
- | "RichSignalCKAnglesDownstream"                                    |            2000 |           0.066 |           33.179 |
- | "RichCKResolutionsDownstream"                                     |            2000 |           0.028 |           14.338 |
- | "RichPhotonRecoDownstream"                                        |            2000 |           3.120 |         1560.410 |
- | "RichPredPixelSignalDownstream"                                   |            2000 |           0.342 |          171.443 |
- | "RichRecSummaryDownstream"                                        |            2000 |           0.326 |          163.331 |
- | "RichGPIDInitDownstream"                                          |            2000 |           0.055 |           27.921 |
- | "RichPixBackgroundsIt0Downstream"                                 |            2000 |           0.277 |          138.765 |
- | "RichGPIDLikelihoodIt0Downstream"                                 |            2000 |           0.568 |          284.017 |
- | "RichPixBackgroundsIt1Downstream"                                 |            2000 |           0.269 |          134.729 |
- | "RichGPIDLikelihoodIt1Downstream"                                 |            2000 |           0.531 |          265.822 |
- | "RichPIDsWriterDownstream"                                        |            2000 |           0.091 |           45.739 |
- | "RichTrackSegmentsLong"                                           |            2000 |           3.255 |         1627.653 |
- | "RichEmittedYieldsLong"                                           |            2000 |           0.100 |           50.329 |
- | "RichEmittedCKAnglesLong"                                         |            2000 |           0.313 |          156.905 |
- | "RichMassConesLong"                                               |            2000 |           8.521 |         4260.785 |
- | "RichDetectableYieldsLong"                                        |            2000 |           0.199 |           99.784 |
- | "RichGeomEffLong"                                                 |            2000 |           0.744 |          372.148 |
- | "RichSignalYieldsLong"                                            |            2000 |           0.058 |           29.284 |
- | "RichTkSegmentSelLong"                                            |            2000 |           0.027 |           13.928 |
- | "RichTrackGloPointsLong"                                          |            2000 |           0.433 |          216.673 |
- | "RichTrackLocPointsLong"                                          |            2000 |           0.048 |           24.017 |
- | "RichSignalCKAnglesLong"                                          |            2000 |           0.268 |          134.031 |
- | "RichCKResolutionsLong"                                           |            2000 |           0.057 |           28.878 |
- | "RichPhotonRecoLong"                                              |            2000 |          14.747 |         7373.642 |
- | "RichPredPixelSignalLong"                                         |            2000 |           1.599 |          799.720 |
- | "RichRecSummaryLong"                                              |            2000 |           0.695 |          347.914 |
- | "RichGPIDInitLong"                                                |            2000 |           0.031 |           15.731 |
- | "RichPixBackgroundsIt0Long"                                       |            2000 |           0.289 |          144.617 |
- | "RichGPIDLikelihoodIt0Long"                                       |            2000 |           4.863 |         2431.910 |
- | "RichPixBackgroundsIt1Long"                                       |            2000 |           0.331 |          165.987 |
- | "RichGPIDLikelihoodIt1Long"                                       |            2000 |           7.607 |         3803.940 |
- | "RichPIDsWriterLong"                                              |            2000 |           0.284 |          142.499 |
- | "RichTrackSegmentsUpstream"                                       |            2000 |           0.269 |          134.860 |
- | "RichEmittedYieldsUpstream"                                       |            2000 |           0.033 |           16.685 |
- | "RichEmittedCKAnglesUpstream"                                     |            2000 |           0.047 |           23.640 |
- | "RichMassConesUpstream"                                           |            2000 |           0.793 |          396.807 |
- | "RichDetectableYieldsUpstream"                                    |            2000 |           0.041 |           20.595 |
- | "RichGeomEffUpstream"                                             |            2000 |           0.089 |           44.522 |
- | "RichSignalYieldsUpstream"                                        |            2000 |           0.032 |           16.189 |
- | "RichTkSegmentSelUpstream"                                        |            2000 |           0.046 |           23.027 |
- | "RichTrackGloPointsUpstream"                                      |            2000 |           0.056 |           28.267 |
- | "RichTrackLocPointsUpstream"                                      |            2000 |           0.030 |           15.128 |
- | "RichSignalCKAnglesUpstream"                                      |            2000 |           0.044 |           22.284 |
- | "RichCKResolutionsUpstream"                                       |            2000 |           0.023 |           11.698 |
- | "RichPhotonRecoUpstream"                                          |            2000 |           1.321 |          660.539 |
- | "RichPredPixelSignalUpstream"                                     |            2000 |           0.252 |          126.396 |
- | "RichRecSummaryUpstream"                                          |            2000 |           0.248 |          124.477 |
- | "RichGPIDInitUpstream"                                            |            2000 |           0.027 |           13.955 |
- | "RichPixBackgroundsIt0Upstream"                                   |            2000 |           0.267 |          133.766 |
- | "RichGPIDLikelihoodIt0Upstream"                                   |            2000 |           0.305 |          152.990 |
- | "RichPixBackgroundsIt1Upstream"                                   |            2000 |           0.243 |          121.706 |
- | "RichGPIDLikelihoodIt1Upstream"                                   |            2000 |           0.274 |          137.403 |
- | "RichPIDsWriterUpstream"                                          |            2000 |           0.060 |           30.128 |
- | "Rich__Future__Rec__MergeRichPIDs"                                |            2000 |           0.310 |          155.319 |
- | "FunctionalChargedProtoParticleMaker"                             |            2000 |          36.416 |        18208.273 |
- | "FunctionalParticleMaker"                                         |            2000 |           0.458 |          229.477 |
- | "FilterDesktop"                                                   |            2000 |           3.716 |         1858.245 |
- | "CombineParticles"                                                |            2000 |           0.714 |          357.327 |
- | "CaloFutureMergedPi0"                                             |            2000 |           2.533 |         1266.542 |
- | "LHCb__Converters__Calo__Cluster__v1__fromV2#1"                   |            2000 |           0.240 |          120.459 |
- | "LHCb__Converters__Calo__Hypo__v1__MergedPi0__fromV2"             |            2000 |           1.189 |          594.723 |
- | "FutureNeutralProtoPAlg"                                          |            2000 |          12.500 |         6250.328 |
- | "LHCb__Phys__ParticleMakers__PhotonMaker"                         |            2000 |           1.352 |          676.427 |
- | "FilterDesktop#1"                                                 |            2000 |           0.181 |           90.625 |
- | "CombineParticles#1"                                              |            2000 |           0.292 |          146.024 |
- | "FilterDesktop#2"                                                 |            2000 |           0.072 |           36.122 |
- | "FilterDesktop#15"                                                |             138 |           0.005 |           39.706 |
- | "FunctionalParticleMaker#1"                                       |             156 |           0.011 |           74.745 |
- | "FilterDesktop#6"                                                 |             156 |           0.003 |           25.142 |
- | "FunctionalParticleMaker#3"                                       |             156 |           0.007 |           47.056 |
- | "FilterDesktop#10"                                                |             156 |           0.004 |           25.823 |
- | "CombineParticles#5"                                              |             156 |           2.247 |        14405.568 |
- | "FilterDesktop#11"                                                |             156 |           0.004 |           29.149 |
- | "FilterDesktop#16"                                                |             138 |           0.002 |           17.282 |
- | "CombineParticles#6"                                              |             138 |           1.584 |        11478.839 |
- | "FilterDesktop#14"                                                |             138 |           0.005 |           36.284 |
- | "FilterDesktop#17"                                                |             138 |           0.005 |           38.940 |
- | "CombineParticles#3"                                              |             156 |           1.622 |        10403.343 |
- | "FilterDesktop#7"                                                 |             156 |           0.006 |           40.112 |
- | "FilterDesktop#18"                                                |             138 |           0.002 |           19.448 |
- | "FilterDesktop#4"                                                 |             156 |           1.055 |         6767.888 |
- | "CombineParticles#2"                                              |             156 |           0.040 |          260.413 |
- | "FilterDesktop#5"                                                 |             156 |           0.004 |           28.131 |
- | "FilterDesktop#19"                                                |             138 |           0.002 |           17.630 |
- | "FilterDesktop#3"                                                 |             156 |           0.110 |          710.535 |
- | "FilterDesktop#20"                                                |             138 |           0.025 |          188.208 |
- | "FilterDesktop#12"                                                |             156 |           0.012 |           80.236 |
- | "FilterDesktop#21"                                                |             138 |           0.009 |           70.595 |
- | "LHCb__Phys__ParticleMakers__MergedPi0Maker"                      |             138 |           0.011 |           81.151 |
- | "FilterDesktop#13"                                                |             138 |           0.006 |           45.719 |
- | "FilterDesktop#22"                                                |             138 |           0.005 |           39.287 |
- | "FunctionalParticleMaker#2"                                       |             156 |           0.031 |          203.045 |
- | "FilterDesktop#8"                                                 |             156 |           0.739 |         4738.863 |
- | "CombineParticles#4"                                              |             156 |           0.210 |         1347.596 |
- | "FilterDesktop#9"                                                 |             156 |           0.003 |           21.276 |
- | "FilterDesktop#23"                                                |             138 |           0.002 |           15.658 |
- | "FunctionalParticleMaker#4"                                       |            2000 |           0.416 |          208.261 |
- | "FilterDesktop#24"                                                |            2000 |           5.636 |         2818.104 |
- | "CombineParticles#7"                                              |            2000 |           3.466 |         1733.354 |
- | "CombineParticles#8"                                              |            2000 |           0.182 |           91.492 |
- | "FilterDesktop#25"                                                |            2000 |           0.035 |           17.947 |
- | "FilterDesktop#28"                                                |              13 |           0.000 |           52.732 |
- | "FilterDesktop#29"                                                |              13 |           0.000 |           22.738 |
- | "FilterDesktop#30"                                                |              13 |           0.000 |           32.904 |
- | "FilterDesktop#31"                                                |              13 |           0.000 |           29.192 |
- | "FilterDesktop#32"                                                |              13 |           0.003 |          241.820 |
- | "LHCb__Phys__ParticleMakers__MergedPi0Maker#1"                    |              69 |           0.010 |          158.576 |
- | "FilterDesktop#26"                                                |              69 |           0.003 |           49.719 |
- | "FilterDesktop#33"                                                |              13 |           0.000 |           26.624 |
- | "FilterDesktop#34"                                                |              13 |           0.000 |           54.461 |
- | "FilterDesktop#35"                                                |              13 |           0.000 |           19.555 |
- | "CombineParticles#9"                                              |              69 |           0.743 |        10773.088 |
- | "FilterDesktop#27"                                                |              69 |           0.029 |          424.910 |
- | "FilterDesktop#36"                                                |              13 |           0.004 |          330.849 |
- | "FilterDesktop#37"                                                |            2000 |           6.637 |         3318.618 |
- | "CombineParticles#10"                                             |            2000 |           0.530 |          265.102 |
- | "CombineParticles#11"                                             |            2000 |           0.232 |          116.219 |
- | "FilterDesktop#38"                                                |            2000 |           0.091 |           45.673 |
- | "FilterDesktop#39"                                                |              57 |           0.003 |           54.603 |
- | "FilterDesktop#40"                                                |              57 |           0.001 |           19.610 |
- | "FilterDesktop#41"                                                |              57 |           0.001 |           22.966 |
- | "FilterDesktop#42"                                                |              57 |           0.001 |           20.491 |
- | "FilterDesktop#43"                                                |              57 |           0.012 |          210.937 |
- | "FilterDesktop#44"                                                |              57 |           0.002 |           42.708 |
- | "FilterDesktop#45"                                                |              57 |           0.004 |           82.377 |
- | "FilterDesktop#46"                                                |              57 |           0.001 |           17.631 |
- | "FilterDesktop#47"                                                |              57 |           0.024 |          433.639 |
- | "CombineParticles#12"                                             |            2000 |           0.210 |          105.199 |
- | "FilterDesktop#48"                                                |            2000 |           0.060 |           30.444 |
- | "FilterDesktop#49"                                                |               4 |           0.000 |          100.494 |
- | "FilterDesktop#50"                                                |               4 |           0.000 |           29.491 |
- | "FilterDesktop#51"                                                |               4 |           0.000 |           35.687 |
- | "FilterDesktop#52"                                                |               4 |           0.000 |           18.642 |
- | "FilterDesktop#53"                                                |               4 |           0.001 |          274.876 |
- | "FilterDesktop#54"                                                |               4 |           0.000 |           58.982 |
- | "FilterDesktop#55"                                                |               4 |           0.001 |          279.041 |
- | "FilterDesktop#56"                                                |               4 |           0.000 |           22.921 |
- | "FilterDesktop#57"                                                |               4 |           0.001 |          401.709 |
- | "HltDecReportsWriter"                                             |             156 |           0.005 |           37.877 |
- | "HltPackedDataWriter"                                             |             156 |           1.171 |         7507.340 |
- | "Hlt__RoutingBitsWriter"                                          |             156 |           0.006 |           44.586 |
- | "Gaudi__Hive__FetchDataFromFile#6"                                |             156 |           0.000 |            4.194 |
- | "UnpackMCVertices"                                                |             156 |           1.002 |         6428.350 |
- | "Gaudi__Hive__FetchDataFromFile#7"                                |             156 |           0.002 |           15.343 |
- | "UnpackMCParticles"                                               |             156 |           0.896 |         5748.153 |
- | "Gaudi__Hive__FetchDataFromFile#26"                               |             156 |           0.002 |           15.092 |
- | "VPClusFull"                                                      |             156 |           0.194 |         1244.819 |
- | "Gaudi__Hive__FetchDataFromFile#24"                               |             156 |           0.001 |            8.481 |
- | "Gaudi__Hive__FetchDataFromFile#25"                               |             156 |           0.000 |            4.066 |
- | "VPFullCluster2MCParticleLinker"                                  |             156 |           0.407 |         2614.429 |
- | "PrLHCbID2MCParticle"                                             |             156 |           1.873 |        12012.544 |
- | "PrTrackAssociator"                                               |             156 |           0.211 |         1355.186 |
- | "MergeLinksByKeysToVector#1"                                      |             156 |           0.024 |          159.582 |
- | "ChargedProtoParticleAssociator"                                  |             156 |           0.069 |          445.888 |
- | "MergeRelationsTablesPP2MCP"                                      |             156 |           0.005 |           35.436 |
- | "MergeRelationsTablesPP2MCP#1"                                    |             156 |           0.000 |            5.694 |
- | "PackCaloElectrons"                                               |             156 |           0.001 |           10.107 |
- | "PackCaloMergedPi0s"                                              |             156 |           0.002 |           12.827 |
- | "PackCaloPhotons"                                                 |             156 |           0.016 |          108.931 |
- | "PackCaloSplitPhotons"                                            |             156 |           0.002 |           15.514 |
- | "PackMCParticle"                                                  |             156 |           0.009 |           59.569 |
- | "PackMCVertex"                                                    |             156 |           0.010 |           66.973 |
- | "PackParticlesAndVertices"                                        |             156 |           0.093 |          598.351 |
- | "PackChargedProtos"                                               |             156 |           0.004 |           27.764 |
- | "PackNeutralProtos"                                               |             156 |           0.002 |           15.403 |
- | "PackPVs"                                                         |             156 |           0.002 |           16.193 |
- | "PackTracks"                                                      |             156 |           0.009 |           57.978 |
- | "RawEventSimpleCombiner"                                          |             156 |           0.061 |          392.690 |
+ | "Gaudi__Hive__FetchDataFromFile#5"                                |            2000 |         126.793 |        63396.995 |
+ | "createODIN"                                                      |            2000 |           0.145 |           72.751 |
+ | "DeterministicPrescaler"                                          |            2000 |           0.011 |            5.877 |
+ | "DeterministicPrescaler#1"                                        |            2000 |           0.005 |            2.947 |
+ | "DeterministicPrescaler#2"                                        |            2000 |           0.007 |            3.707 |
+ | "DeterministicPrescaler#3"                                        |            2000 |           0.005 |            2.809 |
+ | "ExecutionReportsWriter"                                          |            2000 |           0.033 |           16.609 |
+ | "Gaudi__Hive__FetchDataFromFile"                                  |            2000 |           0.016 |            8.341 |
+ | "DummyEventTime"                                                  |            2000 |           0.015 |            7.744 |
+ | "reserveIOV"                                                      |            2000 |           0.029 |           14.516 |
+ | "VeloClusterTrackingSIMD"                                         |            2000 |           3.123 |         1561.977 |
+ | "TracksVPMergerConverter"                                         |            2000 |           0.826 |          413.205 |
+ | "LHCb__Converters__Track__v1__fromV2TrackV1Track"                 |            2000 |           1.153 |          576.579 |
+ | "TrackBeamLineVertexFinderSoA"                                    |            2000 |           0.697 |          348.999 |
+ | "LHCb__Converters__RecVertex__v2__fromVectorLHCbRecVertices"      |            2000 |           0.051 |           25.592 |
+ | "Gaudi__Hive__FetchDataFromFile#1"                                |            2000 |           0.012 |            6.487 |
+ | "FTRawBankDecoder"                                                |            2000 |           0.397 |          198.678 |
+ | "PrStorePrUTHits"                                                 |            2000 |           0.513 |          256.975 |
+ | "PrVeloUT"                                                        |            2000 |           0.979 |          489.592 |
+ | "SciFiTrackForwardingStoreHit"                                    |            2000 |           0.150 |           75.245 |
+ | "SciFiTrackForwarding"                                            |            2000 |           0.493 |          246.748 |
+ | "VeloKalman"                                                      |            2000 |           0.056 |           28.216 |
+ | "TracksUTConverter"                                               |            2000 |           0.452 |          226.243 |
+ | "TracksFTConverter"                                               |            2000 |           0.204 |          102.150 |
+ | "TracksFitConverter"                                              |            2000 |           0.156 |           78.071 |
+ | "LHCb__Converters__Track__v1__fromV2TrackV1Track#3"               |            2000 |           0.202 |          101.423 |
+ | "LHCb__Converters__Track__v1__fromV2TrackV1Track#1"               |            2000 |           0.237 |          118.995 |
+ | "PrStoreFTHit"                                                    |            2000 |           0.270 |          135.103 |
+ | "PrHybridSeeding"                                                 |            2000 |          29.334 |        14667.042 |
+ | "PrStoreSciFiHits"                                                |            2000 |           0.456 |          228.228 |
+ | "LHCb__Converters__Track__PrSeeding__fromTrackv2PrSeedingTracks"  |            2000 |          13.462 |         6731.277 |
+ | "PrMatchNN"                                                       |            2000 |           6.088 |         3044.249 |
+ | "TracksMatchConverter"                                            |            2000 |           0.853 |          426.544 |
+ | "LHCb__Converters__Track__v1__fromV2TrackV1Track#7"               |            2000 |           0.736 |          368.193 |
+ | "LHCb__Converters__Track__v1__fromV2TrackV1Track#5"               |            2000 |           0.802 |          401.206 |
+ | "PrForwardTrackingVelo"                                           |            2000 |          54.966 |        27483.443 |
+ | "TracksFTConverter#1"                                             |            2000 |           0.641 |          320.875 |
+ | "LHCb__Converters__Track__v1__fromV2TrackV1Track#4"               |            2000 |           0.585 |          292.939 |
+ | "PrLongLivedTracking"                                             |            2000 |          31.286 |        15643.094 |
+ | "TracksDownstreamConverter"                                       |            2000 |           0.751 |          375.651 |
+ | "LHCb__Converters__Track__v1__fromV2TrackV1Track#6"               |            2000 |           0.668 |          334.485 |
+ | "PrStoreUTHit"                                                    |            2000 |           0.658 |          329.307 |
+ | "VPClus"                                                          |            2000 |           0.963 |          481.803 |
+ | "TrackBestTrackCreator"                                           |            2000 |         219.112 |       109556.381 |
+ | "InEcalFutureAcceptanceAlg"                                       |            2000 |           1.988 |          994.156 |
+ | "Gaudi__Hive__FetchDataFromFile#3"                                |            2000 |           0.025 |           12.550 |
+ | "FutureEcalZSup"                                                  |            2000 |           1.183 |          591.708 |
+ | "FutureCellularAutomatonAlg"                                      |            2000 |           5.677 |         2838.828 |
+ | "CaloFutureShowerOverlap"                                         |            2000 |          10.821 |         5410.752 |
+ | "CaloFutureClusterCovarianceAlg"                                  |            2000 |           0.929 |          464.914 |
+ | "FuturePhotonMatchAlg"                                            |            2000 |          24.906 |        12453.269 |
+ | "FutureClusChi22ID"                                               |            2000 |           0.273 |          136.730 |
+ | "LHCb__Converters__Calo__Cluster__v1__fromV2"                     |            2000 |           4.835 |         2417.853 |
+ | "ClassifyPhotonElectronAlg"                                       |            2000 |           3.104 |         1552.215 |
+ | "LHCb__Converters__Calo__Hypo__v1__fromV2#1"                      |            2000 |           3.055 |         1527.975 |
+ | "FutureElectronMatchAlg"                                          |            2000 |          41.596 |        20798.306 |
+ | "LHCb__Converters__Calo__Hypo2TrackTable__v1__fromV2"             |            2000 |           3.941 |         1970.552 |
+ | "FutureTrack2EcalEAlg"                                            |            2000 |           1.119 |          559.924 |
+ | "FutureEcalPIDmuAlg"                                              |            2000 |           0.229 |          114.795 |
+ | "FutureEcalChi22ID"                                               |            2000 |           0.175 |           87.571 |
+ | "FutureEcalPIDeAlg"                                               |            2000 |           0.151 |           75.709 |
+ | "FutureInBremFutureAcceptanceAlg"                                 |            2000 |           0.405 |          202.603 |
+ | "LHCb__Converters__Calo__Hypo__v1__fromV2"                        |            2000 |           3.040 |         1520.009 |
+ | "BremMatchAlgFuture"                                              |            2000 |          17.200 |         8600.410 |
+ | "LHCb__Converters__Calo__Hypo2TrackTable__v1__fromV2#1"           |            2000 |           7.309 |         3654.996 |
+ | "FutureHcalZSup"                                                  |            2000 |           0.306 |          153.016 |
+ | "InHcalFutureAcceptanceAlg"                                       |            2000 |           1.683 |          841.532 |
+ | "FutureTrack2HcalEAlg"                                            |            2000 |           0.817 |          408.745 |
+ | "FutureHcalPIDeAlg"                                               |            2000 |           0.137 |           68.579 |
+ | "FutureHcalPIDmuAlg"                                              |            2000 |           0.097 |           48.971 |
+ | "BremChi22IDFuture"                                               |            2000 |           0.210 |          105.337 |
+ | "BremPIDeAlgFuture"                                               |            2000 |           0.196 |           98.181 |
+ | "Rich__Future__Rec__TrackFilter"                                  |            2000 |           0.069 |           34.632 |
+ | "RichTrackSegmentsDownstream"                                     |            2000 |           1.033 |          516.874 |
+ | "RichEmittedYieldsDownstream"                                     |            2000 |           0.047 |           23.939 |
+ | "RichEmittedCKAnglesDownstream"                                   |            2000 |           0.084 |           42.203 |
+ | "RichMassConesDownstream"                                         |            2000 |           2.242 |         1121.414 |
+ | "RichDetectableYieldsDownstream"                                  |            2000 |           0.062 |           31.303 |
+ | "RichGeomEffDownstream"                                           |            2000 |           0.209 |          104.975 |
+ | "RichSignalYieldsDownstream"                                      |            2000 |           0.034 |           17.063 |
+ | "Gaudi__Hive__FetchDataFromFile#2"                                |            2000 |           0.021 |           10.515 |
+ | "RichRawDecoder"                                                  |            2000 |           0.717 |          358.874 |
+ | "RichPixelClustering"                                             |            2000 |           0.716 |          358.197 |
+ | "RichSIMDPixels"                                                  |            2000 |           2.290 |         1145.201 |
+ | "RichTkSegmentSelDownstream"                                      |            2000 |           0.028 |           14.333 |
+ | "RichTrackGloPointsDownstream"                                    |            2000 |           0.143 |           71.566 |
+ | "RichTrackLocPointsDownstream"                                    |            2000 |           0.027 |           13.939 |
+ | "RichSignalCKAnglesDownstream"                                    |            2000 |           0.068 |           34.278 |
+ | "RichCKResolutionsDownstream"                                     |            2000 |           0.028 |           14.137 |
+ | "RichPhotonRecoDownstream"                                        |            2000 |           3.100 |         1550.148 |
+ | "RichPredPixelSignalDownstream"                                   |            2000 |           0.351 |          175.986 |
+ | "RichRecSummaryDownstream"                                        |            2000 |           0.336 |          168.335 |
+ | "RichGPIDInitDownstream"                                          |            2000 |           0.046 |           23.061 |
+ | "RichPixBackgroundsIt0Downstream"                                 |            2000 |           0.282 |          141.091 |
+ | "RichGPIDLikelihoodIt0Downstream"                                 |            2000 |           0.589 |          294.705 |
+ | "RichPixBackgroundsIt1Downstream"                                 |            2000 |           0.258 |          129.412 |
+ | "RichGPIDLikelihoodIt1Downstream"                                 |            2000 |           0.534 |          267.038 |
+ | "RichPIDsWriterDownstream"                                        |            2000 |           0.088 |           44.148 |
+ | "RichTrackSegmentsLong"                                           |            2000 |           3.386 |         1693.077 |
+ | "RichEmittedYieldsLong"                                           |            2000 |           0.103 |           51.527 |
+ | "RichEmittedCKAnglesLong"                                         |            2000 |           0.333 |          166.567 |
+ | "RichMassConesLong"                                               |            2000 |           8.918 |         4459.292 |
+ | "RichDetectableYieldsLong"                                        |            2000 |           0.218 |          109.015 |
+ | "RichGeomEffLong"                                                 |            2000 |           0.777 |          388.952 |
+ | "RichSignalYieldsLong"                                            |            2000 |           0.059 |           29.731 |
+ | "RichTkSegmentSelLong"                                            |            2000 |           0.029 |           14.987 |
+ | "RichTrackGloPointsLong"                                          |            2000 |           0.460 |          230.255 |
+ | "RichTrackLocPointsLong"                                          |            2000 |           0.059 |           29.503 |
+ | "RichSignalCKAnglesLong"                                          |            2000 |           0.278 |          139.202 |
+ | "RichCKResolutionsLong"                                           |            2000 |           0.062 |           31.478 |
+ | "RichPhotonRecoLong"                                              |            2000 |          14.789 |         7394.872 |
+ | "RichPredPixelSignalLong"                                         |            2000 |           1.654 |          827.258 |
+ | "RichRecSummaryLong"                                              |            2000 |           0.737 |          368.996 |
+ | "RichGPIDInitLong"                                                |            2000 |           0.033 |           16.868 |
+ | "RichPixBackgroundsIt0Long"                                       |            2000 |           0.289 |          144.866 |
+ | "RichGPIDLikelihoodIt0Long"                                       |            2000 |           4.917 |         2458.999 |
+ | "RichPixBackgroundsIt1Long"                                       |            2000 |           0.337 |          168.984 |
+ | "RichGPIDLikelihoodIt1Long"                                       |            2000 |           7.802 |         3901.359 |
+ | "RichPIDsWriterLong"                                              |            2000 |           0.312 |          156.098 |
+ | "RichTrackSegmentsUpstream"                                       |            2000 |           0.293 |          146.799 |
+ | "RichEmittedYieldsUpstream"                                       |            2000 |           0.035 |           17.696 |
+ | "RichEmittedCKAnglesUpstream"                                     |            2000 |           0.049 |           24.841 |
+ | "RichMassConesUpstream"                                           |            2000 |           0.853 |          426.924 |
+ | "RichDetectableYieldsUpstream"                                    |            2000 |           0.042 |           21.448 |
+ | "RichGeomEffUpstream"                                             |            2000 |           0.093 |           46.675 |
+ | "RichSignalYieldsUpstream"                                        |            2000 |           0.032 |           16.269 |
+ | "RichTkSegmentSelUpstream"                                        |            2000 |           0.021 |           10.692 |
+ | "RichTrackGloPointsUpstream"                                      |            2000 |           0.058 |           29.139 |
+ | "RichTrackLocPointsUpstream"                                      |            2000 |           0.024 |           12.313 |
+ | "RichSignalCKAnglesUpstream"                                      |            2000 |           0.044 |           22.281 |
+ | "RichCKResolutionsUpstream"                                       |            2000 |           0.024 |           12.151 |
+ | "RichPhotonRecoUpstream"                                          |            2000 |           1.345 |          672.763 |
+ | "RichPredPixelSignalUpstream"                                     |            2000 |           0.253 |          126.686 |
+ | "RichRecSummaryUpstream"                                          |            2000 |           0.264 |          132.364 |
+ | "RichGPIDInitUpstream"                                            |            2000 |           0.033 |           16.861 |
+ | "RichPixBackgroundsIt0Upstream"                                   |            2000 |           0.272 |          136.105 |
+ | "RichGPIDLikelihoodIt0Upstream"                                   |            2000 |           0.306 |          153.235 |
+ | "RichPixBackgroundsIt1Upstream"                                   |            2000 |           0.242 |          121.489 |
+ | "RichGPIDLikelihoodIt1Upstream"                                   |            2000 |           0.269 |          134.518 |
+ | "RichPIDsWriterUpstream"                                          |            2000 |           0.068 |           34.380 |
+ | "Rich__Future__Rec__MergeRichPIDs"                                |            2000 |           0.318 |          159.476 |
+ | "FunctionalChargedProtoParticleMaker"                             |            2000 |          36.118 |        18059.091 |
+ | "FunctionalParticleMaker"                                         |            2000 |           0.419 |          209.950 |
+ | "FilterDesktop"                                                   |            2000 |           2.724 |         1362.030 |
+ | "CombineParticles"                                                |            2000 |           0.417 |          208.803 |
+ | "CaloFutureMergedPi0"                                             |            2000 |           2.567 |         1283.589 |
+ | "LHCb__Converters__Calo__Cluster__v1__fromV2#1"                   |            2000 |           0.265 |          132.696 |
+ | "LHCb__Converters__Calo__Hypo__v1__MergedPi0__fromV2"             |            2000 |           1.194 |          597.202 |
+ | "FutureNeutralProtoPAlg"                                          |            2000 |          14.076 |         7038.277 |
+ | "LHCb__Phys__ParticleMakers__PhotonMaker"                         |            2000 |           0.943 |          471.655 |
+ | "FilterDesktop#1"                                                 |            2000 |           0.207 |          103.773 |
+ | "CombineParticles#1"                                              |            2000 |           0.303 |          151.990 |
+ | "FilterDesktop#2"                                                 |            2000 |           0.074 |           37.373 |
+ | "FilterDesktop#15"                                                |             138 |           0.005 |           39.400 |
+ | "FunctionalParticleMaker#1"                                       |             156 |           0.012 |           77.751 |
+ | "FilterDesktop#6"                                                 |             156 |           0.003 |           23.804 |
+ | "FunctionalParticleMaker#3"                                       |             156 |           0.007 |           49.286 |
+ | "FilterDesktop#10"                                                |             156 |           0.003 |           22.485 |
+ | "CombineParticles#5"                                              |             156 |           1.784 |        11436.945 |
+ | "FilterDesktop#11"                                                |             156 |           0.004 |           31.103 |
+ | "FilterDesktop#16"                                                |             138 |           0.002 |           17.319 |
+ | "CombineParticles#6"                                              |             138 |           0.922 |         6684.904 |
+ | "FilterDesktop#14"                                                |             138 |           0.005 |           37.020 |
+ | "FilterDesktop#17"                                                |             138 |           0.005 |           38.938 |
+ | "CombineParticles#3"                                              |             156 |           1.645 |        10546.736 |
+ | "FilterDesktop#7"                                                 |             156 |           0.006 |           39.823 |
+ | "FilterDesktop#18"                                                |             138 |           0.002 |           20.021 |
+ | "FilterDesktop#4"                                                 |             156 |           1.022 |         6556.860 |
+ | "CombineParticles#2"                                              |             156 |           0.041 |          263.983 |
+ | "FilterDesktop#5"                                                 |             156 |           0.004 |           28.707 |
+ | "FilterDesktop#19"                                                |             138 |           0.002 |           17.595 |
+ | "FilterDesktop#3"                                                 |             156 |           0.107 |          686.347 |
+ | "FilterDesktop#20"                                                |             138 |           0.024 |          179.696 |
+ | "FilterDesktop#12"                                                |             156 |           0.012 |           79.084 |
+ | "FilterDesktop#21"                                                |             138 |           0.009 |           71.435 |
+ | "LHCb__Phys__ParticleMakers__MergedPi0Maker"                      |             138 |           0.012 |           90.839 |
+ | "FilterDesktop#13"                                                |             138 |           0.006 |           45.069 |
+ | "FilterDesktop#22"                                                |             138 |           0.005 |           38.374 |
+ | "FunctionalParticleMaker#2"                                       |             156 |           0.033 |          211.705 |
+ | "FilterDesktop#8"                                                 |             156 |           0.699 |         4485.408 |
+ | "CombineParticles#4"                                              |             156 |           0.065 |          420.029 |
+ | "FilterDesktop#9"                                                 |             156 |           0.003 |           22.006 |
+ | "FilterDesktop#23"                                                |             138 |           0.002 |           16.916 |
+ | "FunctionalParticleMaker#4"                                       |            2000 |           0.445 |          222.958 |
+ | "FilterDesktop#24"                                                |            2000 |           5.574 |         2787.467 |
+ | "CombineParticles#7"                                              |            2000 |           2.779 |         1389.986 |
+ | "CombineParticles#8"                                              |            2000 |           0.188 |           94.456 |
+ | "FilterDesktop#25"                                                |            2000 |           0.051 |           25.817 |
+ | "FilterDesktop#28"                                                |              13 |           0.000 |           48.363 |
+ | "FilterDesktop#29"                                                |              13 |           0.000 |           24.575 |
+ | "FilterDesktop#30"                                                |              13 |           0.000 |           29.982 |
+ | "FilterDesktop#31"                                                |              13 |           0.000 |           35.427 |
+ | "FilterDesktop#32"                                                |              13 |           0.002 |          229.978 |
+ | "LHCb__Phys__ParticleMakers__MergedPi0Maker#1"                    |              69 |           0.011 |          171.577 |
+ | "FilterDesktop#26"                                                |              69 |           0.003 |           48.131 |
+ | "FilterDesktop#33"                                                |              13 |           0.000 |           27.256 |
+ | "FilterDesktop#34"                                                |              13 |           0.000 |           52.178 |
+ | "FilterDesktop#35"                                                |              13 |           0.000 |           21.842 |
+ | "CombineParticles#9"                                              |              69 |           0.737 |        10695.188 |
+ | "FilterDesktop#27"                                                |              69 |           0.029 |          430.503 |
+ | "FilterDesktop#36"                                                |              13 |           0.004 |          313.697 |
+ | "FilterDesktop#37"                                                |            2000 |           6.575 |         3287.886 |
+ | "CombineParticles#10"                                             |            2000 |           0.533 |          266.880 |
+ | "CombineParticles#11"                                             |            2000 |           0.234 |          117.015 |
+ | "FilterDesktop#38"                                                |            2000 |           0.084 |           42.075 |
+ | "FilterDesktop#39"                                                |              57 |           0.003 |           55.321 |
+ | "FilterDesktop#40"                                                |              57 |           0.001 |           17.857 |
+ | "FilterDesktop#41"                                                |              57 |           0.001 |           21.240 |
+ | "FilterDesktop#42"                                                |              57 |           0.001 |           19.678 |
+ | "FilterDesktop#43"                                                |              57 |           0.011 |          207.187 |
+ | "FilterDesktop#44"                                                |              57 |           0.002 |           41.684 |
+ | "FilterDesktop#45"                                                |              57 |           0.004 |           80.996 |
+ | "FilterDesktop#46"                                                |              57 |           0.001 |           17.935 |
+ | "FilterDesktop#47"                                                |              57 |           0.025 |          454.581 |
+ | "CombineParticles#12"                                             |            2000 |           0.220 |          110.114 |
+ | "FilterDesktop#48"                                                |            2000 |           0.063 |           31.639 |
+ | "FilterDesktop#49"                                                |               4 |           0.000 |           92.087 |
+ | "FilterDesktop#50"                                                |               4 |           0.000 |           24.803 |
+ | "FilterDesktop#51"                                                |               4 |           0.000 |           31.259 |
+ | "FilterDesktop#52"                                                |               4 |           0.000 |           19.657 |
+ | "FilterDesktop#53"                                                |               4 |           0.001 |          251.377 |
+ | "FilterDesktop#54"                                                |               4 |           0.000 |           40.338 |
+ | "FilterDesktop#55"                                                |               4 |           0.000 |           76.634 |
+ | "FilterDesktop#56"                                                |               4 |           0.000 |           19.297 |
+ | "FilterDesktop#57"                                                |               4 |           0.001 |          406.572 |
+ | "HltDecReportsWriter"                                             |            2000 |           0.069 |           34.749 |
+ | "Hlt__RoutingBitsWriter"                                          |            2000 |           0.044 |           22.152 |
+ | "Gaudi__Hive__FetchDataFromFile#6"                                |            2000 |           0.022 |           11.332 |
+ | "UnpackMCVertices"                                                |            2000 |          13.866 |         6933.042 |
+ | "Gaudi__Hive__FetchDataFromFile#7"                                |            2000 |           0.026 |           13.048 |
+ | "UnpackMCParticles"                                               |            2000 |          11.635 |         5817.661 |
+ | "Gaudi__Hive__FetchDataFromFile#16"                               |            2000 |           0.023 |           11.821 |
+ | "MCDecayTreeTuple"                                                |            2000 |           6.199 |         3099.546 |
 
 HLTControlFlowMgr                      INFO 
-LAZY_AND: moore                                                                                                            #=2000    Sum=156         Eff=|( 7.800000 +- 0.599650)%|
- Gaudi__Hive__FetchLeavesFromFile/Gaudi__Hive__FetchLeavesFromFile                                                         #=2000    Sum=2000        Eff=|( 100.0000 +- 0.00000 )%|
- NONLAZY_OR: hlt_decision                                                                                                  #=2000    Sum=156         Eff=|( 7.800000 +- 0.599650)%|
-  LAZY_AND: Hlt2BToHHGammaEE_Inclusive_LineDecisionWithOutput                                                              #=2000    Sum=13          Eff=|(0.6500000 +- 0.179691)%|
-   LAZY_AND: Hlt2BToHHGammaEE_Inclusive_Line                                                                               #=2000    Sum=13          Eff=|(0.6500000 +- 0.179691)%|
-    DeterministicPrescaler/DeterministicPrescaler#1                                                                        #=2000    Sum=2000        Eff=|( 100.0000 +- 0.00000 )%|
-    FilterDesktop/FilterDesktop#25                                                                                         #=2000    Sum=13          Eff=|(0.6500000 +- 0.179691)%|
-   NONLAZY_OR: Hlt2BToHHGammaEE_Inclusive_LineOutput                                                                       #=13      Sum=13          Eff=|( 100.0000 +- 0.00000 )%|
-    FilterDesktop/FilterDesktop#30                                                                                         #=13      Sum=4           Eff=|( 30.76923 +- 12.8008 )%|
-    FilterDesktop/FilterDesktop#31                                                                                         #=13      Sum=5           Eff=|( 38.46154 +- 13.4932 )%|
-    LHCb__Converters__RecVertex__v2__fromVectorLHCbRecVertices/LHCb__Converters__RecVertex__v2__fromVectorLHCbRecVertices  #=156     Sum=156         Eff=|( 100.0000 +- 0.00000 )%|
-    FilterDesktop/FilterDesktop#32                                                                                         #=13      Sum=13          Eff=|( 100.0000 +- 0.00000 )%|
-    FilterDesktop/FilterDesktop#35                                                                                         #=13      Sum=3           Eff=|( 23.07692 +- 11.6855 )%|
-    FilterDesktop/FilterDesktop#28                                                                                         #=13      Sum=13          Eff=|( 100.0000 +- 0.00000 )%|
-    FilterDesktop/FilterDesktop#29                                                                                         #=13      Sum=3           Eff=|( 23.07692 +- 11.6855 )%|
-    FilterDesktop/FilterDesktop#36                                                                                         #=13      Sum=8           Eff=|( 61.53846 +- 13.4932 )%|
-    FilterDesktop/FilterDesktop#33                                                                                         #=13      Sum=3           Eff=|( 23.07692 +- 11.6855 )%|
-    FilterDesktop/FilterDesktop#34                                                                                         #=13      Sum=8           Eff=|( 61.53846 +- 13.4932 )%|
-  LAZY_AND: Hlt2BToHHGamma_Inclusive_LineDecisionWithOutput                                                                #=2000    Sum=138         Eff=|( 6.900000 +- 0.566741)%|
-   LAZY_AND: Hlt2BToHHGamma_Inclusive_Line                                                                                 #=2000    Sum=138         Eff=|( 6.900000 +- 0.566741)%|
-    DeterministicPrescaler/DeterministicPrescaler                                                                          #=2000    Sum=2000        Eff=|( 100.0000 +- 0.00000 )%|
-    FilterDesktop/FilterDesktop#2                                                                                          #=2000    Sum=138         Eff=|( 6.900000 +- 0.566741)%|
-   NONLAZY_OR: Hlt2BToHHGamma_Inclusive_LineOutput                                                                         #=138     Sum=138         Eff=|( 100.0000 +- 0.00000 )%|
-    FilterDesktop/FilterDesktop#23                                                                                         #=138     Sum=18          Eff=|( 13.04348 +- 2.86687 )%|
-    LHCb__Converters__RecVertex__v2__fromVectorLHCbRecVertices/LHCb__Converters__RecVertex__v2__fromVectorLHCbRecVertices  #=156     Sum=156         Eff=|( 100.0000 +- 0.00000 )%|
-    FilterDesktop/FilterDesktop#21                                                                                         #=138     Sum=138         Eff=|( 100.0000 +- 0.00000 )%|
-    FilterDesktop/FilterDesktop#17                                                                                         #=138     Sum=112         Eff=|( 81.15942 +- 3.32872 )%|
-    FilterDesktop/FilterDesktop#15                                                                                         #=138     Sum=138         Eff=|( 100.0000 +- 0.00000 )%|
-    FilterDesktop/FilterDesktop#22                                                                                         #=138     Sum=82          Eff=|( 59.42029 +- 4.18006 )%|
-    FilterDesktop/FilterDesktop#20                                                                                         #=138     Sum=138         Eff=|( 100.0000 +- 0.00000 )%|
-    FilterDesktop/FilterDesktop#19                                                                                         #=138     Sum=38          Eff=|( 27.53623 +- 3.80253 )%|
-    FilterDesktop/FilterDesktop#16                                                                                         #=138     Sum=21          Eff=|( 15.21739 +- 3.05762 )%|
-    FilterDesktop/FilterDesktop#18                                                                                         #=138     Sum=39          Eff=|( 28.26087 +- 3.83293 )%|
-  LAZY_AND: Hlt2BToHHHGammaEE_Inclusive_LineDecisionWithOutput                                                             #=2000    Sum=4           Eff=|(0.2000000 +- 0.0998999)%|
-   LAZY_AND: Hlt2BToHHHGammaEE_Inclusive_Line                                                                              #=2000    Sum=4           Eff=|(0.2000000 +- 0.0998999)%|
-    DeterministicPrescaler/DeterministicPrescaler#3                                                                        #=2000    Sum=2000        Eff=|( 100.0000 +- 0.00000 )%|
-    FilterDesktop/FilterDesktop#48                                                                                         #=2000    Sum=4           Eff=|(0.2000000 +- 0.0998999)%|
-   NONLAZY_OR: Hlt2BToHHHGammaEE_Inclusive_LineOutput                                                                      #=4       Sum=4           Eff=|( 100.0000 +- 0.00000 )%|
-    FilterDesktop/FilterDesktop#52                                                                                         #=4       Sum=0           Eff=|( 0.000000 +- 0.00000 )%|
-    FilterDesktop/FilterDesktop#54                                                                                         #=4       Sum=1           Eff=|( 25.00000 +- 21.6506 )%|
-    LHCb__Converters__RecVertex__v2__fromVectorLHCbRecVertices/LHCb__Converters__RecVertex__v2__fromVectorLHCbRecVertices  #=156     Sum=156         Eff=|( 100.0000 +- 0.00000 )%|
-    FilterDesktop/FilterDesktop#57                                                                                         #=4       Sum=3           Eff=|( 75.00000 +- 21.6506 )%|
-    FilterDesktop/FilterDesktop#51                                                                                         #=4       Sum=1           Eff=|( 25.00000 +- 21.6506 )%|
-    FilterDesktop/FilterDesktop#50                                                                                         #=4       Sum=0           Eff=|( 0.000000 +- 0.00000 )%|
-    FilterDesktop/FilterDesktop#53                                                                                         #=4       Sum=4           Eff=|( 100.0000 +- 0.00000 )%|
-    FilterDesktop/FilterDesktop#55                                                                                         #=4       Sum=3           Eff=|( 75.00000 +- 21.6506 )%|
-    FilterDesktop/FilterDesktop#56                                                                                         #=4       Sum=0           Eff=|( 0.000000 +- 0.00000 )%|
-    FilterDesktop/FilterDesktop#49                                                                                         #=4       Sum=4           Eff=|( 100.0000 +- 0.00000 )%|
-  LAZY_AND: Hlt2BToHHHGamma_Inclusive_LineDecisionWithOutput                                                               #=2000    Sum=57          Eff=|( 2.850000 +- 0.372074)%|
-   LAZY_AND: Hlt2BToHHHGamma_Inclusive_Line                                                                                #=2000    Sum=57          Eff=|( 2.850000 +- 0.372074)%|
-    DeterministicPrescaler/DeterministicPrescaler#2                                                                        #=2000    Sum=2000        Eff=|( 100.0000 +- 0.00000 )%|
-    FilterDesktop/FilterDesktop#38                                                                                         #=2000    Sum=57          Eff=|( 2.850000 +- 0.372074)%|
-   NONLAZY_OR: Hlt2BToHHHGamma_Inclusive_LineOutput                                                                        #=57      Sum=57          Eff=|( 100.0000 +- 0.00000 )%|
-    FilterDesktop/FilterDesktop#42                                                                                         #=57      Sum=15          Eff=|( 26.31579 +- 5.83254 )%|
-    FilterDesktop/FilterDesktop#41                                                                                         #=57      Sum=16          Eff=|( 28.07018 +- 5.95168 )%|
-    FilterDesktop/FilterDesktop#47                                                                                         #=57      Sum=50          Eff=|( 87.71930 +- 4.34732 )%|
-    LHCb__Converters__RecVertex__v2__fromVectorLHCbRecVertices/LHCb__Converters__RecVertex__v2__fromVectorLHCbRecVertices  #=156     Sum=156         Eff=|( 100.0000 +- 0.00000 )%|
-    FilterDesktop/FilterDesktop#46                                                                                         #=57      Sum=12          Eff=|( 21.05263 +- 5.39989 )%|
-    FilterDesktop/FilterDesktop#40                                                                                         #=57      Sum=7           Eff=|( 12.28070 +- 4.34732 )%|
-    FilterDesktop/FilterDesktop#43                                                                                         #=57      Sum=57          Eff=|( 100.0000 +- 0.00000 )%|
-    FilterDesktop/FilterDesktop#39                                                                                         #=57      Sum=57          Eff=|( 100.0000 +- 0.00000 )%|
-    FilterDesktop/FilterDesktop#44                                                                                         #=57      Sum=37          Eff=|( 64.91228 +- 6.32126 )%|
-    FilterDesktop/FilterDesktop#45                                                                                         #=57      Sum=57          Eff=|( 100.0000 +- 0.00000 )%|
- NONLAZY_OR: report_writers                                                                                                #=156     Sum=156         Eff=|( 100.0000 +- 0.00000 )%|
-  ExecutionReportsWriter/ExecutionReportsWriter                                                                            #=156     Sum=156         Eff=|( 100.0000 +- 0.00000 )%|
-  HltDecReportsWriter/HltDecReportsWriter                                                                                  #=156     Sum=156         Eff=|( 100.0000 +- 0.00000 )%|
-  NONLAZY_OR: hlt2_line_output_persistence                                                                                 #=156     Sum=156         Eff=|( 100.0000 +- 0.00000 )%|
-   NONLAZY_OR: truth_matching                                                                                              #=156     Sum=156         Eff=|( 100.0000 +- 0.00000 )%|
-    UnpackMCParticle/UnpackMCParticles                                                                                     #=156     Sum=156         Eff=|( 100.0000 +- 0.00000 )%|
-    UnpackMCVertex/UnpackMCVertices                                                                                        #=156     Sum=156         Eff=|( 100.0000 +- 0.00000 )%|
-   NONLAZY_OR: cloners                                                                                                     #=156     Sum=156         Eff=|( 100.0000 +- 0.00000 )%|
-    MergeRelationsTablesPP2MCP/MergeRelationsTablesPP2MCP                                                                  #=156     Sum=156         Eff=|( 100.0000 +- 0.00000 )%|
-    MergeRelationsTablesPP2MCP/MergeRelationsTablesPP2MCP#1                                                                #=156     Sum=156         Eff=|( 100.0000 +- 0.00000 )%|
-    CopyLinePersistenceLocations/CopyLinePersistenceLocations                                                              #=156     Sum=156         Eff=|( 100.0000 +- 0.00000 )%|
-    CopyParticle2PVRelationsFromLinePersistenceLocations/CopyParticle2PVRelationsFromLinePersistenceLocations              #=156     Sum=156         Eff=|( 100.0000 +- 0.00000 )%|
-    CopyProtoParticle2MCRelations/CopyProtoParticle2MCRelations                                                            #=156     Sum=156         Eff=|( 100.0000 +- 0.00000 )%|
-    CopySignalMCParticles/CopySignalMCParticles                                                                            #=156     Sum=156         Eff=|( 100.0000 +- 0.00000 )%|
-   NONLAZY_OR: packers                                                                                                     #=156     Sum=156         Eff=|( 100.0000 +- 0.00000 )%|
-    PackParticlesAndVertices/PackParticlesAndVertices                                                                      #=156     Sum=156         Eff=|( 100.0000 +- 0.00000 )%|
-    PackProtoParticle/PackChargedProtos                                                                                    #=156     Sum=156         Eff=|( 100.0000 +- 0.00000 )%|
-    PackRecVertex/PackPVs                                                                                                  #=156     Sum=156         Eff=|( 100.0000 +- 0.00000 )%|
-    PackCaloHypo/PackCaloPhotons                                                                                           #=156     Sum=156         Eff=|( 100.0000 +- 0.00000 )%|
-    DataPacking__Pack<LHCb__RichPIDPacker>/PackRichPIDs                                                                    #=156     Sum=156         Eff=|( 100.0000 +- 0.00000 )%|
-    PackProtoParticle/PackNeutralProtos                                                                                    #=156     Sum=156         Eff=|( 100.0000 +- 0.00000 )%|
-    PackTrack/PackTracks                                                                                                   #=156     Sum=156         Eff=|( 100.0000 +- 0.00000 )%|
-    DataPacking__Pack<LHCb__MuonPIDPacker>/PackMuonPIDs                                                                    #=156     Sum=156         Eff=|( 100.0000 +- 0.00000 )%|
-    PackCaloHypo/PackCaloSplitPhotons                                                                                      #=156     Sum=156         Eff=|( 100.0000 +- 0.00000 )%|
-    PackCaloHypo/PackCaloElectrons                                                                                         #=156     Sum=156         Eff=|( 100.0000 +- 0.00000 )%|
-    PackCaloHypo/PackCaloMergedPi0s                                                                                        #=156     Sum=156         Eff=|( 100.0000 +- 0.00000 )%|
-   LAZY_AND: mc_packers                                                                                                    #=156     Sum=156         Eff=|( 100.0000 +- 0.00000 )%|
-    PackMCParticle/PackMCParticle                                                                                          #=156     Sum=156         Eff=|( 100.0000 +- 0.00000 )%|
-    PackMCVertex/PackMCVertex                                                                                              #=156     Sum=156         Eff=|( 100.0000 +- 0.00000 )%|
-   LAZY_AND: serialisation                                                                                                 #=156     Sum=156         Eff=|( 100.0000 +- 0.00000 )%|
-    HltPackedDataWriter/HltPackedDataWriter                                                                                #=156     Sum=156         Eff=|( 100.0000 +- 0.00000 )%|
-  Hlt__RoutingBitsWriter/Hlt__RoutingBitsWriter                                                                            #=156     Sum=156         Eff=|( 100.0000 +- 0.00000 )%|
- AddressKillerAlg/AddressKillerAlg                                                                                         #=156     Sum=156         Eff=|( 100.0000 +- 0.00000 )%|
- RawEventSimpleCombiner/RawEventSimpleCombiner                                                                             #=156     Sum=156         Eff=|( 100.0000 +- 0.00000 )%|
- CopyInputStream/CopyInputStream                                                                                           #=156     Sum=156         Eff=|( 100.0000 +- 0.00000 )%|
+NONLAZY_AND: with_efficiency_tuples                                                                                         #=2000    Sum=105         Eff=|( 5.250000 +- 0.498717)%|
+ NONLAZY_AND: moore                                                                                                         #=2000    Sum=156         Eff=|( 7.800000 +- 0.599650)%|
+  NONLAZY_OR: hlt_decision                                                                                                  #=2000    Sum=156         Eff=|( 7.800000 +- 0.599650)%|
+   LAZY_AND: Hlt2BToHHGammaEE_Inclusive_LineDecisionWithOutput                                                              #=2000    Sum=13          Eff=|(0.6500000 +- 0.179691)%|
+    LAZY_AND: Hlt2BToHHGammaEE_Inclusive_Line                                                                               #=2000    Sum=13          Eff=|(0.6500000 +- 0.179691)%|
+     DeterministicPrescaler/DeterministicPrescaler#1                                                                        #=2000    Sum=2000        Eff=|( 100.0000 +- 0.00000 )%|
+     FilterDesktop/FilterDesktop#25                                                                                         #=2000    Sum=13          Eff=|(0.6500000 +- 0.179691)%|
+    NONLAZY_OR: Hlt2BToHHGammaEE_Inclusive_LineOutput                                                                       #=13      Sum=13          Eff=|( 100.0000 +- 0.00000 )%|
+     FilterDesktop/FilterDesktop#30                                                                                         #=13      Sum=4           Eff=|( 30.76923 +- 12.8008 )%|
+     FilterDesktop/FilterDesktop#31                                                                                         #=13      Sum=5           Eff=|( 38.46154 +- 13.4932 )%|
+     LHCb__Converters__RecVertex__v2__fromVectorLHCbRecVertices/LHCb__Converters__RecVertex__v2__fromVectorLHCbRecVertices  #=156     Sum=156         Eff=|( 100.0000 +- 0.00000 )%|
+     FilterDesktop/FilterDesktop#32                                                                                         #=13      Sum=13          Eff=|( 100.0000 +- 0.00000 )%|
+     FilterDesktop/FilterDesktop#35                                                                                         #=13      Sum=3           Eff=|( 23.07692 +- 11.6855 )%|
+     FilterDesktop/FilterDesktop#28                                                                                         #=13      Sum=13          Eff=|( 100.0000 +- 0.00000 )%|
+     FilterDesktop/FilterDesktop#29                                                                                         #=13      Sum=3           Eff=|( 23.07692 +- 11.6855 )%|
+     FilterDesktop/FilterDesktop#36                                                                                         #=13      Sum=8           Eff=|( 61.53846 +- 13.4932 )%|
+     FilterDesktop/FilterDesktop#33                                                                                         #=13      Sum=3           Eff=|( 23.07692 +- 11.6855 )%|
+     FilterDesktop/FilterDesktop#34                                                                                         #=13      Sum=8           Eff=|( 61.53846 +- 13.4932 )%|
+   LAZY_AND: Hlt2BToHHGamma_Inclusive_LineDecisionWithOutput                                                                #=2000    Sum=138         Eff=|( 6.900000 +- 0.566741)%|
+    LAZY_AND: Hlt2BToHHGamma_Inclusive_Line                                                                                 #=2000    Sum=138         Eff=|( 6.900000 +- 0.566741)%|
+     DeterministicPrescaler/DeterministicPrescaler                                                                          #=2000    Sum=2000        Eff=|( 100.0000 +- 0.00000 )%|
+     FilterDesktop/FilterDesktop#2                                                                                          #=2000    Sum=138         Eff=|( 6.900000 +- 0.566741)%|
+    NONLAZY_OR: Hlt2BToHHGamma_Inclusive_LineOutput                                                                         #=138     Sum=138         Eff=|( 100.0000 +- 0.00000 )%|
+     FilterDesktop/FilterDesktop#23                                                                                         #=138     Sum=18          Eff=|( 13.04348 +- 2.86687 )%|
+     LHCb__Converters__RecVertex__v2__fromVectorLHCbRecVertices/LHCb__Converters__RecVertex__v2__fromVectorLHCbRecVertices  #=156     Sum=156         Eff=|( 100.0000 +- 0.00000 )%|
+     FilterDesktop/FilterDesktop#21                                                                                         #=138     Sum=138         Eff=|( 100.0000 +- 0.00000 )%|
+     FilterDesktop/FilterDesktop#17                                                                                         #=138     Sum=112         Eff=|( 81.15942 +- 3.32872 )%|
+     FilterDesktop/FilterDesktop#15                                                                                         #=138     Sum=138         Eff=|( 100.0000 +- 0.00000 )%|
+     FilterDesktop/FilterDesktop#22                                                                                         #=138     Sum=82          Eff=|( 59.42029 +- 4.18006 )%|
+     FilterDesktop/FilterDesktop#20                                                                                         #=138     Sum=138         Eff=|( 100.0000 +- 0.00000 )%|
+     FilterDesktop/FilterDesktop#19                                                                                         #=138     Sum=38          Eff=|( 27.53623 +- 3.80253 )%|
+     FilterDesktop/FilterDesktop#16                                                                                         #=138     Sum=21          Eff=|( 15.21739 +- 3.05762 )%|
+     FilterDesktop/FilterDesktop#18                                                                                         #=138     Sum=39          Eff=|( 28.26087 +- 3.83293 )%|
+   LAZY_AND: Hlt2BToHHHGammaEE_Inclusive_LineDecisionWithOutput                                                             #=2000    Sum=4           Eff=|(0.2000000 +- 0.0998999)%|
+    LAZY_AND: Hlt2BToHHHGammaEE_Inclusive_Line                                                                              #=2000    Sum=4           Eff=|(0.2000000 +- 0.0998999)%|
+     DeterministicPrescaler/DeterministicPrescaler#3                                                                        #=2000    Sum=2000        Eff=|( 100.0000 +- 0.00000 )%|
+     FilterDesktop/FilterDesktop#48                                                                                         #=2000    Sum=4           Eff=|(0.2000000 +- 0.0998999)%|
+    NONLAZY_OR: Hlt2BToHHHGammaEE_Inclusive_LineOutput                                                                      #=4       Sum=4           Eff=|( 100.0000 +- 0.00000 )%|
+     FilterDesktop/FilterDesktop#52                                                                                         #=4       Sum=0           Eff=|( 0.000000 +- 0.00000 )%|
+     FilterDesktop/FilterDesktop#54                                                                                         #=4       Sum=1           Eff=|( 25.00000 +- 21.6506 )%|
+     LHCb__Converters__RecVertex__v2__fromVectorLHCbRecVertices/LHCb__Converters__RecVertex__v2__fromVectorLHCbRecVertices  #=156     Sum=156         Eff=|( 100.0000 +- 0.00000 )%|
+     FilterDesktop/FilterDesktop#57                                                                                         #=4       Sum=3           Eff=|( 75.00000 +- 21.6506 )%|
+     FilterDesktop/FilterDesktop#51                                                                                         #=4       Sum=1           Eff=|( 25.00000 +- 21.6506 )%|
+     FilterDesktop/FilterDesktop#50                                                                                         #=4       Sum=0           Eff=|( 0.000000 +- 0.00000 )%|
+     FilterDesktop/FilterDesktop#53                                                                                         #=4       Sum=4           Eff=|( 100.0000 +- 0.00000 )%|
+     FilterDesktop/FilterDesktop#55                                                                                         #=4       Sum=3           Eff=|( 75.00000 +- 21.6506 )%|
+     FilterDesktop/FilterDesktop#56                                                                                         #=4       Sum=0           Eff=|( 0.000000 +- 0.00000 )%|
+     FilterDesktop/FilterDesktop#49                                                                                         #=4       Sum=4           Eff=|( 100.0000 +- 0.00000 )%|
+   LAZY_AND: Hlt2BToHHHGamma_Inclusive_LineDecisionWithOutput                                                               #=2000    Sum=57          Eff=|( 2.850000 +- 0.372074)%|
+    LAZY_AND: Hlt2BToHHHGamma_Inclusive_Line                                                                                #=2000    Sum=57          Eff=|( 2.850000 +- 0.372074)%|
+     DeterministicPrescaler/DeterministicPrescaler#2                                                                        #=2000    Sum=2000        Eff=|( 100.0000 +- 0.00000 )%|
+     FilterDesktop/FilterDesktop#38                                                                                         #=2000    Sum=57          Eff=|( 2.850000 +- 0.372074)%|
+    NONLAZY_OR: Hlt2BToHHHGamma_Inclusive_LineOutput                                                                        #=57      Sum=57          Eff=|( 100.0000 +- 0.00000 )%|
+     FilterDesktop/FilterDesktop#42                                                                                         #=57      Sum=15          Eff=|( 26.31579 +- 5.83254 )%|
+     FilterDesktop/FilterDesktop#41                                                                                         #=57      Sum=16          Eff=|( 28.07018 +- 5.95168 )%|
+     FilterDesktop/FilterDesktop#47                                                                                         #=57      Sum=50          Eff=|( 87.71930 +- 4.34732 )%|
+     LHCb__Converters__RecVertex__v2__fromVectorLHCbRecVertices/LHCb__Converters__RecVertex__v2__fromVectorLHCbRecVertices  #=156     Sum=156         Eff=|( 100.0000 +- 0.00000 )%|
+     FilterDesktop/FilterDesktop#46                                                                                         #=57      Sum=12          Eff=|( 21.05263 +- 5.39989 )%|
+     FilterDesktop/FilterDesktop#40                                                                                         #=57      Sum=7           Eff=|( 12.28070 +- 4.34732 )%|
+     FilterDesktop/FilterDesktop#43                                                                                         #=57      Sum=57          Eff=|( 100.0000 +- 0.00000 )%|
+     FilterDesktop/FilterDesktop#39                                                                                         #=57      Sum=57          Eff=|( 100.0000 +- 0.00000 )%|
+     FilterDesktop/FilterDesktop#44                                                                                         #=57      Sum=37          Eff=|( 64.91228 +- 6.32126 )%|
+     FilterDesktop/FilterDesktop#45                                                                                         #=57      Sum=57          Eff=|( 100.0000 +- 0.00000 )%|
+  NONLAZY_OR: report_writers                                                                                                #=2000    Sum=2000        Eff=|( 100.0000 +- 0.00000 )%|
+   ExecutionReportsWriter/ExecutionReportsWriter                                                                            #=2000    Sum=2000        Eff=|( 100.0000 +- 0.00000 )%|
+   HltDecReportsWriter/HltDecReportsWriter                                                                                  #=2000    Sum=2000        Eff=|( 100.0000 +- 0.00000 )%|
+   Hlt__RoutingBitsWriter/Hlt__RoutingBitsWriter                                                                            #=2000    Sum=2000        Eff=|( 100.0000 +- 0.00000 )%|
+ MCDecayTreeTuple/MCDecayTreeTuple                                                                                          #=2000    Sum=1458        Eff=|( 72.90000 +- 0.993879)%|
 
 HLTControlFlowMgr                      INFO Histograms converted successfully according to request.
 TransportSvc                        SUCCESS  GEOMETRY ERRORS: 'Skip'     map has the size 0
@@ -1732,8 +1669,520 @@ TrackBestTrackCreator.TrackMaste... SUCCESS  #WARNINGS   = 1        Message = 'E
 TrackBestTrackCreator.TrackMaste... SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/0/1/0
 TrackBestTrackCreator.TrackMaste... SUCCESS  #WARNINGS   = 20       Message = 'Error in compute residual:  non positive variance.'
 RootCnvSvc                             INFO Disconnected data IO:3CD0FD1B-C575-E811-B1AB-001E677927C2 [root://x509up_u137253@lhcbxrootd-kit.gridka.de//pnfs/gridka.de/lhcb/LHCb-Disk/lhcb/MC/Upgrade/LDST/00075829/0000/00075829_00000023_1.ldst]
-RootCnvSvc                             INFO Disconnected data IO:8E45453A-C932-11EB-8BC7-FA163EE75D30 [output/KstG/AllLines_Moore.mdst]
-XMLCatalog                             INFO File 'test_catalog-1825067926.000000.xml' does not exist. New file created.
+RFileCnv                               INFO dumping contents of /NTUPLES/FILE1
+TFile: name=output/KstG/AllLines_MA.root, title=Gaudi Trees, option=CREATE
+******************************************************************************
+*Tree    :MCDecayTree: MCDecayTree                                            *
+*Entries :     1458 : Total =         1123193 bytes  File  Size =     377254 *
+*        :          : Tree compression factor =   2.85                       *
+******************************************************************************
+*Br    0 :B0_TRUEP_E : B0_TRUEP_E/D                                          *
+*Entries :     1458 : Total  Size=      12269 bytes  File Size  =      11285 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   1.04     *
+*............................................................................*
+*Br    1 :B0_TRUEP_X : B0_TRUEP_X/D                                          *
+*Entries :     1458 : Total  Size=      12269 bytes  File Size  =       6907 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   1.70     *
+*............................................................................*
+*Br    2 :B0_TRUEP_Y : B0_TRUEP_Y/D                                          *
+*Entries :     1458 : Total  Size=      12269 bytes  File Size  =       6899 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   1.70     *
+*............................................................................*
+*Br    3 :B0_TRUEP_Z : B0_TRUEP_Z/D                                          *
+*Entries :     1458 : Total  Size=      12269 bytes  File Size  =       7277 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   1.61     *
+*............................................................................*
+*Br    4 :B0_TRUEPT : B0_TRUEPT/D                                            *
+*Entries :     1458 : Total  Size=      12264 bytes  File Size  =      11144 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   1.05     *
+*............................................................................*
+*Br    5 :B0_TRUEORIGINVERTEX_X : B0_TRUEORIGINVERTEX_X/D                    *
+*Entries :     1458 : Total  Size=      12324 bytes  File Size  =       4847 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   2.43     *
+*............................................................................*
+*Br    6 :B0_TRUEORIGINVERTEX_Y : B0_TRUEORIGINVERTEX_Y/D                    *
+*Entries :     1458 : Total  Size=      12324 bytes  File Size  =       4835 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   2.43     *
+*............................................................................*
+*Br    7 :B0_TRUEORIGINVERTEX_Z : B0_TRUEORIGINVERTEX_Z/D                    *
+*Entries :     1458 : Total  Size=      12324 bytes  File Size  =       7938 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   1.48     *
+*............................................................................*
+*Br    8 :B0_TRUEENDVERTEX_X : B0_TRUEENDVERTEX_X/D                          *
+*Entries :     1458 : Total  Size=      12309 bytes  File Size  =       6478 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   1.81     *
+*............................................................................*
+*Br    9 :B0_TRUEENDVERTEX_Y : B0_TRUEENDVERTEX_Y/D                          *
+*Entries :     1458 : Total  Size=      12309 bytes  File Size  =       6541 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   1.80     *
+*............................................................................*
+*Br   10 :B0_TRUEENDVERTEX_Z : B0_TRUEENDVERTEX_Z/D                          *
+*Entries :     1458 : Total  Size=      12309 bytes  File Size  =       7960 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   1.48     *
+*............................................................................*
+*Br   11 :B0_TRUEISSTABLE : B0_TRUEISSTABLE/O                                *
+*Entries :     1458 : Total  Size=       2074 bytes  File Size  =        122 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  12.68     *
+*............................................................................*
+*Br   12 :B0_TRUETAU : B0_TRUETAU/D                                          *
+*Entries :     1458 : Total  Size=      12269 bytes  File Size  =      11157 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   1.05     *
+*............................................................................*
+*Br   13 :B0_TRUEETA : B0_TRUEETA/D                                          *
+*Entries :     1458 : Total  Size=      12269 bytes  File Size  =      11128 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   1.06     *
+*............................................................................*
+*Br   14 :B0_Reconstructible : B0_Reconstructible/I                          *
+*Entries :     1458 : Total  Size=       6469 bytes  File Size  =        687 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   8.62     *
+*............................................................................*
+*Br   15 :B0_Reconstructed : B0_Reconstructed/I                              *
+*Entries :     1458 : Total  Size=       6459 bytes  File Size  =        148 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  40.01     *
+*............................................................................*
+*Br   16 :B0_ProtoParticles : B0_ProtoParticles/I                            *
+*Entries :     1458 : Total  Size=       6464 bytes  File Size  =        149 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  39.75     *
+*............................................................................*
+*Br   17 :B0_PP_PX  : B0_PP_PX[B0_ProtoParticles]/F                          *
+*Entries :     1458 : Total  Size=       6566 bytes  File Size  =        151 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  39.22     *
+*............................................................................*
+*Br   18 :B0_PP_PY  : B0_PP_PY[B0_ProtoParticles]/F                          *
+*Entries :     1458 : Total  Size=       6566 bytes  File Size  =        151 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  39.22     *
+*............................................................................*
+*Br   19 :B0_PP_PZ  : B0_PP_PZ[B0_ProtoParticles]/F                          *
+*Entries :     1458 : Total  Size=       6566 bytes  File Size  =        151 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  39.22     *
+*............................................................................*
+*Br   20 :B0_PP_Weight : B0_PP_Weight[B0_ProtoParticles]/F                   *
+*Entries :     1458 : Total  Size=       6586 bytes  File Size  =        155 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  38.23     *
+*............................................................................*
+*Br   21 :B0_PP_tr_pchi2 : B0_PP_tr_pchi2[B0_ProtoParticles]/F               *
+*Entries :     1458 : Total  Size=       6596 bytes  File Size  =        157 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  37.76     *
+*............................................................................*
+*Br   22 :B0_PP_DLLe : B0_PP_DLLe[B0_ProtoParticles]/F                       *
+*Entries :     1458 : Total  Size=       6576 bytes  File Size  =        153 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  38.72     *
+*............................................................................*
+*Br   23 :B0_PP_DLLk : B0_PP_DLLk[B0_ProtoParticles]/F                       *
+*Entries :     1458 : Total  Size=       6576 bytes  File Size  =        153 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  38.72     *
+*............................................................................*
+*Br   24 :B0_PP_DLLp : B0_PP_DLLp[B0_ProtoParticles]/F                       *
+*Entries :     1458 : Total  Size=       6576 bytes  File Size  =        153 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  38.72     *
+*............................................................................*
+*Br   25 :B0_PP_DLLmu : B0_PP_DLLmu[B0_ProtoParticles]/F                     *
+*Entries :     1458 : Total  Size=       6581 bytes  File Size  =        154 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  38.47     *
+*............................................................................*
+*Br   26 :Kst_892_0_TRUEP_E : Kst_892_0_TRUEP_E/D                            *
+*Entries :     1458 : Total  Size=      12304 bytes  File Size  =      11223 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   1.05     *
+*............................................................................*
+*Br   27 :Kst_892_0_TRUEP_X : Kst_892_0_TRUEP_X/D                            *
+*Entries :     1458 : Total  Size=      12304 bytes  File Size  =       6610 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   1.78     *
+*............................................................................*
+*Br   28 :Kst_892_0_TRUEP_Y : Kst_892_0_TRUEP_Y/D                            *
+*Entries :     1458 : Total  Size=      12304 bytes  File Size  =       6582 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   1.79     *
+*............................................................................*
+*Br   29 :Kst_892_0_TRUEP_Z : Kst_892_0_TRUEP_Z/D                            *
+*Entries :     1458 : Total  Size=      12304 bytes  File Size  =       7163 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   1.64     *
+*............................................................................*
+*Br   30 :Kst_892_0_TRUEPT : Kst_892_0_TRUEPT/D                              *
+*Entries :     1458 : Total  Size=      12299 bytes  File Size  =      11143 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   1.05     *
+*............................................................................*
+*Br   31 :Kst_892_0_TRUEORIGINVERTEX_X : Kst_892_0_TRUEORIGINVERTEX_X/D      *
+*Entries :     1458 : Total  Size=      12359 bytes  File Size  =       6488 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   1.81     *
+*............................................................................*
+*Br   32 :Kst_892_0_TRUEORIGINVERTEX_Y : Kst_892_0_TRUEORIGINVERTEX_Y/D      *
+*Entries :     1458 : Total  Size=      12359 bytes  File Size  =       6551 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   1.80     *
+*............................................................................*
+*Br   33 :Kst_892_0_TRUEORIGINVERTEX_Z : Kst_892_0_TRUEORIGINVERTEX_Z/D      *
+*Entries :     1458 : Total  Size=      12359 bytes  File Size  =       7970 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   1.48     *
+*............................................................................*
+*Br   34 :Kst_892_0_TRUEENDVERTEX_X : Kst_892_0_TRUEENDVERTEX_X/D            *
+*Entries :     1458 : Total  Size=      12344 bytes  File Size  =       6485 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   1.81     *
+*............................................................................*
+*Br   35 :Kst_892_0_TRUEENDVERTEX_Y : Kst_892_0_TRUEENDVERTEX_Y/D            *
+*Entries :     1458 : Total  Size=      12344 bytes  File Size  =       6548 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   1.80     *
+*............................................................................*
+*Br   36 :Kst_892_0_TRUEENDVERTEX_Z : Kst_892_0_TRUEENDVERTEX_Z/D            *
+*Entries :     1458 : Total  Size=      12344 bytes  File Size  =       7967 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   1.48     *
+*............................................................................*
+*Br   37 :Kst_892_0_TRUEISSTABLE : Kst_892_0_TRUEISSTABLE/O                  *
+*Entries :     1458 : Total  Size=       2109 bytes  File Size  =        129 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  12.05     *
+*............................................................................*
+*Br   38 :Kst_892_0_TRUETAU : Kst_892_0_TRUETAU/D                            *
+*Entries :     1458 : Total  Size=      12304 bytes  File Size  =        175 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  67.17     *
+*............................................................................*
+*Br   39 :Kst_892_0_TRUEETA : Kst_892_0_TRUEETA/D                            *
+*Entries :     1458 : Total  Size=      12304 bytes  File Size  =      11138 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   1.06     *
+*............................................................................*
+*Br   40 :Kst_892_0_Reconstructible : Kst_892_0_Reconstructible/I            *
+*Entries :     1458 : Total  Size=       6504 bytes  File Size  =        541 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  10.96     *
+*............................................................................*
+*Br   41 :Kst_892_0_Reconstructed : Kst_892_0_Reconstructed/I                *
+*Entries :     1458 : Total  Size=       6494 bytes  File Size  =        155 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  38.25     *
+*............................................................................*
+*Br   42 :Kst_892_0_ProtoParticles : Kst_892_0_ProtoParticles/I              *
+*Entries :     1458 : Total  Size=       6499 bytes  File Size  =        156 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  38.01     *
+*............................................................................*
+*Br   43 :Kst_892_0_PP_PX : Kst_892_0_PP_PX[Kst_892_0_ProtoParticles]/F      *
+*Entries :     1458 : Total  Size=       6629 bytes  File Size  =        158 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  37.53     *
+*............................................................................*
+*Br   44 :Kst_892_0_PP_PY : Kst_892_0_PP_PY[Kst_892_0_ProtoParticles]/F      *
+*Entries :     1458 : Total  Size=       6629 bytes  File Size  =        158 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  37.53     *
+*............................................................................*
+*Br   45 :Kst_892_0_PP_PZ : Kst_892_0_PP_PZ[Kst_892_0_ProtoParticles]/F      *
+*Entries :     1458 : Total  Size=       6629 bytes  File Size  =        158 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  37.53     *
+*............................................................................*
+*Br   46 :Kst_892_0_PP_Weight :                                              *
+*         | Kst_892_0_PP_Weight[Kst_892_0_ProtoParticles]/F                  *
+*Entries :     1458 : Total  Size=       6649 bytes  File Size  =        162 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  36.62     *
+*............................................................................*
+*Br   47 :Kst_892_0_PP_tr_pchi2 :                                            *
+*         | Kst_892_0_PP_tr_pchi2[Kst_892_0_ProtoParticles]/F                *
+*Entries :     1458 : Total  Size=       6659 bytes  File Size  =        164 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  36.19     *
+*............................................................................*
+*Br   48 :Kst_892_0_PP_DLLe : Kst_892_0_PP_DLLe[Kst_892_0_ProtoParticles]/F  *
+*Entries :     1458 : Total  Size=       6639 bytes  File Size  =        160 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  37.07     *
+*............................................................................*
+*Br   49 :Kst_892_0_PP_DLLk : Kst_892_0_PP_DLLk[Kst_892_0_ProtoParticles]/F  *
+*Entries :     1458 : Total  Size=       6639 bytes  File Size  =        160 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  37.07     *
+*............................................................................*
+*Br   50 :Kst_892_0_PP_DLLp : Kst_892_0_PP_DLLp[Kst_892_0_ProtoParticles]/F  *
+*Entries :     1458 : Total  Size=       6639 bytes  File Size  =        160 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  37.07     *
+*............................................................................*
+*Br   51 :Kst_892_0_PP_DLLmu : Kst_892_0_PP_DLLmu[Kst_892_0_ProtoParticles]/F*
+*Entries :     1458 : Total  Size=       6644 bytes  File Size  =        161 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  36.84     *
+*............................................................................*
+*Br   52 :Kplus_TRUEP_E : Kplus_TRUEP_E/D                                    *
+*Entries :     1458 : Total  Size=      12284 bytes  File Size  =      11185 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   1.05     *
+*............................................................................*
+*Br   53 :Kplus_TRUEP_X : Kplus_TRUEP_X/D                                    *
+*Entries :     1458 : Total  Size=      12284 bytes  File Size  =       6301 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   1.86     *
+*............................................................................*
+*Br   54 :Kplus_TRUEP_Y : Kplus_TRUEP_Y/D                                    *
+*Entries :     1458 : Total  Size=      12284 bytes  File Size  =       6289 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   1.87     *
+*............................................................................*
+*Br   55 :Kplus_TRUEP_Z : Kplus_TRUEP_Z/D                                    *
+*Entries :     1458 : Total  Size=      12284 bytes  File Size  =       7103 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   1.65     *
+*............................................................................*
+*Br   56 :Kplus_TRUEPT : Kplus_TRUEPT/D                                      *
+*Entries :     1458 : Total  Size=      12279 bytes  File Size  =      11147 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   1.05     *
+*............................................................................*
+*Br   57 :Kplus_TRUEORIGINVERTEX_X : Kplus_TRUEORIGINVERTEX_X/D              *
+*Entries :     1458 : Total  Size=      12339 bytes  File Size  =       6484 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   1.81     *
+*............................................................................*
+*Br   58 :Kplus_TRUEORIGINVERTEX_Y : Kplus_TRUEORIGINVERTEX_Y/D              *
+*Entries :     1458 : Total  Size=      12339 bytes  File Size  =       6547 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   1.80     *
+*............................................................................*
+*Br   59 :Kplus_TRUEORIGINVERTEX_Z : Kplus_TRUEORIGINVERTEX_Z/D              *
+*Entries :     1458 : Total  Size=      12339 bytes  File Size  =       7966 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   1.48     *
+*............................................................................*
+*Br   60 :Kplus_TRUEENDVERTEX_X : Kplus_TRUEENDVERTEX_X/D                    *
+*Entries :     1458 : Total  Size=      12324 bytes  File Size  =        179 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  65.69     *
+*............................................................................*
+*Br   61 :Kplus_TRUEENDVERTEX_Y : Kplus_TRUEENDVERTEX_Y/D                    *
+*Entries :     1458 : Total  Size=      12324 bytes  File Size  =        179 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  65.69     *
+*............................................................................*
+*Br   62 :Kplus_TRUEENDVERTEX_Z : Kplus_TRUEENDVERTEX_Z/D                    *
+*Entries :     1458 : Total  Size=      12324 bytes  File Size  =        179 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  65.69     *
+*............................................................................*
+*Br   63 :Kplus_TRUEISSTABLE : Kplus_TRUEISSTABLE/O                          *
+*Entries :     1458 : Total  Size=       2089 bytes  File Size  =        125 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  12.40     *
+*............................................................................*
+*Br   64 :Kplus_TRUETAU : Kplus_TRUETAU/D                                    *
+*Entries :     1458 : Total  Size=      12284 bytes  File Size  =        196 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  59.95     *
+*............................................................................*
+*Br   65 :Kplus_TRUEETA : Kplus_TRUEETA/D                                    *
+*Entries :     1458 : Total  Size=      12284 bytes  File Size  =      11133 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   1.06     *
+*............................................................................*
+*Br   66 :Kplus_Reconstructible : Kplus_Reconstructible/I                    *
+*Entries :     1458 : Total  Size=       6484 bytes  File Size  =        725 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   8.18     *
+*............................................................................*
+*Br   67 :Kplus_Reconstructed : Kplus_Reconstructed/I                        *
+*Entries :     1458 : Total  Size=       6474 bytes  File Size  =        151 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  39.24     *
+*............................................................................*
+*Br   68 :Kplus_ProtoParticles : Kplus_ProtoParticles/I                      *
+*Entries :     1458 : Total  Size=       6479 bytes  File Size  =        152 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  38.99     *
+*............................................................................*
+*Br   69 :Kplus_PP_PX : Kplus_PP_PX[Kplus_ProtoParticles]/F                  *
+*Entries :     1458 : Total  Size=       6593 bytes  File Size  =        154 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  38.47     *
+*............................................................................*
+*Br   70 :Kplus_PP_PY : Kplus_PP_PY[Kplus_ProtoParticles]/F                  *
+*Entries :     1458 : Total  Size=       6593 bytes  File Size  =        154 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  38.47     *
+*............................................................................*
+*Br   71 :Kplus_PP_PZ : Kplus_PP_PZ[Kplus_ProtoParticles]/F                  *
+*Entries :     1458 : Total  Size=       6593 bytes  File Size  =        154 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  38.47     *
+*............................................................................*
+*Br   72 :Kplus_PP_Weight : Kplus_PP_Weight[Kplus_ProtoParticles]/F          *
+*Entries :     1458 : Total  Size=       6613 bytes  File Size  =        158 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  37.53     *
+*............................................................................*
+*Br   73 :Kplus_PP_tr_pchi2 : Kplus_PP_tr_pchi2[Kplus_ProtoParticles]/F      *
+*Entries :     1458 : Total  Size=       6623 bytes  File Size  =        160 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  37.07     *
+*............................................................................*
+*Br   74 :Kplus_PP_DLLe : Kplus_PP_DLLe[Kplus_ProtoParticles]/F              *
+*Entries :     1458 : Total  Size=       6603 bytes  File Size  =        156 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  37.99     *
+*............................................................................*
+*Br   75 :Kplus_PP_DLLk : Kplus_PP_DLLk[Kplus_ProtoParticles]/F              *
+*Entries :     1458 : Total  Size=       6603 bytes  File Size  =        156 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  37.99     *
+*............................................................................*
+*Br   76 :Kplus_PP_DLLp : Kplus_PP_DLLp[Kplus_ProtoParticles]/F              *
+*Entries :     1458 : Total  Size=       6603 bytes  File Size  =        156 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  37.99     *
+*............................................................................*
+*Br   77 :Kplus_PP_DLLmu : Kplus_PP_DLLmu[Kplus_ProtoParticles]/F            *
+*Entries :     1458 : Total  Size=       6608 bytes  File Size  =        157 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  37.76     *
+*............................................................................*
+*Br   78 :piminus_TRUEP_E : piminus_TRUEP_E/D                                *
+*Entries :     1458 : Total  Size=      12294 bytes  File Size  =      11174 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   1.05     *
+*............................................................................*
+*Br   79 :piminus_TRUEP_X : piminus_TRUEP_X/D                                *
+*Entries :     1458 : Total  Size=      12294 bytes  File Size  =       5999 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   1.96     *
+*............................................................................*
+*Br   80 :piminus_TRUEP_Y : piminus_TRUEP_Y/D                                *
+*Entries :     1458 : Total  Size=      12294 bytes  File Size  =       6028 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   1.95     *
+*............................................................................*
+*Br   81 :piminus_TRUEP_Z : piminus_TRUEP_Z/D                                *
+*Entries :     1458 : Total  Size=      12294 bytes  File Size  =       7096 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   1.66     *
+*............................................................................*
+*Br   82 :piminus_TRUEPT : piminus_TRUEPT/D                                  *
+*Entries :     1458 : Total  Size=      12289 bytes  File Size  =      11156 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   1.05     *
+*............................................................................*
+*Br   83 :piminus_TRUEORIGINVERTEX_X : piminus_TRUEORIGINVERTEX_X/D          *
+*Entries :     1458 : Total  Size=      12349 bytes  File Size  =       6486 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   1.81     *
+*............................................................................*
+*Br   84 :piminus_TRUEORIGINVERTEX_Y : piminus_TRUEORIGINVERTEX_Y/D          *
+*Entries :     1458 : Total  Size=      12349 bytes  File Size  =       6549 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   1.80     *
+*............................................................................*
+*Br   85 :piminus_TRUEORIGINVERTEX_Z : piminus_TRUEORIGINVERTEX_Z/D          *
+*Entries :     1458 : Total  Size=      12349 bytes  File Size  =       7968 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   1.48     *
+*............................................................................*
+*Br   86 :piminus_TRUEENDVERTEX_X : piminus_TRUEENDVERTEX_X/D                *
+*Entries :     1458 : Total  Size=      12334 bytes  File Size  =        181 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  64.98     *
+*............................................................................*
+*Br   87 :piminus_TRUEENDVERTEX_Y : piminus_TRUEENDVERTEX_Y/D                *
+*Entries :     1458 : Total  Size=      12334 bytes  File Size  =        181 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  64.98     *
+*............................................................................*
+*Br   88 :piminus_TRUEENDVERTEX_Z : piminus_TRUEENDVERTEX_Z/D                *
+*Entries :     1458 : Total  Size=      12334 bytes  File Size  =        181 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  64.98     *
+*............................................................................*
+*Br   89 :piminus_TRUEISSTABLE : piminus_TRUEISSTABLE/O                      *
+*Entries :     1458 : Total  Size=       2099 bytes  File Size  =        127 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  12.22     *
+*............................................................................*
+*Br   90 :piminus_TRUETAU : piminus_TRUETAU/D                                *
+*Entries :     1458 : Total  Size=      12294 bytes  File Size  =        198 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  59.36     *
+*............................................................................*
+*Br   91 :piminus_TRUEETA : piminus_TRUEETA/D                                *
+*Entries :     1458 : Total  Size=      12294 bytes  File Size  =      11144 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   1.05     *
+*............................................................................*
+*Br   92 :piminus_Reconstructible : piminus_Reconstructible/I                *
+*Entries :     1458 : Total  Size=       6494 bytes  File Size  =        796 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   7.45     *
+*............................................................................*
+*Br   93 :piminus_Reconstructed : piminus_Reconstructed/I                    *
+*Entries :     1458 : Total  Size=       6484 bytes  File Size  =        153 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  38.74     *
+*............................................................................*
+*Br   94 :piminus_ProtoParticles : piminus_ProtoParticles/I                  *
+*Entries :     1458 : Total  Size=       6489 bytes  File Size  =        154 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  38.49     *
+*............................................................................*
+*Br   95 :piminus_PP_PX : piminus_PP_PX[piminus_ProtoParticles]/F            *
+*Entries :     1458 : Total  Size=       6611 bytes  File Size  =        156 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  37.99     *
+*............................................................................*
+*Br   96 :piminus_PP_PY : piminus_PP_PY[piminus_ProtoParticles]/F            *
+*Entries :     1458 : Total  Size=       6611 bytes  File Size  =        156 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  37.99     *
+*............................................................................*
+*Br   97 :piminus_PP_PZ : piminus_PP_PZ[piminus_ProtoParticles]/F            *
+*Entries :     1458 : Total  Size=       6611 bytes  File Size  =        156 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  37.99     *
+*............................................................................*
+*Br   98 :piminus_PP_Weight : piminus_PP_Weight[piminus_ProtoParticles]/F    *
+*Entries :     1458 : Total  Size=       6631 bytes  File Size  =        160 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  37.07     *
+*............................................................................*
+*Br   99 :piminus_PP_tr_pchi2 : piminus_PP_tr_pchi2[piminus_ProtoParticles]/F*
+*Entries :     1458 : Total  Size=       6641 bytes  File Size  =        162 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  36.62     *
+*............................................................................*
+*Br  100 :piminus_PP_DLLe : piminus_PP_DLLe[piminus_ProtoParticles]/F        *
+*Entries :     1458 : Total  Size=       6621 bytes  File Size  =        158 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  37.53     *
+*............................................................................*
+*Br  101 :piminus_PP_DLLk : piminus_PP_DLLk[piminus_ProtoParticles]/F        *
+*Entries :     1458 : Total  Size=       6621 bytes  File Size  =        158 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  37.53     *
+*............................................................................*
+*Br  102 :piminus_PP_DLLp : piminus_PP_DLLp[piminus_ProtoParticles]/F        *
+*Entries :     1458 : Total  Size=       6621 bytes  File Size  =        158 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  37.53     *
+*............................................................................*
+*Br  103 :piminus_PP_DLLmu : piminus_PP_DLLmu[piminus_ProtoParticles]/F      *
+*Entries :     1458 : Total  Size=       6626 bytes  File Size  =        159 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  37.30     *
+*............................................................................*
+*Br  104 :nCandidate : nCandidate/i                                          *
+*Entries :     1458 : Total  Size=       6429 bytes  File Size  =        142 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  41.66     *
+*............................................................................*
+*Br  105 :totCandidates : totCandidates/l                                    *
+*Entries :     1458 : Total  Size=      12284 bytes  File Size  =        192 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  61.20     *
+*............................................................................*
+*Br  106 :EventInSequence : EventInSequence/l                                *
+*Entries :     1458 : Total  Size=      12294 bytes  File Size  =        173 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  67.94     *
+*............................................................................*
+*Br  107 :runNumber : runNumber/i                                            *
+*Entries :     1458 : Total  Size=       6424 bytes  File Size  =        331 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  17.87     *
+*............................................................................*
+*Br  108 :eventNumber : eventNumber/l                                        *
+*Entries :     1458 : Total  Size=      12274 bytes  File Size  =       3396 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   3.46     *
+*............................................................................*
+*Br  109 :BCID      : BCID/i                                                 *
+*Entries :     1458 : Total  Size=       6399 bytes  File Size  =        136 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  43.46     *
+*............................................................................*
+*Br  110 :BCType    : BCType/I                                               *
+*Entries :     1458 : Total  Size=       6409 bytes  File Size  =        145 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  40.77     *
+*............................................................................*
+*Br  111 :OdinTCK   : OdinTCK/i                                              *
+*Entries :     1458 : Total  Size=       6414 bytes  File Size  =        139 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  42.54     *
+*............................................................................*
+*Br  112 :HLT1TCK   : HLT1TCK/i                                              *
+*Entries :     1458 : Total  Size=       6414 bytes  File Size  =        139 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  42.54     *
+*............................................................................*
+*Br  113 :HLT2TCK   : HLT2TCK/i                                              *
+*Entries :     1458 : Total  Size=       6414 bytes  File Size  =        139 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  42.54     *
+*............................................................................*
+*Br  114 :GpsTime   : GpsTime/l                                              *
+*Entries :     1458 : Total  Size=      12254 bytes  File Size  =        165 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  71.18     *
+*............................................................................*
+*Br  115 :Polarity  : Polarity/S                                             *
+*Entries :     1458 : Total  Size=       3499 bytes  File Size  =        127 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  23.61     *
+*............................................................................*
+*Br  116 :Hlt1Global : Hlt1Global/i                                          *
+*Entries :     1458 : Total  Size=       6429 bytes  File Size  =        142 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  41.66     *
+*............................................................................*
+*Br  117 :Hlt2Global : Hlt2Global/i                                          *
+*Entries :     1458 : Total  Size=       6429 bytes  File Size  =        142 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  41.66     *
+*............................................................................*
+*Br  118 :Hlt2BToHHGammaEE_Inclusive_LineDecision :                          *
+*         | Hlt2BToHHGammaEE_Inclusive_LineDecision/I                        *
+*Entries :     1458 : Total  Size=       6574 bytes  File Size  =        221 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  26.90     *
+*............................................................................*
+*Br  119 :Hlt2BToHHGamma_Inclusive_LineDecision :                            *
+*         | Hlt2BToHHGamma_Inclusive_LineDecision/I                          *
+*Entries :     1458 : Total  Size=       6564 bytes  File Size  =        430 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  13.82     *
+*............................................................................*
+*Br  120 :Hlt2BToHHHGammaEE_Inclusive_LineDecision :                         *
+*         | Hlt2BToHHHGammaEE_Inclusive_LineDecision/I                       *
+*Entries :     1458 : Total  Size=       6579 bytes  File Size  =        192 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  30.97     *
+*............................................................................*
+*Br  121 :Hlt2BToHHHGamma_Inclusive_LineDecision :                           *
+*         | Hlt2BToHHHGamma_Inclusive_LineDecision/I                         *
+*Entries :     1458 : Total  Size=       6569 bytes  File Size  =        329 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  18.07     *
+*............................................................................*
+*Br  122 :Hlt2nSelections : Hlt2nSelections/i                                *
+*Entries :     1458 : Total  Size=       6454 bytes  File Size  =        437 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  13.55     *
+*............................................................................*
+*Br  123 :MaxRoutingBits : MaxRoutingBits/I                                  *
+*Entries :     1458 : Total  Size=       6449 bytes  File Size  =        152 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=  38.95     *
+*............................................................................*
+*Br  124 :RoutingBits : RoutingBits[MaxRoutingBits]/F                        *
+*Entries :     1458 : Total  Size=      12401 bytes  File Size  =       1968 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   5.97     *
+*............................................................................*
+NTupleSvc                              INFO NTuples saved successfully
 ChronoStatSvc.finalize()               INFO  Service finalized successfully 
 ApplicationMgr                         INFO Application Manager Finalized successfully
 ApplicationMgr                         INFO Application Manager Terminated successfully
