@@ -15,6 +15,7 @@ ANALYSIS_TOOLS_ROOT= "../root"
 
 #List of MC samples available
 MC_list=["KstG", "PhiG", "K1G", "LambdaG", "XiG", "OmegaG"] # "KstG", "PhiG", "K1G", "LambdaG", "XiG", "OmegaG"
+lines = ["HHGamma","HHGammaEE","HHHGamma","HHGammaEE"]
 
 # Production IDs for each MC
 prodIDs={
@@ -141,8 +142,11 @@ rule MA_correlation:
 ################################### MOORE PART ###################################
 rule all_Moore:
     input:
-        expand("output/{MC}/AllLines_Moore.mdst", MC=MC_list)
-# .PHONY: allDSTs_Moore allEvtSizes_Moore alltuples_Moore
+        expand("output/{MC}/AllLines_Moore.mdst", MC=MC_list),
+        expand("output/{MC}/AllLines_EvtSize_Moore.txt", MC=MC_list),
+        expand("output/{MC}/AllLines_Moore.root", MC=MC_list),
+        expand("output/multiplicities/{line}_{extra}_multiplicity.txt",
+            line=lines,extra=extra_container_list)
 
 
 #Produce DSTs from Moore.
@@ -183,7 +187,10 @@ rule Tuple_Moore:
         "{DAVINCI}/run gaudirun.py DaVinci_Scripts/{wildcards.MC}.py DaVinci_Scripts/AllLines.py"
 
 #For each line, we loop over all the containers
-lines = ["HHGamma","HHGammaEE","HHHGamma","HHGammaEE"]
+rule lines_multiplicities:
+    input:
+        expand("output/multiplicities/{line}_{extra}_multiplicity.txt",
+            line=lines,extra=extra_container_list)
 
 rule line_extra_multiplicities:
     input:
@@ -195,11 +202,6 @@ rule line_extra_multiplicities:
         '{ANALYSIS_TOOLS_ROOT}/Multiplicity_Extrasel.out "{input.tuples}" '
         ' Cuts/{wildcards.extra}_cuts.txt {output} {wildcards.line}Tuple/DecayTree'
         ' {wildcards.line}_{wildcards.extra}Tuple/DecayTree '
-
-rule lines_multiplicities:
-    input:
-        expand("output/multiplicities/{line}_{extra}_multiplicity.txt",
-            line=lines,extra=extra_container_list)
 
 # #HHGamma
 # rule HHGamma_extra_multiplicities:
@@ -214,3 +216,17 @@ rule lines_multiplicities:
 
 # rule HHGamma_multiplicities:
 #     input: expand("output/multiplicities/HHGamma_{extra}_multiplicity.txt",extra=extra_container_list)
+
+################################### ALL ###################################
+rule all_MA:
+    input:
+        expand("Gaudi_inputs/{MC}_input_LFNs.py", MC=MC_list),
+        expand("Gaudi_inputs/{MC}_input_PFNs.py", MC=MC_list),
+        expand("output/{MC}/AllLines_MA.root", MC=MC_list),
+        expand("output/{MC}/AllLines_eff_MA.txt", MC=MC_list),
+        expand("output/{MC}/CorrelationMatrix_MA.md", MC=MC_list),
+        expand("output/{MC}/AllLines_Moore.mdst", MC=MC_list),
+        expand("output/{MC}/AllLines_EvtSize_Moore.txt", MC=MC_list),
+        expand("output/{MC}/AllLines_Moore.root", MC=MC_list),
+        expand("output/multiplicities/{line}_{extra}_multiplicity.txt",
+            line=lines,extra=extra_container_list)
