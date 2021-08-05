@@ -11,7 +11,7 @@ DAVINCI=$(STACKDIR)/DaVinci
 ANALYSIS_TOOLS_ROOT=../root
 
 #List of MC samples available
-MC_list=KstG PhiG K1G LambdaG XiG OmegaG
+MC_list=KstG PhiG K1G LambdaG XiG OmegaG PhiKstG PhiPhiG PhiKs0G K1G_KPiPi0 PhiPi0G KstIsoG LambdaPG PhiKG K1G_Cocktail L1520G RhoG
 #ProdIDs for each MC
 KstG_prodID=75829
 PhiG_prodID=75812
@@ -19,6 +19,17 @@ K1G_prodID=75816
 LambdaG_prodID=76702
 XiG_prodID=109825
 OmegaG_prodID=109823
+PhiKstG_prodID=133775
+PhiPhiG_prodID=133773
+PhiKs0G_prodID=133769
+K1G_KPiPi0_prodID=133765
+PhiPi0G_prodID=133763
+KstIsoG_prodID=133761
+LambdaPG_prodID=133759
+PhiKG_prodID=133753
+K1G_Cocktail_prodID=133757
+L1520G_prodID=133755
+RhoG_prodID=133751
 
 #List of reconstructibles for each MC
 KstG_reconstructibles=Kplus,piminus
@@ -27,6 +38,17 @@ K1G_reconstructibles=Kplus,piminus,piplus
 LambdaG_reconstructibles=pplus,piminus
 XiG_reconstructibles=pplus,piminus,piminus0
 OmegaG_reconstructibles=pplus,piminus,Kminus
+PhiKstG_reconstructibles=Kplus,Kminus,Kplus0,piminus
+PhiPhiG_reconstructibles=Kplus,Kminus,Kplus0,Kminus0
+PhiKs0G_reconstructibles=Kplus,Kminus,piplus,piminus
+K1G_KPiPi0_reconstructibles=Kplus,piminus
+PhiPi0G_reconstructibles=Kplus,Kminus
+KstIsoG_reconstructibles=piplus,piminus,piplus0
+LambdaPG_reconstructibles=pminus,piplus,pplus
+PhiKG_reconstructibles=Kplus,Kminus,Kplus0
+K1G_Cocktail_reconstructibles=Kplus,piminus,piplus
+L1520G_reconstructibles=pplus,Kminus
+RhoG_reconstructibles=piplus,piminus
 
 #List of extra selection containers
 extra_container_list=ExtraHadron ExtraKs0 ExtraLambda ExtraGamma ExtraPi0Merged ExtraPi0Resolved
@@ -46,12 +68,13 @@ all: all_MA all_Moore
 input_options_LFNs_list=$(foreach MC, $(MC_list),Gaudi_inputs/$(MC)_input_LFNs.py)
 input_options_LFNs: $(input_options_LFNs_list)
 $(input_options_LFNs_list): Gaudi_inputs/%_input_LFNs.py:
-	lb-dirac dirac-bookkeeping-get-files --Prod $($*_prodID) --OptionsFile $@
-#Now translate this list into a PFN list which can be used in Gaudi software
+	lb-dirac dirac-bookkeeping-get-files --Prod=$($*_prodID) --OptionsFile=$@
+#Now translate this list into a PFN list which can be used in Gaudi software.
+#Warning (2021/08/05) only works in lxplus, but not in ubuntu + docker
 input_options_PFNs_list=$(foreach MC, $(MC_list),Gaudi_inputs/$(MC)_input_PFNs.py)
 input_options_PFNs: $(input_options_PFNs_list)
 $(input_options_PFNs_list): Gaudi_inputs/%_input_PFNs.py: Gaudi_inputs/%_input_LFNs.py
-	lb-dirac dirac-bookkeeping-genXMLCatalog --Options $< --NewOptions $@
+	lb-dirac dirac-bookkeeping-genXMLCatalog --Options=$< --NewOptions=$@
 
 ################################### MOORE ANALYSIS PART ###################################
 #Produce ntuples from MooreAnalysis.
@@ -62,7 +85,7 @@ alltuple_MA_list=$(foreach MC, $(MC_list),output/$(MC)/AllLines_MA.root)
 alltuples_MA: $(alltuple_MA_list)
 $(alltuple_MA_list): output/%/AllLines_MA.root: Gaudi_inputs/%_input_PFNs.py
 	mkdir -p output/$*
-	$(MOOREANALYSIS)/run gaudirun.py MooreAnalysis_Scripts/$*.py options/2000_Evts.py MooreAnalysis_Scripts/AllLines.py Gaudi_inputs/$*_input_PFNs.py | tee output/$*/AllLines_MA.out
+	$(MOOREANALYSIS)/run --set=DECAY=$* gaudirun.py options/Decay_options.py options/2000_Evts.py MooreAnalysis_Scripts/AllLines.py Gaudi_inputs/$*_input_PFNs.py | tee output/$*/AllLines_MA.out
 
 #Produce efficiency results by using the ntuple info
 #We use reconstructible children, which only takes children with pseudorapidity in LHCb range
@@ -87,21 +110,22 @@ allDST_Moore_list=$(foreach MC, $(MC_list),output/$(MC)/AllLines_Moore.mdst)
 allDSTs_Moore: $(allDST_Moore_list)
 $(allDST_Moore_list): output/%/AllLines_Moore.mdst: Gaudi_inputs/%_input_PFNs.py
 	mkdir -p output/$*
-	$(MOORE)/run gaudirun.py Moore_Scripts/$*.py options/2000_Evts.py Moore_Scripts/AllLines.py Gaudi_inputs/$*_input_PFNs.py | tee output/$*/AllLines_Moore.out
-	rm -f test_catalog.xml
+	$(MOORE)/run --set=DECAY=$* gaudirun.py options/Decay_options.py options/2000_Evts.py Moore_Scripts/AllLines.py Gaudi_inputs/$*_input_PFNs.py | tee output/$*/AllLines_Moore.out
+	rm -f test_catalog*.xml
 
 #Once the mDSTs have been produced, we can run a hacked script from upgrade-bandwidth-studies
+#Make sure you have prettytable installed
 allEvtSizes_Moore_list=$(foreach MC, $(MC_list),output/$(MC)/AllLines_EvtSize_Moore.txt)
 allEvtSizes_Moore: $(allEvtSizes_Moore_list)
 $(allEvtSizes_Moore_list): output/%/AllLines_EvtSize_Moore.txt: output/%/AllLines_Moore.mdst
-	$(MOORE)/run python scripts/event_size.py $< | tee $@
+	python scripts/event_size.py $< | tee $@
 
 
 #Time to produce ntuples
 alltuple_Moore_list=$(foreach MC, $(MC_list),output/$(MC)/AllLines_Moore.root)
 alltuples_Moore: $(alltuple_Moore_list)
 $(alltuple_Moore_list): output/%/AllLines_Moore.root: output/%/AllLines_Moore.mdst
-	$(DAVINCI)/run gaudirun.py DaVinci_Scripts/$*.py DaVinci_Scripts/AllLines.py
+	$(DAVINCI)/run --set=DECAY=$* gaudirun.py DaVinci_Scripts/Decay_options.py DaVinci_Scripts/AllLines.py
 
 #We have the ntuples, now time to extract the multiplicity of each extra container.
 .PHONY: HHGamma_multiplicities HHGammaEE_multiplicities HHHGamma_multiplicities HHHGammaEE_multiplicities

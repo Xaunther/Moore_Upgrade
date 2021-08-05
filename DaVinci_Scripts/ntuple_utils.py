@@ -35,13 +35,26 @@ def get_combo_decaydescriptor(linename, extrasel):
 #Returns full decay descriptor for a given key
 def get_full_decaydescriptor(linename):
     full_decaydescriptor = {}
-    full_decaydescriptor["HHGamma"] = "B0 -> ^(K*(892)0 -> ^pi+ ^pi-) ^gamma"
+    ##HHGamma descriptors
     full_decaydescriptor[
-        "HHGammaEE"] = "B0 -> ^(K*(892)0 -> ^pi+ ^pi-) ^(gamma -> ^e+ ^e-)"
+        "HHGamma_hh"] = "B0 -> ^(K*(892)0 -> ^pi+ ^pi-) ^gamma"
     full_decaydescriptor[
-        "HHHGamma"] = "(B+ -> ^(D*(2010)+ -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi+) ^gamma) || (B- -> ^(D*(2010)- -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi-) ^gamma)"
+        "HHGamma_hKs0"] = "(B+ -> ^(K*(892)+ -> ^pi+ ^(KS0 -> ^pi+ ^pi-)) ^gamma) || (B- -> ^(K*(892)- -> ^pi- ^(KS0 -> ^pi+ ^pi-)) ^gamma)"
     full_decaydescriptor[
-        "HHHGammaEE"] = "(B+ -> ^(D*(2010)+ -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi+) ^(gamma -> ^e+ ^e-)) || (B- -> ^(D*(2010)- -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi-) ^(gamma -> ^e+ ^e-))"
+        "HHGamma_hL0"] = "(B+ -> ^(K*(892)+ -> ^pi+ ^(Lambda0 -> ^p+ ^pi-)) ^gamma) || (B- -> ^(K*(892)- -> ^pi- ^(Lambda~0 -> ^p~- ^pi+)) ^gamma)"
+    ##HHGammaEE descriptors
+    full_decaydescriptor[
+        "HHGammaEE_hh"] = "B0 -> ^(K*(892)0 -> ^pi+ ^pi-) ^(gamma -> ^e+ ^e-)"
+    full_decaydescriptor[
+        "HHGammaEE_hKs0"] = "(B+ -> ^(K*(892)+ -> ^pi+ ^(KS0 -> ^pi+ ^pi-)) ^(gamma -> ^e+ ^e-)) || (B- -> ^(K*(892)- -> ^pi- ^(KS0 -> ^pi+ ^pi-)) ^(gamma -> ^e+ ^e-))"
+    full_decaydescriptor[
+        "HHGammaEE_hL0"] = "(B+ -> ^(K*(892)+ -> ^pi+ ^(Lambda0 -> ^p+ ^pi-)) ^(gamma -> ^e+ ^e-)) || (B- -> ^(K*(892)- -> ^pi- ^(Lambda~0 -> ^p~- ^pi+)) ^(gamma -> ^e+ ^e-))"
+    #HHHGamma descriptors
+    full_decaydescriptor[
+        "HHHGamma_hhh"] = "(B+ -> ^(D*(2010)+ -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi+) ^gamma) || (B- -> ^(D*(2010)- -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi-) ^gamma)"
+    #HHHGammaEE descriptors
+    full_decaydescriptor[
+        "HHHGammaEE_hhh"] = "(B+ -> ^(D*(2010)+ -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi+) ^(gamma -> ^e+ ^e-)) || (B- -> ^(D*(2010)- -> ^(K*(892)0 -> ^pi+ ^pi-) ^pi-) ^(gamma -> ^e+ ^e-))"
     full_decaydescriptor["ExtraHadron"] = "(pi+) || (pi-)"
     full_decaydescriptor["ExtraKs0"] = "KS0 -> ^pi+ ^pi-"
     full_decaydescriptor[
@@ -51,7 +64,7 @@ def get_full_decaydescriptor(linename):
     full_decaydescriptor["ExtraPi0Resolved"] = "pi0 -> ^gamma ^gamma"
     full_decaydescriptor[
         "HHGamma_ExtraHadron_Combo"] = "(B+ -> ^({0}) ^pi+) || (B- -> ^({0}) ^pi-)".format(
-            full_decaydescriptor["HHGamma"])
+            full_decaydescriptor["HHGamma_hh"])
     return full_decaydescriptor[linename]
 
 
@@ -59,15 +72,47 @@ def get_full_decaydescriptor(linename):
 def get_branches(linename):
     branches = {}
     #Branches for HHGamma line
-    branches["HHGamma"] = {
+    branches["HHGamma_hh"] = {
         "B": "B0 -> (K*(892)0 -> pi+ pi-) gamma",
         "Kst": "B0 -> ^(K*(892)0 -> pi+ pi-) gamma",
         "piplus": "B0 -> (K*(892)0 -> ^pi+ pi-) gamma",
         "piminus": "B0 -> (K*(892)0 -> pi+ ^pi-) gamma",
         "gamma": "B0 -> (K*(892)0 -> pi+ pi-) ^gamma",
     }
+    branches["HHGamma_hKs0"] = {
+        "B":
+        "(B+ -> (K*(892)+ -> pi+ (KS0 -> pi+ pi-)) gamma) || (B- -> (K*(892)- -> pi- (KS0 -> pi+ pi-)) gamma)",
+        "Kst":
+        "(B+ -> ^(K*(892)+ -> pi+ (KS0 -> pi+ pi-)) gamma) || (B- -> ^(K*(892)- -> pi- (KS0 -> pi+ pi-)) gamma)",
+        "piplus":
+        "(B+ -> (K*(892)+ -> ^pi+ (KS0 -> pi+ pi-)) gamma) || (B- -> (K*(892)- -> ^pi- (KS0 -> pi+ pi-)) gamma)",
+        "Ks0":
+        "(B+ -> (K*(892)+ -> pi+ ^(KS0 -> pi+ pi-)) gamma) || (B- -> (K*(892)- -> pi- ^(KS0 -> pi+ pi-)) gamma)",
+        "piplus0":
+        "(B+ -> (K*(892)+ -> pi+ (KS0 -> ^pi+ pi-)) gamma) || (B- -> (K*(892)- -> pi- (KS0 -> ^pi+ pi-)) gamma)",
+        "piminus0":
+        "(B+ -> (K*(892)+ -> pi+ (KS0 -> pi+ ^pi-)) gamma) || (B- -> (K*(892)- -> pi- (KS0 -> pi+ ^pi-)) gamma)",
+        "gamma":
+        "(B+ -> (K*(892)+ -> pi+ (KS0 -> pi+ pi-)) ^gamma) || (B- -> (K*(892)- -> pi- (KS0 -> pi+ pi-)) ^gamma)",
+    }
+    branches["HHGamma_hL0"] = {
+        "B":
+        "(B+ -> (K*(892)+ -> pi+ (Lambda0 -> p+ pi-)) gamma) || (B- -> (K*(892)- -> pi- (Lambda~0 -> p~- pi+)) gamma)",
+        "Kst":
+        "(B+ -> ^(K*(892)+ -> pi+ (Lambda0 -> p+ pi-)) gamma) || (B- -> ^(K*(892)- -> pi- (Lambda~0 -> p~- pi+)) gamma)",
+        "piplus":
+        "(B+ -> (K*(892)+ -> ^pi+ (Lambda0 -> p+ pi-)) gamma) || (B- -> (K*(892)- -> ^pi- (Lambda~0 -> p~- pi+)) gamma)",
+        "Lambda0":
+        "(B+ -> (K*(892)+ -> pi+ ^(Lambda0 -> p+ pi-)) gamma) || (B- -> (K*(892)- -> pi- ^(Lambda~0 -> p~- pi+)) gamma)",
+        "pplus":
+        "(B+ -> (K*(892)+ -> pi+ (Lambda0 -> ^p+ pi-)) gamma) || (B- -> (K*(892)- -> pi- (Lambda~0 -> ^p~- pi+)) gamma)",
+        "piminus0":
+        "(B+ -> (K*(892)+ -> pi+ (Lambda0 -> p+ ^pi-)) gamma) || (B- -> (K*(892)- -> pi- (Lambda~0 -> p~- ^pi+)) gamma)",
+        "gamma":
+        "(B+ -> (K*(892)+ -> pi+ (Lambda0 -> p+ pi-)) ^gamma) || (B- -> (K*(892)- -> pi- (Lambda~0 -> p~- pi+)) ^gamma)",
+    }
     #Branches for HHGammaEE line
-    branches["HHGammaEE"] = {
+    branches["HHGammaEE_hh"] = {
         "B": "B0 -> (K*(892)0 -> pi+ pi-) (gamma-> e+ e-)",
         "Kst": "B0 -> ^(K*(892)0 -> pi+ pi-) (gamma-> e+ e-)",
         "piplus": "B0 -> (K*(892)0 -> ^pi+ pi-) (gamma-> e+ e-)",
@@ -76,8 +121,48 @@ def get_branches(linename):
         "eplus": "B0 -> (K*(892)0 -> pi+ pi-) (gamma-> ^e+ e-)",
         "eminus": "B0 -> (K*(892)0 -> pi+ pi-) (gamma-> e+ ^e-)",
     }
+    branches["HHGammaEE_hKs0"] = {
+        "B":
+        "(B+ -> (K*(892)+ -> pi+ (KS0 -> pi+ pi-)) (gamma-> e+ e-)) || (B- -> (K*(892)- -> pi- (KS0 -> pi+ pi-)) (gamma-> e+ e-))",
+        "Kst":
+        "(B+ -> ^(K*(892)+ -> pi+ (KS0 -> pi+ pi-)) (gamma-> e+ e-)) || (B- -> ^(K*(892)- -> pi- (KS0 -> pi+ pi-)) (gamma-> e+ e-))",
+        "piplus":
+        "(B+ -> (K*(892)+ -> ^pi+ (KS0 -> pi+ pi-)) (gamma-> e+ e-)) || (B- -> (K*(892)- -> ^pi- (KS0 -> pi+ pi-)) (gamma-> e+ e-))",
+        "Ks0":
+        "(B+ -> (K*(892)+ -> pi+ ^(KS0 -> pi+ pi-)) (gamma-> e+ e-)) || (B- -> (K*(892)- -> pi- ^(KS0 -> pi+ pi-)) (gamma-> e+ e-))",
+        "piplus0":
+        "(B+ -> (K*(892)+ -> pi+ (KS0 -> ^pi+ pi-)) (gamma-> e+ e-)) || (B- -> (K*(892)- -> pi- (KS0 -> ^pi+ pi-)) (gamma-> e+ e-))",
+        "piminus0":
+        "(B+ -> (K*(892)+ -> pi+ (KS0 -> pi+ ^pi-)) (gamma-> e+ e-)) || (B- -> (K*(892)- -> pi- (KS0 -> pi+ ^pi-)) (gamma-> e+ e-))",
+        "gamma":
+        "(B+ -> (K*(892)+ -> pi+ (KS0 -> pi+ pi-)) ^(gamma-> e+ e-)) || (B- -> (K*(892)- -> pi- (KS0 -> pi+ pi-)) ^(gamma-> e+ e-))",
+        "eplus":
+        "(B+ -> (K*(892)+ -> pi+ (KS0 -> pi+ pi-)) (gamma-> ^e+ e-)) || (B- -> (K*(892)- -> pi- (KS0 -> pi+ pi-)) (gamma-> ^e+ e-))",
+        "eminus":
+        "(B+ -> (K*(892)+ -> pi+ (KS0 -> pi+ pi-)) (gamma-> e+ ^e-)) || (B- -> (K*(892)- -> pi- (KS0 -> pi+ pi-)) (gamma-> e+ ^e-))",
+    }
+    branches["HHGammaEE_hL0"] = {
+        "B":
+        "(B+ -> (K*(892)+ -> pi+ (Lambda0 -> p+ pi-)) (gamma-> e+ e-)) || (B- -> (K*(892)- -> pi- (Lambda~0 -> p~- pi+)) (gamma-> e+ e-))",
+        "Kst":
+        "(B+ -> ^(K*(892)+ -> pi+ (Lambda0 -> p+ pi-)) (gamma-> e+ e-)) || (B- -> ^(K*(892)- -> pi- (Lambda~0 -> p~- pi+)) (gamma-> e+ e-))",
+        "piplus":
+        "(B+ -> (K*(892)+ -> ^pi+ (Lambda0 -> p+ pi-)) (gamma-> e+ e-)) || (B- -> (K*(892)- -> ^pi- (Lambda~0 -> p~- pi+)) (gamma-> e+ e-))",
+        "Lambda0":
+        "(B+ -> (K*(892)+ -> pi+ ^(Lambda0 -> p+ pi-)) (gamma-> e+ e-)) || (B- -> (K*(892)- -> pi- ^(Lambda~0 -> p~- pi+)) (gamma-> e+ e-))",
+        "pplus":
+        "(B+ -> (K*(892)+ -> pi+ (Lambda0 -> ^p+ pi-)) (gamma-> e+ e-)) || (B- -> (K*(892)- -> pi- (Lambda~0 -> ^p~- pi+)) (gamma-> e+ e-))",
+        "piminus0":
+        "(B+ -> (K*(892)+ -> pi+ (Lambda0 -> p+ ^pi-)) (gamma-> e+ e-)) || (B- -> (K*(892)- -> pi- (Lambda~0 -> p~- ^pi+)) (gamma-> e+ e-))",
+        "gamma":
+        "(B+ -> (K*(892)+ -> pi+ (Lambda0 -> p+ pi-)) ^(gamma-> e+ e-)) || (B- -> (K*(892)- -> pi- (Lambda~0 -> p~- pi+)) ^(gamma-> e+ e-))",
+        "eplus":
+        "(B+ -> (K*(892)+ -> pi+ (Lambda0 -> p+ pi-)) (gamma-> ^e+ e-)) || (B- -> (K*(892)- -> pi- (Lambda~0 -> p~- pi+)) (gamma-> ^e+ e-))",
+        "eminus":
+        "(B+ -> (K*(892)+ -> pi+ (Lambda0 -> p+ pi-)) (gamma-> e+ ^e-)) || (B- -> (K*(892)- -> pi- (Lambda~0 -> p~- pi+)) (gamma-> e+ ^e-))",
+    }
     #Branches for HHHGamma line
-    branches["HHHGamma"] = {
+    branches["HHHGamma_hhh"] = {
         "B":
         "(B+ -> (D*(2010)+ -> (K*(892)0 -> pi+ pi-) pi+) gamma) || (B- -> (D*(2010)- -> (K*(892)0 -> pi+ pi-) pi-) gamma)",
         "Dst":
@@ -94,7 +179,7 @@ def get_branches(linename):
         "(B+ -> (D*(2010)+ -> (K*(892)0 -> pi+ pi-) pi+) ^gamma) || (B- -> (D*(2010)- -> (K*(892)0 -> pi+ pi-) pi-) ^gamma)",
     }
     #Branches for HHHGammaEE line
-    branches["HHHGammaEE"] = {
+    branches["HHHGammaEE_hhh"] = {
         "B":
         "(B+ -> (D*(2010)+ -> (K*(892)0 -> pi+ pi-) pi+) (gamma -> e+ e-)) || (B- -> (D*(2010)- -> (K*(892)0 -> pi+ pi-) pi-) (gamma -> e+ e-))",
         "Dst":
@@ -297,39 +382,46 @@ def get_ntuples():
     radiative_ntuples = {}
     radiative_seqs = {}
     linenames = [
-        "HHGamma",
-        "HHGammaEE",
-        "HHHGamma",
-        "HHHGammaEE",
+        ["HHGamma", ["hh", "hKs0", "hL0"]],
+        ["HHGammaEE", ["hh", "hKs0", "hL0"]],
+        ["HHHGamma", ["hhh"]],
+        ["HHHGammaEE", ["hhh"]],
     ]
     ################## LOOP over every line ##################
     for linename in linenames:
-        #Define DTT
-        radiative_ntuples[linename] = DecayTreeTuple(
-            "{0}Tuple".format(linename),
-            Inputs=[
-                AutomaticData(
-                    "/Event/HLT2/Hlt2BTo{0}_Inclusive_Line/Particles".format(
-                        linename)).outputLocation()
-            ],
-            Decay=get_full_decaydescriptor(linename),
-        )
-        #Branches
-        radiative_ntuples[linename].addBranches(get_branches(linename))
-        #Tupletools
-        #MC tools
-        radiative_ntuples[linename].ToolList += mc_tool_list
-        DecayTreeTupleTruthUtils.makeTruth(
-            radiative_ntuples[linename],
-            relations,
-            mc_tools,
-            stream="/Event/HLT2")
-        #Other tools
-        lokitool = radiative_ntuples[linename].addTupleTool(
-            "LoKi::Hybrid::TupleTool/{0}".format(linename))
-        lokitool.Variables = LoKi_variables
+        for hadron_comb in linename[1]:
+            #Define DTT
+            radiative_ntuples[
+                linename[0] + "_" + hadron_comb] = DecayTreeTuple(
+                    "{0}_{1}Tuple".format(linename[0], hadron_comb),
+                    Inputs=[
+                        AutomaticData(
+                            "/Event/HLT2/Hlt2BTo{0}_Inclusive_Line/Particles".
+                            format(linename[0])).outputLocation()
+                    ],
+                    Decay=get_full_decaydescriptor(linename[0] + "_" +
+                                                   hadron_comb),
+                )
+            #Branches
+            radiative_ntuples[linename[0] + "_" + hadron_comb].addBranches(
+                get_branches(linename[0] + "_" + hadron_comb))
+            #Tupletools
+            #MC tools
+            radiative_ntuples[linename[0] + "_" +
+                              hadron_comb].ToolList += mc_tool_list
+            DecayTreeTupleTruthUtils.makeTruth(
+                radiative_ntuples[linename[0] + "_" + hadron_comb],
+                relations,
+                mc_tools,
+                stream="/Event/HLT2")
+            #Other tools
+            lokitool = radiative_ntuples[
+                linename[0] + "_" + hadron_comb].addTupleTool(
+                    "LoKi::Hybrid::TupleTool/{0}_{1}".format(
+                        linename[0], hadron_comb))
+            lokitool.Variables = LoKi_variables
         #Add extra selections
-        extra_dtts, extra_seqs = get_extra_ntuples(linename)
+        extra_dtts, extra_seqs = get_extra_ntuples(linename[0])
         radiative_ntuples.update(extra_dtts)
         radiative_seqs.update(extra_seqs)
 
