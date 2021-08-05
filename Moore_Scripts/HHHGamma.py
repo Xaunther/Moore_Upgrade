@@ -6,6 +6,12 @@ from RecoConf.reconstruction_objects import reconstruction
 import json
 from Configurables import HltANNSvc
 
+import os, sys
+sys.path.append(os.getcwd())
+
+from options.Decay_properties import props
+decay_props = props[os.environ["DECAY"]]
+
 
 def all_lines():
     standard_line = [btohhhgamma_inclusive_line()]
@@ -13,13 +19,13 @@ def all_lines():
 
 
 #Switch true or false
-reco_from_file = False
+reco_from_file = decay_props["reco_from_file"]
 
 #Line name for files
 linename = "HHHGamma"
 
-output_dir = options.output_file
-options.output_file = output_dir + linename + "_Moore.mdst"
+options.output_file = "output/{0}/{1}_Moore.mdst".format(
+    os.environ["DECAY"], linename)
 
 public_tools = []
 if (not reco_from_file):
@@ -30,5 +36,7 @@ with reconstruction.bind(from_file=reco_from_file):
     run_moore(options, all_lines, public_tools)
 
 #Dump tck info from Moore (needed by Davinci afterwards)
-with open(output_dir + linename + "_Moore_tck.json", "w") as outfile:
+with open(
+        "output/{0}/{1}_Moore_tck.json".format(os.environ["DECAY"], linename),
+        "w") as outfile:
     json.dump(HltANNSvc().PackedObjectLocations, outfile)
