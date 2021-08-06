@@ -133,7 +133,10 @@ def get_ntuples():
                               hadron_comb] = DecayTreeTuple(
                                   "{0}_{1}Tuple".format(
                                       linename[0], hadron_comb),
-                                  Inputs=[dtt_inputs.get_inputs(linename[0])],
+                                  Inputs=[
+                                      dtt_inputs.get_inputs(
+                                          linename[0]).outputLocation()
+                                  ],
                                   Decay=descriptors.get_full_decaydescriptor(
                                       linename[0] + "_" + hadron_comb),
                               )
