@@ -21,7 +21,18 @@ prodIDs={
     "K1G"    :  "75816",
     "LambdaG":  "76702",
     "XiG"    :  "109825",
-    "OmegaG" :  "109823"
+    "OmegaG" :  "109823",
+    "PhiKstG_prodID"        : "133775",
+    "PhiPhiG_prodID"        : "133773",
+    "PhiKs0G_prodID"        : "133769",
+    "K1G_KPiPi0_prodID"     : "133765",
+    "PhiPi0G_prodID"        : "133763",
+    "KstIsoG_prodID"        : "133761",
+    "LambdaPG_prodID"       : "133759",
+    "PhiKG_prodID"          : "133753",
+    "K1G_Cocktail_prodID"   : "133757",
+    "L1520G_prodID"         : "133755",
+    "RhoG_prodID"           : "133751"
 }
 
 # Reconstructibles for each MC
@@ -31,7 +42,18 @@ reconstructibles_d={
     "K1G"     :  "Kplus,piminus,piplus",
     "LambdaG" :  "pplus,piminus",
     "XiG"     :  "pplus,piminus,piminus0",
-    "OmegaG"  :  "pplus,piminus,Kminus"
+    "OmegaG"  :  "pplus,piminus,Kminus",
+    "PhiKstG_reconstructibles"      : "Kplus,Kminus,Kplus0,piminus",
+    "PhiPhiG_reconstructibles"      : "Kplus,Kminus,Kplus0,Kminus0",
+    "PhiKs0G_reconstructibles"      : "Kplus,Kminus,piplus,piminus",
+    "K1G_KPiPi0_reconstructibles"   : "Kplus,piminus",
+    "PhiPi0G_reconstructibles"      : "Kplus,Kminus",
+    "KstIsoG_reconstructibles"      : "piplus,piminus,piplus0",
+    "LambdaPG_reconstructibles"     : "pminus,piplus,pplus",
+    "PhiKG_reconstructibles"        : "Kplus,Kminus,Kplus0",
+    "K1G_Cocktail_reconstructibles" : "Kplus,piminus,piplus",
+    "L1520G_reconstructibles"       : "pplus,Kminus",
+    "RhoG_reconstructibles"         : "piplus,piminus"
 }
 
 #List of extra selection containers
@@ -68,11 +90,15 @@ rule all_LFNs:
     input: expand("Gaudi_inputs/{MC}_input_LFNs.py", MC=MC_list)
 
 rule get_LFN:
+    """This is a prerrequisite for both MooreAnalysis and Moore workflows
+    First, get input LFNs from prodID
+    """
+    #Warning (2021/08/05) only works in lxplus, but not in ubuntu + docker
     output: "Gaudi_inputs/{MC}_input_LFNs.py"
     params:
         prodID=lambda wcs: prodIDs[wcs.MC]
     shell:
-        "lb-dirac dirac-bookkeeping-get-files --Prod {params.prodID} --OptionsFile {output}"
+        "lb-dirac dirac-bookkeeping-get-files --Prod={params.prodID} --OptionsFile={output}"
 
 rule all_PFNs:
     """translate the LFN list into a PFN list which can be used in Gaudi software"""
@@ -82,7 +108,7 @@ rule get_PFN:
     input: "Gaudi_inputs/{MC}_input_LFNs.py"
     output: "Gaudi_inputs/{MC}_input_PFNs.py"
     shell:
-        "lb-dirac dirac-bookkeeping-genXMLCatalog --Options {input} --NewOptions {output}"
+        "lb-dirac dirac-bookkeeping-genXMLCatalog --Options={input} --NewOptions={output}"
 
 
 ################################### MOORE ANALYSIS PART ###################################
@@ -108,7 +134,7 @@ rule MA_tuple:
     output: "output/{MC}/AllLines_MA.root"
     run:
         shell('mkdir -p output/{wildcards.MC}')
-        ma_script = f'{MOOREANALYSIS}/run gaudirun.py MooreAnalysis_Scripts/{wildcards.MC}.py'
+        ma_script = f'{MOOREANALYSIS}/run  --set=DECAY={wildcards.MC} gaudirun.py options/Decay_options.py'
         options   = f' options/2000_Evts.py MooreAnalysis_Scripts/AllLines.py Gaudi_inputs/{wildcards.MC}_input_PFNs.py'
         tee       = f' | tee output/{wildcards.MC}/AllLines_MA.out'
         try:
@@ -170,23 +196,22 @@ rule Dst_Moore:
     output: "output/{MC}/AllLines_Moore.mdst"
     shell:
         "mkdir -p output/{wildcards.MC} \n"
-        "{MOORE}/run gaudirun.py Moore_Scripts/{wildcards.MC}.py "
+        "{MOORE}/run --set=DECAY={wildcards.MC} gaudirun.py options/Decay_options.py "
         "options/2000_Evts.py Moore_Scripts/AllLines.py Gaudi_inputs/{wildcards.MC}_input_PFNs.py "
         "| tee output/{wildcards.MC}/AllLines_Moore.out \n"
-        "rm -f test_catalog.xml"
+        "rm -f test_catalog*.xml"
 
 
 rule allEvtSizes_Moore:
     """Once the mDSTs have been produced, we can run a hacked script from upgrade-bandwidth-studies"""
+    #Make sure you have prettytable installed
     input: expand("output/{MC}/AllLines_EvtSize_Moore.txt", MC=MC_list)
 
 rule EvtSize_Moore:
     input: "output/{MC}/AllLines_Moore.mdst"
     output: "output/{MC}/AllLines_EvtSize_Moore.txt"
     shell:
-        "{MOORE}/run python scripts/event_size.py {input} "
-        "| tee {output}"
-
+        "python scripts/event_size.py {input} | tee {output}"
 
 
 rule allTuples_Moore:
@@ -197,7 +222,7 @@ rule Tuple_Moore:
     input: "output/{MC}/AllLines_Moore.mdst"
     output: "output/{MC}/AllLines_Moore.root"
     shell:
-        "{DAVINCI}/run gaudirun.py DaVinci_Scripts/{wildcards.MC}.py DaVinci_Scripts/AllLines.py"
+        "{DAVINCI}/run --set=DECAY={wildcards.MC} gaudirun.py DaVinci_Scripts/Decay_options.py DaVinci_Scripts/AllLines.py"
 
 
 rule lines_multiplicities:
