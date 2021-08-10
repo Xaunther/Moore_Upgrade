@@ -1,0 +1,463 @@
+Script started on mié 09 jun 2021 12:33:18 CEST
+]0;alobosal@lxplus765:/afs/cern.ch/work/a/alobosal/Trigger/moore_upgrade[?1034h[alobosal@lxplus765 moore_upgrade]$ 
+]0;alobosal@lxplus765:/afs/cern.ch/work/a/alobosal/Trigger/moore_upgrade[alobosal@lxplus765 moore_upgrade]$ deactivatesnakemake -j 1 -n all_Moore[1P[C[C[C[C[C[C[C[C[C[C[C[C[C[Cclear[Kgit fetch[1Ppushmv  Figures preselection[3@-r Figures/[C[C[C[C[C[C[C[C[C[C[C[C[Ccdana[Kgit pull[3Pcdanagit mv -r Figures/ preselection[3P Figures[C[C[C[C[C[C[C[C[C[C[C[C[Cpush[Kfetch[4Pclearsnakemake -j1 -n all_Moore[1@ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[17Pdeactivate[Kmake output/KstG/AllLines_Moore.o[Kroot
+../stack/DaVinci/run gaudirun.py DaVinci_Scripts/KstG.py DaVinci_Scripts/AllLines.py
+# setting LC_ALL to "C"
+# --> Including file '/afs/cern.ch/work/a/alobosal/Trigger/moore_upgrade/DaVinci_Scripts/KstG.py'
+# <-- End of file '/afs/cern.ch/work/a/alobosal/Trigger/moore_upgrade/DaVinci_Scripts/KstG.py'
+# --> Including file '/afs/cern.ch/work/a/alobosal/Trigger/moore_upgrade/DaVinci_Scripts/AllLines.py'
+# <-- End of file '/afs/cern.ch/work/a/alobosal/Trigger/moore_upgrade/DaVinci_Scripts/AllLines.py'
+# applying configuration of LHCbApp
+# /***** User LHCbApp/LHCbApp ************************************************************************
+# |-Persistency     = None
+# |-EnableHive      = False
+# |-ThreadPoolSize  = 10
+# |-SkipEvents      = 0
+# |-GeometryVersion = ''
+# |-DDDBtag         = 'dddb-20171126'  (default: '')
+# |-DQFLAGStag      = ''
+# |-Scheduler       = 'AvalancheScheduler'
+# |-Detectors       = []  (default: [])
+# |-IgnoreDQFlags   = True
+# |-OnlineMode      = False
+# |-TimeStamp       = False
+# |-OutputLevel     = 3
+# |-EvtMax          = -1
+# |-CondDBtag       = 'sim-20171127-vc-md100'  (default: '')
+# |-GeometryMain    = ''
+# |-TupleFile       = 'output/KstG/AllLines_Moore.root'  (default: '')
+# |-Simulation      = True  (default: False)
+# |-DataType        = 'Upgrade'  (default: '2012')
+# |-GeometryPath    = ''
+# |-LocalDataTypes  = []  (default: [])
+# |-XMLSummary      = None
+# |-Monitors        = []  (default: [])
+# \----- (End of User LHCbApp/LHCbApp) ---------------------------------------------------------------
+# skipping configuration of XMLSummary
+# applying configuration of DDDBConf
+# /***** User DDDBConf/DDDBConf **********************************************************************
+# |-IgnoreHeartBeat      = True
+# |-GeometryPath         = ''
+# |-DataType             = 'Upgrade'  (default: '2012')
+# |-InitialTime          = 'Safe'
+# |-ConditionsDBtag      = 'sim-20171127-vc-md100'  (default: '')
+# |-EnableRunStampCheck  = False
+# |-ConditionsRepository = ''
+# |-GeometryMain         = 'LHCb.xml'
+# |-Simulation           = True  (default: False)
+# |-GeometryVersion      = 'trunk'
+# |-DbRoot               = 'git:/lhcb.xml'
+# |-OnlineMode           = False
+# \----- (End of User DDDBConf/DDDBConf) -------------------------------------------------------------
+# applying configuration of CondDB
+# /***** User CondDB/CondDB **************************************************************************
+# |-EnableRunChangeHandler     = False
+# |-LocalTags                  = {}  (default: {})
+# |-IgnoreHeartBeat            = False
+# |-Tags                       = {'DDDB': 'dddb-20171126', 'SIMCOND': 'sim-20171127-vc-md100'}  (default: {})
+# |-EnableRunStampCheck        = False
+# |-Simulation                 = True  (default: False)
+# |-Upgrade                    = True  (default: False)
+# |-AllLocalTagsByDataType     = []  (default: [])
+# |-Online                     = False
+# |-QueryGranularity           = 0
+# |-Overlays                   = []  (default: [])
+# |-LatestGlobalTagByDataTypes = []  (default: [])
+# |-LatestGlobalTagByDataType  = ''
+# |-RunChangeHandlerConditions = {'online_%d.xml': ['Conditions/Online/LHCb/Magnet/Set', 'Conditions/Online/Velo/MotionSystem', 'Conditions/Online/LHCb/Lumi/LumiSettings', 'Conditions/Online/LHCb/LHCFillingScheme', 'Conditions/Online/LHCb/RunParameters', 'Conditions/Online/Rich1/R1HltGasParameters', 'Conditions/Online/Rich2/R2HltGasParameters']}
+# |                            (default: {'online_%d.xml': ['Conditions/Online/LHCb/Magnet/Set', 'Conditions/Online/Velo/MotionSystem', 'Conditions/Online/LHCb/Lumi/LumiSettings', 'Conditions/Online/LHCb/LHCFillingScheme', 'Conditions/Online/LHCb/RunParameters', 'Conditions/Online/Rich1/R1HltGasParameters', 'Conditions/Online/Rich2/R2HltGasParameters']})
+# \----- (End of User CondDB/CondDB) -----------------------------------------------------------------
+ApplicationMgr    SUCCESS 
+====================================================================================================================================
+                                                   Welcome to DaVinci version v53r0
+                                          running on lxplus765.cern.ch on Wed Jun  9 12:34:42 2021
+====================================================================================================================================
+ApplicationMgr       INFO Application Manager Configured successfully
+ToolSvc.GitDDDB      INFO opening Git repository '/cvmfs/lhcb.cern.ch/lib/lhcb/git-conddb/DDDB.git'
+ToolSvc.GitDDDB      INFO using commit 'upgrade/dddb-20171126' corresponding to 3ca3610ca2465697d0ee7666bc3a8bc2f5c88438
+ToolSvc.GitSIMCOND   INFO opening Git repository '/cvmfs/lhcb.cern.ch/lib/lhcb/git-conddb/SIMCOND.git'
+ToolSvc.GitSIMCOND   INFO using commit 'upgrade/sim-20171127-vc-md100' corresponding to 143109bc764c9a5cb34a04ce227d005e20236caa
+DetectorPersist...   INFO Added successfully Conversion service:XmlCnvSvc
+DetectorDataSvc   SUCCESS Detector description database: git:/lhcb.xml
+NTupleSvc            INFO Added stream file:output/KstG/AllLines_Moore.root as FILE1
+Combine_HLT2HHG...   INFO Member list: LoKi::VoidFilter/SELECT:/Event/HLT2/Hlt2BToHHGamma_Inclusive_Line/ExtraHadron, LoKi::VoidFilter/SELECT:/Event/HLT2/Hlt2BToHHGamma_Inclusive_Line, CombineParticles/Combine_HLT2HHGamma_ExtraHadron
+RndmGenSvc.Engine    INFO Generator engine type:CLHEP::RanluxEngine
+RndmGenSvc.Engine    INFO Current Seed:1234567 Luxury:3
+RndmGenSvc           INFO Using Random engine:HepRndm::Engine<CLHEP::RanluxEngine>
+ToolSvc.Sequenc...   INFO This machine has a speed about   2.94 times the speed of a 2.8 GHz Xeon.
+[?1034hRootHistSvc          INFO Writing ROOT histograms to: UndefinedROOTOutputFileName
+HistogramPersis...   INFO Added successfully Conversion service:RootHistSvc
+HHHGammaEE_Extr...   INFO Will look for  pi0 
+HHHGammaEE_Extr...   INFO Explicit sub decays :1
+HHHGammaEE_Extr...   INFO HHHGammaEE_ExtraPi0MergedTuple.pi0 : pi0 
+HHGamma_ExtraPi...   INFO Will look for  pi0 
+HHGamma_ExtraPi...   INFO Explicit sub decays :1
+HHGamma_ExtraPi...   INFO HHGamma_ExtraPi0MergedTuple.pi0 : pi0 
+HHGamma_ExtraHa...   INFO Will look for  ( pi+ || pi- ) 
+HHGamma_ExtraHa...   INFO Explicit sub decays :1
+HHGamma_ExtraHa...   INFO HHGamma_ExtraHadronTuple.pi : ( pi+ || pi- ) 
+HHGammaEE_Extra...   INFO Will look for  gamma 
+HHGammaEE_Extra...   INFO Explicit sub decays :1
+HHGammaEE_Extra...   INFO HHGammaEE_ExtraGammaTuple.gamma : gamma 
+HHHGamma_ExtraG...   INFO Will look for  gamma 
+HHHGamma_ExtraG...   INFO Explicit sub decays :1
+HHHGamma_ExtraG...   INFO HHHGamma_ExtraGammaTuple.gamma : gamma 
+HHHGammaEE_Extr...   INFO Will look for  gamma 
+HHHGammaEE_Extr...   INFO Explicit sub decays :1
+HHHGammaEE_Extr...   INFO HHHGammaEE_ExtraGammaTuple.gamma : gamma 
+HHHGammaEETuple      INFO Will look for  ( ( B+  -> ^( ( D*(2010)+  -> ^( ( K*(892)0  -> ^( pi+ ) ^( pi- )) ) ^( pi+ )) ) ^( ( gamma  -> ^( e+ ) ^( e- )) )) || ( B-  -> ^( ( D*(2010)-  -> ^( ( K*(892)0  -> ^( pi+ ) ^( pi- )) ) ^( pi- )) ) ^( ( gamma  -> ^( e+ ) ^( e- )) )) ) 
+HHHGammaEETuple      INFO Explicit sub decays :9
+HHHGammaEETuple.B    INFO HHHGammaEETuple.B : ( ( B+  -> ( D*(2010)+  -> ( K*(892)0  -> pi+  pi- )  pi+ )  ( gamma  -> e+  e- ) ) || ( B-  -> ( D*(2010)-  -> ( K*(892)0  -> pi+  pi- )  pi- )  ( gamma  -> e+  e- ) ) ) 
+HHHGammaEETuple...   INFO HHHGammaEETuple.Dst : ( ( B+  -> ^( ( D*(2010)+  -> ( K*(892)0  -> pi+  pi- )  pi+ ) ) ( gamma  -> e+  e- ) ) || ( B-  -> ^( ( D*(2010)-  -> ( K*(892)0  -> pi+  pi- )  pi- ) ) ( gamma  -> e+  e- ) ) ) 
+HHHGammaEETuple...   INFO HHHGammaEETuple.Kst : ( ( B+  -> ( D*(2010)+  -> ^( ( K*(892)0  -> pi+  pi- ) ) pi+ )  ( gamma  -> e+  e- ) ) || ( B-  -> ( D*(2010)-  -> ^( ( K*(892)0  -> pi+  pi- ) ) pi- )  ( gamma  -> e+  e- ) ) ) 
+HHHGammaEETuple...   INFO HHHGammaEETuple.eminus : ( ( B+  -> ( D*(2010)+  -> ( K*(892)0  -> pi+  pi- )  pi+ )  ( gamma  -> e+  ^( e- )) ) || ( B-  -> ( D*(2010)-  -> ( K*(892)0  -> pi+  pi- )  pi- )  ( gamma  -> e+  ^( e- )) ) ) 
+HHHGammaEETuple...   INFO HHHGammaEETuple.eplus : ( ( B+  -> ( D*(2010)+  -> ( K*(892)0  -> pi+  pi- )  pi+ )  ( gamma  -> ^( e+ ) e- ) ) || ( B-  -> ( D*(2010)-  -> ( K*(892)0  -> pi+  pi- )  pi- )  ( gamma  -> ^( e+ ) e- ) ) ) 
+HHHGammaEETuple...   INFO HHHGammaEETuple.gamma : ( ( B+  -> ( D*(2010)+  -> ( K*(892)0  -> pi+  pi- )  pi+ )  ^( ( gamma  -> e+  e- ) )) || ( B-  -> ( D*(2010)-  -> ( K*(892)0  -> pi+  pi- )  pi- )  ^( ( gamma  -> e+  e- ) )) ) 
+HHHGammaEETuple...   INFO HHHGammaEETuple.pi3 : ( ( B+  -> ( D*(2010)+  -> ( K*(892)0  -> pi+  pi- )  ^( pi+ ))  ( gamma  -> e+  e- ) ) || ( B-  -> ( D*(2010)-  -> ( K*(892)0  -> pi+  pi- )  ^( pi- ))  ( gamma  -> e+  e- ) ) ) 
+HHHGammaEETuple...   INFO HHHGammaEETuple.piminus : ( ( B+  -> ( D*(2010)+  -> ( K*(892)0  -> pi+  ^( pi- ))  pi+ )  ( gamma  -> e+  e- ) ) || ( B-  -> ( D*(2010)-  -> ( K*(892)0  -> pi+  pi- )  ^( pi- ))  ( gamma  -> e+  e- ) ) ) 
+HHHGammaEETuple...   INFO HHHGammaEETuple.piplus : ( ( B+  -> ( D*(2010)+  -> ( K*(892)0  -> ^( pi+ ) pi- )  pi+ )  ( gamma  -> e+  e- ) ) || ( B-  -> ( D*(2010)-  -> ( K*(892)0  -> ^( pi+ ) pi- )  pi- )  ( gamma  -> e+  e- ) ) ) 
+HHGammaTuple         INFO Will look for  ( B0  -> ^( ( K*(892)0  -> ^( pi+ ) ^( pi- )) ) ^( gamma )) 
+HHGammaTuple         INFO Explicit sub decays :5
+HHGammaTuple.B       INFO HHGammaTuple.B : ( B0  -> ( K*(892)0  -> pi+  pi- )  gamma ) 
+HHGammaTuple.Kst     INFO HHGammaTuple.Kst : ( B0  -> ^( ( K*(892)0  -> pi+  pi- ) ) gamma ) 
+HHGammaTuple.gamma   INFO HHGammaTuple.gamma : ( B0  -> ( K*(892)0  -> pi+  pi- )  ^( gamma )) 
+HHGammaTuple.pi...   INFO HHGammaTuple.piminus : ( B0  -> ( K*(892)0  -> pi+  ^( pi- ))  gamma ) 
+HHGammaTuple.pi...   INFO HHGammaTuple.piplus : ( B0  -> ( K*(892)0  -> ^( pi+ ) pi- )  gamma ) 
+HHHGamma_ExtraL...   INFO Will look for  ( ( Lambda0  -> ^( p+ ) ^( pi- )) || ( Lambda~0  -> ^( p~- ) ^( pi+ )) ) 
+HHHGamma_ExtraL...   INFO Explicit sub decays :3
+HHHGamma_ExtraL...   INFO HHHGamma_ExtraLambdaTuple.Lambda : ( ( Lambda0  -> p+  pi- ) || ( Lambda~0  -> p~-  pi+ ) ) 
+HHHGamma_ExtraL...   INFO HHHGamma_ExtraLambdaTuple.piminus : ( ( Lambda0  -> p+  ^( pi- )) || ( Lambda~0  -> p~-  ^( pi+ )) ) 
+HHHGamma_ExtraL...   INFO HHHGamma_ExtraLambdaTuple.pplus : ( ( Lambda0  -> ^( p+ ) pi- ) || ( Lambda~0  -> ^( p~- ) pi+ ) ) 
+HHHGammaEE_Extr...   INFO Will look for  ( pi0  -> ^( gamma ) ^( gamma )) 
+HHHGammaEE_Extr...   INFO Explicit sub decays :3
+HHHGammaEE_Extr...   INFO HHHGammaEE_ExtraPi0ResolvedTuple.gamma1 : ( pi0  -> ^( gamma ) gamma ) 
+HHHGammaEE_Extr...   INFO HHHGammaEE_ExtraPi0ResolvedTuple.gamma2 : ( pi0  -> gamma  ^( gamma )) 
+HHHGammaEE_Extr...   INFO HHHGammaEE_ExtraPi0ResolvedTuple.pi0 : ( pi0  -> gamma  gamma ) 
+HHGamma_ExtraLa...   INFO Will look for  ( ( Lambda0  -> ^( p+ ) ^( pi- )) || ( Lambda~0  -> ^( p~- ) ^( pi+ )) ) 
+HHGamma_ExtraLa...   INFO Explicit sub decays :3
+HHGamma_ExtraLa...   INFO HHGamma_ExtraLambdaTuple.Lambda : ( ( Lambda0  -> p+  pi- ) || ( Lambda~0  -> p~-  pi+ ) ) 
+HHGamma_ExtraLa...   INFO HHGamma_ExtraLambdaTuple.piminus : ( ( Lambda0  -> p+  ^( pi- )) || ( Lambda~0  -> p~-  ^( pi+ )) ) 
+HHGamma_ExtraLa...   INFO HHGamma_ExtraLambdaTuple.pplus : ( ( Lambda0  -> ^( p+ ) pi- ) || ( Lambda~0  -> ^( p~- ) pi+ ) ) 
+HHHGamma_ExtraK...   INFO Will look for  ( KS0  -> ^( pi+ ) ^( pi- )) 
+HHHGamma_ExtraK...   INFO Explicit sub decays :3
+HHHGamma_ExtraK...   INFO HHHGamma_ExtraKs0Tuple.Ks0 : ( KS0  -> pi+  pi- ) 
+HHHGamma_ExtraK...   INFO HHHGamma_ExtraKs0Tuple.piminus : ( KS0  -> pi+  ^( pi- )) 
+HHHGamma_ExtraK...   INFO HHHGamma_ExtraKs0Tuple.piplus : ( KS0  -> ^( pi+ ) pi- ) 
+HHHGammaEE_Extr...   INFO Will look for  ( KS0  -> ^( pi+ ) ^( pi- )) 
+HHHGammaEE_Extr...   INFO Explicit sub decays :3
+HHHGammaEE_Extr...   INFO HHHGammaEE_ExtraKs0Tuple.Ks0 : ( KS0  -> pi+  pi- ) 
+HHHGammaEE_Extr...   INFO HHHGammaEE_ExtraKs0Tuple.piminus : ( KS0  -> pi+  ^( pi- )) 
+HHHGammaEE_Extr...   INFO HHHGammaEE_ExtraKs0Tuple.piplus : ( KS0  -> ^( pi+ ) pi- ) 
+HHGamma_ExtraKs...   INFO Will look for  ( KS0  -> ^( pi+ ) ^( pi- )) 
+HHGamma_ExtraKs...   INFO Explicit sub decays :3
+HHGamma_ExtraKs...   INFO HHGamma_ExtraKs0Tuple.Ks0 : ( KS0  -> pi+  pi- ) 
+HHGamma_ExtraKs...   INFO HHGamma_ExtraKs0Tuple.piminus : ( KS0  -> pi+  ^( pi- )) 
+HHGamma_ExtraKs...   INFO HHGamma_ExtraKs0Tuple.piplus : ( KS0  -> ^( pi+ ) pi- ) 
+HHGammaEETuple       INFO Will look for  ( B0  -> ^( ( K*(892)0  -> ^( pi+ ) ^( pi- )) ) ^( ( gamma  -> ^( e+ ) ^( e- )) )) 
+HHGammaEETuple       INFO Explicit sub decays :7
+HHGammaEETuple.B     INFO HHGammaEETuple.B : ( B0  -> ( K*(892)0  -> pi+  pi- )  ( gamma  -> e+  e- ) ) 
+HHGammaEETuple.Kst   INFO HHGammaEETuple.Kst : ( B0  -> ^( ( K*(892)0  -> pi+  pi- ) ) ( gamma  -> e+  e- ) ) 
+HHGammaEETuple....   INFO HHGammaEETuple.eminus : ( B0  -> ( K*(892)0  -> pi+  pi- )  ( gamma  -> e+  ^( e- )) ) 
+HHGammaEETuple....   INFO HHGammaEETuple.eplus : ( B0  -> ( K*(892)0  -> pi+  pi- )  ( gamma  -> ^( e+ ) e- ) ) 
+HHGammaEETuple....   INFO HHGammaEETuple.gamma : ( B0  -> ( K*(892)0  -> pi+  pi- )  ^( ( gamma  -> e+  e- ) )) 
+HHGammaEETuple....   INFO HHGammaEETuple.piminus : ( B0  -> ( K*(892)0  -> pi+  ^( pi- ))  ( gamma  -> e+  e- ) ) 
+HHGammaEETuple....   INFO HHGammaEETuple.piplus : ( B0  -> ( K*(892)0  -> ^( pi+ ) pi- )  ( gamma  -> e+  e- ) ) 
+HHGamma_ExtraGa...   INFO Will look for  gamma 
+HHGamma_ExtraGa...   INFO Explicit sub decays :1
+HHGamma_ExtraGa...   INFO HHGamma_ExtraGammaTuple.gamma : gamma 
+HHHGammaEE_Extr...   INFO Will look for  ( pi+ || pi- ) 
+HHHGammaEE_Extr...   INFO Explicit sub decays :1
+HHHGammaEE_Extr...   INFO HHHGammaEE_ExtraHadronTuple.pi : ( pi+ || pi- ) 
+HHHGammaEE_Extr...   INFO Will look for  ( ( Lambda0  -> ^( p+ ) ^( pi- )) || ( Lambda~0  -> ^( p~- ) ^( pi+ )) ) 
+HHHGammaEE_Extr...   INFO Explicit sub decays :3
+HHHGammaEE_Extr...   INFO HHHGammaEE_ExtraLambdaTuple.Lambda : ( ( Lambda0  -> p+  pi- ) || ( Lambda~0  -> p~-  pi+ ) ) 
+HHHGammaEE_Extr...   INFO HHHGammaEE_ExtraLambdaTuple.piminus : ( ( Lambda0  -> p+  ^( pi- )) || ( Lambda~0  -> p~-  ^( pi+ )) ) 
+HHHGammaEE_Extr...   INFO HHHGammaEE_ExtraLambdaTuple.pplus : ( ( Lambda0  -> ^( p+ ) pi- ) || ( Lambda~0  -> ^( p~- ) pi+ ) ) 
+HHGammaEE_Extra...   INFO Will look for  ( pi0  -> ^( gamma ) ^( gamma )) 
+HHGammaEE_Extra...   INFO Explicit sub decays :3
+HHGammaEE_Extra...   INFO HHGammaEE_ExtraPi0ResolvedTuple.gamma1 : ( pi0  -> ^( gamma ) gamma ) 
+HHGammaEE_Extra...   INFO HHGammaEE_ExtraPi0ResolvedTuple.gamma2 : ( pi0  -> gamma  ^( gamma )) 
+HHGammaEE_Extra...   INFO HHGammaEE_ExtraPi0ResolvedTuple.pi0 : ( pi0  -> gamma  gamma ) 
+HHHGamma_ExtraP...   INFO Will look for  pi0 
+HHHGamma_ExtraP...   INFO Explicit sub decays :1
+HHHGamma_ExtraP...   INFO HHHGamma_ExtraPi0MergedTuple.pi0 : pi0 
+HHGammaEE_Extra...   INFO Will look for  pi0 
+HHGammaEE_Extra...   INFO Explicit sub decays :1
+HHGammaEE_Extra...   INFO HHGammaEE_ExtraPi0MergedTuple.pi0 : pi0 
+HHHGammaTuple        INFO Will look for  ( ( B+  -> ^( ( D*(2010)+  -> ^( ( K*(892)0  -> ^( pi+ ) ^( pi- )) ) ^( pi+ )) ) ^( gamma )) || ( B-  -> ^( ( D*(2010)-  -> ^( ( K*(892)0  -> ^( pi+ ) ^( pi- )) ) ^( pi- )) ) ^( gamma )) ) 
+HHHGammaTuple        INFO Explicit sub decays :7
+HHHGammaTuple.B      INFO HHHGammaTuple.B : ( ( B+  -> ( D*(2010)+  -> ( K*(892)0  -> pi+  pi- )  pi+ )  gamma ) || ( B-  -> ( D*(2010)-  -> ( K*(892)0  -> pi+  pi- )  pi- )  gamma ) ) 
+HHHGammaTuple.Dst    INFO HHHGammaTuple.Dst : ( ( B+  -> ^( ( D*(2010)+  -> ( K*(892)0  -> pi+  pi- )  pi+ ) ) gamma ) || ( B-  -> ^( ( D*(2010)-  -> ( K*(892)0  -> pi+  pi- )  pi- ) ) gamma ) ) 
+HHHGammaTuple.Kst    INFO HHHGammaTuple.Kst : ( ( B+  -> ( D*(2010)+  -> ^( ( K*(892)0  -> pi+  pi- ) ) pi+ )  gamma ) || ( B-  -> ( D*(2010)-  -> ^( ( K*(892)0  -> pi+  pi- ) ) pi- )  gamma ) ) 
+HHHGammaTuple.g...   INFO HHHGammaTuple.gamma : ( ( B+  -> ( D*(2010)+  -> ( K*(892)0  -> pi+  pi- )  pi+ )  ^( gamma )) || ( B-  -> ( D*(2010)-  -> ( K*(892)0  -> pi+  pi- )  pi- )  ^( gamma )) ) 
+HHHGammaTuple.pi3    INFO HHHGammaTuple.pi3 : ( ( B+  -> ( D*(2010)+  -> ( K*(892)0  -> pi+  pi- )  ^( pi+ ))  gamma ) || ( B-  -> ( D*(2010)-  -> ( K*(892)0  -> pi+  pi- )  ^( pi- ))  gamma ) ) 
+HHHGammaTuple.p...   INFO HHHGammaTuple.piminus : ( ( B+  -> ( D*(2010)+  -> ( K*(892)0  -> pi+  ^( pi- ))  pi+ )  gamma ) || ( B-  -> ( D*(2010)-  -> ( K*(892)0  -> pi+  pi- )  ^( pi- ))  gamma ) ) 
+HHHGammaTuple.p...   INFO HHHGammaTuple.piplus : ( ( B+  -> ( D*(2010)+  -> ( K*(892)0  -> ^( pi+ ) pi- )  pi+ )  gamma ) || ( B-  -> ( D*(2010)-  -> ( K*(892)0  -> ^( pi+ ) pi- )  pi- )  gamma ) ) 
+HHHGamma_ExtraH...   INFO Will look for  ( pi+ || pi- ) 
+HHHGamma_ExtraH...   INFO Explicit sub decays :1
+HHHGamma_ExtraH...   INFO HHHGamma_ExtraHadronTuple.pi : ( pi+ || pi- ) 
+HHHGamma_ExtraP...   INFO Will look for  ( pi0  -> ^( gamma ) ^( gamma )) 
+HHHGamma_ExtraP...   INFO Explicit sub decays :3
+HHHGamma_ExtraP...   INFO HHHGamma_ExtraPi0ResolvedTuple.gamma1 : ( pi0  -> ^( gamma ) gamma ) 
+HHHGamma_ExtraP...   INFO HHHGamma_ExtraPi0ResolvedTuple.gamma2 : ( pi0  -> gamma  ^( gamma )) 
+HHHGamma_ExtraP...   INFO HHHGamma_ExtraPi0ResolvedTuple.pi0 : ( pi0  -> gamma  gamma ) 
+HHGammaEE_Extra...   INFO Will look for  ( ( Lambda0  -> ^( p+ ) ^( pi- )) || ( Lambda~0  -> ^( p~- ) ^( pi+ )) ) 
+HHGammaEE_Extra...   INFO Explicit sub decays :3
+HHGammaEE_Extra...   INFO HHGammaEE_ExtraLambdaTuple.Lambda : ( ( Lambda0  -> p+  pi- ) || ( Lambda~0  -> p~-  pi+ ) ) 
+HHGammaEE_Extra...   INFO HHGammaEE_ExtraLambdaTuple.piminus : ( ( Lambda0  -> p+  ^( pi- )) || ( Lambda~0  -> p~-  ^( pi+ )) ) 
+HHGammaEE_Extra...   INFO HHGammaEE_ExtraLambdaTuple.pplus : ( ( Lambda0  -> ^( p+ ) pi- ) || ( Lambda~0  -> ^( p~- ) pi+ ) ) 
+HHGammaEE_Extra...   INFO Will look for  ( KS0  -> ^( pi+ ) ^( pi- )) 
+HHGammaEE_Extra...   INFO Explicit sub decays :3
+HHGammaEE_Extra...   INFO HHGammaEE_ExtraKs0Tuple.Ks0 : ( KS0  -> pi+  pi- ) 
+HHGammaEE_Extra...   INFO HHGammaEE_ExtraKs0Tuple.piminus : ( KS0  -> pi+  ^( pi- )) 
+HHGammaEE_Extra...   INFO HHGammaEE_ExtraKs0Tuple.piplus : ( KS0  -> ^( pi+ ) pi- ) 
+HHGamma_ExtraPi...   INFO Will look for  ( pi0  -> ^( gamma ) ^( gamma )) 
+HHGamma_ExtraPi...   INFO Explicit sub decays :3
+HHGamma_ExtraPi...   INFO HHGamma_ExtraPi0ResolvedTuple.gamma1 : ( pi0  -> ^( gamma ) gamma ) 
+HHGamma_ExtraPi...   INFO HHGamma_ExtraPi0ResolvedTuple.gamma2 : ( pi0  -> gamma  ^( gamma )) 
+HHGamma_ExtraPi...   INFO HHGamma_ExtraPi0ResolvedTuple.pi0 : ( pi0  -> gamma  gamma ) 
+Tuple_Combine_H...   INFO Will look for  ( ( B+  -> ^( ( B0  -> ^( ( K*(892)0  -> ^( pi+ ) ^( pi- )) ) ^( gamma )) ) ^( pi+ )) || ( B-  -> ^( ( B0  -> ^( ( K*(892)0  -> ^( pi+ ) ^( pi- )) ) ^( gamma )) ) ^( pi- )) ) 
+HHGammaEE_Extra...   INFO Will look for  ( pi+ || pi- ) 
+HHGammaEE_Extra...   INFO Explicit sub decays :1
+HHGammaEE_Extra...   INFO HHGammaEE_ExtraHadronTuple.pi : ( pi+ || pi- ) 
+EventPersistenc...   INFO Added successfully Conversion service:RootCnvSvc
+EventSelector        INFO Stream:EventSelector.DataStreamTool_1 Def:DATAFILE='output/KstG/AllLines_Moore.mdst' SVC='Gaudi::RootEvtSelector' OPT='READ'
+ApplicationMgr       INFO Application Manager Initialized successfully
+ApplicationMgr       INFO Application Manager Started successfully
+EventSelector     SUCCESS Reading Event record 1. Record number within stream 1: 1
+HltPackedDataDe...WARNING HltPackedDataDecoder:: No HltPackedData raw bank (the DstData bank) in raw event. Quitting.
+HltPackedDataDe...WARNING HltPackedDataDecoder:: No HltPackedData raw bank (the DstData bank) in raw event. Quitting.
+HltPackedDataDe...WARNING HltPackedDataDecoder:: No HltPackedData raw bank (the DstData bank) in raw event. Quitting.
+HltPackedDataDe...WARNING HltPackedDataDecoder:: No HltPackedData raw bank (the DstData bank) in raw event. Quitting.
+HltPackedDataDe...WARNING HltPackedDataDecoder:: No HltPackedData raw bank (the DstData bank) in raw event. Quitting.
+HltPackedDataDe...WARNING HltPackedDataDecoder:: No HltPackedData raw bank (the DstData bank) in raw event. Quitting.
+HltPackedDataDe...WARNING HltPackedDataDecoder:: No HltPackedData raw bank (the DstData bank) in raw event. Quitting.
+HltPackedDataDe...WARNING HltPackedDataDecoder:: No HltPackedData raw bank (the DstData bank) in raw event. Quitting.
+HltPackedDataDe...WARNING HltPackedDataDecoder:: No HltPackedData raw bank (the DstData bank) in raw event. Quitting.
+HltPackedDataDe...WARNING HltPackedDataDecoder:: The WARNING message is suppressed : 'No HltPackedData raw bank (the DstData bank) in raw event. Quitting.'
+EventSelector     SUCCESS Reading Event record 11. Record number within stream 1: 11
+EventSelector     SUCCESS Reading Event record 21. Record number within stream 1: 21
+EventSelector     SUCCESS Reading Event record 31. Record number within stream 1: 31
+EventSelector     SUCCESS Reading Event record 41. Record number within stream 1: 41
+EventSelector     SUCCESS Reading Event record 51. Record number within stream 1: 51
+EventSelector     SUCCESS Reading Event record 61. Record number within stream 1: 61
+EventSelector     SUCCESS Reading Event record 71. Record number within stream 1: 71
+EventSelector     SUCCESS Reading Event record 81. Record number within stream 1: 81
+EventSelector     SUCCESS Reading Event record 91. Record number within stream 1: 91
+EventSelector     SUCCESS Reading Event record 101. Record number within stream 1: 101
+EventSelector     SUCCESS Reading Event record 111. Record number within stream 1: 111
+EventSelector     SUCCESS Reading Event record 121. Record number within stream 1: 121
+EventSelector     SUCCESS Reading Event record 131. Record number within stream 1: 131
+EventSelector     SUCCESS Reading Event record 141. Record number within stream 1: 141
+EventSelector     SUCCESS Reading Event record 151. Record number within stream 1: 151
+EventLoopMgr         INFO No more events in event selection 
+HHGammaEETuple       INFO Number of counters : 4
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# HLT2/Hlt2BToHHGammaEE_Inclusive_Line"        |       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# input particles"                             |       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ |*"#accept"                                       |       156 |          0 |( 0.000000 +- 0.000000)% |
+ | "Event"                                         |       156 |
+HHGammaEE_Extra...   INFO Number of counters : 4
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# HLT2/Hlt2BToHHGammaEE_Inclusive_Line/ExtraGamma"|       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# input particles"                             |       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ |*"#accept"                                       |       156 |          0 |( 0.000000 +- 0.000000)% |
+ | "Event"                                         |       156 |
+HHGammaEE_Extra...   INFO Number of counters : 4
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# HLT2/Hlt2BToHHGammaEE_Inclusive_Line/ExtraHadron"|       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# input particles"                             |       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ |*"#accept"                                       |       156 |          0 |( 0.000000 +- 0.000000)% |
+ | "Event"                                         |       156 |
+HHGammaEE_Extra...   INFO Number of counters : 5
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# HLT2/Hlt2BToHHGammaEE_Inclusive_Line/ExtraKs0DD"|       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# HLT2/Hlt2BToHHGammaEE_Inclusive_Line/ExtraKs0LL"|       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# input particles"                             |       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ |*"#accept"                                       |       156 |          0 |( 0.000000 +- 0.000000)% |
+ | "Event"                                         |       156 |
+HHGammaEE_Extra...   INFO Number of counters : 5
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# HLT2/Hlt2BToHHGammaEE_Inclusive_Line/ExtraLambdaDD"|       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# HLT2/Hlt2BToHHGammaEE_Inclusive_Line/ExtraLambdaLL"|       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# input particles"                             |       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ |*"#accept"                                       |       156 |          0 |( 0.000000 +- 0.000000)% |
+ | "Event"                                         |       156 |
+HHGammaEE_Extra...   INFO Number of counters : 4
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# HLT2/Hlt2BToHHGammaEE_Inclusive_Line/ExtraPi0Merged"|       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# input particles"                             |       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ |*"#accept"                                       |       156 |          0 |( 0.000000 +- 0.000000)% |
+ | "Event"                                         |       156 |
+HHGammaEE_Extra...   INFO Number of counters : 4
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# HLT2/Hlt2BToHHGammaEE_Inclusive_Line/ExtraPi0Resolved"|       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# input particles"                             |       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ |*"#accept"                                       |       156 |          0 |( 0.000000 +- 0.000000)% |
+ | "Event"                                         |       156 |
+HHGammaTuple         INFO Number of counters : 4
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# HLT2/Hlt2BToHHGamma_Inclusive_Line"          |       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# input particles"                             |       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ |*"#accept"                                       |       156 |          0 |( 0.000000 +- 0.000000)% |
+ | "Event"                                         |       156 |
+HHGamma_ExtraGa...   INFO Number of counters : 4
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# HLT2/Hlt2BToHHGamma_Inclusive_Line/ExtraGamma"|       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# input particles"                             |       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ |*"#accept"                                       |       156 |          0 |( 0.000000 +- 0.000000)% |
+ | "Event"                                         |       156 |
+HHGamma_ExtraHa...   INFO Number of counters : 4
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# HLT2/Hlt2BToHHGamma_Inclusive_Line/ExtraHadron"|       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# input particles"                             |       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ |*"#accept"                                       |       156 |          0 |( 0.000000 +- 0.000000)% |
+ | "Event"                                         |       156 |
+HHGamma_ExtraKs...   INFO Number of counters : 5
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# HLT2/Hlt2BToHHGamma_Inclusive_Line/ExtraKs0DD"|       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# HLT2/Hlt2BToHHGamma_Inclusive_Line/ExtraKs0LL"|       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# input particles"                             |       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ |*"#accept"                                       |       156 |          0 |( 0.000000 +- 0.000000)% |
+ | "Event"                                         |       156 |
+HHGamma_ExtraLa...   INFO Number of counters : 5
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# HLT2/Hlt2BToHHGamma_Inclusive_Line/ExtraLambdaDD"|       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# HLT2/Hlt2BToHHGamma_Inclusive_Line/ExtraLambdaLL"|       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# input particles"                             |       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ |*"#accept"                                       |       156 |          0 |( 0.000000 +- 0.000000)% |
+ | "Event"                                         |       156 |
+HHGamma_ExtraPi...   INFO Number of counters : 4
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# HLT2/Hlt2BToHHGamma_Inclusive_Line/ExtraPi0Merged"|       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# input particles"                             |       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ |*"#accept"                                       |       156 |          0 |( 0.000000 +- 0.000000)% |
+ | "Event"                                         |       156 |
+HHGamma_ExtraPi...   INFO Number of counters : 4
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# HLT2/Hlt2BToHHGamma_Inclusive_Line/ExtraPi0Resolved"|       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# input particles"                             |       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ |*"#accept"                                       |       156 |          0 |( 0.000000 +- 0.000000)% |
+ | "Event"                                         |       156 |
+HHHGammaEETuple      INFO Number of counters : 4
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# HLT2/Hlt2BToHHHGammaEE_Inclusive_Line"       |       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# input particles"                             |       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ |*"#accept"                                       |       156 |          0 |( 0.000000 +- 0.000000)% |
+ | "Event"                                         |       156 |
+HHHGammaEE_Extr...   INFO Number of counters : 4
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# HLT2/Hlt2BToHHHGammaEE_Inclusive_Line/ExtraGamma"|       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# input particles"                             |       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ |*"#accept"                                       |       156 |          0 |( 0.000000 +- 0.000000)% |
+ | "Event"                                         |       156 |
+HHHGammaEE_Extr...   INFO Number of counters : 4
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# HLT2/Hlt2BToHHHGammaEE_Inclusive_Line/ExtraHadron"|       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# input particles"                             |       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ |*"#accept"                                       |       156 |          0 |( 0.000000 +- 0.000000)% |
+ | "Event"                                         |       156 |
+HHHGammaEE_Extr...   INFO Number of counters : 5
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# HLT2/Hlt2BToHHHGammaEE_Inclusive_Line/ExtraKs0DD"|       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# HLT2/Hlt2BToHHHGammaEE_Inclusive_Line/ExtraKs0LL"|       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# input particles"                             |       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ |*"#accept"                                       |       156 |          0 |( 0.000000 +- 0.000000)% |
+ | "Event"                                         |       156 |
+HHHGammaEE_Extr...   INFO Number of counters : 5
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# HLT2/Hlt2BToHHHGammaEE_Inclusive_Line/ExtraLambdaDD"|       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# HLT2/Hlt2BToHHHGammaEE_Inclusive_Line/ExtraLambdaLL"|       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# input particles"                             |       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ |*"#accept"                                       |       156 |          0 |( 0.000000 +- 0.000000)% |
+ | "Event"                                         |       156 |
+HHHGammaEE_Extr...   INFO Number of counters : 4
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# HLT2/Hlt2BToHHHGammaEE_Inclusive_Line/ExtraPi0Merged"|       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# input particles"                             |       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ |*"#accept"                                       |       156 |          0 |( 0.000000 +- 0.000000)% |
+ | "Event"                                         |       156 |
+HHHGammaEE_Extr...   INFO Number of counters : 4
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# HLT2/Hlt2BToHHHGammaEE_Inclusive_Line/ExtraPi0Resolved"|       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# input particles"                             |       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ |*"#accept"                                       |       156 |          0 |( 0.000000 +- 0.000000)% |
+ | "Event"                                         |       156 |
+HHHGammaTuple        INFO Number of counters : 4
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# HLT2/Hlt2BToHHHGamma_Inclusive_Line"         |       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# input particles"                             |       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ |*"#accept"                                       |       156 |          0 |( 0.000000 +- 0.000000)% |
+ | "Event"                                         |       156 |
+HHHGamma_ExtraG...   INFO Number of counters : 4
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# HLT2/Hlt2BToHHHGamma_Inclusive_Line/ExtraGamma"|       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# input particles"                             |       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ |*"#accept"                                       |       156 |          0 |( 0.000000 +- 0.000000)% |
+ | "Event"                                         |       156 |
+HHHGamma_ExtraH...   INFO Number of counters : 4
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# HLT2/Hlt2BToHHHGamma_Inclusive_Line/ExtraHadron"|       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# input particles"                             |       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ |*"#accept"                                       |       156 |          0 |( 0.000000 +- 0.000000)% |
+ | "Event"                                         |       156 |
+HHHGamma_ExtraK...   INFO Number of counters : 5
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# HLT2/Hlt2BToHHHGamma_Inclusive_Line/ExtraKs0DD"|       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# HLT2/Hlt2BToHHHGamma_Inclusive_Line/ExtraKs0LL"|       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# input particles"                             |       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ |*"#accept"                                       |       156 |          0 |( 0.000000 +- 0.000000)% |
+ | "Event"                                         |       156 |
+HHHGamma_ExtraL...   INFO Number of counters : 5
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# HLT2/Hlt2BToHHHGamma_Inclusive_Line/ExtraLambdaDD"|       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# HLT2/Hlt2BToHHHGamma_Inclusive_Line/ExtraLambdaLL"|       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# input particles"                             |       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ |*"#accept"                                       |       156 |          0 |( 0.000000 +- 0.000000)% |
+ | "Event"                                         |       156 |
+HHHGamma_ExtraP...   INFO Number of counters : 4
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# HLT2/Hlt2BToHHHGamma_Inclusive_Line/ExtraPi0Merged"|       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# input particles"                             |       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ |*"#accept"                                       |       156 |          0 |( 0.000000 +- 0.000000)% |
+ | "Event"                                         |       156 |
+HHHGamma_ExtraP...   INFO Number of counters : 4
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# HLT2/Hlt2BToHHHGamma_Inclusive_Line/ExtraPi0Resolved"|       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# input particles"                             |       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ |*"#accept"                                       |       156 |          0 |( 0.000000 +- 0.000000)% |
+ | "Event"                                         |       156 |
+ToolSvc.CoreFac...   INFO Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# loaded from PYTHON"                          |         2 |
+ToolSvc.HybridF...   INFO Number of counters : 1
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# loaded from PYTHON"                          |         6 |
+Tuple_Combine_H...   INFO Number of counters : 4
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# Phys/Combine_HLT2HHGamma_ExtraHadron"        |       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# input particles"                             |       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ |*"#accept"                                       |       156 |          0 |( 0.000000 +- 0.000000)% |
+ | "Event"                                         |       156 |
+UnpackParticles...   INFO Number of counters : 8
+ |    Counter                                      |     #     |    sum     | mean/eff^* | rms/err^*  |     min     |     max     |
+ | "# UnPacked FlavourTags"                        |       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# UnPacked MuonPIDs"                           |       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# UnPacked Particles"                          |       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# UnPacked ProtoParticles"                     |       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# UnPacked RecVertices"                        |       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# UnPacked RichPIDs"                           |       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# UnPacked Tracks"                             |       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ | "# UnPacked Vertices"                           |       156 |          0 |     0.0000 |     0.0000 |      0.0000 |      0.0000 |
+ApplicationMgr       INFO Application Manager Stopped successfully
+HltPackedDataDe...SUCCESS Exceptions/Errors/Warnings/Infos Statistics : 0/0/1/0
+HltPackedDataDe...SUCCESS  #WARNINGS   = 156      Message = 'No HltPackedData raw bank (the DstData bank) in raw event. Quitting.'
+RootHistSvc       WARNING no ROOT output file name, Histograms cannot be persistified
+EventLoopMgr         INFO Histograms converted successfully according to request.
+ToolSvc              INFO Removing all tools created by ToolSvc
+RootCnvSvc           INFO Disconnected data IO:39028D8C-C908-11EB-B71C-FA163E509E87 [output/KstG/AllLines_Moore.mdst]
+ApplicationMgr       INFO Application Manager Finalized successfully
+ApplicationMgr       INFO Application Manager Terminated successfully
+]0;alobosal@lxplus765:/afs/cern.ch/work/a/alobosal/Trigger/moore_upgrade[alobosal@lxplus765 moore_upgrade]$ exit
+
+Script done on mié 09 jun 2021 12:35:56 CEST

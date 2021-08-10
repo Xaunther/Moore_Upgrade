@@ -6,6 +6,7 @@ from Hlt2Conf.lines.rd.b_to_hhgamma import btohhgamma_inclusive_line
 from Hlt2Conf.lines.rd.b_to_hhgamma_gamma_to_ee import btohhgammaee_inclusive_line
 from Hlt2Conf.lines.rd.b_to_hhhgamma import btohhhgamma_inclusive_line
 from Hlt2Conf.lines.rd.b_to_hhhgamma_gamma_to_ee import btohhhgammaee_inclusive_line
+from Hlt2Conf.lines.rd.builders.b_tmva_builder import make_b
 from RecoConf.reconstruction_objects import reconstruction
 import os, sys
 sys.path.append(os.getcwd())
@@ -22,12 +23,14 @@ linename = "AllLines"
 
 
 def make_lines():
-    return [
-        btohhgamma_inclusive_line(),
-        btohhgammaee_inclusive_line(),
-        btohhhgamma_inclusive_line(),
-        btohhhgammaee_inclusive_line()
-    ]
+    lines_list=[]
+    # with make_b.bind(bdt_cut=0.95):
+    #     lines_list.append(btohhgamma_inclusive_line())
+    lines_list.append(btohhgamma_inclusive_line())
+    lines_list.append(btohhgammaee_inclusive_line())
+    lines_list.append(btohhhgamma_inclusive_line())
+    lines_list.append(btohhhgammaee_inclusive_line())
+    return lines_list
 
 
 options.lines_maker = make_lines
