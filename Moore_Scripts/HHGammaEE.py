@@ -1,6 +1,5 @@
 from Moore import options, run_moore
 from RecoConf.global_tools import stateProvider_with_simplified_geom
-from RecoConf.hlt1_tracking import default_ft_decoding_version
 from Hlt2Conf.lines.rd.b_to_hhgamma_gamma_to_ee import btohhgammaee_inclusive_line
 from RecoConf.reconstruction_objects import reconstruction
 import json
@@ -29,7 +28,6 @@ options.output_file = "output/{0}/{1}_Moore.mdst".format(
 
 public_tools = []
 if (not reco_from_file):
-    default_ft_decoding_version.global_bind(value=2)
     public_tools = [stateProvider_with_simplified_geom()]
 
 with reconstruction.bind(from_file=reco_from_file):
