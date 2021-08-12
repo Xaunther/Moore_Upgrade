@@ -55,8 +55,8 @@ extra_container_list=ExtraHadron ExtraKs0 ExtraLambda ExtraGamma ExtraPi0Merged 
 #List of decaytree keys. Each line has a name for each DecayTree possibility
 HHGamma_decay_list=hh hKs0 hL0
 HHGammaEE_decay_list=hh hKs0 hL0
-HHHGamma_decay_list=hhh
-HHHGammaEE_decay_list=hhh
+HHHGamma_decay_list=hhh hhKs0 hhL0
+HHHGammaEE_decay_list=hhh hhKs0 hhL0
 
 #List of important make commands
 all: all_MA all_Moore
