@@ -1,7 +1,7 @@
 #Dictionary with properties of the MC needed to run Moore, DaVinci, MooreAnalysis.
 #Reco from file switch. To turn it on/off for all MC that can be switched off
 #For the others (XDIGI) it has to be on always
-reco_from_file = True
+reco_from_file = False
 
 props = {
     "KstG": {
@@ -18,7 +18,7 @@ props = {
         'reco_from_file':
         reco_from_file,
         'ft_decoding_version':
-        4
+        2
     },
     "PhiG": {
         'descriptor':
@@ -34,7 +34,7 @@ props = {
         'reco_from_file':
         reco_from_file,
         'ft_decoding_version':
-        4
+        2
     },
     "K1G": {
         'descriptor':
@@ -50,7 +50,7 @@ props = {
         'reco_from_file':
         reco_from_file,
         'ft_decoding_version':
-        4
+        2
     },
     "LambdaG": {
         'descriptor':
@@ -66,7 +66,7 @@ props = {
         'reco_from_file':
         reco_from_file,
         'ft_decoding_version':
-        4
+        2
     },
     "XiG": {
         'descriptor':
@@ -118,7 +118,7 @@ props = {
     },
     "PhiPhiG": {
         'descriptor':
-        "[${B0}B0s -> (phi(1020) -> ${Kplus}K+ ${Kminus}K-) (phi(1020) -> ${Kplus0}K+ ${Kminus0}K-) gamma]CC",
+        "[${B0}B_s0 -> (phi(1020) -> ${Kplus}K+ ${Kminus}K-) (phi(1020) -> ${Kplus0}K+ ${Kminus0}K-) gamma]CC",
         'evtnumber':
         "13104212",
         'dddb_tag':
@@ -130,7 +130,7 @@ props = {
         'reco_from_file':
         False,
         'ft_decoding_version':
-        4
+        6
     },
     "PhiKs0G": {
         'descriptor':
@@ -146,7 +146,7 @@ props = {
         'reco_from_file':
         False,
         'ft_decoding_version':
-        4
+        6
     },
     "K1G_KPiPi0": {
         'descriptor':
@@ -162,7 +162,7 @@ props = {
         'reco_from_file':
         False,
         'ft_decoding_version':
-        4
+        6
     },
     "PhiPi0G": {
         'descriptor':
@@ -178,11 +178,11 @@ props = {
         'reco_from_file':
         False,
         'ft_decoding_version':
-        4
+        6
     },
     "KstIsoG": {
         'descriptor':
-        "[${Bplus}B+ -> ${Kst_plus}(K*+ -> ${KS0}(K_S0 -> ${piplus}pi+ ${piminus}pi-) ${piplus0}pi+) gamma]CC",
+        "[${Bplus}B+ -> ${Kst_plus}(K*(892)+ -> ${KS0}(KS0 -> ${piplus}pi+ ${piminus}pi-) ${piplus0}pi+) gamma]CC",
         'evtnumber':
         "12203303",
         'dddb_tag':
@@ -194,11 +194,11 @@ props = {
         'reco_from_file':
         False,
         'ft_decoding_version':
-        4
+        6
     },
     "LambdaPG": {
         'descriptor':
-        "[${Bplus}B+ -> ${Lambda_0}(anti-Lambda0 -> ${pminus}p~- ${piplus}pi+) ${pplus}p gamma]CC",
+        "[${Bplus}B+ -> ${Lambda_0}(Lambda~0 -> ${pminus}p~- ${piplus}pi+) ${pplus}p+ gamma]CC",
         'evtnumber':
         "12103331",
         'dddb_tag':
@@ -210,7 +210,7 @@ props = {
         'reco_from_file':
         False,
         'ft_decoding_version':
-        4
+        6
     },
     "PhiKG": {
         'descriptor':
@@ -226,11 +226,11 @@ props = {
         'reco_from_file':
         False,
         'ft_decoding_version':
-        4
+        6
     },
     "K1G_Cocktail": {
         'descriptor':
-        "[${Bplus}B+ -> ${K1_plus}(K_1+ -> (X -> ${Kplus}K+ ${piminus}pi- ${piplus}pi+)) gamma ]CC",
+        "[${Bplus}B+ -> ${K1_plus}(K_1(1270)+ -> (X -> ${Kplus}K+ ${piminus}pi- ${piplus}pi+)) gamma ]CC",
         'evtnumber':
         "12203271",
         'dddb_tag':
@@ -242,7 +242,7 @@ props = {
         'reco_from_file':
         False,
         'ft_decoding_version':
-        4
+        6
     },
     "L1520G": {
         'descriptor':
@@ -258,16 +258,22 @@ props = {
         'reco_from_file':
         False,
         'ft_decoding_version':
-        4
+        6
     },
     "RhoG": {
         'descriptor':
-        "[${B0}B0 -> (rho0 -> ${piplus}pi+ ${piminus}pi-) gamma]CC",
-        'evtnumber': "11102222",
-        'dddb_tag': "dddb-20210218",
-        'conddb_tag': "sim-20201218-vc-md100",
-        'input_raw_format': 0.3,
-        'reco_from_file': False,
-        'ft_decoding_version': 4
+        "[${B0}B0 -> (rho(770)0 -> ${piplus}pi+ ${piminus}pi-) gamma]CC",
+        'evtnumber':
+        "11102222",
+        'dddb_tag':
+        "dddb-20210218",
+        'conddb_tag':
+        "sim-20201218-vc-md100",
+        'input_raw_format':
+        0.3,
+        'reco_from_file':
+        False,
+        'ft_decoding_version':
+        6
     }
 }
