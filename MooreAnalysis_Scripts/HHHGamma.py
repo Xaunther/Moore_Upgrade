@@ -27,7 +27,6 @@ options.ntuple_file = "output/{0}/{1}_MA.mdst".format(os.environ["DECAY"],
 
 public_tools = []
 if (not reco_from_file):
-    default_ft_decoding_version.global_bind(value=2)
     public_tools = [stateProvider_with_simplified_geom()]
 
 with reconstruction.bind(from_file=reco_from_file):
