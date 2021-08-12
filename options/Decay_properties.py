@@ -1,7 +1,7 @@
 #Dictionary with properties of the MC needed to run Moore, DaVinci, MooreAnalysis.
 #Reco from file switch. To turn it on/off for all MC that can be switched off
 #For the others (XDIGI) it has to be on always
-reco_from_file = False
+reco_from_file = True
 
 props = {
     "KstG": {
