@@ -40,8 +40,8 @@ def get_extra_combined_ntuples(linename, hadron_comb):
     seq_dict = {}
     dtt_dict = {}
     for extrasel in extrasels:
-        if (extrasel != "ExtraHadron" or "HHHGamma" in linename
-            ):  #Only combine with extra hadrons, for now, and only HHGamma(EE)
+        #Only combine with extra hadrons, for now
+        if (extrasel != "ExtraHadron"):
             continue
         #Inputs
         inputs = dtt_inputs.get_extra_inputs_sel(linename, extrasel)
@@ -122,8 +122,8 @@ def get_ntuples():
     linenames = [
         ["HHGamma", ["hh", "hKs0", "hL0"]],
         ["HHGammaEE", ["hh", "hKs0", "hL0"]],
-        ["HHHGamma", ["hhh"]],
-        ["HHHGammaEE", ["hhh"]],
+        ["HHHGamma", ["hhh", "hhKs0", "hhL0"]],
+        ["HHHGammaEE", ["hhh", "hhKs0", "hhL0"]],
     ]
     ################## LOOP over every line ##################
     for linename in linenames:

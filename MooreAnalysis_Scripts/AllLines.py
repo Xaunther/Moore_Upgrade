@@ -16,14 +16,13 @@ decay_props = props[os.environ["DECAY"]]
 
 #Switch true or false
 reco_from_file = decay_props["reco_from_file"]
-print(reco_from_file)
 
 #Line name for files
 linename = "AllLines"
 
 
 def make_lines():
-    lines_list=[]
+    lines_list = []
     # with make_b.bind(bdt_cut=0.95):
     #     lines_list.append(btohhgamma_inclusive_line())
     lines_list.append(btohhgamma_inclusive_line())
@@ -39,7 +38,6 @@ options.ntuple_file = "output/{0}/{1}_MA.mdst".format(os.environ["DECAY"],
 
 public_tools = []
 if (not reco_from_file):
-    default_ft_decoding_version.global_bind(value=2)
     public_tools = [stateProvider_with_simplified_geom()]
 
 with reconstruction.bind(from_file=reco_from_file):

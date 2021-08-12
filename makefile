@@ -52,6 +52,11 @@ RhoG_reconstructibles=piplus,piminus
 
 #List of extra selection containers
 extra_container_list=ExtraHadron ExtraKs0 ExtraLambda ExtraGamma ExtraPi0Merged ExtraPi0Resolved
+#List of decaytree keys. Each line has a name for each DecayTree possibility
+HHGamma_decay_list=hh hKs0 hL0
+HHGammaEE_decay_list=hh hKs0 hL0
+HHHGamma_decay_list=hhh hhKs0 hhL0
+HHHGammaEE_decay_list=hhh hhKs0 hhL0
 
 #List of important make commands
 all: all_MA all_Moore
@@ -85,7 +90,7 @@ alltuple_MA_list=$(foreach MC, $(MC_list),output/$(MC)/AllLines_MA.root)
 alltuples_MA: $(alltuple_MA_list)
 $(alltuple_MA_list): output/%/AllLines_MA.root: Gaudi_inputs/%_input_PFNs.py
 	mkdir -p output/$*
-	$(MOOREANALYSIS)/run --set=DECAY=$* gaudirun.py options/Decay_options.py options/2000_Evts.py MooreAnalysis_Scripts/AllLines.py Gaudi_inputs/$*_input_PFNs.py | tee output/$*/AllLines_MA.out
+	$(MOOREANALYSIS)/run env DECAY=$* gaudirun.py options/Decay_options.py options/2000_Evts.py MooreAnalysis_Scripts/AllLines.py Gaudi_inputs/$*_input_PFNs.py | tee output/$*/AllLines_MA.out
 
 #Produce efficiency results by using the ntuple info
 #We use reconstructible children, which only takes children with pseudorapidity in LHCb range
@@ -110,7 +115,7 @@ allDST_Moore_list=$(foreach MC, $(MC_list),output/$(MC)/AllLines_Moore.mdst)
 allDSTs_Moore: $(allDST_Moore_list)
 $(allDST_Moore_list): output/%/AllLines_Moore.mdst: Gaudi_inputs/%_input_PFNs.py
 	mkdir -p output/$*
-	$(MOORE)/run --set=DECAY=$* gaudirun.py options/Decay_options.py options/2000_Evts.py Moore_Scripts/AllLines.py Gaudi_inputs/$*_input_PFNs.py | tee output/$*/AllLines_Moore.out
+	$(MOORE)/run env DECAY=$* gaudirun.py options/Decay_options.py options/2000_Evts.py Moore_Scripts/AllLines.py Gaudi_inputs/$*_input_PFNs.py | tee output/$*/AllLines_Moore.out
 	rm -f test_catalog*.xml
 
 #Once the mDSTs have been produced, we can run a hacked script from upgrade-bandwidth-studies
@@ -125,7 +130,7 @@ $(allEvtSizes_Moore_list): output/%/AllLines_EvtSize_Moore.txt: output/%/AllLine
 alltuple_Moore_list=$(foreach MC, $(MC_list),output/$(MC)/AllLines_Moore.root)
 alltuples_Moore: $(alltuple_Moore_list)
 $(alltuple_Moore_list): output/%/AllLines_Moore.root: output/%/AllLines_Moore.mdst
-	$(DAVINCI)/run --set=DECAY=$* gaudirun.py DaVinci_Scripts/Decay_options.py DaVinci_Scripts/AllLines.py
+	$(DAVINCI)/run env DECAY=$* gaudirun.py DaVinci_Scripts/Decay_options.py DaVinci_Scripts/AllLines.py
 
 #We have the ntuples, now time to extract the multiplicity of each extra container.
 .PHONY: HHGamma_multiplicities HHGammaEE_multiplicities HHHGamma_multiplicities HHHGammaEE_multiplicities
@@ -134,22 +139,22 @@ $(alltuple_Moore_list): output/%/AllLines_Moore.root: output/%/AllLines_Moore.md
 HHGamma_multiplicity_list=$(foreach extra_container, $(extra_container_list), output/HHGamma_${extra_container}_multiplicity.txt)
 HHGamma_multiplicities: $(HHGamma_multiplicity_list)
 $(HHGamma_multiplicity_list): output/HHGamma_%_multiplicity.txt: $(alltuple_Moore_list) Cuts/%_cuts.txt
-	$(ANALYSIS_TOOLS_ROOT)/Multiplicity_Extrasel.out "$(alltuple_Moore_list)" Cuts/$*_cuts.txt $@ HHGammaTuple/DecayTree HHGamma_$*Tuple/DecayTree
+	$(ANALYSIS_TOOLS_ROOT)/Multiplicity_Extrasel.out "$(alltuple_Moore_list)" Cuts/$*_cuts.txt $@ "$(foreach key, $(HHGamma_decay_list),HHGamma_$(key)Tuple/DecayTree)" HHGamma_$*Tuple/DecayTree
 #HHGammaEE
 HHGammaEE_multiplicity_list=$(foreach extra_container, $(extra_container_list), output/HHGammaEE_${extra_container}_multiplicity.txt)
 HHGammaEE_multiplicities: $(HHGammaEE_multiplicity_list)
 $(HHGammaEE_multiplicity_list): output/HHGammaEE_%_multiplicity.txt: $(alltuple_Moore_list) Cuts/%_cuts.txt
-	$(ANALYSIS_TOOLS_ROOT)/Multiplicity_Extrasel.out "$(alltuple_Moore_list)" Cuts/$*_cuts.txt $@ HHGammaEETuple/DecayTree HHGammaEE_$*Tuple/DecayTree
+	$(ANALYSIS_TOOLS_ROOT)/Multiplicity_Extrasel.out "$(alltuple_Moore_list)" Cuts/$*_cuts.txt $@ "$(foreach key, $(HHGammaEE_decay_list),HHGammaEE_$(key)Tuple/DecayTree) HHGammaEE_$*Tuple/DecayTree
 #HHHGamma
 HHHGamma_multiplicity_list=$(foreach extra_container, $(extra_container_list), output/HHHGamma_${extra_container}_multiplicity.txt)
 HHHGamma_multiplicities: $(HHHGamma_multiplicity_list)
 $(HHHGamma_multiplicity_list): output/HHHGamma_%_multiplicity.txt: $(alltuple_Moore_list) Cuts/%_cuts.txt
-	$(ANALYSIS_TOOLS_ROOT)/Multiplicity_Extrasel.out "$(alltuple_Moore_list)" Cuts/$*_cuts.txt $@ HHHGammaTuple/DecayTree HHHGamma_$*Tuple/DecayTree
+	$(ANALYSIS_TOOLS_ROOT)/Multiplicity_Extrasel.out "$(alltuple_Moore_list)" Cuts/$*_cuts.txt $@ "$(foreach key, $(HHHGamma_decay_list),HHHGamma_$(key)Tuple/DecayTree) HHHGamma_$*Tuple/DecayTree
 #HHHGammaEE
 HHHGammaEE_multiplicity_list=$(foreach extra_container, $(extra_container_list), output/HHHGammaEE_${extra_container}_multiplicity.txt)
 HHHGammaEE_multiplicities: $(HHHGammaEE_multiplicity_list)
 $(HHHGammaEE_multiplicity_list): output/HHHGammaEE_%_multiplicity.txt: $(alltuple_Moore_list) Cuts/%_cuts.txt
-	$(ANALYSIS_TOOLS_ROOT)/Multiplicity_Extrasel.out "$(alltuple_Moore_list)" Cuts/$*_cuts.txt $@ "HHHGammaEETuple/DecayTree" HHHGammaEE_$*Tuple/DecayTree
+	$(ANALYSIS_TOOLS_ROOT)/Multiplicity_Extrasel.out "$(alltuple_Moore_list)" Cuts/$*_cuts.txt $@ "$(foreach key, $(HHHGammaEE_decay_list),HHHGammaEE_$(key)Tuple/DecayTree) HHHGammaEE_$*Tuple/DecayTree
 #Run all Moore part
 all_Moore: HHGamma_multiplicities HHGammaEE_multiplicities HHHGamma_multiplicities HHHGammaEE_multiplicities allEvtSizes_Moore
 
