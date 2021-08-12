@@ -1,7 +1,6 @@
 from Moore import options
 from HltEfficiencyChecker.config import run_moore_with_tuples
 from RecoConf.global_tools import stateProvider_with_simplified_geom
-from RecoConf.hlt1_tracking import default_ft_decoding_version
 from Hlt2Conf.lines.rd.b_to_hhhgamma import btohhhgamma_inclusive_line
 from RecoConf.reconstruction_objects import reconstruction
 import os, sys
