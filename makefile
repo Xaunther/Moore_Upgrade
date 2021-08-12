@@ -90,7 +90,7 @@ alltuple_MA_list=$(foreach MC, $(MC_list),output/$(MC)/AllLines_MA.root)
 alltuples_MA: $(alltuple_MA_list)
 $(alltuple_MA_list): output/%/AllLines_MA.root: Gaudi_inputs/%_input_PFNs.py
 	mkdir -p output/$*
-	$(MOOREANALYSIS)/run --set=DECAY=$* gaudirun.py options/Decay_options.py options/2000_Evts.py MooreAnalysis_Scripts/AllLines.py Gaudi_inputs/$*_input_PFNs.py | tee output/$*/AllLines_MA.out
+	$(MOOREANALYSIS)/run env DECAY=$* gaudirun.py options/Decay_options.py options/2000_Evts.py MooreAnalysis_Scripts/AllLines.py Gaudi_inputs/$*_input_PFNs.py | tee output/$*/AllLines_MA.out
 
 #Produce efficiency results by using the ntuple info
 #We use reconstructible children, which only takes children with pseudorapidity in LHCb range
@@ -115,7 +115,7 @@ allDST_Moore_list=$(foreach MC, $(MC_list),output/$(MC)/AllLines_Moore.mdst)
 allDSTs_Moore: $(allDST_Moore_list)
 $(allDST_Moore_list): output/%/AllLines_Moore.mdst: Gaudi_inputs/%_input_PFNs.py
 	mkdir -p output/$*
-	$(MOORE)/run --set=DECAY=$* gaudirun.py options/Decay_options.py options/2000_Evts.py Moore_Scripts/AllLines.py Gaudi_inputs/$*_input_PFNs.py | tee output/$*/AllLines_Moore.out
+	$(MOORE)/run env DECAY=$* gaudirun.py options/Decay_options.py options/2000_Evts.py Moore_Scripts/AllLines.py Gaudi_inputs/$*_input_PFNs.py | tee output/$*/AllLines_Moore.out
 	rm -f test_catalog*.xml
 
 #Once the mDSTs have been produced, we can run a hacked script from upgrade-bandwidth-studies
@@ -130,7 +130,7 @@ $(allEvtSizes_Moore_list): output/%/AllLines_EvtSize_Moore.txt: output/%/AllLine
 alltuple_Moore_list=$(foreach MC, $(MC_list),output/$(MC)/AllLines_Moore.root)
 alltuples_Moore: $(alltuple_Moore_list)
 $(alltuple_Moore_list): output/%/AllLines_Moore.root: output/%/AllLines_Moore.mdst
-	$(DAVINCI)/run --set=DECAY=$* gaudirun.py DaVinci_Scripts/Decay_options.py DaVinci_Scripts/AllLines.py
+	$(DAVINCI)/run env DECAY=$* gaudirun.py DaVinci_Scripts/Decay_options.py DaVinci_Scripts/AllLines.py
 
 #We have the ntuples, now time to extract the multiplicity of each extra container.
 .PHONY: HHGamma_multiplicities HHGammaEE_multiplicities HHHGamma_multiplicities HHHGammaEE_multiplicities
