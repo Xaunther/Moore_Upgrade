@@ -30,6 +30,7 @@ PhiKG_prodID=133753
 K1G_Cocktail_prodID=133757
 L1520G_prodID=133755
 RhoG_prodID=133751
+MinBias_prodID=75219
 
 #List of reconstructibles for each MC
 KstG_reconstructibles=Kplus,piminus
@@ -70,13 +71,13 @@ all: all_MA all_Moore
 .PHONY: input_options_LFNs input_options_PFNs
 #This is a prerrequisite for both MooreAnalysis and Moore workflows
 #First, get input LFNs from prodID
-input_options_LFNs_list=$(foreach MC, $(MC_list),Gaudi_inputs/$(MC)_input_LFNs.py)
+input_options_LFNs_list=$(foreach MC, $(MC_list),Gaudi_inputs/$(MC)_input_LFNs.py) Gaudi_inputs/MinBias_input_LFNs.py
 input_options_LFNs: $(input_options_LFNs_list)
 $(input_options_LFNs_list): Gaudi_inputs/%_input_LFNs.py:
 	lb-dirac dirac-bookkeeping-get-files --Prod=$($*_prodID) --OptionsFile=$@
 #Now translate this list into a PFN list which can be used in Gaudi software.
 #Warning (2021/08/05) only works in lxplus, but not in ubuntu + docker
-input_options_PFNs_list=$(foreach MC, $(MC_list),Gaudi_inputs/$(MC)_input_PFNs.py)
+input_options_PFNs_list=$(foreach MC, $(MC_list),Gaudi_inputs/$(MC)_input_PFNs.py) Gaudi_inputs/MinBias_input_PFNs.py
 input_options_PFNs: $(input_options_PFNs_list)
 $(input_options_PFNs_list): Gaudi_inputs/%_input_PFNs.py: Gaudi_inputs/%_input_LFNs.py
 	lb-dirac dirac-bookkeeping-genXMLCatalog --Options=$< --NewOptions=$@
@@ -111,7 +112,7 @@ all_MA: alleffs_MA allcorrelations_MA
 #Produce DSTs from Moore.
 .PHONY: allDSTs_Moore allEvtSizes_Moore alltuples_Moore
 #They produce FILTERED DSTs where only events that pass any HLT line are stored.
-allDST_Moore_list=$(foreach MC, $(MC_list),output/$(MC)/AllLines_Moore.mdst)
+allDST_Moore_list=$(foreach MC, $(MC_list),output/$(MC)/AllLines_Moore.mdst) output/MinBias/AllLines_Moore.mdst
 allDSTs_Moore: $(allDST_Moore_list)
 $(allDST_Moore_list): output/%/AllLines_Moore.mdst: Gaudi_inputs/%_input_PFNs.py
 	mkdir -p output/$*
@@ -120,14 +121,14 @@ $(allDST_Moore_list): output/%/AllLines_Moore.mdst: Gaudi_inputs/%_input_PFNs.py
 
 #Once the mDSTs have been produced, we can run a hacked script from upgrade-bandwidth-studies
 #Make sure you have prettytable installed
-allEvtSizes_Moore_list=$(foreach MC, $(MC_list),output/$(MC)/AllLines_EvtSize_Moore.txt)
+allEvtSizes_Moore_list=$(foreach MC, $(MC_list),output/$(MC)/AllLines_EvtSize_Moore.txt) output/MinBias/AllLines_EvtSize_Moore.txt
 allEvtSizes_Moore: $(allEvtSizes_Moore_list)
 $(allEvtSizes_Moore_list): output/%/AllLines_EvtSize_Moore.txt: output/%/AllLines_Moore.mdst
 	python scripts/event_size.py $< | tee $@
 
 
 #Time to produce ntuples
-alltuple_Moore_list=$(foreach MC, $(MC_list),output/$(MC)/AllLines_Moore.root)
+alltuple_Moore_list=$(foreach MC, $(MC_list),output/$(MC)/AllLines_Moore.root) output/MinBias/AllLines_Moore.root
 alltuples_Moore: $(alltuple_Moore_list)
 $(alltuple_Moore_list): output/%/AllLines_Moore.root: output/%/AllLines_Moore.mdst
 	$(DAVINCI)/run env DECAY=$* gaudirun.py DaVinci_Scripts/Decay_options.py DaVinci_Scripts/AllLines.py

@@ -275,5 +275,13 @@ props = {
         False,
         'ft_decoding_version':
         6
+    },
+    "MinBias": {
+        'evtnumber': "30000000",
+        'dddb_tag': "dddb-20171126 ",
+        'conddb_tag': "sim-20171127-vc-md100",
+        'input_raw_format': 4.3,
+        'reco_from_file': reco_from_file,
+        'ft_decoding_version': 6
     }
 }
