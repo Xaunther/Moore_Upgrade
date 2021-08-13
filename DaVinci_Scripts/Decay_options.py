@@ -6,9 +6,15 @@ from options.Decay_properties import props
 
 decay_props = props[os.environ["DECAY"]]
 
+#Whether MagDown or MagUp
+if ("Down" in os.environ["DECAY"]):
+    mag = "d"
+else:
+    mag = "u"
+
 #Output
 LHCbApp().DDDBtag = decay_props["dddb_tag"]
-LHCbApp().CondDBtag = decay_props["conddb_tag"]
+LHCbApp().CondDBtag = decay_props["conddb_tag"].format(mag)
 LHCbApp().DataType = "Upgrade"
 LHCbApp().Simulation = True
 #LHCbApp().Lumi = not LHCbApp().Simulation

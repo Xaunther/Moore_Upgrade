@@ -12,7 +12,7 @@ props = {
         'dddb_tag':
         "dddb-20171126",
         'conddb_tag':
-        "sim-20171127-vc-md100",
+        "sim-20171127-vc-m{0}100",
         'input_raw_format':
         4.3,
         'reco_from_file':
@@ -28,7 +28,7 @@ props = {
         'dddb_tag':
         "dddb-20171126",
         'conddb_tag':
-        "sim-20171127-vc-md100",
+        "sim-20171127-vc-m{0}100",
         'input_raw_format':
         4.3,
         'reco_from_file':
@@ -44,7 +44,7 @@ props = {
         'dddb_tag':
         "dddb-20171126",
         'conddb_tag':
-        "sim-20171127-vc-md100",
+        "sim-20171127-vc-m{0}100",
         'input_raw_format':
         4.3,
         'reco_from_file':
@@ -60,7 +60,7 @@ props = {
         'dddb_tag':
         "dddb-20171126",
         'conddb_tag':
-        "sim-20171127-vc-md100",
+        "sim-20171127-vc-m{0}100",
         'input_raw_format':
         4.3,
         'reco_from_file':
@@ -76,7 +76,7 @@ props = {
         'dddb_tag':
         "dddb-20190223",
         'conddb_tag':
-        "sim-20180530-vc-md100",
+        "sim-20180530-vc-m{0}100",
         'input_raw_format':
         4.3,
         'reco_from_file':
@@ -92,7 +92,7 @@ props = {
         'dddb_tag':
         "dddb-20190223",
         'conddb_tag':
-        "sim-20180530-vc-md100",
+        "sim-20180530-vc-m{0}100",
         'input_raw_format':
         4.3,
         'reco_from_file':
@@ -108,7 +108,7 @@ props = {
         'dddb_tag':
         "dddb-20210218",
         'conddb_tag':
-        "sim-20201218-vc-md100",
+        "sim-20201218-vc-m{0}100",
         'input_raw_format':
         0.3,
         'reco_from_file':
@@ -124,7 +124,7 @@ props = {
         'dddb_tag':
         "dddb-20210218",
         'conddb_tag':
-        "sim-20201218-vc-md100",
+        "sim-20201218-vc-m{0}100",
         'input_raw_format':
         0.3,
         'reco_from_file':
@@ -140,7 +140,7 @@ props = {
         'dddb_tag':
         "dddb-20210218",
         'conddb_tag':
-        "sim-20201218-vc-md100",
+        "sim-20201218-vc-m{0}100",
         'input_raw_format':
         0.3,
         'reco_from_file':
@@ -156,7 +156,7 @@ props = {
         'dddb_tag':
         "dddb-20210218",
         'conddb_tag':
-        "sim-20201218-vc-md100",
+        "sim-20201218-vc-m{0}100",
         'input_raw_format':
         0.3,
         'reco_from_file':
@@ -172,7 +172,7 @@ props = {
         'dddb_tag':
         "dddb-20210218",
         'conddb_tag':
-        "sim-20201218-vc-md100",
+        "sim-20201218-vc-m{0}100",
         'input_raw_format':
         0.3,
         'reco_from_file':
@@ -188,7 +188,7 @@ props = {
         'dddb_tag':
         "dddb-20210218",
         'conddb_tag':
-        "sim-20201218-vc-md100",
+        "sim-20201218-vc-m{0}100",
         'input_raw_format':
         0.3,
         'reco_from_file':
@@ -204,7 +204,7 @@ props = {
         'dddb_tag':
         "dddb-20210218",
         'conddb_tag':
-        "sim-20201218-vc-md100",
+        "sim-20201218-vc-m{0}100",
         'input_raw_format':
         0.3,
         'reco_from_file':
@@ -220,7 +220,7 @@ props = {
         'dddb_tag':
         "dddb-20210218",
         'conddb_tag':
-        "sim-20201218-vc-md100",
+        "sim-20201218-vc-m{0}100",
         'input_raw_format':
         0.3,
         'reco_from_file':
@@ -236,7 +236,7 @@ props = {
         'dddb_tag':
         "dddb-20210218",
         'conddb_tag':
-        "sim-20201218-vc-md100",
+        "sim-20201218-vc-m{0}100",
         'input_raw_format':
         0.3,
         'reco_from_file':
@@ -252,7 +252,7 @@ props = {
         'dddb_tag':
         "dddb-20210218",
         'conddb_tag':
-        "sim-20201218-vc-md100",
+        "sim-20201218-vc-m{0}100",
         'input_raw_format':
         0.3,
         'reco_from_file':
@@ -268,7 +268,7 @@ props = {
         'dddb_tag':
         "dddb-20210218",
         'conddb_tag':
-        "sim-20201218-vc-md100",
+        "sim-20201218-vc-m{0}100",
         'input_raw_format':
         0.3,
         'reco_from_file':
@@ -279,7 +279,7 @@ props = {
     "MinBias": {
         'evtnumber': "30000000",
         'dddb_tag': "dddb-20171126 ",
-        'conddb_tag': "sim-20171127-vc-md100",
+        'conddb_tag': "sim-20171127-vc-m{0}100",
         'input_raw_format': 4.3,
         'reco_from_file': reco_from_file,
         'ft_decoding_version': 6
