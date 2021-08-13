@@ -13,7 +13,8 @@ sys.path.append(os.getcwd())
 from DaVinci_Scripts.ntuple_utils import get_ntuples
 
 from options.Decay_properties import props
-decay_props = props[os.environ["DECAY"]]
+DECAY = os.environ["DECAY"].split("_Down")[0].split("_Up")[0]
+decay_props = props[DECAY]
 
 
 # Helper functions to be able to read the Hlt2 data

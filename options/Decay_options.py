@@ -3,8 +3,13 @@ from Gaudi.Configuration import INFO
 import os, sys
 sys.path.append(os.getcwd())
 
-from options.Decay_properties import props
-decay_props = props[os.environ["DECAY"]]
+#Make the script compatible with ganga
+try:
+    from options.Decay_properties import props
+except ImportError:
+    from Decay_properties import props
+DECAY = os.environ["DECAY"].split("_Down")[0].split("_Up")[0]
+decay_props = props[DECAY]
 
 #Whether MagDown or MagUp
 if ("Down" in os.environ["DECAY"]):

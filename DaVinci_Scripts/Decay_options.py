@@ -3,8 +3,8 @@ sys.path.append(os.getcwd())
 
 from Configurables import LHCbApp
 from options.Decay_properties import props
-
-decay_props = props[os.environ["DECAY"]]
+DECAY = os.environ["DECAY"].split("_Down")[0].split("_Up")[0]
+decay_props = props[DECAY]
 
 #Whether MagDown or MagUp
 if ("Down" in os.environ["DECAY"]):

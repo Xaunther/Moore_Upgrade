@@ -7,7 +7,8 @@ import os, sys
 sys.path.append(os.getcwd())
 
 from options.Decay_properties import props
-decay_props = props[os.environ["DECAY"]]
+DECAY = os.environ["DECAY"].split("_Down")[0].split("_Up")[0]
+decay_props = props[DECAY]
 
 #Switch true or false
 reco_from_file = decay_props["reco_from_file"]
