@@ -1,4 +1,3 @@
-import sys
 from options.Decay_properties import props
 
 #Parse input arguments
@@ -66,5 +65,9 @@ else:
     j.inputdata = dataset
 
 j.splitter = SplitByFiles(filesPerJob=10, ignoremissing=True)
-j.outputfiles = [DiracFile("*.mdst"), DiracFile("*.json"), LocalFile("*stdout")]
+j.outputfiles = [
+    DiracFile("*.mdst"),
+    DiracFile("*.json"),
+    LocalFile("*stdout")
+]
 j.submit()
