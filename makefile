@@ -108,7 +108,7 @@ $(input_options_LFNs_list): Gaudi_inputs/%_input_LFNs.py:
 input_options_PFNs_list=$(foreach MC, $(MC_list),Gaudi_inputs/$(MC)_input_PFNs.py) Gaudi_inputs/MinBias_input_PFNs.py
 input_options_PFNs: $(input_options_PFNs_list)
 $(input_options_PFNs_list): Gaudi_inputs/%_input_PFNs.py: Gaudi_inputs/%_input_LFNs.py
-	lb-dirac scripts/dirac-bookkeeping-genXMLCatalog.py --Options=$< --NewOptions=$@
+	lb-dirac dirac-bookkeeping-genXMLCatalog --Options=$< --NewOptions=$@
 
 ################################### MOORE ANALYSIS PART ###################################
 #Produce ntuples from MooreAnalysis.
