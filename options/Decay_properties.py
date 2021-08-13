@@ -322,7 +322,7 @@ props = {
         'reco_from_file':
         reco_from_file,
         'ft_decoding_version':
-        6,
+        2,
         'dirac-path':
         "/MC/Upgrade/Beam7000GeV-Upgrade-Mag{0}-Nu7.6-25ns-Pythia8/Sim09c-Up02/Reco-Up01/Trig0x52000000/30000000/LDST"
     }
