@@ -1,14 +1,14 @@
 from Moore import options
 from HltEfficiencyChecker.config import run_moore_with_tuples
 from RecoConf.global_tools import stateProvider_with_simplified_geom
-from RecoConf.hlt1_tracking import default_ft_decoding_version
 from Hlt2Conf.lines.rd.b_to_hhhgamma import btohhhgamma_inclusive_line
 from RecoConf.reconstruction_objects import reconstruction
 import os, sys
 sys.path.append(os.getcwd())
 
 from options.Decay_properties import props
-decay_props = props[os.environ["DECAY"]]
+DECAY = os.environ["DECAY"].split("_Down")[0].split("_Up")[0]
+decay_props = props[DECAY]
 
 #Switch true or false
 reco_from_file = decay_props["reco_from_file"]
@@ -27,7 +27,6 @@ options.ntuple_file = "output/{0}/{1}_MA.mdst".format(os.environ["DECAY"],
 
 public_tools = []
 if (not reco_from_file):
-    default_ft_decoding_version.global_bind(value=2)
     public_tools = [stateProvider_with_simplified_geom()]
 
 with reconstruction.bind(from_file=reco_from_file):

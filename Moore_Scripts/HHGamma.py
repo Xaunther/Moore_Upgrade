@@ -1,6 +1,5 @@
 from Moore import options, run_moore
 from RecoConf.global_tools import stateProvider_with_simplified_geom
-from RecoConf.hlt1_tracking import default_ft_decoding_version
 from Hlt2Conf.lines.rd.b_to_hhgamma import btohhgamma_inclusive_line
 from RecoConf.reconstruction_objects import reconstruction
 import json
@@ -9,8 +8,13 @@ from Configurables import HltANNSvc
 import os, sys
 sys.path.append(os.getcwd())
 
-from options.Decay_properties import props
-decay_props = props[os.environ["DECAY"]]
+#Make the script compatible with ganga
+try:
+    from options.Decay_properties import props
+except ImportError:
+    from Decay_properties import props
+DECAY = os.environ["DECAY"].split("_Down")[0].split("_Up")[0]
+decay_props = props[DECAY]
 
 
 def all_lines():
@@ -24,19 +28,17 @@ reco_from_file = decay_props["reco_from_file"]
 #Line name for files
 linename = "HHGamma"
 
-options.output_file = "output/{0}/{1}_Moore.mdst".format(
-    os.environ["DECAY"], linename)
+options.output_file = "{0}{1}_Moore.mdst".format(os.environ["outfolder"],
+                                                 linename)
 
 public_tools = []
 if (not reco_from_file):
-    default_ft_decoding_version.global_bind(value=2)
     public_tools = [stateProvider_with_simplified_geom()]
 
 with reconstruction.bind(from_file=reco_from_file):
     run_moore(options, all_lines, public_tools)
 
 #Dump tck info from Moore (needed by Davinci afterwards)
-with open(
-        "output/{0}/{1}_Moore_tck.json".format(os.environ["DECAY"], linename),
-        "w") as outfile:
+with open("{0}{1}_Moore_tck.json".format(os.environ["outfolder"], linename),
+          "w") as outfile:
     json.dump(HltANNSvc().PackedObjectLocations, outfile)

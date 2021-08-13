@@ -45,3 +45,7 @@ output/*/*_tck.json
 #vscode settings
 .vscode/
 *.code-workspace
+
+# snakemake
+.snakemake/metadata/*
+.snakemake/log/*
