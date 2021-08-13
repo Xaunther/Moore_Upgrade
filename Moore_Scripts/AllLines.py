@@ -36,8 +36,8 @@ reco_from_file = decay_props["reco_from_file"]
 #Line name for files
 linename = "AllLines"
 
-options.output_file = "output/{0}/{1}_Moore.mdst".format(
-    os.environ["DECAY"], linename)
+options.output_file = "{0}{1}_Moore.mdst".format(os.environ["outfolder"],
+                                                 linename)
 
 public_tools = []
 if (not reco_from_file):
@@ -47,7 +47,6 @@ with reconstruction.bind(from_file=reco_from_file):
     run_moore(options, all_lines, public_tools)
 
 #Dump tck info from Moore (needed by Davinci afterwards)
-with open(
-        "output/{0}/{1}_Moore_tck.json".format(os.environ["DECAY"], linename),
-        "w") as outfile:
+with open("{0}{1}_Moore_tck.json".format(os.environ["outfolder"], linename),
+          "w") as outfile:
     json.dump(HltANNSvc().PackedObjectLocations, outfile)

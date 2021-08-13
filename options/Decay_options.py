@@ -26,8 +26,11 @@ default_ft_decoding_version.global_bind(
 outfolder = "output/{0}/".format(os.environ["DECAY"])
 try:
     os.mkdir(outfolder)
-except:
+except FileExistsError:
     pass
+else:
+    outfolder = "./"
+os.environ["outfolder"] = outfolder
 
 options.input_type = 'ROOT'
 options.input_raw_format = decay_props["input_raw_format"]
