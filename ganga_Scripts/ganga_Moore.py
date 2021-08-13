@@ -51,7 +51,7 @@ app.options = [
     'options/Decay_options.py',
     'Moore_Scripts/AllLines.py',
 ]
-app.extraopts = 'options.evt_max = {}'.format(N)
+app.extraOpts = 'options.evt_max = {}'.format(N)
 app.inputsandbox = ['options/Decay_properties.py']
 
 #Dataset
