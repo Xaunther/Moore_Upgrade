@@ -52,7 +52,6 @@ app.options = [
     'Moore_Scripts/AllLines.py',
 ]
 app.extraOpts = 'options.evt_max = {}'.format(N)
-app.inputsandbox = ['options/Decay_properties.py']
 
 #Dataset
 dataset = BKQuery(
@@ -60,6 +59,7 @@ dataset = BKQuery(
 
 #Configure job
 j = Job(application=app)
+j.inputsandbox = ['options/Decay_properties.py']
 j.application.platform = BUILD_VERSION
 #j.backend.settings['BannedSites'] = ['LCG.RAL-HEP.uk']
 j.name = '{0} MC Upgrade Mag{1}'.format(DECAY, POLARITY)  #CHANGE!!
