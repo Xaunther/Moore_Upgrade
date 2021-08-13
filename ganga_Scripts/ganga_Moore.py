@@ -27,11 +27,6 @@ parser.add_argument(
     help="Build version used")
 parser.add_argument(
     '--test', action='store_true', help='Run over one file locally')
-parser.add_argument(
-    '--N',
-    type=int,
-    default=-1,
-    help='Maximum number of events to run over in each subjob')
 args = parser.parse_args()
 
 DECAY = args.decay
@@ -39,7 +34,6 @@ POLARITY = args.polarity
 MOORE_PATH = args.moore_path
 BUILD_VERSION = args.build_version
 TEST = args.test
-N = args.N
 
 #proxy
 #ganga bd_ganga.py
@@ -51,7 +45,6 @@ app.options = [
     'options/Decay_options.py',
     'Moore_Scripts/AllLines.py',
 ]
-app.extraOpts = 'options.evt_max = {}'.format(N)
 
 #Dataset
 dataset = BKQuery(
@@ -59,11 +52,11 @@ dataset = BKQuery(
 
 #Configure job
 j = Job(application=app)
-j.inputsandbox = ['options/Decay_properties.py']
+j.inputfiles = ['options/Decay_properties.py']
 j.application.platform = BUILD_VERSION
 #j.backend.settings['BannedSites'] = ['LCG.RAL-HEP.uk']
 j.name = '{0} MC Upgrade Mag{1}'.format(DECAY, POLARITY)  #CHANGE!!
-j.comment = "{0} {1}".format(MOORE_PATH.split("/")[:-1],
+j.comment = "{0} {1}".format(MOORE_PATH.split("/")[-1],
                              BUILD_VERSION)  #CHANGE!!
 if TEST:  #Run just 1 file locally
     j.backend = Local()
@@ -73,5 +66,5 @@ else:
     j.inputdata = dataset
 
 j.splitter = SplitByFiles(filesPerJob=10, ignoremissing=True)
-j.outputfiles = [DiracFile("*.mdst"), LocalFile("*stdout")]
+j.outputfiles = [DiracFile("*.mdst"), DiracFile("*.json"), LocalFile("*stdout")]
 j.submit()

@@ -4,10 +4,12 @@ import os, sys
 sys.path.append(os.getcwd())
 
 #Make the script compatible with ganga
+inganga = False
 try:
     from options.Decay_properties import props
 except ImportError:
     from Decay_properties import props
+    inganga = True
 DECAY = os.environ["DECAY"].split("_Down")[0].split("_Up")[0]
 decay_props = props[DECAY]
 
@@ -23,13 +25,14 @@ default_ft_decoding_version.global_bind(
     value=decay_props["ft_decoding_version"])
 
 #Define outputfolder here
-outfolder = "output/{0}/".format(os.environ["DECAY"])
-try:
-    os.mkdir(outfolder)
-except FileExistsError:
-    pass
-else:
+if inganga:
     outfolder = "./"
+else:
+    outfolder = "output/{0}/".format(os.environ["DECAY"])
+    try:
+        os.mkdir(outfolder)
+    except:
+        pass
 os.environ["outfolder"] = outfolder
 
 options.input_type = 'ROOT'
