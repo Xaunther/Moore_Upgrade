@@ -27,11 +27,6 @@ parser.add_argument(
     help="Build version used")
 parser.add_argument(
     '--test', action='store_true', help='Run over one file locally')
-parser.add_argument(
-    '--N',
-    type=int,
-    default=-1,
-    help='Maximum number of events to run over in each subjob')
 args = parser.parse_args()
 
 DECAY = args.decay
@@ -39,7 +34,6 @@ POLARITY = args.polarity
 MOORE_PATH = args.moore_path
 BUILD_VERSION = args.build_version
 TEST = args.test
-N = args.N
 
 #proxy
 #ganga bd_ganga.py
@@ -51,7 +45,6 @@ app.options = [
     'options/Decay_options.py',
     'Moore_Scripts/AllLines.py',
 ]
-app.extraopts = 'options.evt_max = {}'.format(N)
 app.inputsandbox = ['options/Decay_properties.py']
 
 #Dataset
