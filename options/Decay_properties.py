@@ -18,7 +18,9 @@ props = {
         'reco_from_file':
         reco_from_file,
         'ft_decoding_version':
-        2
+        2,
+        'dirac-path':
+        "/MC/Upgrade/Beam7000GeV-Upgrade-Mag{0}-Nu7.6-25ns-Pythia8/Sim09c-Up02/Reco-Up01/Trig0x52000000/11102202/LDST"
     },
     "PhiG": {
         'descriptor':
@@ -34,7 +36,9 @@ props = {
         'reco_from_file':
         reco_from_file,
         'ft_decoding_version':
-        2
+        2,
+        'dirac-path':
+        "/MC/Upgrade/Beam7000GeV-Upgrade-Mag{0}-Nu7.6-25ns-Pythia8/Sim09c-Up02/Reco-Up01/Trig0x52000000/13102202/LDST"
     },
     "K1G": {
         'descriptor':
@@ -50,7 +54,9 @@ props = {
         'reco_from_file':
         reco_from_file,
         'ft_decoding_version':
-        2
+        2,
+        'dirac-path':
+        "/MC/Upgrade/Beam7000GeV-Upgrade-Mag{0}-Nu7.6-25ns-Pythia8/Sim09c-Up02/Reco-Up01/Trig0x52000000/12203224/LDST"
     },
     "LambdaG": {
         'descriptor':
@@ -66,7 +72,9 @@ props = {
         'reco_from_file':
         reco_from_file,
         'ft_decoding_version':
-        2
+        2,
+        'dirac-path':
+        "/MC/Upgrade/Beam7000GeV-Upgrade-Mag{0}-Nu7.6-25ns-Pythia8/Sim09c-Up02/Reco-Up01/Trig0x52000000/15102307/LDST"
     },
     "XiG": {
         'descriptor':
@@ -82,7 +90,9 @@ props = {
         'reco_from_file':
         reco_from_file,
         'ft_decoding_version':
-        6
+        6,
+        'dirac-path':
+        "/MC/Upgrade/Beam7000GeV-Upgrade-Mag{0}-Nu7.6-25ns-Pythia8/Sim10-Up05/Reco-Up03/16103330/XDST"
     },
     "OmegaG": {
         'descriptor':
@@ -98,7 +108,9 @@ props = {
         'reco_from_file':
         reco_from_file,
         'ft_decoding_version':
-        6
+        6,
+        'dirac-path':
+        "/MC/Upgrade/Beam7000GeV-Upgrade-Mag{0}-Nu7.6-25ns-Pythia8/Sim10-Up05/Reco-Up03/16103332/XDST"
     },
     "PhiKstG": {
         'descriptor':
@@ -114,7 +126,9 @@ props = {
         'reco_from_file':
         False,
         'ft_decoding_version':
-        6
+        6,
+        'dirac-path':
+        "/MC/Upgrade/Beam7000GeV-Upgrade-Mag{0}-Nu7.6-25ns-Pythia8/Sim10-Up08/Digi15-Up04/11104202/XDIGI"
     },
     "PhiPhiG": {
         'descriptor':
@@ -130,7 +144,9 @@ props = {
         'reco_from_file':
         False,
         'ft_decoding_version':
-        6
+        6,
+        'dirac-path':
+        "/MC/Upgrade/Beam7000GeV-Upgrade-Mag{0}-Nu7.6-25ns-Pythia8/Sim10-Up08/Digi15-Up04/13104212/XDIGI"
     },
     "PhiKs0G": {
         'descriptor':
@@ -146,7 +162,9 @@ props = {
         'reco_from_file':
         False,
         'ft_decoding_version':
-        6
+        6,
+        'dirac-path':
+        "/MC/Upgrade/Beam7000GeV-Upgrade-Mag{0}-Nu7.6-25ns-Pythia8/Sim10-Up08/Digi15-Up04/11104372/XDIGI"
     },
     "K1G_KPiPi0": {
         'descriptor':
@@ -162,7 +180,9 @@ props = {
         'reco_from_file':
         False,
         'ft_decoding_version':
-        6
+        6,
+        'dirac-path':
+        "/MC/Upgrade/Beam7000GeV-Upgrade-Mag{0}-Nu7.6-25ns-Pythia8/Sim10-Up08/Digi15-Up04/11202603/XDIGI"
     },
     "PhiPi0G": {
         'descriptor':
@@ -178,7 +198,9 @@ props = {
         'reco_from_file':
         False,
         'ft_decoding_version':
-        6
+        6,
+        'dirac-path':
+        "/MC/Upgrade/Beam7000GeV-Upgrade-Mag{0}-Nu7.6-25ns-Pythia8/Sim10-Up08/Digi15-Up04/13102212/XDIGI"
     },
     "KstIsoG": {
         'descriptor':
@@ -194,7 +216,9 @@ props = {
         'reco_from_file':
         False,
         'ft_decoding_version':
-        6
+        6,
+        'dirac-path':
+        "/MC/Upgrade/Beam7000GeV-Upgrade-Mag{0}-Nu7.6-25ns-Pythia8/Sim10-Up08/Digi15-Up04/12203303/XDIGI"
     },
     "LambdaPG": {
         'descriptor':
@@ -210,7 +234,9 @@ props = {
         'reco_from_file':
         False,
         'ft_decoding_version':
-        6
+        6,
+        'dirac-path':
+        "/MC/Upgrade/Beam7000GeV-Upgrade-Mag{0}-Nu7.6-25ns-Pythia8/Sim10-Up08/Digi15-Up04/12103331/XDIGI"
     },
     "PhiKG": {
         'descriptor':
@@ -226,7 +252,9 @@ props = {
         'reco_from_file':
         False,
         'ft_decoding_version':
-        6
+        6,
+        'dirac-path':
+        "/MC/Upgrade/Beam7000GeV-Upgrade-Mag{0}-Nu7.6-25ns-Pythia8/Sim10-Up08/Digi15-Up04/12103202/XDIGI"
     },
     "K1G_Cocktail": {
         'descriptor':
@@ -242,7 +270,9 @@ props = {
         'reco_from_file':
         False,
         'ft_decoding_version':
-        6
+        6,
+        'dirac-path':
+        "/MC/Upgrade/Beam7000GeV-Upgrade-Mag{0}-Nu7.6-25ns-Pythia8/Sim10-Up08/Digi15-Up04/12203271/XDIGI"
     },
     "L1520G": {
         'descriptor':
@@ -258,7 +288,9 @@ props = {
         'reco_from_file':
         False,
         'ft_decoding_version':
-        6
+        6,
+        'dirac-path':
+        "/MC/Upgrade/Beam7000GeV-Upgrade-Mag{0}-Nu7.6-25ns-Pythia8/Sim10-Up08/Digi15-Up04/15102203/XDIGI"
     },
     "RhoG": {
         'descriptor':
@@ -274,14 +306,24 @@ props = {
         'reco_from_file':
         False,
         'ft_decoding_version':
-        6
+        6,
+        'dirac-path':
+        "/MC/Upgrade/Beam7000GeV-Upgrade-Mag{0}-Nu7.6-25ns-Pythia8/Sim10-Up08/Digi15-Up04/11102222/XDIGI"
     },
     "MinBias": {
-        'evtnumber': "30000000",
-        'dddb_tag': "dddb-20171126 ",
-        'conddb_tag': "sim-20171127-vc-m{0}100",
-        'input_raw_format': 4.3,
-        'reco_from_file': reco_from_file,
-        'ft_decoding_version': 6
+        'evtnumber':
+        "30000000",
+        'dddb_tag':
+        "dddb-20171126 ",
+        'conddb_tag':
+        "sim-20171127-vc-m{0}100",
+        'input_raw_format':
+        4.3,
+        'reco_from_file':
+        reco_from_file,
+        'ft_decoding_version':
+        6,
+        'dirac-path':
+        "/MC/Upgrade/Beam7000GeV-Upgrade-Mag{0}-Nu7.6-25ns-Pythia8/Sim09c-Up02/Reco-Up01/Trig0x52000000/30000000/LDST"
     }
 }
