@@ -122,8 +122,8 @@ def get_ntuples():
     linenames = [
         ["HHGamma", ["hh", "hKs0", "hL0"]],
         ["HHGammaEE", ["hh", "hKs0", "hL0"]],
-        ["HHHGamma", ["hhh", "hhKs0", "hhL0"]],
-        ["HHHGammaEE", ["hhh", "hhKs0", "hhL0"]],
+        ["HHHGamma", ["hhh", "hhKs0", "hhL0", "hKs0L0", "hL0L0", "hKs0Ks0"]],
+        ["HHHGammaEE", ["hhh", "hhKs0", "hhL0", "hKs0L0", "hL0L0", "hKs0Ks0"]],
     ]
     ################## LOOP over every line ##################
     for linename in linenames:
