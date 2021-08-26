@@ -26,10 +26,17 @@ def get_combo_decaydescriptor(linename, hadron_comb, extrasel):
     decaydescriptor["HHHGamma_hhh_ExtraHadron_Combo"] = neutral_descriptor
     decaydescriptor["HHHGamma_hhKs0_ExtraHadron_Combo"] = charged_descriptor
     decaydescriptor["HHHGamma_hhL0_ExtraHadron_Combo"] = charged_descriptor
+    decaydescriptor["HHHGamma_hKs0L0_ExtraHadron_Combo"] = neutral_descriptor
+    decaydescriptor["HHHGamma_hL0L0_ExtraHadron_Combo"] = neutral_descriptor
+    decaydescriptor["HHHGamma_hKs0Ks0_ExtraHadron_Combo"] = neutral_descriptor
     #HHHGammaEE
     decaydescriptor["HHHGammaEE_hhh_ExtraHadron_Combo"] = neutral_descriptor
     decaydescriptor["HHHGammaEE_hhKs0_ExtraHadron_Combo"] = charged_descriptor
     decaydescriptor["HHHGammaEE_hhL0_ExtraHadron_Combo"] = charged_descriptor
+    decaydescriptor["HHHGammaEE_hKs0L0_ExtraHadron_Combo"] = neutral_descriptor
+    decaydescriptor["HHHGammaEE_hL0L0_ExtraHadron_Combo"] = neutral_descriptor
+    decaydescriptor[
+        "HHHGammaEE_hKs0Ks0_ExtraHadron_Combo"] = neutral_descriptor
     return decaydescriptor["{0}_{1}_{2}_Combo".format(linename, hadron_comb,
                                                       extrasel)]
 
@@ -69,6 +76,26 @@ def get_full_decaydescriptor(linename):
         "(B0 -> ^(D*(2007)0 -> ^(K*(892)0 -> ^K+ ^K-) ^(Lambda0 -> ^p+ ^pi-)) ^gamma) || "
         "(B~0 -> ^(D*(2007)~0 -> ^(K*(892)0 -> ^K+ ^K-) ^(Lambda~0 -> ^p~- ^pi+)) ^gamma)"
     )
+    full_decaydescriptor["HHHGamma_hKs0L0"] = (
+        "(B+ -> ^(D*(2010)+ -> ^(K*(892)+ -> ^K+ ^(KS0 -> ^pi+ ^pi-)) ^(Lambda0 -> ^p+ ^pi-)) ^gamma) ||"
+        "(B+ -> ^(D*(2010)+ -> ^(K*(892)+ -> ^K+ ^(KS0 -> ^pi+ ^pi-)) ^(Lambda~0 -> ^p~- ^pi+)) ^gamma) ||"
+        "(B- -> ^(D*(2010)- -> ^(K*(892)- -> ^K- ^(KS0 -> ^pi+ ^pi-)) ^(Lambda0 -> ^p+ ^pi-)) ^gamma) ||"
+        "(B- -> ^(D*(2010)- -> ^(K*(892)- -> ^K- ^(KS0 -> ^pi+ ^pi-)) ^(Lambda~0 -> ^p~- ^pi+)) ^gamma)"
+    )
+    full_decaydescriptor["HHHGamma_hL0L0"] = (
+        "(B+ -> ^(D*(2010)+ -> ^(K*(892)+ -> ^K+ ^(Lambda0 -> ^p+ ^pi-)) ^(Lambda0 -> ^p+ ^pi-)) ^gamma) ||"
+        "(B+ -> ^(D*(2010)+ -> ^(K*(892)+ -> ^K+ ^(Lambda0 -> ^p+ ^pi-)) ^(Lambda~0 -> ^p~- ^pi+)) ^gamma) ||"
+        "(B+ -> ^(D*(2010)+ -> ^(K*(892)+ -> ^K+ ^(Lambda~0 -> ^p~- ^pi+)) ^(Lambda0 -> ^p+ ^pi-)) ^gamma) ||"
+        "(B+ -> ^(D*(2010)+ -> ^(K*(892)+ -> ^K+ ^(Lambda~0 -> ^p~- ^pi+)) ^(Lambda~0 -> ^p~- ^pi+)) ^gamma) ||"
+        "(B- -> ^(D*(2010)- -> ^(K*(892)- -> ^K- ^(Lambda0 -> ^p+ ^pi-)) ^(Lambda0 -> ^p+ ^pi-)) ^gamma) ||"
+        "(B- -> ^(D*(2010)- -> ^(K*(892)- -> ^K- ^(Lambda0 -> ^p+ ^pi-)) ^(Lambda~0 -> ^p~- ^pi+)) ^gamma) ||"
+        "(B- -> ^(D*(2010)- -> ^(K*(892)- -> ^K- ^(Lambda~0 -> ^p~- ^pi+)) ^(Lambda0 -> ^p+ ^pi-)) ^gamma) ||"
+        "(B- -> ^(D*(2010)- -> ^(K*(892)- -> ^K- ^(Lambda~0 -> ^p~- ^pi+)) ^(Lambda~0 -> ^p~- ^pi+)) ^gamma)"
+    )
+    full_decaydescriptor["HHHGamma_hKs0Ks0"] = (
+        "(B+ -> ^(D*(2010)+ -> ^(K*(892)+ -> ^K+ ^(KS0 -> ^pi+ ^pi-)) ^(KS0 -> ^pi+ ^pi-)) ^gamma) ||"
+        "(B- -> ^(D*(2010)- -> ^(K*(892)- -> ^K- ^(KS0 -> ^pi+ ^pi-)) ^(KS0 -> ^pi+ ^pi-)) ^gamma)"
+    )
     #HHHGammaEE descriptors
     full_decaydescriptor["HHHGammaEE_hhh"] = (
         "(B+ -> ^(D*(2010)+ -> ^(K*(892)0 -> ^K+ ^K-) ^K+) ^(gamma -> ^e+ ^e-)) || "
@@ -79,6 +106,26 @@ def get_full_decaydescriptor(linename):
     full_decaydescriptor["HHHGammaEE_hhL0"] = (
         "(B0 -> ^(D*(2007)0 -> ^(K*(892)0 -> ^K+ ^K-) ^(Lambda0 -> ^p+ ^pi-)) ^(gamma -> ^e+ ^e-)) || "
         "(B~0 -> ^(D*(2007)~0 -> ^(K*(892)0 -> ^K+ ^K-) ^(Lambda~0 -> ^p~- ^pi+)) ^(gamma -> ^e+ ^e-))"
+    )
+    full_decaydescriptor["HHHGammaEE_hKs0L0"] = (
+        "(B+ -> ^(D*(2010)+ -> ^(K*(892)+ -> ^K+ ^(KS0 -> ^pi+ ^pi-)) ^(Lambda0 -> ^p+ ^pi-)) ^(gamma -> ^e+ ^e-)) ||"
+        "(B+ -> ^(D*(2010)+ -> ^(K*(892)+ -> ^K+ ^(KS0 -> ^pi+ ^pi-)) ^(Lambda~0 -> ^p~- ^pi+)) ^(gamma -> ^e+ ^e-)) ||"
+        "(B- -> ^(D*(2010)- -> ^(K*(892)- -> ^K- ^(KS0 -> ^pi+ ^pi-)) ^(Lambda0 -> ^p+ ^pi-)) ^(gamma -> ^e+ ^e-)) ||"
+        "(B- -> ^(D*(2010)- -> ^(K*(892)- -> ^K- ^(KS0 -> ^pi+ ^pi-)) ^(Lambda~0 -> ^p~- ^pi+)) ^(gamma -> ^e+ ^e-))"
+    )
+    full_decaydescriptor["HHHGammaEE_hL0L0"] = (
+        "(B+ -> ^(D*(2010)+ -> ^(K*(892)+ -> ^K+ ^(Lambda0 -> ^p+ ^pi-)) ^(Lambda0 -> ^p+ ^pi-)) ^(gamma -> ^e+ ^e-)) ||"
+        "(B+ -> ^(D*(2010)+ -> ^(K*(892)+ -> ^K+ ^(Lambda0 -> ^p+ ^pi-)) ^(Lambda~0 -> ^p~- ^pi+)) ^(gamma -> ^e+ ^e-)) ||"
+        "(B+ -> ^(D*(2010)+ -> ^(K*(892)+ -> ^K+ ^(Lambda~0 -> ^p~- ^pi+)) ^(Lambda0 -> ^p+ ^pi-)) ^(gamma -> ^e+ ^e-)) ||"
+        "(B+ -> ^(D*(2010)+ -> ^(K*(892)+ -> ^K+ ^(Lambda~0 -> ^p~- ^pi+)) ^(Lambda~0 -> ^p~- ^pi+)) ^(gamma -> ^e+ ^e-)) ||"
+        "(B- -> ^(D*(2010)- -> ^(K*(892)- -> ^K- ^(Lambda0 -> ^p+ ^pi-)) ^(Lambda0 -> ^p+ ^pi-)) ^(gamma -> ^e+ ^e-)) ||"
+        "(B- -> ^(D*(2010)- -> ^(K*(892)- -> ^K- ^(Lambda0 -> ^p+ ^pi-)) ^(Lambda~0 -> ^p~- ^pi+)) ^(gamma -> ^e+ ^e-)) ||"
+        "(B- -> ^(D*(2010)- -> ^(K*(892)- -> ^K- ^(Lambda~0 -> ^p~- ^pi+)) ^(Lambda0 -> ^p+ ^pi-)) ^(gamma -> ^e+ ^e-)) ||"
+        "(B- -> ^(D*(2010)- -> ^(K*(892)- -> ^K- ^(Lambda~0 -> ^p~- ^pi+)) ^(Lambda~0 -> ^p~- ^pi+)) ^(gamma -> ^e+ ^e-))"
+    )
+    full_decaydescriptor["HHHGammaEE_hKs0Ks0"] = (
+        "(B+ -> ^(D*(2010)+ -> ^(K*(892)+ -> ^K+ ^(KS0 -> ^pi+ ^pi-)) ^(KS0 -> ^pi+ ^pi-)) ^(gamma -> ^e+ ^e-)) ||"
+        "(B- -> ^(D*(2010)- -> ^(K*(892)- -> ^K- ^(KS0 -> ^pi+ ^pi-)) ^(KS0 -> ^pi+ ^pi-)) ^(gamma -> ^e+ ^e-))"
     )
     #Extra particle descriptors
     full_decaydescriptor["ExtraHadron"] = "(K+) || (K-)"
@@ -97,6 +144,8 @@ def get_full_decaydescriptor(linename):
         "(B~0 -> ^(B- -> ^(K*(892)- -> ^K- ^(KS0 -> ^pi+ ^pi-)) ^gamma) ^K+)")
     full_decaydescriptor["HHGamma_hL0_ExtraHadron_Combo"] = (
         "(B0 -> ^(B+ -> ^(K*(892)+ -> ^K+ ^(Lambda0 -> ^p+ ^pi-)) ^gamma) ^K-) || "
+        "(B0 -> ^(B+ -> ^(K*(892)+ -> ^K+ ^(Lambda~0 -> ^p~- ^pi+)) ^gamma) ^K-) || "
+        "(B~0 -> ^(B- -> ^(K*(892)- -> ^K- ^(Lambda0 -> ^p+ ^pi-)) ^gamma) ^K+) ||"
         "(B~0 -> ^(B- -> ^(K*(892)- -> ^K- ^(Lambda~0 -> ^p~- ^pi+)) ^gamma) ^K+)"
     )
     #HHGammaEE line + extra hadron descriptors
@@ -109,6 +158,8 @@ def get_full_decaydescriptor(linename):
     )
     full_decaydescriptor["HHGammaEE_hL0_ExtraHadron_Combo"] = (
         "(B0 -> ^(B+ -> ^(K*(892)+ -> ^K+ ^(Lambda0 -> ^p+ ^pi-)) ^(gamma -> ^e+ ^e-)) ^K-) || "
+        "(B0 -> ^(B+ -> ^(K*(892)+ -> ^K+ ^(Lambda~0 -> ^p~- ^pi+)) ^(gamma -> ^e+ ^e-)) ^K-) || "
+        "(B~0 -> ^(B- -> ^(K*(892)- -> ^K- ^(Lambda0 -> ^p+ ^pi-)) ^(gamma -> ^e+ ^e-)) ^K+) ||"
         "(B~0 -> ^(B- -> ^(K*(892)- -> ^K- ^(Lambda~0 -> ^p~- ^pi+)) ^(gamma -> ^e+ ^e-)) ^K+)"
     )
     #HHHGamma line + extra hadron descriptors
@@ -118,13 +169,33 @@ def get_full_decaydescriptor(linename):
     )
     full_decaydescriptor["HHHGamma_hhKs0_ExtraHadron_Combo"] = (
         "(B+ -> ^(B0 -> ^(D*(2007)0 -> ^(K*(892)0 -> ^K+ ^K-) ^(KS0 -> ^pi+ ^pi-)) ^gamma) ^K+) || "
-        "(B+ -> ^(B0 -> ^(D*(2007)0 -> ^(K*(892)0 -> ^K+ ^K-) ^(KS0 -> ^pi+ ^pi-)) ^gamma) ^K-)"
+        "(B- -> ^(B0 -> ^(D*(2007)0 -> ^(K*(892)0 -> ^K+ ^K-) ^(KS0 -> ^pi+ ^pi-)) ^gamma) ^K-)"
     )
     full_decaydescriptor["HHHGamma_hhL0_ExtraHadron_Combo"] = (
         "(B+ -> ^(B0 -> ^(D*(2007)0 -> ^(K*(892)0 -> ^K+ ^K-) ^(Lambda0 -> ^p+ ^pi-)) ^gamma) ^K+) || "
-        "(B+ -> ^(B0 -> ^(D*(2007)0 -> ^(K*(892)0 -> ^K+ ^K-) ^(Lambda0 -> ^p+ ^pi-)) ^gamma) ^K-) || "
+        "(B- -> ^(B0 -> ^(D*(2007)0 -> ^(K*(892)0 -> ^K+ ^K-) ^(Lambda0 -> ^p+ ^pi-)) ^gamma) ^K-) || "
         "(B+ -> ^(B~0 -> ^(D*(2007)~0 -> ^(K*(892)0 -> ^K+ ^K-) ^(Lambda~0 -> ^p~- ^pi+)) ^gamma) ^K+) || "
-        "(B+ -> ^(B~0 -> ^(D*(2007)~0 -> ^(K*(892)0 -> ^K+ ^K-) ^(Lambda~0 -> ^p~- ^pi+)) ^gamma) ^K-)"
+        "(B- -> ^(B~0 -> ^(D*(2007)~0 -> ^(K*(892)0 -> ^K+ ^K-) ^(Lambda~0 -> ^p~- ^pi+)) ^gamma) ^K-)"
+    )
+    full_decaydescriptor["HHHGamma_hKs0L0_ExtraHadron_Combo"] = (
+        "(B0 -> ^(B+ -> ^(D*(2010)+ -> ^(K*(892)+ -> ^K+ ^(KS0 -> ^pi+ ^pi-)) ^(Lambda0 -> ^p+ ^pi-)) ^gamma) ^K-) ||"
+        "(B0 -> ^(B+ -> ^(D*(2010)+ -> ^(K*(892)+ -> ^K+ ^(KS0 -> ^pi+ ^pi-)) ^(Lambda~0 -> ^p~- ^pi+)) ^gamma) ^K-) ||"
+        "(B~0 -> ^(B- -> ^(D*(2010)- -> ^(K*(892)- -> ^K- ^(KS0 -> ^pi+ ^pi-)) ^(Lambda0 -> ^p+ ^pi-)) ^gamma) ^K+) ||"
+        "(B~0 -> ^(B- -> ^(D*(2010)- -> ^(K*(892)- -> ^K- ^(KS0 -> ^pi+ ^pi-)) ^(Lambda~0 -> ^p~- ^pi+)) ^gamma) ^K+)"
+    )
+    full_decaydescriptor["HHHGamma_hL0L0_ExtraHadron_Combo"] = (
+        "(B0 -> ^(B+ -> ^(D*(2010)+ -> ^(K*(892)+ -> ^K+ ^(Lambda0 -> ^p+ ^pi-)) ^(Lambda0 -> ^p+ ^pi-)) ^gamma) ^K-) ||"
+        "(B0 -> ^(B+ -> ^(D*(2010)+ -> ^(K*(892)+ -> ^K+ ^(Lambda0 -> ^p+ ^pi-)) ^(Lambda~0 -> ^p~- ^pi+)) ^gamma) ^K-) ||"
+        "(B0 -> ^(B+ -> ^(D*(2010)+ -> ^(K*(892)+ -> ^K+ ^(Lambda~0 -> ^p~- ^pi+)) ^(Lambda~0 -> ^p~- ^pi+)) ^gamma) ^K-) ||"
+        "(B0 -> ^(B+ -> ^(D*(2010)+ -> ^(K*(892)+ -> ^K+ ^(Lambda~0 -> ^p~- ^pi+)) ^(Lambda~0 -> ^p~- ^pi+)) ^gamma) ^K-) ||"
+        "(B~0 -> ^(B- -> ^(D*(2010)- -> ^(K*(892)- -> ^K- ^(Lambda0 -> ^p+ ^pi-)) ^(Lambda0 -> ^p+ ^pi-)) ^gamma) ^K+) ||"
+        "(B~0 -> ^(B- -> ^(D*(2010)- -> ^(K*(892)- -> ^K- ^(Lambda0 -> ^p+ ^pi-)) ^(Lambda~0 -> ^p~- ^pi+)) ^gamma) ^K+) ||"
+        "(B~0 -> ^(B- -> ^(D*(2010)- -> ^(K*(892)- -> ^K- ^(Lambda~0 -> ^p~- ^pi+)) ^(Lambda~0 -> ^p~- ^pi+)) ^gamma) ^K+) ||"
+        "(B~0 -> ^(B- -> ^(D*(2010)- -> ^(K*(892)- -> ^K- ^(Lambda~0 -> ^p~- ^pi+)) ^(Lambda~0 -> ^p~- ^pi+)) ^gamma) ^K+)"
+    )
+    full_decaydescriptor["HHHGamma_hKs0Ks0_ExtraHadron_Combo"] = (
+        "(B0 -> ^(B+ -> ^(D*(2010)+ -> ^(K*(892)+ -> ^K+ ^(KS0 -> ^pi+ ^pi-)) ^(KS0 -> ^pi+ ^pi-)) ^gamma) ^K-) ||"
+        "(B~0 -> ^(B- -> ^(D*(2010)- -> ^(K*(892)- -> ^K- ^(KS0 -> ^pi+ ^pi-)) ^(KS0 -> ^pi+ ^pi-)) ^gamma) ^K+)"
     )
     #HHHGammaEE line + extra hadron descriptors
     full_decaydescriptor["HHHGammaEE_hhh_ExtraHadron_Combo"] = (
@@ -133,13 +204,33 @@ def get_full_decaydescriptor(linename):
     )
     full_decaydescriptor["HHHGammaEE_hhKs0_ExtraHadron_Combo"] = (
         "(B+ -> ^(B0 -> ^(D*(2007)0 -> ^(K*(892)0 -> ^K+ ^K-) ^(KS0 -> ^pi+ ^pi-)) ^(gamma -> ^e+ ^e-)) ^K+) || "
-        "(B+ -> ^(B0 -> ^(D*(2007)0 -> ^(K*(892)0 -> ^K+ ^K-) ^(KS0 -> ^pi+ ^pi-)) ^(gamma -> ^e+ ^e-)) ^K-)"
+        "(B- -> ^(B0 -> ^(D*(2007)0 -> ^(K*(892)0 -> ^K+ ^K-) ^(KS0 -> ^pi+ ^pi-)) ^(gamma -> ^e+ ^e-)) ^K-)"
     )
     full_decaydescriptor["HHHGammaEE_hhL0_ExtraHadron_Combo"] = (
         "(B+ -> ^(B0 -> ^(D*(2007)0 -> ^(K*(892)0 -> ^K+ ^K-) ^(Lambda0 -> ^p+ ^pi-)) ^(gamma -> ^e+ ^e-)) ^K+) || "
-        "(B+ -> ^(B0 -> ^(D*(2007)0 -> ^(K*(892)0 -> ^K+ ^K-) ^(Lambda0 -> ^p+ ^pi-)) ^(gamma -> ^e+ ^e-)) ^K-) || "
+        "(B- -> ^(B0 -> ^(D*(2007)0 -> ^(K*(892)0 -> ^K+ ^K-) ^(Lambda0 -> ^p+ ^pi-)) ^(gamma -> ^e+ ^e-)) ^K-) || "
         "(B+ -> ^(B~0 -> ^(D*(2007)~0 -> ^(K*(892)0 -> ^K+ ^K-) ^(Lambda~0 -> ^p~- ^pi+)) ^(gamma -> ^e+ ^e-)) ^K+) || "
-        "(B+ -> ^(B~0 -> ^(D*(2007)~0 -> ^(K*(892)0 -> ^K+ ^K-) ^(Lambda~0 -> ^p~- ^pi+)) ^(gamma -> ^e+ ^e-)) ^K-)"
+        "(B- -> ^(B~0 -> ^(D*(2007)~0 -> ^(K*(892)0 -> ^K+ ^K-) ^(Lambda~0 -> ^p~- ^pi+)) ^(gamma -> ^e+ ^e-)) ^K-)"
+    )
+    full_decaydescriptor["HHHGammaEE_hKs0L0_ExtraHadron_Combo"] = (
+        "(B0 -> ^(B+ -> ^(D*(2010)+ -> ^(K*(892)+ -> ^K+ ^(KS0 -> ^pi+ ^pi-)) ^(Lambda0 -> ^p+ ^pi-)) ^(gamma -> ^e+ ^e-)) ^K-) ||"
+        "(B0 -> ^(B+ -> ^(D*(2010)+ -> ^(K*(892)+ -> ^K+ ^(KS0 -> ^pi+ ^pi-)) ^(Lambda~0 -> ^p~- ^pi+)) ^(gamma -> ^e+ ^e-)) ^K-) ||"
+        "(B~0 -> ^(B- -> ^(D*(2010)- -> ^(K*(892)- -> ^K- ^(KS0 -> ^pi+ ^pi-)) ^(Lambda0 -> ^p+ ^pi-)) ^(gamma -> ^e+ ^e-)) ^K+) ||"
+        "(B~0 -> ^(B- -> ^(D*(2010)- -> ^(K*(892)- -> ^K- ^(KS0 -> ^pi+ ^pi-)) ^(Lambda~0 -> ^p~- ^pi+)) ^(gamma -> ^e+ ^e-)) ^K+)"
+    )
+    full_decaydescriptor["HHHGammaEE_hL0L0_ExtraHadron_Combo"] = (
+        "(B0 -> ^(B+ -> ^(D*(2010)+ -> ^(K*(892)+ -> ^K+ ^(Lambda0 -> ^p+ ^pi-)) ^(Lambda0 -> ^p+ ^pi-)) ^(gamma -> ^e+ ^e-)) ^K-) ||"
+        "(B0 -> ^(B+ -> ^(D*(2010)+ -> ^(K*(892)+ -> ^K+ ^(Lambda0 -> ^p+ ^pi-)) ^(Lambda~0 -> ^p~- ^pi+)) ^(gamma -> ^e+ ^e-)) ^K-) ||"
+        "(B0 -> ^(B+ -> ^(D*(2010)+ -> ^(K*(892)+ -> ^K+ ^(Lambda~0 -> ^p~- ^pi+)) ^(Lambda~0 -> ^p~- ^pi+)) ^(gamma -> ^e+ ^e-)) ^K-) ||"
+        "(B0 -> ^(B+ -> ^(D*(2010)+ -> ^(K*(892)+ -> ^K+ ^(Lambda~0 -> ^p~- ^pi+)) ^(Lambda~0 -> ^p~- ^pi+)) ^(gamma -> ^e+ ^e-)) ^K-) ||"
+        "(B~0 -> ^(B- -> ^(D*(2010)- -> ^(K*(892)- -> ^K- ^(Lambda0 -> ^p+ ^pi-)) ^(Lambda0 -> ^p+ ^pi-)) ^(gamma -> ^e+ ^e-)) ^K+) ||"
+        "(B~0 -> ^(B- -> ^(D*(2010)- -> ^(K*(892)- -> ^K- ^(Lambda0 -> ^p+ ^pi-)) ^(Lambda~0 -> ^p~- ^pi+)) ^(gamma -> ^e+ ^e-)) ^K+) ||"
+        "(B~0 -> ^(B- -> ^(D*(2010)- -> ^(K*(892)- -> ^K- ^(Lambda~0 -> ^p~- ^pi+)) ^(Lambda~0 -> ^p~- ^pi+)) ^(gamma -> ^e+ ^e-)) ^K+) ||"
+        "(B~0 -> ^(B- -> ^(D*(2010)- -> ^(K*(892)- -> ^K- ^(Lambda~0 -> ^p~- ^pi+)) ^(Lambda~0 -> ^p~- ^pi+)) ^(gamma -> ^e+ ^e-)) ^K+)"
+    )
+    full_decaydescriptor["HHHGammaEE_hKs0Ks0_ExtraHadron_Combo"] = (
+        "(B0 -> ^(B+ -> ^(D*(2010)+ -> ^(K*(892)+ -> ^K+ ^(KS0 -> ^pi+ ^pi-)) ^(KS0 -> ^pi+ ^pi-)) ^(gamma -> ^e+ ^e-)) ^K-) ||"
+        "(B~0 -> ^(B- -> ^(D*(2010)- -> ^(K*(892)- -> ^K- ^(KS0 -> ^pi+ ^pi-)) ^(KS0 -> ^pi+ ^pi-)) ^(gamma -> ^e+ ^e-)) ^K+)"
     )
     return full_decaydescriptor[linename]
 
@@ -156,36 +247,50 @@ def get_branches(linename):
         "gamma": "B0 -> (K*(892)0 -> K+ K-) ^gamma",
     }
     branches["HHGamma_hKs0"] = {
-        "B":
-        "(B+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) gamma) || (B- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) gamma)",
-        "Kst":
-        "(B+ -> ^(K*(892)+ -> K+ (KS0 -> pi+ pi-)) gamma) || (B- -> ^(K*(892)- -> K- (KS0 -> pi+ pi-)) gamma)",
-        "Kplus":
-        "(B+ -> (K*(892)+ -> ^K+ (KS0 -> pi+ pi-)) gamma) || (B- -> (K*(892)- -> ^K- (KS0 -> pi+ pi-)) gamma)",
-        "Ks0":
-        "(B+ -> (K*(892)+ -> K+ ^(KS0 -> pi+ pi-)) gamma) || (B- -> (K*(892)- -> K- ^(KS0 -> pi+ pi-)) gamma)",
-        "piplus":
-        "(B+ -> (K*(892)+ -> K+ (KS0 -> ^pi+ pi-)) gamma) || (B- -> (K*(892)- -> K- (KS0 -> ^pi+ pi-)) gamma)",
-        "piminus":
-        "(B+ -> (K*(892)+ -> K+ (KS0 -> pi+ ^pi-)) gamma) || (B- -> (K*(892)- -> K- (KS0 -> pi+ ^pi-)) gamma)",
-        "gamma":
-        "(B+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) ^gamma) || (B- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) ^gamma)",
+        "B": ("(B+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) gamma) || "
+              "(B- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) gamma)"),
+        "Kst": ("(B+ -> ^(K*(892)+ -> K+ (KS0 -> pi+ pi-)) gamma) || "
+                "(B- -> ^(K*(892)- -> K- (KS0 -> pi+ pi-)) gamma)"),
+        "Kplus": ("(B+ -> (K*(892)+ -> ^K+ (KS0 -> pi+ pi-)) gamma) || "
+                  "(B- -> (K*(892)- -> ^K- (KS0 -> pi+ pi-)) gamma)"),
+        "Ks0": ("(B+ -> (K*(892)+ -> K+ ^(KS0 -> pi+ pi-)) gamma) || "
+                "(B- -> (K*(892)- -> K- ^(KS0 -> pi+ pi-)) gamma)"),
+        "piplus": ("(B+ -> (K*(892)+ -> K+ (KS0 -> ^pi+ pi-)) gamma) || "
+                   "(B- -> (K*(892)- -> K- (KS0 -> ^pi+ pi-)) gamma)"),
+        "piminus": ("(B+ -> (K*(892)+ -> K+ (KS0 -> pi+ ^pi-)) gamma) || "
+                    "(B- -> (K*(892)- -> K- (KS0 -> pi+ ^pi-)) gamma)"),
+        "gamma": ("(B+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) ^gamma) || "
+                  "(B- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) ^gamma)"),
     }
     branches["HHGamma_hL0"] = {
-        "B":
-        "(B+ -> (K*(892)+ -> K+ (Lambda0 -> p+ pi-)) gamma) || (B- -> (K*(892)- -> K- (Lambda~0 -> p~- pi+)) gamma)",
-        "Kst":
-        "(B+ -> ^(K*(892)+ -> K+ (Lambda0 -> p+ pi-)) gamma) || (B- -> ^(K*(892)- -> K- (Lambda~0 -> p~- pi+)) gamma)",
-        "Kplus":
-        "(B+ -> (K*(892)+ -> ^K+ (Lambda0 -> p+ pi-)) gamma) || (B- -> (K*(892)- -> ^K- (Lambda~0 -> p~- pi+)) gamma)",
-        "Lambda0":
-        "(B+ -> (K*(892)+ -> K+ ^(Lambda0 -> p+ pi-)) gamma) || (B- -> (K*(892)- -> K- ^(Lambda~0 -> p~- pi+)) gamma)",
-        "pplus":
-        "(B+ -> (K*(892)+ -> K+ (Lambda0 -> ^p+ pi-)) gamma) || (B- -> (K*(892)- -> K- (Lambda~0 -> ^p~- pi+)) gamma)",
-        "piminus":
-        "(B+ -> (K*(892)+ -> K+ (Lambda0 -> p+ ^pi-)) gamma) || (B- -> (K*(892)- -> K- (Lambda~0 -> p~- ^pi+)) gamma)",
-        "gamma":
-        "(B+ -> (K*(892)+ -> K+ (Lambda0 -> p+ pi-)) ^gamma) || (B- -> (K*(892)- -> K- (Lambda~0 -> p~- pi+)) ^gamma)",
+        "B": ("(B+ -> (K*(892)+ -> K+ (Lambda0 -> p+ pi-)) gamma) || "
+              "(B+ -> (K*(892)+ -> K+ (Lambda~0 -> p~- pi+)) gamma) || "
+              "(B- -> (K*(892)- -> K- (Lambda0 -> p+ pi-)) gamma) ||"
+              "(B- -> (K*(892)- -> K- (Lambda~0 -> p~- pi+)) gamma)"),
+        "Kst": ("(B+ -> ^(K*(892)+ -> K+ (Lambda0 -> p+ pi-)) gamma) || "
+                "(B+ -> ^(K*(892)+ -> K+ (Lambda~0 -> p~- pi+)) gamma) || "
+                "(B- -> ^(K*(892)- -> K- (Lambda0 -> p+ pi-)) gamma) ||"
+                "(B- -> ^(K*(892)- -> K- (Lambda~0 -> p~- pi+)) gamma)"),
+        "Kplus": ("(B+ -> (K*(892)+ -> ^K+ (Lambda0 -> p+ pi-)) gamma) || "
+                  "(B+ -> (K*(892)+ -> ^K+ (Lambda~0 -> p~- pi+)) gamma) || "
+                  "(B- -> (K*(892)- -> ^K- (Lambda0 -> p+ pi-)) gamma) ||"
+                  "(B- -> (K*(892)- -> ^K- (Lambda~0 -> p~- pi+)) gamma)"),
+        "Lambda0": ("(B+ -> (K*(892)+ -> K+ ^(Lambda0 -> p+ pi-)) gamma) || "
+                    "(B+ -> (K*(892)+ -> K+ ^(Lambda~0 -> p~- pi+)) gamma) || "
+                    "(B- -> (K*(892)- -> K- ^(Lambda0 -> p+ pi-)) gamma) ||"
+                    "(B- -> (K*(892)- -> K- ^(Lambda~0 -> p~- pi+)) gamma)"),
+        "pplus": ("(B+ -> (K*(892)+ -> K+ (Lambda0 -> ^p+ pi-)) gamma) || "
+                  "(B+ -> (K*(892)+ -> K+ (Lambda~0 -> ^p~- pi+)) gamma) || "
+                  "(B- -> (K*(892)- -> K- (Lambda0 -> ^p+ pi-)) gamma) ||"
+                  "(B- -> (K*(892)- -> K- (Lambda~0 -> ^p~- pi+)) gamma)"),
+        "piminus": ("(B+ -> (K*(892)+ -> K+ (Lambda0 -> p+ ^pi-)) gamma) || "
+                    "(B+ -> (K*(892)+ -> K+ (Lambda~0 -> p~- ^pi+)) gamma) || "
+                    "(B- -> (K*(892)- -> K- (Lambda0 -> p+ ^pi-)) gamma) ||"
+                    "(B- -> (K*(892)- -> K- (Lambda~0 -> p~- ^pi+)) gamma)"),
+        "gamma": ("(B+ -> (K*(892)+ -> K+ (Lambda0 -> p+ pi-)) ^gamma) || "
+                  "(B+ -> (K*(892)+ -> K+ (Lambda~0 -> p~- pi+)) ^gamma) || "
+                  "(B- -> (K*(892)- -> K- (Lambda0 -> p+ pi-)) ^gamma) ||"
+                  "(B- -> (K*(892)- -> K- (Lambda~0 -> p~- pi+)) ^gamma)"),
     }
     #Branches for HHGammaEE line
     branches["HHGammaEE_hh"] = {
@@ -198,170 +303,746 @@ def get_branches(linename):
         "eminus": "B0 -> (K*(892)0 -> K+ K-) (gamma-> e+ ^e-)",
     }
     branches["HHGammaEE_hKs0"] = {
-        "B":
-        "(B+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) (gamma-> e+ e-)) || (B- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) (gamma-> e+ e-))",
+        "B": ("(B+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) (gamma-> e+ e-)) || "
+              "(B- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) (gamma-> e+ e-))"),
         "Kst":
-        "(B+ -> ^(K*(892)+ -> K+ (KS0 -> pi+ pi-)) (gamma-> e+ e-)) || (B- -> ^(K*(892)- -> K- (KS0 -> pi+ pi-)) (gamma-> e+ e-))",
+        ("(B+ -> ^(K*(892)+ -> K+ (KS0 -> pi+ pi-)) (gamma-> e+ e-)) || "
+         "(B- -> ^(K*(892)- -> K- (KS0 -> pi+ pi-)) (gamma-> e+ e-))"),
         "Kplus":
-        "(B+ -> (K*(892)+ -> ^K+ (KS0 -> pi+ pi-)) (gamma-> e+ e-)) || (B- -> (K*(892)- -> ^K- (KS0 -> pi+ pi-)) (gamma-> e+ e-))",
+        ("(B+ -> (K*(892)+ -> ^K+ (KS0 -> pi+ pi-)) (gamma-> e+ e-)) || "
+         "(B- -> (K*(892)- -> ^K- (KS0 -> pi+ pi-)) (gamma-> e+ e-))"),
         "Ks0":
-        "(B+ -> (K*(892)+ -> K+ ^(KS0 -> pi+ pi-)) (gamma-> e+ e-)) || (B- -> (K*(892)- -> K- ^(KS0 -> pi+ pi-)) (gamma-> e+ e-))",
+        ("(B+ -> (K*(892)+ -> K+ ^(KS0 -> pi+ pi-)) (gamma-> e+ e-)) || "
+         "(B- -> (K*(892)- -> K- ^(KS0 -> pi+ pi-)) (gamma-> e+ e-))"),
         "piplus":
-        "(B+ -> (K*(892)+ -> K+ (KS0 -> ^pi+ pi-)) (gamma-> e+ e-)) || (B- -> (K*(892)- -> K- (KS0 -> ^pi+ pi-)) (gamma-> e+ e-))",
+        ("(B+ -> (K*(892)+ -> K+ (KS0 -> ^pi+ pi-)) (gamma-> e+ e-)) || "
+         "(B- -> (K*(892)- -> K- (KS0 -> ^pi+ pi-)) (gamma-> e+ e-))"),
         "piminus":
-        "(B+ -> (K*(892)+ -> K+ (KS0 -> pi+ ^pi-)) (gamma-> e+ e-)) || (B- -> (K*(892)- -> K- (KS0 -> pi+ ^pi-)) (gamma-> e+ e-))",
+        ("(B+ -> (K*(892)+ -> K+ (KS0 -> pi+ ^pi-)) (gamma-> e+ e-)) || "
+         "(B- -> (K*(892)- -> K- (KS0 -> pi+ ^pi-)) (gamma-> e+ e-))"),
         "gamma":
-        "(B+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) ^(gamma-> e+ e-)) || (B- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) ^(gamma-> e+ e-))",
+        ("(B+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) ^(gamma-> e+ e-)) || "
+         "(B- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) ^(gamma-> e+ e-))"),
         "eplus":
-        "(B+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) (gamma-> ^e+ e-)) || (B- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) (gamma-> ^e+ e-))",
+        ("(B+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) (gamma-> ^e+ e-)) || "
+         "(B- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) (gamma-> ^e+ e-))"),
         "eminus":
-        "(B+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) (gamma-> e+ ^e-)) || (B- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) (gamma-> e+ ^e-))",
+        ("(B+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) (gamma-> e+ ^e-)) || "
+         "(B- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) (gamma-> e+ ^e-))"),
     }
     branches["HHGammaEE_hL0"] = {
         "B":
-        "(B+ -> (K*(892)+ -> K+ (Lambda0 -> p+ pi-)) (gamma-> e+ e-)) || (B- -> (K*(892)- -> K- (Lambda~0 -> p~- pi+)) (gamma-> e+ e-))",
+        ("(B+ -> (K*(892)+ -> K+ (Lambda0 -> p+ pi-)) (gamma-> e+ e-)) || "
+         "(B+ -> (K*(892)+ -> K+ (Lambda~0 -> p~- pi+)) (gamma-> e+ e-)) || "
+         "(B- -> (K*(892)- -> K- (Lambda0 -> p+ pi-)) (gamma-> e+ e-)) ||"
+         "(B- -> (K*(892)- -> K- (Lambda~0 -> p~- pi+)) (gamma-> e+ e-))"),
         "Kst":
-        "(B+ -> ^(K*(892)+ -> K+ (Lambda0 -> p+ pi-)) (gamma-> e+ e-)) || (B- -> ^(K*(892)- -> K- (Lambda~0 -> p~- pi+)) (gamma-> e+ e-))",
+        ("(B+ -> ^(K*(892)+ -> K+ (Lambda0 -> p+ pi-)) (gamma-> e+ e-)) || "
+         "(B+ -> ^(K*(892)+ -> K+ (Lambda~0 -> p~- pi+)) (gamma-> e+ e-)) || "
+         "(B- -> ^(K*(892)- -> K- (Lambda0 -> p+ pi-)) (gamma-> e+ e-)) ||"
+         "(B- -> ^(K*(892)- -> K- (Lambda~0 -> p~- pi+)) (gamma-> e+ e-))"),
         "Kplus":
-        "(B+ -> (K*(892)+ -> ^K+ (Lambda0 -> p+ pi-)) (gamma-> e+ e-)) || (B- -> (K*(892)- -> ^K- (Lambda~0 -> p~- pi+)) (gamma-> e+ e-))",
+        ("(B+ -> (K*(892)+ -> ^K+ (Lambda0 -> p+ pi-)) (gamma-> e+ e-)) || "
+         "(B+ -> (K*(892)+ -> ^K+ (Lambda~0 -> p~- pi+)) (gamma-> e+ e-)) || "
+         "(B- -> (K*(892)- -> ^K- (Lambda0 -> p+ pi-)) (gamma-> e+ e-)) ||"
+         "(B- -> (K*(892)- -> ^K- (Lambda~0 -> p~- pi+)) (gamma-> e+ e-))"),
         "Lambda0":
-        "(B+ -> (K*(892)+ -> K+ ^(Lambda0 -> p+ pi-)) (gamma-> e+ e-)) || (B- -> (K*(892)- -> K- ^(Lambda~0 -> p~- pi+)) (gamma-> e+ e-))",
+        ("(B+ -> (K*(892)+ -> K+ ^(Lambda0 -> p+ pi-)) (gamma-> e+ e-)) || "
+         "(B+ -> (K*(892)+ -> K+ ^(Lambda~0 -> p~- pi+)) (gamma-> e+ e-)) || "
+         "(B- -> (K*(892)- -> K- ^(Lambda0 -> p+ pi-)) (gamma-> e+ e-)) ||"
+         "(B- -> (K*(892)- -> K- ^(Lambda~0 -> p~- pi+)) (gamma-> e+ e-))"),
         "pplus":
-        "(B+ -> (K*(892)+ -> K+ (Lambda0 -> ^p+ pi-)) (gamma-> e+ e-)) || (B- -> (K*(892)- -> K- (Lambda~0 -> ^p~- pi+)) (gamma-> e+ e-))",
+        ("(B+ -> (K*(892)+ -> K+ (Lambda0 -> ^p+ pi-)) (gamma-> e+ e-)) || "
+         "(B+ -> (K*(892)+ -> K+ (Lambda~0 -> ^p~- pi+)) (gamma-> e+ e-)) || "
+         "(B- -> (K*(892)- -> K- (Lambda0 -> ^p+ pi-)) (gamma-> e+ e-)) ||"
+         "(B- -> (K*(892)- -> K- (Lambda~0 -> ^p~- pi+)) (gamma-> e+ e-))"),
         "piminus":
-        "(B+ -> (K*(892)+ -> K+ (Lambda0 -> p+ ^pi-)) (gamma-> e+ e-)) || (B- -> (K*(892)- -> K- (Lambda~0 -> p~- ^pi+)) (gamma-> e+ e-))",
+        ("(B+ -> (K*(892)+ -> K+ (Lambda0 -> p+ ^pi-)) (gamma-> e+ e-)) || "
+         "(B+ -> (K*(892)+ -> K+ (Lambda~0 -> p~- ^pi+)) (gamma-> e+ e-)) || "
+         "(B- -> (K*(892)- -> K- (Lambda0 -> p+ ^pi-)) (gamma-> e+ e-)) ||"
+         "(B- -> (K*(892)- -> K- (Lambda~0 -> p~- ^pi+)) (gamma-> e+ e-))"),
         "gamma":
-        "(B+ -> (K*(892)+ -> K+ (Lambda0 -> p+ pi-)) ^(gamma-> e+ e-)) || (B- -> (K*(892)- -> K- (Lambda~0 -> p~- pi+)) ^(gamma-> e+ e-))",
+        ("(B+ -> (K*(892)+ -> K+ (Lambda0 -> p+ pi-)) ^(gamma-> e+ e-)) || "
+         "(B+ -> (K*(892)+ -> K+ (Lambda~0 -> p~- pi+)) ^(gamma-> e+ e-)) || "
+         "(B- -> (K*(892)- -> K- (Lambda0 -> p+ pi-)) ^(gamma-> e+ e-)) ||"
+         "(B- -> (K*(892)- -> K- (Lambda~0 -> p~- pi+)) ^(gamma-> e+ e-))"),
         "eplus":
-        "(B+ -> (K*(892)+ -> K+ (Lambda0 -> p+ pi-)) (gamma-> ^e+ e-)) || (B- -> (K*(892)- -> K- (Lambda~0 -> p~- pi+)) (gamma-> ^e+ e-))",
+        ("(B+ -> (K*(892)+ -> K+ (Lambda0 -> p+ pi-)) (gamma-> ^e+ e-)) || "
+         "(B+ -> (K*(892)+ -> K+ (Lambda~0 -> p~- pi+)) (gamma-> ^e+ e-)) || "
+         "(B- -> (K*(892)- -> K- (Lambda0 -> p+ pi-)) (gamma-> ^e+ e-)) ||"
+         "(B- -> (K*(892)- -> K- (Lambda~0 -> p~- pi+)) (gamma-> ^e+ e-))"),
         "eminus":
-        "(B+ -> (K*(892)+ -> K+ (Lambda0 -> p+ pi-)) (gamma-> e+ ^e-)) || (B- -> (K*(892)- -> K- (Lambda~0 -> p~- pi+)) (gamma-> e+ ^e-))",
+        ("(B+ -> (K*(892)+ -> K+ (Lambda0 -> p+ pi-)) (gamma-> e+ ^e-)) || "
+         "(B+ -> (K*(892)+ -> K+ (Lambda~0 -> p~- pi+)) (gamma-> e+ ^e-)) || "
+         "(B- -> (K*(892)- -> K- (Lambda0 -> p+ pi-)) (gamma-> e+ ^e-)) ||"
+         "(B- -> (K*(892)- -> K- (Lambda~0 -> p~- pi+)) (gamma-> e+ ^e-))"),
     }
     #Branches for HHHGamma line
     branches["HHHGamma_hhh"] = {
-        "B":
-        "(B+ -> (D*(2010)+ -> (K*(892)0 -> K+ K-) K+) gamma) || (B- -> (D*(2010)- -> (K*(892)0 -> K+ K-) K-) gamma)",
-        "Dst":
-        "(B+ -> ^(D*(2010)+ -> (K*(892)0 -> K+ K-) K+) gamma) || (B- -> ^(D*(2010)- -> (K*(892)0 -> K+ K-) K-) gamma)",
-        "Kst":
-        "(B+ -> (D*(2010)+ -> ^(K*(892)0 -> K+ K-) K+) gamma) || (B- -> (D*(2010)- -> ^(K*(892)0 -> K+ K-) K-) gamma)",
-        "Kplus0":
-        "(B+ -> (D*(2010)+ -> (K*(892)0 -> K+ K-) ^K+) gamma) || (B- -> (D*(2010)- -> (K*(892)0 -> K+ K-) ^K-) gamma)",
-        "Kplus":
-        "(B+ -> (D*(2010)+ -> (K*(892)0 -> ^K+ K-) K+) gamma) || (B- -> (D*(2010)- -> (K*(892)0 -> ^K+ K-) K-) gamma)",
-        "Kminus":
-        "(B+ -> (D*(2010)+ -> (K*(892)0 -> K+ ^K-) K+) gamma) || (B- -> (D*(2010)- -> (K*(892)0 -> K+ K-) ^K-) gamma)",
-        "gamma":
-        "(B+ -> (D*(2010)+ -> (K*(892)0 -> K+ K-) K+) ^gamma) || (B- -> (D*(2010)- -> (K*(892)0 -> K+ K-) K-) ^gamma)",
+        "B": ("(B+ -> (D*(2010)+ -> (K*(892)0 -> K+ K-) K+) gamma) || "
+              "(B- -> (D*(2010)- -> (K*(892)0 -> K+ K-) K-) gamma)"),
+        "Dst": ("(B+ -> ^(D*(2010)+ -> (K*(892)0 -> K+ K-) K+) gamma) || "
+                "(B- -> ^(D*(2010)- -> (K*(892)0 -> K+ K-) K-) gamma)"),
+        "Kst": ("(B+ -> (D*(2010)+ -> ^(K*(892)0 -> K+ K-) K+) gamma) || "
+                "(B- -> (D*(2010)- -> ^(K*(892)0 -> K+ K-) K-) gamma)"),
+        "Kplus0": ("(B+ -> (D*(2010)+ -> (K*(892)0 -> K+ K-) ^K+) gamma) || "
+                   "(B- -> (D*(2010)- -> (K*(892)0 -> K+ K-) ^K-) gamma)"),
+        "Kplus": ("(B+ -> (D*(2010)+ -> (K*(892)0 -> ^K+ K-) K+) gamma) || "
+                  "(B- -> (D*(2010)- -> (K*(892)0 -> ^K+ K-) K-) gamma)"),
+        "Kminus": ("(B+ -> (D*(2010)+ -> (K*(892)0 -> K+ ^K-) K+) gamma) || "
+                   "(B- -> (D*(2010)- -> (K*(892)0 -> K+ ^K-) K-) gamma)"),
+        "gamma": ("(B+ -> (D*(2010)+ -> (K*(892)0 -> K+ K-) K+) ^gamma) || "
+                  "(B- -> (D*(2010)- -> (K*(892)0 -> K+ K-) K-) ^gamma)"),
     }
     branches["HHHGamma_hhKs0"] = {
         "B":
-        "(B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) (KS0 -> pi+ pi-)) gamma) || (B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) (KS0 -> pi+ pi-)) gamma)",
+        "(B0 -> (D*(2007)0-> (K*(892)0 -> K+ K-) (KS0 -> pi+ pi-)) gamma)",
         "Dst":
-        "(B0 -> ^(D*(2007)0 -> (K*(892)0 -> K+ K-) (KS0 -> pi+ pi-)) gamma) || (B0 -> ^(D*(2007)0 -> (K*(892)0 -> K+ K-) (KS0 -> pi+ pi-)) gamma)",
+        "(B0 -> ^(D*(2007)0-> (K*(892)0 -> K+ K-) (KS0 -> pi+ pi-)) gamma)",
         "Kst":
-        "(B0 -> (D*(2007)0 -> ^(K*(892)0 -> K+ K-) (KS0 -> pi+ pi-)) gamma) || (B0 -> (D*(2007)0 -> ^(K*(892)0 -> K+ K-) (KS0 -> pi+ pi-)) gamma)",
+        "(B0 -> (D*(2007)0-> ^(K*(892)0 -> K+ K-) (KS0 -> pi+ pi-)) gamma)",
         "Ks0":
-        "(B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) ^(KS0 -> pi+ pi-)) gamma) || (B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) ^(KS0 -> pi+ pi-)) gamma)",
+        "(B0 -> (D*(2007)0-> (K*(892)0 -> K+ K-) ^(KS0 -> pi+ pi-)) gamma)",
         "Kplus":
-        "(B0 -> (D*(2007)0 -> (K*(892)0 -> ^K+ K-) (KS0 -> pi+ pi-)) gamma) || (B0 -> (D*(2007)0 -> (K*(892)0 -> ^K+ K-) (KS0 -> pi+ pi-)) gamma)",
+        "(B0 -> (D*(2007)0-> (K*(892)0 -> ^K+ K-) (KS0 -> pi+ pi-)) gamma)",
         "Kminus":
-        "(B0 -> (D*(2007)0 -> (K*(892)0 -> K+ ^K-) (KS0 -> pi+ pi-)) gamma) || (B0 -> (D*(2007)0 -> (K*(892)0 -> K+ ^K-) (KS0 -> pi+ pi-)) gamma)",
+        "(B0 -> (D*(2007)0-> (K*(892)0 -> K+ ^K-) (KS0 -> pi+ pi-)) gamma)",
         "gamma":
-        "(B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) (KS0 -> pi+ pi-)) ^gamma) || (B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) (KS0 -> pi+ pi-)) ^gamma)",
+        "(B0 -> (D*(2007)0-> (K*(892)0 -> K+ K-) (KS0 -> pi+ pi-)) ^gamma)",
         "piplus":
-        "(B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) (KS0 -> ^pi+ pi-)) gamma) || (B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) (KS0 -> ^pi+ pi-)) gamma)",
+        "(B0 -> (D*(2007)0-> (K*(892)0 -> K+ K-) (KS0 -> ^pi+ pi-)) gamma)",
         "piminus":
-        "(B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) (KS0 -> pi+ ^pi-)) gamma) || (B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) (KS0 -> pi+ ^pi-)) gamma)",
+        "(B0 -> (D*(2007)0-> (K*(892)0 -> K+ K-) (KS0 -> pi+ ^pi-)) gamma)",
     }
     branches["HHHGamma_hhL0"] = {
         "B":
-        "(B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) (Lambda0 -> p+ pi-)) gamma) || (B~0 -> (D*(2007)~0 -> (K*(892)0 -> K+ K-) (Lambda~0 -> p~- pi+)) gamma)",
+        ("(B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) (Lambda0 -> p+ pi-)) gamma) || "
+         "(B~0 -> (D*(2007)~0 -> (K*(892)0 -> K+ K-) (Lambda~0 -> p~- pi+)) gamma)"
+         ),
         "Dst":
-        "(B0 -> ^(D*(2007)0 -> (K*(892)0 -> K+ K-) (Lambda0 -> p+ pi-)) gamma) || (B~0 -> ^(D*(2007)~0 -> (K*(892)0 -> K+ K-) (Lambda~0 -> p~- pi+)) gamma)",
+        ("(B0 -> ^(D*(2007)0 -> (K*(892)0 -> K+ K-) (Lambda0 -> p+ pi-)) gamma) || "
+         "(B~0 -> ^(D*(2007)~0 -> (K*(892)0 -> K+ K-) (Lambda~0 -> p~- pi+)) gamma)"
+         ),
         "Kst":
-        "(B0 -> (D*(2007)0 -> ^(K*(892)0 -> K+ K-) (Lambda0 -> p+ pi-)) gamma) || (B~0 -> (D*(2007)~0 -> ^(K*(892)0 -> K+ K-) (Lambda~0 -> p~- pi+)) gamma)",
+        ("(B0 -> (D*(2007)0 -> ^(K*(892)0 -> K+ K-) (Lambda0 -> p+ pi-)) gamma) || "
+         "(B~0 -> (D*(2007)~0 -> ^(K*(892)0 -> K+ K-) (Lambda~0 -> p~- pi+)) gamma)"
+         ),
         "Lambda0":
-        "(B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) ^(Lambda0 -> p+ pi-)) gamma) || (B~0 -> (D*(2007)~0 -> (K*(892)0 -> K+ K-) ^(Lambda~0 -> p~- pi+)) gamma)",
+        ("(B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) ^(Lambda0 -> p+ pi-)) gamma) || "
+         "(B~0 -> (D*(2007)~0 -> (K*(892)0 -> K+ K-) ^(Lambda~0 -> p~- pi+)) gamma)"
+         ),
         "Kplus":
-        "(B0 -> (D*(2007)0 -> (K*(892)0 -> ^K+ K-) (Lambda0 -> p+ pi-)) gamma) || (B~0 -> (D*(2007)~0 -> (K*(892)0 -> ^K+ K-) (Lambda~0 -> p~- pi+)) gamma)",
+        ("(B0 -> (D*(2007)0 -> (K*(892)0 -> ^K+ K-) (Lambda0 -> p+ pi-)) gamma) || "
+         "(B~0 -> (D*(2007)~0 -> (K*(892)0 -> ^K+ K-) (Lambda~0 -> p~- pi+)) gamma)"
+         ),
         "Kminus":
-        "(B0 -> (D*(2007)0 -> (K*(892)0 -> K+ ^K-) (Lambda0 -> p+ pi-)) gamma) || (B~0 -> (D*(2007)~0 -> (K*(892)0 -> K+ ^K-) (Lambda~0 -> p~- pi+)) gamma)",
+        ("(B0 -> (D*(2007)0 -> (K*(892)0 -> K+ ^K-) (Lambda0 -> p+ pi-)) gamma) || "
+         "(B~0 -> (D*(2007)~0 -> (K*(892)0 -> K+ ^K-) (Lambda~0 -> p~- pi+)) gamma)"
+         ),
         "gamma":
-        "(B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) (Lambda0 -> p+ pi-)) ^gamma) || (B~0 -> (D*(2007)~0 -> (K*(892)0 -> K+ K-) (Lambda~0 -> p~- pi+)) ^gamma)",
+        ("(B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) (Lambda0 -> p+ pi-)) ^gamma) || "
+         "(B~0 -> (D*(2007)~0 -> (K*(892)0 -> K+ K-) (Lambda~0 -> p~- pi+)) ^gamma)"
+         ),
         "pplus":
-        "(B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) (Lambda0 -> ^p+ pi-)) gamma) || (B~0 -> (D*(2007)~0 -> (K*(892)0 -> K+ K-) (Lambda~0 -> ^p~- pi+)) gamma)",
+        ("(B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) (Lambda0 -> ^p+ pi-)) gamma) || "
+         "(B~0 -> (D*(2007)~0 -> (K*(892)0 -> K+ K-) (Lambda~0 -> ^p~- pi+)) gamma)"
+         ),
         "piminus":
-        "(B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) (Lambda0 -> p+ ^pi-)) gamma) || (B~0 -> (D*(2007)~0 -> (K*(892)0 -> K+ K-) (Lambda~0 -> p~- ^pi+)) gamma)",
+        ("(B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) (Lambda0 -> p+ ^pi-)) gamma) || "
+         "(B~0 -> (D*(2007)~0 -> (K*(892)0 -> K+ K-) (Lambda~0 -> p~- ^pi+)) gamma)"
+         ),
+    }
+    branches["HHHGamma_hKs0L0"] = {
+        "B":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) (Lambda0 -> p+ pi-)) gamma) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) (Lambda~0 -> p~- pi+)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) (Lambda0 -> p+ pi-)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) (Lambda~0 -> p~- pi+)) gamma)"
+         ),
+        "Dst":
+        ("(B+ -> ^(D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) (Lambda0 -> p+ pi-)) gamma) ||"
+         "(B+ -> ^(D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) (Lambda~0 -> p~- pi+)) gamma) ||"
+         "(B- -> ^(D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) (Lambda0 -> p+ pi-)) gamma) ||"
+         "(B- -> ^(D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) (Lambda~0 -> p~- pi+)) gamma)"
+         ),
+        "Kst":
+        ("(B+ -> (D*(2010)+ -> ^(K*(892)+ -> K+ (KS0 -> pi+ pi-)) (Lambda0 -> p+ pi-)) gamma) ||"
+         "(B+ -> (D*(2010)+ -> ^(K*(892)+ -> K+ (KS0 -> pi+ pi-)) (Lambda~0 -> p~- pi+)) gamma) ||"
+         "(B- -> (D*(2010)- -> ^(K*(892)- -> K- (KS0 -> pi+ pi-)) (Lambda0 -> p+ pi-)) gamma) ||"
+         "(B- -> (D*(2010)- -> ^(K*(892)- -> K- (KS0 -> pi+ pi-)) (Lambda~0 -> p~- pi+)) gamma)"
+         ),
+        "Ks0":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ ^(KS0 -> pi+ pi-)) (Lambda0 -> p+ pi-)) gamma) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ ^(KS0 -> pi+ pi-)) (Lambda~0 -> p~- pi+)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- ^(KS0 -> pi+ pi-)) (Lambda0 -> p+ pi-)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- ^(KS0 -> pi+ pi-)) (Lambda~0 -> p~- pi+)) gamma)"
+         ),
+        "Lambda0":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) ^(Lambda0 -> p+ pi-)) gamma) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) ^(Lambda~0 -> p~- pi+)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) ^(Lambda0 -> p+ pi-)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) ^(Lambda~0 -> p~- pi+)) gamma)"
+         ),
+        "Kplus":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> ^K+ (KS0 -> pi+ pi-)) (Lambda0 -> p+ pi-)) gamma) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> ^K+ (KS0 -> pi+ pi-)) (Lambda~0 -> p~- pi+)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> ^K- (KS0 -> pi+ pi-)) (Lambda0 -> p+ pi-)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> ^K- (KS0 -> pi+ pi-)) (Lambda~0 -> p~- pi+)) gamma)"
+         ),
+        "gamma":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) (Lambda0 -> p+ pi-)) ^gamma) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) (Lambda~0 -> p~- pi+)) ^gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) (Lambda0 -> p+ pi-)) ^gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) (Lambda~0 -> p~- pi+)) ^gamma)"
+         ),
+        "piplus":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> ^pi+ pi-)) (Lambda0 -> p+ pi-)) gamma) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> ^pi+ pi-)) (Lambda~0 -> p~- pi+)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> ^pi+ pi-)) (Lambda0 -> p+ pi-)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> ^pi+ pi-)) (Lambda~0 -> p~- pi+)) gamma)"
+         ),
+        "piminus":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ ^pi-)) (Lambda0 -> p+ pi-)) gamma) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ ^pi-)) (Lambda~0 -> p~- pi+)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ ^pi-)) (Lambda0 -> p+ pi-)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ ^pi-)) (Lambda~0 -> p~- pi+)) gamma)"
+         ),
+        "pplus":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) (Lambda0 -> ^p+ pi-)) gamma) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) (Lambda~0 -> ^p~- pi+)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) (Lambda0 -> ^p+ pi-)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) (Lambda~0 -> ^p~- pi+)) gamma)"
+         ),
+        "piminus0":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) (Lambda0 -> p+ ^pi-)) gamma) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) (Lambda~0 -> p~- ^pi+)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) (Lambda0 -> p+ ^pi-)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) (Lambda~0 -> p~- ^pi+)) gamma)"
+         ),
+    }
+    branches["HHHGamma_hL0L0"] = {
+        "B":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda0 -> p+ pi-)) (Lambda0 -> p+ pi-)) gamma) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda0 -> p+ pi-)) (Lambda~0 -> p~- pi+)) gamma) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda~0 -> p~- pi+)) (Lambda0 -> p+ pi-)) gamma) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda~0 -> p~- pi+)) (Lambda~0 -> p~- pi+)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda0 -> p+ pi-)) (Lambda0 -> p+ pi-)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda0 -> p+ pi-)) (Lambda~0 -> p~- pi+)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda~0 -> p~- pi+)) (Lambda0 -> p+ pi-)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda~0 -> p~- pi+)) (Lambda~0 -> p~- pi+)) gamma)"
+         ),
+        "Dst":
+        ("(B+ -> ^(D*(2010)+ -> (K*(892)+ -> K+ (Lambda0 -> p+ pi-)) (Lambda0 -> p+ pi-)) gamma) ||"
+         "(B+ -> ^(D*(2010)+ -> (K*(892)+ -> K+ (Lambda0 -> p+ pi-)) (Lambda~0 -> p~- pi+)) gamma) ||"
+         "(B+ -> ^(D*(2010)+ -> (K*(892)+ -> K+ (Lambda~0 -> p~- pi+)) (Lambda0 -> p+ pi-)) gamma) ||"
+         "(B+ -> ^(D*(2010)+ -> (K*(892)+ -> K+ (Lambda~0 -> p~- pi+)) (Lambda~0 -> p~- pi+)) gamma) ||"
+         "(B- -> ^(D*(2010)- -> (K*(892)- -> K- (Lambda0 -> p+ pi-)) (Lambda0 -> p+ pi-)) gamma) ||"
+         "(B- -> ^(D*(2010)- -> (K*(892)- -> K- (Lambda0 -> p+ pi-)) (Lambda~0 -> p~- pi+)) gamma) ||"
+         "(B- -> ^(D*(2010)- -> (K*(892)- -> K- (Lambda~0 -> p~- pi+)) (Lambda0 -> p+ pi-)) gamma) ||"
+         "(B- -> ^(D*(2010)- -> (K*(892)- -> K- (Lambda~0 -> p~- pi+)) (Lambda~0 -> p~- pi+)) gamma)"
+         ),
+        "Kst":
+        ("(B+ -> (D*(2010)+ -> ^(K*(892)+ -> K+ (Lambda0 -> p+ pi-)) (Lambda0 -> p+ pi-)) gamma) ||"
+         "(B+ -> (D*(2010)+ -> ^(K*(892)+ -> K+ (Lambda0 -> p+ pi-)) (Lambda~0 -> p~- pi+)) gamma) ||"
+         "(B+ -> (D*(2010)+ -> ^(K*(892)+ -> K+ (Lambda~0 -> p~- pi+)) (Lambda0 -> p+ pi-)) gamma) ||"
+         "(B+ -> (D*(2010)+ -> ^(K*(892)+ -> K+ (Lambda~0 -> p~- pi+)) (Lambda~0 -> p~- pi+)) gamma) ||"
+         "(B- -> (D*(2010)- -> ^(K*(892)- -> K- (Lambda0 -> p+ pi-)) (Lambda0 -> p+ pi-)) gamma) ||"
+         "(B- -> (D*(2010)- -> ^(K*(892)- -> K- (Lambda0 -> p+ pi-)) (Lambda~0 -> p~- pi+)) gamma) ||"
+         "(B- -> (D*(2010)- -> ^(K*(892)- -> K- (Lambda~0 -> p~- pi+)) (Lambda0 -> p+ pi-)) gamma) ||"
+         "(B- -> (D*(2010)- -> ^(K*(892)- -> K- (Lambda~0 -> p~- pi+)) (Lambda~0 -> p~- pi+)) gamma)"
+         ),
+        "Lambda0":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ ^(Lambda0 -> p+ pi-)) (Lambda0 -> p+ pi-)) gamma) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ ^(Lambda0 -> p+ pi-)) (Lambda~0 -> p~- pi+)) gamma) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ ^(Lambda~0 -> p~- pi+)) (Lambda0 -> p+ pi-)) gamma) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ ^(Lambda~0 -> p~- pi+)) (Lambda~0 -> p~- pi+)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- ^(Lambda0 -> p+ pi-)) (Lambda0 -> p+ pi-)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- ^(Lambda0 -> p+ pi-)) (Lambda~0 -> p~- pi+)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- ^(Lambda~0 -> p~- pi+)) (Lambda0 -> p+ pi-)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- ^(Lambda~0 -> p~- pi+)) (Lambda~0 -> p~- pi+)) gamma)"
+         ),
+        "Lambda0_0":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda0 -> p+ pi-)) ^(Lambda0 -> p+ pi-)) gamma) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda0 -> p+ pi-)) ^(Lambda~0 -> p~- pi+)) gamma) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda~0 -> p~- pi+)) ^(Lambda0 -> p+ pi-)) gamma) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda~0 -> p~- pi+)) ^(Lambda~0 -> p~- pi+)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda0 -> p+ pi-)) ^(Lambda0 -> p+ pi-)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda0 -> p+ pi-)) ^(Lambda~0 -> p~- pi+)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda~0 -> p~- pi+)) ^(Lambda0 -> p+ pi-)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda~0 -> p~- pi+)) ^(Lambda~0 -> p~- pi+)) gamma)"
+         ),
+        "Kplus":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> ^K+ (Lambda0 -> p+ pi-)) (Lambda0 -> p+ pi-)) gamma) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> ^K+ (Lambda0 -> p+ pi-)) (Lambda~0 -> p~- pi+)) gamma) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> ^K+ (Lambda~0 -> p~- pi+)) (Lambda0 -> p+ pi-)) gamma) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> ^K+ (Lambda~0 -> p~- pi+)) (Lambda~0 -> p~- pi+)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> ^K- (Lambda0 -> p+ pi-)) (Lambda0 -> p+ pi-)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> ^K- (Lambda0 -> p+ pi-)) (Lambda~0 -> p~- pi+)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> ^K- (Lambda~0 -> p~- pi+)) (Lambda0 -> p+ pi-)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> ^K- (Lambda~0 -> p~- pi+)) (Lambda~0 -> p~- pi+)) gamma)"
+         ),
+        "gamma":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda0 -> p+ pi-)) (Lambda0 -> p+ pi-)) ^gamma) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda0 -> p+ pi-)) (Lambda~0 -> p~- pi+)) ^gamma) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda~0 -> p~- pi+)) (Lambda0 -> p+ pi-)) ^gamma) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda~0 -> p~- pi+)) (Lambda~0 -> p~- pi+)) ^gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda0 -> p+ pi-)) (Lambda0 -> p+ pi-)) ^gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda0 -> p+ pi-)) (Lambda~0 -> p~- pi+)) ^gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda~0 -> p~- pi+)) (Lambda0 -> p+ pi-)) ^gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda~0 -> p~- pi+)) (Lambda~0 -> p~- pi+)) ^gamma)"
+         ),
+        "pplus":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda0 -> ^p+ pi-)) (Lambda0 -> p+ pi-)) gamma) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda0 -> ^p+ pi-)) (Lambda~0 -> p~- pi+)) gamma) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda~0 -> ^p~- pi+)) (Lambda0 -> p+ pi-)) gamma) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda~0 -> ^p~- pi+)) (Lambda~0 -> p~- pi+)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda0 -> ^p+ pi-)) (Lambda0 -> p+ pi-)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda0 -> ^p+ pi-)) (Lambda~0 -> p~- pi+)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda~0 -> ^p~- pi+)) (Lambda0 -> p+ pi-)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda~0 -> ^p~- pi+)) (Lambda~0 -> p~- pi+)) gamma)"
+         ),
+        "piminus":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda0 -> p+ ^pi-)) (Lambda0 -> p+ pi-)) gamma) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda0 -> p+ ^pi-)) (Lambda~0 -> p~- pi+)) gamma) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda~0 -> p~- ^pi+)) (Lambda0 -> p+ pi-)) gamma) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda~0 -> p~- ^pi+)) (Lambda~0 -> p~- pi+)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda0 -> p+ ^pi-)) (Lambda0 -> p+ pi-)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda0 -> p+ ^pi-)) (Lambda~0 -> p~- pi+)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda~0 -> p~- ^pi+)) (Lambda0 -> p+ pi-)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda~0 -> p~- ^pi+)) (Lambda~0 -> p~- pi+)) gamma)"
+         ),
+        "pplus0":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda0 -> p+ pi-)) (Lambda0 -> ^p+ pi-)) gamma) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda0 -> p+ pi-)) (Lambda~0 -> ^p~- pi+)) gamma) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda~0 -> p~- pi+)) (Lambda0 -> ^p+ pi-)) gamma) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda~0 -> p~- pi+)) (Lambda~0 -> ^p~- pi+)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda0 -> p+ pi-)) (Lambda0 -> ^p+ pi-)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda0 -> p+ pi-)) (Lambda~0 -> ^p~- pi+)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda~0 -> p~- pi+)) (Lambda0 -> ^p+ pi-)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda~0 -> p~- pi+)) (Lambda~0 -> ^p~- pi+)) gamma)"
+         ),
+        "piminus0":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda0 -> p+ pi-)) (Lambda0 -> p+ ^pi-)) gamma) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda0 -> p+ pi-)) (Lambda~0 -> p~- ^pi+)) gamma) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda~0 -> p~- pi+)) (Lambda0 -> p+ ^pi-)) gamma) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda~0 -> p~- pi+)) (Lambda~0 -> p~- ^pi+)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda0 -> p+ pi-)) (Lambda0 -> p+ ^pi-)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda0 -> p+ pi-)) (Lambda~0 -> p~- ^pi+)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda~0 -> p~- pi+)) (Lambda0 -> p+ ^pi-)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda~0 -> p~- pi+)) (Lambda~0 -> p~- ^pi+)) gamma)"
+         ),
+    }
+    branches["HHHGamma_hKs0Ks0"] = {
+        "B":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) (KS0 -> pi+ pi-)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) (KS0 -> pi+ pi-)) gamma)"
+         ),
+        "Dst":
+        ("(B+ -> ^(D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) (KS0 -> pi+ pi-)) gamma) ||"
+         "(B- -> ^(D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) (KS0 -> pi+ pi-)) gamma)"
+         ),
+        "Kst":
+        ("(B+ -> (D*(2010)+ -> ^(K*(892)+ -> K+ (KS0 -> pi+ pi-)) (KS0 -> pi+ pi-)) gamma) ||"
+         "(B- -> (D*(2010)- -> ^(K*(892)- -> K- (KS0 -> pi+ pi-)) (KS0 -> pi+ pi-)) gamma)"
+         ),
+        "Ks0":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ ^(KS0 -> pi+ pi-)) (KS0 -> pi+ pi-)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- ^(KS0 -> pi+ pi-)) (KS0 -> pi+ pi-)) gamma)"
+         ),
+        "Ks0_0":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) ^(KS0 -> pi+ pi-)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) ^(KS0 -> pi+ pi-)) gamma)"
+         ),
+        "Kplus":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> ^K+ (KS0 -> pi+ pi-)) (KS0 -> pi+ pi-)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> ^K- (KS0 -> pi+ pi-)) (KS0 -> pi+ pi-)) gamma)"
+         ),
+        "gamma":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) (KS0 -> pi+ pi-)) ^gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) (KS0 -> pi+ pi-)) ^gamma)"
+         ),
+        "piplus":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> ^pi+ pi-)) (KS0 -> pi+ pi-)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> ^pi+ pi-)) (KS0 -> pi+ pi-)) gamma)"
+         ),
+        "piminus":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ ^pi-)) (KS0 -> pi+ pi-)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ ^pi-)) (KS0 -> pi+ pi-)) gamma)"
+         ),
+        "piplus0":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) (KS0 -> ^pi+ pi-)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) (KS0 -> ^pi+ pi-)) gamma)"
+         ),
+        "piminus0":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) (KS0 -> pi+ ^pi-)) gamma) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) (KS0 -> pi+ ^pi-)) gamma)"
+         ),
     }
     #Branches for HHHGammaEE line
     branches["HHHGammaEE_hhh"] = {
         "B":
-        "(B+ -> (D*(2010)+ -> (K*(892)0 -> K+ K-) K+) (gamma-> e+ e-)) || (B- -> (D*(2010)- -> (K*(892)0 -> K+ K-) K-) (gamma-> e+ e-))",
+        ("(B+ -> (D*(2010)+ -> (K*(892)0 -> K+ K-) K+) (gamma -> e+ e-)) || "
+         "(B- -> (D*(2010)- -> (K*(892)0 -> K+ K-) K-) (gamma -> e+ e-))"),
         "Dst":
-        "(B+ -> ^(D*(2010)+ -> (K*(892)0 -> K+ K-) K+) (gamma-> e+ e-)) || (B- -> ^(D*(2010)- -> (K*(892)0 -> K+ K-) K-) (gamma-> e+ e-))",
+        ("(B+ -> ^(D*(2010)+ -> (K*(892)0 -> K+ K-) K+) (gamma -> e+ e-)) || "
+         "(B- -> ^(D*(2010)- -> (K*(892)0 -> K+ K-) K-) (gamma -> e+ e-))"),
         "Kst":
-        "(B+ -> (D*(2010)+ -> ^(K*(892)0 -> K+ K-) K+) (gamma-> e+ e-)) || (B- -> (D*(2010)- -> ^(K*(892)0 -> K+ K-) K-) (gamma-> e+ e-))",
+        ("(B+ -> (D*(2010)+ -> ^(K*(892)0 -> K+ K-) K+) (gamma -> e+ e-)) || "
+         "(B- -> (D*(2010)- -> ^(K*(892)0 -> K+ K-) K-) (gamma -> e+ e-))"),
         "Kplus0":
-        "(B+ -> (D*(2010)+ -> (K*(892)0 -> K+ K-) ^K+) (gamma-> e+ e-)) || (B- -> (D*(2010)- -> (K*(892)0 -> K+ K-) ^K-) (gamma-> e+ e-))",
+        ("(B+ -> (D*(2010)+ -> (K*(892)0 -> K+ K-) ^K+) (gamma -> e+ e-)) || "
+         "(B- -> (D*(2010)- -> (K*(892)0 -> K+ K-) ^K-) (gamma -> e+ e-))"),
         "Kplus":
-        "(B+ -> (D*(2010)+ -> (K*(892)0 -> ^K+ K-) K+) (gamma-> e+ e-)) || (B- -> (D*(2010)- -> (K*(892)0 -> ^K+ K-) K-) (gamma-> e+ e-))",
+        ("(B+ -> (D*(2010)+ -> (K*(892)0 -> ^K+ K-) K+) (gamma -> e+ e-)) || "
+         "(B- -> (D*(2010)- -> (K*(892)0 -> ^K+ K-) K-) (gamma -> e+ e-))"),
         "Kminus":
-        "(B+ -> (D*(2010)+ -> (K*(892)0 -> K+ ^K-) K+) (gamma-> e+ e-)) || (B- -> (D*(2010)- -> (K*(892)0 -> K+ K-) ^K-) (gamma-> e+ e-))",
+        ("(B+ -> (D*(2010)+ -> (K*(892)0 -> K+ ^K-) K+) (gamma -> e+ e-)) || "
+         "(B- -> (D*(2010)- -> (K*(892)0 -> K+ ^K-) K-) (gamma -> e+ e-))"),
         "gamma":
-        "(B+ -> (D*(2010)+ -> (K*(892)0 -> K+ K-) K+) ^(gamma-> e+ e-)) || (B- -> (D*(2010)- -> (K*(892)0 -> K+ K-) K-) ^(gamma-> e+ e-))",
+        ("(B+ -> (D*(2010)+ -> (K*(892)0 -> K+ K-) K+) ^(gamma -> e+ e-)) || "
+         "(B- -> (D*(2010)- -> (K*(892)0 -> K+ K-) K-) ^(gamma -> e+ e-))"),
         "eplus":
-        "(B+ -> (D*(2010)+ -> (K*(892)0 -> K+ K-) K+) (gamma-> ^e+ e-)) || (B- -> (D*(2010)- -> (K*(892)0 -> K+ K-) K-) (gamma-> ^e+ e-))",
+        ("(B+ -> (D*(2010)+ -> (K*(892)0 -> K+ K-) K+) (gamma -> ^e+ e-)) || "
+         "(B- -> (D*(2010)- -> (K*(892)0 -> K+ K-) K-) (gamma -> ^e+ e-))"),
         "eminus":
-        "(B+ -> (D*(2010)+ -> (K*(892)0 -> K+ K-) K+) (gamma-> e+ ^e-)) || (B- -> (D*(2010)- -> (K*(892)0 -> K+ K-) K-) (gamma-> e+ ^e-))",
+        ("(B+ -> (D*(2010)+ -> (K*(892)0 -> K+ K-) K+) (gamma -> e+ ^e-)) || "
+         "(B- -> (D*(2010)- -> (K*(892)0 -> K+ K-) K-) (gamma -> e+ ^e-))"),
     }
     branches["HHHGammaEE_hhKs0"] = {
         "B":
-        "(B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) (KS0 -> pi+ pi-)) (gamma-> e+ e-)) || (B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) (KS0 -> pi+ pi-)) (gamma-> e+ e-))",
+        "(B0 -> (D*(2007)0-> (K*(892)0 -> K+ K-) (KS0 -> pi+ pi-)) (gamma -> e+ e-))",
         "Dst":
-        "(B0 -> ^(D*(2007)0 -> (K*(892)0 -> K+ K-) (KS0 -> pi+ pi-)) (gamma-> e+ e-)) || (B0 -> ^(D*(2007)0 -> (K*(892)0 -> K+ K-) (KS0 -> pi+ pi-)) (gamma-> e+ e-))",
+        "(B0 -> ^(D*(2007)0-> (K*(892)0 -> K+ K-) (KS0 -> pi+ pi-)) (gamma -> e+ e-))",
         "Kst":
-        "(B0 -> (D*(2007)0 -> ^(K*(892)0 -> K+ K-) (KS0 -> pi+ pi-)) (gamma-> e+ e-)) || (B0 -> (D*(2007)0 -> ^(K*(892)0 -> K+ K-) (KS0 -> pi+ pi-)) (gamma-> e+ e-))",
+        "(B0 -> (D*(2007)0-> ^(K*(892)0 -> K+ K-) (KS0 -> pi+ pi-)) (gamma -> e+ e-))",
         "Ks0":
-        "(B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) ^(KS0 -> pi+ pi-)) (gamma-> e+ e-)) || (B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) ^(KS0 -> pi+ pi-)) (gamma-> e+ e-))",
+        "(B0 -> (D*(2007)0-> (K*(892)0 -> K+ K-) ^(KS0 -> pi+ pi-)) (gamma -> e+ e-))",
         "Kplus":
-        "(B0 -> (D*(2007)0 -> (K*(892)0 -> ^K+ K-) (KS0 -> pi+ pi-)) (gamma-> e+ e-)) || (B0 -> (D*(2007)0 -> (K*(892)0 -> ^K+ K-) (KS0 -> pi+ pi-)) (gamma-> e+ e-))",
+        "(B0 -> (D*(2007)0-> (K*(892)0 -> ^K+ K-) (KS0 -> pi+ pi-)) (gamma -> e+ e-))",
         "Kminus":
-        "(B0 -> (D*(2007)0 -> (K*(892)0 -> K+ ^K-) (KS0 -> pi+ pi-)) (gamma-> e+ e-)) || (B0 -> (D*(2007)0 -> (K*(892)0 -> K+ ^K-) (KS0 -> pi+ pi-)) (gamma-> e+ e-))",
+        "(B0 -> (D*(2007)0-> (K*(892)0 -> K+ ^K-) (KS0 -> pi+ pi-)) (gamma -> e+ e-))",
         "gamma":
-        "(B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) (KS0 -> pi+ pi-)) ^(gamma-> e+ e-)) || (B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) (KS0 -> pi+ pi-)) ^(gamma-> e+ e-))",
+        "(B0 -> (D*(2007)0-> (K*(892)0 -> K+ K-) (KS0 -> pi+ pi-)) ^(gamma -> e+ e-))",
         "piplus":
-        "(B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) (KS0 -> ^pi+ pi-)) (gamma-> e+ e-)) || (B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) (KS0 -> ^pi+ pi-)) (gamma-> e+ e-))",
+        "(B0 -> (D*(2007)0-> (K*(892)0 -> K+ K-) (KS0 -> ^pi+ pi-)) (gamma -> e+ e-))",
         "piminus":
-        "(B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) (KS0 -> pi+ ^pi-)) (gamma-> e+ e-)) || (B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) (KS0 -> pi+ ^pi-)) (gamma-> e+ e-))",
+        "(B0 -> (D*(2007)0-> (K*(892)0 -> K+ K-) (KS0 -> pi+ ^pi-)) (gamma -> e+ e-))",
         "eplus":
-        "(B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) (KS0 -> pi+ pi-)) (gamma-> ^e+ e-)) || (B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) (KS0 -> pi+ pi-)) (gamma-> ^e+ e-))",
+        "(B0 -> (D*(2007)0-> (K*(892)0 -> K+ K-) (KS0 -> pi+ pi-)) (gamma -> ^e+ e-))",
         "eminus":
-        "(B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) (KS0 -> pi+ pi-)) (gamma-> e+ ^e-)) || (B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) (KS0 -> pi+ pi-)) (gamma-> e+ ^e-))",
+        "(B0 -> (D*(2007)0-> (K*(892)0 -> K+ K-) (KS0 -> pi+ pi-)) (gamma -> e+ ^e-))",
     }
     branches["HHHGammaEE_hhL0"] = {
         "B":
-        "(B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) (Lambda0 -> p+ pi-)) (gamma-> e+ e-)) ||(B~0 -> (D*(2007)~0 -> (K*(892)0 -> K+ K-) (Lambda~0 -> p~- pi+)) (gamma-> e+ e-))",
+        ("(B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) || "
+         "(B~0 -> (D*(2007)~0 -> (K*(892)0 -> K+ K-) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-))"
+         ),
         "Dst":
-        "(B0 -> ^(D*(2007)0 -> (K*(892)0 -> K+ K-) (Lambda0 -> p+ pi-)) (gamma-> e+ e-)) || (B~0 -> ^(D*(2007)~0 -> (K*(892)0 -> K+ K-) (Lambda~0 -> p~- pi+)) (gamma-> e+ e-))",
+        ("(B0 -> ^(D*(2007)0 -> (K*(892)0 -> K+ K-) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) || "
+         "(B~0 -> ^(D*(2007)~0 -> (K*(892)0 -> K+ K-) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-))"
+         ),
         "Kst":
-        "(B0 -> (D*(2007)0 -> ^(K*(892)0 -> K+ K-) (Lambda0 -> p+ pi-)) (gamma-> e+ e-)) || (B~0 -> (D*(2007)~0 -> ^(K*(892)0 -> K+ K-) (Lambda~0 -> p~- pi+)) (gamma-> e+ e-))",
+        ("(B0 -> (D*(2007)0 -> ^(K*(892)0 -> K+ K-) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) || "
+         "(B~0 -> (D*(2007)~0 -> ^(K*(892)0 -> K+ K-) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-))"
+         ),
         "Lambda0":
-        "(B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) ^(Lambda0 -> p+ pi-)) (gamma-> e+ e-)) || (B~0 -> (D*(2007)~0 -> (K*(892)0 -> K+ K-) ^(Lambda~0 -> p~- pi+)) (gamma-> e+ e-))",
+        ("(B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) ^(Lambda0 -> p+ pi-)) (gamma -> e+ e-)) || "
+         "(B~0 -> (D*(2007)~0 -> (K*(892)0 -> K+ K-) ^(Lambda~0 -> p~- pi+)) (gamma -> e+ e-))"
+         ),
         "Kplus":
-        "(B0 -> (D*(2007)0 -> (K*(892)0 -> ^K+ K-) (Lambda0 -> p+ pi-)) (gamma-> e+ e-)) || (B~0 -> (D*(2007)~0 -> (K*(892)0 -> ^K+ K-) (Lambda~0 -> p~- pi+)) (gamma-> e+ e-))",
+        ("(B0 -> (D*(2007)0 -> (K*(892)0 -> ^K+ K-) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) || "
+         "(B~0 -> (D*(2007)~0 -> (K*(892)0 -> ^K+ K-) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-))"
+         ),
         "Kminus":
-        "(B0 -> (D*(2007)0 -> (K*(892)0 -> K+ ^K-) (Lambda0 -> p+ pi-)) (gamma-> e+ e-)) || (B~0 -> (D*(2007)~0 -> (K*(892)0 -> K+ ^K-) (Lambda~0 -> p~- pi+)) (gamma-> e+ e-))",
+        ("(B0 -> (D*(2007)0 -> (K*(892)0 -> K+ ^K-) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) || "
+         "(B~0 -> (D*(2007)~0 -> (K*(892)0 -> K+ ^K-) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-))"
+         ),
         "gamma":
-        "(B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) (Lambda0 -> p+ pi-)) ^(gamma-> e+ e-)) || (B~0 -> (D*(2007)~0 -> (K*(892)0 -> K+ K-) (Lambda~0 -> p~- pi+)) ^(gamma-> e+ e-))",
+        ("(B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) (Lambda0 -> p+ pi-)) ^(gamma -> e+ e-)) || "
+         "(B~0 -> (D*(2007)~0 -> (K*(892)0 -> K+ K-) (Lambda~0 -> p~- pi+)) ^(gamma -> e+ e-))"
+         ),
         "pplus":
-        "(B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) (Lambda0 -> ^p+ pi-)) (gamma-> e+ e-)) || (B~0 -> (D*(2007)~0 -> (K*(892)0 -> K+ K-) (Lambda~0 -> ^p~- pi+)) (gamma-> e+ e-))",
+        ("(B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) (Lambda0 -> ^p+ pi-)) (gamma -> e+ e-)) || "
+         "(B~0 -> (D*(2007)~0 -> (K*(892)0 -> K+ K-) (Lambda~0 -> ^p~- pi+)) (gamma -> e+ e-))"
+         ),
         "piminus":
-        "(B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) (Lambda0 -> p+ ^pi-)) (gamma-> e+ e-)) || (B~0 -> (D*(2007)~0 -> (K*(892)0 -> K+ K-) (Lambda~0 -> p~- ^pi+)) (gamma-> e+ e-))",
+        ("(B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) (Lambda0 -> p+ ^pi-)) (gamma -> e+ e-)) || "
+         "(B~0 -> (D*(2007)~0 -> (K*(892)0 -> K+ K-) (Lambda~0 -> p~- ^pi+)) (gamma -> e+ e-))"
+         ),
         "eplus":
-        "(B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) (Lambda0 -> p+ pi-)) (gamma-> ^e+ e-)) || (B~0 -> (D*(2007)~0 -> (K*(892)0 -> K+ K-) (Lambda~0 -> p~- pi+)) (gamma-> ^e+ e-))",
+        ("(B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) (Lambda0 -> p+ pi-)) (gamma -> ^e+ e-)) || "
+         "(B~0 -> (D*(2007)~0 -> (K*(892)0 -> K+ K-) (Lambda~0 -> p~- pi+)) (gamma -> ^e+ e-))"
+         ),
         "eminus":
-        "(B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) (Lambda0 -> p+ pi-)) (gamma-> e+ ^e-)) || (B~0 -> (D*(2007)~0 -> (K*(892)0 -> K+ K-) (Lambda~0 -> p~- pi+)) (gamma-> e+ ^e-))",
+        ("(B0 -> (D*(2007)0 -> (K*(892)0 -> K+ K-) (Lambda0 -> p+ pi-)) (gamma -> e+ ^e-)) || "
+         "(B~0 -> (D*(2007)~0 -> (K*(892)0 -> K+ K-) (Lambda~0 -> p~- pi+)) (gamma -> e+ ^e-))"
+         ),
+    }
+    branches["HHHGammaEE_hKs0L0"] = {
+        "B":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-))"
+         ),
+        "Dst":
+        ("(B+ -> ^(D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B+ -> ^(D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-)) ||"
+         "(B- -> ^(D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B- -> ^(D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-))"
+         ),
+        "Kst":
+        ("(B+ -> (D*(2010)+ -> ^(K*(892)+ -> K+ (KS0 -> pi+ pi-)) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B+ -> (D*(2010)+ -> ^(K*(892)+ -> K+ (KS0 -> pi+ pi-)) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> ^(K*(892)- -> K- (KS0 -> pi+ pi-)) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> ^(K*(892)- -> K- (KS0 -> pi+ pi-)) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-))"
+         ),
+        "Ks0":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ ^(KS0 -> pi+ pi-)) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ ^(KS0 -> pi+ pi-)) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- ^(KS0 -> pi+ pi-)) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- ^(KS0 -> pi+ pi-)) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-))"
+         ),
+        "Lambda0":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) ^(Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) ^(Lambda~0 -> p~- pi+)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) ^(Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) ^(Lambda~0 -> p~- pi+)) (gamma -> e+ e-))"
+         ),
+        "Kplus":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> ^K+ (KS0 -> pi+ pi-)) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> ^K+ (KS0 -> pi+ pi-)) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> ^K- (KS0 -> pi+ pi-)) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> ^K- (KS0 -> pi+ pi-)) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-))"
+         ),
+        "gamma":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) (Lambda0 -> p+ pi-)) ^(gamma -> e+ e-)) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) (Lambda~0 -> p~- pi+)) ^(gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) (Lambda0 -> p+ pi-)) ^(gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) (Lambda~0 -> p~- pi+)) ^(gamma -> e+ e-))"
+         ),
+        "piplus":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> ^pi+ pi-)) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> ^pi+ pi-)) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> ^pi+ pi-)) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> ^pi+ pi-)) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-))"
+         ),
+        "piminus":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ ^pi-)) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ ^pi-)) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ ^pi-)) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ ^pi-)) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-))"
+         ),
+        "pplus":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) (Lambda0 -> ^p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) (Lambda~0 -> ^p~- pi+)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) (Lambda0 -> ^p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) (Lambda~0 -> ^p~- pi+)) (gamma -> e+ e-))"
+         ),
+        "piminus0":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) (Lambda0 -> p+ ^pi-)) (gamma -> e+ e-)) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) (Lambda~0 -> p~- ^pi+)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) (Lambda0 -> p+ ^pi-)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) (Lambda~0 -> p~- ^pi+)) (gamma -> e+ e-))"
+         ),
+        "eplus":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) (Lambda0 -> p+ pi-)) (gamma -> ^e+ e-)) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) (Lambda~0 -> p~- pi+)) (gamma -> ^e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) (Lambda0 -> p+ pi-)) (gamma -> ^e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) (Lambda~0 -> p~- pi+)) (gamma -> ^e+ e-))"
+         ),
+        "eminus":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) (Lambda0 -> p+ pi-)) (gamma -> e+ ^e-)) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) (Lambda~0 -> p~- pi+)) (gamma -> e+ ^e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) (Lambda0 -> p+ pi-)) (gamma -> e+ ^e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) (Lambda~0 -> p~- pi+)) (gamma -> e+ ^e-))"
+         ),
+    }
+    branches["HHHGammaEE_hL0L0"] = {
+        "B":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda0 -> p+ pi-)) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda0 -> p+ pi-)) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-)) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda~0 -> p~- pi+)) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda~0 -> p~- pi+)) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda0 -> p+ pi-)) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda0 -> p+ pi-)) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda~0 -> p~- pi+)) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda~0 -> p~- pi+)) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-))"
+         ),
+        "Dst":
+        ("(B+ -> ^(D*(2010)+ -> (K*(892)+ -> K+ (Lambda0 -> p+ pi-)) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B+ -> ^(D*(2010)+ -> (K*(892)+ -> K+ (Lambda0 -> p+ pi-)) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-)) ||"
+         "(B+ -> ^(D*(2010)+ -> (K*(892)+ -> K+ (Lambda~0 -> p~- pi+)) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B+ -> ^(D*(2010)+ -> (K*(892)+ -> K+ (Lambda~0 -> p~- pi+)) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-)) ||"
+         "(B- -> ^(D*(2010)- -> (K*(892)- -> K- (Lambda0 -> p+ pi-)) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B- -> ^(D*(2010)- -> (K*(892)- -> K- (Lambda0 -> p+ pi-)) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-)) ||"
+         "(B- -> ^(D*(2010)- -> (K*(892)- -> K- (Lambda~0 -> p~- pi+)) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B- -> ^(D*(2010)- -> (K*(892)- -> K- (Lambda~0 -> p~- pi+)) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-))"
+         ),
+        "Kst":
+        ("(B+ -> (D*(2010)+ -> ^(K*(892)+ -> K+ (Lambda0 -> p+ pi-)) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B+ -> (D*(2010)+ -> ^(K*(892)+ -> K+ (Lambda0 -> p+ pi-)) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-)) ||"
+         "(B+ -> (D*(2010)+ -> ^(K*(892)+ -> K+ (Lambda~0 -> p~- pi+)) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B+ -> (D*(2010)+ -> ^(K*(892)+ -> K+ (Lambda~0 -> p~- pi+)) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> ^(K*(892)- -> K- (Lambda0 -> p+ pi-)) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> ^(K*(892)- -> K- (Lambda0 -> p+ pi-)) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> ^(K*(892)- -> K- (Lambda~0 -> p~- pi+)) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> ^(K*(892)- -> K- (Lambda~0 -> p~- pi+)) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-))"
+         ),
+        "Lambda0":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ ^(Lambda0 -> p+ pi-)) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ ^(Lambda0 -> p+ pi-)) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-)) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ ^(Lambda~0 -> p~- pi+)) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ ^(Lambda~0 -> p~- pi+)) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- ^(Lambda0 -> p+ pi-)) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- ^(Lambda0 -> p+ pi-)) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- ^(Lambda~0 -> p~- pi+)) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- ^(Lambda~0 -> p~- pi+)) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-))"
+         ),
+        "Lambda0_0":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda0 -> p+ pi-)) ^(Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda0 -> p+ pi-)) ^(Lambda~0 -> p~- pi+)) (gamma -> e+ e-)) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda~0 -> p~- pi+)) ^(Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda~0 -> p~- pi+)) ^(Lambda~0 -> p~- pi+)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda0 -> p+ pi-)) ^(Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda0 -> p+ pi-)) ^(Lambda~0 -> p~- pi+)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda~0 -> p~- pi+)) ^(Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda~0 -> p~- pi+)) ^(Lambda~0 -> p~- pi+)) (gamma -> e+ e-))"
+         ),
+        "Kplus":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> ^K+ (Lambda0 -> p+ pi-)) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> ^K+ (Lambda0 -> p+ pi-)) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-)) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> ^K+ (Lambda~0 -> p~- pi+)) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> ^K+ (Lambda~0 -> p~- pi+)) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> ^K- (Lambda0 -> p+ pi-)) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> ^K- (Lambda0 -> p+ pi-)) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> ^K- (Lambda~0 -> p~- pi+)) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> ^K- (Lambda~0 -> p~- pi+)) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-))"
+         ),
+        "gamma":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda0 -> p+ pi-)) (Lambda0 -> p+ pi-)) ^(gamma -> e+ e-)) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda0 -> p+ pi-)) (Lambda~0 -> p~- pi+)) ^(gamma -> e+ e-)) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda~0 -> p~- pi+)) (Lambda0 -> p+ pi-)) ^(gamma -> e+ e-)) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda~0 -> p~- pi+)) (Lambda~0 -> p~- pi+)) ^(gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda0 -> p+ pi-)) (Lambda0 -> p+ pi-)) ^(gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda0 -> p+ pi-)) (Lambda~0 -> p~- pi+)) ^(gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda~0 -> p~- pi+)) (Lambda0 -> p+ pi-)) ^(gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda~0 -> p~- pi+)) (Lambda~0 -> p~- pi+)) ^(gamma -> e+ e-))"
+         ),
+        "pplus":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda0 -> ^p+ pi-)) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda0 -> ^p+ pi-)) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-)) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda~0 -> ^p~- pi+)) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda~0 -> ^p~- pi+)) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda0 -> ^p+ pi-)) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda0 -> ^p+ pi-)) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda~0 -> ^p~- pi+)) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda~0 -> ^p~- pi+)) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-))"
+         ),
+        "piminus":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda0 -> p+ ^pi-)) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda0 -> p+ ^pi-)) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-)) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda~0 -> p~- ^pi+)) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda~0 -> p~- ^pi+)) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda0 -> p+ ^pi-)) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda0 -> p+ ^pi-)) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda~0 -> p~- ^pi+)) (Lambda0 -> p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda~0 -> p~- ^pi+)) (Lambda~0 -> p~- pi+)) (gamma -> e+ e-))"
+         ),
+        "pplus0":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda0 -> p+ pi-)) (Lambda0 -> ^p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda0 -> p+ pi-)) (Lambda~0 -> ^p~- pi+)) (gamma -> e+ e-)) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda~0 -> p~- pi+)) (Lambda0 -> ^p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda~0 -> p~- pi+)) (Lambda~0 -> ^p~- pi+)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda0 -> p+ pi-)) (Lambda0 -> ^p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda0 -> p+ pi-)) (Lambda~0 -> ^p~- pi+)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda~0 -> p~- pi+)) (Lambda0 -> ^p+ pi-)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda~0 -> p~- pi+)) (Lambda~0 -> ^p~- pi+)) (gamma -> e+ e-))"
+         ),
+        "piminus0":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda0 -> p+ pi-)) (Lambda0 -> p+ ^pi-)) (gamma -> e+ e-)) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda0 -> p+ pi-)) (Lambda~0 -> p~- ^pi+)) (gamma -> e+ e-)) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda~0 -> p~- pi+)) (Lambda0 -> p+ ^pi-)) (gamma -> e+ e-)) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda~0 -> p~- pi+)) (Lambda~0 -> p~- ^pi+)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda0 -> p+ pi-)) (Lambda0 -> p+ ^pi-)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda0 -> p+ pi-)) (Lambda~0 -> p~- ^pi+)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda~0 -> p~- pi+)) (Lambda0 -> p+ ^pi-)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda~0 -> p~- pi+)) (Lambda~0 -> p~- ^pi+)) (gamma -> e+ e-))"
+         ),
+        "eplus":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda0 -> p+ pi-)) (Lambda0 -> p+ pi-)) (gamma -> ^e+ e-)) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda0 -> p+ pi-)) (Lambda~0 -> p~- pi+)) (gamma -> ^e+ e-)) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda~0 -> p~- pi+)) (Lambda0 -> p+ pi-)) (gamma -> ^e+ e-)) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda~0 -> p~- pi+)) (Lambda~0 -> p~- pi+)) (gamma -> ^e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda0 -> p+ pi-)) (Lambda0 -> p+ pi-)) (gamma -> ^e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda0 -> p+ pi-)) (Lambda~0 -> p~- pi+)) (gamma -> ^e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda~0 -> p~- pi+)) (Lambda0 -> p+ pi-)) (gamma -> ^e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda~0 -> p~- pi+)) (Lambda~0 -> p~- pi+)) (gamma -> ^e+ e-))"
+         ),
+        "eminus":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda0 -> p+ pi-)) (Lambda0 -> p+ pi-)) (gamma -> e+ ^e-)) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda0 -> p+ pi-)) (Lambda~0 -> p~- pi+)) (gamma -> e+ ^e-)) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda~0 -> p~- pi+)) (Lambda0 -> p+ pi-)) (gamma -> e+ ^e-)) ||"
+         "(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (Lambda~0 -> p~- pi+)) (Lambda~0 -> p~- pi+)) (gamma -> e+ ^e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda0 -> p+ pi-)) (Lambda0 -> p+ pi-)) (gamma -> e+ ^e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda0 -> p+ pi-)) (Lambda~0 -> p~- pi+)) (gamma -> e+ ^e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda~0 -> p~- pi+)) (Lambda0 -> p+ pi-)) (gamma -> e+ ^e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (Lambda~0 -> p~- pi+)) (Lambda~0 -> p~- pi+)) (gamma -> e+ ^e-))"
+         ),
+    }
+    branches["HHHGammaEE_hKs0Ks0"] = {
+        "B":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) (KS0 -> pi+ pi-)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) (KS0 -> pi+ pi-)) (gamma -> e+ e-))"
+         ),
+        "Dst":
+        ("(B+ -> ^(D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) (KS0 -> pi+ pi-)) (gamma -> e+ e-)) ||"
+         "(B- -> ^(D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) (KS0 -> pi+ pi-)) (gamma -> e+ e-))"
+         ),
+        "Kst":
+        ("(B+ -> (D*(2010)+ -> ^(K*(892)+ -> K+ (KS0 -> pi+ pi-)) (KS0 -> pi+ pi-)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> ^(K*(892)- -> K- (KS0 -> pi+ pi-)) (KS0 -> pi+ pi-)) (gamma -> e+ e-))"
+         ),
+        "Ks0":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ ^(KS0 -> pi+ pi-)) (KS0 -> pi+ pi-)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- ^(KS0 -> pi+ pi-)) (KS0 -> pi+ pi-)) (gamma -> e+ e-))"
+         ),
+        "Ks0_0":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) ^(KS0 -> pi+ pi-)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) ^(KS0 -> pi+ pi-)) (gamma -> e+ e-))"
+         ),
+        "Kplus":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> ^K+ (KS0 -> pi+ pi-)) (KS0 -> pi+ pi-)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> ^K- (KS0 -> pi+ pi-)) (KS0 -> pi+ pi-)) (gamma -> e+ e-))"
+         ),
+        "gamma":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) (KS0 -> pi+ pi-)) ^(gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) (KS0 -> pi+ pi-)) ^(gamma -> e+ e-))"
+         ),
+        "piplus":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> ^pi+ pi-)) (KS0 -> pi+ pi-)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> ^pi+ pi-)) (KS0 -> pi+ pi-)) (gamma -> e+ e-))"
+         ),
+        "piminus":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ ^pi-)) (KS0 -> pi+ pi-)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ ^pi-)) (KS0 -> pi+ pi-)) (gamma -> e+ e-))"
+         ),
+        "piplus0":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) (KS0 -> ^pi+ pi-)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) (KS0 -> ^pi+ pi-)) (gamma -> e+ e-))"
+         ),
+        "piminus0":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) (KS0 -> pi+ ^pi-)) (gamma -> e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) (KS0 -> pi+ ^pi-)) (gamma -> e+ e-))"
+         ),
+        "eplus":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) (KS0 -> pi+ pi-)) (gamma -> ^e+ e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) (KS0 -> pi+ pi-)) (gamma -> ^e+ e-))"
+         ),
+        "eminus":
+        ("(B+ -> (D*(2010)+ -> (K*(892)+ -> K+ (KS0 -> pi+ pi-)) (KS0 -> pi+ pi-)) (gamma -> e+ ^e-)) ||"
+         "(B- -> (D*(2010)- -> (K*(892)- -> K- (KS0 -> pi+ pi-)) (KS0 -> pi+ pi-)) (gamma -> e+ ^e-))"
+         ),
     }
     #Branches for ExtraHadron
     branches["ExtraHadron"] = {"K": "(K+) || (K-)"}
