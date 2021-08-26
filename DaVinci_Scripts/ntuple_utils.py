@@ -5,8 +5,13 @@ from PhysSelPython.Selections import SelectionSequence, CombineSelection
 from DecayTreeTuple import DecayTreeTupleTruthUtils
 from DaVinci_Scripts import descriptors, dtt_inputs
 
-#List of extra LoKi variables to add
-LoKi_variables = {"MIPCHI2DV": "MIPCHI2DV(PRIMARY)"}
+#TupleTools used with default configuration
+default_tools = [
+    'TupleToolKinematic',
+    'TupleToolPid',
+    'TupleToolANNPID',
+    'TupleToolEventInfo',
+]
 
 #MCMatch tools and configurations
 relations = [
@@ -53,7 +58,7 @@ def get_extra_combined_ntuples(linename, hadron_comb):
             DecayDescriptors=descriptors.get_combo_decaydescriptor(
                 linename, hadron_comb, extrasel),
             CombinationCut=("APT > 0 * GeV"),  #Dummy cut that always holds
-            MotherCut=("BPVDIRA() < 2"),  #Dummy cut that always holds
+            MotherCut=("PT > 0 * GeV"),  #Dummy cut that always holds
         )
         #Make the sequence
         extra_seq = SelectionSequence(
@@ -64,6 +69,7 @@ def get_extra_combined_ntuples(linename, hadron_comb):
             Inputs=[extra_seq.outputLocation()],
             Decay=descriptors.get_full_decaydescriptor(
                 "{0}_{1}_{2}_Combo".format(linename, hadron_comb, extrasel)),
+            ToolList=default_tools.copy(),
         )
         #Tupletools
         #MC tools
@@ -71,10 +77,12 @@ def get_extra_combined_ntuples(linename, hadron_comb):
         DecayTreeTupleTruthUtils.makeTruth(
             dtt, relations, mc_tools, stream="/Event/HLT2")
         #Other tools
-        lokitool = dtt.addTupleTool(
-            "LoKi::Hybrid::TupleTool/{0}_{1}_{2}_Combo".format(
-                linename, hadron_comb, extrasel))
-        lokitool.Variables = LoKi_variables
+        geotool = dtt.addTupleTool("TupleToolGeometry")
+        geotool.FillMultiPV = True
+        geotool.RootInTES = "/Event/HLT2"
+        geotool.Verbose = True
+        primariestool = dtt.addTupleTool("TupleToolPrimaries")
+        primariestool.RootInTES = "/Event/HLT2"
         #Return dictionary and the sequence
         seq_dict["{0}_{1}_{2}_Combo".format(linename, hadron_comb,
                                             extrasel)] = extra_seq.sequence()
@@ -93,6 +101,7 @@ def get_extra_ntuples(linename):
             "{0}_{1}Tuple".format(linename, extrasel),
             Inputs=dtt_inputs.get_extra_inputs(linename, extrasel),
             Decay=descriptors.get_full_decaydescriptor(extrasel),
+            ToolList=default_tools.copy(),
         )
         #Branches
         extra_ntuples["{0}_{1}".format(linename, extrasel)].addBranches(
@@ -107,10 +116,14 @@ def get_extra_ntuples(linename):
             mc_tools,
             stream="/Event/HLT2")
         #Other tools
-        lokitool = extra_ntuples["{0}_{1}".format(
-            linename, extrasel)].addTupleTool(
-                "LoKi::Hybrid::TupleTool/{0}_{1}".format(linename, extrasel))
-        lokitool.Variables = LoKi_variables
+        geotool = extra_ntuples["{0}_{1}".format(
+            linename, extrasel)].addTupleTool("TupleToolGeometry")
+        geotool.FillMultiPV = True
+        geotool.RootInTES = "/Event/HLT2"
+        geotool.Verbose = True
+        primariestool = extra_ntuples["{0}_{1}".format(
+            linename, extrasel)].addTupleTool("TupleToolPrimaries")
+        primariestool.RootInTES = "/Event/HLT2"
     return extra_ntuples
 
 
@@ -139,6 +152,7 @@ def get_ntuples():
                                   ],
                                   Decay=descriptors.get_full_decaydescriptor(
                                       linename[0] + "_" + hadron_comb),
+                                  ToolList=default_tools.copy(),
                               )
             #Branches
             radiative_ntuples[linename[0] + "_" + hadron_comb].addBranches(
@@ -153,11 +167,16 @@ def get_ntuples():
                 mc_tools,
                 stream="/Event/HLT2")
             #Other tools
-            lokitool = radiative_ntuples[
-                linename[0] + "_" + hadron_comb].addTupleTool(
-                    "LoKi::Hybrid::TupleTool/{0}_{1}".format(
-                        linename[0], hadron_comb))
-            lokitool.Variables = LoKi_variables
+            geotool = radiative_ntuples[linename[0] + "_" +
+                                        hadron_comb].addTupleTool(
+                                            "TupleToolGeometry")
+            geotool.FillMultiPV = True
+            geotool.RootInTES = "/Event/HLT2"
+            geotool.Verbose = True
+            primariestool = radiative_ntuples[linename[0] + "_" +
+                                              hadron_comb].addTupleTool(
+                                                  "TupleToolPrimaries")
+            primariestool.RootInTES = "/Event/HLT2"
             #Add combination of extra selections with HLT lines
             extra_dtts, extra_seqs = get_extra_combined_ntuples(
                 linename[0], hadron_comb)
