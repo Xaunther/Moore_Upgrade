@@ -58,8 +58,8 @@ def read_hlt2():
     if inganga:
         tck_file = "{0}_Moore_tck.json".format(linename)
     else:
-        tck_file = 'output/{0}/{1}_Moore.root'.format(os.environ["DECAY"],
-                                                      linename)
+        tck_file = 'output/{0}/{1}_Moore_tck.json'.format(
+            os.environ["DECAY"], linename)
     with open(tck_file) as f:
         tck = json.load(f)
         HltANNSvc(PackedObjectLocations={str(k): v for k, v in tck.items()})
