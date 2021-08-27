@@ -8,124 +8,29 @@
 * granted to it by virtue of its status as an Intergovernmental Organization  *
 * or submit itself to any jurisdiction.                                       *
 \*****************************************************************************/
+// $Id: TupleToolGeometry.cpp,v 1.17 2010-05-12 20:01:40 jpalac Exp $
+// Include files
 
-#include "DecayTreeTupleBase/TupleToolBase.h"
+// local
+#include "TupleToolGeometry.h"
 
-#include "Kernel/GetIDVAlgorithm.h"
 #include "Kernel/IDVAlgorithm.h"
-#include "Kernel/IDistanceCalculator.h"
 #include "Kernel/IPVReFitter.h"
-#include "Kernel/IParticleTupleTool.h"
-
-#include "Event/Particle.h"
+#include <Kernel/GetIDVAlgorithm.h>
+#include <Kernel/IDistanceCalculator.h>
 
 #include "GaudiAlg/Tuple.h"
 #include "GaudiAlg/TupleObj.h"
 
-/**
- * \brief Fill geometry related information for DecayTreeTuple
- *
- * - head_MINIP : minimum impact parameter on any PV
- * - head_MINIPCHI2 : minimum chi2 IP on all PVs
- * - head_ENDVERTEX_[X|Y|Z] : decay vertex position for composite particles
- * - head_ENDVERTEX_[X|Y|Z]ERR : decay vertex position error estimate for composite particles
- * - head_ENDVERTEX_CHI2 : decay vertex chi2
- * - head_ENDVERTEX_NDOF : decay vertex nDoF
- * - head_OWNPV_[X|Y|Z] : related primary vertex position
- * - head_OWNPV_[X|Y|Z]ERR : related primary vertex position error estimate for composite particles
- * - head_OWNPV_CHI2 : related primary vertex chi2
- * - head_OWNPV_NDOF : related primary vertex nDoF
- * - head_IP_OWNPV : impact parameter with respect to the PhysDesktop::relatedVertex() considered particle
- * - head_IPCHI2_OWNPV : impact parameter chi2 with respect to the relatedVertex() considered particle
- * - head_FD_OWNPV : flight distance of composite particle wrt. the relatedVertex() considered particle
- * - head_FDCHI2_OWNPV : flight distance significance in units of chi2 wrt. the relatedVertex() considered particle
- * - head_DIRA_OWNPV : direction angle wrt. the PhysDesktop::relatedVertex() considered particle
- *
- *  If Verbose is true:
- *
- * - head_TOPPV_[X|Y|Z] : PhysDesktop::relatedVertex() of the top of decay chain position
- * - head_TOPPV_[X|Y|Z]ERR : PhysDesktop::relatedVertex() of the top of decay chain position error estimate
- * - head_TOPPV_CHI2 : PhysDesktop::relatedVertex() of the top of decay chain chi2
- * - head_TOPPV_NDOF : PhysDesktop::relatedVertex() of the top of decay chain nDoF
- * - head_IP_TOPPV : impact parameter with respect to the PhysDesktop::relatedVertex() of the top of decay chain
- * - head_IPCHI2_TOPPV : impact parameter chi2 with respect to the relatedVertex() of the top of decay chain
- * - head_FD_TOPPV : flight distance of composite particle wrt. the relatedVertex() of the top of decay chain
- * - head_FDCHI2_TOPPV : flight distance significance in units of chi2 wrt.
- *      the PhysDesktop::relatedVertex() of the top of decay chain
- * - head_DIRA_TOPPV : direction angle wrt. the relatedVertex() of the top of decay chain
- *
- * - head_ORIVX_[X|Y|Z] : ancestor's related primary vertex position (when applicable)
- * - head_ORIVX_[X|Y|Z]ERR : ancestor's related primary vertex position error estimate (when applicable)
- * - head_ORIVX_CHI2 : ancestor's related primary vertex chi2 (when applicable)
- * - head_ORIVX_NDOF : ancestor's related primary vertex nDoF (when applicable)
- * - head_IP_ORIVX : impact parameter with respect to the ancestor's vertex (when applicable)
- * - head_IPCHI2_ORIVX : impact parameter chi2 with respect to the ancestor's vertex (when applicable)
- * - head_FD_ORIVX : flight distance of composite particle wrt. the ancestor's vertex (when applicable)
- * - head_FDCHI2_ORIVX : flight distance significance in units of chi2 wrt. ancestor's vertex (when applicable)
- * - head_DIRA_ORIVX : direction angle wrt. ancestor's vertex (when applicable)
- *
- * Finally some arrays with FillMultiPV
- * - head_AllIP : IP wrt to all PVs
- * - head_AllIPchi2 : IPchi2 wrt to all Vs
- * - head_AllDIRA : DIRA wrt to all PVs
- *
- * \sa DecayTreeTuple
- *
- *  @author Jeremie Borel
- *  @date   2007-11-07
- */
-class TupleToolGeometry : public TupleToolBase, virtual public IParticleTupleTool {
-
-public:
-  /// Standard constructor
-  TupleToolGeometry( const std::string& type, const std::string& name, const IInterface* parent );
-
-  StatusCode initialize() override;
-
-  StatusCode fill( const LHCb::Particle*, const LHCb::Particle*, const std::string&, Tuples::Tuple&,
-                   IGeometryInfo const& ) override;
-
-private:
-  /// fill end vertex stuff
-  StatusCode fillVertexFull( const LHCb::VertexBase* vtx, const LHCb::Particle* P, const std::string& head,
-                             const std::string& vtx_name, Tuples::Tuple&, IGeometryInfo const& geometry ) const;
-
-  /// origin vertex
-  const LHCb::VertexBase* originVertex( const LHCb::Particle* top, const LHCb::Particle* P ) const;
-  /// fill related pV stuff
-  StatusCode fillBPV( const LHCb::VertexBase* primVtx, const LHCb::Particle* P, const std::string& prefix,
-                      Tuples::Tuple& tuple, IGeometryInfo const& geometry, const std::string& trail = "" ) const;
-
-  /// fill min IP
-  StatusCode fillMinIP( const LHCb::Particle* P, const std::string& prefix, Tuples::Tuple& tuple,
-                        IGeometryInfo const& geometry ) const;
-
-  /// fill end vertex stuff
-  StatusCode fillVertex( const LHCb::VertexBase* vtx, const std::string& vtx_name, Tuples::Tuple& ) const;
-
-  /// fill flight
-  StatusCode fillFlight( const LHCb::VertexBase* oriVtx, const LHCb::Particle* P, const std::string& prefix,
-                         Tuples::Tuple& tuple, const std::string& trail = "" ) const;
-
-  /// Compute DIRA
-  double dira( const LHCb::VertexBase* oriVtx, const LHCb::Particle* P ) const;
-
-private:
-  const IDistanceCalculator* m_dist = nullptr;
-
-  bool m_refitPVs;
-  bool m_fillMultiPV; ///< fill multiPV variables
-
-  // bool m_fillMother;
-
-  std::string   m_pvLocation; ///<  PV location to be used. If empty, take context-dependent default
-  IDVAlgorithm* m_dva = nullptr;
-
-  IPVReFitter* m_pvReFitter = nullptr;
-  std::string  m_pvReFitterName;
-};
+#include "Event/Particle.h"
 
 using namespace LHCb;
+
+//-----------------------------------------------------------------------------
+// Implementation file for class : GeometryTupleTool
+//
+// 2007-11-07 : Jeremie Borel
+//-----------------------------------------------------------------------------
 
 // Declaration of the Tool Factory
 // actually acts as a using namespace TupleTool
@@ -141,7 +46,7 @@ TupleToolGeometry::TupleToolGeometry( const std::string& type, const std::string
   declareProperty( "PVReFitter", m_pvReFitterName = "LoKi::PVReFitter:PUBLIC",
                    "PV refitter algorithm name (':PUBLIC' at end of algo name makes sure a public instance is used)" );
   declareProperty( "FillMultiPV", m_fillMultiPV = false, "Fill Multi PV arrays" );
-  declareProperty( "InputLocation", m_pvLocation = LHCb::RecVertexLocation::Primary, "PV location to be used." );
+  declareProperty( "InputLocation", m_pvLocation = LHCb::RecVertexLocation::Primary, "PV location to be used" );
 
   // declareProperty("FillMother",m_fillMother=true,
   //                "Turn false if the mother is expected to be NULL, will not fill mother PV info");
@@ -172,7 +77,7 @@ StatusCode TupleToolGeometry::initialize() {
 
 //=============================================================================
 StatusCode TupleToolGeometry::fill( const Particle* mother, const Particle* P, const std::string& head,
-                                    Tuples::Tuple& tuple, IGeometryInfo const& geometry ) {
+                                    Tuples::Tuple& tuple ) {
   const auto prefix = fullName( head );
 
   StatusCode sc = StatusCode::SUCCESS;
@@ -186,7 +91,7 @@ StatusCode TupleToolGeometry::fill( const Particle* mother, const Particle* P, c
 
   // fill min IP
   if ( isVerbose() || m_fillMultiPV ) {
-    sc = fillMinIP( P, prefix, tuple, geometry );
+    sc = fillMinIP( P, prefix, tuple );
     if ( sc.isFailure() ) { return Warning( "Could not fill minimum IP", StatusCode::FAILURE, 1 ); }
   }
   //=========================================================================
@@ -196,7 +101,7 @@ StatusCode TupleToolGeometry::fill( const Particle* mother, const Particle* P, c
     if ( msgLevel( MSG::VERBOSE ) ) verbose() << "No need to look for endVertex of " << prefix << endmsg;
   } else {
     //=========================================================================
-    if ( msgLevel( MSG::VERBOSE ) && P->endVertex() ) { // https://its.cern.ch/jira/browse/LHCBPS-598
+    if ( msgLevel( MSG::VERBOSE ) && P->endVertex() ) { // https://savannah.cern.ch/bugs/?92524
       verbose() << "Before cast : " << P->endVertex() << endmsg;
       verbose() << "Container " << P->endVertex()->parent()->registry()->identifier() << " key "
                 << P->endVertex()->key() << endmsg;
@@ -210,7 +115,7 @@ StatusCode TupleToolGeometry::fill( const Particle* mother, const Particle* P, c
       return StatusCode::FAILURE;
     }
 
-    if ( msgLevel( MSG::VERBOSE ) ) { // https://its.cern.ch/jira/browse/LHCBPS-598
+    if ( msgLevel( MSG::VERBOSE ) ) { // https://savannah.cern.ch/bugs/?92524
       verbose() << "End Vertex : " << *evtx << endmsg;
       verbose() << "Container " << evtx->parent()->registry()->identifier() << " key " << evtx->key() << endmsg;
     }
@@ -225,18 +130,18 @@ StatusCode TupleToolGeometry::fill( const Particle* mother, const Particle* P, c
   // fill IP for Particles's Own BPV.. if it isn't the mother!
   //=========================================================================
   if ( true ) {
-    aPV = m_dva->bestVertex( P, geometry );
+    aPV = m_dva->bestVertex( P );
     if ( aPV && msgLevel( MSG::VERBOSE ) ) verbose() << "Got best PV of particle : " << *aPV << endmsg;
-    sc = fillVertexFull( aPV, P, prefix, "_OWNPV", tuple, geometry );
+    sc = fillVertexFull( aPV, P, prefix, "_OWNPV", tuple );
     if ( sc.isFailure() ) { return Warning( "Could not fill best PV", sc, 1 ); }
   }
   //=========================================================================
   // fill IP for head of chain's own BPV
   //=========================================================================
   if ( mother && isVerbose() ) {
-    aPV = m_dva->bestVertex( mother, geometry );
+    aPV = m_dva->bestVertex( mother );
     if ( aPV && msgLevel( MSG::VERBOSE ) ) verbose() << "Got best PV of mother : " << *aPV << endmsg;
-    sc = fillVertexFull( aPV, P, prefix, "_TOPPV", tuple, geometry );
+    sc = fillVertexFull( aPV, P, prefix, "_TOPPV", tuple );
     if ( sc.isFailure() ) { return Warning( "Could not fill TOP PV", sc, 1 ); }
   }
   //=========================================================================
@@ -246,7 +151,7 @@ StatusCode TupleToolGeometry::fill( const Particle* mother, const Particle* P, c
     aPV = originVertex( mother, P );
     if ( aPV && msgLevel( MSG::VERBOSE ) ) verbose() << "Got originVertex of mother : " << *aPV << endmsg;
     if ( isVerbose() ) {
-      sc = fillVertexFull( aPV, P, prefix, "_ORIVX", tuple, geometry );
+      sc = fillVertexFull( aPV, P, prefix, "_ORIVX", tuple );
       if ( sc.isFailure() ) { return Warning( "Could not fill VertexFull " + prefix, sc, 1 ); }
     } else {
       sc = fillVertex( aPV, prefix + "_ORIVX", tuple );
@@ -267,11 +172,11 @@ StatusCode TupleToolGeometry::fill( const Particle* mother, const Particle* P, c
 //=========================================================================
 StatusCode TupleToolGeometry::fillVertexFull( const LHCb::VertexBase* vtx, const LHCb::Particle* P,
                                               const std::string& prefix, const std::string& vtx_name,
-                                              Tuples::Tuple& tuple, IGeometryInfo const& geometry ) const {
+                                              Tuples::Tuple& tuple ) const {
   if ( !vtx ) ++counter( "Can't retrieve the " + vtx_name + " vertex for " + prefix );
   auto sc = fillVertex( vtx, prefix + vtx_name, tuple );
   if ( sc.isFailure() ) { return Warning( "Could not fill Endvertex " + prefix, sc, 1 ); }
-  sc = fillBPV( vtx, P, prefix, tuple, geometry, vtx_name );
+  sc = fillBPV( vtx, P, prefix, tuple, vtx_name );
   if ( sc.isFailure() ) { return Warning( "Could not fillBPV " + prefix, sc, 1 ); }
   if ( !P->isBasicParticle() ) {
     sc = fillFlight( vtx, P, prefix, tuple, vtx_name );
@@ -284,8 +189,7 @@ StatusCode TupleToolGeometry::fillVertexFull( const LHCb::VertexBase* vtx, const
 //  Fill PV for related PV
 //=========================================================================
 StatusCode TupleToolGeometry::fillBPV( const VertexBase* primVtx, const Particle* P, const std::string& prefix,
-                                       Tuples::Tuple& tuple, IGeometryInfo const& geometry,
-                                       const std::string& trail ) const {
+                                       Tuples::Tuple& tuple, const std::string& trail ) const {
   bool test = true;
 
   double ip{-999}, chi2{-999};
@@ -294,7 +198,7 @@ StatusCode TupleToolGeometry::fillBPV( const VertexBase* primVtx, const Particle
     ++counter( "No BPV for " + prefix );
   } else {
     auto distance_ok = true;
-    distance_ok &= m_dist->distance( P, primVtx, ip, chi2, geometry );
+    distance_ok &= m_dist->distance( P, primVtx, ip, chi2 );
     if ( !distance_ok ) {
       Warning( "Could not compute distance for " + prefix ).ignore();
       ip = chi2 = -1;
@@ -310,8 +214,7 @@ StatusCode TupleToolGeometry::fillBPV( const VertexBase* primVtx, const Particle
 //=========================================================================
 //  Fill PV for all PV
 //=========================================================================
-StatusCode TupleToolGeometry::fillMinIP( const Particle* P, const std::string& prefix, Tuples::Tuple& tuple,
-                                         IGeometryInfo const& geometry ) const {
+StatusCode TupleToolGeometry::fillMinIP( const Particle* P, const std::string& prefix, Tuples::Tuple& tuple ) const {
   bool test = true;
   // minimum IP
   double ipmin   = -1;
@@ -333,7 +236,7 @@ StatusCode TupleToolGeometry::fillMinIP( const Particle* P, const std::string& p
       RecVertex newPV( **pv.base() );
       if ( m_refitPVs ) {
 
-        StatusCode scfit = m_pvReFitter->remove( P, &newPV, geometry );
+        StatusCode scfit = m_pvReFitter->remove( P, &newPV );
         if ( !scfit ) {
           Warning( "ReFitter fails!", StatusCode::SUCCESS, 10 ).ignore();
           continue;
@@ -341,15 +244,13 @@ StatusCode TupleToolGeometry::fillMinIP( const Particle* P, const std::string& p
       }
 
       double ip{0}, chi2{0};
+      // StatusCode test2 = m_dist->distance ( P, *pv, ip, chi2 );
 
       auto       newPVPtr = (LHCb::VertexBase*)&newPV;
-      const auto test2    = m_dist->distance( P, newPVPtr, ip, chi2, geometry );
+      const auto test2    = m_dist->distance( P, newPVPtr, ip, chi2 );
       ips.push_back( ip );
       ipchi2s.push_back( chi2 );
-      if ( P->endVertex() )
-        diras.push_back( dira( newPVPtr, P ) );
-      else
-        diras.push_back( -999. );
+      if ( P->endVertex() ) { diras.push_back( dira( newPVPtr, P ) ); }
       if ( test2 && isVerbose() ) {
         if ( ip < ipmin || ipmin < 0. ) {
           ipminnextbest = ipmin;
@@ -380,10 +281,9 @@ StatusCode TupleToolGeometry::fillMinIP( const Particle* P, const std::string& p
     test &= tuple->column( prefix + "_MINIPCHI2NEXTBEST", minchi2nextbest );
   }
   if ( m_fillMultiPV ) {
-    if ( msgLevel( MSG::VERBOSE ) ) verbose() << "Flling AllIP with " << ips.size() << " PVS" << endmsg;
     test &= tuple->farray( prefix + "_AllIP", ips, "nPV", m_maxPV );
     test &= tuple->farray( prefix + "_AllIPchi2", ipchi2s, "nPV", m_maxPV );
-    test &= tuple->farray( prefix + "_AllDIRA", diras, "nPV", m_maxPV );
+    if ( !diras.empty() ) test &= tuple->farray( prefix + "_AllDIRA", diras, "nPV", m_maxPV );
     // --------------------------------------------------
   }
 
@@ -467,7 +367,7 @@ const VertexBase* TupleToolGeometry::originVertex( const Particle* top, const Pa
   const auto& dau = top->daughters();
   if ( dau.empty() ) return nullptr;
 
-  for ( const auto& d : dau ) {
+  for ( const auto d : dau ) {
     if ( P == d ) { // I found the daughter
       if ( msgLevel( MSG::VERBOSE ) ) verbose() << "It's a daughter, retrning mother's endvertex : " << endmsg;
       return top->endVertex();
@@ -475,7 +375,7 @@ const VertexBase* TupleToolGeometry::originVertex( const Particle* top, const Pa
   }
 
   // vertex not yet found, get deeper in the decay:
-  for ( const auto& d : dau ) {
+  for ( const auto d : dau ) {
     if ( P != d && !d->isBasicParticle() ) {
       const auto vv = originVertex( d, P );
       if ( msgLevel( MSG::VERBOSE ) ) verbose() << "Went up : " << vv << endmsg;
