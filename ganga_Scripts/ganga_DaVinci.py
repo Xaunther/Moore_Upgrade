@@ -67,6 +67,9 @@ dataset = BuildDataset("some_input_file_for_a_given_MC.txt")
 j = Job(application=app)
 j.inputfiles = [
     'options/Decay_properties.py',
+    'DaVinci_Scripts/ntuple_utils.py',
+    'DaVinci_Scripts/descriptors.py',
+    'DaVinci_Scripts/dtt_inputs.py',
     'tckfolder/somedecay/AllLines_Moore_tck.json',
 ]
 j.application.platform = BUILD_VERSION

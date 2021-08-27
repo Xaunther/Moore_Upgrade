@@ -1,4 +1,4 @@
-from GaudiConf import IOHelper, reading
+from GaudiConf import reading
 from Configurables import (
     ApplicationMgr,
     LHCbApp,
@@ -10,13 +10,14 @@ import json
 #Manually add this folder to system path
 import os, sys
 sys.path.append(os.getcwd())
-from DaVinci_Scripts.ntuple_utils import get_ntuples
 
 #Make the script compatible with ganga
 inganga = False
 try:
+    from DaVinci_Scripts.ntuple_utils import get_ntuples
     from options.Decay_properties import props
 except ImportError:
+    from ntuple_utils import get_ntuples
     from Decay_properties import props
     inganga = True
 DECAY = os.environ["DECAY"].split("_Down")[0].split("_Up")[0]

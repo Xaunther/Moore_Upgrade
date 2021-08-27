@@ -3,7 +3,7 @@ from Configurables import DecayTreeTuple
 from DecayTreeTuple import Configuration
 from PhysSelPython.Selections import SelectionSequence, CombineSelection
 from DecayTreeTuple import DecayTreeTupleTruthUtils
-from DaVinci_Scripts import descriptors, dtt_inputs
+import descriptors, dtt_inputs
 
 #TupleTools used with default configuration
 default_tools = [
