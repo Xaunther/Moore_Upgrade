@@ -159,7 +159,7 @@ $(allEvtSizes_Moore_list): output/%/AllLines_EvtSize_Moore.txt: output/%/AllLine
 alltuple_Moore_list=$(foreach MC, $(MC_list),output/$(MC)/AllLines_Moore.root) output/MinBias/AllLines_Moore.root
 alltuples_Moore: $(alltuple_Moore_list)
 $(alltuple_Moore_list): output/%/AllLines_Moore.root: output/%/AllLines_Moore.mdst
-	$(DAVINCI)/run env DECAY=$* gaudirun.py DaVinci_Scripts/Decay_options.py DaVinci_Scripts/AllLines.py
+	$(DAVINCI)/run env DECAY=$* gaudirun.py DaVinci_Scripts/Decay_options.py DaVinci_Scripts/AllLines.py DaVinci_Scripts/Input.py
 
 #We have the ntuples, now time to extract the multiplicity of each extra container.
 .PHONY: HHGamma_multiplicities HHGammaEE_multiplicities HHHGamma_multiplicities HHHGammaEE_multiplicities
