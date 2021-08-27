@@ -67,6 +67,7 @@ else:
 j.splitter = SplitByFiles(filesPerJob=10, ignoremissing=True)
 j.outputfiles = [
     DiracFile("*.mdst"),
-    LocalFile("*stdout")
+    LocalFile("*stdout"),
+    LocalFile("*.json")
 ]
 j.submit()
