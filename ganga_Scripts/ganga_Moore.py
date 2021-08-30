@@ -9,7 +9,7 @@ parser.add_argument(
     choices=[
         "KstG", "PhiG", "K1G", "LambdaG", "XiG", "OmegaG", "PhiKstG",
         "PhiPhiG", "PhiKs0G", "K1G_KPiPi0", "PhiPi0G", "KstIsoG", "LambdaPG",
-        "PhiKG", "K1G_Cocktail", "L1520G", "RhoG"
+        "PhiKG", "K1G_Cocktail", "L1520G", "RhoG", "MinBias"
     ],
     help='Decay MC to run over')
 parser.add_argument(
@@ -67,7 +67,7 @@ else:
 j.splitter = SplitByFiles(filesPerJob=10, ignoremissing=True)
 j.outputfiles = [
     DiracFile("*.mdst"),
-    DiracFile("*.json"),
-    LocalFile("*stdout")
+    LocalFile("*stdout"),
+    LocalFile("*.json")
 ]
 j.submit()

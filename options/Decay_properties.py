@@ -314,7 +314,7 @@ props = {
         'evtnumber':
         "30000000",
         'dddb_tag':
-        "dddb-20171126 ",
+        "dddb-20171126",
         'conddb_tag':
         "sim-20171127-vc-m{0}100",
         'input_raw_format':
