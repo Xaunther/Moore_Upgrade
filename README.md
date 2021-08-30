@@ -68,6 +68,7 @@ The workflow can be found in the report or in the DAGs:
 ![all_MA](dags/dag_allMA.png)
 - All Moore:
 ![all_Moore](dags/dag_allMoore.png)
+
 ## MC cheatsheet
 
 We have prepared scripts to run over many, interesting radiative MC samples. We have given a short key name to each of them, which can be related to its EvtNumber down here:
@@ -91,3 +92,7 @@ We have prepared scripts to run over many, interesting radiative MC samples. We 
 | K1G_Cocktail | [12203271](http://lhcbdoc.web.cern.ch/lhcbdoc/decfiles/releases/latest/options/12203271.py) | [ B+ -> (K_1+ -> (X ->  K+ pi- pi+)) gamma ]cc                                         |
 |    L1520G    | [15102203](http://lhcbdoc.web.cern.ch/lhcbdoc/decfiles/releases/latest/options/15102203.py) | [Lambda_b0 -> (Lambda(1520)0 -> p+ K-) gamma]cc                                        |
 |     RhoG     | [11102222](http://lhcbdoc.web.cern.ch/lhcbdoc/decfiles/releases/latest/options/11102222.py) | [B0 -> (rho0 -> pi+ pi-) gamma]cc                                                      |
+
+## Running on ganga
+
+The ganga workflow, for obvious reasons, is not included in the makefile/snakemake flow. Although it is possible to override it by substituting the .mdst or .root from ganga in their expected locations in here, so that (snake)make will continue from then on. The scripts to run ganga and their relevant output are all located in the [ganga_Scripts](ganga_Scripts/) folder. Step-by-step instructions can be found in the dedicated [README](ganga_Scripts/README.md).
