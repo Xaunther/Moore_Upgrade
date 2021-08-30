@@ -62,9 +62,10 @@ for req_key in requested_keys:
         continue
     #If the key is ok, get the list of LFN files
     print("Starting reading {key} LFNs".format(key=req_key))
+    print("---------------------------")
     LFNs = GetLFNs("ganga_Scripts/ganga_Moore_LFNs/{key}".format(key=req_key))
 
     #Now we must loop over this list, and run the magic dirac command, which takes its time
     for lfn in LFNs:
         print("Running dirac command for {lfn}".format(lfn=lfn))
-        os.command("lb-dirac dirac-lhcb-fix-file-guid {lfn}".format(lfn=lfn))
+        os.system("lb-dirac dirac-lhcb-fix-file-guid {lfn}".format(lfn=lfn))
