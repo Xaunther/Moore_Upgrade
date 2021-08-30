@@ -18,11 +18,11 @@ parser.add_argument(
     help='Polarity of data-taking to run over')
 parser.add_argument(
     '--davinci_path',
-    default='../DaVinciDev_v52r0',
+    default='../DaVinciDev_master',
     help="Path to DaVinci lb-dev build")
 parser.add_argument(
     '--build_version',
-    default='x86_64+avx2+fma-centos7-gcc9-opt',
+    default='x86_64_v2-centos7-gcc10-opt',
     help="Build version used")
 parser.add_argument(
     '--test', action='store_true', help='Run over one file locally')
@@ -30,7 +30,7 @@ args = parser.parse_args()
 
 DECAY = args.decay
 POLARITY = args.polarity
-DAVINCI_PATH = args._path
+DAVINCI_PATH = args.davinci_path
 BUILD_VERSION = args.build_version
 TEST = args.test
 
@@ -44,7 +44,7 @@ def BuildDataset(filename):
     f.close()
 
     for line in lines:
-        dataset.extend(line.rstrip("\n"))
+        dataset.extend(DiracFile(line.rstrip("\n")))
     return dataset
 
 
