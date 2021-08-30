@@ -61,7 +61,8 @@ app.options = [
 
 #Dataset
 #Just a placeholder, imagine each file name is 1 line. We must read and remove trailing newline character
-dataset = BuildDataset("some_input_file_for_a_given_MC.txt")
+dataset = BuildDataset("ganga_Scripts/ganga_Moore_LFNs/{0}_{1}".format(
+    DECAY, POLARITY))
 
 #Configure job
 j = Job(application=app)
@@ -70,7 +71,8 @@ j.inputfiles = [
     'DaVinci_Scripts/ntuple_utils.py',
     'DaVinci_Scripts/descriptors.py',
     'DaVinci_Scripts/dtt_inputs.py',
-    'tckfolder/somedecay/AllLines_Moore_tck.json',
+    'ganga_Scripts/ganga_tcks/{0}_{1}/AllLines_Moore_tck.json'.format(
+        DECAY, POLARITY),
 ]
 j.application.platform = BUILD_VERSION
 #j.backend.settings['BannedSites'] = ['LCG.RAL-HEP.uk']
