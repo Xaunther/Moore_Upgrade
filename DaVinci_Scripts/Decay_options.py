@@ -2,7 +2,11 @@ import os, sys
 sys.path.append(os.getcwd())
 
 from Configurables import LHCbApp
-from options.Decay_properties import props
+#Make the script compatible with ganga
+try:
+    from options.Decay_properties import props
+except ImportError:
+    from Decay_properties import props
 DECAY = os.environ["DECAY"].split("_Down")[0].split("_Up")[0]
 decay_props = props[DECAY]
 

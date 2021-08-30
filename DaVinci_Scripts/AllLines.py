@@ -1,4 +1,4 @@
-from GaudiConf import IOHelper, reading
+from GaudiConf import reading
 from Configurables import (
     ApplicationMgr,
     LHCbApp,
@@ -10,9 +10,16 @@ import json
 #Manually add this folder to system path
 import os, sys
 sys.path.append(os.getcwd())
-from DaVinci_Scripts.ntuple_utils import get_ntuples
 
-from options.Decay_properties import props
+#Make the script compatible with ganga
+inganga = False
+try:
+    from DaVinci_Scripts.ntuple_utils import get_ntuples
+    from options.Decay_properties import props
+except ImportError:
+    from ntuple_utils import get_ntuples
+    from Decay_properties import props
+    inganga = True
 DECAY = os.environ["DECAY"].split("_Down")[0].split("_Up")[0]
 decay_props = props[DECAY]
 
@@ -47,20 +54,24 @@ def configure_packed_locations(tck_location):
 
 #Line name for files
 linename = "AllLines"
-#Input data
-IOHelper('ROOT').inputFiles(
-    ['output/{0}/{1}_Moore.mdst'.format(os.environ["DECAY"], linename)],
-    clear=True)
+os.environ["LINENAME"] = linename
 
 dtts, seqs = get_ntuples()
 
 #Read TCK
-configure_packed_locations("output/{0}/{1}_Moore_tck.json".format(
-    os.environ["DECAY"], linename))
+if inganga:
+    configure_packed_locations("{0}_Moore_tck.json".format(linename))
+else:
+    configure_packed_locations("output/{0}/{1}_Moore_tck.json".format(
+        os.environ["DECAY"], linename))
 
 #DaVinci configuration. #Use ALL declared dtts!
 ApplicationMgr().TopAlg = get_hlt2_unpackers(is_simulation=True) + list(
     seqs.values()) + list(dtts.values())
 
-LHCbApp().TupleFile = 'output/{0}/{1}_Moore.root'.format(
-    os.environ["DECAY"], linename)
+#Output ntuple
+if inganga:
+    LHCbApp().TupleFile = '{0}_Moore.root'.format(linename)
+else:
+    LHCbApp().TupleFile = 'output/{0}/{1}_Moore.root'.format(
+        os.environ["DECAY"], linename)

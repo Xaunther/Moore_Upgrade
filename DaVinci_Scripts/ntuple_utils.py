@@ -3,7 +3,10 @@ from Configurables import DecayTreeTuple
 from DecayTreeTuple import Configuration
 from PhysSelPython.Selections import SelectionSequence, CombineSelection
 from DecayTreeTuple import DecayTreeTupleTruthUtils
-from DaVinci_Scripts import descriptors, dtt_inputs
+try:
+    from DaVinci_Scripts import descriptors, dtt_inputs
+except ImportError:
+    import descriptors, dtt_inputs
 
 #TupleTools used with default configuration
 default_tools = [
@@ -69,7 +72,7 @@ def get_extra_combined_ntuples(linename, hadron_comb):
             Inputs=[extra_seq.outputLocation()],
             Decay=descriptors.get_full_decaydescriptor(
                 "{0}_{1}_{2}_Combo".format(linename, hadron_comb, extrasel)),
-            ToolList=default_tools.copy(),
+            ToolList=list(default_tools),
         )
         #Tupletools
         #MC tools
@@ -101,7 +104,7 @@ def get_extra_ntuples(linename):
             "{0}_{1}Tuple".format(linename, extrasel),
             Inputs=dtt_inputs.get_extra_inputs(linename, extrasel),
             Decay=descriptors.get_full_decaydescriptor(extrasel),
-            ToolList=default_tools.copy(),
+            ToolList=list(default_tools),
         )
         #Branches
         extra_ntuples["{0}_{1}".format(linename, extrasel)].addBranches(
@@ -152,7 +155,7 @@ def get_ntuples():
                                   ],
                                   Decay=descriptors.get_full_decaydescriptor(
                                       linename[0] + "_" + hadron_comb),
-                                  ToolList=default_tools.copy(),
+                                  ToolList=list(default_tools),
                               )
             #Branches
             radiative_ntuples[linename[0] + "_" + hadron_comb].addBranches(
