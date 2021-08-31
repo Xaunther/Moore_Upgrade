@@ -22,7 +22,7 @@ parser.add_argument(
     help="Path to Moore lb-dev build")
 parser.add_argument(
     '--build_version',
-    default='x86_64_v2-centos7-gcc10-op',
+    default='x86_64_v2-centos7-gcc10-opt',
     help="Build version used")
 parser.add_argument(
     '--test', action='store_true', help='Run over one file locally')
