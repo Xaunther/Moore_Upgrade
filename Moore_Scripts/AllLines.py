@@ -1,4 +1,5 @@
 from Moore import options, run_moore
+from Moore.tcks import dump_hlt2_configuration
 from RecoConf.global_tools import stateProvider_with_simplified_geom
 from Hlt2Conf.lines.rd.b_to_hhgamma import btohhgamma_inclusive_line
 from Hlt2Conf.lines.rd.b_to_hhgamma_gamma_to_ee import btohhgammaee_inclusive_line
@@ -44,9 +45,10 @@ if (not reco_from_file):
     public_tools = [stateProvider_with_simplified_geom()]
 
 with reconstruction.bind(from_file=reco_from_file):
-    run_moore(options, all_lines, public_tools)
+    config = run_moore(options, all_lines, public_tools)
 
 #Dump tck info from Moore (needed by Davinci afterwards)
-with open("{0}{1}_Moore_tck.json".format(os.environ["outfolder"], linename),
-          "w") as outfile:
-    json.dump(HltANNSvc().PackedObjectLocations, outfile)
+dump_hlt2_configuration(
+    config,
+    "{0}{1}_Moore_tck.json".format(os.environ["outfolder"], linename),
+)
