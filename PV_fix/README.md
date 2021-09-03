@@ -8,4 +8,4 @@ Get DaVinci master release from the nightlies: `lb-dev --platform x86_64_v2-cent
 
 ## LHCb stack flavour
 
-Then there is the stack version to be used in the stack, where the .h and .cpp have been merged into a single file. Simply copy TupleToolGeometry.cpp into Analysis/Phys/DecayTreeTuple/src folder
+In this case, simply copy TupleToolGeometry.cpp into Analysis/Phys/DecayTreeTuple/src folder in your stack.

@@ -83,7 +83,7 @@ We then proceed inside the folder and get the Phys/DecayTreeTuple package from A
 cd DaVinciDev_master
 git lb-use Analysis
 git lb-checkout Analysis/master Phys/DecayTreeTuple
-cp -r ${moore_upgrade}/PV_fixTupleToolGeometry.cpp Phys/DecayTreeTuple/src
+cp -r ${moore_upgrade}/PV_fix/TupleToolGeometry.cpp Phys/DecayTreeTuple/src
 make
 ```
 
