@@ -17,7 +17,7 @@ cd MooreDev_master
 #Skip this part if no modifications are needed
 git lb-use Moore
 git lb-checkout Moore/master Hlt/Hlt2Conf
-cp -r ${stackdir}/Moore/Hlt/Hlt2Connf/python/lines/rd Hlt/Hlt2Conf/python/Hlt2Conf/lines
+cp -r ${stackdir}/Moore/Hlt/Hlt2Conf/python/Hlt2Conf/lines/rd Hlt/Hlt2Conf/python/Hlt2Conf/lines
 #Continue here
 make
 ```
