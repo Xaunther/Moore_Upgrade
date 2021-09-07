@@ -91,4 +91,4 @@ if(DECAY == "MinBias"):
     filesperjob = 10
 j.splitter = SplitByFiles(filesPerJob=filesperjob, ignoremissing=True)
 j.outputfiles = [DiracFile("*.root"), LocalFile("*stdout")]
-j.submit()
+queues.add(j.submit)

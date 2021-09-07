@@ -72,4 +72,4 @@ j.outputfiles = [
     LocalFile("*stdout"),
     LocalFile("*.json")
 ]
-j.submit()
+queues.add(j.submit)
