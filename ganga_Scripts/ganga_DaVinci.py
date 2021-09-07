@@ -86,7 +86,7 @@ else:
     j.backend = Dirac()
     j.inputdata = dataset
 
-filerperjob = 3
+filesperjob = 3
 if(DECAY == "MinBias"):
     filesperjob = 10
 j.splitter = SplitByFiles(filesPerJob=filesperjob, ignoremissing=True)
