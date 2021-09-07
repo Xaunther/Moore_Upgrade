@@ -9,7 +9,7 @@ parser.add_argument(
     choices=[
         "KstG", "PhiG", "K1G", "LambdaG", "XiG", "OmegaG", "PhiKstG",
         "PhiPhiG", "PhiKs0G", "K1G_KPiPi0", "PhiPi0G", "KstIsoG", "LambdaPG",
-        "PhiKG", "K1G_Cocktail", "L1520G", "RhoG"
+        "PhiKG", "K1G_Cocktail", "L1520G", "RhoG", "MinBias"
     ],
     help='Decay MC to run over')
 parser.add_argument(
@@ -44,7 +44,7 @@ def BuildDataset(filename):
     f.close()
 
     for line in lines:
-        dataset.extend(DiracFile(line.rstrip("\n")))
+        dataset.extend(DiracFile("LFN:" + line.rstrip("\n")))
     return dataset
 
 
@@ -86,6 +86,9 @@ else:
     j.backend = Dirac()
     j.inputdata = dataset
 
-j.splitter = SplitByFiles(filesPerJob=10, ignoremissing=True)
+filesperjob = 3
+if(DECAY == "MinBias"):
+    filesperjob = 10
+j.splitter = SplitByFiles(filesPerJob=filesperjob, ignoremissing=True)
 j.outputfiles = [DiracFile("*.root"), LocalFile("*stdout")]
-j.submit()
+queues.add(j.submit)

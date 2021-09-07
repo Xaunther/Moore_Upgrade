@@ -4,6 +4,7 @@ from Configurables import (
     LHCbApp,
     createODIN,
     HltANNSvc,
+    HltDecReportsDecoder,
 )
 import json
 
@@ -31,15 +32,17 @@ def get_hlt2_unpackers(is_simulation):
     This is a temporary measure until support for Run 3 HLT2 output is added to
     an LHCb application.
     """
-
-    reading_algs = ([reading.decoder()] + reading.unpackers() + [createODIN()])
+    dec_reports = HltDecReportsDecoder(
+        SourceID=2, OutputHltDecReportsLocation="/Event/Hlt2/DecReports")
+    reading_algs = ([reading.decoder()] + reading.unpackers() + [dec_reports] +
+                    [createODIN()])
     if is_simulation:
         reading_algs = reading.mc_unpackers() + reading_algs
     return reading_algs
 
 
 def configure_packed_locations(tck_location):
-    """Configures HltANNSvc to know about packed locations used in Moore.
+    """Configures HltANNSvc to know about packed locations and hlt2 decision names used in Moore.
 
     tck_location (string): Location of json file containing trigger configuration.
 
@@ -47,7 +50,15 @@ def configure_packed_locations(tck_location):
 
     with open(tck_location) as f:
         tck = json.load(f)
-        HltANNSvc(PackedObjectLocations={str(k): v for k, v in tck.items()})
+    ann_config = tck["HltANNSvc/HltANNSvc"]
+    HltANNSvc(PackedObjectLocations={
+        str(k): v
+        for k, v in ann_config["PackedObjectLocations"].items()
+    })
+    HltANNSvc(Hlt2SelectionID={
+        str(k): v
+        for k, v in ann_config["Hlt2SelectionID"].items()
+    })
 
 
 ############ End of helper Functions ##############
