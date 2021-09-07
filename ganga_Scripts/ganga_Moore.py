@@ -44,6 +44,8 @@ app.options = [
     'options/Decay_options.py',
     'Moore_Scripts/AllLines.py',
 ]
+if TEST:
+    app.options.append('options/100_Evts.py')
 
 #Dataset
 dataset = BKQuery(
