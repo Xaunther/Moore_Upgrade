@@ -41,82 +41,82 @@ extrasels = [
 ]
 
 BDTVariables_list = {
-    "HHGamma":{
-    "ipchi2":
-    "log10(BPVIPCHI2())",
-    'ipchi2_min':
-    "log10(MINTREE(BPVIPCHI2(), ((ABSID=='K+')|(ID=='KS0')|(ABSID=='Lambda0'))))",
-    'gamma_pt':
-    "CHILD(2, PT)",
-    'm_corrected':
-    "BPVCORRM()",
-    'vm_corrected':
-    "CHILD(1, BPVCORRM())",
-    'fdchi2':
-    "log10(BPVVDCHI2())",
-    'vtx_chi2':
-    "log10(VFASPF(VCHI2))",
-    'doca':
-    "CHILD(1, DOCA(1,2))"
-},
-    "HHGammaEE":{
-    'mcor':
-    "BPVCORRM()",
-    'chi2':
-    "VFASPF(VCHI2)",
-    'sumpt':
-    "SUMTREE(PT, ((ABSID=='K+')|(ID=='KS0')|(ABSID=='Lambda0')|(ABSID=='gamma')), 0.0)/MeV",
-    'eta':
-    "BPVETA()",
-    'fdchi2':
-    "BPVVDCHI2()",
-    'minpt':
-    "MINTREE(((ABSID=='K+')|(ID=='KS0')|(ABSID=='Lambda0')|(ABSID=='gamma')), PT)/MeV",
-    'nlt16':
-    "NINTREE(((ABSID=='K+')|(ID=='KS0')|(ABSID=='Lambda0')|(ABSID=='gamma')) & (BPVIPCHI2() < 16))",
-    'ipchi2':
-    "BPVIPCHI2()",
-    'n1trk':
-    "NINTREE(((ABSID=='K+')|(ID=='KS0')|(ABSID=='Lambda0')|(ABSID=='gamma')) & (PT > 1*GeV) & (BPVIPCHI2() > 16))"
-},
-    "HHHGamma":{
-    'ipchi2':
-    "log10(BPVIPCHI2())",
-    'ipchi2_min':
-    "log10(MINTREE(BPVIPCHI2(), ((ABSID=='K+')|(ID=='KS0')|(ABSID=='Lambda0'))))",
-    'gamma_pt':
-    "CHILD(2, PT)",
-    'gamma_p':
-    "CHILD(2, P)",
-    'm_corrected':
-    "BPVCORRM()",
-    'fdchi2':
-    "log10(BPVVDCHI2())",
-    'vtx_chi2':
-    "log10(VFASPF(VCHI2))",
-    'chi2dof_max':
-    "MAXTREE(TRCHI2DOF, ISBASIC & HASTRACK & (ABSID=='K+'))"
-},
-    "HHHGammaEE":{
-    'mcor':
-    "BPVCORRM()",
-    'chi2':
-    "VFASPF(VCHI2)",
-    'sumpt':
-    "SUMTREE(PT, ((ABSID=='K+')|(ID=='KS0')|(ABSID=='Lambda0')|(ABSID=='gamma')), 0.0)/MeV",
-    'eta':
-    "BPVETA()",
-    'fdchi2':
-    "BPVVDCHI2()",
-    'minpt':
-    "MINTREE(((ABSID=='K+')|(ID=='KS0')|(ABSID=='Lambda0')|(ABSID=='gamma')), PT)/MeV",
-    'nlt16':
-    "NINTREE(((ABSID=='K+')|(ID=='KS0')|(ABSID=='Lambda0')|(ABSID=='gamma')) & (BPVIPCHI2() < 16))",
-    'ipchi2':
-    "BPVIPCHI2()",
-    'n1trk':
-    "NINTREE(((ABSID=='K+')|(ID=='KS0')|(ABSID=='Lambda0')|(ABSID=='gamma')) & (PT > 1*GeV) & (BPVIPCHI2() > 16))"
-}
+    "HHGamma": {
+        "ipchi2":
+        "log10(BPVIPCHI2())",
+        'ipchi2_min':
+        "log10(MINTREE(BPVIPCHI2(), ((ABSID=='K+')|(ID=='KS0')|(ABSID=='Lambda0'))))",
+        'gamma_pt':
+        "CHILD(2, PT)",
+        'm_corrected':
+        "BPVCORRM()",
+        'vm_corrected':
+        "CHILD(1, BPVCORRM())",
+        'fdchi2':
+        "log10(BPVVDCHI2())",
+        'vtx_chi2':
+        "log10(VFASPF(VCHI2))",
+        'doca':
+        "CHILD(1, DOCA(1,2))"
+    },
+    "HHGammaEE": {
+        'mcor':
+        "BPVCORRM()",
+        'chi2':
+        "VFASPF(VCHI2)",
+        'sumpt':
+        "SUMTREE(PT, ((ABSID=='K+')|(ID=='KS0')|(ABSID=='Lambda0')|(ABSID=='gamma')), 0.0)/MeV",
+        'eta':
+        "BPVETA()",
+        'fdchi2':
+        "BPVVDCHI2()",
+        'minpt':
+        "MINTREE(((ABSID=='K+')|(ID=='KS0')|(ABSID=='Lambda0')|(ABSID=='gamma')), PT)/MeV",
+        'nlt16':
+        "NINTREE(((ABSID=='K+')|(ID=='KS0')|(ABSID=='Lambda0')|(ABSID=='gamma')) & (BPVIPCHI2() < 16))",
+        'ipchi2':
+        "BPVIPCHI2()",
+        'n1trk':
+        "NINTREE(((ABSID=='K+')|(ID=='KS0')|(ABSID=='Lambda0')|(ABSID=='gamma')) & (PT > 1*GeV) & (BPVIPCHI2() > 16))"
+    },
+    "HHHGamma": {
+        'ipchi2':
+        "log10(BPVIPCHI2())",
+        'ipchi2_min':
+        "log10(MINTREE(BPVIPCHI2(), ((ABSID=='K+')|(ID=='KS0')|(ABSID=='Lambda0'))))",
+        'gamma_pt':
+        "CHILD(2, PT)",
+        'gamma_p':
+        "CHILD(2, P)",
+        'm_corrected':
+        "BPVCORRM()",
+        'fdchi2':
+        "log10(BPVVDCHI2())",
+        'vtx_chi2':
+        "log10(VFASPF(VCHI2))",
+        'chi2dof_max':
+        "MAXTREE(TRCHI2DOF, ISBASIC & HASTRACK & (ABSID=='K+'))"
+    },
+    "HHHGammaEE": {
+        'mcor':
+        "BPVCORRM()",
+        'chi2':
+        "VFASPF(VCHI2)",
+        'sumpt':
+        "SUMTREE(PT, ((ABSID=='K+')|(ID=='KS0')|(ABSID=='Lambda0')|(ABSID=='gamma')), 0.0)/MeV",
+        'eta':
+        "BPVETA()",
+        'fdchi2':
+        "BPVVDCHI2()",
+        'minpt':
+        "MINTREE(((ABSID=='K+')|(ID=='KS0')|(ABSID=='Lambda0')|(ABSID=='gamma')), PT)/MeV",
+        'nlt16':
+        "NINTREE(((ABSID=='K+')|(ID=='KS0')|(ABSID=='Lambda0')|(ABSID=='gamma')) & (BPVIPCHI2() < 16))",
+        'ipchi2':
+        "BPVIPCHI2()",
+        'n1trk':
+        "NINTREE(((ABSID=='K+')|(ID=='KS0')|(ABSID=='Lambda0')|(ABSID=='gamma')) & (PT > 1*GeV) & (BPVIPCHI2() > 16))"
+    }
 }
 
 
@@ -260,8 +260,10 @@ def get_ntuples():
                                                   "TupleToolPrimaries")
             primariestool.RootInTES = "/Event/HLT2"
             #Variables used in the BDTs
-            lokitool = radiative_ntuples[linename[0] + "_" +
-                                              hadron_comb].B.addTupleTool('LoKi::Hybrid::TupleTool/{0}_{1}'.format(linename[0], hadron_comb))
+            lokitool = radiative_ntuples[
+                linename[0] + "_" + hadron_comb].B.addTupleTool(
+                    'LoKi::Hybrid::TupleTool/{0}_{1}'.format(
+                        linename[0], hadron_comb))
             lokitool.Variables = BDTVariables_list[linename[0]]
             #Add combination of extra selections with HLT lines
             extra_dtts, extra_seqs = get_extra_combined_ntuples(

@@ -87,7 +87,7 @@ else:
     j.inputdata = dataset
 
 filesperjob = 3
-if(DECAY == "MinBias"):
+if (DECAY == "MinBias"):
     filesperjob = 10
 j.splitter = SplitByFiles(filesPerJob=filesperjob, ignoremissing=True)
 j.outputfiles = [DiracFile("*.root"), LocalFile("*stdout")]
