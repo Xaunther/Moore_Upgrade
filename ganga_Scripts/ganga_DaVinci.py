@@ -42,11 +42,7 @@ JOBNUMBER = int(args.jobN)
 def GetFailedDatasets(jobN):
     dataset = LHCbDataset()
 
-    skip = True
     for sj in jobs[jobN].subjobs.select(status="failed"):
-        if skip:
-            skip = False
-            continue
         dataset.extend(sj.inputdata)
     return dataset
 
