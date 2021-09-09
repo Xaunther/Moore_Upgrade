@@ -77,13 +77,15 @@ Analogously to Moore, we must first get a master release of DaVinci for the nigh
 lb-dev --platform x86_64_v2-centos7-gcc10-opt --nightly lhcb-master/latest DaVinci/master
 ```
 
-We then proceed inside the folder and get the Phys/DecayTreeTuple package from Analysis in order to **fix TupleToolGeometry not finding the PVs in the produced mdst**:
+We then proceed inside the folder and get the Phys/DecayTreeTuple package from Analysis in order to **fix TupleToolGeometry not finding the PVs in the produced mdst** and allowing **DaVinci recovery from null MCMother**:
 
 ```sh
 cd DaVinciDev_master
 git lb-use Analysis
 git lb-checkout Analysis/master Phys/DecayTreeTuple
-cp -r ${moore_upgrade}/PV_fix/TupleToolGeometry.cpp Phys/DecayTreeTuple/src
+git lb-checkout Analysis/master Phys/DaVinciMCTools
+cp ${moore_upgrade}/PV_fix/TupleToolGeometry.cpp Phys/DecayTreeTuple/src
+cp ${moore_upgrade}/BKGCat_fix/BackgroundCategory.cpp Phys/DaVinciMCTools/src
 make
 ```
 
