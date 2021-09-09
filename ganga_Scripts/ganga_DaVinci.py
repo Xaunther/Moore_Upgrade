@@ -4,28 +4,30 @@ from options.Decay_properties import props
 import argparse
 
 parser = argparse.ArgumentParser(description="Make DaVinci jobs.")
+parser.add_argument('decay',
+                    choices=[
+                        "KstG", "PhiG", "K1G", "LambdaG", "XiG", "OmegaG",
+                        "PhiKstG", "PhiPhiG", "PhiKs0G", "K1G_KPiPi0",
+                        "PhiPi0G", "KstIsoG", "LambdaPG", "PhiKG",
+                        "K1G_Cocktail", "L1520G", "RhoG", "MinBias"
+                    ],
+                    help='Decay MC to run over')
+parser.add_argument('polarity',
+                    choices=['Up', 'Down'],
+                    help='Polarity of data-taking to run over')
+parser.add_argument('--davinci_path',
+                    default='../DaVinciDev_master',
+                    help="Path to DaVinci lb-dev build")
+parser.add_argument('--build_version',
+                    default='x86_64_v2-centos7-gcc10-opt',
+                    help="Build version used")
+parser.add_argument('--test',
+                    action='store_true',
+                    help='Run over one file locally')
 parser.add_argument(
-    'decay',
-    choices=[
-        "KstG", "PhiG", "K1G", "LambdaG", "XiG", "OmegaG", "PhiKstG",
-        "PhiPhiG", "PhiKs0G", "K1G_KPiPi0", "PhiPi0G", "KstIsoG", "LambdaPG",
-        "PhiKG", "K1G_Cocktail", "L1520G", "RhoG", "MinBias"
-    ],
-    help='Decay MC to run over')
-parser.add_argument(
-    'polarity',
-    choices=['Up', 'Down'],
-    help='Polarity of data-taking to run over')
-parser.add_argument(
-    '--davinci_path',
-    default='../DaVinciDev_master',
-    help="Path to DaVinci lb-dev build")
-parser.add_argument(
-    '--build_version',
-    default='x86_64_v2-centos7-gcc10-opt',
-    help="Build version used")
-parser.add_argument(
-    '--test', action='store_true', help='Run over one file locally')
+    '--jobN',
+    default='-1',
+    help="Use in case you want to retry the failed subjobs in the given job")
 args = parser.parse_args()
 
 DECAY = args.decay
@@ -33,6 +35,20 @@ POLARITY = args.polarity
 DAVINCI_PATH = args.davinci_path
 BUILD_VERSION = args.build_version
 TEST = args.test
+JOBNUMBER = int(args.jobN)
+
+
+#Function that reads the inputdata of the failed subjobs in a given job and puts it in a dataset
+def GetFailedDatasets(jobN):
+    dataset = LHCbDataset()
+
+    skip = True
+    for sj in jobs[jobN].subjobs.select(status="failed"):
+        if skip:
+            skip = False
+            continue
+        dataset.extend(sj.inputdata)
+    return dataset
 
 
 #Function that builds LHCbDataset from a file containing list of input files
@@ -60,9 +76,13 @@ app.options = [
 ]
 
 #Dataset
-#Just a placeholder, imagine each file name is 1 line. We must read and remove trailing newline character
-dataset = BuildDataset("ganga_Scripts/ganga_Moore_LFNs/{0}_{1}".format(
-    DECAY, POLARITY))
+#Each file name is 1 line. We must read and remove trailing newline character, as well as add LFN: prefix
+#If a valid job number has been provided
+if (JOBNUMBER > 0):
+    dataset = GetFailedDatasets(JOBNUMBER)
+else:
+    dataset = BuildDataset("ganga_Scripts/ganga_Moore_LFNs/{0}_{1}".format(
+        DECAY, POLARITY))
 
 #Configure job
 j = Job(application=app)
@@ -76,7 +96,11 @@ j.inputfiles = [
 ]
 j.application.platform = BUILD_VERSION
 #j.backend.settings['BannedSites'] = ['LCG.RAL-HEP.uk']
-j.name = '{0} MC Upgrade ntuples Mag{1}'.format(DECAY, POLARITY)  #CHANGE!!
+if (JOBNUMBER > 0):
+    j.name = 'Job {2}: {0} MC Upgrade ntuples Mag{1}'.format(
+        DECAY, POLARITY, JOBNUMBER)
+else:
+    j.name = '{0} MC Upgrade ntuples Mag{1}'.format(DECAY, POLARITY)  #CHANGE!!
 j.comment = "{0} {1}".format(DAVINCI_PATH.split("/")[-1],
                              BUILD_VERSION)  #CHANGE!!
 if TEST:  #Run just 1 file locally
