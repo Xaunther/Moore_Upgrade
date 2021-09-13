@@ -105,4 +105,24 @@ The only relevant output in this case is the ntuple `AllLines_Moore.root`, which
 
 ## Retrieving DaVinci outputs
 
-TODO: Retrieve from a ganga job
+For the DaVinci outputs, we don't just want to save the list of LFNs in text files, we also want to download the ntuples so that they can be processed, eventually. To retrieve the list of LFNs you can do as with the mdst's, in ganga:
+
+```python
+#Example with job number 630 and subjob number 1
+Ganga In [0]: list(jobs[630].subjobs[1].backend.getOutputDataLFNs().getReplicas().keys())[0]
+```
+
+Again, this must be done manually and the LFNs must be dumped into `ganga_Scripts/ganga_DaVinci_LFNs/` folder. Once the lists are created, you can Download the `AllLines_Moore.root` into your folder of choice (default is `ganga_Scripts/ganga_DaVinci_ntuples`) using:
+
+```sh
+#This will download the AllLines_Moore.root files from these decays into the given directory
+python ganga_Scripts/Download_DaVinci.py --decays KstG_Down K1G_Down PhiG_Down --directory /eos/lhcb/user/a/aalfonso/Upgrade_ntuples
+```
+
+The script will create subfolders inside the provided directory with the name of the decay, which in turn contains all of the sub-ntuples and a text file `AllLines_Moore.dir` with the list of all of them
+
+Again, don't forget to set up the proxy:
+
+```sh
+lhcb-proxy-init
+```
