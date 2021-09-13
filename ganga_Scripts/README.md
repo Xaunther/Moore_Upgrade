@@ -17,7 +17,7 @@ cd MooreDev_master
 #Skip this part if no modifications are needed
 git lb-use Moore
 git lb-checkout Moore/master Hlt/Hlt2Conf
-cp -r ${stackdir}/Moore/Hlt/Hlt2Connf/python/lines/rd Hlt/Hlt2Conf/python/Hlt2Conf/lines
+cp -r ${stackdir}/Moore/Hlt/Hlt2Conf/python/Hlt2Conf/lines/rd Hlt/Hlt2Conf/python/Hlt2Conf/lines
 #Continue here
 make
 ```
@@ -77,13 +77,15 @@ Analogously to Moore, we must first get a master release of DaVinci for the nigh
 lb-dev --platform x86_64_v2-centos7-gcc10-opt --nightly lhcb-master/latest DaVinci/master
 ```
 
-We then proceed inside the folder and get the Phys/DecayTreeTuple package from Analysis in order to **fix TupleToolGeometry not finding the PVs in the produced mdst**:
+We then proceed inside the folder and get the Phys/DecayTreeTuple package from Analysis in order to **fix TupleToolGeometry not finding the PVs in the produced mdst** and allowing **DaVinci recovery from null MCMother**:
 
 ```sh
 cd DaVinciDev_master
 git lb-use Analysis
 git lb-checkout Analysis/master Phys/DecayTreeTuple
-cp -r ${moore_upgrade}/PV_fix/TupleToolGeometry.cpp Phys/DecayTreeTuple/src
+git lb-checkout Analysis/master Phys/DaVinciMCTools
+cp ${moore_upgrade}/PV_fix/TupleToolGeometry.cpp Phys/DecayTreeTuple/src
+cp ${moore_upgrade}/BKGCat_fix/BackgroundCategory.cpp Phys/DaVinciMCTools/src
 make
 ```
 
@@ -103,4 +105,24 @@ The only relevant output in this case is the ntuple `AllLines_Moore.root`, which
 
 ## Retrieving DaVinci outputs
 
-TODO: Retrieve from a ganga job
+For the DaVinci outputs, we don't just want to save the list of LFNs in text files, we also want to download the ntuples so that they can be processed, eventually. To retrieve the list of LFNs you can do as with the mdst's, in ganga:
+
+```python
+#Example with job number 630 and subjob number 1
+Ganga In [0]: list(jobs[630].subjobs[1].backend.getOutputDataLFNs().getReplicas().keys())[0]
+```
+
+Again, this must be done manually and the LFNs must be dumped into `ganga_Scripts/ganga_DaVinci_LFNs/` folder. Once the lists are created, you can Download the `AllLines_Moore.root` into your folder of choice (default is `ganga_Scripts/ganga_DaVinci_ntuples`) using:
+
+```sh
+#This will download the AllLines_Moore.root files from these decays into the given directory
+python ganga_Scripts/Download_DaVinci.py --decays KstG_Down K1G_Down PhiG_Down --directory /eos/lhcb/user/a/aalfonso/Upgrade_ntuples
+```
+
+The script will create subfolders inside the provided directory with the name of the decay, which in turn contains all of the sub-ntuples and a text file `AllLines_Moore.dir` with the list of all of them
+
+Again, don't forget to set up the proxy:
+
+```sh
+lhcb-proxy-init
+```
