@@ -31,10 +31,12 @@ For the background proxy, we only have the minimum bias, but we use all possible
 - HHGamma(EE) lines: `HHGamma(EE)_hhTuple`, `HHGamma(EE)_hKs0Tuple`, `HHGamma(EE)_hL0Tuple`.
 - HHHGamma lines: `HHHGamma(EE)_hhhTuple`, `HHHGamma(EE)_hhKs0Tuple`, `HHHGamma(EE)_hhL0Tuple`, `HHHGamma(EE)_hKs0L0Tuple`, `HHHGamma(EE)_hL0L0Tuple`, `HHHGamma(EE)_hKs0Ks0Tuple`.
 
-On top of that, the variables used for the BDT are applied some sanity cuts as some of them yield NaN values that MUST BE REMOVED.
+Step by step, to train the BDT we first strip away all variables not used in the BDT or in the BKGCAT selection,and apply the following BKGCAT cuts (this can be refined by adding mass cuts on the B, for example, but this will do for now). The list of variables for each BDT is saved in `BDTs/Variables/SavedVariables_<line>.txt`.
 
 | BKGCAT selection           | HHGamma          | HHGammaEE          | HHHGamma         | HHHGammaEE         |
 | -------------------------- | ---------------- | ------------------ | ---------------- | ------------------ |
 | $B^0\to K^{*0}(892)\gamma$ | `B_BKGCAT == 30` | `Kst_BKGCAT == 30` | N/A              | N/A                |
 | $B_s\to\phi\gamma$         | `B_BKGCAT == 20` | `Kst_BKGCAT == 20` | N/A              | N/A                |
 | $B^+\to K_1^+\gamma$       | `B_BKGCAT == 40` | `Kst_BKGCAT == 40` | `B_BKGCAT == 30` | `Kst_BKGCAT == 30` |
+
+Next, we train the BDTs using [BDTs/Train_BDT.C](BDTs/Train_BDT.C). The signal proxy is specified from `BDTs/Signal_<line>.txt`, while the background proxy is set in `BDTs/Background_<line>.txt`. The variables used to train the BDT are specified at `BDTs/Variables/BDT_Variables_<line>.txt` while some sanity cuts are defined in `BDTs/Cuts/SanityCuts_<line>.txt` to remove the NaNs.

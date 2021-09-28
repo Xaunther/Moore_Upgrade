@@ -1,9 +1,18 @@
 // Script to train a BDT for the inclusive radiative lines. List of arguments:
+
 // signal_files: Text file with list of proxy signal files. Each file in one
-// line background_files: Text file with list of proxy background files. Each
-// file in one line BDTVariables: Text file with the list of BDT variables. Each
-// variable in one cuts: File containing cuts to be applied line BDTName: Name
-// given to the classifier
+// line
+
+// background_files: Text file with list of proxy background files. Each
+// file in one line
+
+// BDTVariables: Text file with the list of BDT variables. Each variable in one
+// line
+
+// cutfile: File containing cuts to be applied line
+
+// BDTName: Name given to the classifier (HHGamma, HHGammaEE, HHHGamma,
+// HHHGammaEE)
 
 #include <fstream>
 #include <iostream>
