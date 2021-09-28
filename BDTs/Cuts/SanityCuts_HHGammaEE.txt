@@ -1,0 +1,9 @@
+abs(B_mcor) < 12000
+abs(B_chi2) < 3000
+abs(B_sumpt) < 80000
+abs(B_eta) < 6
+abs(B_fdchi2) < 100000
+abs(B_minpt) < 18000
+abs(B_nlt16) < 16
+abs(B_ipchi2) < 100000
+abs(B_n1trk) < 16
