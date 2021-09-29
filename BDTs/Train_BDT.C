@@ -21,49 +21,54 @@ Script to train a BDT for the inclusive radiative lines. List of arguments:
 #include "TMVA/Factory.h"
 #include "TMVA/Tools.h"
 
-// Read lines from a file and return a list. Each entry is a line
-std::list<std::string> ReadVariables(std::string filename)
+//Define anonymous namespace for these functions so that there is no conflict
+namespace
 {
-  std::ifstream input;
-  std::string basura = "";
 
-  std::list<std::string> l;
-  input.open(filename.c_str());
-
-  std::getline(input, basura);
-  while (basura != "")
+  // Read lines from a file and return a list. Each entry is a line
+  std::list<std::string> ReadVariables(std::string filename)
   {
-    l.push_back(basura);
-    basura = "";
+    std::ifstream input;
+    std::string basura = "";
+
+    std::list<std::string> l;
+    input.open(filename.c_str());
+
     std::getline(input, basura);
+    while (basura != "")
+    {
+      l.push_back(basura);
+      basura = "";
+      std::getline(input, basura);
+    }
+
+    input.close();
+
+    return l;
   }
 
-  input.close();
-
-  return l;
-}
-
-TCut ReadCuts(std::string cutfile)
-{
-  // Do nothing if no cutfile has been specified
-  if (cutfile == "")
-    return "";
-  // Open and retrieve cuts
-  std::ifstream input;
-  std::string basura;
-  TCut cuts = "";
-
-  input.open(cutfile.c_str());
-
-  std::getline(input, basura);
-  while (basura != "")
+  TCut ReadCuts(std::string cutfile)
   {
-    cuts = cuts + TCut(basura.c_str());
-    basura = "";
-    std::getline(input, basura);
-  }
+    // Do nothing if no cutfile has been specified
+    if (cutfile == "")
+      return "";
+    // Open and retrieve cuts
+    std::ifstream input;
+    std::string basura;
+    TCut cuts = "";
 
-  return cuts;
+    input.open(cutfile.c_str());
+
+    std::getline(input, basura);
+    while (basura != "")
+    {
+      cuts = cuts + TCut(basura.c_str());
+      basura = "";
+      std::getline(input, basura);
+    }
+
+    return cuts;
+  }
 }
 
 void Train_BDT(std::string signal_files, std::string background_files,
