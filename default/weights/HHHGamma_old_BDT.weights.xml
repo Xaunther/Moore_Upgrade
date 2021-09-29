@@ -68,14 +68,14 @@
     <Option name="NNodesMax" modified="No">0</Option>
   </Options>
   <Variables NVar="8">
-    <Variable VarIndex="0" Expression="ipchi2" Label="ipchi2" Title="ipchi2" Unit="" Internal="ipchi2" Type="D" Min="-2.95671654e+00" Max="5.75878096e+00"/>
-    <Variable VarIndex="1" Expression="ipchi2_min" Label="ipchi2_min" Title="ipchi2_min" Unit="" Internal="ipchi2_min" Type="D" Min="6.02091193e-01" Max="5.61206293e+00"/>
-    <Variable VarIndex="2" Expression="gamma_pt" Label="gamma_pt" Title="gamma_pt" Unit="" Internal="gamma_pt" Type="D" Min="2.00001904e+03" Max="2.30479551e+04"/>
-    <Variable VarIndex="3" Expression="gamma_p" Label="gamma_p" Title="gamma_p" Unit="" Internal="gamma_p" Type="D" Min="5.73695020e+03" Max="4.81671938e+05"/>
-    <Variable VarIndex="4" Expression="m_corrected" Label="m_corrected" Title="m_corrected" Unit="" Internal="m_corrected" Type="D" Min="1.95302771e+03" Max="1.09999277e+04"/>
-    <Variable VarIndex="5" Expression="fdchi2" Label="fdchi2" Title="fdchi2" Unit="" Internal="fdchi2" Type="D" Min="1.21393609e+00" Max="7.93324423e+00"/>
-    <Variable VarIndex="6" Expression="vtx_chi2" Label="vtx_chi2" Title="vtx_chi2" Unit="" Internal="vtx_chi2" Type="D" Min="-3.03683448e+00" Max="2.99998879e+00"/>
-    <Variable VarIndex="7" Expression="chi2dof_max" Label="chi2dof_max" Title="chi2dof_max" Unit="" Internal="chi2dof_max" Type="D" Min="5.80347955e-01" Max="2.99992013e+00"/>
+    <Variable VarIndex="0" Expression="B_ipchi2" Label="B_ipchi2" Title="B_ipchi2" Unit="" Internal="B_ipchi2" Type="D" Min="-2.95671654e+00" Max="5.75878096e+00"/>
+    <Variable VarIndex="1" Expression="B_ipchi2_min" Label="B_ipchi2_min" Title="B_ipchi2_min" Unit="" Internal="B_ipchi2_min" Type="D" Min="6.02091193e-01" Max="5.61206293e+00"/>
+    <Variable VarIndex="2" Expression="B_gamma_pt" Label="B_gamma_pt" Title="B_gamma_pt" Unit="" Internal="B_gamma_pt" Type="D" Min="2.00001904e+03" Max="2.30479551e+04"/>
+    <Variable VarIndex="3" Expression="B_gamma_p" Label="B_gamma_p" Title="B_gamma_p" Unit="" Internal="B_gamma_p" Type="D" Min="5.73695020e+03" Max="4.81671938e+05"/>
+    <Variable VarIndex="4" Expression="B_m_corrected" Label="B_m_corrected" Title="B_m_corrected" Unit="" Internal="B_m_corrected" Type="D" Min="1.95302771e+03" Max="1.09999277e+04"/>
+    <Variable VarIndex="5" Expression="B_fdchi2" Label="B_fdchi2" Title="B_fdchi2" Unit="" Internal="B_fdchi2" Type="D" Min="1.21393609e+00" Max="7.93324423e+00"/>
+    <Variable VarIndex="6" Expression="B_vtx_chi2" Label="B_vtx_chi2" Title="B_vtx_chi2" Unit="" Internal="B_vtx_chi2" Type="D" Min="-3.03683448e+00" Max="2.99998879e+00"/>
+    <Variable VarIndex="7" Expression="B_chi2dof_max" Label="B_chi2dof_max" Title="B_chi2dof_max" Unit="" Internal="B_chi2dof_max" Type="D" Min="5.80347955e-01" Max="2.99992013e+00"/>
   </Variables>
   <Spectators NSpec="0"/>
   <Classes NClass="2">

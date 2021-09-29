@@ -68,15 +68,15 @@
     <Option name="NNodesMax" modified="No">0</Option>
   </Options>
   <Variables NVar="9">
-    <Variable VarIndex="0" Expression="mcor" Label="mcor" Title="mcor" Unit="" Internal="mcor" Type="D" Min="1.30673975e+03" Max="1.09679121e+04"/>
-    <Variable VarIndex="1" Expression="chi2" Label="chi2" Title="chi2" Unit="" Internal="chi2" Type="D" Min="-2.19698677e+01" Max="2.97523950e+03"/>
-    <Variable VarIndex="2" Expression="sumpt" Label="sumpt" Title="sumpt" Unit="" Internal="sumpt" Type="D" Min="4.54004590e+03" Max="4.71022773e+04"/>
-    <Variable VarIndex="3" Expression="eta" Label="eta" Title="eta" Unit="" Internal="eta" Type="D" Min="2.04760671e+00" Max="4.99840593e+00"/>
-    <Variable VarIndex="4" Expression="fdchi2" Label="fdchi2" Title="fdchi2" Unit="" Internal="fdchi2" Type="D" Min="1.41968555e+01" Max="3.73430840e+07"/>
-    <Variable VarIndex="5" Expression="minpt" Label="minpt" Title="minpt" Unit="" Internal="minpt" Type="D" Min="1.35366235e+03" Max="9.36795410e+03"/>
-    <Variable VarIndex="6" Expression="nlt16" Label="nlt16" Title="nlt16" Unit="" Internal="nlt16" Type="D" Min="0.00000000e+00" Max="1.00000000e+00"/>
-    <Variable VarIndex="7" Expression="ipchi2" Label="ipchi2" Title="ipchi2" Unit="" Internal="ipchi2" Type="D" Min="4.74157417e-03" Max="2.76031188e+05"/>
-    <Variable VarIndex="8" Expression="n1trk" Label="n1trk" Title="n1trk" Unit="" Internal="n1trk" Type="D" Min="2.00000000e+00" Max="3.00000000e+00"/>
+    <Variable VarIndex="0" Expression="B_mcor" Label="B_mcor" Title="B_mcor" Unit="" Internal="B_mcor" Type="D" Min="1.30673975e+03" Max="1.09679121e+04"/>
+    <Variable VarIndex="1" Expression="B_chi2" Label="B_chi2" Title="B_chi2" Unit="" Internal="B_chi2" Type="D" Min="-2.19698677e+01" Max="2.97523950e+03"/>
+    <Variable VarIndex="2" Expression="B_sumpt" Label="B_sumpt" Title="B_sumpt" Unit="" Internal="B_sumpt" Type="D" Min="4.54004590e+03" Max="4.71022773e+04"/>
+    <Variable VarIndex="3" Expression="B_eta" Label="B_eta" Title="B_eta" Unit="" Internal="B_eta" Type="D" Min="2.04760671e+00" Max="4.99840593e+00"/>
+    <Variable VarIndex="4" Expression="B_fdchi2" Label="B_fdchi2" Title="B_fdchi2" Unit="" Internal="B_fdchi2" Type="D" Min="1.41968555e+01" Max="3.73430840e+07"/>
+    <Variable VarIndex="5" Expression="B_minpt" Label="B_minpt" Title="B_minpt" Unit="" Internal="B_minpt" Type="D" Min="1.35366235e+03" Max="9.36795410e+03"/>
+    <Variable VarIndex="6" Expression="B_nlt16" Label="B_nlt16" Title="B_nlt16" Unit="" Internal="B_nlt16" Type="D" Min="0.00000000e+00" Max="1.00000000e+00"/>
+    <Variable VarIndex="7" Expression="B_ipchi2" Label="B_ipchi2" Title="B_ipchi2" Unit="" Internal="B_ipchi2" Type="D" Min="4.74157417e-03" Max="2.76031188e+05"/>
+    <Variable VarIndex="8" Expression="B_n1trk" Label="B_n1trk" Title="B_n1trk" Unit="" Internal="B_n1trk" Type="D" Min="2.00000000e+00" Max="3.00000000e+00"/>
   </Variables>
   <Spectators NSpec="0"/>
   <Classes NClass="2">
