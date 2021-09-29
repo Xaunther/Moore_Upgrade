@@ -1,18 +1,11 @@
-// Script to train a BDT for the inclusive radiative lines. List of arguments:
-
-// signal_files: Text file with list of proxy signal files. Each file in one
-// line
-
-// background_files: Text file with list of proxy background files. Each
-// file in one line
-
-// BDTVariables: Text file with the list of BDT variables. Each variable in one
-// line
-
-// cutfile: File containing cuts to be applied line
-
-// BDTName: Name given to the classifier (HHGamma, HHGammaEE, HHHGamma,
-// HHHGammaEE)
+/******************************
+Script to train a BDT for the inclusive radiative lines. List of arguments:
+- signal_files: Text file with list of proxy signal files. Each file in one line
+- background_files: Text file with list of proxy background files. Each file in one line
+- BDTVariables: Text file with the list of BDT variables. Each variable in one line
+- cutfile: File containing cuts to be applied line
+- BDTName: Name given to the classifier (HHGamma, HHGammaEE, HHHGamma, HHHGammaEE)
+********************************/
 
 #include <fstream>
 #include <iostream>
@@ -29,7 +22,8 @@
 #include "TMVA/Tools.h"
 
 // Read lines from a file and return a list. Each entry is a line
-std::list<std::string> ReadVariables(std::string filename) {
+std::list<std::string> ReadVariables(std::string filename)
+{
   std::ifstream input;
   std::string basura = "";
 
@@ -37,7 +31,8 @@ std::list<std::string> ReadVariables(std::string filename) {
   input.open(filename.c_str());
 
   std::getline(input, basura);
-  while (basura != "") {
+  while (basura != "")
+  {
     l.push_back(basura);
     basura = "";
     std::getline(input, basura);
@@ -48,7 +43,8 @@ std::list<std::string> ReadVariables(std::string filename) {
   return l;
 }
 
-TCut ReadCuts(std::string cutfile) {
+TCut ReadCuts(std::string cutfile)
+{
   // Do nothing if no cutfile has been specified
   if (cutfile == "")
     return "";
@@ -56,19 +52,24 @@ TCut ReadCuts(std::string cutfile) {
   std::ifstream input;
   std::string basura;
   TCut cuts = "";
+
   input.open(cutfile.c_str());
+
   std::getline(input, basura);
-  while (basura != "") {
+  while (basura != "")
+  {
     cuts = cuts + TCut(basura.c_str());
     basura = "";
     std::getline(input, basura);
   }
+
   return cuts;
 }
 
 void Train_BDT(std::string signal_files, std::string background_files,
                std::string BDTVariables, std::string BDTName,
-               std::string cutfile = "") {
+               std::string cutfile = "")
+{
   // Get the lists of things
   auto signal_list = ReadVariables(signal_files);
   auto background_list = ReadVariables(background_files);
