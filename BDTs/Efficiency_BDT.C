@@ -128,4 +128,5 @@ void Efficiency_BDT(const std::string files, const std::string outputfile, const
     outf.open(outputfile.c_str());
     for (auto &result : results)
         outf << "BDT_response > " << result.first << " | " << result.second << std::endl;
+    outf.close();
 }
