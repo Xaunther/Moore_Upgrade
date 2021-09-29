@@ -57,11 +57,11 @@ The MinBias sample used contains **2810467** events, but this has a [HLT1 VLoose
 
 | BDT            | 100 Hz BDT cut | Signal events |
 | -------------- | -------------- | ------------- |
-| HHGamma        | 0.247525       | 17488         |
-| HHGamma old    | 0.366337       | 12113         |
-| HHGammaEE      | 0.306931       | 1028          |
-| HHGammaEE old  | 0.247525       | 835           |
-| HHHGamma       | 0.108911       | 4044          |
-| HHHGamma old   | 0.0891089      | 4244          |
-| HHHGammaEE     | 0.326733       | 29            |
-| HHHGammaEE old | 0.247525       | 81            |
+| HHGamma        | 0.248          | 17464         |
+| HHGamma old    | 0.362          | 12292         |
+| HHGammaEE      | 0.3            | 1085          |
+| HHGammaEE old  | 0.25           | 821           |
+| HHHGamma       | 0.108          | 3782          |
+| HHHGamma old   | 0.092          | 3790          |
+| HHHGammaEE     | 0.324          | 33            |
+| HHHGammaEE old | 0.236          | 92            |
