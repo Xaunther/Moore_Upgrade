@@ -1,0 +1,8 @@
+abs(B_ipchi2) < 6
+abs(B_ipchi2_min) < 6
+abs(B_gamma_pt) < 30000
+abs(B_gamma_p) < 600000
+abs(B_m_corrected) < 12000
+abs(B_fdchi2) < 9
+abs(B_vtx_chi2) < 4
+abs(B_chi2dof_max) < 3
